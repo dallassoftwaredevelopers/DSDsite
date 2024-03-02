@@ -8,6 +8,10 @@ To start, there are a few considerations.
 
 This project will be using Next.js, React.js, Typescript, Appwrite, and Vanilla CSS. Especially with beginners working on this, I think Typescript will be a great addition so we do not end up breaking things that we shouldn't be.
 
+Current Design Goal
+![image](https://github.com/dallassoftwaredevelopers/DSDsite/assets/39189903/4c7f42b1-c852-4225-bb47-e21386d878d5) ![image](https://github.com/dallassoftwaredevelopers/DSDsite/assets/39189903/8936f5f4-2cab-47c0-b0e3-3fde3fcf805b)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
