@@ -1,3 +1,13 @@
+This is an Open Source Project for the Dallas Software Developer meetup group and community! Our goal is to keep this beginner friendly where beginners can read the code, contribute, work together to keep the website up, and understand how to work on a larger project together. We will be using this Figma file for the design https://www.figma.com/file/8cpiqfhzCrzjqK7UOyJKvn/DSD?type=design&node-id=0%3A1&mode=design&t=Eno7CAj9zbn8ArtS-1
+
+To start, there are a few considerations.
+
+- Download the repo
+- Once downloaded, use npm install
+- The run the development server using npm run dev
+
+This project will be using Next.js, React.js, Typescript, Appwrite, and Vanilla CSS. Especially with beginners working on this, I think Typescript will be a great addition so we do not end up breaking things that we shouldn't be.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
