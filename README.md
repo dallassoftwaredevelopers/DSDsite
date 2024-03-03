@@ -11,6 +11,9 @@ To start, there are a few considerations.
 > - The run the development server using npm run dev
 
 This project will be using **Next.js, React.js, Typescript, Appwrite, and Vanilla CSS.**
+For testing, we will be using **React Testing Library and Jest**
+https://testing-library.com/docs/
+https://jestjs.io/docs/getting-started
 *Especially with beginners working on this*, ***Typescript*** will be a great addition so we do not end up breaking things that shouldn't be broken and catch errors earlier on in the development process.
 
 ## Current Design Goal

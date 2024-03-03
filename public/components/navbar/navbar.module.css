@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+.mobileNavBar {
+  display: none;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.logo a,
+.navLinks a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  color: #3c3db9;
+}
+
+.navLinks {
+  display: flex;
+  gap: 35px;
+}
+
+.homeLink {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.links {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  color: #3c3db9;
+  font-size: 25px;
+  padding-bottom: 5px;
+}
+
+.links::after {
+  content: '';
+  display: block;
+  width: 55%;
+  height: 5px;
+  background-color: #6d6df5;
+  position: absolute;
+  left: 45%;
+  bottom: 0;
+  top: 100%;
+}
+
+.meetupLink {
+  border-radius: 50px;
+  padding: 20px 40px;
+  background-color: #3c3db9;
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #3c3db9;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navLinks.active {
+  display: none;
+}
+
+@media (max-width: 1150px) {
+  .home {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+  .mobileNavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    font-family: 'Raleway', sans-serif;
+  }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: #3c3db9;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    text-decoration: none;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+
+  .logo a,
+  .navLinks a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    color: #3c3db9;
+  }
+  .links::after {
+    display: none;
+  }
+
+  .meetupLink {
+    background-color: #fff;
+    color: #3c3db9;
+    font-size: 25px;
+    text-decoration: none;
+    padding: 0;
+  }
+}
+/* }
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .home {
+    display: none;
+  }
+  .logo a,
+  .navLinks a {
+    text-decoration: none;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #3c3db9;
+  }
+
+  .links {
+    text-decoration: none;
+    display: flex;
+    direction: column;
+    align-items: center;
+    gap: 0;
+    justify-content: center;
+    color: #3c3db9;
+    font-size: 15px;
+  }
+
+  .links::after {
+    display: none;
+  }
+
+  .meetupLink {
+    background-color: #fff;
+    color: #3c3db9;
+    font-size: 15px;
+    text-decoration: none;
+    padding: 0;
+  }
+} */

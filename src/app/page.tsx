@@ -1,12 +1,17 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Navbar from '../../public/components/navbar/navbar';
+import styles from './page.module.css';
 
 export default function Home() {
+  const labelMap = {
+    lblHome: 'Dallas Software Developers',
+    lblCommunity: 'Community Impact',
+    lblContact: 'Contact Us',
+    lblMeetup: 'Meetups',
+  };
+
   return (
     <main className={styles.main}>
-    <div>
-      DSD
-    </div>
+      <Navbar label={labelMap} />
     </main>
   );
 }
