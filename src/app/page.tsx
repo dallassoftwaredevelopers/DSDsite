@@ -7,6 +7,7 @@ export default function Home() {
     lblCommunity: 'Community Impact',
     lblContact: 'Contact Us',
     lblMeetup: 'Meetups',
+    lblHero: 'You don\'t have to code alone.'
   };
 
   return (
