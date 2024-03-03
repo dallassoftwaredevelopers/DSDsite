@@ -1,5 +1,6 @@
 import CardsSection from "./components/cardsSection/cardsSection";
 import BannerSection from "./components/bannerSection/bannerSection";
+import HeroSection from "./components/heroSection/heroSection";
 import Navbar from "./components/navbar/navbar";
 import styles from "./page.module.css";
 
@@ -18,6 +19,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Navbar label={labelMap} />
+      <HeroSection label={labelMap} />
       <BannerSection label={labelMap} />
       <CardsSection label={labelMap} />
     </main>
