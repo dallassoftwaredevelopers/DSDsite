@@ -6,19 +6,28 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
+    "next": "14.1.1",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.1.1"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3",
+    "@babel/preset-typescript": "^7.23.3",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "babel-jest": "^29.7.0",
     "eslint": "^8",
-    "eslint-config-next": "14.1.1"
+    "eslint-config-next": "14.1.1",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "typescript": "^5"
   }
 }
