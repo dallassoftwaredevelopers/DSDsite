@@ -1,0 +1,11 @@
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: All Contributors Auto Action
+                uses: JoshuaKGoldberg/all-contributors-auto-action@v0.4.3
