@@ -1,5 +1,6 @@
-import Navbar from '../../public/components/navbar/navbar';
+import Navbar from './components/navbar/navbar';
 import styles from './page.module.css';
+import React from 'react';
 
 export default function Home() {
   const labelMap = {
