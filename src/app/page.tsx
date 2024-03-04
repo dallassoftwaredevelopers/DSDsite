@@ -8,6 +8,7 @@ export default function Home() {
     lblCommunity: 'Community Impact',
     lblContact: 'Contact Us',
     lblMeetup: 'Meetups',
+    lblBanner: "This website is made BY the community FOR the community"
   };
 
   return (

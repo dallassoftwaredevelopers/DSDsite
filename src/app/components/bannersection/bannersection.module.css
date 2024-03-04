@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+.bannerSection {
+  background-color: #0F1038;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bannerText {
+  padding: 1rem 0;
+  width: 60%;
+  color: white;
+  text-align: center;
+  font-size: 64px;
+  font-weight: 900;
+  font-family: 'Raleway', sans-serif;
+}
