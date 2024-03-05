@@ -49,7 +49,7 @@ jobs:
       - name: Check TypeScript Version
         run: tsc --version
 "on":
-  pull_request: null
+  pull_request:
   push:
     branches:
       - main
