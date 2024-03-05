@@ -38,7 +38,7 @@ For testing, we will be using **React Testing Library and Jest**
 
 ![DSD Meetup (900 x 512 px) (2000 x 1500 px)](https://github.com/dallassoftwaredevelopers/DSDsite/assets/39189903/129c6858-c274-4bc5-9dab-80a6ddf0415a)
 
-To Contribute, Read the Contribution Guidelines. [Contribution guidelines for this project](docs/CONTRIBUTING.md)
+To Contribute, Read the Contribution Guidelines. [Contribution guidelines for this project]([docs/CONTRIBUTING.md](https://github.com/dallassoftwaredevelopers/DSDsite/blob/main/CONTRIBUTING.md))
 
 # Contributors To The Project:
 <!-- readme: contributors -start -->
