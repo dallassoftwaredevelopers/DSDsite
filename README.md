@@ -57,6 +57,20 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Danny Thompson</b></sub>
         </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Dthompsondevtestaccount">
+            <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
+            <br />
+            <sub><b>Null</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/GetBlackBoxSolutions">
+            <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
+            <br />
+            <sub><b>Dennis Garcia</b></sub>
+        </a>
     </td></tr>
 </table>
 <!-- readme: contributors -end -->
