@@ -10,7 +10,6 @@ export default function Home() {
     lblMeetup: "Meetups",
   };
 
-  // Render the page home
   return (
     <main className={styles.main}>
       <Navbar label={labelMap} />
