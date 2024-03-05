@@ -16,8 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run ESLint
-        run: |
-          npm install
+        run: npm install
           npx eslint .
   prettier-format-check:
     if: github.event_name == 'push'
@@ -29,7 +28,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
       - name: Install dependencies
         run: npm install
       - name: Run Prettier Check
@@ -44,12 +43,12 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: "14"
       - name: Install TypeScript
         run: npm install -g typescript
       - name: Check TypeScript Version
         run: tsc --version
-'on':
+"on":
   pull_request: null
   push:
     branches:
