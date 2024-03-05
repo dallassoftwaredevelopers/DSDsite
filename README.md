@@ -38,4 +38,14 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
 
 Contributors To The Project:
 <!-- readme: contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/TheDThompsonDev">
+            <img src="https://avatars.githubusercontent.com/u/39189903?v=4" width="100;" alt="TheDThompsonDev"/>
+            <br />
+            <sub><b>Danny Thompson</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: contributors -end -->
