@@ -1,7 +1,7 @@
 ---
 jobs:
   contrib-readme-job:
-    if: github.event_name == 'push'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     name: A job to automate contrib in readme
     runs-on: ubuntu-latest
     steps:
