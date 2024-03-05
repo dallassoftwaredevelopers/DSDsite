@@ -10,10 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to automate contrib in readme
     steps:
-      - name: Contribute List
-        uses: akhilmhdh/contributors-readme-action@v2.3.6
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: Contribute List
+          uses: akhilmhdh/contributors-readme-action@v2.3.6
+          env:
+              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        - name: Checkout code
+          uses: actions/checkout@v2
+        - name: Set up Node.js
+          uses: actions/setup-node@v2
+          with:
+            node-version: '14'
+        - name: Install TypeScript
+          run: npm install -g typescript
+        - name: Check TypeScript Version
+          run: tsc --version
 
   typescript-setup-job:
     if: github.event_name == 'pull_request'
