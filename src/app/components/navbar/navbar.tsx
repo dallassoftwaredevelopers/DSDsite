@@ -16,8 +16,7 @@ interface NavbarProps {
 
 export default function Navbar({ label }: NavbarProps) {
   const [isNavVisible, setIsNavVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  
+
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
   };
