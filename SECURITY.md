@@ -1,5 +1,7 @@
 # Security Policy
+
 Will update this more as the project progresses.
+
 ## Supported Versions
 
 Use this section to tell people about which versions of your project are
