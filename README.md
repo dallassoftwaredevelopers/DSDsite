@@ -57,7 +57,6 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Danny Thompson</b></sub>
         </a>
-    </td>
-    </tr>
+    </td></tr>
 </table>
 <!-- readme: contributors -end -->
