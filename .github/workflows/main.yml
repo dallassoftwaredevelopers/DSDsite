@@ -2,14 +2,14 @@
 jobs:
   contrib-readme-job:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    name: A job to automate contrib in readme
     runs-on: ubuntu-latest
+    name: A job to automate contrib in readme
     steps:
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          runs-on: ubuntu-latest
-        name: Contribute List
+      - uses: actions/checkout@v2
+      - name: Contribute List
         uses: akhilmhdh/contributors-readme-action@v2.3.6
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   eslint-run-push:
     if: github.event_name == 'push'
     name: Run ESLint
