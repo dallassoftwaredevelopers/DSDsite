@@ -1,34 +1,43 @@
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-
+---
 jobs:
   contrib-readme-job:
     if: github.event_name == 'push'
-    runs-on: ubuntu-latest
     name: A job to automate contrib in readme
-    steps:
-        - name: Contribute List
-          uses: akhilmhdh/contributors-readme-action@v2.3.6
-          env:
-              GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - name: Checkout code
-          uses: actions/checkout@v2
-        - name: Set up Node.js
-          uses: actions/setup-node@v2
-          with:
-            node-version: '14'
-        - name: Install TypeScript
-          run: npm install -g typescript
-        - name: Check TypeScript Version
-          run: tsc --version
-
-  typescript-setup-job:
-    if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
-    name: Setup TypeScript on PR
+    steps:
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          runs-on: ubuntu-latest
+        name: Contribute List
+        uses: akhilmhdh/contributors-readme-action@v2.3.6
+  eslint-run-push:
+    if: github.event_name == 'push'
+    name: Run ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run ESLint
+        run: |
+          npm install
+          npx eslint .
+  prettier-format-check:
+    if: github.event_name == 'push'
+    name: Check code formatting with Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+      - name: Install dependencies
+        run: npm install
+      - name: Run Prettier Check
+        run: npx prettier --check .
+  typescript-run-push:
+    if: github.event_name == 'push'
+    name: Setup TypeScript on Main Push
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -40,3 +49,8 @@ jobs:
         run: npm install -g typescript
       - name: Check TypeScript Version
         run: tsc --version
+'on':
+  pull_request: null
+  push:
+    branches:
+      - main
