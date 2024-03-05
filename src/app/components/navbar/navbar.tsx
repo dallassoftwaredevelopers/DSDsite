@@ -15,15 +15,14 @@ interface NavbarProps {
 }
 
 export default function Navbar({ label }: NavbarProps) {
-  const [isNavVisible, setIsNavVisible] = useState(false);
-  const isMobile = false;
+  const [isNavVisible, setIsNavVisible] = useState(false);  
 
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
   };
   return (
     <div>
-      <nav className={!isMobile && styles.mobileNavBar}>
+      <nav className={styles.mobileNavBar}>
         <div className={styles.mobileLogo}>
           <Link href="/">
             <div className={styles.homeLink}>
