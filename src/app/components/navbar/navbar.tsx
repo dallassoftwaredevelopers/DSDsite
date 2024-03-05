@@ -14,6 +14,7 @@ interface NavbarProps {
   };
 }
 
+
 export default function Navbar({ label }: NavbarProps) {
   const [isNavVisible, setIsNavVisible] = useState(false);
 
