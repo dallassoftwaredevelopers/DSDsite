@@ -1,0 +1,19 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 45px;
+    padding: 60px;
+    justify-content: space-around;
+}
+
+.card {
+    flex: 1 1 425px;
+    height: 550px;
+    background-color: #D9D9D9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
