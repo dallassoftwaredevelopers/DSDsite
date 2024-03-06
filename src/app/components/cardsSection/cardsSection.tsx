@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./card";
 import styles from "./cards.module.css";
 
@@ -8,10 +7,20 @@ interface CardData {
 }
 
 interface CardsSectionProps {
-  cardData: CardData[];
+  label: {
+    lblWorkshops: string;
+    lblSupport: string;
+    lblCohorts: string;
+  };
 }
 
-const CardsSection: React.FC<CardsSectionProps> = ({ cardData }) => {
+export default function CardsSection({ label }: CardsSectionProps) {
+  const cardData: CardData[] = [
+    { id: 1, content: label.lblWorkshops },
+    { id: 2, content: label.lblSupport },
+    { id: 3, content: label.lblCohorts },
+  ];
+
   return (
     <div className={styles.cardContainer}>
       {cardData.map((card) => (
@@ -21,6 +30,4 @@ const CardsSection: React.FC<CardsSectionProps> = ({ cardData }) => {
       ))}
     </div>
   );
-};
-
-export default CardsSection;
+}
