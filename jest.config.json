@@ -1,7 +1,7 @@
 {
   "testEnvironment": "jsdom",
   "setupFilesAfterEnv": ["<rootDir>/__test__/setupTests.js"],
-    "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js"
-    }
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js"
   }
+}

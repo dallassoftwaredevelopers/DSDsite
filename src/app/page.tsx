@@ -1,6 +1,6 @@
-import Navbar from './components/navbar/navbar';
-import styles from './page.module.css';
-import React from 'react';
+import Navbar from "./components/navbar/navbar";
+import styles from "./page.module.css";
+import React from "react";
 
 export default function Home() {
   const labelMap = {
@@ -8,7 +8,7 @@ export default function Home() {
     lblCommunity: 'Community Impact',
     lblContact: 'Contact Us',
     lblMeetup: 'Meetups',
-    lblBanner: "This website is made BY the community FOR the community"
+    lblBanner: "This website is made BY the community FOR the community",
   };
 
   return (
