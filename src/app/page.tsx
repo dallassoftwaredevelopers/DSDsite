@@ -11,10 +11,17 @@ export default function Home() {
     lblMeetup: "Meetups",
   };
 
+  const cardData = [
+    { id: 1, content: labelMap.lblHome },
+    { id: 2, content: labelMap.lblCommunity },
+    { id: 3, content: labelMap.lblContact },
+    { id: 4, content: labelMap.lblMeetup },
+  ];
+
   return (
     <main className={styles.main}>
       <Navbar label={labelMap} />
-      <CardsSection />
+      <CardsSection cardData={cardData} />
     </main>
   );
 }

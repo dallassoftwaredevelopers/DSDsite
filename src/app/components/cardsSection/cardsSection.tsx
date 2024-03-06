@@ -8,18 +8,10 @@ interface CardData {
 }
 
 interface CardsSectionProps {
-  cardData?: CardData[];
+  cardData: CardData[];
 }
 
-const futureCardData: CardData[] = [
-  { id: 1, content: "Technical Workshops" },
-  { id: 2, content: "Community Support" },
-  { id: 3, content: "Cohorts & Hackathons" },
-];
-
-const CardsSection: React.FC<CardsSectionProps> = ({
-  cardData = futureCardData,
-}) => {
+const CardsSection: React.FC<CardsSectionProps> = ({ cardData }) => {
   return (
     <div className={styles.cardContainer}>
       {cardData.map((card) => (
