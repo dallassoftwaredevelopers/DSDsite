@@ -59,6 +59,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/joshuaow91">
+            <img src="https://avatars.githubusercontent.com/u/113389785?v=4" width="100;" alt="joshuaow91"/>
+            <br />
+            <sub><b>Josh</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/Dthompsondevtestaccount">
             <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
             <br />
