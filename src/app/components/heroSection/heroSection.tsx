@@ -3,22 +3,11 @@
 import React from "react";
 import styles from "./heroSection.module.css";
 
-interface HeroSection {
-  label: {
-    lblHome: string;
-    lblCommunity: string;
-    lblContact: string;
-    lblMeetup: string;
-    lblBanner: string;
-    lblWorkshops: string;
-    lblSupport: string;
-    lblCohorts: string;
-  };
-}
 
-export default function HeroSection({ label }: HeroSection) {
+export default function HeroSection({ label }: {label: string}) {
   return (
-    <div className={styles.heroSection}>
+    <div className={styles.heroSection} data-testid="hero" >
+      <p className={styles.intro}>{label}</p>
       <div className={styles.videoPlaceholder}>Video playing here</div>
     </div>
   );

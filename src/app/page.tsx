@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Navbar label={labelMap} />
-      <HeroSection label={labelMap} />
+      <HeroSection label={labelMap.lblHero} />
       <BannerSection label={labelMap} />
       <CardsSection label={labelMap} />
     </main>

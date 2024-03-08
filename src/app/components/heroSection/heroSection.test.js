@@ -1,6 +1,6 @@
 import React from 'react'; // Import React
 import { render, screen } from '@testing-library/react';
-import HeroSection from './hero-section';
+import HeroSection from './heroSection'
 
 describe('HeroSection component', () => {
   const labelMap = {    
