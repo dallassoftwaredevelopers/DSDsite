@@ -4,6 +4,9 @@
   gap: 45px;
   padding: 60px;
   justify-content: space-around;
+  font-family: "Raleway", sans-serif;
+  color: #0f1038;
+  box-sizing: border-box;
 }
 
 .card {
@@ -13,7 +16,22 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   display: flex;
+  gap: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.cardTitle {
+  font-size: 32px;
+  font-weight: 900;
+  text-decoration: underline;
+  margin: 0;
+}
+
+.cardText {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
 }
