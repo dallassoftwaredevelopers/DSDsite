@@ -10,7 +10,7 @@ export default function Home() {
     lblCommunity: "Community Impact",
     lblContact: "Contact Us",
     lblMeetup: "Meetups",
-    lblHero: 'You don\'t have to code alone.',
+    lblHero: "You don't have to code alone.",
     lblBanner: "This website is made BY the community FOR the community",
     lblWorkshopsTitle: "Technical Workshops",
     lblSupportTitle: "Community Support",
