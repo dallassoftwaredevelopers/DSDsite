@@ -58,8 +58,8 @@ export default function CardsSection({ label }: CardsSectionProps) {
         <Card key={card.id}>
           <header className={styles.cardHeader}>{card.title}</header>
           <p className={styles.cardContent}>{card.content}</p>
-          <Link href={card.href}>
-            <a className={styles.button}>{card.buttonText} &rarr;</a>
+          <Link href={card.href} className={styles.button}>
+            {card.buttonText} &rarr;
           </Link>
         </Card>
       ))}
