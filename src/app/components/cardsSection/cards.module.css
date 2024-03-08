@@ -23,15 +23,17 @@
 
 .cardHeader {
   font-size: 32px;
-  background-color: #3c3db9;
-  width: 200px;
-  height: 45px;
-  border-radius: 15px;
-  font-size: 18px;
   font-weight: 900;
   color: #0f1038;
   margin-bottom: 20px;
   text-decoration: underline;
+}
+
+.cardContent {
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 41px;
+  padding-right: 41px;
 }
 
 .button {
@@ -49,19 +51,4 @@
   justify-content: center;
   align-items: center;
   outline: none;
-}
-
-.cardHeader {
-  font-size: 32px;
-  font-weight: 900;
-  color: #0f1038;
-  margin-bottom: 20px;
-  text-decoration: underline;
-}
-
-.cardContent {
-  font-size: 14px;
-  font-weight: 400;
-  padding-left: 41px;
-  padding-right: 41px;
 }
