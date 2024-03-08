@@ -10,6 +10,7 @@ export default function Home() {
     lblCommunity: "Community Impact",
     lblContact: "Contact Us",
     lblMeetup: "Meetups",
+    lblHero: "You don't have to code alone.",
     lblBanner: "This website is made BY the community FOR the community",
     lblWorkshopsTitle: "Technical Workshops",
     lblSupportTitle: "Community Support",
@@ -25,7 +26,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <Navbar label={labelMap} />
-      <HeroSection label={labelMap} />
+      <HeroSection label={labelMap.lblHero} />
       <BannerSection label={labelMap} />
       <CardsSection label={labelMap} />
     </main>

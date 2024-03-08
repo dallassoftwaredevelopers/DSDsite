@@ -26,3 +26,10 @@
   align-items: center;
   justify-content: center;
 }
+
+.intro {
+  font-size: 100px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  color: #3c3db9;
+}
