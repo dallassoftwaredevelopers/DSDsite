@@ -27,7 +27,7 @@ export default function Navbar({ label }: NavbarProps) {
           <Link href="/">
             <div className={styles.homeLink}>
               <Image
-                src="/public/assets/dsd-circle-logo.png"
+                src="/assets/dsd-circle-logo.png"
                 alt="Logo"
                 width={45}
                 height={45}
