@@ -3,29 +3,38 @@ import styles from "./cards.module.css";
 
 interface CardData {
   id: number;
+  title: string;
   content: string;
 }
 
 interface CardsSectionProps {
   label: {
-    lblWorkshops: string;
-    lblSupport: string;
-    lblCohorts: string;
+    lblWorkshopsTitle: string;
+    lblSupportTitle: string;
+    lblCohortsTitle: string;
+    lblWorkshopsContent: string;
+    lblSupportContent: string;
+    lblCohortsContent: string;
   };
 }
 
 export default function CardsSection({ label }: CardsSectionProps) {
   const cardData: CardData[] = [
-    { id: 1, content: label.lblWorkshops },
-    { id: 2, content: label.lblSupport },
-    { id: 3, content: label.lblCohorts },
+    {
+      id: 1,
+      title: label.lblWorkshopsTitle,
+      content: label.lblWorkshopsContent,
+    },
+    { id: 2, title: label.lblSupportTitle, content: label.lblSupportContent },
+    { id: 3, title: label.lblCohortsTitle, content: label.lblCohortsContent },
   ];
 
   return (
     <div className={styles.cardContainer}>
       {cardData.map((card) => (
         <Card key={card.id}>
-          <p>{card.content}</p>
+          <header className={styles.cardHeader}>{card.title}</header>
+          <p className={styles.cardContent}>{card.content}</p>
         </Card>
       ))}
     </div>
