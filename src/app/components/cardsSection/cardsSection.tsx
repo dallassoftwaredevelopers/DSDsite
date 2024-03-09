@@ -1,7 +1,6 @@
 import Card from "./card";
 import styles from "./cards.module.css";
-import Link from "next/link";
-
+import CtaButton from "../ctaButton/ctaButton";
 interface CardData {
   id: number;
   title: string;
@@ -58,9 +57,7 @@ export default function CardsSection({ label }: CardsSectionProps) {
         <Card key={card.id}>
           <header className={styles.cardHeader}>{card.title}</header>
           <p className={styles.cardContent}>{card.content}</p>
-          <Link href={card.href} className={styles.button}>
-            {card.buttonText} &rarr;
-          </Link>
+          <CtaButton href={card.href} buttonText={card.buttonText} />
         </Card>
       ))}
     </div>
