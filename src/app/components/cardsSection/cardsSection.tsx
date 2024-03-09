@@ -1,10 +1,13 @@
-import Card from './card';
-import styles from './cards.module.css';
+import Card from "./card";
+import styles from "./cards.module.css";
+import Link from "next/link";
 
 interface CardData {
   id: number;
   title: string;
   content: string;
+  buttonText: string;
+  href: string;
 }
 
 interface CardsSectionProps {
@@ -15,6 +18,12 @@ interface CardsSectionProps {
     lblWorkshopsContent: string;
     lblSupportContent: string;
     lblCohortsContent: string;
+    btnTextMeetup: string;
+    btnTextCommunity: string;
+    btnTextCohort: string;
+    meetupUrl: string;
+    communityUrl: string;
+    cohortUrl: string;
   };
 }
 
@@ -24,9 +33,23 @@ export default function CardsSection({ label }: CardsSectionProps) {
       id: 1,
       title: label.lblWorkshopsTitle,
       content: label.lblWorkshopsContent,
+      buttonText: label.btnTextMeetup,
+      href: label.meetupUrl,
     },
-    { id: 2, title: label.lblSupportTitle, content: label.lblSupportContent },
-    { id: 3, title: label.lblCohortsTitle, content: label.lblCohortsContent },
+    {
+      id: 2,
+      title: label.lblSupportTitle,
+      content: label.lblSupportContent,
+      buttonText: label.btnTextCommunity,
+      href: label.communityUrl,
+    },
+    {
+      id: 3,
+      title: label.lblCohortsTitle,
+      content: label.lblCohortsContent,
+      buttonText: label.btnTextCohort,
+      href: label.cohortUrl,
+    },
   ];
 
   return (
@@ -35,6 +58,9 @@ export default function CardsSection({ label }: CardsSectionProps) {
         <Card key={card.id}>
           <header className={styles.cardHeader}>{card.title}</header>
           <p className={styles.cardContent}>{card.content}</p>
+          <Link href={card.href}>
+            <a className={styles.button}>{card.buttonText} &rarr;</a>
+          </Link>
         </Card>
       ))}
     </div>

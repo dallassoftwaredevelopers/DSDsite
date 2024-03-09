@@ -24,14 +24,12 @@
 .cardHeader {
   font-size: 32px;
   font-weight: 900;
-  color: #0f1038;
-  margin-bottom: 20px;
-  text-decoration: underline;
-}
-
-.cardContent {
-  font-size: 14px;
-  font-weight: 400;
-  padding-left: 41px;
-  padding-right: 41px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
 }
