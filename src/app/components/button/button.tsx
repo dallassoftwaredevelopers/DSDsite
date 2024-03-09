@@ -20,7 +20,11 @@ export default function Button({
   return (
     <button className={`${styles.button} ${buttonClass}`} onClick={onClick}>
       {buttonText}
-      {showIcon && <span className={styles.button__icon}>&rarr;</span>}
+      {showIcon && (
+        <span className={styles.button__icon} data-testid="button-icon">
+          &rarr;
+        </span>
+      )}
     </button>
   );
 }
