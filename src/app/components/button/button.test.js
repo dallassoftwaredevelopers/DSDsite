@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import Button from "./Button";
-import styles from "./button.module.css";
 
 test("renders correct text", () => {
   render(<Button buttonText="Click me" />);
