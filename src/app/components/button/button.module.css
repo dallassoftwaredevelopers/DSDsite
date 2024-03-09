@@ -1,4 +1,4 @@
-.button {
+.button--primary {
   background-color: #3c3db9;
   width: 200px;
   height: 45px;
@@ -14,4 +14,8 @@
   align-items: center;
   outline: none;
   text-decoration: none;
+}
+
+.button__icon {
+  padding: 0 0 0 5px;
 }
