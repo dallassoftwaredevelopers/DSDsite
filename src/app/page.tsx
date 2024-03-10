@@ -20,17 +20,13 @@ export default function Home() {
     lblSupportContent:
       'No matter your level, you have a community that has your back! Dallas Software Developers are focused on supporting our local community while also trying to support the developers who need our help and support!',
     lblCohortsContent:
-<<<<<<< HEAD
       'A 6-week program that is completely free to pair developers working on a project being guided by a developer working in the industry. The focus is to help give you something interesting to showcase in an interview and give you real-world skills!',
-=======
-      "A 6-week program that is completely free to pair developers working on a project being guided by a developer working in the industry. The focus is to help give you something interesting to showcase in an interview and give you real-world skills!",
-    btnTextMeetup: "Go To A Meetup",
-    btnTextCommunity: "Community Impact",
-    btnTextCohort: "Join Our Cohort",
-    meetupUrl: "https://www.meetup.com/dallas-software-developers-meetup/",
-    communityUrl: "/",
-    cohortUrl: "/",
->>>>>>> 34b59c3 (chore: bringing branch up to date WEB-15)
+    btnTextMeetup: 'Go To A Meetup',
+    btnTextCommunity: 'Community Impact',
+    btnTextCohort: 'Join Our Cohort',
+    meetupUrl: 'https://www.meetup.com/dallas-software-developers-meetup/',
+    communityUrl: '/',
+    cohortUrl: '/',
   };
 
   return (
