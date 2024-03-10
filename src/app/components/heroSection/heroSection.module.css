@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
 
 .heroSection {
   display: flex;
@@ -7,14 +7,14 @@
   justify-content: space-between;
   padding: 5rem 3rem;
   margin: 3rem 0;
-  background-image: url("/assets/dsdHeroBg.png");
+  background-image: url('/assets/dsdHeroBg.png');
   background-repeat: no-repeat;
   background-position: bottom right;
   background-size: contain;
 }
 
 .videoPlaceholder {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   text-align: center;
   font-weight: 700;
   font-size: 36px;
@@ -29,7 +29,7 @@
 
 .intro {
   font-size: 100px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 900;
   color: #3c3db9;
 }

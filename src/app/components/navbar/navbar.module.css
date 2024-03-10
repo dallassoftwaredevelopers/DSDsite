@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
 
 .mobileNavBar {
   display: none;
@@ -8,7 +8,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .logo a,
@@ -42,7 +42,7 @@
 }
 
 .links::after {
-  content: "";
+  content: '';
   display: block;
   width: 55%;
   height: 5px;
@@ -97,7 +97,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    font-family: "Raleway", sans-serif;
+    font-family: 'Raleway', sans-serif;
   }
   .hamburger {
     display: flex;

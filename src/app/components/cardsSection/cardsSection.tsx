@@ -1,5 +1,5 @@
-import Card from "./card";
-import styles from "./cards.module.css";
+import Card from './card';
+import styles from './cards.module.css';
 
 interface CardData {
   id: number;
