@@ -1,7 +1,7 @@
-import Card from "./card";
-import styles from "./cards.module.css";
-import Button from "../button/button";
-import Link from "next/link";
+import Card from './card';
+import styles from './cards.module.css';
+import Button from '../button/button';
+import Link from 'next/link';
 interface CardData {
   id: number;
   title: string;
