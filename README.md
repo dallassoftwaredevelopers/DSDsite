@@ -87,13 +87,20 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/braydoncoyer">
+            <img src="https://avatars.githubusercontent.com/u/38799309?v=4" width="100;" alt="braydoncoyer"/>
+            <br />
+            <sub><b>Braydon Coyer</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
         <a href="https://github.com/GetBlackBoxSolutions">
             <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
             <br />
             <sub><b>Dennis Garcia</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/coffee2theorems">
             <img src="https://avatars.githubusercontent.com/u/7843313?v=4" width="100;" alt="coffee2theorems"/>
