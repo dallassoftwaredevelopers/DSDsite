@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
 
 .heroSection {
+  font-family: 'Raleway', sans-serif;
   display: flex;
-  flex-wrap: wrap;
   gap: 1rem;
+  align-items: center;
   justify-content: space-between;
-  padding: 5rem 3rem;
+  padding: 5rem 4rem 5rem 1rem;
   margin: 3rem 0;
   background-image: url('/assets/dsdHeroBg.png');
   background-repeat: no-repeat;
@@ -14,12 +15,11 @@
 }
 
 .videoPlaceholder {
-  font-family: 'Raleway', sans-serif;
   text-align: center;
   font-weight: 700;
   font-size: 36px;
   height: 320px;
-  width: 460px;
+  flex: 0 0 480px;
   background-color: lightgrey;
   color: black;
   display: flex;
@@ -28,8 +28,55 @@
 }
 
 .intro {
+  margin: 0;
   font-size: 100px;
-  font-family: 'Raleway', sans-serif;
   font-weight: 900;
   color: #3c3db9;
+  flex: 0 1 750px;
+  line-height: 1.2;
+
+  /* Set mix-blend-mode to "plus-lighter" preferably, else fallback to "color-dodge" */
+  mix-blend-mode: color-dodge;
+  mix-blend-mode: plus-lighter;
+}
+
+@media (width < 1300px) {
+  .intro {
+    flex-basis: 500px;
+    font-size: 70px;
+  }
+}
+
+@media (width < 960px) {
+  .heroSection {
+    padding: 3rem 1.5rem;
+  }
+  .intro {
+    flex-basis: 420px;
+    font-size: 50px;
+  }
+  .videoPlaceholder {
+    flex-basis: 350px;
+    height: 240px;
+  }
+}
+@media (width < 690px) {
+  .heroSection {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    margin-top: 1rem;
+    gap: 3rem;
+  }
+  .intro {
+    text-align: center;
+    font-size: 60px;
+    flex: unset;
+    max-width: 430px;
+  }
+  .videoPlaceholder {
+    flex: unset;
+    width: 80%;
+    height: auto;
+    aspect-ratio: 5/3;
+  }
 }
