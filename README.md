@@ -66,17 +66,17 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/JVPH">
-            <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
-            <br />
-            <sub><b>JVPH</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/climaxmba">
             <img src="https://avatars.githubusercontent.com/u/106796090?v=4" width="100;" alt="climaxmba"/>
             <br />
             <sub><b>Climax Mba</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/JVPH">
+            <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
+            <br />
+            <sub><b>JVPH</b></sub>
         </a>
     </td>
     <td align="center">
