@@ -16,9 +16,14 @@ export default function Button({
   showIcon,
 }: ButtonProps) {
   const buttonClass = variant === 'primary' ? styles['button--primary'] : '';
+  const testId = `button-${variant}`;
 
   return (
-    <button className={`${styles.button} ${buttonClass}`} onClick={onClick}>
+    <button
+      className={`${styles.button} ${buttonClass}`}
+      onClick={onClick}
+      data-testid={testId}
+    >
       {buttonText}
       {showIcon && (
         <span className={styles.button__icon} data-testid='button-icon'>

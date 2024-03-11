@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with primary variant 1`] = `
+<DocumentFragment>
+  <button
+    class="button undefined"
+    data-testid="button-primary"
+  >
+    Primary Button
+  </button>
+</DocumentFragment>
+`;

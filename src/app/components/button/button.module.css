@@ -1,6 +1,6 @@
 .button--primary {
   background-color: #3c3db9;
-  width: 200px;
+  padding: 0 15px 0 15px;
   height: 45px;
   border-radius: 15px;
   font-size: 18px;
@@ -17,5 +17,5 @@
 }
 
 .button__icon {
-  padding: 0 0 0 5px;
+  padding-left: 5px;
 }
