@@ -104,18 +104,17 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/coffee2theorems">
-            <img src="https://avatars.githubusercontent.com/u/7843313?v=4" width="100;" alt="coffee2theorems"/>
-            <br />
-            <sub><b>Ryan Monaghan</b></sub>
-        </a>
-    </td></tr>
-</table>
-   <td align="center">
         <a href="https://github.com/NoelCov">
             <img src="https://avatars.githubusercontent.com/u/73734505?v=4" width="100;" alt="NoelCov"/>
             <br />
             <sub><b>Noel Covarrubias</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/coffee2theorems">
+            <img src="https://avatars.githubusercontent.com/u/7843313?v=4" width="100;" alt="coffee2theorems"/>
+            <br />
+            <sub><b>Ryan Monaghan</b></sub>
         </a>
     </td></tr>
 </table>
