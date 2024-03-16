@@ -1,0 +1,21 @@
+.button--primary {
+  background-color: #3c3db9;
+  padding: 0 15px 0 15px;
+  height: 45px;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 900;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  text-decoration: none;
+}
+
+.button__icon {
+  padding-left: 5px;
+}
