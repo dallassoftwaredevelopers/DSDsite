@@ -16,7 +16,10 @@ To start, there are a few considerations.
 
 > - Download the repo
 > - Once downloaded, use npm install
+> - npm install --save-dev prettier
 > - The run the development server using npm run dev
+> - if you make any changes run npx prettier --write <your file name> otherwise it will not pass the pipeline checks
+
 
 #
 
