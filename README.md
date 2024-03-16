@@ -20,7 +20,6 @@ To start, there are a few considerations.
 > - The run the development server using npm run dev
 > - if you make any changes run npx prettier --write <your file name> otherwise it will not pass the pipeline checks
 
-
 #
 
 # > Tech Stack Of This Project
