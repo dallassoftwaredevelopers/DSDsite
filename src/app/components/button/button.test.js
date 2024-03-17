@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import Button from './Button';
-import styles from './button.module.css';
 
 jest.mock('./button.module.css', () => ({
   button: 'button',
@@ -27,12 +26,6 @@ test('renders correctly with primary variant', () => {
   );
   expect(asFragment()).toMatchSnapshot();
 });
-
-// test('has the correct class when variant is primary', () => {
-//   render(<Button buttonText='Primary Button' variant='primary' />);
-//   const buttonElement = screen.getByTestId('button-primary');
-//   expect(buttonElement).toHaveStyle('background-color: #3c3db9');
-// });
 
 test('shows icon when showIcon is true', () => {
   render(<Button buttonText='Button with Icon' showIcon />);
