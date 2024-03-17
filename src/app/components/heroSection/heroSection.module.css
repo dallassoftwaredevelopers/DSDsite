@@ -74,6 +74,7 @@
     max-width: 430px;
   }
   .videoPlaceholder {
+    display: none;
     flex: unset;
     width: 80%;
     height: auto;
