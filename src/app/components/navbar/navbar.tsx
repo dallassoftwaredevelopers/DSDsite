@@ -37,23 +37,33 @@ export default function Navbar({ label }: NavbarProps) {
           </Link>
         </div>
         <div className={styles.hamburger} onClick={toggleNav}>
-          <div className={styles.line}></div>
-          <div className={styles.line}></div>
-          <div className={styles.line}></div>
+          {
+            isNavVisible ? (
+              <>
+                <div className={styles.closeIcon}></div>
+              </>
+            ) : (
+              <>
+                <div className={styles.line}></div>
+                <div className={styles.line}></div>
+                <div className={styles.line}></div>
+              </>
+            )
+          }
         </div>
         <div
           className={styles.mobileNavBackground}
           style={{ display: isNavVisible ? 'block' : 'none' }}
         >
           <div className={styles.mobileNav}>
-            <Link href='/'>
-              <div className={styles.mobileLinks}>{label.lblCommunity}</div>
+            <Link className={styles.mobileLinks} href='/'>
+              {label.lblCommunity}
             </Link>
-            <Link href='/'>
-              <div className={styles.mobileLinks}>{label.lblContact}</div>
+            <Link className={styles.mobileLinks} href='/'>
+              {label.lblContact}
             </Link>
-            <Link href='https://www.meetup.com/dallas-software-developers-meetup/'>
-              <div className={styles.meetupLink}>{label.lblMeetup}</div>
+            <Link className={styles.meetupLink} href='https://www.meetup.com/dallas-software-developers-meetup/'>
+              {label.lblMeetup}
             </Link>
           </div>
         </div>
