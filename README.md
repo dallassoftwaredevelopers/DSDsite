@@ -130,6 +130,12 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Prashanth Vamanan Srinivasan</b></sub>
         </a>
+     <td align="center">
+        <a href="https://github.com/Brayheart">
+            <img src="https://avatars.githubusercontent.com/u/30908449?v=4" width="100;" alt="Brayheart"/>
+            <br />
+            <sub><b>Tyler Bray</b></sub>
+        </a>
     </td></tr>
 </table>
 <!-- readme: contributors -end -->
