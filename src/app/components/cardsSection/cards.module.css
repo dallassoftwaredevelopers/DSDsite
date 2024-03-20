@@ -35,3 +35,7 @@
   padding-left: 41px;
   padding-right: 41px;
 }
+
+.cardLink {
+  text-decoration: none;
+}
