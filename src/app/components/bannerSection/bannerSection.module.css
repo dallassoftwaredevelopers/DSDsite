@@ -16,3 +16,17 @@
   font-weight: 900;
   font-family: 'Raleway', sans-serif;
 }
+
+/* Mobile devices */
+@media only screen and (max-width: 767px) {
+  .bannerText {
+    font-size: 2rem;
+  }
+}
+
+/* Medium-sized devices (like tablets in portrait and landscape mode) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .bannerText {
+    font-size: 3rem;
+  }
+}
