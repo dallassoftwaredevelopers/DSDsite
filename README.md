@@ -97,13 +97,6 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
     </td></tr>
 <tr>
     <td align="center">
-        <a href="https://github.com/PrashanthVamanan">
-            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
-            <br />
-            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/braydoncoyer">
             <img src="https://avatars.githubusercontent.com/u/38799309?v=4" width="100;" alt="braydoncoyer"/>
             <br />
@@ -132,10 +125,10 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/Brayheart">
-            <img src="https://avatars.githubusercontent.com/u/30908449?v=4" width="100;" alt="Brayheart"/>
+        <a href="https://github.com/PrashanthVamanan">
+            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
             <br />
-            <sub><b>Tyler Bray</b></sub>
+            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
         </a>
     </td></tr>
 </table>
