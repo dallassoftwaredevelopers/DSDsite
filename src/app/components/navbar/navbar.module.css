@@ -25,6 +25,10 @@
   gap: 35px;
 }
 
+.home {
+  font-weight: 900;
+}
+
 .homeLink {
   display: flex;
   align-items: center;
