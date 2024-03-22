@@ -87,6 +87,7 @@
 @media (max-width: 1150px) {
   .home {
     display: none;
+    font-weight: 900;
   }
 }
 @media (max-width: 768px) {
