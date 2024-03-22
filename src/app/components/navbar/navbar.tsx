@@ -37,9 +37,11 @@ export default function Navbar({ label }: NavbarProps) {
           </Link>
         </div>
         {isNavVisible ? (
-          <div onClick={toggleNav} className={styles.cross}>
-            <div className={styles.line}></div>
-            <div className={styles.line}></div>
+          <div className={styles.crossContainer}>
+            <div onClick={toggleNav} className={styles.cross}>
+              <div className={styles.line}></div>
+              <div className={styles.line}></div>
+            </div>
           </div>
         ) : (
           <div className={styles.hamburger} onClick={toggleNav}>

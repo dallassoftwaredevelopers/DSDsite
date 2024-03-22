@@ -110,6 +110,22 @@
     cursor: pointer;
   }
 
+  .crossContainer {
+    width: 50%;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cross {
+    justify-content: center;
+    align-self: flex-end;
+  }
+
+  .cross {
+    align-items: flex-start;
+  }
+
   .hamburger div,
   .cross div {
     width: 25px;
@@ -140,9 +156,7 @@
     flex-direction: column;
     text-decoration: none;
   }
-  .mobileLinks {
-    font-weight: 900;
-  }
+
   .navLinks {
     display: none;
     flex-direction: column;
@@ -183,8 +197,9 @@
   .meetupLink {
     font-size: 12px;
     font-family: 'Raleway', sans-serif;
-    font-weight: 900;
-    color: #551a8b;
+    font-weight: 700;
+    color: #3c3db9;
     text-decoration: none;
+    line-height: 14.09px;
   }
 }
