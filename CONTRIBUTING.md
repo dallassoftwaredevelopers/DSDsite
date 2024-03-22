@@ -7,7 +7,6 @@ An example commit message would look like this:
 
 chore: create contributing guidelines (WEB-8)
 
-
 Commit messages should not be written in an action or present tense. It also should not mention tasks unrelated to the issue "Creating Contributing Guidlines and will work on next task" is not what we would want to see as a commit message.
 
 After a pull request is approved, the branch should be deleted once merged.
