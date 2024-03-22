@@ -111,6 +111,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/David-Ogden-III">
+            <img src="https://avatars.githubusercontent.com/u/71677972?v=4" width="100;" alt="David-Ogden-III"/>
+            <br />
+            <sub><b>David Ogden</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/GetBlackBoxSolutions">
             <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
             <br />
@@ -130,7 +137,8 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Ryan Monaghan</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/Brayheart">
             <img src="https://avatars.githubusercontent.com/u/30908449?v=4" width="100;" alt="Brayheart"/>
