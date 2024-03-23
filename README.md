@@ -104,6 +104,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/choir27">
+            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir27"/>
+            <br />
+            <sub><b>Richard</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/PrashanthVamanan">
             <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
             <br />
@@ -130,15 +137,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Dennis Garcia</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/NoelCov">
             <img src="https://avatars.githubusercontent.com/u/73734505?v=4" width="100;" alt="NoelCov"/>
             <br />
             <sub><b>Noel Covarrubias</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/coffee2theorems">
             <img src="https://avatars.githubusercontent.com/u/7843313?v=4" width="100;" alt="coffee2theorems"/>
