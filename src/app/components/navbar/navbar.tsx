@@ -36,11 +36,20 @@ export default function Navbar({ label }: NavbarProps) {
             </div>
           </Link>
         </div>
-        <div className={styles.hamburger} onClick={toggleNav}>
-          <div className={styles.line}></div>
-          <div className={styles.line}></div>
-          <div className={styles.line}></div>
-        </div>
+        {isNavVisible ? (
+          <div className={styles.crossContainer}>
+            <div onClick={toggleNav} className={styles.cross}>
+              <div className={styles.line}></div>
+              <div className={styles.line}></div>
+            </div>
+          </div>
+        ) : (
+          <div className={styles.hamburger} onClick={toggleNav}>
+            <div className={styles.line}></div>
+            <div className={styles.line}></div>
+            <div className={styles.line}></div>
+          </div>
+        )}
         <div
           className={styles.mobileNavBackground}
           style={{ display: isNavVisible ? 'block' : 'none' }}

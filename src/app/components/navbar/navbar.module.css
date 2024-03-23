@@ -67,11 +67,13 @@
   text-decoration: none;
 }
 
-.hamburger {
+.hamburger,
+.cross {
   display: none;
 }
 
-.hamburger div {
+.hamburger div,
+.cross div {
   width: 25px;
   height: 3px;
   background-color: #3c3db9;
@@ -104,13 +106,32 @@
     padding: 0 20px;
     font-family: 'Raleway', sans-serif;
   }
-  .hamburger {
+
+  .hamburger,
+  .cross {
     display: flex;
     flex-direction: column;
     cursor: pointer;
   }
 
-  .hamburger div {
+  .crossContainer {
+    width: 50%;
+    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cross {
+    justify-content: center;
+    align-self: flex-end;
+  }
+
+  .cross {
+    align-items: flex-start;
+  }
+
+  .hamburger div,
+  .cross div {
     width: 25px;
     height: 3px;
     background-color: #3c3db9;
@@ -118,14 +139,28 @@
     transition: all 0.3s ease;
   }
 
+  .cross {
+    position: relative;
+  }
+
+  .cross div {
+    position: absolute;
+  }
+
+  .cross div:last-child {
+    transform: rotate(45deg);
+  }
+
+  .cross div:first-child {
+    transform: rotate(-45deg);
+  }
+
   .mobileNav {
     display: flex;
     flex-direction: column;
     text-decoration: none;
   }
-  .mobileLinks {
-    font-weight: 900;
-  }
+
   .navLinks {
     display: none;
     flex-direction: column;
@@ -158,8 +193,17 @@
   .meetupLink {
     background-color: #fff;
     color: #3c3db9;
-    font-size: 25px;
     text-decoration: none;
     padding: 0;
+  }
+
+  .mobileNav a,
+  .meetupLink {
+    font-size: 12px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    color: #3c3db9;
+    text-decoration: none;
+    line-height: 14.09px;
   }
 }
