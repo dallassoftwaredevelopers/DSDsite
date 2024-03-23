@@ -39,3 +39,28 @@
 .cardLink {
   text-decoration: none;
 }
+
+@media (max-width: 1300px) {
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .cardHeader {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cardContainer {
+    padding: 24px;
+  }
+
+  .cardContent {
+    padding: 0 24px;
+  }
+}
