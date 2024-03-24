@@ -140,6 +140,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
     </td></tr>
 <tr>
     <td align="center">
+        <a href="https://github.com/Fadi-Haddad">
+            <img src="https://avatars.githubusercontent.com/u/125252809?v=4" width="100;" alt="Fadi-Haddad"/>
+            <br />
+            <sub><b>Fadi Haddad</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/NoelCov">
             <img src="https://avatars.githubusercontent.com/u/73734505?v=4" width="100;" alt="NoelCov"/>
             <br />
