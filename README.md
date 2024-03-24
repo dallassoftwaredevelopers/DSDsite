@@ -75,6 +75,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/David-Ogden-III">
+            <img src="https://avatars.githubusercontent.com/u/71677972?v=4" width="100;" alt="David-Ogden-III"/>
+            <br />
+            <sub><b>David Ogden</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/JVPH">
             <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
             <br />
@@ -87,15 +94,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Usman Raja</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/abhiramrp">
             <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
             <br />
             <sub><b>Abhiram Rishi Prattipati</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Dthompsondevtestaccount">
             <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
@@ -122,13 +129,6 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <img src="https://avatars.githubusercontent.com/u/38799309?v=4" width="100;" alt="braydoncoyer"/>
             <br />
             <sub><b>Braydon Coyer</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/David-Ogden-III">
-            <img src="https://avatars.githubusercontent.com/u/71677972?v=4" width="100;" alt="David-Ogden-III"/>
-            <br />
-            <sub><b>David Ogden</b></sub>
         </a>
     </td>
     <td align="center">
