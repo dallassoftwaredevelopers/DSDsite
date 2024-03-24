@@ -34,12 +34,13 @@
   color: #3c3db9;
   flex: 0 1 750px;
   line-height: 1.2;
-
-  /* Set mix-blend-mode to "plus-lighter" preferably, else fallback to "color-dodge" */
   mix-blend-mode: color-dodge;
   mix-blend-mode: plus-lighter;
 }
 
+.mobileHeroImage {
+  display: none;
+}
 @media (width < 1300px) {
   .intro {
     flex-basis: 500px;
@@ -60,24 +61,30 @@
     height: 240px;
   }
 }
-@media (width < 690px) {
+
+@media (max-width: 690px) {
   .heroSection {
-    flex-direction: column;
-    padding: 2rem 1rem;
-    margin-top: 1rem;
-    gap: 3rem;
+    flex-direction: row;
+    padding: 0 1rem 0 0;
+    margin: 4rem -10px 15px 15px;
+    background-image: url('/assets/dsdMobileHeroBg.png');
+    background-size: 65%;
   }
+
   .intro {
-    text-align: center;
-    font-size: 60px;
-    flex: unset;
-    max-width: 430px;
+    font-size: 24px;
+    flex: 0 1 45%;
+    margin-right: 1rem;
   }
+
   .videoPlaceholder {
     display: none;
-    flex: unset;
-    width: 80%;
-    height: auto;
-    aspect-ratio: 5/3;
+  }
+  .mobileHeroImage {
+    display: block;
+    flex: 0 1 45%;
+    z-index: 2;
+    margin-bottom: -20px;
+    margin-top: 5px;
   }
 }

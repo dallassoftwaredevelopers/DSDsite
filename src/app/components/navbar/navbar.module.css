@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
+  padding: 10px 20px;
   font-family: 'Raleway', sans-serif;
 }
 
@@ -100,11 +100,20 @@
     display: none;
   }
   .mobileNavBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 10px 20px;
     font-family: 'Raleway', sans-serif;
+    background-color: #fff;
+    border-bottom: #eeeeee 1px solid;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
   }
 
   .hamburger,
