@@ -68,6 +68,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/UsmanCanCode">
+            <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
+            <br />
+            <sub><b>Usman Raja</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/climaxmba">
             <img src="https://avatars.githubusercontent.com/u/106796090?v=4" width="100;" alt="climaxmba"/>
             <br />
@@ -86,13 +93,6 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
             <br />
             <sub><b>JVPH</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/UsmanCanCode">
-            <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
-            <br />
-            <sub><b>Usman Raja</b></sub>
         </a>
     </td></tr>
 <tr>
