@@ -2,8 +2,7 @@ import Card from './card';
 import styles from './cards.module.css';
 import Button from '../button/button';
 import Link from 'next/link';
-import Image from 'next/image'
-
+import Image from 'next/image';
 
 interface CardData {
   id: number;
@@ -14,7 +13,6 @@ interface CardData {
   src: string;
   alt: string;
 }
-
 
 interface CardsSectionProps {
   label: {
@@ -75,13 +73,14 @@ export default function CardsSection({ label }: CardsSectionProps) {
       {cardData.map((card) => (
         <Card key={card.id}>
           <div className={styles.imageContainer}>
-            <Image 
-            src={card.src} 
-            alt={card.alt} 
-            className={styles.imageStyle} 
-            sizes="100vw" 
-            width={375} 
-            height={250}/>
+            <Image
+              src={card.src}
+              alt={card.alt}
+              className={styles.imageStyle}
+              sizes='100vw'
+              width={375}
+              height={250}
+            />
           </div>
           <header className={styles.cardHeader}>{card.title}</header>
           <p className={styles.cardContent}>{card.content}</p>
