@@ -1,5 +1,6 @@
-Steps to contribute.
-NEVER COMMIT TO MAIN. NEVER COMMIT TO MAIN. It should always be on your own branch and that branch name should match the issue.
+# Steps to contribute.
+
+**NEVER COMMIT TO MAIN. NEVER COMMIT TO MAIN.** It should always be on your own branch and that branch name should match the issue.
 Ensure that you are addressing the correct issue. Each issue will be listed as something like a chore, fix, bug, etc. Your commit message MUST start with one of these tags that correspond with your issue.
 Followed by your commit message and your commit message must end with the branch name, example (WEB-1)
 
@@ -11,7 +12,7 @@ Commit messages should not be written in an action or present tense. It also sho
 
 After a pull request is approved, the branch should be deleted once merged.
 
-**First Time Contribution Guide**
+## First Time Contribution Guide
 
 1. Fork the DSDsite repository
 
@@ -88,7 +89,7 @@ This often happens and is mostly encountered after a pull request opened by anot
 
 1. Syncronize your Fork by going to your forked repository and ensure that you are on the `main` branch. You will see a message like "This branch is 1 commit ahead of, 9 commits behind dallassoftwaredevelopers/DSDsite:main."
 2. Click **Sync fork** and click **Update branch** on the prompt that appears.
-> ![image](https://github.com/climaxmba/DSDsite/assets/106796090/d72ef411-c707-4d70-8c45-48e607450c04)
+   > ![image](https://github.com/climaxmba/DSDsite/assets/106796090/d72ef411-c707-4d70-8c45-48e607450c04)
 
 ### Update your local repository
 
