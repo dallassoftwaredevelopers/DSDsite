@@ -38,13 +38,21 @@ export default function Navbar({ label }: NavbarProps) {
         </div>
         {isNavVisible ? (
           <div className={styles.crossContainer}>
-            <div onClick={toggleNav} className={styles.cross} data-testid='navbar-collapse'>
+            <div
+              onClick={toggleNav}
+              className={styles.cross}
+              data-testid='navbar-collapse'
+            >
               <div className={styles.line}></div>
               <div className={styles.line}></div>
             </div>
           </div>
         ) : (
-          <div className={styles.hamburger} onClick={toggleNav} data-testid='navbar-expand'>
+          <div
+            className={styles.hamburger}
+            onClick={toggleNav}
+            data-testid='navbar-expand'
+          >
             <div className={styles.line}></div>
             <div className={styles.line}></div>
             <div className={styles.line}></div>
