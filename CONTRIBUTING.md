@@ -88,6 +88,7 @@ This often happens and is mostly encountered after a pull request opened by anot
 
 1. Syncronize your Fork by going to your forked repository and ensure that you are on the `main` branch. You will see a message like "This branch is 1 commit ahead of, 9 commits behind dallassoftwaredevelopers/DSDsite:main."
 2. Click **Sync fork** and click **Update branch** on the prompt that appears.
+> ![image](https://github.com/climaxmba/DSDsite/assets/106796090/d72ef411-c707-4d70-8c45-48e607450c04)
 
 ### Update your local repository
 
@@ -104,7 +105,7 @@ git pull --rebase
 git rebase main
 ```
 
-4. You may run into a merge conflict. If you do, [here's how to resolve them](), you have to do that before preceeding.
+4. You may run into a merge conflict. If you do, [here's how to resolve them](https://www.freecodecamp.org/news/resolve-merge-conflicts-in-git-a-practical-guide/), you have to do that before preceeding.
 
 ### Force-push your changes
 
