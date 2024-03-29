@@ -1,5 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders correctly with non-primary variant 1`] = `
+<DocumentFragment>
+  <button
+    class="button "
+    data-testid="button-secondary"
+  >
+    Secondary Button
+  </button>
+</DocumentFragment>
+`;
+
 exports[`renders correctly with primary variant 1`] = `
 <DocumentFragment>
   <button
