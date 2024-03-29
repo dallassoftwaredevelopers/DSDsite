@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import Navbar from './navbar';
 
 describe('Navbar', () => {
@@ -34,5 +34,22 @@ describe('Navbar', () => {
     expect(navbarElement).toHaveTextContent('Community Impact');
     expect(navbarElement).toHaveTextContent('Contact Us');
     expect(navbarElement).toHaveTextContent('Meetups');
+  });
+
+  test('navbar toggles when expand/collapse button is pressed', () => {
+    const component = render(
+      <Navbar
+        label={{
+          lblHome: 'Dallas Software Developers',
+          lblCommunity: 'Community Impact',
+          lblContact: 'Contact Us',
+          lblMeetup: 'Meetups',
+        }}
+      />
+    );
+    expect(component.getByTestId('navbar-expand')).toBeInTheDocument();
+    fireEvent.click(component.getByTestId('navbar-expand'));
+    expect(component.getByTestId('navbar-collapse')).toBeInTheDocument();
+    fireEvent.click(component.getByTestId('navbar-collapse'));
   });
 });

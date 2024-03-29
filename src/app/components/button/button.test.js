@@ -27,6 +27,13 @@ test('renders correctly with primary variant', () => {
   expect(asFragment()).toMatchSnapshot();
 });
 
+test('renders correctly with non-primary variant', () => {
+  const { asFragment } = render(
+    <Button buttonText='Secondary Button' variant='secondary' />
+  );
+  expect(asFragment()).toMatchSnapshot();
+});
+
 test('shows icon when showIcon is true', () => {
   render(<Button buttonText='Button with Icon' showIcon />);
   const iconElement = screen.getByTestId('button-icon');
