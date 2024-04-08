@@ -8,7 +8,7 @@ interface BentoData {
   alt: string;
 }
 
-const bentoImages = [
+const bentoImages: BentoData[] = [
   {
     id: 1,
     url: '/assets/twoPeopleHelp.png',
@@ -83,7 +83,7 @@ export default function BentoSection() {
         ))}
       </div>
 
-      <div className={styles.bentoFourthContainer}>
+      <div className={styles.bentoThirdContainer}>
         <Bento key={bentoImages[5].id}>
           <div className={styles.imageContainer}>
             <Image
@@ -96,7 +96,7 @@ export default function BentoSection() {
           </div>
         </Bento>
 
-        <div className={styles.bentoThirdContainer}>
+        <div className={styles.bentoFourthContainer}>
           <Bento key={bentoImages[6].id}>
             <div>
               <Image

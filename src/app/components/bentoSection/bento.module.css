@@ -17,19 +17,25 @@
   justify-content: space-evenly;
 }
 
-.bentoThirdContainer {
+.bentoFourthContainer {
   padding-top: 1rem;
   display: flex;
 }
 
-.bentoThirdContainer .card {
-  padding: 0rem;
-  margin: 0rem;
-}
-
-.bentoThirdContainer .card {
+.bentoFourthContainer .card {
   padding: 0rem;
   margin: 0 1rem;
+}
+
+.bentoThirdContainer .imageContainer {
+  padding: 0 0.9rem;
+}
+
+.bentoThirdContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .imageContainer {
