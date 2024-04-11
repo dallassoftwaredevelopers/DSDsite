@@ -1,7 +1,11 @@
+'use client';
+
+import useMediaQuery from './hooks/useMediaQuery';
 import CardsSection from './components/cardsSection/cardsSection';
 import BannerSection from './components/bannerSection/bannerSection';
 import HeroSection from './components/heroSection/heroSection';
 import Navbar from './components/navbar/navbar';
+import SocialSection from './components/socialSection/socialSection';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -33,7 +37,39 @@ export default function Home() {
     meetupUrl: 'https://www.meetup.com/dallas-software-developers-meetup/',
     communityUrl: '/',
     cohortUrl: '/',
+    githubUrl: 'https://github.com/dallassoftwaredevelopers',
+    discordUrl: '/',
+    linkedinUrl: '/',
   };
+
+  const socialData = [
+    {
+      id: 'github',
+      imgSrc: '/assets/githubIcon.png',
+      alt: 'Github social icon',
+      link: labelMap.githubUrl,
+    },
+    {
+      id: 'discord',
+      imgSrc: '/assets/discordIcon.png',
+      alt: 'Discord social icon',
+      link: labelMap.discordUrl,
+    },
+    {
+      id: 'meetup',
+      imgSrc: '/assets/meetupIcon.png',
+      alt: 'Meetup social icon',
+      link: labelMap.meetupUrl,
+    },
+    {
+      id: 'linkedin',
+      imgSrc: '/assets/linkedinIcon.png',
+      alt: 'LinkedIn social icon',
+      link: labelMap.linkedinUrl,
+    },
+  ];
+
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   return (
     <main className={styles.main}>
@@ -41,6 +77,7 @@ export default function Home() {
       <HeroSection label={labelMap.lblHero} />
       <BannerSection label={labelMap} />
       <CardsSection label={labelMap} />
+      {isDesktop && <SocialSection socialData={socialData} />}
     </main>
   );
 }
