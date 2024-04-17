@@ -1,5 +1,6 @@
-Steps to contribute.
-NEVER COMMIT TO MAIN. NEVER COMMIT TO MAIN. It should always be on your own branch and that branch name should match the issue.
+# Steps to contribute.
+
+**NEVER COMMIT TO MAIN. NEVER COMMIT TO MAIN.** It should always be on your own branch and that branch name should match the issue.
 Ensure that you are addressing the correct issue. Each issue will be listed as something like a chore, fix, bug, etc. Your commit message MUST start with one of these tags that correspond with your issue.
 Followed by your commit message and your commit message must end with the branch name, example (WEB-1)
 
@@ -11,7 +12,7 @@ Commit messages should not be written in an action or present tense. It also sho
 
 After a pull request is approved, the branch should be deleted once merged.
 
-**First Time Contribution Guide**
+## First Time Contribution Guide
 
 1. Fork the DSDsite repository
 
@@ -73,3 +74,40 @@ After a pull request is approved, the branch should be deleted once merged.
    6. Verify tests have passed
 
 CONGRATULATIONS! You have successfully contributed to the Dallas Software Developers website! Now just wait and see if your pull request is approved.
+
+## When your Pull Request is merged
+
+That's Great, your work is well appreciated! If you would like to keep contributing, you should update your fork and update your local repository.
+
+## When your branch goes out of date
+
+This often happens and is mostly encountered after a pull request opened by another individual is merged to the `main` branch and you may sometimes run into merge conflicts. Here are steps to follow if this happens:
+
+> You may choose to merge them the `main` branch on GitHub to your working branch which may be faster, but these steps are encouraged for a more linear-looking git history
+
+### Update your Fork
+
+1. Syncronize your Fork by going to your forked repository and ensure that you are on the `main` branch. You will see a message like "This branch is 1 commit ahead of, 9 commits behind dallassoftwaredevelopers/DSDsite:main."
+2. Click **Sync fork** and click **Update branch** on the prompt that appears.
+   > ![image](https://github.com/climaxmba/DSDsite/assets/106796090/d72ef411-c707-4d70-8c45-48e607450c04)
+
+### Update your local repository
+
+1. Open a terminal in the directory of your local repository and run `git checkout main` to ensure you are on the `main` branch.
+2. Run this command to update your local repository, you can read more about `git pull` at [https://git-scm.com/docs/git-pull](https://git-scm.com/docs/git-pull).
+
+```bash
+git pull --rebase
+```
+
+3. Now checkout your working branch with `git checkout [branch_name]` and run:
+
+```bash
+git rebase main
+```
+
+4. You may run into a merge conflict. If you do, [here's how to resolve them](https://www.freecodecamp.org/news/resolve-merge-conflicts-in-git-a-practical-guide/), you have to do that before preceeding.
+
+### Force-push your changes
+
+Run `git push --force` to update your remote branch and eventually, your pull request.
