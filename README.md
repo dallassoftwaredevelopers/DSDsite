@@ -68,17 +68,17 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/UsmanCanCode">
-            <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
-            <br />
-            <sub><b>Usman Raja</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/climaxmba">
             <img src="https://avatars.githubusercontent.com/u/106796090?v=4" width="100;" alt="climaxmba"/>
             <br />
             <sub><b>Climax Mba</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/UsmanCanCode">
+            <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
+            <br />
+            <sub><b>Usman Raja</b></sub>
         </a>
     </td>
     <td align="center">
@@ -132,25 +132,25 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/GetBlackBoxSolutions">
+            <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
+            <br />
+            <sub><b>Dennis Garcia</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
         <a href="https://github.com/abhiramrp">
             <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
             <br />
             <sub><b>Abhiram Rishi Prattipati</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/braydoncoyer">
             <img src="https://avatars.githubusercontent.com/u/38799309?v=4" width="100;" alt="braydoncoyer"/>
             <br />
             <sub><b>Braydon Coyer</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/GetBlackBoxSolutions">
-            <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
-            <br />
-            <sub><b>Dennis Garcia</b></sub>
         </a>
     </td>
     <td align="center">
