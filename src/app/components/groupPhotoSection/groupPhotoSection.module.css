@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+.groupPhotoSection {
+  background-color: #3c3db9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+}
+
+.groupPhotoImg {
+  border: #eeeeee 5px solid;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
