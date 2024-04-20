@@ -8,7 +8,6 @@ import { detectContentType } from 'next/dist/server/image-optimizer';
 export default function GroupPhotoSection({ label }: { label: string }) {
   return (
     <div className={styles.groupPhotoSection} data-testid='groupPhoto'>
-      <div className={styles.mobileGroupPhotoImage}>
         <Image
           className={styles.groupPhotoImg}
           src='/assets/meetupGroupShot5.png'
@@ -16,7 +15,6 @@ export default function GroupPhotoSection({ label }: { label: string }) {
           width={1450}
           height={500}
         />
-      </div>
     </div>
   );
 }
