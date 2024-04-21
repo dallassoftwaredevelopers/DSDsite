@@ -43,8 +43,8 @@ export default function Home() {
       <HeroSection label={labelMap.lblHero} />
       <BannerSection label={labelMap} />
       <CardsSection label={labelMap} />
-      <BentoSection />
       <GroupPhotoSection label='' />
+      <BentoSection />
     </main>
   );
 }
