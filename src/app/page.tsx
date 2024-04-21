@@ -3,6 +3,7 @@ import BannerSection from './components/bannerSection/bannerSection';
 import HeroSection from './components/heroSection/heroSection';
 import Navbar from './components/navbar/navbar';
 import styles from './page.module.css';
+import GroupPhotoSection from './components/groupPhotoSection/groupPhotoSection';
 import BentoSection from './components/bentoSection/bentoSection';
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
       <BannerSection label={labelMap} />
       <CardsSection label={labelMap} />
       <BentoSection />
+      <GroupPhotoSection label='' />
     </main>
   );
 }

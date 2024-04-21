@@ -68,6 +68,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/climaxmba">
+            <img src="https://avatars.githubusercontent.com/u/106796090?v=4" width="100;" alt="climaxmba"/>
+            <br />
+            <sub><b>Climax Mba</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/UsmanCanCode">
             <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
             <br />
@@ -75,10 +82,10 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/climaxmba">
-            <img src="https://avatars.githubusercontent.com/u/106796090?v=4" width="100;" alt="climaxmba"/>
+        <a href="https://github.com/smclairecarden">
+            <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
             <br />
-            <sub><b>Climax Mba</b></sub>
+            <sub><b>Claire Carden</b></sub>
         </a>
     </td>
     <td align="center">
@@ -87,41 +94,27 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>David Ogden</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/JVPH">
             <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
             <br />
             <sub><b>JVPH</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
-        <a href="https://github.com/abhiramrp">
-            <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
+        <a href="https://github.com/GetBlackBoxSolutions">
+            <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
             <br />
-            <sub><b>Abhiram Rishi Prattipati</b></sub>
+            <sub><b>Dennis Garcia</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/Dthompsondevtestaccount">
-            <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
+        <a href="https://github.com/Soumava-221B">
+            <img src="https://avatars.githubusercontent.com/u/77767745?v=4" width="100;" alt="Soumava-221B"/>
             <br />
             <sub><b>Null</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/choir27">
-            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir27"/>
-            <br />
-            <sub><b>Richard</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/PrashanthVamanan">
-            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
-            <br />
-            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
         </a>
     </td>
     <td align="center">
@@ -132,18 +125,39 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/braydoncoyer">
-            <img src="https://avatars.githubusercontent.com/u/38799309?v=4" width="100;" alt="braydoncoyer"/>
+        <a href="https://github.com/PrashanthVamanan">
+            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
             <br />
-            <sub><b>Braydon Coyer</b></sub>
+            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/choir27">
+            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir27"/>
+            <br />
+            <sub><b>Richard</b></sub>
         </a>
     </td></tr>
 <tr>
     <td align="center">
-        <a href="https://github.com/GetBlackBoxSolutions">
-            <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
+        <a href="https://github.com/Dthompsondevtestaccount">
+            <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
             <br />
-            <sub><b>Dennis Garcia</b></sub>
+            <sub><b>Null</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/abhiramrp">
+            <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
+            <br />
+            <sub><b>Abhiram Rishi Prattipati</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/braydoncoyer">
+            <img src="https://avatars.githubusercontent.com/u/38799309?v=4" width="100;" alt="braydoncoyer"/>
+            <br />
+            <sub><b>Braydon Coyer</b></sub>
         </a>
     </td>
     <td align="center">
@@ -166,7 +180,8 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Ryan Monaghan</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/Brayheart">
             <img src="https://avatars.githubusercontent.com/u/30908449?v=4" width="100;" alt="Brayheart"/>
