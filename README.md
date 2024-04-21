@@ -82,10 +82,25 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/GetBlackBoxSolutions">
+            <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
+            <br />
+            <sub><b>Dennis Garcia</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/smclairecarden">
             <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
             <br />
             <sub><b>Claire Carden</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
+        <a href="https://github.com/choir27">
+            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir27"/>
+            <br />
+            <sub><b>Richard</b></sub>
         </a>
     </td>
     <td align="center">
@@ -94,20 +109,12 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>David Ogden</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/JVPH">
             <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
             <br />
             <sub><b>JVPH</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/GetBlackBoxSolutions">
-            <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
-            <br />
-            <sub><b>Dennis Garcia</b></sub>
         </a>
     </td>
     <td align="center">
@@ -129,13 +136,6 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
             <br />
             <sub><b>Prashanth Vamanan Srinivasan</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/choir27">
-            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir27"/>
-            <br />
-            <sub><b>Richard</b></sub>
         </a>
     </td></tr>
 <tr>
