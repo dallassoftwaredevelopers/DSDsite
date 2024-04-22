@@ -39,7 +39,7 @@ export default function Home() {
     cohortUrl: '/',
     githubUrl: 'https://github.com/dallassoftwaredevelopers',
     discordUrl: '/',
-    linkedinUrl: '/',
+    linkedinUrl: 'https://www.linkedin.com/company/dallas-software-developers',
   };
 
   const socialData = [
