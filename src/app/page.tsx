@@ -1,5 +1,5 @@
 'use client';
-
+import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa';
 import useMediaQuery from './hooks/useMediaQuery';
 import CardsSection from './components/cardsSection/cardsSection';
 import BannerSection from './components/bannerSection/bannerSection';
@@ -45,24 +45,28 @@ export default function Home() {
   const socialData = [
     {
       id: 'github',
+      icon: <FaGithub />,
       imgSrc: '/assets/githubIcon.png',
       alt: 'Github social icon',
       link: labelMap.githubUrl,
     },
     {
       id: 'discord',
+      icon: <FaDiscord />,
       imgSrc: '/assets/discordIcon.png',
       alt: 'Discord social icon',
       link: labelMap.discordUrl,
     },
     {
       id: 'meetup',
+      icon: <FaMeetup />,
       imgSrc: '/assets/meetupIcon.png',
       alt: 'Meetup social icon',
       link: labelMap.meetupUrl,
     },
     {
       id: 'linkedin',
+      icon: <FaLinkedin />,
       imgSrc: '/assets/linkedinIcon.png',
       alt: 'LinkedIn social icon',
       link: labelMap.linkedinUrl,

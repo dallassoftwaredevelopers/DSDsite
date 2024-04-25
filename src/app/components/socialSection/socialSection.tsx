@@ -4,6 +4,7 @@ import styles from './socialSection.module.css';
 
 export interface SocialLinkData {
   id: string;
+  icon: React.ReactNode;
   imgSrc: string;
   alt: string;
   link: string;
