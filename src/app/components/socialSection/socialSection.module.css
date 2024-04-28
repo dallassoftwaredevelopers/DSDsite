@@ -1,0 +1,35 @@
+.socialSection {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  padding: 60px 60px 60px 0;
+}
+
+.socialSection p {
+  font-family: 'Raleway', sans-serif;
+  font-size: 55px;
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 50%;
+  height: 500px;
+  background-color: #0f1034;
+  border-radius: 0 30px 30px 0;
+}
+
+.imageContainer img {
+  border-radius: 0 15px 15px 0;
+  width: 93%;
+  height: 90%;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: space-evenly;
+  list-style: none;
+  padding: 0;
+}

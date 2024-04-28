@@ -1,7 +1,11 @@
+'use client';
+import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa';
+import useMediaQuery from './hooks/useMediaQuery';
 import CardsSection from './components/cardsSection/cardsSection';
 import BannerSection from './components/bannerSection/bannerSection';
 import HeroSection from './components/heroSection/heroSection';
 import Navbar from './components/navbar/navbar';
+import SocialSection from './components/socialSection/socialSection';
 import styles from './page.module.css';
 import GroupPhotoSection from './components/groupPhotoSection/groupPhotoSection';
 import BentoSection from './components/bentoSection/bentoSection';
@@ -35,7 +39,43 @@ export default function Home() {
     meetupUrl: 'https://www.meetup.com/dallas-software-developers-meetup/',
     communityUrl: '/',
     cohortUrl: '/',
+    githubUrl: 'https://github.com/dallassoftwaredevelopers',
+    discordUrl: '/',
+    linkedinUrl: 'https://www.linkedin.com/company/dallas-software-developers',
   };
+
+  const socialData = [
+    {
+      id: 'github',
+      icon: <FaGithub />,
+      imgSrc: '/assets/githubIcon.png',
+      alt: 'Github social icon',
+      link: labelMap.githubUrl,
+    },
+    {
+      id: 'discord',
+      icon: <FaDiscord />,
+      imgSrc: '/assets/discordIcon.png',
+      alt: 'Discord social icon',
+      link: labelMap.discordUrl,
+    },
+    {
+      id: 'meetup',
+      icon: <FaMeetup />,
+      imgSrc: '/assets/meetupIcon.png',
+      alt: 'Meetup social icon',
+      link: labelMap.meetupUrl,
+    },
+    {
+      id: 'linkedin',
+      icon: <FaLinkedin />,
+      imgSrc: '/assets/linkedinIcon.png',
+      alt: 'LinkedIn social icon',
+      link: labelMap.linkedinUrl,
+    },
+  ];
+
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   return (
     <main className={styles.main}>
@@ -43,6 +83,7 @@ export default function Home() {
       <HeroSection label={labelMap.lblHero} />
       <BannerSection label={labelMap} />
       <CardsSection label={labelMap} />
+      {isDesktop && <SocialSection socialData={socialData} />}
       <GroupPhotoSection label='' />
       <BentoSection />
     </main>
