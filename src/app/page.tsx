@@ -83,9 +83,9 @@ export default function Home() {
       <HeroSection label={labelMap.lblHero} />
       <BannerSection label={labelMap} />
       <CardsSection label={labelMap} />
+      {isDesktop && <SocialSection socialData={socialData} />}
       <GroupPhotoSection label='' />
       <BentoSection />
-      {isDesktop && <SocialSection socialData={socialData} />}
     </main>
   );
 }
