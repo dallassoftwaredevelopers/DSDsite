@@ -75,17 +75,17 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/UsmanCanCode">
-            <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
-            <br />
-            <sub><b>Usman Raja</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/GetBlackBoxSolutions">
             <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
             <br />
             <sub><b>Dennis Garcia</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/UsmanCanCode">
+            <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
+            <br />
+            <sub><b>Usman Raja</b></sub>
         </a>
     </td>
     <td align="center">
@@ -125,20 +125,27 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/tk1ng">
+            <img src="https://avatars.githubusercontent.com/u/49492414?v=4" width="100;" alt="tk1ng"/>
+            <br />
+            <sub><b>Taryn King</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/SamuelHe2024">
             <img src="https://avatars.githubusercontent.com/u/39107451?v=4" width="100;" alt="SamuelHe2024"/>
             <br />
             <sub><b>SamuelHe</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/PrashanthVamanan">
             <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
             <br />
             <sub><b>Prashanth Vamanan Srinivasan</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Dthompsondevtestaccount">
             <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
@@ -173,15 +180,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Noel Covarrubias</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/coffee2theorems">
             <img src="https://avatars.githubusercontent.com/u/7843313?v=4" width="100;" alt="coffee2theorems"/>
             <br />
             <sub><b>Ryan Monaghan</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Brayheart">
             <img src="https://avatars.githubusercontent.com/u/30908449?v=4" width="100;" alt="Brayheart"/>
