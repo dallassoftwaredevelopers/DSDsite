@@ -1,6 +1,7 @@
+import type React from 'react';
 import Navbar from '../navbar/navbar';
 
-export default function Layout() {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Navbar
@@ -11,7 +12,7 @@ export default function Layout() {
           lblMeetup: 'Meetups',
         }}
       />
-      <main></main>
+      <main>{children}</main>
     </>
   );
 }
