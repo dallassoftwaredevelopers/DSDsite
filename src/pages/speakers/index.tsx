@@ -7,4 +7,4 @@ export default function Speakers() {
       <h1 className={styles.h1}>Past Speakers</h1>
     </div>
   );
-};
+}
