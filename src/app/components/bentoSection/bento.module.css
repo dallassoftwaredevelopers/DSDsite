@@ -76,6 +76,17 @@
   .cardHeader {
     font-size: 24px;
   }
+
+  .bentoFirstContainer {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+  }
+
+  .bentoFirstContainer .card {
+    height: 100%;
+    width: fit-content;
+  }
 }
 
 @media (max-width: 375px) {
