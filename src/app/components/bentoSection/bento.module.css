@@ -44,12 +44,12 @@
   grid-template: repeat(3, 1fr) / repeat(2, 1fr);
 }
 
-.bentoThirdContainer>div:first-child {
+.bentoThirdContainer > div:first-child {
   grid-column: 1 / -1;
 }
 
-.bentoThirdContainer>*:nth-child(2),
-.bentoThirdContainer>*:last-child {
+.bentoThirdContainer > *:nth-child(2),
+.bentoThirdContainer > *:last-child {
   grid-row: 2 / -1;
 }
 

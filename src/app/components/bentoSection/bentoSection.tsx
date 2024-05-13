@@ -56,18 +56,17 @@ export default function BentoSection() {
     <div className={styles.cardContainer}>
       <div className={styles.bentoFirstContainer}>
         <Bento key={bentoImages[0].id}>
-        <div>
-          <Image
-            className={styles.imageStyle}
-            src={bentoImages[0].url}
-            alt={bentoImages[0].alt}
-            width={575}
-            height={750}
-          />
-        </div>
-      </Bento>
+          <div>
+            <Image
+              className={styles.imageStyle}
+              src={bentoImages[0].url}
+              alt={bentoImages[0].alt}
+              width={575}
+              height={750}
+            />
+          </div>
+        </Bento>
       </div>
-      
 
       <div className={styles.bentoSecondContainer}>
         {bentoImages.slice(1, 4).map((card) => (
