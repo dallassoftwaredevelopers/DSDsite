@@ -54,7 +54,8 @@ const bentoImages: BentoData[] = [
 export default function BentoSection() {
   return (
     <div className={styles.cardContainer}>
-      <Bento key={bentoImages[0].id}>
+      <div className={styles.bentoFirstContainer}>
+        <Bento key={bentoImages[0].id}>
         <div>
           <Image
             className={styles.imageStyle}
@@ -65,8 +66,10 @@ export default function BentoSection() {
           />
         </div>
       </Bento>
+      </div>
+      
 
-      <div className={styles.bentoImages}>
+      <div className={styles.bentoSecondContainer}>
         {bentoImages.slice(1, 4).map((card) => (
           <Bento key={card.id}>
             <div className={styles.imageContainer}>
@@ -96,31 +99,29 @@ export default function BentoSection() {
           </div>
         </Bento>
 
-        <div className={styles.bentoFourthContainer}>
-          <Bento key={bentoImages[6].id}>
-            <div>
-              <Image
-                className={styles.imageStyle}
-                src={bentoImages[6].url}
-                alt={bentoImages[6].alt}
-                width={575}
-                height={750}
-              />
-            </div>
-          </Bento>
+        <Bento key={bentoImages[6].id}>
+          <div>
+            <Image
+              className={styles.imageStyle}
+              src={bentoImages[6].url}
+              alt={bentoImages[6].alt}
+              width={575}
+              height={750}
+            />
+          </div>
+        </Bento>
 
-          <Bento key={bentoImages[7].id}>
-            <div>
-              <Image
-                className={styles.imageStyle}
-                src={bentoImages[7].url}
-                alt={bentoImages[7].alt}
-                width={575}
-                height={750}
-              />
-            </div>
-          </Bento>
-        </div>
+        <Bento key={bentoImages[7].id}>
+          <div>
+            <Image
+              className={styles.imageStyle}
+              src={bentoImages[7].url}
+              alt={bentoImages[7].alt}
+              width={575}
+              height={750}
+            />
+          </div>
+        </Bento>
       </div>
     </div>
   );
