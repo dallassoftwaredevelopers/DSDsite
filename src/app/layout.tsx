@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import './globals.css';
+import Footer from '@/app/components/footer/footer';
 
 export const metadata: Metadata = {
   title: 'Dallas Software Developers',
@@ -17,7 +18,10 @@ export default function RootLayout({
       <head>
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
