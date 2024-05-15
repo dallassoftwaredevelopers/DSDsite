@@ -45,14 +45,14 @@ export default function Footer() {
   ];
 
   return (
-    <div className={styles.footerSection}>
+    <div className={styles.footerSection} data-testid='footerComponent'>
       <div className={styles.leftFooterContainer}>
         <div className={styles.footerText}>
           This website is made
           <br /> by the community <br />
           for the community
         </div>
-        <div>
+        <div data-testid='socialLinksDiv'>
           <SocialLinks
             links={socialData}
             iconContextValue={{ color: 'white', size: '3.1rem' }}
