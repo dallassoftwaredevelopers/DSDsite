@@ -33,7 +33,11 @@ export default function SocialSection({ socialData }: SocialSectionProps) {
           This is YOUR community,
           <br /> be a part of it!
         </p>
-        <SocialLinks links={socialData} />
+        <SocialLinks
+          links={socialData}
+          iconContextValue={{ color: 'black', size: '7rem' }}
+          className={styles.socialLinks}
+        />
       </div>
     </div>
   );
