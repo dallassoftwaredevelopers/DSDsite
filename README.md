@@ -97,6 +97,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
     </td></tr>
 <tr>
     <td align="center">
+        <a href="https://github.com/Nur4ck">
+            <img src="https://avatars.githubusercontent.com/u/144545225?v=4" width="100;" alt="Nur4ck"/>
+            <br />
+            <sub><b>Null</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/JVPH">
             <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
             <br />
@@ -130,15 +137,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Taryn King</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/abhiramrp">
             <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
             <br />
             <sub><b>Abhiram Rishi Prattipati</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Dthompsondevtestaccount">
             <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
@@ -173,15 +180,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Fadi Haddad</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/NoelCov">
             <img src="https://avatars.githubusercontent.com/u/73734505?v=4" width="100;" alt="NoelCov"/>
             <br />
             <sub><b>Noel Covarrubias</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/coffee2theorems">
             <img src="https://avatars.githubusercontent.com/u/7843313?v=4" width="100;" alt="coffee2theorems"/>
