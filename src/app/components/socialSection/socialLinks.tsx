@@ -1,15 +1,20 @@
 import { IconContext } from 'react-icons';
 import { SocialLinkData } from './socialSection';
-import styles from './socialSection.module.css';
 
 interface SocialLinksProps {
   links: SocialLinkData[];
+  iconContextValue: IconContext;
+  className: string;
 }
 
-const SocialLinks = ({ links }: SocialLinksProps) => {
+const SocialLinks = ({
+  links,
+  iconContextValue,
+  className,
+}: SocialLinksProps) => {
   return (
-    <IconContext.Provider value={{ color: 'black', size: '7rem' }}>
-      <ul className={styles.socialLinks}>
+    <IconContext.Provider value={iconContextValue}>
+      <ul className={className}>
         {links.map((link) => (
           <li key={link.id}>
             <a href={link.link} target='_blank'>
