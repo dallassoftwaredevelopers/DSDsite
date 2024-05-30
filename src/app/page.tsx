@@ -9,6 +9,7 @@ import SocialSection from './components/socialSection/socialSection';
 import styles from './page.module.css';
 import GroupPhotoSection from './components/groupPhotoSection/groupPhotoSection';
 import BentoSection from './components/bentoSection/bentoSection';
+import Person from './components/person/person';
 
 export default function Home() {
   const labelMap = {
