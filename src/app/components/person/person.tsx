@@ -18,7 +18,7 @@ export default function Person({
       <div className={styles.personImageContainer}>
         <img
           id={styles.personImage}
-          src='/assets/person.svg'
+          src={imageUrl ? imageUrl : '/assets/person.svg'}
           alt='image of person'
         />
       </div>
