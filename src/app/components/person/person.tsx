@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import styles from './person.module.css';
 
 interface PersonProps {
@@ -16,33 +17,39 @@ export default function Person({
   return (
     <div className={styles.personContainer}>
       <div className={styles.personImageContainer}>
-        <img
+        <Image
           id={styles.personImage}
+          width={200}
+          height={200}
           src={imageUrl ? imageUrl : '/assets/person.svg'}
           alt='image of person'
         />
       </div>
-      <div>
-        <h3 className={styles.fullName}>
-          {!fullName ? 'FirstName LastName' : fullName}
-        </h3>
-      </div>
+      <div>{fullName && <h3 className={styles.fullName}>{fullName}</h3>}</div>
       <div className={styles.iconContainer}>
-        <a href={twitterUrl}>
-          <img
-            className={styles.icon}
-            src='/assets/twitterIcon.png'
-            alt='Twitter social icon'
-          />
-        </a>
-        <a href={linkedinUrl}>
-          <img
-            className={styles.icon}
-            id={styles.linkedin}
-            src='/assets/linkedinIcon.png'
-            alt='LinkedIn social icon'
-          />
-        </a>
+        {twitterUrl && (
+          <a href={twitterUrl}>
+            <Image
+              className={styles.icon}
+              width={30}
+              height={30}
+              src='/assets/twitterIcon.png'
+              alt='Twitter social icon'
+            />
+          </a>
+        )}
+        {linkedinUrl && (
+          <a href={linkedinUrl}>
+            <Image
+              className={styles.icon}
+              width={30}
+              height={30}
+              id={styles.linkedin}
+              src='/assets/linkedinIcon.png'
+              alt='LinkedIn social icon'
+            />
+          </a>
+        )}
       </div>
     </div>
   );
