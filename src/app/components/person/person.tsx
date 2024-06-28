@@ -3,9 +3,9 @@ import styles from './person.module.css';
 
 interface PersonProps {
   fullName: string;
-  twitterUrl: string;
-  linkedinUrl: string;
-  imageUrl: string;
+  twitterUrl?: string;
+  linkedinUrl?: string;
+  imageUrl?: string;
 }
 
 export default function Person({
@@ -14,7 +14,17 @@ export default function Person({
   linkedinUrl,
   imageUrl,
 }: PersonProps) {
-  const defaultImgComponent = (
+  const ImgComponent = imageUrl ? (
+    <div className={styles.personImageContainer}>
+      <Image
+        id={styles.personImage}
+        width={200}
+        height={200}
+        src={imageUrl}
+        alt='image of person'
+      />
+    </div>
+  ) : (
     <div className={styles.defaultImageContainer}>
       <Image
         id={styles.defaultImage}
@@ -25,21 +35,9 @@ export default function Person({
       />
     </div>
   );
-
-  const imageComponent = (
-    <div className={styles.personImageContainer}>
-      <Image
-        id={styles.personImage}
-        width={200}
-        height={200}
-        src={imageUrl}
-        alt='image of person'
-      />
-    </div>
-  );
   return (
     <div className={styles.personContainer}>
-      {imageUrl ? imageComponent : defaultImgComponent}
+      {ImgComponent}
       <div>{fullName && <h3 className={styles.fullName}>{fullName}</h3>}</div>
       <div className={styles.iconContainer}>
         {twitterUrl && (
