@@ -82,20 +82,27 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/Ayomide4">
+            <img src="https://avatars.githubusercontent.com/u/59846289?v=4" width="100;" alt="Ayomide4"/>
+            <br />
+            <sub><b>Ayomide Omotosho</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/UsmanCanCode">
             <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
             <br />
             <sub><b>Usman Raja</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/Soumava-221B">
             <img src="https://avatars.githubusercontent.com/u/77767745?v=4" width="100;" alt="Soumava-221B"/>
             <br />
             <sub><b>Null</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Nur4ck">
             <img src="https://avatars.githubusercontent.com/u/144545225?v=4" width="100;" alt="Nur4ck"/>
@@ -130,15 +137,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Claire Carden</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/tk1ng">
             <img src="https://avatars.githubusercontent.com/u/49492414?v=4" width="100;" alt="tk1ng"/>
             <br />
             <sub><b>Taryn King</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/abhiramrp">
             <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
@@ -173,15 +180,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Braydon Coyer</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/Fadi-Haddad">
             <img src="https://avatars.githubusercontent.com/u/125252809?v=4" width="100;" alt="Fadi-Haddad"/>
             <br />
             <sub><b>Fadi Haddad</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/NoelCov">
             <img src="https://avatars.githubusercontent.com/u/73734505?v=4" width="100;" alt="NoelCov"/>
