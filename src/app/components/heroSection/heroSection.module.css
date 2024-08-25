@@ -1,87 +1,52 @@
 .hero {
-  background: var(
-    --background-gradient,
-    linear-gradient(180deg, #dcdceb 0%, #fff 100%)
-  );
+  background:
+    url('/assets/dsdHeroBg.png') no-repeat center center,
+    linear-gradient(180deg, #dcdceb 0%, #fff 100%);
+  background-size: cover;
   display: flex;
   align-items: center;
+  justify-content: space-around;
   position: relative;
-  height: 50vh;
+  height: 60vh;
+  overflow: hidden;
 }
 
 .heroSection {
   font-family: 'Raleway', sans-serif;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  margin-top: -4px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 2;
+  padding-left: 5%;
+  width: 40%;
+}
+
+.intro {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #3c3db9;
+  line-height: 1.2;
 }
 
 .videoPlaceholder {
   text-align: center;
   font-weight: 700;
-  font-size: 36px;
-  width: 25rem;
-  height: 25rem;
-  background-color: lightgrey;
-  color: black;
+  font-size: 2rem;
+  width: 17rem;
+  height: 15rem;
+  padding: 2rem;
+  background-color: #333;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-50%);
+  border-radius: 10px;
   z-index: 2;
+  margin-right: 1rem;
 }
 
-.intro {
-  margin-left: 3rem;
-  width: 40%;
-  font-size: 5rem;
-  font-weight: 700;
-  color: #3c3db9;
-  line-height: 1.2;
-  text-align: center;
-}
-
-.purpleShape {
-  background-color: #3c3db9;
-  width: 60%;
-  height: 50vh;
-  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-  position: absolute;
-  right: 0;
-  top: 0;
-  z-index: 1;
-  border-radius: 25px;
-  margin-right: -2rem;
-  overflow: hidden;
-}
-
-@media (max-width: 1300px) {
-  .intro {
-    font-size: 4.375rem;
-  }
-}
-
-@media (max-width: 1000px) {
-  .intro {
-    margin-left: 1rem;
-    width: 40%;
-    font-size: 4rem;
-  }
-
-  .videoPlaceholder {
-    right: 2rem;
-    width: 20rem;
-    height: 20rem;
-  }
-}
-
-@media (max-width: 760px) {
+@media (max-width: 850px) {
   .hero {
     background: var(
       --Gradient-to-Dark,
@@ -92,6 +57,8 @@
     align-items: center;
     justify-content: space-evenly;
     height: 85vh;
+    gap: 2rem;
+    padding-top: 4rem;
   }
 
   .heroSection {
@@ -118,7 +85,7 @@
 
   .videoPlaceholder {
     width: 25rem;
-    height: 25rem;
+    height: 15rem;
     position: relative;
     right: 0;
     top: 0;
@@ -126,16 +93,11 @@
     background: #302929;
     color: #fff;
     color: #fff;
-
     text-align: center;
     font-family: Raleway;
     font-size: 3rem;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-  }
-
-  .purpleShape {
-    display: none;
   }
 }
