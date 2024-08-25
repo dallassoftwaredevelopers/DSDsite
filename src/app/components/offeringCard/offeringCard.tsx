@@ -13,7 +13,9 @@ export default function OfferingCard({
 }: OfferingCardProps) {
   return (
     <div className={styles.offeringCard}>
-      <p className={styles.text}>{text}</p>
+      <div className={styles.textContainer}>
+        <p className={styles.text}>Want to become a speaker at an event?</p>
+      </div>
       <a href={buttonLink} className={styles.button}>
         {buttonText}
       </a>

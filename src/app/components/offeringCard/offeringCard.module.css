@@ -4,27 +4,31 @@
     rgba(102, 103, 255, 1),
     rgba(61, 62, 153, 1)
   );
-  border-radius: 23px;
+  border-radius: 1.4375rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
-  box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.25);
-  width: 1264px;
-  height: 155px;
-  margin: 20px auto;
+  padding: 0 3rem;
+  box-shadow: 0.625rem 0.625rem 0.9375rem 0.3125rem rgba(0, 0, 0, 0.25);
+  width: 80%;
+  height: 9.6875rem;
+  margin: 1.25rem auto;
   font-family: Raleway;
+  flex-wrap: nowrap;
+  text-align: center;
 }
 
 .textContainer {
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
 }
 
 .text {
   color: #ffffff;
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
 }
@@ -35,19 +39,46 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 0.625rem;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 700;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   transition:
     background-color 0.3s ease,
     transform 0.2s ease;
-  width: 201px;
-  height: 60px;
+  width: 12.5625rem;
+  height: 3.75rem;
+  margin-top: 1rem;
 }
 
 .button:hover {
   background-color: #4b3bb1;
   transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .offeringCard {
+    padding: 1rem;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+  }
+
+  .textContainer {
+    width: 100%;
+    margin: 0 0 1rem 0;
+    justify-content: center;
+  }
+
+  .text {
+    font-size: 1.25rem;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 15rem;
+    font-size: 1rem;
+  }
 }
