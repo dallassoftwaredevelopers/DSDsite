@@ -9,6 +9,17 @@
   align-items: center;
   padding: 10px 20px;
   font-family: 'Raleway', sans-serif;
+  width: 100%;
+}
+
+.innerContainer {
+  max-width: 1550px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo a,
@@ -22,7 +33,6 @@
 
 .navLinks {
   display: flex;
-  gap: 35px;
 }
 
 .home {
@@ -52,7 +62,7 @@
   content: '';
   display: block;
   border-radius: 10px;
-  width: 100%;
+  width: 110%;
   height: 5px;
   background-color: hsla(240, 98%, 60%, 0.5);
   position: absolute;
@@ -86,7 +96,7 @@
 
 .navLinks {
   display: flex;
-  gap: 20px;
+  gap: 35px;
 }
 
 .navLinks.active {

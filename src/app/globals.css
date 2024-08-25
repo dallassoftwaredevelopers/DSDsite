@@ -1,13 +1,16 @@
+:root {
+  --max-width: 1450px;
+}
+
+.innerContainer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-}
-
-.container {
-  width: 100%;
-}
-
-.inner-container {
-  width: 80%;
-  margin: 0 auto;
-  max-width: 1800px;
+  font-family: 'Raleway', sans-serif;
+  background-color: #f8f9fa;
 }

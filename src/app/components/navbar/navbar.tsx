@@ -109,20 +109,22 @@ export default function Navbar() {
       </nav>
 
       <nav className={styles.navbar} data-testid='navbar'>
-        <div className={styles.logo}>
-          <Link href='/'>
-            <div className={styles.homeLink}>
-              <Image
-                src='/assets/dsd-circle-logo.png'
-                alt='Logo'
-                width={75}
-                height={75}
-              />
-              <span className={styles.home}>{constLabels.lblHome}</span>
-            </div>
-          </Link>
+        <div className={styles.innerContainer}>
+          <div className={styles.logo}>
+            <Link href='/'>
+              <div className={styles.homeLink}>
+                <Image
+                  src='/assets/dsd-circle-logo.png'
+                  alt='Logo'
+                  width={75}
+                  height={75}
+                />
+                <span className={styles.home}>{constLabels.lblHome}</span>
+              </div>
+            </Link>
+          </div>
+          <div className={styles.navLinks}>{navLinks()}</div>
         </div>
-        <div className={styles.navLinks}>{navLinks()}</div>
       </nav>
     </div>
   );
