@@ -19,28 +19,28 @@ export default function Navbar() {
   const constLinks = [
     {
       id: 0,
-      link: '/',
+      link: '/community',
       desktopClassName: styles.links,
       mobileClassName: styles.mobileLinks,
       label: constLabels.lblCommunity,
     },
     {
       id: 1,
-      link: '/',
+      link: '/cohorts',
       desktopClassName: styles.links,
       mobileClassName: styles.mobileLinks,
       label: constLabels.lblCohorts,
     },
     {
       id: 2,
-      link: '/',
+      link: '/about',
       desktopClassName: styles.links,
       mobileClassName: styles.mobileLinks,
       label: constLabels.lblAbout,
     },
     {
       id: 3,
-      link: 'https://www.meetup.com/dallas-software-developers-meetup/',
+      link: '/meetups',
       desktopClassName: styles.meetupLink,
       mobileClassName: styles.meetupLink,
       label: constLabels.lblMeetup,
