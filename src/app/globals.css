@@ -1,5 +1,8 @@
 :root {
   --max-width: 1450px;
+  --dark-blue: 239, 58%, 14%;
+  --blue: 240, 51%, 48%;
+  --white: 0, 0%, 100%;
 }
 
 .innerContainer {
