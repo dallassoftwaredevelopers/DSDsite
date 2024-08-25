@@ -13,61 +13,40 @@ interface CardData {
   src: string;
   alt: string;
 }
+const cardData: CardData[] = [
+  {
+    id: 1,
+    title: 'Technical Workshops',
+    content:
+      'Bringing the community together twice a month around technical topics that allow you to learn and grow your programming skills to be a stronger developer.',
+    buttonText: 'Go To A Meetup',
+    href: 'https://www.meetup.com/dallas-software-developers-meetup/',
+    src: '/assets/technicalWorkshops.png',
+    alt: 'Technical Workshops',
+  },
+  {
+    id: 2,
+    title: 'Community Support',
+    content:
+      'No matter your level, you have a community that has your back! Dallas Software Developers are focused on supporting our local community while also trying to support the developers who need our help and support!',
+    buttonText: 'Community Impact',
+    href: '/',
+    src: '/assets/communitySupport.png',
+    alt: 'Community Support',
+  },
+  {
+    id: 3,
+    title: 'Cohorts & Hackathons',
+    content:
+      'A 6-week program that is completely free to pair developers working on a project being guided by a developer working in the industry. The focus is to help give you something interesting to showcase in an interview and give you real-world skills!',
+    buttonText: 'Join Our Cohort',
+    href: '/',
+    src: '/assets/cohortsAndHackathons.png',
+    alt: 'Cohorts & Hackathons',
+  },
+];
 
-interface CardsSectionProps {
-  label: {
-    lblWorkshopsTitle: string;
-    lblSupportTitle: string;
-    lblCohortsTitle: string;
-    lblWorkshopsContent: string;
-    lblSupportContent: string;
-    lblCohortsContent: string;
-    lblWorkshopsImageUrl: string;
-    lblWorkshopsImageAlt: string;
-    lblSupportImageUrl: string;
-    lblSupportImageAlt: string;
-    lblCohortsImageUrl: string;
-    lblCohortsImageAlt: string;
-    btnTextMeetup: string;
-    btnTextCommunity: string;
-    btnTextCohort: string;
-    meetupUrl: string;
-    communityUrl: string;
-    cohortUrl: string;
-  };
-}
-
-export default function CardsSection({ label }: CardsSectionProps) {
-  const cardData: CardData[] = [
-    {
-      id: 1,
-      title: label.lblWorkshopsTitle,
-      content: label.lblWorkshopsContent,
-      buttonText: label.btnTextMeetup,
-      href: label.meetupUrl,
-      src: label.lblWorkshopsImageUrl,
-      alt: label.lblWorkshopsImageAlt,
-    },
-    {
-      id: 2,
-      title: label.lblSupportTitle,
-      content: label.lblSupportContent,
-      buttonText: label.btnTextCommunity,
-      href: label.communityUrl,
-      src: label.lblSupportImageUrl,
-      alt: label.lblSupportImageAlt,
-    },
-    {
-      id: 3,
-      title: label.lblCohortsTitle,
-      content: label.lblCohortsContent,
-      buttonText: label.btnTextCohort,
-      href: label.cohortUrl,
-      src: label.lblCohortsImageUrl,
-      alt: label.lblCohortsImageAlt,
-    },
-  ];
-
+export default function CardsSection() {
   return (
     <div className={styles.cardContainer}>
       {cardData.map((card) => (

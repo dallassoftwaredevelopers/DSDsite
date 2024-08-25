@@ -3,21 +3,12 @@
 import React from 'react';
 import styles from './bannerSection.module.css';
 
-interface BannerSectionProps {
-  label: {
-    lblHome: string;
-    lblCommunity: string;
-    lblContact: string;
-    lblMeetup: string;
-    lblBanner: string;
-  };
-}
 
-export default function BannerSection({ label }: BannerSectionProps) {
+export default function BannerSection() {
   return (
     <div className={styles.bannerSection}>
       <span className={styles.bannerText} data-testid='bannerSection'>
-        {label.lblBanner}
+        This website is made BY the community FOR the community
       </span>
     </div>
   );

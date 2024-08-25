@@ -3,9 +3,8 @@
 import React from 'react';
 import styles from './groupPhotoSection.module.css';
 import Image from 'next/image';
-import { detectContentType } from 'next/dist/server/image-optimizer';
 
-export default function GroupPhotoSection({ label }: { label: string }) {
+export default function GroupPhotoSection() {
   return (
     <div className={styles.groupPhotoSection} data-testid='groupPhoto'>
       <Image

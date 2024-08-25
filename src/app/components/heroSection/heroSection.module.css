@@ -8,6 +8,10 @@
   justify-content: space-between;
   padding: 5rem 4rem 5rem 1rem;
   margin: 3rem 0;
+  background: var(
+    --Card-Gradient-1,
+    linear-gradient(180deg, #dcdceb 0%, #fff 100%)
+  );
   background-image: url('/assets/dsdHeroBg.png');
   background-repeat: no-repeat;
   background-position: bottom right;
