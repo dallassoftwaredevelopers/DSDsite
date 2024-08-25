@@ -9,7 +9,6 @@ import GroupPhotoSection from './components/groupPhotoSection/groupPhotoSection'
 import BentoSection from './components/bentoSection/bentoSection';
 
 export default function Home() {
-
   const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   return (
@@ -17,7 +16,7 @@ export default function Home() {
       <HeroSection />
       <BannerSection />
       <CardsSection />
-      {isDesktop && <SocialSection  />}
+      {isDesktop && <SocialSection />}
       <GroupPhotoSection />
       <BentoSection />
     </>

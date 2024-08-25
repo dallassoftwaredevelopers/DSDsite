@@ -3,7 +3,6 @@
 import React from 'react';
 import styles from './bannerSection.module.css';
 
-
 export default function BannerSection() {
   return (
     <div className={styles.bannerSection}>
