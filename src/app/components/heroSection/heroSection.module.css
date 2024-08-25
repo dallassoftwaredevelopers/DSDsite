@@ -1,94 +1,141 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+.hero {
+  background: var(
+    --background-gradient,
+    linear-gradient(180deg, #dcdceb 0%, #fff 100%)
+  );
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50vh;
+}
 
 .heroSection {
   font-family: 'Raleway', sans-serif;
   display: flex;
-  gap: 1rem;
-  align-items: center;
   justify-content: space-between;
-  padding: 5rem 4rem 5rem 1rem;
-  margin: 3rem 0;
-  background: var(
-    --Card-Gradient-1,
-    linear-gradient(180deg, #dcdceb 0%, #fff 100%)
-  );
-  background-image: url('/assets/dsdHeroBg.png');
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  background-size: contain;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  margin-top: -4px;
 }
 
 .videoPlaceholder {
   text-align: center;
   font-weight: 700;
   font-size: 36px;
-  height: 320px;
-  flex: 0 0 480px;
+  width: 25rem;
+  height: 25rem;
   background-color: lightgrey;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
 }
 
 .intro {
-  margin: 0;
-  font-size: 100px;
-  font-weight: 900;
+  margin-left: 3rem;
+  width: 40%;
+  font-size: 5rem;
+  font-weight: 700;
   color: #3c3db9;
-  flex: 0 1 750px;
   line-height: 1.2;
-  mix-blend-mode: color-dodge;
-  mix-blend-mode: plus-lighter;
+  text-align: center;
 }
 
-.mobileHeroImage {
-  display: none;
+.purpleShape {
+  background-color: #3c3db9;
+  width: 60%;
+  height: 50vh;
+  clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  border-radius: 25px;
+  margin-right: -2rem;
+  overflow: hidden;
 }
-@media (width < 1300px) {
+
+@media (max-width: 1300px) {
   .intro {
-    flex-basis: 500px;
-    font-size: 70px;
+    font-size: 4.375rem;
   }
 }
 
-@media (width < 960px) {
-  .heroSection {
-    padding: 3rem 1.5rem;
-  }
+@media (max-width: 1000px) {
   .intro {
-    flex-basis: 420px;
-    font-size: 50px;
-  }
-  .videoPlaceholder {
-    flex-basis: 350px;
-    height: 240px;
-  }
-}
-
-@media (max-width: 690px) {
-  .heroSection {
-    flex-direction: row;
-    padding: 0 1rem 0 0;
-    margin: 4rem 15px 15px;
-    background-image: url('/assets/dsdMobileHeroBg.png');
-    background-size: 65%;
-  }
-
-  .intro {
-    font-size: 24px;
-    flex: 0 1 45%;
-    margin-right: 1rem;
+    margin-left: 1rem;
+    width: 40%;
+    font-size: 4rem;
   }
 
   .videoPlaceholder {
+    right: 2rem;
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    background: var(
+      --Gradient-to-Dark,
+      linear-gradient(180deg, #3c3db9 0%, #0f1036 100%)
+    );
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 85vh;
+  }
+
+  .heroSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .intro {
+    color: #fff;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 4.0625rem;
+    width: 18rem;
+    height: 10rem;
+    margin: 0;
+  }
+
+  .videoPlaceholder {
+    width: 25rem;
+    height: 25rem;
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    background: #302929;
+    color: #fff;
+    color: #fff;
+
+    text-align: center;
+    font-family: Raleway;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  .purpleShape {
     display: none;
-  }
-  .mobileHeroImage {
-    display: block;
-    flex: 0 1 45%;
-    z-index: 2;
-    margin-bottom: -20px;
-    margin-top: 5px;
   }
 }
