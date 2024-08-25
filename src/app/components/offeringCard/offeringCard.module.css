@@ -1,0 +1,53 @@
+.offeringCard {
+  background: linear-gradient(
+    180deg,
+    rgba(102, 103, 255, 1),
+    rgba(61, 62, 153, 1)
+  );
+  border-radius: 23px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.25);
+  width: 1264px;
+  height: 155px;
+  margin: 20px auto;
+  font-family: Raleway;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.button {
+  background-color: rgba(60, 61, 185, 1);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  width: 201px;
+  height: 60px;
+}
+
+.button:hover {
+  background-color: #4b3bb1;
+  transform: translateY(-2px);
+}

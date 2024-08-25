@@ -1,0 +1,98 @@
+.container {
+  background-color: #3c3db9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 75px 0;
+  flex-direction: column;
+  color: #fff;
+  width: 100%;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.communityParagraph {
+  padding: 75px 0;
+  font-size: 24px;
+  font-family: Raleway;
+  text-align: center;
+  font-weight: 700;
+  max-width: 70%;
+  margin: auto;
+}
+
+.teamSection {
+  max-width: 80%;
+  margin: 75px 0;
+}
+
+.subtitle {
+  color: #fff;
+  text-align: left;
+  font-family: Raleway;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.teamParagraph {
+  font-size: 24px;
+  font-family: Raleway;
+  font-weight: 700;
+  margin: auto;
+  padding: 20px 0 0 40px;
+}
+
+.peopleList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 75px 0;
+}
+
+.yearSelector {
+  display: flex;
+  gap: 50px;
+  justify-content: start;
+  margin: 20px 0;
+}
+
+.yearButton {
+  background: none;
+  border: none;
+  font-size: 36px;
+  font-weight: 600;
+  color: rgba(138, 139, 231, 1);
+  cursor: pointer;
+  padding: 10px 10px;
+  transition: color 0.3s;
+}
+
+.active {
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.speakerList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 38px;
+  margin: 75px 0;
+}
