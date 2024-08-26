@@ -25,16 +25,9 @@
   text-transform: uppercase;
 }
 
-.subtitle {
-  color: #fff;
-  text-align: left;
-  font-family: Raleway;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 700;
-  padding: 0 1rem;
-  margin: 0;
-  text-transform: uppercase;
+.paragraphBox {
+  padding: 70px;
+  margin: auto;
 }
 
 .cohortsParagraph {
@@ -46,3 +39,44 @@
   max-width: 70%;
   margin: auto;
 }
+
+
+.cohortSection {
+  max-width: 80%;
+  margin: 75px 0;
+}
+
+.subtitle {
+  color: #fff;
+  text-align: left;
+  font-family: Raleway;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 800;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.yearSelector {
+  display: flex;
+  gap: 50px;
+  justify-content: start;
+  margin: 20px 0;
+}
+
+.yearButton {
+  background: none;
+  border: none;
+  font-size: 36px;
+  font-weight: 600;
+  color: rgba(138, 139, 231, 1);
+  cursor: pointer;
+  padding: 10px 10px;
+  transition: color 0.3s;
+}
+
+.active {
+  font-weight: bold;
+  color: #ffffff;
+}
+
