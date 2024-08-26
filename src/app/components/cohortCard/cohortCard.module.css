@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
+
+.cohortContainer {
+  font-family: 'Raleway', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #3c3db9;
+  border-radius: 5px;
+  width: 240px;
+  height: 314px;
+}
+
+.defaultThumbnailContainer {
+  margin-top: 10px;
+  width: 215px;
+  height: 205px;
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cohortThumbnailContainer {
+  margin-top: 10px;
+  width: 215px;
+  height: 205px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#cohortImage {
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
