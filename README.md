@@ -111,6 +111,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/CloudyBae">
+            <img src="https://avatars.githubusercontent.com/u/109190196?v=4" width="100;" alt="CloudyBae"/>
+            <br />
+            <sub><b>Yoon</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/JVPH">
             <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
             <br />
@@ -130,15 +137,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Richard</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/smclairecarden">
             <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
             <br />
             <sub><b>Claire Carden</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/tk1ng">
             <img src="https://avatars.githubusercontent.com/u/49492414?v=4" width="100;" alt="tk1ng"/>
@@ -173,15 +180,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>SamuelHe</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/braydoncoyer">
             <img src="https://avatars.githubusercontent.com/u/38799309?v=4" width="100;" alt="braydoncoyer"/>
             <br />
             <sub><b>Braydon Coyer</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Fadi-Haddad">
             <img src="https://avatars.githubusercontent.com/u/125252809?v=4" width="100;" alt="Fadi-Haddad"/>
