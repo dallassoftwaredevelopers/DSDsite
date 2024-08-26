@@ -15,7 +15,7 @@
   margin-top: 10px;
   width: 215px;
   height: 205px;
-  background-color: #d9d9d9;
+  background-color: #ee0c0c;
   border-radius: 5px;
   display: flex;
   justify-content: center;
@@ -43,26 +43,17 @@
   height: 80%;
 }
 
-.fullName {
-  color: white;
-  margin: 10px 0 10px 0;
-  font-size: 21px;
-}
-
-.iconContainer {
+.cohortInfo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 65px;
+  height: 65px;
+  width: 200px;
 }
 
 .icon {
   width: 30px;
-  height: 35px;
+  height: 30px;
   color: white;
-}
-
-.ghLink {
-  display: inline;
-  padding: 0 20px;
+  padding: 5px;
 }

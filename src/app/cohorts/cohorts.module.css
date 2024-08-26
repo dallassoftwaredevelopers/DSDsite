@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 75px 0;
+  padding-left: 1rem;
   flex-direction: column;
   color: #fff;
   width: 100%;
@@ -25,6 +26,17 @@
   text-transform: uppercase;
 }
 
+.subtitle {
+  width: 100%;
+  color: #fff;
+  text-align: left;
+  font-family: Raleway;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 800;
+  margin: 0;
+}
+
 .paragraphBox {
   padding: 70px;
   margin: auto;
@@ -40,35 +52,26 @@
   margin: auto;
 }
 
-
 .cohortSection {
-  max-width: 80%;
-  margin: 75px 0;
+  width: 100%;
+  margin: auto;
 }
 
 .cohortList {
+  width: inherit;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 20px;
 }
 
-.subtitle {
-  color: #fff;
-  text-align: left;
-  font-family: Raleway;
-  font-size: 60px;
-  font-style: normal;
-  font-weight: 800;
-  margin: 0;
-  padding-left: 1rem;
+.cohortCard {
+  flex: 1 0 21%;
 }
 
 .yearSelector {
   display: flex;
   gap: 50px;
   justify-content: start;
-  margin: 20px 0;
 }
 
 .yearButton {
@@ -86,4 +89,3 @@
   font-weight: bold;
   color: #ffffff;
 }
-

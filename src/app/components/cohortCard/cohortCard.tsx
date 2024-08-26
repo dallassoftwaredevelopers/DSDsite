@@ -40,10 +40,10 @@ export default function CohortCard({
     <div className={styles.cohortContainer}>
       <a href={youtubeLink}>{Thumbnail}</a>
       <div className={styles.cohortInfo}>
-        <h3 className={styles.cohortName}>
-          {groupName}
+        <h3 className={styles.cohortName}>{groupName}</h3>
+        <div>
           {githubLink && (
-            <a href={githubLink} className={styles.ghLink}>
+            <a href={githubLink}>
               <Image
                 className={styles.icon}
                 width={30}
@@ -53,7 +53,7 @@ export default function CohortCard({
               />
             </a>
           )}
-        </h3>
+        </div>
       </div>
     </div>
   );

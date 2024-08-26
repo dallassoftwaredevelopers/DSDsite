@@ -16,9 +16,9 @@ export default function CohortPage() {
   interface Group {
     id: number;
     groupName: string;
-    youtubeLink: string;
-    githubLink: string;
-    imageUrl: string;
+    youtubeLink?: string;
+    githubLink?: string;
+    imageUrl?: string;
   }
 
   type CohortData = {
@@ -42,7 +42,6 @@ export default function CohortPage() {
         githubLink: '/',
         imageUrl: '/assets/person.svg',
       },
-
       {
         id: 3,
         groupName: 'Group 3',
@@ -92,18 +91,14 @@ export default function CohortPage() {
       {
         id: 1,
         groupName: 'Group 1',
-        youtubeLink: '/',
         githubLink: '/',
-        imageUrl: '/assets/person.svg',
       },
       {
         id: 2,
         groupName: 'Group 2',
-        youtubeLink: '/',
-        githubLink: '/',
+        githubLink: '',
         imageUrl: '/assets/person.svg',
       },
-
       {
         id: 3,
         groupName: 'Group 3',
@@ -114,6 +109,48 @@ export default function CohortPage() {
       {
         id: 4,
         groupName: 'Group 4',
+        youtubeLink: '/',
+        githubLink: '/',
+        imageUrl: '/assets/person.svg',
+      },
+      {
+        id: 5,
+        groupName: 'Group 5',
+        youtubeLink: '/',
+        githubLink: '/',
+        imageUrl: '/assets/person.svg',
+      },
+      {
+        id: 6,
+        groupName: 'Group 6',
+        youtubeLink: '/',
+        githubLink: '/',
+        imageUrl: '/assets/person.svg',
+      },
+      {
+        id: 7,
+        groupName: 'Group 7',
+        youtubeLink: '/',
+        githubLink: '/',
+        imageUrl: '/assets/person.svg',
+      },
+      {
+        id: 8,
+        groupName: 'Group 8',
+        youtubeLink: '/',
+        githubLink: '/',
+        imageUrl: '/assets/person.svg',
+      },
+      {
+        id: 9,
+        groupName: 'Group 9',
+        youtubeLink: '/',
+        githubLink: '/',
+        imageUrl: '/assets/person.svg',
+      },
+      {
+        id: 10,
+        groupName: 'Group 10',
         youtubeLink: '/',
         githubLink: '/',
         imageUrl: '/assets/person.svg',
@@ -139,16 +176,16 @@ export default function CohortPage() {
           buttonLink='/'
         />
       </div>
-      <div className={styles.cohortSelection}>
-        <h2 className={styles.subtitle}>Previous Cohorts</h2>
-        <div className={styles.cohortSelector}>
+      <h2 className={styles.subtitle}>Previous Cohorts</h2>
+      <div className={styles.cohortSection}>
+        <div className={styles.yearSelector}>
           {Object.keys(cohortData)
             .sort((a, b) => Number(b) - Number(a))
             .map((year) => (
               <button
                 key={year}
                 className={`${styles.yearButton} ${
-                  selectedYear === Number(year) ? styles.selectedYear : ''
+                  selectedYear === Number(year) ? styles.active : ''
                 }`}
                 onClick={() => setSelectedYear(Number(year))}
               >
@@ -159,13 +196,15 @@ export default function CohortPage() {
 
         <div className={styles.cohortList}>
           {cohortData[selectedYear].map((cohort) => (
-            <CohortCard
-              key={cohort.id}
-              groupName={cohort.groupName}
-              youtubeLink='/'
-              githubLink='/'
-              imageUrl='/assets/person.svg'
-            />
+            <div key={cohort.id} >
+              <CohortCard
+                key={cohort.id}
+                groupName={cohort.groupName}
+                youtubeLink={cohort.youtubeLink}
+                githubLink={cohort.githubLink}
+                imageUrl={cohort.imageUrl}
+              />
+            </div>
           ))}
         </div>
       </div>
