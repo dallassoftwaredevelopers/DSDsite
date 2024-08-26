@@ -1,32 +1,83 @@
 .bannerSection {
-  background-color: #0f1038;
-  width: 100%;
+  background-color: hsl(var(--dark-blue));
+  color: hsl(var(--white));
   display: flex;
-  align-items: center;
+  gap: 50px;
   justify-content: center;
-  height: 360px;
+  padding: 1.5rem 0;
+}
+
+.bannerImage {
+  flex: 1;
+  position: relative;
 }
 
 .bannerText {
-  padding: 1rem 0;
-  width: 60%;
-  color: white;
-  text-align: center;
-  font-size: 64px;
-  font-weight: 900;
-  font-family: 'Raleway', sans-serif;
+  flex: 1;
+  margin: 2.5rem 0;
+  padding-right: 2.4rem;
+  font-family: Raleway;
+  font-style: normal;
+}
+
+.bannerText > h1 {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+.bannerText > p {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.48px;
 }
 
 /* Mobile devices */
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 850px) {
+  .bannerSection {
+    padding: 0px;
+    background-image: url('/assets/joinOurDiscord.png');
+    background-repeat: no-repeat;
+    box-shadow: inset 0 0 0 1000px hsla(var(--dark-blue), 0.75);
+    background-size: cover;
+  }
+
   .bannerText {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .bannerText > h1 {
+    width: 100%;
     font-size: 2rem;
+  }
+
+  .bannerText > p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .bannerImage {
+    display: none;
   }
 }
 
 /* Medium-sized devices (like tablets in portrait and landscape mode) */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .bannerText {
-    font-size: 3rem;
+@media only screen and (min-width: 850px) and (max-width: 1050px) {
+  .bannerSection {
+    padding: 1rem 0;
+  }
+
+  .bannerText > p {
+    font-size: 1rem;
+  }
+
+  .bannerText > h1 {
+    font-size: 2.5rem;
+    padding-top: 0;
+    padding-bottom: 0.15rem;
   }
 }

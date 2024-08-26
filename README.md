@@ -61,17 +61,17 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/joshuaow91">
-            <img src="https://avatars.githubusercontent.com/u/113389785?v=4" width="100;" alt="joshuaow91"/>
-            <br />
-            <sub><b>Josh</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/GetBlackBoxSolutions">
             <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
             <br />
             <sub><b>Dennis Garcia</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/joshuaow91">
+            <img src="https://avatars.githubusercontent.com/u/113389785?v=4" width="100;" alt="joshuaow91"/>
+            <br />
+            <sub><b>Josh</b></sub>
         </a>
     </td>
     <td align="center">

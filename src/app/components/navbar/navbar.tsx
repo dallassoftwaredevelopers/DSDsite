@@ -63,7 +63,7 @@ export default function Navbar() {
     ));
 
   return (
-    <div>
+    <div className={styles.nav}>
       <nav className={styles.mobileNavBar}>
         <div className={styles.mobileLogo}>
           <Link href='/'>

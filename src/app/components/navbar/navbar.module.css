@@ -1,13 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
 
+.nav {
+  background-color: hsl(var(--white));
+}
+
 .mobileNavBar {
   display: none;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 10px 0px;
   font-family: 'Raleway', sans-serif;
   width: 100%;
 }
@@ -28,7 +33,7 @@
   display: flex;
   align-items: center;
   font-size: 25px;
-  color: #3c3db9;
+  color: hsl(var(--blue));
 }
 
 .navLinks {
@@ -50,7 +55,7 @@
   text-decoration: none;
   display: inline-block;
   position: relative;
-  color: #3c3db9;
+  color: hsl(var(--blue));
   font-size: 20px;
   font-weight: 900;
   padding-bottom: 5px;
@@ -74,8 +79,8 @@
 .meetupLink {
   border-radius: 50px;
   padding: 20px 40px;
-  background-color: #3c3db9;
-  color: white;
+  background-color: hsl(var(--blue));
+  color: hsl(var(--white));
   font-size: 25px;
   text-decoration: none;
 }
@@ -89,7 +94,7 @@
 .cross div {
   width: 25px;
   height: 3px;
-  background-color: #3c3db9;
+  background-color: hsl(var(--blue));
   margin: 5px;
   transition: all 0.3s ease;
 }
@@ -123,7 +128,7 @@
     align-items: center;
     padding: 10px 20px;
     font-family: 'Raleway', sans-serif;
-    background-color: #fff;
+    background-color: hsl(var(--white));
     border-bottom: #eeeeee 1px solid;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
@@ -156,7 +161,7 @@
   .cross div {
     width: 25px;
     height: 3px;
-    background-color: #3c3db9;
+    background-color: hsl(var(--blue));
     margin: 5px;
     transition: all 0.3s ease;
   }
@@ -191,7 +196,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fff;
+    background-color: hsl(var(--white));
     padding: 20px;
     text-decoration: none;
   }
@@ -206,15 +211,15 @@
     display: flex;
     align-items: center;
     font-size: 25px;
-    color: #3c3db9;
+    color: hsl(var(--blue));
   }
   .links::after {
     display: none;
   }
 
   .meetupLink {
-    background-color: #fff;
-    color: #3c3db9;
+    background-color: hsl(var(--white));
+    color: hsl(var(--blue));
     text-decoration: none;
     padding: 0;
   }
@@ -224,7 +229,7 @@
     font-size: 12px;
     font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    color: #3c3db9;
+    color: hsl(var(--blue));
     text-decoration: none;
     line-height: 14.09px;
   }
