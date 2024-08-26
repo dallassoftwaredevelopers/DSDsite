@@ -159,34 +159,32 @@ export default function CommunityPage() {
             />
           ))}
         </div>
-        <div className={styles.speakersSection}>
-          <h2 className={styles.subtitle}>Past Speakers</h2>
-          <div className={styles.yearSelector}>
-            {Object.keys(speakersData)
-              .sort((a, b) => Number(b) - Number(a))
-              .map((year) => (
-                <button
-                  key={year}
-                  className={`${styles.yearButton} ${
-                    selectedYear === Number(year) ? styles.active : ''
-                  }`}
-                  onClick={() => setSelectedYear(Number(year))}
-                >
-                  {year}
-                </button>
-              ))}
-          </div>
-          <div className={styles.speakerList}>
-            {speakersData[selectedYear].map((person: Speaker) => (
-              <Person
-                key={person.id}
-                fullName={person.fullName}
-                twitterUrl={person.twitterUrl}
-                linkedinUrl={person.linkedinUrl}
-                imageUrl={person.imageUrl}
-              />
+        <h2 className={styles.subtitle}>Past Speakers</h2>
+        <div className={styles.yearSelector}>
+          {Object.keys(speakersData)
+            .sort((a, b) => Number(b) - Number(a))
+            .map((year) => (
+              <button
+                key={year}
+                className={`${styles.yearButton} ${
+                  selectedYear === Number(year) ? styles.active : ''
+                }`}
+                onClick={() => setSelectedYear(Number(year))}
+              >
+                {year}
+              </button>
             ))}
-          </div>
+        </div>
+        <div className={styles.speakerList}>
+          {speakersData[selectedYear].map((person: Speaker) => (
+            <Person
+              key={person.id}
+              fullName={person.fullName}
+              twitterUrl={person.twitterUrl}
+              linkedinUrl={person.linkedinUrl}
+              imageUrl={person.imageUrl}
+            />
+          ))}
         </div>
       </div>
     </section>

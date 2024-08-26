@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 75px 0;
+  padding: 5rem 0;
   flex-direction: column;
   color: #fff;
   width: 100%;
@@ -19,15 +19,15 @@
   color: #fff;
   text-align: center;
   font-family: Raleway;
-  font-size: 80px;
+  font-size: 5rem;
   font-weight: 700;
   margin: 0;
   text-transform: uppercase;
 }
 
 .communityParagraph {
-  padding: 75px 0;
-  font-size: 24px;
+  padding: 5rem 0;
+  font-size: 1.5rem;
   font-family: Raleway;
   text-align: center;
   font-weight: 700;
@@ -36,15 +36,15 @@
 }
 
 .teamSection {
-  max-width: 80%;
-  margin: 75px 0;
+  max-width: 85%;
+  margin: 5rem 0;
 }
 
 .subtitle {
   color: #fff;
   text-align: left;
   font-family: Raleway;
-  font-size: 60px;
+  font-size: 3.75rem;
   font-style: normal;
   font-weight: 800;
   margin: 0;
@@ -52,35 +52,35 @@
 }
 
 .teamParagraph {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-family: Raleway;
   font-weight: 700;
   margin: auto;
-  padding: 20px 0 0 40px;
+  padding: 1.25rem 0 0 1.25rem;
 }
 
 .peopleList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 75px 0;
+  margin: 5rem 0;
 }
 
 .yearSelector {
   display: flex;
-  gap: 50px;
+  gap: 3rem;
   justify-content: start;
-  margin: 20px 0;
+  margin: 1.25rem 0;
 }
 
 .yearButton {
   background: none;
   border: none;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 600;
   color: rgba(138, 139, 231, 1);
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 0.625rem 0.625rem;
   transition: color 0.3s;
 }
 
@@ -90,9 +90,63 @@
 }
 
 .speakerList {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
   justify-content: center;
-  gap: 38px;
-  margin: 75px 0;
+  margin-top: 3rem;
+}
+
+@media (max-width: 1200px) {
+  .speakerList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .speakerList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .speakerList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .speakerList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .peopleList {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .communityParagraph {
+    padding: 3rem 0;
+    font-size: 1.25rem;
+  }
+
+  .teamParagraph {
+    font-size: 1.25rem;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .yearButton {
+    font-size: 1.25rem;
+  }
 }
