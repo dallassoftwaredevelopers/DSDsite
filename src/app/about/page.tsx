@@ -5,8 +5,8 @@ import styles from './about.module.css';
 export default function AboutPage() {
   return (
     <>
+      {/* About Section */}
       <section className={styles.aboutContainer}>
-        {/* About Section */}
         <div className={styles.aboutSection}>
           <h1 className={styles.aboutTitle}>{aboutData[0].title}</h1>
           <div className={styles.imageSection}>
@@ -18,8 +18,8 @@ export default function AboutPage() {
           <p className={styles.aboutDescription}>{aboutData[0].description}</p>
         </div>
       </section>
-      {/* Blue Container wrapping the Open Source Projects Section */}
-      <section className={styles.blueContainer}>
+      {/* Open Source Projects Section */}
+      <section className={styles.opensourceContainer}>
         <div className={styles.opensourceSection}>
           <h2 className={styles.opensourceTitle}>{aboutData[1].title}</h2>
           <p className={styles.opensourceDescription}>
