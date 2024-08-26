@@ -1,8 +1,15 @@
 :root {
+  /* break points*/
   --max-width: 1450px;
+
+  /* colors */
   --dark-blue: 239, 58%, 14%;
   --blue: 240, 51%, 48%;
   --white: 0, 0%, 100%;
+  --cool-gray: 240, 26%, 85%;
+
+  --color-primary: var(--blue);
+  --color-secondary: var(--dark-blue);
 }
 
 .innerContainer {
@@ -15,5 +22,5 @@
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;
-  background-color: #f8f9fa;
+  background-color: hsl(var(--cool-gray));
 }
