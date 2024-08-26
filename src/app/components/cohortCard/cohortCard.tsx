@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './cohortCard.module.css';
 
 interface CohortCardProps {
-  groupName: string;
+  groupName?: string;
   youtubeLink?: string;
   githubLink?: string;
   imageUrl?: string;
@@ -30,7 +30,7 @@ export default function CohortCard({
         className={styles.defaultImage}
         width={200}
         height={200}
-        src='/assets/person.svg'
+        src='/assets/video-placeholder.svg'
         alt='Default thumbnail for cohort video'
       />
     </div>
@@ -40,7 +40,7 @@ export default function CohortCard({
     <div className={styles.cohortContainer}>
       <a href={youtubeLink}>{Thumbnail}</a>
       <div className={styles.cohortInfo}>
-        <h3 className={styles.cohortName}>{groupName}</h3>
+        {groupName && <h3 className={styles.groupName}>{groupName}</h3>}
         <div>
           {githubLink && (
             <a href={githubLink}>

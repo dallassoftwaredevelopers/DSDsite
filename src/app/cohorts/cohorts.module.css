@@ -3,8 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 75px 0;
-  padding-left: 1rem;
+  padding: 75px 1rem;
   flex-direction: column;
   color: #fff;
   width: 100%;
@@ -53,25 +52,22 @@
 }
 
 .cohortSection {
-  width: 100%;
-  margin: auto;
+  width: 97%;
+  margin: auto 0;
+  padding-top: 20px;
 }
 
 .cohortList {
-  width: inherit;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 
-.cohortCard {
-  flex: 1 0 21%;
-}
-
 .yearSelector {
   display: flex;
+  width: 100%;
+  text-align: left;
   gap: 50px;
-  justify-content: start;
 }
 
 .yearButton {
