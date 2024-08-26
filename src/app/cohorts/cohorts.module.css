@@ -1,0 +1,48 @@
+.container {
+  background-color: #3c3db9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 75px 0;
+  flex-direction: column;
+  color: #fff;
+  width: 100%;
+}
+
+.titleSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  color: #fff;
+  text-align: left;
+  font-family: Raleway;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+  padding: 0 1rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.cohortsParagraph {
+  padding: 20px 0;
+  font-size: 24px;
+  font-family: Raleway;
+  text-align: center;
+  font-weight: 700;
+  max-width: 70%;
+  margin: auto;
+}
