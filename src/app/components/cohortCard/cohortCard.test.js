@@ -37,7 +37,9 @@ describe('CohortCard Component', () => {
         githubLink={githubLink}
       />
     );
-    const defaultImage = screen.getByAltText(/Default thumbnail for cohort video/i);
+    const defaultImage = screen.getByAltText(
+      /Default thumbnail for cohort video/i
+    );
     expect(defaultImage).toHaveAttribute(
       'src',
       '/assets/video-placeholder.svg'
