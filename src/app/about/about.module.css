@@ -10,7 +10,7 @@
 }
 
 .blueContainer {
-  background-color: #4648CA;
+  background-color: #4648ca;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -24,7 +24,7 @@
 }
 
 .opensourceSection {
-  background-color:#DCDCEB;
+  background-color: #dcdceb;
   margin: 170px 0;
   display: flex;
   align-items: flex-start;
@@ -44,7 +44,7 @@
 }
 
 .opensourceTitle {
-  color: #3C3DB9;
+  color: #3c3db9;
   font-family: Raleway;
   font-size: 74px;
   font-weight: 800;
