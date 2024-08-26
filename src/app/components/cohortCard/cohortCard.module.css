@@ -37,3 +37,32 @@
   height: 100%;
   object-fit: cover;
 }
+
+#defaultImage {
+  width: 80%;
+  height: 80%;
+}
+
+.fullName {
+  color: white;
+  margin: 10px 0 10px 0;
+  font-size: 21px;
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 65px;
+}
+
+.icon {
+  width: 30px;
+  height: 35px;
+  color: white;
+}
+
+.ghLink {
+  display: inline;
+  padding: 0 20px;
+}

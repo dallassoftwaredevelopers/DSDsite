@@ -46,6 +46,13 @@
   margin: 75px 0;
 }
 
+.cohortList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
 .subtitle {
   color: #fff;
   text-align: left;
