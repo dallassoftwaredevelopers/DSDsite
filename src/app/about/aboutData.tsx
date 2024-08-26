@@ -2,7 +2,6 @@ export interface AboutSection {
   id: string;
   title: string;
   description: string;
-  imageSrc?: string;
 }
 
 export const descriptions = {
@@ -23,12 +22,10 @@ export const aboutData: AboutSection[] = [
     id: 'about',
     title: 'About Dallas Software Developers',
     description: descriptions.aboutDescription,
-    imageSrc: '',
   },
   {
     id: 'opensource',
     title: 'Open Source Projects',
     description: descriptions.opensourceDescription,
-    imageSrc: '',
   },
 ];
