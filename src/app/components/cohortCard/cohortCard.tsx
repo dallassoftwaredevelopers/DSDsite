@@ -1,35 +1,28 @@
 import Image from 'next/image';
 import styles from './cohortCard.module.css';
+import Video from '../video/videoFrame';
 
 interface CohortCardProps {
   groupName?: string;
   youtubeLink?: string;
   githubLink?: string;
-  imageUrl?: string;
 }
 
 export default function CohortCard({
-  groupName,
+  groupName: cohortName,
   youtubeLink,
-  imageUrl,
   githubLink,
 }: CohortCardProps) {
-  const Thumbnail = imageUrl ? (
-    <div className={styles.cohortImageContainer}>
-      <Image
-        className={styles.cohortImage}
-        width={200}
-        height={200}
-        src={imageUrl}
-        alt='Thumbnail of cohort video'
-      />
+  const VideoEmbed = youtubeLink ? (
+    <div className={styles.cohortVideoContainer}>
+      <Video videoUrl={youtubeLink} title={cohortName} />
     </div>
   ) : (
     <div className={styles.defaultImageContainer}>
       <Image
         className={styles.defaultImage}
-        width={200}
-        height={200}
+        width={560}
+        height={315}
         src='/assets/video-placeholder.svg'
         alt='Default thumbnail for cohort video'
       />
@@ -38,9 +31,9 @@ export default function CohortCard({
 
   return (
     <div className={styles.cohortContainer}>
-      <a href={youtubeLink}>{Thumbnail}</a>
+      {cohortName && <h3 className={styles.groupName}>{cohortName}</h3>}
+      {VideoEmbed}
       <div className={styles.cohortInfo}>
-        {groupName && <h3 className={styles.groupName}>{groupName}</h3>}
         <div>
           {githubLink && (
             <a href={githubLink}>
