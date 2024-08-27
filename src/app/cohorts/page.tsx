@@ -107,7 +107,7 @@ export default function CohortPage() {
           {cohortData[selectedYear].reverse().map((cohort) => (
             <CohortCard
               key={cohort.id}
-              groupName={cohort.cohortName}
+              cohortName={cohort.cohortName}
               youtubeLink={cohort.youtubeLink}
               githubLink={cohort.githubLink}
             />
