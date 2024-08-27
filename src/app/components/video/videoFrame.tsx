@@ -5,6 +5,7 @@ interface VideoProps {
   title?: string;
 }
 
+// Video component to display a video iframe - using Youtube embed specifications
 export default function Video({ videoUrl, title }: VideoProps) {
   return (
     <div className='videoFrame'>

@@ -3,13 +3,13 @@ import styles from './cohortCard.module.css';
 import Video from '../video/videoFrame';
 
 interface CohortCardProps {
-  groupName?: string;
+  cohortName?: string;
   youtubeLink?: string;
   githubLink?: string;
 }
 
 export default function CohortCard({
-  groupName: cohortName,
+  cohortName,
   youtubeLink,
   githubLink,
 }: CohortCardProps) {

@@ -27,8 +27,7 @@ export default function CohortPage() {
     [year: number]: Group[];
   };
 
-  // TODO: Get cohort data from admin: group name, youtube link, github link, and image URL
-  // Data for the cohorts, add more groups to each year as needed
+  // Data for the cohorts, add more elements to each year as needed
   const cohortData: CohortData = {
     2022: [
       {
