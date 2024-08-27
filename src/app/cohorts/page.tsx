@@ -30,37 +30,40 @@ export default function CohortPage() {
   // TODO: Get cohort data from admin: group name, youtube link, github link, and image URL
   // Data for the cohorts, add more groups to each year as needed
   const cohortData: CohortData = {
-    2020: [],
-    2021: [],
     2022: [
       {
         id: 1,
         cohortName: 'Cohort 5',
-        youtubeLink: 'https://www.youtube.com/embed/0Z7K9sv5Hcc?si=XymSUESq1layFazc',
+        youtubeLink:
+          'https://www.youtube.com/embed/0Z7K9sv5Hcc?si=XymSUESq1layFazc',
       },
       {
         id: 2,
         cohortName: 'Cohort 6',
-        youtubeLink: 'https://www.youtube.com/embed/hfGrR_IPHdw?si=h9kzQpNhIALvNOet',
+        youtubeLink:
+          'https://www.youtube.com/embed/hfGrR_IPHdw?si=h9kzQpNhIALvNOet',
       },
     ],
     2023: [
       {
         id: 1,
         cohortName: 'Cohort 7',
-        youtubeLink: 'https://www.youtube.com/embed/hs26g7qAy5A?si=Ps5Rr7SdCFkn8HX8',
+        youtubeLink:
+          'https://www.youtube.com/embed/hs26g7qAy5A?si=Ps5Rr7SdCFkn8HX8',
       },
       {
         id: 2,
         cohortName: 'Cohort 8',
-        youtubeLink: 'https://www.youtube.com/embed/5tRtqQ1PRZs?si=s9Ltw__Wdgky7_YR',
+        youtubeLink:
+          'https://www.youtube.com/embed/5tRtqQ1PRZs?si=s9Ltw__Wdgky7_YR',
       },
     ],
     2024: [
       {
         id: 1,
         cohortName: 'Cohort 9',
-        youtubeLink: 'https://www.youtube.com/embed/jQL0k_4vUJQ?si=0cvsqz3hH87XNCLl',
+        youtubeLink:
+          'https://www.youtube.com/embed/jQL0k_4vUJQ?si=0cvsqz3hH87XNCLl',
       },
     ],
   };
@@ -102,7 +105,7 @@ export default function CohortPage() {
 
       <div className={styles.cohortSection}>
         <div className={styles.cohortList}>
-          {cohortData[selectedYear].map((cohort) => (
+          {cohortData[selectedYear].reverse().map((cohort) => (
             <CohortCard
               key={cohort.id}
               groupName={cohort.cohortName}
