@@ -1,64 +1,24 @@
 .aboutContainer {
-  background-color: hsl(var(--blue));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 75px 0;
-  flex-direction: column;
-  color: hsl(var(--white));
-  gap: 50px;
+  align-items: flex-start;
 }
 
 .imageSection {
   position: relative;
-  height: 600px;
   width: 100%;
 }
-
-.aboutDescription {
-  color: hsl(var(--white));
-  font-size: 24px;
-  text-align: center;
-  font-weight: 700;
-  white-space: pre-wrap;
-}
-
 .aboutTitle {
-  color: hsl(var(--white));
-  text-align: center;
-  font-family: Raleway;
-  font-size: 80px;
   font-weight: 700;
-  margin: 0 215px;
+  margin: 0;
 }
-
 .opensourceContainer {
-  border-top: 10rem solid #4648ca;
-  background-color: #dcdceb;
-  display: flex;
+  border-top: 10rem solid hsl(var(--light-blue));
   align-items: flex-start;
-  justify-content: center;
-  padding: 100px 0;
-  flex-direction: column;
-  width: 100%;
-  gap: 50px;
 }
-
 .opensourceTitle {
   color: hsl(var(--blue));
-  font-family: Raleway;
-  font-size: 74px;
-  font-weight: 800;
   text-align: left;
-  margin: 0 120px;
+  margin: 0;
   flex: 1;
-}
-
-.aboutDescription,
-.opensourceDescription {
-  font-family: Raleway;
-  margin: 0 120px;
-  font-size: 24px;
 }
 
 .opensourceDescription {
@@ -67,40 +27,52 @@
   white-space: pre-line;
 }
 
+/******************
+*  Media Queries  *
+*******************/
 /* Mobile devices */
 @media only screen and (max-width: 850px) {
   .aboutContainer {
     gap: 10px;
   }
   .aboutTitle {
-    color: hsl(var(--white));
-    text-align: center;
-    font-family: Raleway;
-    font-size: 60px;
-    font-weight: 700;
+    font-size: var(--text-lg);
     width: 100%;
   }
-
   .imageSection {
-    position: relative;
     height: 300px;
-    width: 100%;
   }
-
-  .aboutDescription,
-  .opensourceDescription {
-    font-family: Raleway;
-    margin: 0 20px;
-    font-size: 20px;
-  }
-
   .opensourceTitle {
-    color: hsl(var(--blue));
-    font-family: Raleway;
-    font-size: 60px;
+    font-size: var(--text-lg);
     font-weight: 700;
-    text-align: left;
-    margin: 0 20px;
-    flex: 1;
+  }
+}
+@media (max-width: 575px) {
+  .imageSection {
+      height: 400px;
+  }
+}
+@media (min-width: 576px) {
+    .imageSection {
+      height: 300px;
+    }
+}
+@media (min-width: 768px) {
+  .aboutTitle {
+    text-align: center;
+  }
+}
+@media (min-width: 850px) {
+  .imageSection {
+    height: 600px;
+  }
+  .aboutDescription {
+    text-align: center;
+    white-space: pre-wrap;
+  }
+}
+@media (min-width: 1200px) {
+  .imageSection {
+    height: 700px;
   }
 }

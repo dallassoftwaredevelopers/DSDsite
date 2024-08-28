@@ -1,50 +1,32 @@
 .footerSection {
-  background-color: hsl(var(--dark-blue));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Raleway', sans-serif;
+  padding-top: 2em;
   white-space: nowrap;
-  width: 100%;
   margin: 0 auto;
 }
-
-.innerContainer {
-  max-width: 1450px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
+.footerContainer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-
 .rightFooterContainer {
   order: 2;
 }
-
-.rightFooterContainer .links a {
-  text-align: right;
-}
-
 .leftFooterContainer {
   order: 1;
 }
-
 .footerText {
   width: 36%;
   color: hsl(var(--white));
   font-size: 3rem;
   font-weight: 700;
 }
-
 .links {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-end;
 }
-
 .links a {
   width: max-content;
   margin-bottom: 0.5rem;
@@ -52,52 +34,56 @@
   text-decoration: none;
   color: hsl(var(--white));
   font-size: 1.2rem;
+  text-align: right;
 }
-
+.links a:hover,
+.lings a:focus {
+  text-decoration: underline;
+}
 .links a:last-child {
   margin-bottom: 0;
 }
-
 .socialSection {
   list-style: none;
   display: flex;
   gap: 1rem;
   padding-left: 0;
 }
-
+/******************
+*  Media Queries  *
+*******************/
 @media only screen and (max-width: 850px) {
-  .innerContainer {
-    padding: 4rem 0;
-    flex-direction: column;
-    gap: 2rem;
-  }
   .footerSection {
     flex-direction: column;
   }
-
+  .footerContainer {
+    margin: 0 1em;
+  }
   .rightFooterContainer {
-    order: 1;
     margin-bottom: 2.5rem;
   }
-
-  .leftFooterContainer {
-    order: 2;
-  }
-
+  
   .footerText {
-    width: 93%;
-    color: hsl(var(--white));
-    font-size: 1.5rem;
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 700;
   }
-
   .links {
     justify-content: normal;
     align-items: normal;
   }
-
   .links a {
     text-align: left;
-    font-size: 1rem;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 576px) {
+  .footerContainer {
+    flex-direction: column;
+  }  
+  .rightFooterContainer {
+    order:1;
+  }
+    .leftFooterContainer {
+    order: 2;
   }
 }
