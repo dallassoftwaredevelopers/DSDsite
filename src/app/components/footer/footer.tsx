@@ -6,8 +6,8 @@ import { socialData } from './footerSocialdata';
 
 export default function Footer() {
   return (
-    <div className={styles.footerSection} data-testid='footerComponent'>
-      <div className={styles.innerContainer}>
+    <footer className={styles.footerSection} data-testid='footerComponent'>
+      <div className={`innerContainer ${styles.footerContainer}`}>
         <div className={styles.leftFooterContainer}>
           <div className={styles.footerText}>
             This website is made
@@ -33,6 +33,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
