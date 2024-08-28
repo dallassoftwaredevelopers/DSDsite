@@ -49,13 +49,13 @@
 }
 @media (max-width: 575px) {
   .imageSection {
-      height: 400px;
+    height: 400px;
   }
 }
 @media (min-width: 576px) {
-    .imageSection {
-      height: 300px;
-    }
+  .imageSection {
+    height: 300px;
+  }
 }
 @media (min-width: 768px) {
   .aboutTitle {

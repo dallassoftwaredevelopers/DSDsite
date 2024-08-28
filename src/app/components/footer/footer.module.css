@@ -62,7 +62,7 @@
   .rightFooterContainer {
     margin-bottom: 2.5rem;
   }
-  
+
   .footerText {
     font-size: 2rem;
     font-weight: 700;
@@ -79,11 +79,11 @@
 @media (max-width: 576px) {
   .footerContainer {
     flex-direction: column;
-  }  
-  .rightFooterContainer {
-    order:1;
   }
-    .leftFooterContainer {
+  .rightFooterContainer {
+    order: 1;
+  }
+  .leftFooterContainer {
     order: 2;
   }
 }

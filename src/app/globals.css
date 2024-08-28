@@ -25,13 +25,16 @@
   --text-sm: calc(1em / var(--text-scale-ratio));
   --text-md: calc(1em * var(--text-scale-ratio));
   --text-lg: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio));
-  --text-xl: calc(1em * var(--text-scale-ratio) * var(--text-scale-ratio) * var(--text-scale-ratio));
+  --text-xl: calc(
+    1em * var(--text-scale-ratio) * var(--text-scale-ratio) *
+      var(--text-scale-ratio)
+  );
 }
 
 html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -moz-text-size-adjust: 100%;
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
 }
 
 body {
@@ -43,16 +46,20 @@ body {
 /*********************
 *  Typography        *
 **********************/
-h1, .xlText{
+h1,
+.xlText {
   font-size: var(--text-xl);
 }
-h2, .lgText{
+h2,
+.lgText {
   font-size: var(--text-lg);
 }
-h3, .mdText{
+h3,
+.mdText {
   font-size: var(--text-md);
 }
-h4, .smText{
+h4,
+.smText {
   font-size: var(--text-sm);
 }
 
@@ -65,7 +72,7 @@ h4, .smText{
   box-sizing: border-box;
 }
 
-.section{
+.section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,7 +93,8 @@ h4, .smText{
   flex: 0 0 16.666667%;
   max-width: 16.666667%;
 }
-footer, .bgDarkBlue{
+footer,
+.bgDarkBlue {
   background-color: hsl(var(--dark-blue));
   color: hsl(var(--white));
 }
@@ -110,35 +118,33 @@ footer, .bgDarkBlue{
 *  Media Queries  *
 *******************/
 @media (max-width: 575px) {
-    .innerContainer {
-        max-width: inherit; 
-    }
-    .sectionPadded {
-      margin: 0 1em;
-    }
+  .innerContainer {
+    max-width: inherit;
+  }
+  .sectionPadded {
+    margin: 0 1em;
+  }
 }
 @media (min-width: 576px) {
-    .sectionPadded {
-      margin: 0 2em;
-    }
+  .sectionPadded {
+    margin: 0 2em;
+  }
 }
 @media (min-width: 768px) {
-  
 }
 @media (min-width: 992px) {
-    .innerContainer {
-        max-width: 960px;
-    }
-    .sectionPadded {
-      margin: 0 4em;
-    }
-    
+  .innerContainer {
+    max-width: 960px;
+  }
+  .sectionPadded {
+    margin: 0 4em;
+  }
 }
 @media (min-width: 1200px) {
-    .innerContainer {
-        max-width: var(--max-width);
-        padding: 0 1.25em;
-    }
+  .innerContainer {
+    max-width: var(--max-width);
+    padding: 0 1.25em;
+  }
 }
 
 /* Mobile devices */
