@@ -6,13 +6,11 @@ import useMediaQuery from '@/app/hooks/useMediaQuery';
 interface CohortCardProps {
   cohortName?: string;
   youtubeLink?: string;
-  githubLink?: string;
 }
 
 export default function CohortCard({
   cohortName,
   youtubeLink,
-  githubLink,
 }: CohortCardProps) {
   const isTablet = useMediaQuery('(max-width: 1024px)');
   const isMobile = useMediaQuery('(max-width: 850px)');

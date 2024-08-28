@@ -68,4 +68,8 @@
 
 /* Medium-sized devices (like tablets in portrait and landscape mode) */
 @media only screen and (min-width: 850px) and (max-width: 1050px) {
+  .cohortContainer {
+    width: 500px;
+    height: 350px;
+  }
 }
