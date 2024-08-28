@@ -7,7 +7,7 @@ export default function AboutPage() {
     <>
       {/* About Section */}
       <section className={styles.aboutContainer}>
-        <h1 className={styles.aboutTitle}>Open Source Projects</h1>
+        <h1 className={styles.aboutTitle}>About Dallas Software Developers</h1>
         <div className={styles.imageSection}>
           <Image
             src='/assets/communitySupport.png'
@@ -32,16 +32,14 @@ export default function AboutPage() {
       </section>
       {/* Open Source Projects Section */}
       <section className={styles.opensourceContainer}>
-        <h2 className={styles.opensourceTitle}>
-          About Dallas Software Developers
-        </h2>
+        <h2 className={styles.opensourceTitle}>Open Source Projects</h2>
         <p className={styles.opensourceDescription}>
-          Join the dynamic community of [organization] on Discord, where
-          you&apos;ll find an array of collaborative projects aimed at enhancing
-          teamwork, learning opportunities, and hands-on contributions to
-          open-source code. Our Discord serves as the central hub for developers
-          eager to engage in meaningful discussions, seek advice from peers, and
-          actively participate in real-world coding projects.
+          Join the dynamic community of Dallas Software Developers on Discord,
+          where you&apos;ll find an array of collaborative projects aimed at
+          enhancing teamwork, learning opportunities, and hands-on contributions
+          to open-source code. Our Discord serves as the central hub for
+          developers eager to engage in meaningful discussions, seek advice from
+          peers, and actively participate in real-world coding projects.
         </p>
         <p className={styles.opensourceDescription}>
           On our Discord there are a selection of collaborative projects, each
