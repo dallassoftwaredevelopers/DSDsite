@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 75px 1rem;
+  padding: 1rem;
   flex-direction: column;
   color: #fff;
   width: 100%;
@@ -19,9 +19,9 @@
   color: #fff;
   text-align: center;
   font-family: Raleway;
-  font-size: 80px;
+  font-size: 5rem;
   font-weight: 700;
-  margin: 0;
+  margin: 3rem 0;
   text-transform: uppercase;
 }
 
@@ -30,58 +30,151 @@
   color: #fff;
   text-align: left;
   font-family: Raleway;
-  font-size: 60px;
+  font-size: 3rem;
   font-style: normal;
   font-weight: 800;
   margin: 0;
 }
 
 .paragraphBox {
-  padding: 70px;
+  padding: 2rem;
   margin: auto;
 }
 
 .cohortsParagraph {
-  padding: 20px 0;
+  padding: 1rem 0;
   font-size: 24px;
   font-family: Raleway;
   text-align: center;
   font-weight: 700;
-  max-width: 70%;
+  max-width: 100%;
   margin: auto;
 }
 
 .cohortSection {
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 1rem 0;
 }
 
 .cohortList {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 20px;
+  gap: 2rem;
 }
 
 .yearSelector {
   display: flex;
   width: 100%;
   text-align: left;
-  gap: 50px;
+  gap: 1rem;
 }
 
 .yearButton {
   background: none;
   border: none;
-  font-size: 36px;
+  font-size: 2.5rem;
   font-weight: 600;
   color: rgba(138, 139, 231, 1);
   cursor: pointer;
-  padding: 10px 10px;
+  padding: 1rem;
   transition: color 0.3s;
 }
 
 .active {
   font-weight: bold;
   color: #ffffff;
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 850px) {
+  .container {
+    padding: 0;
+  }
+
+  .title {
+    margin: 0;
+    margin-top: 5rem;
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .paragraphBox {
+    padding: 0 2rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .cohortsParagraph {
+    padding: 0;
+    padding-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 100%;
+  }
+
+  .yearSelector {
+    margin: auto 0;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cohortList {
+    display: block;
+    justify-content: center;
+  }
+}
+
+/* Medium-sized devices (like tablets in portrait and landscape mode) */
+@media only screen and (min-width: 850px) and (max-width: 1050px) {
+  .container {
+    padding: 0;
+  }
+
+  .title {
+    margin: 0;
+    margin-top: 5rem;
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    margin: 0;
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .paragraphBox {
+    padding: 0 2rem;
+    margin: 1rem 0 2rem 0;
+  }
+
+  .cohortsParagraph {
+    padding: 0;
+    padding-top: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 100%;
+  }
+
+  .yearSelector {
+    margin: auto 0;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cohortList {
+    display: block;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 850px) and (max-width: 1250px) {
+  .cohortList {
+    display: block;
+    justify-content: center;
+  }
 }

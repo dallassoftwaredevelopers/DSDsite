@@ -1,26 +1,14 @@
-import useMediaQuery from '@/app/hooks/useMediaQuery';
-import React, { use } from 'react';
+import React from 'react';
 
 interface VideoProps {
   videoUrl: string;
   title?: string;
+  width: number;
+  height: number;
 }
 
 // Video component to display a video iframe - using Youtube embed specifications
-export default function Video({ videoUrl, title }: VideoProps) {
-
-  let width = 560;
-  let height = 315;
-
-  if (useMediaQuery('(max-width: 1050px)')) {
-    width = 480;
-    height = 270;
-  }
-  if (useMediaQuery('(max-width: 850px)')) {
-    width = 320;
-    height = 180;
-  }
-
+export default function Video({ videoUrl, title, width, height }: VideoProps) {
   return (
     <div className='videoFrame'>
       <iframe
