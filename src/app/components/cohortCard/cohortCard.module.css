@@ -7,14 +7,14 @@
   align-items: center;
   background-color: #3c3db9;
   border-radius: 5px;
-  width: 240px;
-  height: 314px;
+  width: 560px;
+  height: 315px;
 }
 
-.defaultThumbnailContainer {
+.defaultImageContainer {
   margin-top: 10px;
-  width: 215px;
-  height: 205px;
+  width: 560px;
+  height: 315px;
   background-color: #ee0c0c;
   border-radius: 5px;
   display: flex;
@@ -22,10 +22,10 @@
   align-items: center;
 }
 
-.cohortThumbnailContainer {
+.cohortVideoContainer {
   margin-top: 10px;
-  width: 215px;
-  height: 205px;
+  width: 560px;
+  height: 315px;
   display: flex;
   justify-content: center;
   align-items: center;

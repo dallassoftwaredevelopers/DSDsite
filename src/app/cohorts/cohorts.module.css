@@ -52,14 +52,14 @@
 }
 
 .cohortSection {
-  width: 97%;
-  margin: auto 0;
-  padding-top: 20px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 .cohortList {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
 }
 

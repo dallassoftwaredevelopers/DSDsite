@@ -17,7 +17,7 @@ export default function CohortPage() {
 
   interface Group {
     id: number;
-    groupName?: string;
+    cohortName?: string;
     youtubeLink?: string;
     githubLink?: string;
     imageUrl?: string;
@@ -27,138 +27,42 @@ export default function CohortPage() {
     [year: number]: Group[];
   };
 
-  // TODO: Get cohort data from admin: group name, youtube link, github link, and image URL
-  // Data for the cohorts, add more groups to each year as needed
+  // Data for the cohorts, add more elements to each year as needed
   const cohortData: CohortData = {
-    2020: [],
-    2021: [],
     2022: [
       {
         id: 1,
-        groupName: 'Group 1',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
+        cohortName: 'Cohort 5',
+        youtubeLink:
+          'https://www.youtube.com/embed/0Z7K9sv5Hcc?si=XymSUESq1layFazc',
       },
       {
         id: 2,
-        groupName: 'Group 2',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 3,
-        groupName: 'Group 3',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 4,
-        groupName: 'Group 4',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
+        cohortName: 'Cohort 6',
+        youtubeLink:
+          'https://www.youtube.com/embed/hfGrR_IPHdw?si=h9kzQpNhIALvNOet',
       },
     ],
     2023: [
       {
         id: 1,
-        groupName: 'Group 1',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
+        cohortName: 'Cohort 7',
+        youtubeLink:
+          'https://www.youtube.com/embed/hs26g7qAy5A?si=Ps5Rr7SdCFkn8HX8',
       },
       {
         id: 2,
-        groupName: 'Group 2',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 3,
-        groupName: 'Group 3',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 4,
-        groupName: 'Group 4',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
+        cohortName: 'Cohort 8',
+        youtubeLink:
+          'https://www.youtube.com/embed/5tRtqQ1PRZs?si=s9Ltw__Wdgky7_YR',
       },
     ],
     2024: [
       {
         id: 1,
-        groupName: 'Group 1',
-        githubLink: '/',
-      },
-      {
-        id: 2,
-        groupName: 'Group 2',
-        githubLink: '',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 3,
-        groupName: 'Group 3',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 4,
-        groupName: 'Group 4',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 5,
-        groupName: 'Group 5',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 6,
-        groupName: 'Group 6',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 7,
-        groupName: 'Group 7',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 8,
-        groupName: 'Group 8',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 9,
-        groupName: 'Group 9',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
-      },
-      {
-        id: 10,
-        groupName: 'Group 10',
-        youtubeLink: '/',
-        githubLink: '/',
-        imageUrl: '/assets/video-placeholder.svg',
+        cohortName: 'Cohort 9',
+        youtubeLink:
+          'https://www.youtube.com/embed/jQL0k_4vUJQ?si=0cvsqz3hH87XNCLl',
       },
     ],
   };
@@ -200,13 +104,12 @@ export default function CohortPage() {
 
       <div className={styles.cohortSection}>
         <div className={styles.cohortList}>
-          {cohortData[selectedYear].map((cohort) => (
+          {cohortData[selectedYear].reverse().map((cohort) => (
             <CohortCard
               key={cohort.id}
-              groupName={cohort.groupName}
+              cohortName={cohort.cohortName}
               youtubeLink={cohort.youtubeLink}
               githubLink={cohort.githubLink}
-              imageUrl={cohort.imageUrl}
             />
           ))}
         </div>
