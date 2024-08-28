@@ -1,9 +1,7 @@
 import styles from './offeringCard.module.css';
 
-const defaultText = 'Want to become a speaker at an event?';
-
 interface OfferingCardProps {
-  text?: string;
+  text: string;
   buttonText: string;
   buttonLink: string;
 }
@@ -16,7 +14,7 @@ export default function OfferingCard({
   return (
     <div className={styles.offeringCard}>
       <div className={styles.textContainer}>
-        <p className={styles.text}>{text || defaultText}</p>
+        {text && <p className={styles.text}>{text}</p>}
       </div>
       <a href={buttonLink} className={styles.button}>
         {buttonText}
