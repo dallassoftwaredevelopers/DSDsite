@@ -24,3 +24,14 @@ body {
   font-family: 'Raleway', sans-serif;
   background-color: hsl(var(--cool-gray));
 }
+
+/* Mobile devices */
+@media only screen and (max-width: 850px) {
+  .innerContainer {
+    padding: 0;
+  }
+}
+
+/* Medium-sized devices (like tablets in portrait and landscape mode) */
+@media only screen and (min-width: 850px) and (max-width: 1050px) {
+}
