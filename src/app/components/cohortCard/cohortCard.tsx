@@ -14,7 +14,6 @@ export default function CohortCard({
   youtubeLink,
   githubLink,
 }: CohortCardProps) {
-
   const isTablet = useMediaQuery('(max-width: 1024px)');
   const isMobile = useMediaQuery('(max-width: 850px)');
 
@@ -23,7 +22,12 @@ export default function CohortCard({
 
   const VideoEmbed = youtubeLink ? (
     <div className={styles.cohortVideoContainer}>
-      <Video videoUrl={youtubeLink} title={cohortName} width={videoWidth} height={videoHeight} />
+      <Video
+        videoUrl={youtubeLink}
+        title={cohortName}
+        width={videoWidth}
+        height={videoHeight}
+      />
     </div>
   ) : (
     <div className={styles.defaultImageContainer}>
