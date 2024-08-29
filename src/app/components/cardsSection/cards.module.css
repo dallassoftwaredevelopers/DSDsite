@@ -5,14 +5,14 @@
   gap: 13px;
   padding: 60px 0px;
   justify-content: space-around;
-  background-color: #CFCFE3;
+  background-color: #cfcfe3;
 }
 
 .card {
   height: 621px;
   max-width: 445px;
   min-height: 621px;
-  background: linear-gradient(to bottom, #DCDCEB, #FFFFFF);
+  background: linear-gradient(to bottom, #dcdceb, #ffffff);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   display: flex;
@@ -68,7 +68,6 @@
 }
 
 @media (max-width: 1450px) {
-
   .card {
     flex: 1;
     margin-bottom: 30px;
