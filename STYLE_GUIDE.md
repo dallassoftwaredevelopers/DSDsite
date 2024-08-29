@@ -48,14 +48,18 @@
 .mdText{font-size:32px}
 
 </style>
+
 # Style Guide for DSD Website's brand
+
 To establish consistency and aid to developers, this guide aims to set a ruleset of common styles and resources such as colors, typography, and more.
-Please use [Global.css](https://github.com/dallassoftwaredevelopers/DSDsite/blob/main/src/app/globals.css) 
+Please use [Global.css](https://github.com/dallassoftwaredevelopers/DSDsite/blob/main/src/app/globals.css)
 
 # Getting Started
+
 Global.css contains a collection of common styling properties and CSS classes which can be used to both create new CSS classes and "pre-build" styles onto one class you can then cascade onto the HTML element you want to style. This guide will list all available properties and CSS classes from the global.css file.
 <br>
 To use a property from global.css into your file, use the <code>var()</code> function when declaring your own property. For example, if we wanted to set the color of a text within a container with the class <code>myCustomClass</code> to our primary blue color, we would use the <code>--blue</code> prefix property as so:
+
 <pre class="brush: css notranslate">
 element.css
 <code>
@@ -65,7 +69,8 @@ element.css
 </code>
 </pre>
 
-To add a class from global.css to your html element in tsx, wrap the 
+To add a class from global.css to your html element in tsx, wrap the
+
 <pre class="brush: css notranslate">
 element.tsx
 <code>
@@ -80,6 +85,7 @@ return(
 # Visual Style
 
 ## Colors and Font
+
 The most unifying visual component is the consistent use of colors and font settings.<br>
 <span class="cardTitle">Font Family</span>
 <code style="display:block;">
@@ -118,13 +124,16 @@ The core colors below are for background and textual elements. They are listed w
 </section>
 
 ## Typography
+
 <p class="typography xlText"><code>.xlText</code> Heading 1 / XL Text</p>
 <p class="typography lgText"><code>.lgText</code> Heading 2 / Large Text</p>
 <p class="typography mdText"><code>.mdText</code> Heading 3 / Medium Text</p>
 <p class="typography">Normal Text</p>
 
 ## Design Elements
+
 ### Sections
+
 <div class="section bgBlue">
   <div class="sectionPadded">
   <p class="typography lgText">Blue <code>.bgBlue</code></p>
@@ -157,6 +166,7 @@ The core colors below are for background and textual elements. They are listed w
 </div>
 
 ### Breakpoints
+
 <pre>
 --max-width: 1450px;
 --breakpoint-xs: 0;
