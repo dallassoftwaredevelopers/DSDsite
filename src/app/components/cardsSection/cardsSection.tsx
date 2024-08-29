@@ -63,9 +63,11 @@ export default function CardsSection() {
           </div>
           <header className={styles.cardHeader}>{card.title}</header>
           <p className={styles.cardContent}>{card.content}</p>
-          <div className={styles.linkContainer}><Link href={card.href} passHref className={styles.cardLink}>
-            <Button buttonText={card.buttonText} showIcon />
-          </Link></div>
+          <div className={styles.linkContainer}>
+            <Link href={card.href} passHref className={styles.cardLink}>
+              <Button buttonText={card.buttonText} showIcon />
+            </Link>
+          </div>
         </Card>
       ))}
     </div>
