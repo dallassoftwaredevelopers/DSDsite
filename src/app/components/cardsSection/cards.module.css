@@ -2,21 +2,22 @@
 
 .cardContainer {
   display: flex;
-  flex-wrap: wrap;
-  gap: 45px;
-  padding: 60px;
+  align-items: center;
+  gap: 32px;
+  padding: 60px 30px;
   justify-content: space-around;
 }
 
 .card {
-  flex: 0 0 425px;
-  height: 550px;
+  flex: 1 0 250px;
+  min-height: 520px;
+  padding: 1rem;
   background-color: #d9d9d9;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   font-family: 'Raleway';
 }
@@ -24,6 +25,7 @@
 .cardHeader {
   font-size: 32px;
   font-weight: 900;
+  text-align: center;
   color: #0f1038;
   margin-bottom: 20px;
 }
@@ -31,8 +33,13 @@
 .cardContent {
   font-size: 14px;
   font-weight: 400;
-  padding-left: 41px;
-  padding-right: 41px;
+  padding: 0 28px;
+}
+
+.linkContainer {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
 }
 
 .cardLink {
@@ -45,7 +52,7 @@
   height: 100%;
   max-width: 375px;
   width: 100%;
-  padding: 15px;
+  padding: 15px 0;
   justify-content: center;
 }
 
@@ -59,17 +66,23 @@
 }
 
 @media (max-width: 1300px) {
-  .cardContainer {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .card {
     margin-bottom: 30px;
   }
 
   .cardHeader {
     font-size: 24px;
+  }
+}
+
+@media (width < 1024px) {
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 400px;
   }
 }
 
