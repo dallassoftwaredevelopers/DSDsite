@@ -132,20 +132,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/smclairecarden">
-            <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
+        <a href="https://github.com/JVPH">
+            <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
             <br />
-            <sub><b>Claire Carden</b></sub>
+            <sub><b>JVPH</b></sub>
         </a>
     </td></tr>
 <tr>
-    <td align="center">
-        <a href="https://github.com/choir27">
-            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir27"/>
-            <br />
-            <sub><b>Richard</b></sub>
-        </a>
-    </td>
     <td align="center">
         <a href="https://github.com/David-Ogden-III">
             <img src="https://avatars.githubusercontent.com/u/71677972?v=4" width="100;" alt="David-Ogden-III"/>
@@ -154,10 +147,24 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/JVPH">
-            <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
+        <a href="https://github.com/choir27">
+            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir27"/>
             <br />
-            <sub><b>JVPH</b></sub>
+            <sub><b>Richard</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/smclairecarden">
+            <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
+            <br />
+            <sub><b>Claire Carden</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/elderyouth">
+            <img src="https://avatars.githubusercontent.com/u/13540588?v=4" width="100;" alt="elderyouth"/>
+            <br />
+            <sub><b>Elder</b></sub>
         </a>
     </td>
     <td align="center">
@@ -168,32 +175,25 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/PrashanthVamanan">
-            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
+        <a href="https://github.com/abhiramrp">
+            <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
             <br />
-            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
+            <sub><b>Abhiram Rishi Prattipati</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/Dthompsondevtestaccount">
             <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
             <br />
             <sub><b>Null</b></sub>
         </a>
-    </td></tr>
-<tr>
-    <td align="center">
-        <a href="https://github.com/abhiramrp">
-            <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
-            <br />
-            <sub><b>Abhiram Rishi Prattipati</b></sub>
-        </a>
     </td>
     <td align="center">
-        <a href="https://github.com/elderyouth">
-            <img src="https://avatars.githubusercontent.com/u/13540588?v=4" width="100;" alt="elderyouth"/>
+        <a href="https://github.com/PrashanthVamanan">
+            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
             <br />
-            <sub><b>Elder</b></sub>
+            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
         </a>
     </td>
     <td align="center">
