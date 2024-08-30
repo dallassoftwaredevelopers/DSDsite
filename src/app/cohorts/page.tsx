@@ -73,7 +73,7 @@ export default function CohortPage() {
         <h1 className={styles.title}>Cohorts</h1>
 
         <div className={styles.paragraphBox}>
-          <p className={styles.cohortsParagraph}>{cohortsText[0]}</p>
+          <p className={`.mdText ${styles.cohortsParagraph}`}>{cohortsText[0]}</p>
           <p className={styles.cohortsParagraph}>{cohortsText[1]}</p>
           <p className={styles.cohortsParagraph}>{cohortsText[2]}</p>
         </div>
