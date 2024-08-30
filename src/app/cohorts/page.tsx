@@ -109,7 +109,6 @@ export default function CohortPage() {
               key={cohort.id}
               cohortName={cohort.cohortName}
               youtubeLink={cohort.youtubeLink}
-              githubLink={cohort.githubLink}
             />
           ))}
         </div>

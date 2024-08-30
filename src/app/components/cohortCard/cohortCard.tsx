@@ -41,7 +41,7 @@ export default function CohortCard({
 
   return (
     <div className={styles.cohortContainer}>
-      {cohortName && <h3 className={styles.groupName}>{cohortName}</h3>}
+      {cohortName && <h4 className={styles.groupName}>{cohortName}</h4>}
       {VideoEmbed}
     </div>
   );
