@@ -10,6 +10,7 @@
 }
 
 .titleSection {
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,22 +38,23 @@
 }
 
 .paragraphBox {
-  padding: 2rem;
-  margin: auto;
+  padding: 0 2rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
 }
 
 .cohortsParagraph {
-  padding: 1rem 0;
-  font-size: 24px;
+  padding: 1.5rem 0;
+  font-size: 1.5rem;
   font-family: Raleway;
   text-align: center;
   font-weight: 700;
-  max-width: 100%;
+  max-width: 80%;
   margin: auto;
 }
 
 .cohortSection {
-  margin: 0 auto;
+  margin-bottom: 2rem;
   padding: 1rem 0;
 }
 
@@ -110,10 +112,6 @@
   }
 
   .cohortsParagraph {
-    padding: 0;
-    padding-top: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 400;
     max-width: 100%;
   }
 
@@ -148,15 +146,10 @@
   }
 
   .paragraphBox {
-    padding: 0 2rem;
     margin: 1rem 0 2rem 0;
   }
 
   .cohortsParagraph {
-    padding: 0;
-    padding-top: 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 400;
     max-width: 100%;
   }
 
