@@ -62,8 +62,9 @@
 .peopleList {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   margin: 5rem 0;
+  gap: 2rem;
 }
 
 .yearSelector {

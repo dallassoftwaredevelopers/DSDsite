@@ -175,7 +175,7 @@ export default function CommunityPage() {
               </button>
             ))}
         </div>
-        <div className={styles.speakerList}>
+        <div className={styles.peopleList}>
           {speakersData[selectedYear].map((person: Speaker) => (
             <Person
               key={person.id}

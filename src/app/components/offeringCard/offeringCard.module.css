@@ -21,8 +21,7 @@
 .textContainer {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+
   margin-right: 1rem;
 }
 
@@ -69,7 +68,6 @@
   .textContainer {
     width: 100%;
     margin: 0 0 1rem 0;
-    justify-content: center;
   }
 
   .text {

@@ -14,31 +14,22 @@ export default function Person({
   linkedinUrl,
   imageUrl,
 }: PersonProps) {
-  const ImgComponent = imageUrl ? (
-    <div className={styles.personImageContainer}>
-      <Image
-        id={styles.personImage}
-        width={200}
-        height={200}
-        src={imageUrl}
-        alt='image of person'
-      />
-    </div>
-  ) : (
-    <div className={styles.defaultImageContainer}>
-      <Image
-        id={styles.defaultImage}
-        width={200}
-        height={200}
-        src='/assets/person.svg'
-        alt='image of person'
-      />
-    </div>
-  );
   return (
     <div className={styles.personContainer}>
-      {ImgComponent}
-      <div>{fullName && <h3 className={styles.fullName}>{fullName}</h3>}</div>
+      <div className={styles.personImageContainer}>
+        <Image
+          id={fullName}
+          src={imageUrl ? imageUrl : '/assets/person.svg'}
+          alt='image of person'
+          fill
+          objectFit='contain'
+        />
+      </div>
+      <h3 className={styles.fullName}>
+        {fullName.split(' ')[0]}
+        <br />
+        {fullName.split(' ')[1]}
+      </h3>
       <div className={styles.iconContainer}>
         {twitterUrl && (
           <a href={twitterUrl}>
