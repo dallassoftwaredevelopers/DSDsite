@@ -1,3 +1,4 @@
+import Button from '../button/button';
 import styles from './offeringCard.module.css';
 
 interface OfferingCardProps {
@@ -16,9 +17,7 @@ export default function OfferingCard({
       <div className={styles.textContainer}>
         {text && <p className={styles.text}>{text}</p>}
       </div>
-      <a href={buttonLink} className={styles.button}>
-        {buttonText}
-      </a>
+      <Button buttonText={buttonText} />
     </div>
   );
 }
