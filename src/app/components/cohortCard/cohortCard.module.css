@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap');
-
 .cohortContainer {
-  font-family: 'Raleway', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,23 +9,17 @@
 }
 
 .defaultImageContainer {
-  margin-top: 10px;
   width: 100%;
   height: 100%;
   background-color: #ee0c0c;
   border-radius: 5px;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 .cohortVideoContainer {
-  margin-top: 10px;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #cohortImage {
