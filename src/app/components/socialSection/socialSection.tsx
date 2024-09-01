@@ -11,49 +11,44 @@ export interface SocialLinkData {
   link: string;
 }
 
-export default function SocialSection() {
-  const socialData = [
-    {
-      id: 'github',
-      icon: <FaGithub />,
-      imgSrc: '/assets/githubIcon.png',
-      alt: 'Github social icon',
-      link: 'https://github.com/dallassoftwaredevelopers',
-    },
-    {
-      id: 'discord',
-      icon: <FaDiscord />,
-      imgSrc: '/assets/discordIcon.png',
-      alt: 'Discord social icon',
-      link: '/',
-    },
-    {
-      id: 'meetup',
-      icon: <FaMeetup />,
-      imgSrc: '/assets/meetupIcon.png',
-      alt: 'Meetup social icon',
-      link: '/',
-    },
-    {
-      id: 'linkedin',
-      icon: <FaLinkedin />,
-      imgSrc: '/assets/linkedinIcon.png',
-      alt: 'LinkedIn social icon',
-      link: 'https://www.linkedin.com/company/dallas-software-developers',
-    },
-  ];
+const socialData = [
+  {
+    id: 'github',
+    icon: <FaGithub />,
+    imgSrc: '/assets/githubIcon.png',
+    alt: 'Github social icon',
+    link: 'https://github.com/dallassoftwaredevelopers',
+  },
+  {
+    id: 'discord',
+    icon: <FaDiscord />,
+    imgSrc: '/assets/discordIcon.png',
+    alt: 'Discord social icon',
+    link: '/',
+  },
+  {
+    id: 'meetup',
+    icon: <FaMeetup />,
+    imgSrc: '/assets/meetupIcon.png',
+    alt: 'Meetup social icon',
+    link: '/',
+  },
+  {
+    id: 'linkedin',
+    icon: <FaLinkedin />,
+    imgSrc: '/assets/linkedinIcon.png',
+    alt: 'LinkedIn social icon',
+    link: 'https://www.linkedin.com/company/dallas-software-developers',
+  },
+];
 
+export default function SocialSection() {
   return (
-    <div className={styles.socialSection} data-testid='socialSection'>
-      <div className={styles.imageContainer}>
-        <Image
-          src='/assets/joinOurDiscord.png'
-          alt=''
-          width={500}
-          height={350}
-        />
-      </div>
-      <div>
+    <section
+      className={`section ${styles.socialSection}`}
+      data-testid='socialSection'
+    >
+      <div className={styles.socialText}>
         <p>
           Join our Discord and <br /> other social links!
         </p>
@@ -63,10 +58,18 @@ export default function SocialSection() {
         </p>
         <SocialLinks
           links={socialData}
-          iconContextValue={{ color: 'black', size: '7rem' }}
+          iconContextValue={{ className: styles.socialIcons }}
           className={styles.socialLinks}
         />
       </div>
-    </div>
+      <div className={styles.socialImage}>
+        <Image
+          src='/assets/communityImage_01.jpg'
+          alt='community image of people talking'
+          fill
+          objectFit='contain'
+        />
+      </div>
+    </section>
   );
 }
