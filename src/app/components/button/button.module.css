@@ -1,21 +1,35 @@
 .button--primary {
-  background-color: #3c3db9;
+  background-color: hsl(var(--light-blue));
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
   padding: 0 15px 0 15px;
-  height: 45px;
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: 900;
-  color: #fff;
+  height: 3.75rem;
+  border-radius: 0.625rem;
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: hsl(var(--white));
   border: none;
   cursor: pointer;
   text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   outline: none;
   text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: hsl(var(--blue));
+  transform: translateY(-2px);
 }
 
 .button__icon {
   padding-left: 5px;
+}
+
+@media (max-width: 850px) {
+  .button {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
