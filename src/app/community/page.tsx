@@ -144,6 +144,8 @@ export default function CommunityPage() {
           propelling us toward new heights of achievement and impact.
         </p>
       </Section>
+      {/* 
+      //TODO: Add this section back in when we have a way to get involved
       <Section classNames='bgBlue'>
         <h2>Get Involved</h2>
         <OfferingCard
@@ -151,7 +153,8 @@ export default function CommunityPage() {
           buttonText='Get Involved'
           buttonLink='/'
         />
-      </Section>
+      </Section> 
+      */}
       <Section classNames='bgBlue'>
         <div className={styles.teamSection}>
           <h2>Our Team</h2>

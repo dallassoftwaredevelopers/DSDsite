@@ -77,6 +77,8 @@ export default function CohortPage() {
         </p>
       </Section>
 
+      {/* 
+      //TODO: Uncomment when we find a way to handle cohort registration and notifications
       <Section classNames='bgBlue'>
         <h2>Cohort Information</h2>
         <OfferingCard
@@ -84,7 +86,7 @@ export default function CohortPage() {
           buttonText='Get Notified'
           buttonLink='/'
         />
-      </Section>
+      </Section> */}
 
       <Section classNames='bgBlue'>
         <h2>Previous Cohorts</h2>
