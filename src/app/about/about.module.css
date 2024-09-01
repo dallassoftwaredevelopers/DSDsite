@@ -1,30 +1,21 @@
-.aboutContainer {
-  align-items: flex-start;
-}
-
 .imageSection {
   position: relative;
   width: 100%;
 }
-.aboutTitle {
-  font-weight: 700;
-  margin: 0;
-}
-.opensourceContainer {
+
+.openSourceContainer {
   border-top: 10rem solid hsl(var(--light-blue));
-  align-items: flex-start;
-}
-.opensourceTitle {
-  color: hsl(var(--blue));
-  text-align: left;
-  margin: 0;
-  flex: 1;
 }
 
-.opensourceDescription {
-  text-align: left;
+.openSourceTitle {
+  color: hsl(var(--blue));
+  margin: auto;
+}
+
+.openSourceDescription {
   font-weight: 500;
   white-space: pre-line;
+  text-align: left;
 }
 
 /******************

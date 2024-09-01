@@ -6,11 +6,9 @@ export default function AboutPage() {
   return (
     <>
       {/* About Section */}
-      <section className={`section bgBlue ${styles.aboutContainer}`}>
+      <section className={`sectionIntro bgBlue ${styles.aboutContainer}`}>
         <div className='sectionPadded'>
-          <h1 className={styles.aboutTitle}>
-            About Dallas Software Developers
-          </h1>
+          <h1>About Dallas Software Developers</h1>
           <div className={styles.imageSection}>
             <Image
               src='/assets/communitySupport.png'
@@ -19,14 +17,14 @@ export default function AboutPage() {
               objectFit='contain'
             />
           </div>
-          <p className={styles.aboutDescription}>
+          <p>
             Explore what Dallas Software Developers as to offer and become an
             integral part of our dynamic community. Whether you&apos;re
             passionate about coding, eager to contribute to open-source
             projects, or simply looking to connect with like-minded individuals,
             there&apos;s a place for you here.
           </p>
-          <p className={styles.aboutDescription}>
+          <p>
             Dive into our various programs, from collaborative projects on
             Discord to hands-on developer placement initiatives, and discover
             how you can make a meaningful impact while honing your skills and
@@ -35,10 +33,10 @@ export default function AboutPage() {
         </div>
       </section>
       {/* Open Source Projects Section */}
-      <section className={`section bgGray ${styles.opensourceContainer}`}>
+      <section className={`section bgGray ${styles.openSourceContainer}`}>
         <div className='sectionPadded'>
-          <h2 className={styles.opensourceTitle}>Open Source Projects</h2>
-          <p className={styles.opensourceDescription}>
+          <h2 className={styles.openSourceTitle}>Open Source Projects</h2>
+          <p className={`sectionParagraph ${styles.openSourceDescription}`}>
             Join the dynamic community of Dallas Software Developers on Discord,
             where you&apos;ll find an array of collaborative projects aimed at
             enhancing teamwork, learning opportunities, and hands-on
@@ -47,7 +45,7 @@ export default function AboutPage() {
             advice from peers, and actively participate in real-world coding
             projects.
           </p>
-          <p className={styles.opensourceDescription}>
+          <p className={`sectionParagraph ${styles.openSourceDescription}`}>
             On our Discord there are a selection of collaborative projects, each
             offering a unique chance to learn and contribute. With project
             codebases hosted on GitHub, you&apos;ll have easy access to the
