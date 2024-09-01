@@ -3,6 +3,7 @@ import styles from './cards.module.css';
 import Button from '../button/button';
 import Link from 'next/link';
 import Image from 'next/image';
+import { externalLinks } from '@/app/_constants';
 
 interface CardData {
   id: number;
@@ -10,17 +11,19 @@ interface CardData {
   content: string;
   buttonText: string;
   href: string;
+  isExternal: boolean;
   src: string;
   alt: string;
 }
 const cardData: CardData[] = [
   {
     id: 1,
-    title: 'Technical Workshops',
+    title: 'Meetups',
     content:
-      'Bringing the community together twice a month around technical topics that allow you to learn and grow your programming skills to be a stronger developer.',
+      "Mark your calendars as our meetups typically occur twice a month, offering regular opportunities to connect with like-minded individuals and expand your skill set. Don't forget to RSVP on our Meetup page, so we can ensure we have enough pizza to fuel our collective creativity and collaboration.",
     buttonText: 'Go To A Meetup',
-    href: 'https://www.meetup.com/dallas-software-developers-meetup/',
+    href: externalLinks.meetupUrl,
+    isExternal: true,
     src: '/assets/technicalWorkshops.png',
     alt: 'Technical Workshops',
   },
@@ -28,19 +31,21 @@ const cardData: CardData[] = [
     id: 2,
     title: 'Community Support',
     content:
-      'No matter your level, you have a community that has your back! Dallas Software Developers are focused on supporting our local community while also trying to support the developers who need our help and support!',
+      'Meet the community that has your back and learn how you can get involved with helping others. Whether you want to give a presentation, mentor fellow developers, or just network with others, there is a spot for all who share a passion for coding. ',
     buttonText: 'Community Impact',
-    href: '/',
+    href: '/community',
+    isExternal: false,
     src: '/assets/communitySupport.png',
     alt: 'Community Support',
   },
   {
     id: 3,
-    title: 'Cohorts & Hackathons',
+    title: 'Cohorts',
     content:
       'A 6-week program that is completely free to pair developers working on a project being guided by a developer working in the industry. The focus is to help give you something interesting to showcase in an interview and give you real-world skills!',
     buttonText: 'Join Our Cohort',
-    href: '/',
+    href: '/cohorts',
+    isExternal: false,
     src: '/assets/cohortsAndHackathons.png',
     alt: 'Cohorts & Hackathons',
   },
@@ -63,9 +68,20 @@ export default function CardsSection() {
           </div>
           <header className={styles.cardHeader}>{card.title}</header>
           <p className={styles.cardContent}>{card.content}</p>
-          <Link href={card.href} passHref className={styles.cardLink}>
-            <Button buttonText={card.buttonText} showIcon />
-          </Link>
+          {!card.isExternal && (
+            <Link href={card.href} passHref className={styles.cardLink}>
+              <Button buttonText={card.buttonText} showIcon />
+            </Link>
+          )}
+          {card.isExternal && (
+            <a
+              className={styles.cardLink}
+              href={externalLinks.meetupUrl}
+              target='_blank'
+            >
+              <Button buttonText={card.buttonText} showIcon />
+            </a>
+          )}
         </Card>
       ))}
     </div>

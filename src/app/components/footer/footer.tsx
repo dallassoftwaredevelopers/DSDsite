@@ -2,7 +2,7 @@
 import SocialLinks from '../socialSection/socialLinks';
 import Link from 'next/link';
 import styles from './footer.module.css';
-import { socialData } from './footerSocialdata';
+import { socialData, internalLinks } from '../../_constants';
 
 export default function Footer() {
   return (
@@ -24,12 +24,11 @@ export default function Footer() {
         </div>
         <div className={styles.rightFooterContainer}>
           <div className={styles.links}>
-            <Link href='/'>Admin Team</Link>
-            <Link href='/'>Learn About Our Cohorts</Link>
-            <Link href='/'>Previous Cohorts</Link>
-            <Link href='/'>Previous Speakers</Link>
-            <Link href='/'>Previous Meetups</Link>
-            <Link href='/'>DSD Community Advocates</Link>
+            <Link href={internalLinks.community.link}>Meet the Community</Link>
+            <Link href={internalLinks.cohorts.link}>
+              Learn About Our Cohorts
+            </Link>
+            <Link href={internalLinks.about.link}>About DSD</Link>
           </div>
         </div>
       </div>

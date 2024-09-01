@@ -4,48 +4,34 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './navbar.module.css';
+import { externalLinks, internalLinks } from '../../_constants';
 
-const constLabels = {
-  lblHome: 'Dallas Software Developers',
-  lblCommunity: 'The Community',
-  lblCohorts: 'Cohorts',
-  lblAbout: 'About',
-  lblMeetup: 'Meetups',
-};
+const constLinks = [
+  {
+    id: 0,
+    link: internalLinks.community.link,
+    desktopClassName: styles.links,
+    mobileClassName: styles.mobileLinks,
+    label: internalLinks.community.label,
+  },
+  {
+    id: 1,
+    link: internalLinks.cohorts.link,
+    desktopClassName: styles.links,
+    mobileClassName: styles.mobileLinks,
+    label: internalLinks.cohorts.label,
+  },
+  {
+    id: 2,
+    link: internalLinks.about.link,
+    desktopClassName: styles.links,
+    mobileClassName: styles.mobileLinks,
+    label: internalLinks.about.label,
+  },
+];
 
 export default function Navbar() {
   const [isNavVisible, setIsNavVisible] = useState(false);
-
-  const constLinks = [
-    {
-      id: 0,
-      link: '/community',
-      desktopClassName: styles.links,
-      mobileClassName: styles.mobileLinks,
-      label: constLabels.lblCommunity,
-    },
-    {
-      id: 1,
-      link: '/cohorts',
-      desktopClassName: styles.links,
-      mobileClassName: styles.mobileLinks,
-      label: constLabels.lblCohorts,
-    },
-    {
-      id: 2,
-      link: '/about',
-      desktopClassName: styles.links,
-      mobileClassName: styles.mobileLinks,
-      label: constLabels.lblAbout,
-    },
-    {
-      id: 3,
-      link: '/meetups',
-      desktopClassName: styles.meetupLink,
-      mobileClassName: styles.meetupLink,
-      label: constLabels.lblMeetup,
-    },
-  ];
 
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
@@ -74,7 +60,7 @@ export default function Navbar() {
                 width={45}
                 height={45}
               />
-              <span className={styles.home}>{constLabels.lblHome}</span>
+              <span className={styles.home}>{internalLinks.home.label}</span>
             </div>
           </Link>
         </div>
@@ -104,7 +90,16 @@ export default function Navbar() {
           className={styles.mobileNavBackground}
           style={{ display: isNavVisible ? 'block' : 'none' }}
         >
-          <div className={styles.mobileNav}>{navLinks(true)}</div>
+          <div className={styles.mobileNav}>
+            {navLinks(true)}
+            <a
+              className={styles.meetupLink}
+              href={externalLinks.meetupUrl}
+              target='_blank'
+            >
+              Meetup
+            </a>
+          </div>
         </div>
       </nav>
 
@@ -119,11 +114,20 @@ export default function Navbar() {
                   width={75}
                   height={75}
                 />
-                <span className={styles.home}>{constLabels.lblHome}</span>
+                <span className={styles.home}>{internalLinks.home.label}</span>
               </div>
             </Link>
           </div>
-          <div className={styles.navLinks}>{navLinks()}</div>
+          <div className={styles.navLinks}>
+            {navLinks()}
+            <a
+              className={styles.meetupLink}
+              href={externalLinks.meetupUrl}
+              target='_blank'
+            >
+              Meetup
+            </a>
+          </div>
         </div>
       </nav>
     </div>

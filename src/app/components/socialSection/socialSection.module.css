@@ -1,4 +1,5 @@
 .socialSection {
+  display: flex;
   background-color: hsl(var(--gray));
   flex-direction: row;
   gap: 0rem;
