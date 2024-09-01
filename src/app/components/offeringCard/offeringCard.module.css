@@ -21,8 +21,8 @@
 .textContainer {
   flex: 1;
   display: flex;
-
   margin-right: 1rem;
+  text-align: left;
 }
 
 .text {
@@ -56,9 +56,9 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 850px) {
   .offeringCard {
-    padding: 1rem;
+    padding: 2rem;
     height: auto;
     flex-direction: column;
     align-items: center;
@@ -76,7 +76,6 @@
 
   .button {
     width: 100%;
-    max-width: 15rem;
     font-size: 1rem;
   }
 }

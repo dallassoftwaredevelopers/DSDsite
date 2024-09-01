@@ -1,59 +1,10 @@
-.container {
-  background-color: #3c3db9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5rem 0;
-  flex-direction: column;
-  color: #fff;
-  width: 100%;
-}
-
-.titleSection {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.title {
-  color: #fff;
-  text-align: center;
-  font-family: Raleway;
-  font-size: 5rem;
-  font-weight: 700;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-.communityParagraph {
-  padding: 5rem 0;
-  font-size: 1.5rem;
-  font-family: Raleway;
-  text-align: center;
-  font-weight: 700;
-  max-width: 70%;
-  margin: auto;
-}
-
 .teamSection {
   max-width: 85%;
   margin: 5rem 0;
 }
 
-.subtitle {
-  color: #fff;
-  text-align: left;
-  font-family: Raleway;
-  font-size: 3.75rem;
-  font-style: normal;
-  font-weight: 800;
-  margin: 0;
-  text-transform: uppercase;
-}
-
 .teamParagraph {
   font-size: 1.5rem;
-  font-family: Raleway;
   font-weight: 700;
   margin: auto;
   padding: 1.25rem 0 0 1.25rem;
@@ -127,24 +78,6 @@
   .peopleList {
     justify-content: center;
     align-items: center;
-  }
-
-  .communityParagraph {
-    padding: 3rem 0;
-    font-size: 1.25rem;
-  }
-
-  .teamParagraph {
-    font-size: 1.25rem;
-  }
-
-  .title {
-    font-size: 3rem;
-  }
-
-  .subtitle {
-    font-size: 2.5rem;
-    text-align: center;
   }
 
   .yearButton {
