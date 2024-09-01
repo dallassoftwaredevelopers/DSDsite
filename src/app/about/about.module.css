@@ -3,21 +3,6 @@
   width: 100%;
 }
 
-.openSourceContainer {
-  border-top: 10rem solid hsl(var(--light-blue));
-}
-
-.openSourceTitle {
-  color: hsl(var(--blue));
-  margin: auto;
-}
-
-.openSourceDescription {
-  font-weight: 500;
-  white-space: pre-line;
-  text-align: left;
-}
-
 /******************
 *  Media Queries  *
 *******************/
@@ -26,16 +11,9 @@
   .aboutContainer {
     gap: 10px;
   }
-  .aboutTitle {
-    font-size: var(--text-lg);
-    width: 100%;
-  }
+
   .imageSection {
     height: 300px;
-  }
-  .opensourceTitle {
-    font-size: var(--text-lg);
-    font-weight: 700;
   }
 }
 @media (max-width: 575px) {
@@ -48,18 +26,9 @@
     height: 300px;
   }
 }
-@media (min-width: 768px) {
-  .aboutTitle {
-    text-align: center;
-  }
-}
 @media (min-width: 850px) {
   .imageSection {
     height: 600px;
-  }
-  .aboutDescription {
-    text-align: center;
-    white-space: pre-wrap;
   }
 }
 @media (min-width: 1200px) {
