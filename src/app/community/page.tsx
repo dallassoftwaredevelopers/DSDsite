@@ -11,28 +11,28 @@ const peopleData = [
     fullName: 'Danny Thompson',
     twitterUrl: '/',
     linkedinUrl: '/',
-    imageUrl: '/assets/person.svg',
+    imageUrl: '/assets/people/Danny_Thompson.png',
   },
   {
     id: 2,
     fullName: 'Dennis Garcia',
     twitterUrl: '/',
     linkedinUrl: '/',
-    imageUrl: '/assets/person.svg',
+    imageUrl: undefined,
   },
   {
     id: 3,
     fullName: 'Clint LastName',
     twitterUrl: '/',
     linkedinUrl: '/',
-    imageUrl: '/assets/person.svg',
+    imageUrl: undefined,
   },
   {
     id: 4,
     fullName: 'Erik LastName',
     twitterUrl: '/',
     linkedinUrl: '/',
-    imageUrl: '/assets/person.svg',
+    imageUrl: undefined,
   },
 ];
 
