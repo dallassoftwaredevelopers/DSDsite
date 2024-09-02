@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import styles from './community.module.css';
 import OfferingCard from '../components/offeringCard/offeringCard';
@@ -9,28 +10,28 @@ const peopleData = [
   {
     id: 1,
     fullName: 'Danny Thompson',
-    twitterUrl: null,
+    twitterUrl: undefined,
     linkedinUrl: 'https://www.linkedin.com/in/dthompsondev',
     imageUrl: '/assets/people/Danny_Thompson.png',
   },
   {
     id: 2,
     fullName: 'Dennis Garcia',
-    twitterUrl: null,
+    twitterUrl: undefined,
     linkedinUrl: 'https://www.linkedin.com/in/dgarcia-appdev/',
     imageUrl: '/assets/people/Dennis_Garcia.jpg',
   },
   {
     id: 3,
     fullName: 'Clint Myers',
-    twitterUrl: null,
+    twitterUrl: undefined,
     linkedinUrl: 'https://www.linkedin.com/in/clintmyers',
     imageUrl: '/assets/people/Clint_Myers.png',
   },
   {
     id: 4,
     fullName: 'Erik Andersen',
-    twitterUrl: null,
+    twitterUrl: undefined,
     linkedinUrl: 'https://www.linkedin.com/in/ebandersen',
     imageUrl: undefined,
   },
@@ -153,7 +154,7 @@ export default function CommunityPage() {
           buttonText='Get Involved'
           buttonLink='/'
         />
-      </Section> 
+      </Section>
       */}
       <Section classNames='bgBlue'>
         <div className={styles.teamSection}>

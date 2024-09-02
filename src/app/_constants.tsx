@@ -21,7 +21,7 @@ export const internalLinks = {
 
 export const externalLinks = {
   githubUrl: 'https://github.com/dallassoftwaredevelopers',
-  discordUrl: '/',
+  discordUrl: 'https://discord.gg/pWGt6JMV9t',
   linkedinUrl: 'https://www.linkedin.com/company/dallas-software-developers',
   meetupUrl: 'https://www.meetup.com/dallas-software-developers-meetup/',
 };

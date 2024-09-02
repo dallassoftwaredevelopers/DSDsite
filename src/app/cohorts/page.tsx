@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 import styles from './cohorts.module.css';
 import OfferingCard from '../components/offeringCard/offeringCard';
