@@ -16,7 +16,7 @@ export default function AboutPage() {
             src='/assets/communitySupport.png'
             alt='community photo of solving a problem'
             fill
-            objectFit='contain'
+            style={{ objectFit: 'contain' }}
           />
         </div>
         <p>

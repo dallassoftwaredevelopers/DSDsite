@@ -12,7 +12,7 @@ export default function BannerSection() {
           src='/assets/joinOurDiscord.png'
           alt='Banner'
           fill
-          objectFit='contain'
+          style={{ objectFit: 'contain' }}
         />
       </div>
       <div className={styles.bannerText}>

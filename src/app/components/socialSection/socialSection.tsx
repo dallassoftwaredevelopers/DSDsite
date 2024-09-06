@@ -33,7 +33,7 @@ export default function SocialSection() {
           src='/assets/communityImage_01.jpg'
           alt='community image of people talking'
           fill
-          objectFit='contain'
+          style={{ objectFit: 'contain' }}
         />
       </div>
     </section>
