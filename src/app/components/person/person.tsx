@@ -19,10 +19,12 @@ export default function Person({
       <div className={styles.personImageContainer}>
         <Image
           id={fullName}
+          placeholder='blur'
+          blurDataURL='/assets/person.svg'
           src={imageUrl ? imageUrl : '/assets/person.svg'}
           alt='image of person'
           fill
-          objectFit='contain'
+          style={{ objectFit: 'contain' }}
         />
       </div>
       <h3 className={styles.fullName}>
