@@ -18,7 +18,8 @@
     "next": "14.1.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.1.0"
+    "react-icons": "^5.1.0",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.0",
