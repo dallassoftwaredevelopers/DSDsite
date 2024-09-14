@@ -6,6 +6,16 @@ import { Databases } from 'appwrite';
 
 import { NextResponse } from 'next/server';
 
+interface Speaker {
+  $id: string;
+  DocumentID: number;
+  isAdmin: boolean;
+  fullName: string;
+  xUrl?: string;
+  linkedInUrl?: string;
+  imageUrl?: string;
+}
+
 const databases = new Databases(client);
 
 export async function GET() {
@@ -13,6 +23,16 @@ export async function GET() {
     process.env.APPWRITE_DATABASE_ID as string,
     'peoples'
   );
+  const peopleData = response.documents.map((doc) => {
+    return {
+      documentId: doc.$id,
+      isAdmin: doc.isAdmin,
+      fullName: doc.fullName,
+      xUrl: doc.xUrl,
+      linkedInUrl: doc.linkedInUrl,
+      imageUrl: doc.imageUrl,
+    };
+  });
 
-  return NextResponse.json(response);
+  return NextResponse.json(peopleData);
 }
