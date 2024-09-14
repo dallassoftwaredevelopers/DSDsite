@@ -13,6 +13,7 @@ export default function GroupPhotoSection() {
         alt='Meetup Group Shot image'
         width={1450}
         height={500}
+        sizes='100vw'
       />
     </div>
   );
