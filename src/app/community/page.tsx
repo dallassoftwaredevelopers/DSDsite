@@ -6,6 +6,7 @@ import Section from '../components/Section/section';
 import { useQuery } from '@tanstack/react-query';
 
 interface Speaker {
+  $id: string;
   DocumentID: number;
   isAdmin: boolean;
   fullName: string;
@@ -23,7 +24,6 @@ export default function CommunityPage() {
     },
   });
   const peopleData = (peopleDataResponse?.documents ?? []) as Speaker[];
-
   if (isLoading) {
     return <h1>Loading...</h1>;
   }
@@ -66,7 +66,7 @@ export default function CommunityPage() {
               .filter((p) => p.isAdmin)
               .map((person) => (
                 <Person
-                  key={person.fullName}
+                  key={person.$id}
                   fullName={person.fullName}
                   twitterUrl={person.xUrl}
                   linkedinUrl={person.linkedInUrl}
@@ -80,7 +80,7 @@ export default function CommunityPage() {
               .filter((p) => !p.isAdmin)
               .map((person) => (
                 <Person
-                  key={person.fullName}
+                  key={person.$id}
                   fullName={person.fullName}
                   twitterUrl={person.xUrl}
                   linkedinUrl={person.linkedInUrl}
