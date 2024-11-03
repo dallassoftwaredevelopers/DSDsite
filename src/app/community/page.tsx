@@ -53,40 +53,38 @@ export default function CommunityPage() {
       </Section>
       */}
       <Section classNames='bgBlue'>
-        <div className={styles.teamSection}>
-          <h2>Our Team</h2>
-          <p className={styles.teamParagraph}>
-            Meet the dedicated admin team volunteers who spend countless hours
-            to support, guide, and inspire every member of our community. Learn
-            more about the passionate individuals leading the way.
-          </p>
-          <div className={styles.peopleList}>
-            {peopleData
-              .filter((p) => p.isAdmin)
-              .map((person) => (
-                <Person
-                  key={person.documentId}
-                  fullName={person.fullName}
-                  twitterUrl={person.xUrl}
-                  linkedinUrl={person.linkedInUrl}
-                  imageUrl={person.imageUrl}
-                />
-              ))}
-          </div>
-          <h2 className={styles.subtitle}>Past Speakers</h2>
-          <div className={styles.peopleList}>
-            {peopleData
-              .filter((p) => !p.isAdmin)
-              .map((person) => (
-                <Person
-                  key={person.documentId}
-                  fullName={person.fullName}
-                  twitterUrl={person.xUrl}
-                  linkedinUrl={person.linkedInUrl}
-                  imageUrl={person.imageUrl}
-                />
-              ))}
-          </div>
+        <h2>Our Team</h2>
+        <p>
+          Meet the dedicated admin team volunteers who spend countless hours to
+          support, guide, and inspire every member of our community. Learn more
+          about the passionate individuals leading the way.
+        </p>
+        <div className={styles.peopleList}>
+          {peopleData
+            .filter((p) => p.isAdmin)
+            .map((person) => (
+              <Person
+                key={person.documentId}
+                fullName={person.fullName}
+                twitterUrl={person.xUrl}
+                linkedinUrl={person.linkedInUrl}
+                imageUrl={person.imageUrl}
+              />
+            ))}
+        </div>
+        <h2 className={styles.subtitle}>Past Speakers</h2>
+        <div className={styles.peopleList}>
+          {peopleData
+            .filter((p) => !p.isAdmin)
+            .map((person) => (
+              <Person
+                key={person.documentId}
+                fullName={person.fullName}
+                twitterUrl={person.xUrl}
+                linkedinUrl={person.linkedInUrl}
+                imageUrl={person.imageUrl}
+              />
+            ))}
         </div>
       </Section>
     </>

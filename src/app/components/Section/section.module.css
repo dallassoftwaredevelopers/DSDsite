@@ -49,6 +49,10 @@
     margin: 0.75rem 1rem;
     line-height: 2rem;
   }
+
+  .section p {
+    margin: 0;
+  }
 }
 /* Medium-sized devices (like tablets in portrait and landscape mode) */
 @media only screen and (min-width: 850px) and (max-width: 1050px) {
