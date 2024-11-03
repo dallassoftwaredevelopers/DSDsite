@@ -54,17 +54,17 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
 <table>
 <tr>
     <td align="center">
-        <a href="https://github.com/TheDThompsonDev">
-            <img src="https://avatars.githubusercontent.com/u/39189903?v=4" width="100;" alt="TheDThompsonDev"/>
-            <br />
-            <sub><b>Danny Thompson</b></sub>
-        </a>
-    </td>
-    <td align="center">
         <a href="https://github.com/GetBlackBoxSolutions">
             <img src="https://avatars.githubusercontent.com/u/110210295?v=4" width="100;" alt="GetBlackBoxSolutions"/>
             <br />
             <sub><b>Dennis Garcia</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/TheDThompsonDev">
+            <img src="https://avatars.githubusercontent.com/u/39189903?v=4" width="100;" alt="TheDThompsonDev"/>
+            <br />
+            <sub><b>Danny Thompson</b></sub>
         </a>
     </td>
     <td align="center">
@@ -147,8 +147,8 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/choir27">
-            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir27"/>
+        <a href="https://github.com/choir241">
+            <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir241"/>
             <br />
             <sub><b>Richard</b></sub>
         </a>
