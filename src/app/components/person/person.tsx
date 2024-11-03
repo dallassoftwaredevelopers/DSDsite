@@ -24,6 +24,7 @@ export default function Person({
           src={imageUrl ? imageUrl : '/assets/person.svg'}
           alt='image of person'
           fill
+          sizes='200px'
           style={{ objectFit: 'contain' }}
         />
       </div>
