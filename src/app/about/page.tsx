@@ -20,7 +20,7 @@ export default function AboutPage() {
           />
         </div>
         <p>
-          Explore what Dallas Software Developers as to offer and become an
+          Explore what Dallas Software Developers has to offer and become an
           integral part of our dynamic community. Whether you&apos;re passionate
           about coding, eager to contribute to open-source projects, or simply
           looking to connect with like-minded individuals, there&apos;s a place
