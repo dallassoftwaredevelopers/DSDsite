@@ -132,20 +132,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/JVPH">
-            <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
+        <a href="https://github.com/smclairecarden">
+            <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
             <br />
-            <sub><b>JVPH</b></sub>
+            <sub><b>Claire Carden</b></sub>
         </a>
     </td></tr>
 <tr>
-    <td align="center">
-        <a href="https://github.com/David-Ogden-III">
-            <img src="https://avatars.githubusercontent.com/u/71677972?v=4" width="100;" alt="David-Ogden-III"/>
-            <br />
-            <sub><b>David Ogden</b></sub>
-        </a>
-    </td>
     <td align="center">
         <a href="https://github.com/choir241">
             <img src="https://avatars.githubusercontent.com/u/66279068?v=4" width="100;" alt="choir241"/>
@@ -154,10 +147,17 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/smclairecarden">
-            <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
+        <a href="https://github.com/David-Ogden-III">
+            <img src="https://avatars.githubusercontent.com/u/71677972?v=4" width="100;" alt="David-Ogden-III"/>
             <br />
-            <sub><b>Claire Carden</b></sub>
+            <sub><b>David Ogden</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/JVPH">
+            <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
+            <br />
+            <sub><b>JVPH</b></sub>
         </a>
     </td>
     <td align="center">
@@ -175,10 +175,10 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/abhiramrp">
-            <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
+        <a href="https://github.com/PrashanthVamanan">
+            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
             <br />
-            <sub><b>Abhiram Rishi Prattipati</b></sub>
+            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
         </a>
     </td></tr>
 <tr>
@@ -190,10 +190,10 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/PrashanthVamanan">
-            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
+        <a href="https://github.com/abhiramrp">
+            <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
             <br />
-            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
+            <sub><b>Abhiram Rishi Prattipati</b></sub>
         </a>
     </td>
     <td align="center">
@@ -211,20 +211,27 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/KrownWealth">
+            <img src="https://avatars.githubusercontent.com/u/100444940?v=4" width="100;" alt="KrownWealth"/>
+            <br />
+            <sub><b>Adeola Abdulramon</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/NoelCov">
             <img src="https://avatars.githubusercontent.com/u/73734505?v=4" width="100;" alt="NoelCov"/>
             <br />
             <sub><b>Noel Covarrubias</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/coffee2theorems">
             <img src="https://avatars.githubusercontent.com/u/7843313?v=4" width="100;" alt="coffee2theorems"/>
             <br />
             <sub><b>Ryan Monaghan</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Brayheart">
             <img src="https://avatars.githubusercontent.com/u/30908449?v=4" width="100;" alt="Brayheart"/>
