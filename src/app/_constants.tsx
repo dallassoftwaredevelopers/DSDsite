@@ -29,28 +29,28 @@ export const externalLinks = {
 export const socialData = [
   {
     id: 'github',
-    icon: <FaGithub />,
+    icon: <FaGithub aria-label='Github'/>,
     imgSrc: '/assets/githubIcon.png',
     alt: 'Github social icon',
     link: externalLinks.githubUrl,
   },
   {
     id: 'discord',
-    icon: <FaDiscord />,
+    icon: <FaDiscord aria-label="Discord" />,
     imgSrc: '/assets/discordIcon.png',
     alt: 'Discord social icon',
     link: externalLinks.discordUrl,
   },
   {
     id: 'meetup',
-    icon: <FaMeetup />,
+    icon: <FaMeetup aria-label="Meetup" />,
     imgSrc: '/assets/meetupIcon.png',
     alt: 'Meetup social icon',
     link: externalLinks.meetupUrl,
   },
   {
     id: 'linkedin',
-    icon: <FaLinkedin />,
+    icon: <FaLinkedin aria-label="Linkedin" />,
     imgSrc: '/assets/linkedinIcon.png',
     alt: 'LinkedIn social icon',
     link: externalLinks.linkedinUrl,
