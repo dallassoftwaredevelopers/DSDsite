@@ -1,12 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import styles from './cohorts.module.css';
-import OfferingCard from '../components/offeringCard/offeringCard';
 import CohortCard from '../components/cohortCard/cohortCard';
 import Section from '../components/Section/section';
-
-// TODO: Add appropriate links
+import NotificationForm from './notificationForm';
+import { useQuery } from '@tanstack/react-query';
+import Button from '../components/button/button';
+import { useGlobalState } from '../hooks/useGlobalState/useGlobalState';
 
 interface Group {
   id: number;
@@ -16,12 +17,24 @@ interface Group {
   imageUrl?: string;
 }
 
+interface CohortStatus {
+  documentId: number;
+  statusType: string;
+  message: string;
+  active: boolean;
+}
+
 type CohortData = {
   [year: number]: Group[];
 };
 
-const cohortStatusMessage =
-  'Cohorts are currently closed and registration will be announced in Discord when the next one opens.';
+const defaultCohortStatusMessage = {
+  documentId: 0,
+  statusType: 'closed',
+  message:
+    'Cohorts are currently closed and registration will be announced in Discord when the next one opens.',
+  active: false,
+} as CohortStatus;
 
 // Data for the cohorts, add more elements to each year as needed
 const cohortData: CohortData = {
@@ -62,8 +75,30 @@ const cohortData: CohortData = {
     },
   ],
 };
+
 export default function CohortPage() {
   const [selectedYear, setSelectedYear] = React.useState<number>(2024);
+
+  const { actionLinks } = useGlobalState();
+
+  const { data: cohortStatusResponse, isLoading } = useQuery({
+    queryKey: ['cohortStatus'],
+    queryFn: async () => {
+      const response = await fetch('/api/cohort', { cache: 'no-store' });
+      return response.json();
+    },
+  });
+
+  const currentCohortStatusData = useMemo(() => {
+    if (!cohortStatusResponse) {
+      return defaultCohortStatusMessage;
+    }
+    return cohortStatusResponse ?? defaultCohortStatusMessage;
+  }, [cohortStatusResponse]);
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <>
@@ -78,16 +113,28 @@ export default function CohortPage() {
         </p>
       </Section>
 
-      {/* 
-      //TODO: Uncomment when we find a way to handle cohort registration and notifications
       <Section classNames='bgBlue'>
         <h2>Cohort Information</h2>
-        <OfferingCard
-          text={cohortStatusMessage}
-          buttonText='Get Notified'
-          buttonLink='/'
-        />
-      </Section> */}
+        <p>
+          {currentCohortStatusData.message}
+          {currentCohortStatusData.statusType === 'open' && (
+            <Button
+              buttonText='Apply Now'
+              onClick={() => {
+                if (!actionLinks) return;
+
+                const cohortSignupLink = actionLinks.find(
+                  (x: any) => x.linkName === 'cohortSignup'
+                )?.link;
+                window.open(cohortSignupLink, '_blank');
+              }}
+            />
+          )}
+        </p>
+        {currentCohortStatusData.statusType === 'closed' && (
+          <NotificationForm />
+        )}
+      </Section>
 
       <Section classNames='bgBlue'>
         <h2>Previous Cohorts</h2>
