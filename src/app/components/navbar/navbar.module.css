@@ -78,7 +78,7 @@
   color: hsl(var(--dark-blue));
 
   &:after {
-  background-color: hsla(240, 98%, 60%, 1);
+    background-color: hsla(240, 98%, 60%, 1);
   }
 }
 
