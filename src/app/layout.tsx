@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from './components/navbar/navbar';
 import Footer from '@/app/components/footer/footer';
 import ReactQueryProvider from './react-query-provider';
+import { GlobalStateProvider } from './hooks/useGlobalState/useGlobalState';
 
 export const metadata: Metadata = {
   title: 'Dallas Software Developers',
@@ -22,9 +23,11 @@ export default function RootLayout({
       </head>
       <body>
         <ReactQueryProvider>
-          <Navbar />
-          <main className='innerContainer'>{children}</main>
-          <Footer />
+          <GlobalStateProvider>
+            <Navbar />
+            <main className='innerContainer'>{children}</main>
+            <Footer />
+          </GlobalStateProvider>
         </ReactQueryProvider>
       </body>
     </html>
