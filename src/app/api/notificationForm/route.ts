@@ -68,21 +68,17 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  // await databases.createDocument(
-  //   process.env.APPWRITE_DATABASE_ID as string,
-  //   'cohortWaitList',
-  //   sdk.ID.unique(),
-  //   {
-  //     name: formData.name,
-  //     email: formData.email,
-  //     techStack: formData.techStack,
-  //     applicationLayer: formData.applicationLayer,
-  //     experience: formData.experience,
-  //     notified: false,
-  //     createdOn: new Date().toLocaleDateString(),
-  //     updatedOn: new Date().toLocaleDateString(),
-  //   }
-  // );
+  await databases.createDocument(
+    process.env.APPWRITE_DATABASE_ID as string,
+    'cohortWaitList',
+    sdk.ID.unique(),
+    {
+      name: formData.name,
+      email: formData.email,
+      notified: false,
+      createdOn: new Date().toLocaleDateString(),
+    }
+  );
 
   return new Response('Success', { status: 200 });
 }
