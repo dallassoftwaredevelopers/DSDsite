@@ -57,6 +57,7 @@
   font-weight: 900;
   padding-bottom: 5px;
   padding-right: 10px;
+  transition: all ease-in 0.3s;
 }
 
 /* This is the underline */
@@ -71,6 +72,14 @@
   left: 0%;
   bottom: 0;
   top: 100%;
+}
+
+.links:hover {
+  color: hsl(var(--dark-blue));
+
+  &:after {
+  background-color: hsla(240, 98%, 60%, 1);
+  }
 }
 
 .navLinks > .meetupLink {
