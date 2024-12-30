@@ -183,6 +183,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
     </td></tr>
 <tr>
     <td align="center">
+        <a href="https://github.com/amelia2802">
+            <img src="https://avatars.githubusercontent.com/u/49182604?v=4" width="100;" alt="amelia2802"/>
+            <br />
+            <sub><b>Amelia Dutta</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/Dthompsondevtestaccount">
             <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
             <br />
@@ -216,15 +223,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Fadi Haddad</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/KrownWealth">
             <img src="https://avatars.githubusercontent.com/u/100444940?v=4" width="100;" alt="KrownWealth"/>
             <br />
             <sub><b>Adeola Abdulramon</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/NoelCov">
             <img src="https://avatars.githubusercontent.com/u/73734505?v=4" width="100;" alt="NoelCov"/>
