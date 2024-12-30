@@ -24,11 +24,10 @@ export default function Footer() {
         </div>
         <div className={styles.rightFooterContainer}>
           <div className={styles.links}>
-            <Link href={internalLinks.community.link}>Meet the Community</Link>
-            <Link href={internalLinks.cohorts.link}>
-              Learn About Our Cohorts
-            </Link>
-            <Link href={internalLinks.about.link}>About DSD</Link>
+            <Link href={internalLinks.home.link}>Home</Link>
+            <Link href={internalLinks.community.link}>Community</Link>
+            <Link href={internalLinks.cohorts.link}>Cohorts</Link>
+            <Link href={internalLinks.about.link}>About</Link>
           </div>
         </div>
       </div>
