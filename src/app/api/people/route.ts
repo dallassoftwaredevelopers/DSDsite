@@ -2,29 +2,30 @@ import 'server-only';
 export const dynamic = 'force-dynamic';
 
 import client from '../../../../lib/appwrite_client';
-import { Databases } from 'appwrite';
+import * as sdk from 'node-appwrite';
 
 import { NextResponse } from 'next/server';
 import { faker } from '@faker-js/faker';
 
 interface Speaker {
-  $id: string;
-  DocumentID: number;
+  documentId: string;
   isAdmin: boolean;
   fullName: string;
-  xUrl?: string;
+  xUrl?: string | null;
   linkedInUrl?: string;
   imageUrl?: string;
 }
 
-const databases = new Databases(client);
-
 export async function GET() {
   // In development, we use faker to generate random data
-  if (process.env.NODE_ENV === 'development') {
+  if (
+    process.env.NODE_ENV === 'development' &&
+    process.env.NEXT_PUBLIC_APPWRITE_HASKEY === 'false'
+  ) {
     return NextResponse.json(generateFakeData());
   }
 
+  const databases = new sdk.Databases(client);
   const response = await databases.listDocuments(
     process.env.APPWRITE_DATABASE_ID as string,
     'peoples'
@@ -38,17 +39,17 @@ export async function GET() {
       linkedInUrl: doc.linkedInUrl,
       imageUrl: doc.imageUrl,
     };
-  });
+  }) as Speaker[];
 
   return NextResponse.json(peopleData);
 }
 
-function generateFakeData() {
-  const fakeData = [];
+function generateFakeData(): Speaker[] {
+  const fakeData = [] as Speaker[];
   for (let i = 5; i < 50; i++) {
     const fakeFullName = faker.person.fullName();
     fakeData.push({
-      documentId: i,
+      documentId: i.toString(),
       isAdmin: false,
       fullName: fakeFullName,
       xUrl: 'https://example.com',
