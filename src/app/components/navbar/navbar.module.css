@@ -89,6 +89,15 @@
   color: hsl(var(--white));
   font-size: 25px;
   text-decoration: none;
+  transition: all ease-in 0.3s;
+
+  &:hover {
+    background-color: hsl(var(--dark-blue));
+  }
+
+  &:active {
+    background-color: hsl(var(--light-blue));
+  }
 }
 
 .hamburger,
@@ -236,5 +245,13 @@
     color: hsl(var(--blue));
     text-decoration: none;
     line-height: 14.09px;
+
+    &:hover {
+      color: hsl(var(--light-blue));
+    }
+
+    &:active {
+      color: hsl(var(--dark-blue));
+    }
   }
 }
