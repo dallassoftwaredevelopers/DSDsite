@@ -57,6 +57,7 @@
   font-weight: 900;
   padding-bottom: 5px;
   padding-right: 10px;
+  transition: all ease-in 0.3s;
 }
 
 /* This is the underline */
@@ -73,6 +74,14 @@
   top: 100%;
 }
 
+.links:hover {
+  color: hsl(var(--dark-blue));
+
+  &:after {
+    background-color: hsla(240, 98%, 60%, 1);
+  }
+}
+
 .navLinks > .meetupLink {
   border-radius: 50px;
   padding: 10px 30px;
@@ -80,6 +89,15 @@
   color: hsl(var(--white));
   font-size: 25px;
   text-decoration: none;
+  transition: all ease-in 0.3s;
+
+  &:hover {
+    background-color: hsl(var(--dark-blue));
+  }
+
+  &:active {
+    background-color: hsl(var(--light-blue));
+  }
 }
 
 .hamburger,
@@ -227,5 +245,13 @@
     color: hsl(var(--blue));
     text-decoration: none;
     line-height: 14.09px;
+
+    &:hover {
+      color: hsl(var(--light-blue));
+    }
+
+    &:active {
+      color: hsl(var(--dark-blue));
+    }
   }
 }
