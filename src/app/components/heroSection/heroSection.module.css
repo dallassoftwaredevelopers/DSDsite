@@ -113,12 +113,12 @@
   .videoPlaceholder {
     padding: 1.4rem 0.8rem;
     max-width: 90%;
-  }  
+  }
 }
 
 @media (max-width: 480px) {
   .videoPlaceholder {
     width: 100%;
     padding: 1rem 0.7rem;
-  }  
+  }
 }
