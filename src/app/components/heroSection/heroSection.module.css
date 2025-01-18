@@ -30,9 +30,9 @@
   text-align: center;
   font-weight: 700;
   font-size: 2rem;
-  width: 17rem;
-  height: 10rem;
-  padding: 2rem;
+  width: 33rem;
+  height: 19rem;
+  padding: 0.25rem;
   background-color: #333;
   color: white;
   display: flex;
@@ -40,8 +40,8 @@
   justify-content: center;
   border-radius: 10px;
   z-index: 2;
-  margin-right: 1rem;
-  max-width: 400px; /* Ensure the videoPlaceholder has a max width */
+  margin-left: 5rem;
+  max-width: 600px; /* Ensure the videoPlaceholder has a max width*/
 }
 
 .intro {
@@ -70,6 +70,20 @@
   z-index: 2;
   margin-right: 1rem;
 } */
+
+@media (max-width: 1350px) {
+  .videoPlaceholder {
+    width: 39vw;
+    height: auto;
+  }
+}
+
+@media (max-width: 1200px) {
+  .videoPlaceholder {
+    width: 33vw;
+    height: auto;
+  }
+}
 
 @media (max-width: 850px) {
   .hero {
@@ -101,9 +115,17 @@
   .videoPlaceholder {
     width: 100%;
     max-width: none;
-    margin-right: 0;
+    margin-right: 5rem;
     margin-top: 1rem;
     max-width: 300px;
     height: auto;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .videoPlaceholder {
+    width: 60%;
+    padding: 1rem 0.7rem;
   }
 }

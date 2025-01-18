@@ -11,7 +11,7 @@ export default function HeroSection() {
       </div>
       <div className={styles.purpleShape}>
         <div className={styles.videoPlaceholder}>
-          <video width='320' loop autoPlay muted>
+          <video width='100%' loop autoPlay muted>
             <source src='/assets/MeetupIntro.mp4' type='video/mp4' />
             Your browser does not support the video tag.
           </video>
