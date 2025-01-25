@@ -1,4 +1,5 @@
 'use client';
+import Spinner from '../../components/spinner/spinner';
 
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -42,7 +43,7 @@ export const GlobalStateProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [actionLinksResponse]);
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <Spinner />;
 
   return (
     <GlobalStateContext.Provider value={state}>

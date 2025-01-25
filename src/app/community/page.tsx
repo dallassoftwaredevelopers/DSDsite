@@ -4,6 +4,7 @@ import styles from './community.module.css';
 import Person from '../components/person/person';
 import Section from '../components/Section/section';
 import { useQuery } from '@tanstack/react-query';
+import Spinner from '../components/spinner/spinner';
 
 interface Speaker {
   documentId: number;
@@ -24,7 +25,7 @@ export default function CommunityPage() {
   });
   const peopleData = (peopleDataResponse ?? []) as Speaker[];
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Spinner />;
   }
 
   return (
