@@ -8,6 +8,7 @@ import NotificationForm from './notificationForm';
 import { useQuery } from '@tanstack/react-query';
 import Button from '../components/button/button';
 import { useGlobalState } from '../hooks/useGlobalState/useGlobalState';
+import Spinner from '../components/spinner/spinner';
 
 interface Group {
   id: number;
@@ -97,7 +98,7 @@ export default function CohortPage() {
   }, [cohortStatusResponse]);
 
   if (isLoading) {
-    return <h1>Loading...</h1>;
+    return <Spinner />;
   }
 
   return (
