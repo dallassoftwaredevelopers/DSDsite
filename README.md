@@ -111,10 +111,10 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/Nur4ck">
-            <img src="https://avatars.githubusercontent.com/u/144545225?v=4" width="100;" alt="Nur4ck"/>
+        <a href="https://github.com/SamuelHe2024">
+            <img src="https://avatars.githubusercontent.com/u/39107451?v=4" width="100;" alt="SamuelHe2024"/>
             <br />
-            <sub><b>Null</b></sub>
+            <sub><b>SamuelHe</b></sub>
         </a>
     </td>
     <td align="center">
@@ -125,25 +125,25 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/SamuelHe2024">
-            <img src="https://avatars.githubusercontent.com/u/39107451?v=4" width="100;" alt="SamuelHe2024"/>
+        <a href="https://github.com/Nur4ck">
+            <img src="https://avatars.githubusercontent.com/u/144545225?v=4" width="100;" alt="Nur4ck"/>
             <br />
-            <sub><b>SamuelHe</b></sub>
+            <sub><b>Null</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/JVPH">
-            <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
+        <a href="https://github.com/Eddie992">
+            <img src="https://avatars.githubusercontent.com/u/29631565?v=4" width="100;" alt="Eddie992"/>
             <br />
-            <sub><b>JVPH</b></sub>
+            <sub><b>Edward Kataika</b></sub>
         </a>
     </td></tr>
 <tr>
     <td align="center">
-        <a href="https://github.com/David-Ogden-III">
-            <img src="https://avatars.githubusercontent.com/u/71677972?v=4" width="100;" alt="David-Ogden-III"/>
+        <a href="https://github.com/smclairecarden">
+            <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
             <br />
-            <sub><b>David Ogden</b></sub>
+            <sub><b>Claire Carden</b></sub>
         </a>
     </td>
     <td align="center">
@@ -154,24 +154,17 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/smclairecarden">
-            <img src="https://avatars.githubusercontent.com/u/96350691?v=4" width="100;" alt="smclairecarden"/>
+        <a href="https://github.com/David-Ogden-III">
+            <img src="https://avatars.githubusercontent.com/u/71677972?v=4" width="100;" alt="David-Ogden-III"/>
             <br />
-            <sub><b>Claire Carden</b></sub>
+            <sub><b>David Ogden</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/elderyouth">
-            <img src="https://avatars.githubusercontent.com/u/13540588?v=4" width="100;" alt="elderyouth"/>
+        <a href="https://github.com/JVPH">
+            <img src="https://avatars.githubusercontent.com/u/83098530?v=4" width="100;" alt="JVPH"/>
             <br />
-            <sub><b>Elder</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/Eddie992">
-            <img src="https://avatars.githubusercontent.com/u/29631565?v=4" width="100;" alt="Eddie992"/>
-            <br />
-            <sub><b>Edward Kataika</b></sub>
+            <sub><b>JVPH</b></sub>
         </a>
     </td>
     <td align="center">
@@ -179,6 +172,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <img src="https://avatars.githubusercontent.com/u/49492414?v=4" width="100;" alt="tk1ng"/>
             <br />
             <sub><b>Taryn King</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/elderyouth">
+            <img src="https://avatars.githubusercontent.com/u/13540588?v=4" width="100;" alt="elderyouth"/>
+            <br />
+            <sub><b>Elder</b></sub>
         </a>
     </td></tr>
 <tr>
