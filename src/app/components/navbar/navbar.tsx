@@ -42,6 +42,7 @@ export default function Navbar() {
       <Link href={link.link} key={link.id}>
         <div
           className={isMobile ? link.mobileClassName : link.desktopClassName}
+          onClick={toggleNav}
         >
           {link.label}
         </div>
@@ -51,44 +52,49 @@ export default function Navbar() {
   return (
     <div className={styles.nav}>
       <nav className={styles.mobileNavBar}>
-        <div className={styles.mobileLogo}>
-          <Link href='/'>
-            <div className={styles.homeLink}>
-              <Image
-                src='/assets/dsd-circle-logo.png'
-                alt='Logo'
-                width={45}
-                height={45}
-              />
-              <span className={styles.home}>{internalLinks.home.label}</span>
+        <div className={styles.mobileLogoIconContainer}>
+          <div className={styles.mobileLogo}>
+            <Link href='/'>
+              <div
+                className={styles.homeLink}
+                onClick={() => setIsNavVisible(false)}
+              >
+                <Image
+                  src='/assets/dsd-circle-logo.png'
+                  alt='Logo'
+                  width={45}
+                  height={45}
+                />
+                <span className={styles.home}>{internalLinks.home.label}</span>
+              </div>
+            </Link>
+          </div>
+          {isNavVisible ? (
+            <div className={styles.crossContainer}>
+              <div
+                onClick={toggleNav}
+                className={styles.cross}
+                data-testid='navbar-collapse'
+              >
+                <div className={styles.line}></div>
+                <div className={styles.line}></div>
+              </div>
             </div>
-          </Link>
-        </div>
-        {isNavVisible ? (
-          <div className={styles.crossContainer}>
+          ) : (
             <div
+              className={styles.hamburger}
               onClick={toggleNav}
-              className={styles.cross}
-              data-testid='navbar-collapse'
+              data-testid='navbar-expand'
             >
               <div className={styles.line}></div>
               <div className={styles.line}></div>
+              <div className={styles.line}></div>
             </div>
-          </div>
-        ) : (
-          <div
-            className={styles.hamburger}
-            onClick={toggleNav}
-            data-testid='navbar-expand'
-          >
-            <div className={styles.line}></div>
-            <div className={styles.line}></div>
-            <div className={styles.line}></div>
-          </div>
-        )}
+          )}
+        </div>
         <div
           className={styles.mobileNavBackground}
-          style={{ display: isNavVisible ? 'block' : 'none' }}
+          style={{ display: isNavVisible ? 'flex' : 'none' }}
         >
           <div className={styles.mobileNav}>
             {navLinks(true)}
