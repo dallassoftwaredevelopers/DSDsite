@@ -198,8 +198,9 @@
 
   .mobileNav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     text-decoration: none;
+    gap: 16px;
   }
 
   .navLinks {
