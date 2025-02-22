@@ -107,7 +107,7 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         <a href="https://github.com/Soumava-221B">
             <img src="https://avatars.githubusercontent.com/u/77767745?v=4" width="100;" alt="Soumava-221B"/>
             <br />
-            <sub><b>Null</b></sub>
+            <sub><b>Soumava Das</b></sub>
         </a>
     </td>
     <td align="center">
