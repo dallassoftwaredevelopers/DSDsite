@@ -89,25 +89,25 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/Soumava-221B">
+            <img src="https://avatars.githubusercontent.com/u/77767745?v=4" width="100;" alt="Soumava-221B"/>
+            <br />
+            <sub><b>Soumava Das</b></sub>
+        </a>
+    </td></tr>
+<tr>
+    <td align="center">
         <a href="https://github.com/Ayomide4">
             <img src="https://avatars.githubusercontent.com/u/59846289?v=4" width="100;" alt="Ayomide4"/>
             <br />
             <sub><b>Ayomide Omotosho</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/UsmanCanCode">
             <img src="https://avatars.githubusercontent.com/u/86849038?v=4" width="100;" alt="UsmanCanCode"/>
             <br />
             <sub><b>Usman Raja</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/Soumava-221B">
-            <img src="https://avatars.githubusercontent.com/u/77767745?v=4" width="100;" alt="Soumava-221B"/>
-            <br />
-            <sub><b>Soumava Das</b></sub>
         </a>
     </td>
     <td align="center">
