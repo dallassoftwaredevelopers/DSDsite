@@ -240,6 +240,13 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
+        <a href="https://github.com/bluethreadmade">
+            <img src="https://avatars.githubusercontent.com/u/169301676?v=4" width="100;" alt="bluethreadmade"/>
+            <br />
+            <sub><b>Megan McNeill</b></sub>
+        </a>
+    </td>
+    <td align="center">
         <a href="https://github.com/NoelCov">
             <img src="https://avatars.githubusercontent.com/u/73734505?v=4" width="100;" alt="NoelCov"/>
             <br />
