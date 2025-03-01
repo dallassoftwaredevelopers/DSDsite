@@ -19,14 +19,11 @@ export default function CommunityPage() {
   const { data: peopleDataResponse, isLoading } = useQuery({
     queryKey: ['people'],
     queryFn: async () => {
-      const response = await fetch('/api/people', { cache: 'no-store' });
+      const response = await fetch('/api/peopl', { cache: 'no-store' });
       return response.json();
     },
   });
   const peopleData = (peopleDataResponse ?? []) as Speaker[];
-  if (isLoading) {
-    return <Spinner />;
-  }
 
   return (
     <>
@@ -60,33 +57,43 @@ export default function CommunityPage() {
           support, guide, and inspire every member of our community. Learn more
           about the passionate individuals leading the way.
         </p>
-        <div className={styles.peopleList}>
-          {peopleData
-            .filter((p) => p.isAdmin)
-            .map((person) => (
-              <Person
-                key={person.documentId}
-                fullName={person.fullName}
-                twitterUrl={person.xUrl}
-                linkedinUrl={person.linkedInUrl}
-                imageUrl={person.imageUrl}
-              />
-            ))}
-        </div>
+        {isLoading && <Spinner />}
+        {!isLoading && (
+          <>
+            <div className={styles.peopleList}>
+              {peopleData
+                .filter((p) => p.isAdmin)
+                .map((person) => (
+                  <Person
+                    key={person.documentId}
+                    fullName={person.fullName}
+                    twitterUrl={person.xUrl}
+                    linkedinUrl={person.linkedInUrl}
+                    imageUrl={person.imageUrl}
+                  />
+                ))}
+            </div>
+          </>
+        )}
         <h2 className={styles.subtitle}>Past Speakers</h2>
-        <div className={styles.peopleList}>
-          {peopleData
-            .filter((p) => !p.isAdmin)
-            .map((person) => (
-              <Person
-                key={person.documentId}
-                fullName={person.fullName}
-                twitterUrl={person.xUrl}
-                linkedinUrl={person.linkedInUrl}
-                imageUrl={person.imageUrl}
-              />
-            ))}
-        </div>
+        {isLoading && <Spinner />}
+        {!isLoading && (
+          <>
+            <div className={styles.peopleList}>
+              {peopleData
+                .filter((p) => !p.isAdmin)
+                .map((person) => (
+                  <Person
+                    key={person.documentId}
+                    fullName={person.fullName}
+                    twitterUrl={person.xUrl}
+                    linkedinUrl={person.linkedInUrl}
+                    imageUrl={person.imageUrl}
+                  />
+                ))}
+            </div>
+          </>
+        )}
       </Section>
     </>
   );
