@@ -19,7 +19,7 @@ export default function CommunityPage() {
   const { data: peopleDataResponse, isLoading } = useQuery({
     queryKey: ['people'],
     queryFn: async () => {
-      const response = await fetch('/api/peopl', { cache: 'no-store' });
+      const response = await fetch('/api/people', { cache: 'no-store' });
       return response.json();
     },
   });
