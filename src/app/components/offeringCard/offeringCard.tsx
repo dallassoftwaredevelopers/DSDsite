@@ -4,20 +4,20 @@ import styles from './offeringCard.module.css';
 interface OfferingCardProps {
   text: string;
   buttonText: string;
-  buttonLink: string;
+  onClick: () => void;
 }
 
 export default function OfferingCard({
   text,
   buttonText,
-  buttonLink,
+  onClick,
 }: OfferingCardProps) {
   return (
     <div className={styles.offeringCard}>
       <div className={styles.textContainer}>
         {text && <p className={styles.text}>{text}</p>}
       </div>
-      <Button buttonText={buttonText} />
+      <Button buttonText={buttonText} onClick={onClick} />
     </div>
   );
 }

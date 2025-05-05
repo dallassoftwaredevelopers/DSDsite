@@ -4,8 +4,7 @@ import client from '../../../../lib/appwrite_client';
 
 export const dynamic = 'force-dynamic';
 
-import { NextResponse, type NextRequest } from 'next/server';
-import { Query } from 'appwrite';
+import { type NextRequest } from 'next/server';
 import { getRecaptchaSiteUrl } from '@/app/_constants';
 
 type RecaptchaData = {
@@ -17,6 +16,15 @@ export async function POST(request: NextRequest) {
     return new Response('Method not allowed', { status: 405 });
 
   const formData = await request.json();
+
+  if (
+    !formData.fullName ||
+    !formData.email ||
+    !formData.topic ||
+    !formData.briefDescription
+  ) {
+    return new Response(null, { status: 400, statusText: 'Missing fields' });
+  }
 
   // In development, we use faker to generate random images
   if (
@@ -31,10 +39,6 @@ export async function POST(request: NextRequest) {
       status: 400,
       statusText: 'Invalid Token',
     });
-  }
-
-  if (!formData.name || !formData.email) {
-    return NextResponse.json({ message: 'Missing field' }, { status: 400 });
   }
 
   // Verify the reCAPTCHA token
@@ -53,28 +57,15 @@ export async function POST(request: NextRequest) {
 
   const databases = new sdk.Databases(client);
 
-  const data = await databases.listDocuments(
-    process.env.APPWRITE_DATABASE_ID as string,
-    'cohortWaitList',
-    [Query.equal('email', [formData.email])]
-  );
-
-  if (data.documents.length > 0) {
-    return NextResponse.json(
-      { message: 'Email already exists' },
-      { status: 400 }
-    );
-  }
-
   await databases.createDocument(
     process.env.APPWRITE_DATABASE_ID as string,
-    'cohortWaitList',
+    'speakerRequestForm',
     sdk.ID.unique(),
     {
-      name: formData.name,
+      fullName: formData.fullName,
       email: formData.email,
-      notified: false,
-      createdOn: new Date().toLocaleDateString(),
+      topic: formData.topic,
+      briefDescription: formData.briefDescription,
     }
   );
 

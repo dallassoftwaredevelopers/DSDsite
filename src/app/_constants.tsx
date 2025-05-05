@@ -1,5 +1,8 @@
 import { FaDiscord, FaGithub, FaLinkedin, FaMeetup } from 'react-icons/fa';
 
+export const getRecaptchaSiteUrl = (token: string) =>
+  `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${token}`;
+
 export const internalLinks = {
   home: {
     link: '/',

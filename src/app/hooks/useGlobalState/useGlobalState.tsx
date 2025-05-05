@@ -1,4 +1,5 @@
 'use client';
+import Toast from '@/app/components/toast/toast';
 import Spinner from '../../components/spinner/spinner';
 
 import { useQuery } from '@tanstack/react-query';
@@ -16,18 +17,30 @@ type ActionLinks = {
   active: boolean;
 };
 
-class GlobalState {
+type ToastState = {
+  message: string;
+  type: 'success' | 'error';
+};
+
+type GlobalState = {
   actionLinks: Array<ActionLinks> | null;
+  toast: ToastState | null;
+  setToast: (toast: ToastState | null) => void;
+  clearToast: () => void;
+};
 
-  constructor(actionLinks: Array<ActionLinks> | null) {
-    this.actionLinks = actionLinks;
-  }
-}
-
-const GlobalStateContext = createContext(new GlobalState(null));
+const GlobalStateContext = createContext<GlobalState>({
+  actionLinks: null,
+  toast: null,
+  setToast: () => {},
+  clearToast: () => {},
+});
 
 export const GlobalStateProvider = ({ children }: { children: ReactNode }) => {
-  const [state, setState] = useState(() => new GlobalState(null));
+  const [actionLinks, setActionLinks] = useState<Array<ActionLinks> | null>(
+    null
+  );
+  const [toast, setToast] = useState<ToastState | null>(null);
 
   const { data: actionLinksResponse, isLoading } = useQuery({
     queryKey: ['actionLinks'],
@@ -37,17 +50,31 @@ export const GlobalStateProvider = ({ children }: { children: ReactNode }) => {
     },
   });
 
+  const clearToast = () => {
+    setToast(null);
+  };
+
   useEffect(() => {
     if (actionLinksResponse) {
-      setState(new GlobalState(actionLinksResponse));
+      setActionLinks(actionLinksResponse);
     }
   }, [actionLinksResponse]);
 
   if (isLoading) return <Spinner />;
 
   return (
-    <GlobalStateContext.Provider value={state}>
+    <GlobalStateContext.Provider
+      value={{ actionLinks, toast, setToast, clearToast }}
+    >
       {children}
+
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => clearToast()}
+        />
+      )}
     </GlobalStateContext.Provider>
   );
 };

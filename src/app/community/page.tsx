@@ -1,28 +1,29 @@
 'use client';
 
-import styles from './community.module.css';
-import Person from '../components/person/person';
 import Section from '../components/Section/section';
 import { useQuery } from '@tanstack/react-query';
 import Spinner from '../components/spinner/spinner';
-
-interface Speaker {
-  documentId: number;
-  isAdmin: boolean;
-  fullName: string;
-  xUrl?: string;
-  linkedInUrl?: string;
-  imageUrl?: string;
-}
+import OfferingCard from '../components/offeringCard/offeringCard';
+import Modal from '../components/modal/modal';
+import { useState } from 'react';
+import SpeakerForm from '../components/speakerForm/speakerForm';
+import PeopleList from '../components/peopleList/peopleList';
+import styles from './community.module.css';
+import { Speaker } from '@/types/globalTypes';
 
 export default function CommunityPage() {
+  const [modalOpen, setModalOpen] = useState(false);
+
   const { data: peopleDataResponse, isLoading } = useQuery({
     queryKey: ['people'],
     queryFn: async () => {
       const response = await fetch('/api/people', { cache: 'no-store' });
       return response.json();
     },
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
   });
+
   const peopleData = (peopleDataResponse ?? []) as Speaker[];
 
   return (
@@ -39,17 +40,16 @@ export default function CommunityPage() {
           propelling us toward new heights of achievement and impact.
         </p>
       </Section>
-      {/* 
-      //TODO: Add this section back in when we have a way to get involved
+
       <Section classNames='bgBlue'>
         <h2>Get Involved</h2>
         <OfferingCard
           text='Want to become a speaker at an event?'
           buttonText='Get Involved'
-          buttonLink='/'
+          onClick={() => setModalOpen(true)}
         />
       </Section>
-      */}
+
       <Section classNames='bgBlue'>
         <h2>Our Team</h2>
         <p>
@@ -58,43 +58,20 @@ export default function CommunityPage() {
           about the passionate individuals leading the way.
         </p>
         {isLoading && <Spinner />}
-        {!isLoading && (
-          <>
-            <div className={styles.peopleList}>
-              {peopleData
-                .filter((p) => p.isAdmin)
-                .map((person) => (
-                  <Person
-                    key={person.documentId}
-                    fullName={person.fullName}
-                    twitterUrl={person.xUrl}
-                    linkedinUrl={person.linkedInUrl}
-                    imageUrl={person.imageUrl}
-                  />
-                ))}
-            </div>
-          </>
-        )}
+        {!isLoading && <PeopleList peopleData={peopleData} isAdmin />}
         <h2 className={styles.subtitle}>Past Speakers</h2>
         {isLoading && <Spinner />}
-        {!isLoading && (
-          <>
-            <div className={styles.peopleList}>
-              {peopleData
-                .filter((p) => !p.isAdmin)
-                .map((person) => (
-                  <Person
-                    key={person.documentId}
-                    fullName={person.fullName}
-                    twitterUrl={person.xUrl}
-                    linkedinUrl={person.linkedInUrl}
-                    imageUrl={person.imageUrl}
-                  />
-                ))}
-            </div>
-          </>
-        )}
+        {!isLoading && <PeopleList peopleData={peopleData} />}
       </Section>
+
+      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+        <SpeakerForm
+          onSubmit={() => {
+            setModalOpen(false);
+          }}
+          onCancel={() => setModalOpen(false)}
+        />
+      </Modal>
     </>
   );
 }

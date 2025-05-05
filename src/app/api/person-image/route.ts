@@ -1,6 +1,4 @@
 import { faker } from '@faker-js/faker';
-import client from '../../../../lib/appwrite_client';
-import * as sdk from 'node-appwrite';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
@@ -23,10 +21,28 @@ export async function GET(request: NextRequest) {
     return new NextResponse(blob, { status: 200, statusText: 'OK', headers });
   }
 
-  const storage = new sdk.Storage(client);
-  const imageResponse = await storage.getFilePreview(
-    process.env.APPWRITE_STORAGE_BUCKET_ID as string,
-    queryParam as string
-  );
-  return new NextResponse(imageResponse, { status: 200 });
+  request.headers.set('Content-Type', 'image/*');
+  request.headers.set('Cache-Control', 'public, max-age=86400');
+
+  try {
+    const imageResponse = await fetch(
+      `${process.env.APPWRITE_ENDPOINT}/storage/buckets/${process.env.APPWRITE_STORAGE_BUCKET_ID}/files/${queryParam}/view?project=${process.env.APPWRITE_PROJECT_ID}`
+    );
+
+    const contentType =
+      imageResponse.headers.get('content-type') || 'image/jpeg';
+    return new NextResponse(imageResponse.body, {
+      status: 200,
+      headers: {
+        'Content-Type': contentType,
+        'Cache-Control': 'no-store', // Disable caching for the image
+      },
+    });
+  } catch (error) {
+    console.error('Image fetch error:', error);
+    return NextResponse.json(
+      { error: 'Internal server error' },
+      { status: 500 }
+    );
+  }
 }

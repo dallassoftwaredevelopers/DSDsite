@@ -1,16 +1,3 @@
-/* .teamSection {
-  max-width: 85%;
-  margin: 5rem 0;
-} */
-
-.peopleList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 5rem 0;
-  gap: 2rem;
-}
-
 .yearSelector {
   display: flex;
   gap: 3rem;

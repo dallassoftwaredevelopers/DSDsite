@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './cohorts.module.css';
+import { Message } from '@/types/globalTypes';
 
 class NotificationFormClass {
   name: string;
@@ -13,11 +14,6 @@ class NotificationFormClass {
     this.token = token;
   }
 }
-
-type Message = {
-  message: string;
-  type: 'error' | 'success';
-};
 
 const localEnv =
   process.env.NODE_ENV === 'development' &&
@@ -42,7 +38,6 @@ export default function NotificationForm() {
     event.preventDefault();
     const token = localEnv ? 'localEnv' : captchaRef.current?.getValue();
     if (!(token || localEnv)) {
-      console.log('display robot message');
       setMessage({
         message: 'Are you a robot? Please complete the reCAPTCHA',
         type: 'error',
@@ -53,7 +48,7 @@ export default function NotificationForm() {
     formData.token = token ?? '';
 
     try {
-      const responese = await fetch('/api/notificationForm', {
+      const response = await fetch('/api/notificationForm', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,12 +56,15 @@ export default function NotificationForm() {
         body: JSON.stringify(formData),
       });
 
-      if (!responese.ok) {
-        setMessage({
-          message: responese.statusText,
-          type: 'error',
-        });
-        throw new Error(`Failed to submit form: ${responese.statusText}`);
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        if (errorResponse.data.message) {
+          setMessage({
+            message: errorResponse.data.message.message,
+            type: 'error',
+          });
+        }
+        return;
       }
 
       setMessage({
