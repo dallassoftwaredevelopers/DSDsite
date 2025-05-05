@@ -28,8 +28,10 @@ export async function GET() {
   const databases = new sdk.Databases(client);
   const response = await databases.listDocuments(
     process.env.APPWRITE_DATABASE_ID as string,
-    'peoples'
+    'peoples',
+    [sdk.Query.limit(100)]
   );
+
   const peopleData = response.documents.map((doc) => {
     return {
       documentId: doc.$id,
