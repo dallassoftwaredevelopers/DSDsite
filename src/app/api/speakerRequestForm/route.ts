@@ -21,6 +21,7 @@ export async function POST(request: NextRequest) {
     !formData.fullName ||
     !formData.email ||
     !formData.topic ||
+    !formData.linkedInUrl ||
     !formData.briefDescription
   ) {
     return new Response(null, { status: 400, statusText: 'Missing fields' });
@@ -56,18 +57,25 @@ export async function POST(request: NextRequest) {
   }
 
   const databases = new sdk.Databases(client);
+  try {
+    await databases.createDocument(
+      process.env.APPWRITE_DATABASE_ID as string,
+      'speakerRequestForm',
+      sdk.ID.unique(),
+      {
+        fullName: formData.fullName,
+        email: formData.email,
+        linkedInUrl: formData.linkedInUrl,
+        topic: formData.topic,
+        briefDescription: formData.briefDescription,
+      }
+    );
 
-  await databases.createDocument(
-    process.env.APPWRITE_DATABASE_ID as string,
-    'speakerRequestForm',
-    sdk.ID.unique(),
-    {
-      fullName: formData.fullName,
-      email: formData.email,
-      topic: formData.topic,
-      briefDescription: formData.briefDescription,
-    }
-  );
-
-  return new Response('Success', { status: 200 });
+    return new Response('Success', { status: 200 });
+  } catch (error) {
+    return new Response(null, {
+      status: 400,
+      statusText: 'Invalid Form Submission',
+    });
+  }
 }

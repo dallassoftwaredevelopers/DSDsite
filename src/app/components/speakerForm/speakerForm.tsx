@@ -7,6 +7,7 @@ import { useGlobalState } from '@/app/hooks/useGlobalState/useGlobalState';
 interface FormData {
   fullName: string;
   email: string;
+  linkedInUrl: string;
   topic: string;
   briefDescription: string;
   token: string;
@@ -15,6 +16,7 @@ interface FormData {
 interface FormErrors {
   fullName?: string;
   email?: string;
+  linkedInUrl?: string;
   topic?: string;
   briefDescription?: string;
 }
@@ -24,6 +26,15 @@ const localEnv =
   process.env.NEXT_PUBLIC_APPWRITE_HASKEY === 'false';
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY ?? '';
+
+function isValidHttpUrl(urlValue: string): boolean {
+  try {
+    const url = new URL(urlValue);
+    return url.protocol === 'http:' || url.protocol === 'https:';
+  } catch (_) {
+    return false;
+  }
+}
 
 export default function SpeakerForm({
   onSubmit,
@@ -35,6 +46,7 @@ export default function SpeakerForm({
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
+    linkedInUrl: '',
     topic: '',
     briefDescription: '',
     token: '',
@@ -57,6 +69,12 @@ export default function SpeakerForm({
       newErrors.email = 'Email is required';
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = 'Email is invalid';
+    }
+
+    if (!formData.linkedInUrl.trim()) {
+      newErrors.linkedInUrl = 'LinkedIn URL is required';
+    } else if (!isValidHttpUrl(formData.linkedInUrl)) {
+      newErrors.linkedInUrl = 'LinkedIn URL is invalid';
     }
 
     if (!formData.topic.trim()) {
@@ -101,13 +119,21 @@ export default function SpeakerForm({
       formData.token = token ?? '';
 
       try {
-        await fetch('/api/speakerRequestForm', {
+        const response = await fetch('/api/speakerRequestForm', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(formData),
         });
+
+        if (response.status === 400) {
+          setToast({
+            type: 'error',
+            message: response.statusText,
+          });
+          return;
+        }
 
         setToast({
           type: 'success',
@@ -152,6 +178,21 @@ export default function SpeakerForm({
           required
         />
         {errors.email && <p className={styles.errorText}>{errors.email}</p>}
+      </div>
+
+      <div className={styles.formGroup}>
+        <label className={styles.formLabel}>Linked In URL</label>
+        <input
+          type='linkedInUrl'
+          name='linkedInUrl'
+          value={formData.linkedInUrl}
+          onChange={handleChange}
+          className={styles.formInput}
+          required
+        />
+        {errors.linkedInUrl && (
+          <p className={styles.errorText}>{errors.linkedInUrl}</p>
+        )}
       </div>
 
       <div className={styles.formGroup}>
