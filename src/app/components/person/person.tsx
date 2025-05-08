@@ -21,7 +21,11 @@ export default function Person({
           id={fullName}
           placeholder='blur'
           blurDataURL='/assets/person.svg'
-          src={imageUrl ? imageUrl : '/assets/person.svg'}
+          src={
+            imageUrl
+              ? `${imageUrl}&t=${new Date().getTime()}`
+              : '/assets/person.svg'
+          }
           alt='image of person'
           fill
           sizes='200px'
