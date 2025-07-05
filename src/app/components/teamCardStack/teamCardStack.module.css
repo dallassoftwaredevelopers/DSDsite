@@ -1,0 +1,348 @@
+.cardStackWrapper {
+  position: relative;
+  padding: var(--spacing-12) 0 var(--spacing-16);
+  overflow: hidden;
+  background-color: hsl(var(--light));
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+  position: relative;
+  z-index: 2;
+}
+
+.sectionHeading h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+  color: hsl(var(--dark));
+  display: inline-block;
+}
+
+.sectionHeading p {
+  font-size: var(--text-lg);
+  color: hsl(var(--dark), 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cardStackContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--spacing-4);
+}
+
+.cardStack {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 250px;
+  margin: 0 auto;
+  perspective: 1000px;
+  touch-action: pan-x;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+}
+
+.card {
+  position: absolute;
+  width: 600px;
+  height: 200px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  background: white;
+  transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+  cursor: grab;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  left: 0;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card:not(.currentCard) {
+  pointer-events: none;
+}
+
+.currentCard {
+  z-index: 10;
+  transform: translateX(0);
+  box-shadow: var(--shadow-lg);
+}
+
+.card:nth-child(2):not(.currentCard) {
+  transform: translateX(calc(100% - 120px));
+  z-index: 9;
+  opacity: 0.8;
+}
+
+.card:nth-child(3):not(.currentCard) {
+  transform: translateX(calc(200% - 240px));
+  z-index: 8;
+  opacity: 0.6;
+}
+
+.slideOutLeft {
+  animation: slideOutLeft 0.5s forwards;
+}
+
+.slideOutRight {
+  animation: slideOutRight 0.5s forwards;
+}
+
+.slideInLeft {
+  animation: slideInLeft 0.5s forwards;
+}
+
+.slideInRight {
+  animation: slideInRight 0.5s forwards;
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.cardContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-6);
+}
+
+.textContent {
+  flex: 1;
+  padding-right: var(--spacing-6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.imageContainer {
+  width: 200px;
+  height: 150px;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
+  color: hsl(var(--primary));
+}
+
+.cardDescription {
+  font-size: var(--text-sm);
+  line-height: 1.5;
+  color: hsl(var(--dark), 0.8);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: var(--spacing-8);
+  gap: var(--spacing-4);
+}
+
+.controlButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  color: white;
+  border: none;
+  font-size: var(--text-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.controlButton:hover {
+  background: hsl(var(--primary-light));
+  transform: scale(1.1);
+}
+
+.indicators {
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: hsl(var(--gray-200));
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeIndicator {
+  background: hsl(var(--primary));
+  transform: scale(1.2);
+}
+
+@media (max-width: 992px) {
+  .cardStackWrapper {
+    padding: var(--spacing-8) 0;
+  }
+  
+  .sectionHeading h2 {
+    font-size: var(--text-3xl);
+  }
+  
+  .sectionHeading p {
+    font-size: var(--text-base);
+  }
+  
+  .card {
+    width: 500px;
+    height: 180px;
+  }
+  
+  .cardTitle {
+    font-size: var(--text-lg);
+  }
+  
+  .cardDescription {
+    font-size: var(--text-xs);
+    -webkit-line-clamp: 3;
+  }
+  
+  .imageContainer {
+    width: 160px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 400px;
+    height: 160px;
+  }
+  
+  .cardContent {
+    padding: var(--spacing-4);
+  }
+  
+  .textContent {
+    padding-right: var(--spacing-4);
+  }
+  
+  .imageContainer {
+    width: 120px;
+    height: 100px;
+  }
+  
+  .cardTitle {
+    font-size: var(--text-base);
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .cardDescription {
+    font-size: var(--text-xs);
+    -webkit-line-clamp: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: 300px;
+    height: 180px;
+  }
+  
+  .cardContent {
+    flex-direction: column;
+    padding: var(--spacing-3);
+  }
+  
+  .textContent {
+    padding-right: 0;
+    padding-bottom: var(--spacing-3);
+    text-align: center;
+  }
+  
+  .imageContainer {
+    width: 100px;
+    height: 80px;
+  }
+  
+  .cardTitle {
+    font-size: var(--text-base);
+    margin-bottom: var(--spacing-1);
+  }
+  
+  .cardDescription {
+    font-size: var(--text-xs);
+    -webkit-line-clamp: 2;
+  }
+  
+  .controlButton {
+    width: 36px;
+    height: 36px;
+  }
+}

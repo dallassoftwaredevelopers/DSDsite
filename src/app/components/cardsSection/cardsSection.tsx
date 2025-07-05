@@ -4,6 +4,8 @@ import Button from '../button/button';
 import Link from 'next/link';
 import Image from 'next/image';
 import { externalLinks } from '@/app/_constants';
+import BackgroundPattern from '../decorative/backgroundPattern';
+import FloatingShapes from '../decorative/floatingShapes';
 
 interface CardData {
   id: number;
@@ -53,8 +55,15 @@ const cardData: CardData[] = [
 
 export default function CardsSection() {
   return (
-    <div className={styles.cardContainer}>
-      {cardData.map((card) => (
+    <div className={styles.cardSectionWrapper}>
+      <BackgroundPattern variant="dots" opacity={0.03} />
+      <FloatingShapes />
+      <div className={styles.sectionHeading}>
+        <h2>What We Offer</h2>
+        <p>Join our community and take advantage of these opportunities</p>
+      </div>
+      <div className={styles.cardContainer}>
+      {cardData.map((card, index) => (
         <Card key={card.id}>
           <div className={styles.imageContainer}>
             <Image
@@ -64,6 +73,8 @@ export default function CardsSection() {
               sizes='100vw'
               width={375}
               height={250}
+              priority={index === 0}
+              quality={90}
             />
           </div>
           <header className={styles.cardHeader}>{card.title}</header>
@@ -78,12 +89,14 @@ export default function CardsSection() {
               className={styles.cardLink}
               href={externalLinks.meetupUrl}
               target='_blank'
+              rel="noopener noreferrer"
             >
               <Button buttonText={card.buttonText} showIcon />
             </a>
           )}
         </Card>
       ))}
+      </div>
     </div>
   );
 }

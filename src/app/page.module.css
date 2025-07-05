@@ -1,1 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hero section container - full width */
+.heroContainer {
+  width: 100%;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Standard section container with spacing */
+.sectionContainer {
+  width: 100% !important;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle, rgba(51, 133, 255, 0.05) 0%, transparent 70%);
+}
+
+/* Add alternating section backgrounds */
+.sectionContainer:nth-of-type(odd) {
+  background-color: hsl(var(--light));
+  position: relative;
+}
+
+.sectionContainer:nth-of-type(odd)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 10% 10%, hsla(var(--primary), 0.03) 0%, transparent 30%),
+    radial-gradient(circle at 90% 90%, hsla(var(--primary), 0.03) 0%, transparent 30%);
+  z-index: 0;
+}
+
+.sectionContainer:nth-of-type(even) {
+  background-color: hsla(var(--primary), 0.03);
+  position: relative;
+}
+
+.sectionContainer:nth-of-type(even)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 90% 10%, hsla(var(--dark), 0.02) 0%, transparent 30%),
+    radial-gradient(circle at 10% 90%, hsla(var(--dark), 0.02) 0%, transparent 30%);
+  z-index: 0;
+}
+
+/* Section dividers */
+.sectionContainer:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    hsla(var(--primary), 0) 0%,
+    hsla(var(--primary), 0.15) 50%,
+    hsla(var(--primary), 0) 100%
+  );
+  z-index: 1;
+}
+
+/* Special styling for the last section container (GroupPhotoSection) */
+.sectionContainer:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: var(--spacing-8) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionContainer {
+    padding: var(--spacing-6) 0;
+  }
+}

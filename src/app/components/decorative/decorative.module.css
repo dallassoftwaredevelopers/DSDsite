@@ -1,0 +1,190 @@
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--pattern-opacity, 0.05);
+}
+
+.patternDots {
+  background-image: radial-gradient(
+    var(--pattern-color, hsl(var(--primary))) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+.patternGrid {
+  background-image: 
+    linear-gradient(to right, var(--pattern-color, hsl(var(--primary))) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--pattern-color, hsl(var(--primary))) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.patternWaves {
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--pattern-color, hsl(var(--primary))),
+    var(--pattern-color, hsl(var(--primary))) 1px,
+    transparent 1px,
+    transparent 10px
+  );
+}
+
+.patternCircles {
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--pattern-color, hsl(var(--primary))) 1%, transparent 10%),
+    radial-gradient(circle at 75% 75%, var(--pattern-color, hsl(var(--primary))) 1%, transparent 10%);
+  background-size: 100px 100px;
+}
+
+/* Floating elements */
+.floatingElement {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  animation: float 6s ease-in-out infinite;
+}
+
+.floatingElement:nth-child(2n) {
+  animation-duration: 8s;
+}
+
+.floatingElement:nth-child(3n) {
+  animation-duration: 10s;
+}
+
+.floatingElement:nth-child(4n) {
+  animation-duration: 12s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+/* Shapes */
+.shape {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--shape-opacity, 0.1);
+}
+
+.shapeCircle {
+  border-radius: 50%;
+  background: var(--shape-color, hsl(var(--primary)));
+}
+
+.shapeSquare {
+  background: var(--shape-color, hsl(var(--primary)));
+}
+
+.shapeTriangle {
+  width: 0;
+  height: 0;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  border-bottom: 86.6px solid var(--shape-color, hsl(var(--primary)));
+}
+
+/* Animated gradient border */
+.gradientBorder {
+  position: relative;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: hsla(var(--dark), 0.1);
+  z-index: 1001;
+}
+
+.scrollIndicatorProgress {
+  height: 100%;
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+  width: 0;
+  transition: width 0.1s ease;
+  box-shadow: 0 0 10px hsla(var(--primary), 0.5);
+}
+
+/* Animated text reveal */
+.textReveal {
+  display: inline-block;
+  overflow: hidden;
+}
+
+.textRevealInner {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  animation: textRevealAnimation 0.8s forwards;
+}
+
+.textRevealInner:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.textRevealInner:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.textRevealInner:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.textRevealInner:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes textRevealAnimation {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.gradientBorder::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(
+    45deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--primary-light)) 25%,
+    hsl(var(--secondary)) 50%,
+    hsl(var(--primary-light)) 75%,
+    hsl(var(--primary)) 100%
+  );
+  z-index: -1;
+  animation: gradientBorderAnimation 3s linear infinite;
+  border-radius: calc(var(--border-radius-md) + 2px);
+}
+
+@keyframes gradientBorderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
