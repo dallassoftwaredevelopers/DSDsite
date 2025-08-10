@@ -70,7 +70,7 @@ export default function CommunityBento() {
             Join Our <span className={styles.highlight}>Community</span>
           </h1>
           <p className={styles.heroDescription}>
-            We're building an inclusive, welcoming space for developers of all
+            We&apos;re building an inclusive, welcoming space for developers of all
             backgrounds and skill levels.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function CommunityBento() {
           <div className={styles.messageCard}>
             <div className={styles.messageContent}>
               <h2 className={styles.messageTitle}>
-                Hybrid Meetups &<br />
+                Hybrid Meetups &amp;<br />
                 No Gatekeeping
               </h2>
               <p className={styles.messageText}>
