@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import styles from './navbar.module.css';
 import { externalLinks, internalLinks } from '../../_constants';
 
@@ -27,9 +28,8 @@ const navItems = [
 export default function Navbar() {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState('/');
+  const pathname = usePathname();
 
-  // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -41,9 +41,6 @@ export default function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    
-    // Set active link based on current path
-    setActiveLink(window.location.pathname);
     
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -58,7 +55,6 @@ export default function Navbar() {
 
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      {/* Desktop Navigation */}
       <div className={styles.container}>
         <div className={styles.navbarContent}>
           <Link href="/" className={styles.logoLink}>
@@ -80,10 +76,10 @@ export default function Navbar() {
                 <li key={item.id} className={styles.navItem}>
                   <Link
                     href={item.link}
-                    className={`${styles.navLink} ${activeLink === item.link ? styles.active : ''}`}
+                    className={`${styles.navLink} ${pathname === item.link ? styles.active : ''}`}
                   >
                     {item.label}
-                    {activeLink === item.link && <span className={styles.activeIndicator}></span>}
+                    {pathname === item.link && <span className={styles.activeIndicator}></span>}
                   </Link>
                 </li>
               ))}
@@ -100,7 +96,6 @@ export default function Navbar() {
             </a>
           </nav>
           
-          {/* Mobile menu button */}
           <button
             className={`${styles.mobileMenuButton} ${isNavVisible ? styles.active : ''}`}
             onClick={toggleNav}
@@ -114,7 +109,6 @@ export default function Navbar() {
         </div>
       </div>
       
-      {/* Mobile Navigation */}
       <div className={`${styles.mobileNav} ${isNavVisible ? styles.visible : ''}`}>
         <div className={styles.mobileNavContent}>
           <ul className={styles.mobileNavList}>

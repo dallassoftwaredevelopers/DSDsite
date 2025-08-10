@@ -1,7 +1,9 @@
+'use client';
+
+import { useRouter } from 'next/navigation';
 import Card from './card';
 import styles from './cards.module.css';
 import Button from '../button/button';
-import Link from 'next/link';
 import Image from 'next/image';
 import { externalLinks } from '@/app/_constants';
 import BackgroundPattern from '../decorative/backgroundPattern';
@@ -51,9 +53,30 @@ const cardData: CardData[] = [
     src: '/assets/cohortsAndHackathons.png',
     alt: 'Cohorts & Hackathons',
   },
+  {
+    id: 4,
+    title: 'The Commit Your Code Conference',
+    content:
+      'Join us for our annual tech conference featuring industry leaders, innovative workshops, and networking opportunities. Connect with fellow developers, learn about the latest technologies, and be inspired by talks from experts in the field.',
+    buttonText: 'Learn About Conference',
+    href: '/conference',
+    isExternal: false,
+    src: '/assets/cycpic.jpg',
+    alt: 'The Commit Your Code Conference',
+  },
 ];
 
 export default function CardsSection() {
+  const router = useRouter();
+
+  const handleNavigation = (href: string, isExternal: boolean) => {
+    if (isExternal) {
+      window.open(href, '_blank', 'noopener,noreferrer');
+    } else {
+      router.push(href);
+    }
+  };
+
   return (
     <div className={styles.cardSectionWrapper}>
       <BackgroundPattern variant="dots" opacity={0.03} />
@@ -79,21 +102,13 @@ export default function CardsSection() {
           </div>
           <header className={styles.cardHeader}>{card.title}</header>
           <p className={styles.cardContent}>{card.content}</p>
-          {!card.isExternal && (
-            <Link href={card.href} passHref className={styles.cardLink}>
-              <Button buttonText={card.buttonText} showIcon />
-            </Link>
-          )}
-          {card.isExternal && (
-            <a
-              className={styles.cardLink}
-              href={externalLinks.meetupUrl}
-              target='_blank'
-              rel="noopener noreferrer"
-            >
-              <Button buttonText={card.buttonText} showIcon />
-            </a>
-          )}
+          <div className={styles.cardButtonWrapper}>
+            <Button 
+              buttonText={card.buttonText} 
+              showIcon 
+              onClick={() => handleNavigation(card.href, card.isExternal)}
+            />
+          </div>
         </Card>
       ))}
       </div>

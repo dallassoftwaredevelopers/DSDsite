@@ -106,7 +106,7 @@ export default function NotificationForm() {
         <div className={styles.recaptcha}>
           {!localEnv && <ReCAPTCHA sitekey={siteKey} ref={captchaRef} />}
         </div>
-        <button className='mdText' type='submit'>
+        <button className={styles.submitBtn} type='submit'>
           Get Notified
         </button>
       </form>

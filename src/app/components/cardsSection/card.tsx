@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styles from './cards.module.css';
-import GradientBorder from '../decorative/gradientBorder';
 
 interface CardProps {
   children: React.ReactNode;

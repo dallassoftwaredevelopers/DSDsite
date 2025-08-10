@@ -5,7 +5,6 @@ import Navbar from './components/navbar/navbar';
 import Footer from '@/app/components/footer/footer';
 import ReactQueryProvider from './react-query-provider';
 import { GlobalStateProvider } from './hooks/useGlobalState/useGlobalState';
-import ScrollIndicator from './components/decorative/scrollIndicator';
 
 export const metadata: Metadata = {
   title: 'Dallas Software Developers',
@@ -43,7 +42,6 @@ export default function RootLayout({
       <body>
         <ReactQueryProvider>
           <GlobalStateProvider>
-            <ScrollIndicator />
             <Navbar />
             <main>{children}</main>
             <Footer />

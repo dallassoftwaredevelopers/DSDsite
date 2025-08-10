@@ -5,6 +5,7 @@ import BannerSection from './components/bannerSection/bannerSection';
 import HeroSection from './components/heroSection/heroSection';
 import SocialSection from './components/socialSection/socialSection';
 import GroupPhotoSection from './components/groupPhotoSection/groupPhotoSection';
+import SponsorshipSection from './components/sponsorshipSection/sponsorshipSection';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -26,6 +27,10 @@ export default function Home() {
       
       <section className={styles.sectionContainer}>
         <SocialSection />
+      </section>
+      
+      <section className={styles.sectionContainer}>
+        <SponsorshipSection />
       </section>
       
       <section className={styles.sectionContainer}>

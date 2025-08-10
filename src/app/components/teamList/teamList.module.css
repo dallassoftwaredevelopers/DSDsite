@@ -1,0 +1,193 @@
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2rem 0;
+}
+
+.teamCard {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #1a1a1a;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  aspect-ratio: 3/4;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.teamCard:hover {
+  transform: translateY(-8px) translateZ(0);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.teamCard:hover .teamImage {
+  transform: scale(1.05);
+}
+
+.teamCard:hover .teamOverlay {
+  background: linear-gradient(to top, 
+    rgba(0, 0, 0, 0.95) 0%, 
+    rgba(0, 0, 0, 0.85) 40%, 
+    rgba(0, 0, 0, 0.4) 70%, 
+    transparent 100%);
+}
+
+.teamImageWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.teamImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.teamOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(to top, 
+    rgba(0, 0, 0, 0.9) 0%, 
+    rgba(0, 0, 0, 0.7) 40%, 
+    rgba(0, 0, 0, 0.3) 70%, 
+    transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem 1.5rem 1.5rem;
+  transition: background 0.3s ease;
+}
+
+.teamContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.teamName {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.teamRole {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0.2rem 0 0 0;
+  line-height: 1.2;
+}
+
+.teamCompany {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.linkedinLink {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.linkedinLink:hover {
+  background: #0077b5;
+  transform: scale(1.1);
+  border-color: #0077b5;
+}
+
+.linkedinLink svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design - identical to speakers */
+@media (max-width: 1200px) {
+  .teamGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .teamName {
+    font-size: 1.2rem;
+  }
+
+  .teamRole {
+    font-size: 0.8rem;
+  }
+
+  .teamCompany {
+    font-size: 0.7rem;
+  }
+
+  .linkedinLink {
+    width: 36px;
+    height: 36px;
+  }
+
+  .linkedinLink svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .teamCard {
+    aspect-ratio: 4/5;
+  }
+
+  .teamOverlay {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+}
+
+/* Light theme adjustments for the page background */
+@media (prefers-color-scheme: light) {
+  .loading,
+  .empty {
+    color: #666666;
+  }
+}

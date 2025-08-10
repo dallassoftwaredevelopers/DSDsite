@@ -8,40 +8,17 @@ export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  const [isPlayButtonAnimating, setIsPlayButtonAnimating] = useState(false);
-  const [isPlayButtonReappearing, setIsPlayButtonReappearing] = useState(false);
-  const [isVideoPausing, setIsVideoPausing] = useState(false);
-  const [showRipple, setShowRipple] = useState(false);
 
   const toggleVideo = () => {
     if (videoRef.current) {
       if (isVideoPlaying) {
         videoRef.current.pause();
         videoRef.current.muted = true;
-        setIsVideoPausing(true);
-        setIsVideoPlaying(false);
-        setIsPlayButtonReappearing(true);
-
-        setTimeout(() => {
-          setIsPlayButtonReappearing(false);
-          setIsVideoPausing(false);
-        }, 600);
       } else {
-        setIsPlayButtonAnimating(true);
-        setShowRipple(true);
-
-        setTimeout(() => {
-          setShowRipple(false);
-        }, 1000);
-        
-        setTimeout(() => {
-          if (videoRef.current) {
-            videoRef.current.play();
-            videoRef.current.muted = false;
-            setIsVideoPlaying(true);
-          }
-        }, 600);
+        videoRef.current.play();
+        videoRef.current.muted = false;
       }
+      setIsVideoPlaying(!isVideoPlaying);
     }
   };
 
@@ -65,7 +42,6 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero} ref={heroRef}>
-      {/* Background elements */}
       <div className={styles.heroBackground}>
         <div className={`${styles.gradientOverlay} ${styles.parallax}`} data-speed="0.2"></div>
         <div className={`${styles.shapesContainer} ${styles.parallax}`} data-speed="0.3">
@@ -76,7 +52,6 @@ export default function HeroSection() {
         <div className={styles.gridPattern}></div>
       </div>
 
-      {/* Main content */}
       <div className={styles.heroContent}>
         <div className={styles.textContent}>
           <div className={styles.heroHeadingWrapper}>
@@ -129,15 +104,13 @@ export default function HeroSection() {
         <div className={styles.mediaContent}>
           <div className={styles.videoCard}>
             <div
-              className={`${styles.videoCardInner} ${isVideoPlaying ? styles.videoCardPlaying : ''} ${showRipple ? styles.videoCardPlaying : ''}`}
+              className={`${styles.videoCardInner} ${isVideoPlaying ? styles.videoCardPlaying : ''}`}
               onClick={toggleVideo}
               style={{ cursor: 'pointer' }}
             >
               <video
                 ref={videoRef}
-                className={`${styles.heroVideo}
-                  ${isVideoPlaying ? styles.videoPlaying : ''}
-                  ${isVideoPausing ? styles.videoPausing : ''}`}
+                className={`${styles.heroVideo} ${isVideoPlaying ? styles.videoPlaying : ''}`}
                 loop
                 muted
                 playsInline
@@ -147,15 +120,8 @@ export default function HeroSection() {
               </video>
               <div className={`${styles.videoOverlay} ${isVideoPlaying ? styles.overlayFaded : ''}`}></div>
               <div
-                className={`${styles.playButton}
-                  ${isVideoPlaying ? styles.playButtonHidden : ''}
-                  ${isPlayButtonAnimating && !isVideoPlaying ? styles.playButtonAnimating : ''}
-                  ${isPlayButtonReappearing ? styles.playButtonReappearing : ''}`}
+                className={`${styles.playButton} ${isVideoPlaying ? styles.playButtonHidden : ''}`}
                 aria-label={isVideoPlaying ? "Pause video" : "Play video"}
-                onAnimationEnd={() => {
-                  setIsPlayButtonAnimating(false);
-                  setIsPlayButtonReappearing(false);
-                }}
               >
                 <div className={styles.playIcon}></div>
               </div>

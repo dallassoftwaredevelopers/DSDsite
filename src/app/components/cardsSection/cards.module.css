@@ -147,8 +147,7 @@
   margin-bottom: 30px;
 }
 
-.cardLink {
-  text-decoration: none;
+.cardButtonWrapper {
   margin-top: auto;
   position: relative;
   z-index: 2;
@@ -207,11 +206,15 @@
 
 @media (max-width: 1200px) {
   .cardContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
     padding: 40px 4%;
   }
   
   .card {
-    max-width: 320px;
+    flex: 0 0 calc(50% - 12.5px);
+    max-width: 360px;
     min-height: 500px;
   }
   

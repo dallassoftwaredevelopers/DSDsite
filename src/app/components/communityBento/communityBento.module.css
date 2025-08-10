@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+.communityHeroSection {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--light));
+  padding: var(--spacing-8) 0;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.gradientOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+    hsla(252, 74%, 26%, 0.03) 0%,
+    hsla(252, 80%, 46%, 0.05) 50%,
+    hsla(208, 93%, 23%, 0.163) 100%);
+  z-index: 1;
+}
+
+.shapesContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+}
+
+.shape1 {
+  top: 10%;
+  left: 5%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle,
+    hsla(213, 100%, 60%, 0.15) 0%,
+    hsla(213, 100%, 60%, 0) 70%);
+  animation: floatAnimation 20s infinite alternate ease-in-out;
+}
+
+.shape2 {
+  bottom: 10%;
+  right: 5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle,
+    hsla(213, 100%, 80%, 0.1) 0%,
+    hsla(213, 100%, 80%, 0) 70%);
+  animation: floatAnimation 15s infinite alternate-reverse ease-in-out;
+}
+
+.shape3 {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle,
+    hsla(222, 89%, 12%, 0.05) 0%,
+    hsla(222, 89%, 12%, 0) 70%);
+  animation: pulseAnimation 10s infinite ease-in-out;
+}
+
+.gridPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(to right, hsla(var(--dark), 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(var(--dark), 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero Content */
+.heroContent {
+  text-align: center;
+  margin-bottom: 4rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.heroTitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  color: hsl(var(--dark));
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: hsl(var(--primary));
+}
+
+.heroDescription {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.25rem;
+  color: hsl(var(--dark));
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Bento Container */
+.bentoContainer {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+  min-height: 600px;
+  animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+/* Message Card */
+.messageCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.messageCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.messageContent {
+  text-align: center;
+  color: hsl(var(--dark));
+}
+
+.messageTitle {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  color: hsl(var(--dark));
+}
+
+.messageText {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  color: hsl(var(--dark));
+}
+
+.messageIcon {
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+
+.photoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem;
+  height: 100%;
+}
+
+.photoCard {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photoCard:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.photo1 {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+
+.photo2 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 3;
+}
+
+.photo3 {
+  grid-column: 1 / 2;
+  grid-row: 2 / 4;
+}
+
+.photo4 {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.photo5 {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+}
+
+.photo6 {
+  display: none;
+}
+
+.additionalPhotos {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.smallPhotoCard {
+  position: relative;
+  flex: 1;
+  min-height: 140px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.smallPhotoCard:hover {
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.photoImage {
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photoCard:hover .photoImage,
+.smallPhotoCard:hover .photoImage {
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(30px, -20px);
+  }
+}
+
+@keyframes pulseAnimation {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+/* Scroll Indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 1.5s forwards;
+}
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid hsl(var(--dark));
+  border-radius: 12px;
+  position: relative;
+  opacity: 0.7;
+}
+
+.mouseWheel {
+  width: 2px;
+  height: 8px;
+  background-color: hsl(var(--dark));
+  border-radius: 1px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite ease-in-out;
+}
+
+@keyframes scroll {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-50%) translateY(10px);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .bentoContainer {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .additionalPhotos {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    height: 150px;
+  }
+  
+  .messageCard {
+    padding: 2rem;
+  }
+  
+  .messageTitle {
+    font-size: 1.75rem;
+  }
+  
+  .photoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+  
+  .photo1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+  
+  .photo2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+  }
+  
+  .photo3 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 4;
+  }
+  
+  .photo4 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+  
+  .photo5 {
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+  }
+  
+  .photo6 {
+    display: block;
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .communityHeroSection {
+    padding: 1rem 0;
+    min-height: auto;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .heroContent {
+    margin-bottom: 2rem;
+  }
+  
+  .heroTitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .heroDescription {
+    font-size: 1rem;
+  }
+  
+  .bentoContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    min-height: auto;
+  }
+  
+  .messageCard {
+    padding: 1.5rem;
+    order: 1;
+  }
+  
+  .messageTitle {
+    font-size: 1.5rem;
+  }
+  
+  .messageText {
+    font-size: 0.9rem;
+  }
+  
+  .messageIcon {
+    font-size: 2rem;
+  }
+  
+  .photoGrid {
+    order: 2;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 200px);
+    height: auto;
+  }
+  
+  .photo1 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  .photo2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  
+  .photo3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+  
+  .photo4 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+  
+  .photo5 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+  
+  .additionalPhotos {
+    order: 3;
+    flex-direction: row;
+    height: 120px;
+  }
+  
+  .smallPhotoCard {
+    min-height: 120px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .photoGrid {
+    grid-template-rows: repeat(3, 150px);
+  }
+  
+  .additionalPhotos {
+    height: 100px;
+  }
+  
+  .smallPhotoCard {
+    min-height: 100px;
+  }
+  
+  .messageCard {
+    padding: 1rem;
+  }
+  
+  .messageTitle {
+    font-size: 1.25rem;
+  }
+}

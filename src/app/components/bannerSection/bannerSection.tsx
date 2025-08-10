@@ -5,134 +5,25 @@ import styles from './bannerSection.module.css';
 import Image from 'next/image';
 import BackgroundPattern from '../decorative/backgroundPattern';
 import FloatingShapes from '../decorative/floatingShapes';
-import Button from '../button/button';
-import TextReveal from '../decorative/textReveal';
-
-interface CardData {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-}
-
-const cardData: CardData[] = [
-  {
-    id: 1,
-    title: 'User Interface Design',
-    description: 'Everyone agrees with the fact that learning management systems are a tremendous way to expand learner knowledge base and help ease entrance their skills.',
-    image: '/assets/meetupGroupShot1.png',
-  },
-  {
-    id: 2,
-    title: 'Digital Design',
-    description: 'Our community hosts regular workshops on digital design principles, tools like Figma and Adobe XD, and modern UI/UX practices for creating engaging user experiences.',
-    image: '/assets/meetupGroupShot2.png',
-  },
-  {
-    id: 3,
-    title: 'Visual Interface Design',
-    description: 'Learn cutting-edge UI/UX design techniques at our Meetup. Join industry experts to discover the latest trends and best practices for creating engaging user experiences.',
-    image: '/assets/meetupGroupShot3.png',
-  },
-  {
-    id: 4,
-    title: 'Branding Design',
-    description: 'Explore the principles of effective branding, from color theory to typography, and learn how to create cohesive visual identities that resonate with target audiences.',
-    image: '/assets/meetupGroupShot4.png',
-  },
-  {
-    id: 5,
-    title: 'Color Palette',
-    description: 'Dive into the psychology of color and learn how to create harmonious color schemes that enhance user experience and effectively communicate brand values.',
-    image: '/assets/meetupGroupShot5.png',
-  },
-];
-
-// Component for a single card
-const Card = ({
-  card,
-  position,
-  zIndex,
-  isDragging = false,
-  dragOffset = 0,
-  isAnimating = false,
-  animationDirection = null
-}: {
-  card: CardData,
-  position: 'active' | 'swiped' | 'next',
-  zIndex: number,
-  isDragging?: boolean,
-  dragOffset?: number,
-  isAnimating?: boolean,
-  animationDirection?: 'left' | 'right' | null
-}) => {
-  let positionClass = '';
-  let positionStyle: React.CSSProperties = { zIndex };
-  
-  if (position === 'active') {
-    positionClass = styles.activeCard;
-    if (isDragging) {
-      positionStyle.left = `calc(50% + clamp(5vw, 15vw, 150px) + ${dragOffset}px)`;
-    }
-    if (isAnimating && animationDirection === 'left') {
-      positionClass += ` ${styles.slideOutLeft}`;
-    }
-    if (isAnimating && animationDirection === 'right') {
-      positionClass += ` ${styles.slideOutRight}`;
-    }
-  } else if (position === 'swiped') {
-    positionClass = styles.swipedCard;
-    // For swiped cards, we need to explicitly set the position
-    positionStyle.opacity = 1;
-  } else if (position === 'next') {
-    positionClass = styles.nextCard;
-  }
-  
-  return (
-    <div
-      className={`${styles.card} ${positionClass}`}
-      style={positionStyle}
-    >
-      <div className={styles.cardContent}>
-        <div className={styles.cardTextContent}>
-          <h3 className={styles.cardTitle}>{card.title}</h3>
-          <p className={styles.cardDescription}>{card.description}</p>
-        </div>
-        <div className={styles.cardImageContainer}>
-          <Image
-            src={card.image}
-            alt={card.title}
-            width={200}
-            height={150}
-            className={styles.cardImage}
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export default function BannerSection() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
-  const [activeCardIndex, setActiveCardIndex] = useState(0);
-  const [swipedCards, setSwipedCards] = useState<number[]>([]);
-  const [isAnimating, setIsAnimating] = useState(false);
-  const [animationDirection, setAnimationDirection] = useState<'left' | 'right' | null>(null);
-  const [animatingCard, setAnimatingCard] = useState<number | null>(null);
-  const [startX, setStartX] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragOffset, setDragOffset] = useState(0);
+  const [counters, setCounters] = useState({
+    members: 0,
+    events: 0,
+    workshops: 0,
+    volunteers: 0
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !isVisible) {
           setIsVisible(true);
-          observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) {
@@ -140,140 +31,72 @@ export default function BannerSection() {
     }
 
     return () => {
-      observer.disconnect();
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
     };
-  }, []);
+  }, [isVisible]);
 
-  // Card swipe handlers
-  const handleTouchStart = (e: React.TouchEvent) => {
-    setStartX(e.touches[0].clientX);
-    setIsDragging(true);
-  };
+  useEffect(() => {
+    if (isVisible) {
+      const duration = 2000;
+      const steps = 60;
+      const interval = duration / steps;
+      
+      const targets = {
+        members: 500,
+        events: 24,
+        workshops: 48,
+        volunteers: 25
+      };
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    setStartX(e.clientX);
-    setIsDragging(true);
-  };
+      let currentStep = 0;
+      const timer = setInterval(() => {
+        currentStep++;
+        const progress = currentStep / steps;
+        
+        setCounters({
+          members: Math.floor(targets.members * progress),
+          events: Math.floor(targets.events * progress),
+          workshops: Math.floor(targets.workshops * progress),
+          volunteers: Math.floor(targets.volunteers * progress)
+        });
 
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging) return;
-    const currentX = e.touches[0].clientX;
-    const diff = currentX - startX;
-    setDragOffset(diff);
-  };
+        if (currentStep >= steps) {
+          clearInterval(timer);
+          setCounters(targets);
+        }
+      }, interval);
 
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return;
-    const currentX = e.clientX;
-    const diff = currentX - startX;
-    setDragOffset(diff);
-  };
-
-  const handleTouchEnd = () => {
-    if (!isDragging) return;
-    
-    if (dragOffset > 100) {
-      // Swiped right
-      handleSwipeRight();
-    } else if (dragOffset < -100) {
-      // Swiped left
-      handleSwipeLeft();
+      return () => clearInterval(timer);
     }
-    
-    setIsDragging(false);
-    setDragOffset(0);
-  };
+  }, [isVisible]);
 
-  const handleMouseUp = () => {
-    if (!isDragging) return;
-    
-    if (dragOffset > 100) {
-      // Swiped right
-      handleSwipeRight();
-    } else if (dragOffset < -100) {
-      // Swiped left
-      handleSwipeLeft();
+  const values = [
+    {
+      icon: '🤝',
+      title: 'Community First',
+      description: 'Building meaningful connections between developers at all skill levels'
+    },
+    {
+      icon: '📚',
+      title: 'Continuous Learning',
+      description: 'Providing cutting-edge workshops and resources to stay ahead'
+    },
+    {
+      icon: '🚀',
+      title: 'Innovation',
+      description: 'Fostering creativity and pushing boundaries in software development'
+    },
+    {
+      icon: '💡',
+      title: 'Open Source',
+      description: 'Contributing to and supporting the open source ecosystem'
     }
-    
-    setIsDragging(false);
-    setDragOffset(0);
-  };
-
-
-  const handleSwipeLeft = () => {
-    if (isAnimating || swipedCards.length >= cardData.length) return;
-    
-    setIsAnimating(true);
-    setAnimationDirection('left');
-    setAnimatingCard(activeCardIndex);
-    
-    // Find the next available card that hasn't been swiped
-    let nextIndex = (activeCardIndex + 1) % cardData.length;
-    while (swipedCards.includes(nextIndex) && swipedCards.length < cardData.length - 1) {
-      nextIndex = (nextIndex + 1) % cardData.length;
-    }
-    
-    // Wait for animation to complete before updating state
-    setTimeout(() => {
-      setSwipedCards(prev => [...prev, activeCardIndex]);
-      setActiveCardIndex(nextIndex);
-      setIsAnimating(false);
-      setAnimationDirection(null);
-      setAnimatingCard(null);
-    }, 400);
-  };
-
-  const handleSwipeRight = () => {
-    if (isAnimating || swipedCards.length === 0) return;
-    
-    setIsAnimating(true);
-    setAnimationDirection('right');
-    
-    // Get the last swiped card
-    const lastSwipedIndex = swipedCards[swipedCards.length - 1];
-    
-    // Create a temporary active card with the content of the last swiped card
-    const tempActiveCard = (
-      <div
-        key="temp-active-card"
-        className={`${styles.card} ${styles.activeCard} ${styles.slideOutRight}`}
-        style={{
-          zIndex: 20,
-          left: 'calc(50% - clamp(30vw, 40vw, 400px))',
-          opacity: 1
-        }}
-      >
-        <div className={styles.cardContent}>
-          <div className={styles.cardTextContent}>
-            <h3 className={styles.cardTitle}>{cardData[lastSwipedIndex].title}</h3>
-            <p className={styles.cardDescription}>{cardData[lastSwipedIndex].description}</p>
-          </div>
-          <div className={styles.cardImageContainer}>
-            <Image
-              src={cardData[lastSwipedIndex].image}
-              alt={cardData[lastSwipedIndex].title}
-              width={200}
-              height={150}
-              className={styles.cardImage}
-            />
-          </div>
-        </div>
-      </div>
-    );
-    
-    // Wait for animation to complete before updating state
-    setTimeout(() => {
-      setActiveCardIndex(lastSwipedIndex);
-      setSwipedCards(prev => prev.slice(0, -1));
-      setIsAnimating(false);
-      setAnimationDirection(null);
-      setAnimatingCard(null);
-    }, 400);
-  };
-
+  ];
 
   return (
-    <div className={styles.bannerSection}>
+    <div className={styles.bannerSection} ref={sectionRef}>
       <BackgroundPattern variant='waves' opacity={0.05} />
       <FloatingShapes
         shapes={[
@@ -293,148 +116,81 @@ export default function BannerSection() {
             top: '70%',
             left: '90%',
           },
-          {
-            type: 'triangle',
-            size: 70,
-            color: 'hsla(var(--accent), 0.1)',
-            opacity: 0.1,
-            top: '30%',
-            left: '80%',
-          },
         ]}
       />
-      <div className={styles.bannerContent} ref={sectionRef}>
-        <div className={styles.sectionHeading}>
-          <h2>The things you&apos;ll get to know</h2>
-          <p>Learn cutting-edge UI/UX design techniques at our Meetup</p>
+      
+      <div className={styles.container}>
+        <div className={styles.headerSection}>
+          <h1 className={styles.mainTitle}>
+            <span className={styles.titleLine}>WHO WE ARE</span>
+            <span className={styles.subtitle}>Building Dallas&apos;s Premier Developer Community</span>
+          </h1>
         </div>
-        
-        <div className={styles.cardStackContainer}>
-          <div
-            className={styles.cardStack}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
-          >
-            {/* Active Card */}
-            <Card
-              card={cardData[activeCardIndex]}
-              position="active"
-              zIndex={10}
-              isDragging={isDragging}
-              dragOffset={dragOffset}
-              isAnimating={isAnimating && animatingCard === activeCardIndex}
-              animationDirection={animationDirection}
-            />
-            
-            {/* Card being animated from swiped to active */}
-            {isAnimating && animationDirection === 'right' && swipedCards.length > 0 && (
-              <div
-                key="animating-card"
-                className={`${styles.card} ${styles.activeCard} ${styles.slideOutRight}`}
-                style={{
-                  zIndex: 20,
-                  left: 'calc(50% - clamp(30vw, 40vw, 400px))',
-                  opacity: 1
-                }}
-              >
-                <div className={styles.cardContent}>
-                  <div className={styles.cardTextContent}>
-                    <h3 className={styles.cardTitle}>{cardData[swipedCards[swipedCards.length - 1]].title}</h3>
-                    <p className={styles.cardDescription}>{cardData[swipedCards[swipedCards.length - 1]].description}</p>
-                  </div>
-                  <div className={styles.cardImageContainer}>
-                    <Image
-                      src={cardData[swipedCards[swipedCards.length - 1]].image}
-                      alt={cardData[swipedCards[swipedCards.length - 1]].title}
-                      width={200}
-                      height={150}
-                      className={styles.cardImage}
-                    />
-                  </div>
-                </div>
-              </div>
-            )}
-            
-            {/* Swiped Cards Stack */}
-            {swipedCards.map((cardIndex, stackPosition) => (
-              <div
-                key={`swiped-${cardData[cardIndex].id}`}
-                className={`${styles.card} ${styles.swipedCard}`}
-                style={{
-                  // Reverse the z-index so first card is on top
-                  zIndex: 15 + stackPosition,
-                  // Right-leaning style with even spacing
-                  left: `calc(50% - clamp(30vw, 40vw, 400px) + ${stackPosition * 15}px)`,
-                  top: `${stackPosition * 15}px`,
-                  transform: 'translateX(-50%) translateY(0) rotate(-5deg)',
-                  opacity: 1
-                }}
-              >
-                <div className={styles.cardContent}>
-                  <div className={styles.cardTextContent}>
-                    <h3 className={styles.cardTitle}>{cardData[cardIndex].title}</h3>
-                    <p className={styles.cardDescription}>{cardData[cardIndex].description}</p>
-                  </div>
-                  <div className={styles.cardImageContainer}>
-                    <Image
-                      src={cardData[cardIndex].image}
-                      alt={cardData[cardIndex].title}
-                      width={200}
-                      height={150}
-                      className={styles.cardImage}
-                    />
-                  </div>
-                </div>
-              </div>
-            ))}
-            
-            {/* Next Card */}
-            {cardData
-              .filter((_, index) => index !== activeCardIndex && !swipedCards.includes(index))
-              .slice(0, 1)
-              .map((card) => (
-                <Card
-                  key={`next-${card.id}`}
-                  card={card}
-                  position="next"
-                  zIndex={1}
-                />
-              ))}
+
+        <div className={styles.statsGrid}>
+          <div className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}>
+            <div className={styles.statNumber}>{counters.members}+</div>
+            <div className={styles.statLabel}>Active Members</div>
+            <div className={styles.statIcon}>👥</div>
           </div>
-          
-          <div className={styles.cardControls}>
-            <button
-              className={`${styles.cardControlButton} ${swipedCards.length >= cardData.length - 1 || isAnimating ? styles.disabledButton : ''}`}
-              onClick={handleSwipeLeft}
-              aria-label="Swipe card left"
-              disabled={swipedCards.length >= cardData.length - 1 || isAnimating}
-            >
-              &lt;
-            </button>
-            <div className={styles.cardIndicators}>
-              {cardData.map((_, index) => (
-                <div
-                  key={index}
-                  className={`${styles.cardIndicator} ${
-                    index === activeCardIndex ? styles.activeCardIndicator : ''
-                  } ${swipedCards.includes(index) ? styles.swipedCardIndicator : ''}`}
-                />
-              ))}
+          <div className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`} style={{ animationDelay: '0.1s' }}>
+            <div className={styles.statNumber}>{counters.events}</div>
+            <div className={styles.statLabel}>Annual Events</div>
+            <div className={styles.statIcon}>📅</div>
+          </div>
+          <div className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`} style={{ animationDelay: '0.2s' }}>
+            <div className={styles.statNumber}>{counters.workshops}+</div>
+            <div className={styles.statLabel}>Tech Workshops</div>
+            <div className={styles.statIcon}>💻</div>
+          </div>
+          <div className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`} style={{ animationDelay: '0.3s' }}>
+            <div className={styles.statNumber}>{counters.volunteers}</div>
+            <div className={styles.statLabel}>Dedicated Volunteers</div>
+            <div className={styles.statIcon}>🌟</div>
+          </div>
+        </div>
+
+        <div className={styles.contentSection}>
+          <div className={styles.missionSection}>
+            <div className={styles.missionCard}>
+              <h2 className={styles.sectionTitle}>Our Mission</h2>
+              <p className={styles.missionText}>
+                Dallas Software Developers is a thriving community in the DFW area run 100% by passionate volunteers.
+                We&apos;re dedicated to providing exceptional value and resources to build a vibrant ecosystem for local software developers.
+              </p>
+              <div className={styles.highlightBox}>
+                <span className={styles.highlight}>100% Free</span>
+                <span className={styles.highlight}>100% Community-Driven</span>
+                <span className={styles.highlight}>100% Inclusive</span>
+              </div>
             </div>
-            <button
-              className={`${styles.cardControlButton} ${swipedCards.length === 0 || isAnimating ? styles.disabledButton : ''}`}
-              onClick={handleSwipeRight}
-              aria-label="Swipe card right"
-              disabled={swipedCards.length === 0 || isAnimating}
-            >
-              &gt;
-            </button>
-          </div>
+
+            <div className={styles.visionCard}>
+              <h2 className={styles.sectionTitle}>Our Core Values</h2>
+              <ul className={styles.offerList}>
+                <li className={styles.offerItem}>
+                  <span className={styles.offerIcon}>🎓</span>
+                  <span>Quarterly cohorts with structured learning paths</span>
+                </li>
+                <li className={styles.offerItem}>
+                  <span className={styles.offerIcon}>🔧</span>
+                  <span>Hands-on workshops on cutting-edge technologies</span>
+                </li>
+                <li className={styles.offerItem}>
+                  <span className={styles.offerIcon}>🤖</span>
+                  <span>AI, Machine Learning, and emerging tech sessions</span>
+                </li>
+                <li className={styles.offerItem}>
+                  <span className={styles.offerIcon}>🌐</span>
+                  <span>Networking opportunities with industry professionals</span>
+                </li>
+                <li className={styles.offerItem}>
+                  <span className={styles.offerIcon}>💼</span>
+                  <span>Career development and mentorship programs</span>
+                </li>
+              </ul>
+            </div>
+          </div>      
         </div>
       </div>
     </div>

@@ -45,7 +45,7 @@ export default function Footer() {
             <div className={styles.footerColumn}>
               <h3 className={styles.footerHeading}>Contact</h3>
               <div className={styles.contactLinks}>
-                <a href="mailto:info@dallassoftware.dev">info@dallassoftware.dev</a>
+                <a href="mailto:dallassoftwaredevelopersdsd@gmail.com">dallassoftwaredevelopersdsd@gmail.com</a>
                 <a href="https://discord.gg/dallassoftwaredevs" target="_blank" rel="noopener noreferrer">Join our Discord</a>
               </div>
             </div>
