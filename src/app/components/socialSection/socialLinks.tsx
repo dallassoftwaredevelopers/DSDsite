@@ -17,7 +17,7 @@ const SocialLinks = ({
       <ul className={className}>
         {links.map((link) => (
           <li key={link.id}>
-            <a href={link.link} target='_blank' rel="noopener noreferrer">
+            <a href={link.link} target='_blank' rel='noopener noreferrer'>
               {link.icon}
             </a>
           </li>

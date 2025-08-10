@@ -15,7 +15,7 @@ export default function CohortCard({
       <iframe
         src={youtubeLink}
         title={cohortName || 'Cohort Video'}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
       />
     </div>

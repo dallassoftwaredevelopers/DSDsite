@@ -10,15 +10,16 @@ export async function GET() {
     return NextResponse.json(speakers, {
       headers: {
         'Cache-Control': 'no-store, no-cache, must-revalidate',
-        'Pragma': 'no-cache',
-        'Expires': '0'
-      }
+        Pragma: 'no-cache',
+        Expires: '0',
+      },
     });
   } catch (error) {
     console.error('API Error:', error);
     return NextResponse.json(
       {
-        error: error instanceof Error ? error.message : 'Failed to fetch speakers'
+        error:
+          error instanceof Error ? error.message : 'Failed to fetch speakers',
       },
       { status: 500 }
     );

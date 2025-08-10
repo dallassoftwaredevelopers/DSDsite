@@ -70,7 +70,8 @@ export default function CommunityBento() {
             Join Our <span className={styles.highlight}>Community</span>
           </h1>
           <p className={styles.heroDescription}>
-            We're building an inclusive, welcoming space for developers of all backgrounds and skill levels.
+            We're building an inclusive, welcoming space for developers of all
+            backgrounds and skill levels.
           </p>
         </div>
 
@@ -84,8 +85,8 @@ export default function CommunityBento() {
                 No Gatekeeping
               </h2>
               <p className={styles.messageText}>
-                We believe in accessible learning for everyone. Join us in person or online - 
-                every voice matters in our community.
+                We believe in accessible learning for everyone. Join us in
+                person or online - every voice matters in our community.
               </p>
             </div>
           </div>
@@ -93,13 +94,16 @@ export default function CommunityBento() {
           {/* Photo Grid */}
           <div className={styles.photoGrid}>
             {bentoImages.slice(0, 6).map((image, index) => (
-              <div key={image.id} className={`${styles.photoCard} ${styles[`photo${index + 1}`]}`}>
+              <div
+                key={image.id}
+                className={`${styles.photoCard} ${styles[`photo${index + 1}`]}`}
+              >
                 <Image
                   src={image.url}
                   alt={image.alt}
                   fill
                   className={styles.photoImage}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                 />
               </div>
             ))}
@@ -114,7 +118,7 @@ export default function CommunityBento() {
                   alt={image.alt}
                   fill
                   className={styles.photoImage}
-                  sizes="(max-width: 768px) 100vw, 25vw"
+                  sizes='(max-width: 768px) 100vw, 25vw'
                 />
               </div>
             ))}
@@ -122,7 +126,7 @@ export default function CommunityBento() {
         </div>
       </div>
 
-      <div className={styles.scrollIndicator} aria-hidden="true">
+      <div className={styles.scrollIndicator} aria-hidden='true'>
         <div className={styles.mouse}>
           <div className={styles.mouseWheel}></div>
         </div>

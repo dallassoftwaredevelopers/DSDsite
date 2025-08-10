@@ -14,7 +14,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(51, 133, 255, 0.1) 0%, rgba(7, 18, 56, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(51, 133, 255, 0.1) 0%,
+    rgba(7, 18, 56, 0.1) 100%
+  );
   z-index: 1;
 }
 
@@ -40,7 +44,11 @@
 .titleLine {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--primary-light)) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -63,7 +71,11 @@
 }
 
 .statCard {
-  background: linear-gradient(135deg, hsla(var(--primary), 0.1) 0%, hsla(var(--primary-dark), 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.1) 0%,
+    hsla(var(--primary-dark), 0.05) 100%
+  );
   border: 1px solid hsla(var(--primary), 0.2);
   border-radius: 1rem;
   padding: 2rem;
@@ -81,13 +93,21 @@
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, hsla(var(--primary), 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    hsla(var(--primary), 0.1) 0%,
+    transparent 70%
+  );
   animation: rotate 20s linear infinite;
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .animateIn {
@@ -168,7 +188,11 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, hsla(var(--primary), 0.2) 0%, hsla(var(--primary-light), 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.2) 0%,
+    hsla(var(--primary-light), 0.1) 100%
+  );
   border: 1px solid hsla(var(--primary), 0.3);
   padding: 0.5rem 1rem;
   border-radius: 2rem;
@@ -219,7 +243,11 @@
 }
 
 .valueCard {
-  background: linear-gradient(135deg, hsla(var(--dark-lighter), 0.5) 0%, hsla(var(--dark), 0.3) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--dark-lighter), 0.5) 0%,
+    hsla(var(--dark), 0.3) 100%
+  );
   border: 1px solid hsla(var(--primary), 0.15);
   border-radius: 1rem;
   padding: 2rem;
@@ -259,7 +287,11 @@
 
 /* CTA Section */
 .ctaSection {
-  background: linear-gradient(135deg, hsla(var(--primary), 0.1) 0%, hsla(var(--primary-dark), 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.1) 0%,
+    hsla(var(--primary-dark), 0.05) 100%
+  );
   border: 1px solid hsla(var(--primary), 0.2);
   border-radius: 1rem;
   padding: 3rem;
@@ -271,7 +303,11 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--primary-light)) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -303,7 +339,11 @@
 }
 
 .primaryBtn {
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--primary-light)) 100%
+  );
   color: white;
   border: none;
 }

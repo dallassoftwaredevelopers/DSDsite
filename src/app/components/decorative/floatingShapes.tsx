@@ -46,7 +46,7 @@ const defaultShapes: ShapeProps[] = [
     left: '75%',
     animationDelay: '1.5s',
   },
-  
+
   // Middle row
   {
     type: 'square',
@@ -66,7 +66,7 @@ const defaultShapes: ShapeProps[] = [
     left: '60%',
     animationDelay: '2.5s',
   },
-  
+
   // Bottom row
   {
     type: 'triangle',
@@ -102,7 +102,18 @@ export default function FloatingShapes({
   className = '',
 }: FloatingShapesProps) {
   return (
-    <div className={className} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 5, pointerEvents: 'none' }}>
+    <div
+      className={className}
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: 5,
+        pointerEvents: 'none',
+      }}
+    >
       {shapes.map((shape, index) => {
         const shapeStyle = {
           '--shape-color': shape.color,
@@ -119,7 +130,7 @@ export default function FloatingShapes({
             key={index}
             className={`${styles.floatingElement} ${styles[`shape${shape.type.charAt(0).toUpperCase() + shape.type.slice(1)}`]} ${styles.shape}`}
             style={shapeStyle}
-            aria-hidden="true"
+            aria-hidden='true'
           />
         );
       })}

@@ -6,7 +6,7 @@
   width: 100%;
   overflow-x: hidden;
   background: hsl(var(--light));
-  
+
   /* Hide scrollbar but allow scrolling */
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
@@ -54,10 +54,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg,
+  background: linear-gradient(
+    135deg,
     hsla(252, 74%, 26%, 0.03) 0%,
     hsla(252, 80%, 46%, 0.05) 50%,
-    hsla(208, 93%, 23%, 0.163) 100%);
+    hsla(208, 93%, 23%, 0.163) 100%
+  );
   z-index: 1;
 }
 
@@ -81,9 +83,11 @@
   left: 15%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle,
+  background: radial-gradient(
+    circle,
     hsla(213, 100%, 60%, 0.15) 0%,
-    hsla(213, 100%, 60%, 0) 70%);
+    hsla(213, 100%, 60%, 0) 70%
+  );
   animation: floatAnimation 20s infinite alternate ease-in-out;
 }
 
@@ -92,9 +96,11 @@
   right: 10%;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle,
+  background: radial-gradient(
+    circle,
     hsla(213, 100%, 80%, 0.1) 0%,
-    hsla(213, 100%, 80%, 0) 70%);
+    hsla(213, 100%, 80%, 0) 70%
+  );
   animation: floatAnimation 15s infinite alternate-reverse ease-in-out;
 }
 
@@ -104,9 +110,11 @@
   transform: translate(-50%, -50%);
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle,
+  background: radial-gradient(
+    circle,
     hsla(222, 89%, 12%, 0.05) 0%,
-    hsla(222, 89%, 12%, 0) 70%);
+    hsla(222, 89%, 12%, 0) 70%
+  );
   animation: pulseAnimation 10s infinite ease-in-out;
 }
 
@@ -115,9 +123,11 @@
   right: 25%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle,
+  background: radial-gradient(
+    circle,
     hsla(213, 100%, 70%, 0.12) 0%,
-    hsla(213, 100%, 70%, 0) 70%);
+    hsla(213, 100%, 70%, 0) 70%
+  );
   animation: floatAnimation 18s infinite alternate-reverse ease-in-out;
 }
 
@@ -249,7 +259,11 @@
   display: inline-block;
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -352,7 +366,11 @@
   justify-content: center;
   width: 48px;
   height: 48px;
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
   border-radius: 50%;
   color: hsl(var(--light));
   flex-shrink: 0;
@@ -422,7 +440,9 @@
 .sectionContainer .contentWrapper {
   opacity: 0;
   transform: translateY(30px);
-  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease-out;
   will-change: transform, opacity;
 }
 
@@ -437,22 +457,28 @@
 }
 
 .sectionContainer.gradientBackground {
-  background: linear-gradient(135deg, 
-    hsla(var(--primary), 0.02) 0%, 
-    hsla(var(--accent), 0.03) 50%, 
-    hsla(var(--primary), 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.02) 0%,
+    hsla(var(--accent), 0.03) 50%,
+    hsla(var(--primary), 0.02) 100%
+  );
 }
 
 .sectionContainer.primaryBackground {
-  background: linear-gradient(135deg, 
-    hsla(var(--primary), 0.05) 0%, 
-    hsla(var(--primary-light), 0.03) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.05) 0%,
+    hsla(var(--primary-light), 0.03) 100%
+  );
 }
 
 .sectionContainer.accentBackground {
-  background: linear-gradient(135deg, 
-    hsla(var(--accent), 0.05) 0%, 
-    hsla(var(--primary), 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--accent), 0.05) 0%,
+    hsla(var(--primary), 0.02) 100%
+  );
 }
 
 .contentWrapper {
@@ -487,7 +513,11 @@
   transform: translateX(-50%);
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--primary-light)));
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
   border-radius: var(--border-radius-full);
 }
 
@@ -531,7 +561,11 @@
   left: 0;
   width: 100%;
   padding: var(--spacing-4);
-  background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
   color: hsl(var(--light));
   font-size: var(--text-sm);
   text-align: center;
@@ -576,7 +610,11 @@
   justify-content: center;
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
   border-radius: 50%;
   color: hsl(var(--light));
   margin: 0 auto var(--spacing-4);
@@ -699,7 +737,7 @@
   .heroStats {
     gap: var(--spacing-4);
   }
-  
+
   .stat {
     min-width: 100px;
   }
@@ -711,11 +749,11 @@
     align-items: center;
     gap: var(--spacing-3);
   }
-  
+
   .stat {
     max-width: 200px;
   }
-  
+
   .speakerBenefits {
     flex-direction: column;
     gap: var(--spacing-4);
@@ -727,7 +765,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .highlightItem {
     max-width: 100%;
   }

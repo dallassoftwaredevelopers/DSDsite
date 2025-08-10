@@ -8,7 +8,7 @@ import BackgroundPattern from '../decorative/backgroundPattern';
 export default function GroupPhotoSection() {
   return (
     <div className={styles.groupPhotoSection} data-testid='groupPhoto'>
-      <BackgroundPattern variant="circles" opacity={0.07} />
+      <BackgroundPattern variant='circles' opacity={0.07} />
       <div className={styles.sectionHeading}>
         <h2>Our Community</h2>
         <p>Join a thriving group of passionate developers</p>

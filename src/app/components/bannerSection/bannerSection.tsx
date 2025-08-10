@@ -13,7 +13,7 @@ export default function BannerSection() {
     members: 0,
     events: 0,
     workshops: 0,
-    volunteers: 0
+    volunteers: 0,
   });
 
   useEffect(() => {
@@ -42,24 +42,24 @@ export default function BannerSection() {
       const duration = 2000;
       const steps = 60;
       const interval = duration / steps;
-      
+
       const targets = {
         members: 500,
         events: 24,
         workshops: 48,
-        volunteers: 25
+        volunteers: 25,
       };
 
       let currentStep = 0;
       const timer = setInterval(() => {
         currentStep++;
         const progress = currentStep / steps;
-        
+
         setCounters({
           members: Math.floor(targets.members * progress),
           events: Math.floor(targets.events * progress),
           workshops: Math.floor(targets.workshops * progress),
-          volunteers: Math.floor(targets.volunteers * progress)
+          volunteers: Math.floor(targets.volunteers * progress),
         });
 
         if (currentStep >= steps) {
@@ -76,23 +76,26 @@ export default function BannerSection() {
     {
       icon: '🤝',
       title: 'Community First',
-      description: 'Building meaningful connections between developers at all skill levels'
+      description:
+        'Building meaningful connections between developers at all skill levels',
     },
     {
       icon: '📚',
       title: 'Continuous Learning',
-      description: 'Providing cutting-edge workshops and resources to stay ahead'
+      description:
+        'Providing cutting-edge workshops and resources to stay ahead',
     },
     {
       icon: '🚀',
       title: 'Innovation',
-      description: 'Fostering creativity and pushing boundaries in software development'
+      description:
+        'Fostering creativity and pushing boundaries in software development',
     },
     {
       icon: '💡',
       title: 'Open Source',
-      description: 'Contributing to and supporting the open source ecosystem'
-    }
+      description: 'Contributing to and supporting the open source ecosystem',
+    },
   ];
 
   return (
@@ -118,32 +121,45 @@ export default function BannerSection() {
           },
         ]}
       />
-      
+
       <div className={styles.container}>
         <div className={styles.headerSection}>
           <h1 className={styles.mainTitle}>
             <span className={styles.titleLine}>WHO WE ARE</span>
-            <span className={styles.subtitle}>Building Dallas&apos;s Premier Developer Community</span>
+            <span className={styles.subtitle}>
+              Building Dallas&apos;s Premier Developer Community
+            </span>
           </h1>
         </div>
 
         <div className={styles.statsGrid}>
-          <div className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}>
+          <div
+            className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
+          >
             <div className={styles.statNumber}>{counters.members}+</div>
             <div className={styles.statLabel}>Active Members</div>
             <div className={styles.statIcon}>👥</div>
           </div>
-          <div className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`} style={{ animationDelay: '0.1s' }}>
+          <div
+            className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
+            style={{ animationDelay: '0.1s' }}
+          >
             <div className={styles.statNumber}>{counters.events}</div>
             <div className={styles.statLabel}>Annual Events</div>
             <div className={styles.statIcon}>📅</div>
           </div>
-          <div className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`} style={{ animationDelay: '0.2s' }}>
+          <div
+            className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
+            style={{ animationDelay: '0.2s' }}
+          >
             <div className={styles.statNumber}>{counters.workshops}+</div>
             <div className={styles.statLabel}>Tech Workshops</div>
             <div className={styles.statIcon}>💻</div>
           </div>
-          <div className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`} style={{ animationDelay: '0.3s' }}>
+          <div
+            className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
+            style={{ animationDelay: '0.3s' }}
+          >
             <div className={styles.statNumber}>{counters.volunteers}</div>
             <div className={styles.statLabel}>Dedicated Volunteers</div>
             <div className={styles.statIcon}>🌟</div>
@@ -155,8 +171,10 @@ export default function BannerSection() {
             <div className={styles.missionCard}>
               <h2 className={styles.sectionTitle}>Our Mission</h2>
               <p className={styles.missionText}>
-                Dallas Software Developers is a thriving community in the DFW area run 100% by passionate volunteers.
-                We&apos;re dedicated to providing exceptional value and resources to build a vibrant ecosystem for local software developers.
+                Dallas Software Developers is a thriving community in the DFW
+                area run 100% by passionate volunteers. We&apos;re dedicated to
+                providing exceptional value and resources to build a vibrant
+                ecosystem for local software developers.
               </p>
               <div className={styles.highlightBox}>
                 <span className={styles.highlight}>100% Free</span>
@@ -182,7 +200,9 @@ export default function BannerSection() {
                 </li>
                 <li className={styles.offerItem}>
                   <span className={styles.offerIcon}>🌐</span>
-                  <span>Networking opportunities with industry professionals</span>
+                  <span>
+                    Networking opportunities with industry professionals
+                  </span>
                 </li>
                 <li className={styles.offerItem}>
                   <span className={styles.offerIcon}>💼</span>
@@ -190,7 +210,7 @@ export default function BannerSection() {
                 </li>
               </ul>
             </div>
-          </div>      
+          </div>
         </div>
       </div>
     </div>

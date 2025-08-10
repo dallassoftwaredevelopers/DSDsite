@@ -12,12 +12,15 @@ export default function AboutPage() {
     const handleScroll = () => {
       if (heroRef.current) {
         const scrollPosition = window.scrollY;
-        const parallaxElements = heroRef.current.querySelectorAll(`.${styles.parallax}`);
-        
+        const parallaxElements = heroRef.current.querySelectorAll(
+          `.${styles.parallax}`
+        );
+
         parallaxElements.forEach((element) => {
           const speed = (element as HTMLElement).dataset.speed || '0.5';
           const movement = scrollPosition * parseFloat(speed);
-          (element as HTMLElement).style.transform = `translateY(${movement}px)`;
+          (element as HTMLElement).style.transform =
+            `translateY(${movement}px)`;
         });
       }
     };
@@ -31,8 +34,14 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className={styles.heroSection} ref={heroRef}>
         <div className={styles.backgroundElements}>
-          <div className={`${styles.gradientOverlay} ${styles.parallax}`} data-speed="0.2"></div>
-          <div className={`${styles.shapesContainer} ${styles.parallax}`} data-speed="0.3">
+          <div
+            className={`${styles.gradientOverlay} ${styles.parallax}`}
+            data-speed='0.2'
+          ></div>
+          <div
+            className={`${styles.shapesContainer} ${styles.parallax}`}
+            data-speed='0.3'
+          >
             <div className={`${styles.shape} ${styles.shape1}`}></div>
             <div className={`${styles.shape} ${styles.shape2}`}></div>
             <div className={`${styles.shape} ${styles.shape3}`}></div>
@@ -45,7 +54,9 @@ export default function AboutPage() {
             <h1 className={styles.heroTitle}>
               <span className={styles.titleLine}>About</span>
               <span className={styles.titleLine}>
-                <span className={styles.highlight}>Dallas Software Developers</span>
+                <span className={styles.highlight}>
+                  Dallas Software Developers
+                </span>
               </span>
             </h1>
             <p className={styles.heroSubtitle}>
@@ -62,10 +73,11 @@ export default function AboutPage() {
             <div className={styles.missionContent}>
               <h2 className={styles.sectionTitle}>Our Mission</h2>
               <p className={styles.missionText}>
-                We are a vibrant community of developers, designers, and tech enthusiasts 
-                dedicated to fostering growth, collaboration, and innovation in the Dallas 
-                tech ecosystem. Through meetups, workshops, and collaborative projects, 
-                we empower individuals to reach their full potential.
+                We are a vibrant community of developers, designers, and tech
+                enthusiasts dedicated to fostering growth, collaboration, and
+                innovation in the Dallas tech ecosystem. Through meetups,
+                workshops, and collaborative projects, we empower individuals to
+                reach their full potential.
               </p>
               <div className={styles.statsGrid}>
                 <div className={styles.statCard}>
@@ -104,32 +116,34 @@ export default function AboutPage() {
               <div className={styles.valueIcon}>🤝</div>
               <h3 className={styles.valueTitle}>Community First</h3>
               <p className={styles.valueDescription}>
-                We believe in the power of community. Every member brings unique perspectives 
-                and experiences that enrich our collective knowledge.
+                We believe in the power of community. Every member brings unique
+                perspectives and experiences that enrich our collective
+                knowledge.
               </p>
             </div>
             <div className={styles.valueCard}>
               <div className={styles.valueIcon}>🚀</div>
               <h3 className={styles.valueTitle}>Continuous Learning</h3>
               <p className={styles.valueDescription}>
-                Technology evolves rapidly, and so do we. We&apos;re committed to staying current
-                with the latest trends and best practices.
+                Technology evolves rapidly, and so do we. We&apos;re committed
+                to staying current with the latest trends and best practices.
               </p>
             </div>
             <div className={styles.valueCard}>
               <div className={styles.valueIcon}>💡</div>
               <h3 className={styles.valueTitle}>Innovation</h3>
               <p className={styles.valueDescription}>
-                We encourage creative thinking and experimentation, fostering an environment 
-                where new ideas can flourish.
+                We encourage creative thinking and experimentation, fostering an
+                environment where new ideas can flourish.
               </p>
             </div>
             <div className={styles.valueCard}>
               <div className={styles.valueIcon}>🌟</div>
               <h3 className={styles.valueTitle}>Inclusivity</h3>
               <p className={styles.valueDescription}>
-                Everyone is welcome here. We celebrate diversity and ensure our community 
-                is accessible to developers of all backgrounds and skill levels.
+                Everyone is welcome here. We celebrate diversity and ensure our
+                community is accessible to developers of all backgrounds and
+                skill levels.
               </p>
             </div>
           </div>
@@ -144,42 +158,42 @@ export default function AboutPage() {
             <div className={styles.offerCard}>
               <h3 className={styles.offerTitle}>Monthly Meetups</h3>
               <p className={styles.offerDescription}>
-                Join us twice a month for in-person meetups featuring tech talks, 
-                networking, and hands-on workshops.
+                Join us twice a month for in-person meetups featuring tech
+                talks, networking, and hands-on workshops.
               </p>
             </div>
             <div className={styles.offerCard}>
               <h3 className={styles.offerTitle}>Technical Workshops</h3>
               <p className={styles.offerDescription}>
-                Deep dive into specific technologies with expert-led workshops 
+                Deep dive into specific technologies with expert-led workshops
                 covering everything from web development to cloud architecture.
               </p>
             </div>
             <div className={styles.offerCard}>
               <h3 className={styles.offerTitle}>Career Support</h3>
               <p className={styles.offerDescription}>
-                Get guidance on career development, resume reviews, interview prep, 
-                and connect with hiring companies.
+                Get guidance on career development, resume reviews, interview
+                prep, and connect with hiring companies.
               </p>
             </div>
             <div className={styles.offerCard}>
               <h3 className={styles.offerTitle}>Open Source Projects</h3>
               <p className={styles.offerDescription}>
-                Contribute to real-world projects, build your portfolio, and 
+                Contribute to real-world projects, build your portfolio, and
                 collaborate with other developers.
               </p>
             </div>
             <div className={styles.offerCard}>
               <h3 className={styles.offerTitle}>Mentorship Program</h3>
               <p className={styles.offerDescription}>
-                Connect with experienced developers who can guide you through 
+                Connect with experienced developers who can guide you through
                 your learning journey and career growth.
               </p>
             </div>
             <div className={styles.offerCard}>
               <h3 className={styles.offerTitle}>Community Discord</h3>
               <p className={styles.offerDescription}>
-                Stay connected 24/7 with our active Discord server where you can 
+                Stay connected 24/7 with our active Discord server where you can
                 ask questions, share resources, and collaborate.
               </p>
             </div>
@@ -205,7 +219,8 @@ export default function AboutPage() {
               <h3 className={styles.teamName}>Danny Thompson</h3>
               <p className={styles.teamRole}>Founder & Community Lead</p>
               <p className={styles.teamBio}>
-                Passionate about building communities and helping developers grow their careers.
+                Passionate about building communities and helping developers
+                grow their careers.
               </p>
             </div>
             <div className={styles.teamCard}>
@@ -256,14 +271,15 @@ export default function AboutPage() {
         <div className={styles.ctaContent}>
           <h2 className={styles.ctaTitle}>Ready to Join Our Community?</h2>
           <p className={styles.ctaSubtitle}>
-            Take the first step towards advancing your career and connecting with amazing developers
+            Take the first step towards advancing your career and connecting
+            with amazing developers
           </p>
           <div className={styles.ctaButtons}>
-            <Link href="/community" className={styles.primaryButton}>
+            <Link href='/community' className={styles.primaryButton}>
               Join the Community
               <span className={styles.buttonArrow}>→</span>
             </Link>
-            <Link href="/cohorts" className={styles.secondaryButton}>
+            <Link href='/cohorts' className={styles.secondaryButton}>
               Explore Programs
             </Link>
           </div>

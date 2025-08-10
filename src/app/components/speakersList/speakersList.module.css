@@ -10,8 +10,9 @@
   border-radius: 20px;
   overflow: hidden;
   background: #1a1a1a;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   aspect-ratio: 3/4;
   will-change: transform;
@@ -29,11 +30,13 @@
 }
 
 .speakerCard:hover .speakerOverlay {
-  background: linear-gradient(to top, 
-    rgba(0, 0, 0, 0.95) 0%, 
-    rgba(0, 0, 0, 0.85) 40%, 
-    rgba(0, 0, 0, 0.4) 70%, 
-    transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.95) 0%,
+    rgba(0, 0, 0, 0.85) 40%,
+    rgba(0, 0, 0, 0.4) 70%,
+    transparent 100%
+  );
 }
 
 .speakerImageWrapper {
@@ -62,11 +65,13 @@
   left: 0;
   right: 0;
   height: 60%;
-  background: linear-gradient(to top, 
-    rgba(0, 0, 0, 0.9) 0%, 
-    rgba(0, 0, 0, 0.7) 40%, 
-    rgba(0, 0, 0, 0.3) 70%, 
-    transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.7) 40%,
+    rgba(0, 0, 0, 0.3) 70%,
+    transparent 100%
+  );
   display: flex;
   align-items: flex-end;
   padding: 2rem 1.5rem 1.5rem;

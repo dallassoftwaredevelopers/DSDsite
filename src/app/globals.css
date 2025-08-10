@@ -19,18 +19,33 @@
   --gray-100: 220, 20%, 92%; /* Light gray: #e6e9f0 */
   --gray-200: 220, 20%, 82%; /* Medium gray: #ccd2e0 */
   --gray-300: 220, 20%, 72%; /* Darker gray: #b3bbd1 */
-  
-  --gradient-primary: linear-gradient(135deg, hsl(213, 100%, 60%) 0%, hsl(213, 100%, 70%) 100%);
-  --gradient-secondary: linear-gradient(135deg, hsl(222, 89%, 12%) 0%, hsl(222, 89%, 22%) 100%);
-  --gradient-accent: linear-gradient(135deg, hsl(213, 100%, 60%) 0%, hsl(213, 100%, 80%) 100%);
-  --gradient-dark: linear-gradient(135deg, hsl(222, 89%, 12%) 0%, hsl(222, 89%, 22%) 100%);
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    hsl(213, 100%, 60%) 0%,
+    hsl(213, 100%, 70%) 100%
+  );
+  --gradient-secondary: linear-gradient(
+    135deg,
+    hsl(222, 89%, 12%) 0%,
+    hsl(222, 89%, 22%) 100%
+  );
+  --gradient-accent: linear-gradient(
+    135deg,
+    hsl(213, 100%, 60%) 0%,
+    hsl(213, 100%, 80%) 100%
+  );
+  --gradient-dark: linear-gradient(
+    135deg,
+    hsl(222, 89%, 12%) 0%,
+    hsl(222, 89%, 22%) 100%
+  );
   --shadow-sm: 0 2px 8px hsla(var(--dark), 0.08);
   --shadow-md: 0 4px 16px hsla(var(--dark), 0.12);
   --shadow-lg: 0 8px 30px hsla(var(--dark), 0.16);
   --shadow-primary: 0 8px 30px rgba(42, 15, 143, 0.3);
   --shadow-secondary: 0 8px 30px rgba(240, 58, 126, 0.3);
-  
-  
+
   --border-radius-sm: 8px;
   --border-radius-md: 12px;
   --border-radius-lg: 20px;
@@ -42,7 +57,7 @@
   --font-secondary: 'Inter', sans-serif;
   --font-base-size: 16px;
   --line-height: 1.6;
-  
+
   --font-weight-light: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -50,7 +65,7 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
   --font-weight-black: 900;
-  
+
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1rem;
@@ -62,7 +77,7 @@
   --text-4xl: 3rem;
   --text-5xl: 3.75rem;
   --text-6xl: 4.5rem;
-  
+
   --spacing-1: 0.25rem;
   --spacing-2: 0.5rem;
   --spacing-3: 0.75rem;
@@ -78,7 +93,9 @@
   --spacing-32: 8rem;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -99,7 +116,7 @@ html {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  
+
   html {
     scroll-behavior: auto;
   }
@@ -124,14 +141,27 @@ body::before {
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(circle at 25px 25px, hsla(var(--dark), 0.01) 2%, transparent 0%),
-    radial-gradient(circle at 75px 75px, hsla(var(--dark), 0.01) 2%, transparent 0%);
+    radial-gradient(
+      circle at 25px 25px,
+      hsla(var(--dark), 0.01) 2%,
+      transparent 0%
+    ),
+    radial-gradient(
+      circle at 75px 75px,
+      hsla(var(--dark), 0.01) 2%,
+      transparent 0%
+    );
   background-size: 100px 100px;
   pointer-events: none;
   z-index: -1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
@@ -454,23 +484,24 @@ footer,
   h1 {
     font-size: var(--text-4xl);
   }
-  
+
   h2 {
     font-size: var(--text-3xl);
   }
-  
+
   h3 {
     font-size: var(--text-2xl);
   }
-  
-  .container, .innerContainer {
+
+  .container,
+  .innerContainer {
     padding: 0 var(--spacing-4);
   }
-  
+
   .section {
     padding: var(--spacing-12) 0;
   }
-  
+
   .sectionPadded {
     margin: 0 var(--spacing-4);
   }
@@ -483,23 +514,26 @@ footer,
 }
 
 @media (min-width: 768px) {
-  .container, .innerContainer {
+  .container,
+  .innerContainer {
     padding: 0 var(--spacing-6);
   }
 }
 
 @media (min-width: 992px) {
-  .container, .innerContainer {
+  .container,
+  .innerContainer {
     max-width: 960px;
   }
-  
+
   .sectionPadded {
     margin: 0 var(--spacing-8);
   }
 }
 
 @media (min-width: 1200px) {
-  .container, .innerContainer {
+  .container,
+  .innerContainer {
     max-width: var(--max-width);
     padding: 0 var(--spacing-8);
   }

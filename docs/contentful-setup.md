@@ -25,6 +25,7 @@ CONTENTFUL_ACCESS_TOKEN=your_access_token_here
 ```
 
 To get these values:
+
 1. Log in to your Contentful account
 2. Go to Settings → API keys
 3. Create a new API key or use an existing one
@@ -33,6 +34,7 @@ To get these values:
 ### 2. Content Type Setup in Contentful
 
 Ensure your "speakers" content type has the exact field IDs as listed above. The field IDs (not display names) must match:
+
 - `name`
 - `role`
 - `company`
@@ -45,6 +47,7 @@ Ensure your "speakers" content type has the exact field IDs as listed above. The
 ### API Endpoint
 
 The speaker data is available through the API endpoint:
+
 ```
 GET /api/speakers
 ```
@@ -75,13 +78,15 @@ import { getSpeakers } from '@/lib/contentful';
 
 export default async function ServerComponent() {
   const speakers = await getSpeakers();
-  
+
   return (
     <div>
-      {speakers.map(speaker => (
+      {speakers.map((speaker) => (
         <div key={speaker.name}>
           <h3>{speaker.name}</h3>
-          <p>{speaker.role} at {speaker.company}</p>
+          <p>
+            {speaker.role} at {speaker.company}
+          </p>
         </div>
       ))}
     </div>
@@ -117,10 +122,12 @@ interface Speaker {
 ### Common Issues
 
 1. **"Contentful ACCESS_TOKEN is not configured"**
+
    - Ensure the `CONTENTFUL_ACCESS_TOKEN` environment variable is set
    - Restart your development server after adding environment variables
 
 2. **"Failed to fetch speakers"**
+
    - Check that your Space ID and Access Token are correct
    - Verify that the content type is named exactly "speakers"
    - Ensure you have published content in Contentful

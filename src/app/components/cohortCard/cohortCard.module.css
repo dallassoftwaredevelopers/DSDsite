@@ -19,7 +19,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, hsla(var(--primary), 0.05) 0%, transparent 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.05) 0%,
+    transparent 100%
+  );
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -54,7 +58,11 @@
 .defaultImageContainer {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background: linear-gradient(135deg, hsla(var(--primary), 0.1) 0%, hsla(var(--accent), 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.1) 0%,
+    hsla(var(--accent), 0.1) 100%
+  );
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +77,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at center, hsla(var(--primary), 0.1) 0%, transparent 70%);
+  background: radial-gradient(
+    circle at center,
+    hsla(var(--primary), 0.1) 0%,
+    transparent 70%
+  );
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -99,14 +111,13 @@
   border: none;
 }
 
-
 /* Responsive Design */
 @media (max-width: 768px) {
   .groupName {
     font-size: var(--text-lg);
     padding: var(--spacing-4);
   }
-  
+
   .cohortVideoContainer,
   .defaultImageContainer {
     aspect-ratio: 16 / 10;

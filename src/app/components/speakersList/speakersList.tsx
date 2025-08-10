@@ -21,8 +21,8 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
           cache: 'no-store',
           headers: {
             'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache'
-          }
+            Pragma: 'no-cache',
+          },
         });
         if (!response.ok) {
           throw new Error('Failed to fetch speakers');
@@ -45,7 +45,7 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
     return date.toLocaleDateString('en-US', {
       month: '2-digit',
       day: '2-digit',
-      year: 'numeric'
+      year: 'numeric',
     });
   };
 
@@ -59,17 +59,17 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
 
   // Filter speakers by selected topic
   const filteredSpeakers = selectedTopic
-    ? speakers.filter(speaker => {
+    ? speakers.filter((speaker) => {
         if (!speaker.topics) return false;
         // Topics are already normalized from the API
         const topicLower = speaker.topics.toLowerCase();
         const selectedLower = selectedTopic.toLowerCase();
-        
+
         // For compound topics like "JavaScript, CSS", split and check each
-        const topics = topicLower.split(',').map(t => t.trim());
-        
+        const topics = topicLower.split(',').map((t) => t.trim());
+
         // Use exact match for single-word topics to avoid Java matching JavaScript
-        return topics.some(topic => {
+        return topics.some((topic) => {
           // For exact matches (like Java vs JavaScript)
           if (selectedLower === 'java') {
             return topic === 'java';
@@ -85,7 +85,9 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
   }
 
   if (filteredSpeakers.length === 0 && selectedTopic) {
-    return <div className={styles.empty}>No speakers found for {selectedTopic}</div>;
+    return (
+      <div className={styles.empty}>No speakers found for {selectedTopic}</div>
+    );
   }
 
   return (
@@ -95,7 +97,9 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
           // Always sort by date (most recent first)
           // If one has a date and the other doesn't, the one with date comes first
           if (a.lastSpoke && b.lastSpoke) {
-            return new Date(b.lastSpoke).getTime() - new Date(a.lastSpoke).getTime();
+            return (
+              new Date(b.lastSpoke).getTime() - new Date(a.lastSpoke).getTime()
+            );
           }
           if (a.lastSpoke && !b.lastSpoke) {
             return -1; // a comes first
@@ -138,13 +142,18 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
                   {speaker.linkedin && (
                     <a
                       href={speaker.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      target='_blank'
+                      rel='noopener noreferrer'
                       className={styles.linkedinLink}
                       aria-label={`${speaker.name}'s LinkedIn profile`}
                     >
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      <svg
+                        width='24'
+                        height='24'
+                        viewBox='0 0 24 24'
+                        fill='currentColor'
+                      >
+                        <path d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z' />
                       </svg>
                     </a>
                   )}

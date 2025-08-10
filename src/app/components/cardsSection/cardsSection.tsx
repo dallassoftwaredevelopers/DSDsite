@@ -79,38 +79,38 @@ export default function CardsSection() {
 
   return (
     <div className={styles.cardSectionWrapper}>
-      <BackgroundPattern variant="dots" opacity={0.03} />
+      <BackgroundPattern variant='dots' opacity={0.03} />
       <FloatingShapes />
       <div className={styles.sectionHeading}>
         <h2>What We Offer</h2>
         <p>Join our community and take advantage of these opportunities</p>
       </div>
       <div className={styles.cardContainer}>
-      {cardData.map((card, index) => (
-        <Card key={card.id}>
-          <div className={styles.imageContainer}>
-            <Image
-              src={card.src}
-              alt={card.alt}
-              className={styles.imageStyle}
-              sizes='100vw'
-              width={375}
-              height={250}
-              priority={index === 0}
-              quality={90}
-            />
-          </div>
-          <header className={styles.cardHeader}>{card.title}</header>
-          <p className={styles.cardContent}>{card.content}</p>
-          <div className={styles.cardButtonWrapper}>
-            <Button 
-              buttonText={card.buttonText} 
-              showIcon 
-              onClick={() => handleNavigation(card.href, card.isExternal)}
-            />
-          </div>
-        </Card>
-      ))}
+        {cardData.map((card, index) => (
+          <Card key={card.id}>
+            <div className={styles.imageContainer}>
+              <Image
+                src={card.src}
+                alt={card.alt}
+                className={styles.imageStyle}
+                sizes='100vw'
+                width={375}
+                height={250}
+                priority={index === 0}
+                quality={90}
+              />
+            </div>
+            <header className={styles.cardHeader}>{card.title}</header>
+            <p className={styles.cardContent}>{card.content}</p>
+            <div className={styles.cardButtonWrapper}>
+              <Button
+                buttonText={card.buttonText}
+                showIcon
+                onClick={() => handleNavigation(card.href, card.isExternal)}
+              />
+            </div>
+          </Card>
+        ))}
       </div>
     </div>
   );
