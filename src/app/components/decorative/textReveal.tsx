@@ -51,11 +51,11 @@ export default function TextReveal({
     if (splitBy === 'word') {
       return text.split(' ').map((word, index) => (
         <span key={index} className={styles.textReveal}>
-          <span 
-            className={styles.textRevealInner} 
-            style={{ 
+          <span
+            className={styles.textRevealInner}
+            style={{
               animationDelay: `${delay + index * 0.1}s`,
-              animationPlayState: isVisible ? 'running' : 'paused'
+              animationPlayState: isVisible ? 'running' : 'paused',
             }}
           >
             {word}&nbsp;
@@ -65,11 +65,11 @@ export default function TextReveal({
     } else {
       return text.split('').map((char, index) => (
         <span key={index} className={styles.textReveal}>
-          <span 
-            className={styles.textRevealInner} 
-            style={{ 
+          <span
+            className={styles.textRevealInner}
+            style={{
               animationDelay: `${delay + index * 0.03}s`,
-              animationPlayState: isVisible ? 'running' : 'paused'
+              animationPlayState: isVisible ? 'running' : 'paused',
             }}
           >
             {char}

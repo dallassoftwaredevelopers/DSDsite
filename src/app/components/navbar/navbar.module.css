@@ -354,7 +354,7 @@
   .logoText {
     font-size: var(--text-base);
   }
-  
+
   .navList {
     gap: var(--spacing-4);
   }
@@ -364,11 +364,11 @@
   .desktopNav {
     display: none;
   }
-  
+
   .mobileMenuButton {
     display: flex;
   }
-  
+
   .logoText {
     font-size: var(--text-md);
   }
@@ -378,7 +378,7 @@
   .logoText {
     display: none;
   }
-  
+
   .container {
     padding: 0 var(--spacing-4);
   }

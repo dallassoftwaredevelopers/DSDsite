@@ -59,7 +59,10 @@
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-md);
   background: white;
-  transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.5s ease,
+    opacity 0.5s ease,
+    box-shadow 0.3s ease;
   cursor: grab;
   overflow: hidden;
   display: flex;
@@ -250,29 +253,29 @@
   .cardStackWrapper {
     padding: var(--spacing-8) 0;
   }
-  
+
   .sectionHeading h2 {
     font-size: var(--text-3xl);
   }
-  
+
   .sectionHeading p {
     font-size: var(--text-base);
   }
-  
+
   .card {
     width: 500px;
     height: 180px;
   }
-  
+
   .cardTitle {
     font-size: var(--text-lg);
   }
-  
+
   .cardDescription {
     font-size: var(--text-xs);
     -webkit-line-clamp: 3;
   }
-  
+
   .imageContainer {
     width: 160px;
     height: 120px;
@@ -284,25 +287,25 @@
     width: 400px;
     height: 160px;
   }
-  
+
   .cardContent {
     padding: var(--spacing-4);
   }
-  
+
   .textContent {
     padding-right: var(--spacing-4);
   }
-  
+
   .imageContainer {
     width: 120px;
     height: 100px;
   }
-  
+
   .cardTitle {
     font-size: var(--text-base);
     margin-bottom: var(--spacing-2);
   }
-  
+
   .cardDescription {
     font-size: var(--text-xs);
     -webkit-line-clamp: 3;
@@ -314,33 +317,33 @@
     width: 300px;
     height: 180px;
   }
-  
+
   .cardContent {
     flex-direction: column;
     padding: var(--spacing-3);
   }
-  
+
   .textContent {
     padding-right: 0;
     padding-bottom: var(--spacing-3);
     text-align: center;
   }
-  
+
   .imageContainer {
     width: 100px;
     height: 80px;
   }
-  
+
   .cardTitle {
     font-size: var(--text-base);
     margin-bottom: var(--spacing-1);
   }
-  
+
   .cardDescription {
     font-size: var(--text-xs);
     -webkit-line-clamp: 2;
   }
-  
+
   .controlButton {
     width: 36px;
     height: 36px;
