@@ -8,17 +8,15 @@ interface ScrollIndicatorProps {
   className?: string;
 }
 
-export default function ScrollIndicator({
-  className = '',
-}: ScrollIndicatorProps) {
+export default function ScrollIndicator({ className = '' }: ScrollIndicatorProps) {
   const scrollProgress = useScrollProgress();
 
   return (
     <div className={`${styles.scrollIndicator} ${className}`}>
-      <div
-        className={styles.scrollIndicatorProgress}
+      <div 
+        className={styles.scrollIndicatorProgress} 
         style={{ width: `${scrollProgress}%` }}
-        role='progressbar'
+        role="progressbar"
         aria-valuenow={scrollProgress}
         aria-valuemin={0}
         aria-valuemax={100}

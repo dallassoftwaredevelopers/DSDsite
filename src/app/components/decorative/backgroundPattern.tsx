@@ -17,15 +17,13 @@ export default function BackgroundPattern({
   className = '',
 }: BackgroundPatternProps) {
   return (
-    <div
+    <div 
       className={`${styles.backgroundPattern} ${styles[`pattern${variant.charAt(0).toUpperCase() + variant.slice(1)}`]} ${className}`}
-      style={
-        {
-          '--pattern-color': color,
-          '--pattern-opacity': opacity,
-        } as React.CSSProperties
-      }
-      aria-hidden='true'
+      style={{ 
+        '--pattern-color': color,
+        '--pattern-opacity': opacity,
+      } as React.CSSProperties}
+      aria-hidden="true"
     />
   );
 }

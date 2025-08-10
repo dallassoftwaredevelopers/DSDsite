@@ -79,7 +79,7 @@ export default function FloatingShapes({
             key={index}
             className={`${styles.floatingElement} ${styles[`shape${shape.type.charAt(0).toUpperCase() + shape.type.slice(1)}`]} ${styles.shape}`}
             style={shapeStyle}
-            aria-hidden='true'
+            aria-hidden="true"
           />
         );
       })}

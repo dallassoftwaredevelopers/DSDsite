@@ -20,40 +20,35 @@ const whoWeAreCards: WhoWeAreCardData[] = [
   {
     id: 1,
     title: 'User Interface Design',
-    description:
-      'Everyone agrees with the fact that learning management systems are a tremendous way to expand learner knowledge base and help ease entrance their skills.',
+    description: 'Everyone agrees with the fact that learning management systems are a tremendous way to expand learner knowledge base and help ease entrance their skills.',
     color: 'var(--primary)',
     image: '/assets/meetupGroupShot1.png',
   },
   {
     id: 2,
     title: 'Digital Design',
-    description:
-      'Our community hosts regular workshops on digital design principles, tools like Figma and Adobe XD, and modern UI/UX practices for creating engaging user experiences.',
+    description: 'Our community hosts regular workshops on digital design principles, tools like Figma and Adobe XD, and modern UI/UX practices for creating engaging user experiences.',
     color: 'var(--primary-light)',
     image: '/assets/meetupGroupShot2.png',
   },
   {
     id: 3,
     title: 'Visual Interface Design',
-    description:
-      'Learn cutting-edge UI/UX design techniques at our Meetup. Join industry experts to discover the latest trends and best practices for creating engaging user experiences.',
+    description: 'Learn cutting-edge UI/UX design techniques at our Meetup. Join industry experts to discover the latest trends and best practices for creating engaging user experiences.',
     color: 'var(--secondary)',
     image: '/assets/meetupGroupShot3.png',
   },
   {
     id: 4,
     title: 'Branding Design',
-    description:
-      'Explore the principles of effective branding, from color theory to typography, and learn how to create cohesive visual identities that resonate with target audiences.',
+    description: 'Explore the principles of effective branding, from color theory to typography, and learn how to create cohesive visual identities that resonate with target audiences.',
     color: 'var(--accent)',
     image: '/assets/meetupGroupShot4.png',
   },
   {
     id: 5,
     title: 'Color Palette',
-    description:
-      'Dive into the psychology of color and learn how to create harmonious color schemes that enhance user experience and effectively communicate brand values.',
+    description: 'Dive into the psychology of color and learn how to create harmonious color schemes that enhance user experience and effectively communicate brand values.',
     color: 'var(--primary)',
     image: '/assets/meetupGroupShot5.png',
   },
@@ -92,7 +87,7 @@ export default function WhoWeAreCardStack() {
 
   const handleTouchEnd = () => {
     if (!isDragging) return;
-
+    
     if (dragOffset > 100) {
       // Swiped right
       handlePrev();
@@ -100,14 +95,14 @@ export default function WhoWeAreCardStack() {
       // Swiped left
       handleNext();
     }
-
+    
     setIsDragging(false);
     setDragOffset(0);
   };
 
   const handleMouseUp = () => {
     if (!isDragging) return;
-
+    
     if (dragOffset > 100) {
       // Swiped right
       handlePrev();
@@ -115,7 +110,7 @@ export default function WhoWeAreCardStack() {
       // Swiped left
       handleNext();
     }
-
+    
     setIsDragging(false);
     setDragOffset(0);
   };
@@ -127,10 +122,7 @@ export default function WhoWeAreCardStack() {
 
   const handlePrev = () => {
     setDirection('right');
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + whoWeAreCards.length) % whoWeAreCards.length
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + whoWeAreCards.length) % whoWeAreCards.length);
   };
 
   // Reset animation direction after animation completes
@@ -143,13 +135,13 @@ export default function WhoWeAreCardStack() {
 
   return (
     <div className={styles.cardStackWrapper}>
-      <BackgroundPattern variant='dots' opacity={0.03} />
+      <BackgroundPattern variant="dots" opacity={0.03} />
       <FloatingShapes />
       <div className={styles.sectionHeading}>
         <h2>The things you&apos;ll get to know</h2>
         <p>Learn cutting-edge UI/UX design techniques at our Meetup</p>
       </div>
-
+      
       <div className={styles.cardStackContainer}>
         <div
           className={styles.cardStack}
@@ -163,44 +155,32 @@ export default function WhoWeAreCardStack() {
         >
           {whoWeAreCards.map((card, index) => {
             // Calculate the position in the stack relative to the current card
-            const position =
-              (index - currentIndex + whoWeAreCards.length) %
-              whoWeAreCards.length;
-
+            const position = (index - currentIndex + whoWeAreCards.length) % whoWeAreCards.length;
+            
             // Only render cards that are visible in the stack (current and a few adjacent ones)
-            if (position > 2 && position < whoWeAreCards.length - 2)
-              return null;
-
+            if (position > 2 && position < whoWeAreCards.length - 2) return null;
+            
             return (
               <div
                 key={card.id}
                 className={`${styles.card} ${position === 0 ? styles.currentCard : ''} ${
-                  direction === 'left' && position === whoWeAreCards.length - 1
-                    ? styles.slideInRight
-                    : ''
+                  direction === 'left' && position === whoWeAreCards.length - 1 ? styles.slideInRight : ''
                 } ${
-                  direction === 'right' && position === 1
-                    ? styles.slideInLeft
-                    : ''
+                  direction === 'right' && position === 1 ? styles.slideInLeft : ''
                 } ${
-                  direction === 'left' && position === 0
-                    ? styles.slideOutLeft
-                    : ''
+                  direction === 'left' && position === 0 ? styles.slideOutLeft : ''
                 } ${
-                  direction === 'right' && position === 0
-                    ? styles.slideOutRight
-                    : ''
+                  direction === 'right' && position === 0 ? styles.slideOutRight : ''
                 }`}
                 style={{
                   zIndex: whoWeAreCards.length - position,
-                  transform:
-                    position === 0 && isDragging
-                      ? `translateX(${dragOffset}px)`
-                      : position === 1
-                        ? 'translateX(calc(100% - 120px))'
-                        : position === 2
-                          ? 'translateX(calc(200% - 240px))'
-                          : '',
+                  transform: position === 0 && isDragging
+                    ? `translateX(${dragOffset}px)`
+                    : position === 1
+                      ? 'translateX(calc(100% - 120px))'
+                      : position === 2
+                        ? 'translateX(calc(200% - 240px))'
+                        : '',
                 }}
               >
                 <div className={styles.cardContent}>
@@ -222,12 +202,12 @@ export default function WhoWeAreCardStack() {
             );
           })}
         </div>
-
+        
         <div className={styles.controls}>
           <button
             className={styles.controlButton}
             onClick={handlePrev}
-            aria-label='Previous card'
+            aria-label="Previous card"
           >
             &lt;
           </button>
@@ -246,7 +226,7 @@ export default function WhoWeAreCardStack() {
           <button
             className={styles.controlButton}
             onClick={handleNext}
-            aria-label='Next card'
+            aria-label="Next card"
           >
             &gt;
           </button>

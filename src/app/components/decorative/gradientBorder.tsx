@@ -17,14 +17,12 @@ export default function GradientBorder({
   animationDuration = 3,
 }: GradientBorderProps) {
   return (
-    <div
+    <div 
       className={`${styles.gradientBorder} ${className}`}
-      style={
-        {
-          '--border-width': `${borderWidth}px`,
-          '--animation-duration': `${animationDuration}s`,
-        } as React.CSSProperties
-      }
+      style={{ 
+        '--border-width': `${borderWidth}px`,
+        '--animation-duration': `${animationDuration}s`,
+      } as React.CSSProperties}
     >
       {children}
     </div>

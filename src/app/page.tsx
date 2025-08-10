@@ -14,20 +14,20 @@ export default function Home() {
       <section className={styles.heroContainer}>
         <HeroSection />
       </section>
-
+      
       {/* Main content sections */}
       <section className={styles.sectionContainer}>
         <BannerSection />
       </section>
-
+      
       <section className={styles.sectionContainer}>
         <CardsSection />
       </section>
-
+      
       <section className={styles.sectionContainer}>
         <SocialSection />
       </section>
-
+      
       <section className={styles.sectionContainer}>
         <GroupPhotoSection />
       </section>

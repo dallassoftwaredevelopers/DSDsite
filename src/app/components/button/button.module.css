@@ -14,11 +14,7 @@
 }
 
 .button--primary {
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary)) 0%,
-    hsl(var(--secondary)) 100%
-  );
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
   color: white;
   padding: 0 25px;
   height: 3.5rem;
@@ -64,11 +60,7 @@
 }
 
 .button--primary:hover {
-  background: linear-gradient(
-    135deg,
-    hsl(var(--secondary)) 0%,
-    hsl(var(--primary)) 100%
-  );
+  background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%);
   box-shadow: 0 8px 20px rgba(51, 133, 255, 0.4);
 }
 
@@ -102,20 +94,18 @@
     width: 100%;
     font-size: var(--text-sm);
   }
-
-  .button--primary,
-  .button--secondary {
+  
+  .button--primary, .button--secondary {
     height: 3.2rem;
   }
 }
 
 @media (max-width: 480px) {
-  .button--primary,
-  .button--secondary {
+  .button--primary, .button--secondary {
     height: 3rem;
     padding: 0 20px;
   }
-
+  
   .button__icon {
     padding-left: 8px;
   }

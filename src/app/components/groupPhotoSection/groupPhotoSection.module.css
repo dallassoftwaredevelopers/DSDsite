@@ -1,15 +1,10 @@
 .groupPhotoSection {
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary)) 0%,
-    hsl(var(--secondary)) 100%
-  );
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-16) var(--spacing-6) calc(var(--spacing-16) + 80px)
-    var(--spacing-6);
+  padding: var(--spacing-16) var(--spacing-6) calc(var(--spacing-16) + 80px) var(--spacing-6);
   position: relative;
   overflow: hidden;
   height: 100%;
@@ -24,16 +19,8 @@
   width: 100%;
   height: 100%;
   background-image:
-    radial-gradient(
-      circle at 20% 30%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 20%
-    ),
-    radial-gradient(
-      circle at 80% 70%,
-      rgba(255, 255, 255, 0.1) 0%,
-      transparent 20%
-    );
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
   z-index: 1;
 }
 
@@ -108,21 +95,13 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to { opacity: 0; }
 }
 
 .carouselIndicators {
@@ -159,9 +138,7 @@
 
 .ctaButton {
   transform: translateY(0);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .ctaButton:hover {
@@ -172,19 +149,18 @@
 /* Medium devices */
 @media only screen and (min-width: 851px) and (max-width: 1200px) {
   .groupPhotoSection {
-    padding: var(--spacing-12) var(--spacing-4) calc(var(--spacing-12) + 70px)
-      var(--spacing-4);
+    padding: var(--spacing-12) var(--spacing-4) calc(var(--spacing-12) + 70px) var(--spacing-4);
     margin-bottom: -70px;
   }
-
+  
   .headingText {
     font-size: var(--text-3xl);
   }
-
+  
   .subheadingText {
     font-size: var(--text-base);
   }
-
+  
   .indicator {
     width: 10px;
     height: 10px;
@@ -194,29 +170,28 @@
 /* Mobile devices */
 @media only screen and (max-width: 850px) {
   .groupPhotoSection {
-    padding: var(--spacing-8) var(--spacing-4) calc(var(--spacing-8) + 60px)
-      var(--spacing-4);
+    padding: var(--spacing-8) var(--spacing-4) calc(var(--spacing-8) + 60px) var(--spacing-4);
     margin-bottom: -60px;
   }
-
+  
   .headingText {
     font-size: var(--text-2xl);
   }
-
+  
   .subheadingText {
     font-size: var(--text-sm);
   }
-
+  
   .groupPhotoImg {
     border-width: 3px;
     transform: none;
   }
-
+  
   .indicator {
     width: 8px;
     height: 8px;
   }
-
+  
   .carouselIndicators {
     margin-top: var(--spacing-3);
     gap: var(--spacing-1);

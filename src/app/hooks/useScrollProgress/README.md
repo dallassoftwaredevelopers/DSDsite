@@ -10,7 +10,7 @@ import useScrollProgress from '../../hooks/useScrollProgress';
 function MyComponent() {
   // Get the current scroll progress (0-100)
   const scrollProgress = useScrollProgress();
-
+  
   return (
     <div>
       <p>You've scrolled {scrollProgress.toFixed(0)}% of the page</p>

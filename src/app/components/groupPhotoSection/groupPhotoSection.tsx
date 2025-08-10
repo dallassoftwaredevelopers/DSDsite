@@ -27,9 +27,7 @@ export default function GroupPhotoSection() {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentPhotoIndex(
-          (prevIndex) => (prevIndex + 1) % groupPhotos.length
-        );
+        setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % groupPhotos.length);
         setIsTransitioning(false);
       }, 500); // Wait for fade-out transition before changing image
     }, 5000);
@@ -79,18 +77,18 @@ export default function GroupPhotoSection() {
 
   return (
     <div className={styles.groupPhotoSection} data-testid='groupPhoto'>
-      <BackgroundPattern variant='circles' opacity={0.07} />
+      <BackgroundPattern variant="circles" opacity={0.07} />
       <FloatingShapes shapes={customShapes} />
-
+      
       <div className={styles.sectionHeading}>
-        <TextReveal text='Our Community' className={styles.headingText} />
+        <TextReveal text="Our Community" className={styles.headingText} />
         <TextReveal
-          text='Join a thriving group of passionate developers'
+          text="Join a thriving group of passionate developers"
           className={styles.subheadingText}
           delay={0.3}
         />
       </div>
-
+      
       <div className={styles.carouselContainer}>
         <GradientBorder className={styles.imageWrapper} borderWidth={3}>
           <Image
@@ -104,7 +102,7 @@ export default function GroupPhotoSection() {
             quality={90}
           />
         </GradientBorder>
-
+        
         <div className={styles.carouselIndicators}>
           {groupPhotos.map((_, index) => (
             <button
@@ -116,11 +114,11 @@ export default function GroupPhotoSection() {
           ))}
         </div>
       </div>
-
+      
       <div className={styles.ctaContainer}>
         <Button
-          buttonText='Join Our Community'
-          variant='primary'
+          buttonText="Join Our Community"
+          variant="primary"
           className={styles.ctaButton}
           showIcon={true}
         />

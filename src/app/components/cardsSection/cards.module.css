@@ -15,11 +15,7 @@
   font-size: var(--text-4xl);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--spacing-4);
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary)) 0%,
-    hsl(var(--primary-light)) 100%
-  );
+  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -76,11 +72,7 @@
   left: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(
-    90deg,
-    hsl(var(--primary)) 0%,
-    hsl(var(--primary-light)) 100%
-  );
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s ease;
@@ -96,11 +88,7 @@
   left: -20px;
   right: -20px;
   bottom: -20px;
-  background: radial-gradient(
-    circle at center,
-    hsla(var(--primary), 0.15) 0%,
-    transparent 70%
-  );
+  background: radial-gradient(circle at center, hsla(var(--primary), 0.15) 0%, transparent 70%);
   z-index: -1;
   border-radius: var(--border-radius-xl);
   opacity: 0;
@@ -140,11 +128,7 @@
   transform: translateX(-50%);
   width: 40px;
   height: 3px;
-  background: linear-gradient(
-    90deg,
-    hsl(var(--primary)) 0%,
-    hsl(var(--primary-light)) 100%
-  );
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
   border-radius: var(--border-radius-sm);
   transition: width 0.3s ease;
 }
@@ -184,8 +168,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
+  background: linear-gradient(to bottom,
     hsla(var(--dark), 0.2) 0%,
     hsla(var(--dark), 0) 20%,
     hsla(var(--dark), 0) 80%,
@@ -216,7 +199,7 @@
   .cardContainer {
     padding: 60px 0;
   }
-
+  
   .card {
     flex: 0 0 360px;
   }
@@ -226,21 +209,21 @@
   .cardContainer {
     padding: 40px 4%;
   }
-
+  
   .card {
     max-width: 320px;
     min-height: 500px;
   }
-
+  
   .cardHeader {
     font-size: 22px;
   }
-
+  
   .cardContent {
     font-size: 15px;
     padding: 0 22px;
   }
-
+  
   .imageContainer {
     height: 180px;
   }
@@ -250,25 +233,25 @@
   .cardSectionWrapper {
     padding: var(--spacing-10) 0;
   }
-
+  
   .sectionHeading {
     margin-bottom: var(--spacing-8);
   }
-
+  
   .sectionHeading h2 {
     font-size: var(--text-3xl);
   }
-
+  
   .sectionHeading p {
     font-size: var(--text-base);
   }
-
+  
   .cardContainer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
   }
-
+  
   .card {
     flex: 0 0 calc(50% - 15px);
     max-width: 380px;
@@ -279,34 +262,34 @@
   .cardSectionWrapper {
     padding: var(--spacing-6) 0 var(--spacing-8);
   }
-
+  
   .sectionHeading h2 {
     font-size: var(--text-2xl);
   }
-
+  
   .sectionHeading p {
     font-size: var(--text-sm);
     padding: 0 var(--spacing-4);
   }
-
+  
   .cardContainer {
     flex-direction: column;
     align-items: center;
     padding: 0 20px;
     gap: 25px;
   }
-
+  
   .card {
     width: 100%;
     max-width: 450px;
     min-height: 480px;
     margin-bottom: 0;
   }
-
+  
   .imageContainer {
     height: 200px;
   }
-
+  
   .cardHeader {
     margin: 18px 0 12px;
   }
@@ -317,15 +300,15 @@
     padding: 25px 15px;
     gap: 20px;
   }
-
+  
   .card {
     min-height: 460px;
   }
-
+  
   .imageContainer {
     height: 170px;
   }
-
+  
   .cardContent {
     padding: 0 18px;
     font-size: 14px;

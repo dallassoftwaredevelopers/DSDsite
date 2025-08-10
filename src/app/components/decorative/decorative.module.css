@@ -18,17 +18,9 @@
 }
 
 .patternGrid {
-  background-image:
-    linear-gradient(
-      to right,
-      var(--pattern-color, hsl(var(--primary))) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      to bottom,
-      var(--pattern-color, hsl(var(--primary))) 1px,
-      transparent 1px
-    );
+  background-image: 
+    linear-gradient(to right, var(--pattern-color, hsl(var(--primary))) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--pattern-color, hsl(var(--primary))) 1px, transparent 1px);
   background-size: 20px 20px;
 }
 
@@ -43,17 +35,9 @@
 }
 
 .patternCircles {
-  background-image:
-    radial-gradient(
-      circle at 25% 25%,
-      var(--pattern-color, hsl(var(--primary))) 1%,
-      transparent 10%
-    ),
-    radial-gradient(
-      circle at 75% 75%,
-      var(--pattern-color, hsl(var(--primary))) 1%,
-      transparent 10%
-    );
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--pattern-color, hsl(var(--primary))) 1%, transparent 10%),
+    radial-gradient(circle at 75% 75%, var(--pattern-color, hsl(var(--primary))) 1%, transparent 10%);
   background-size: 100px 100px;
 }
 
@@ -78,8 +62,7 @@
 }
 
 @keyframes float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0) rotate(0);
   }
   50% {
@@ -132,11 +115,7 @@
 
 .scrollIndicatorProgress {
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    hsl(var(--primary)) 0%,
-    hsl(var(--primary-light)) 100%
-  );
+  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
   width: 0;
   transition: width 0.1s ease;
   box-shadow: 0 0 10px hsla(var(--primary), 0.5);
