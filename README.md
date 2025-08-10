@@ -118,10 +118,10 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/Nur4ck">
-            <img src="https://avatars.githubusercontent.com/u/144545225?v=4" width="100;" alt="Nur4ck"/>
+        <a href="https://github.com/Dopkex">
+            <img src="https://avatars.githubusercontent.com/u/144545225?v=4" width="100;" alt="Dopkex"/>
             <br />
-            <sub><b>Null</b></sub>
+            <sub><b>Dopkex</b></sub>
         </a>
     </td>
     <td align="center">
