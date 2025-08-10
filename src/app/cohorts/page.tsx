@@ -539,7 +539,7 @@ export default function CohortPage() {
 
             <div className={styles.heroDescription}>
               <p>
-                A 6-week collaborative experience where you'll build real
+                A 6-week collaborative experience where you&apos;ll build real
                 projects with a team of developers under the guidance of
                 industry professionals from the Dallas tech scene.
               </p>
