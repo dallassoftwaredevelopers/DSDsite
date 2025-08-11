@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import styles from './heroSection.module.css';
+import { LABELS } from '@/app/labels';
 
 export default function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -66,49 +67,51 @@ export default function HeroSection() {
           <div className={styles.heroHeadingWrapper}>
             <h1 className={styles.heroHeading}>
               <span className={styles.heroHeadingLine}>
-                <span className={styles.heroText}>Elevate</span>
+                <span className={styles.heroText}>{LABELS.hero.elevate}</span>
                 <span className={styles.accentDot}></span>
               </span>
               <span className={styles.heroHeadingLine}>
-                <span className={styles.heroText}>Your Code</span>
+                <span className={styles.heroText}>{LABELS.hero.your_code}</span>
               </span>
               <span className={styles.heroHeadingLine}>
                 <span className={styles.heroText}>
-                  With <span className={styles.highlight}>DSD</span>
+                  {LABELS.hero.with_dsd.replace('DSD', '')}
+                  <span className={styles.highlight}>DSD</span>
                 </span>
               </span>
             </h1>
           </div>
 
-          <p className={styles.heroSubheading}>
-            Join Dallas&apos;s premier community of passionate developers
-            building the future together
-          </p>
+          <p className={styles.heroSubheading}>{LABELS.hero.subheading}</p>
 
           <div className={styles.ctaContainer}>
             <a href='#join-us' className={styles.primaryCta}>
-              Join Our Community
+              {LABELS.hero.join_community}
               <span className={styles.ctaArrow}>→</span>
             </a>
             <a href='#explore' className={styles.secondaryCta}>
-              Explore Events
+              {LABELS.hero.explore_events}
             </a>
           </div>
 
           <div className={styles.statContainer}>
             <div className={styles.stat}>
               <span className={styles.statNumber}>500+</span>
-              <span className={styles.statLabel}>Members</span>
+              <span className={styles.statLabel}>
+                {LABELS.hero.stat_members}
+              </span>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.stat}>
               <span className={styles.statNumber}>24</span>
-              <span className={styles.statLabel}>Meetups/Year</span>
+              <span className={styles.statLabel}>
+                {LABELS.hero.stat_meetups_per_year}
+              </span>
             </div>
             <div className={styles.statDivider}></div>
             <div className={styles.stat}>
               <span className={styles.statNumber}>100%</span>
-              <span className={styles.statLabel}>Free</span>
+              <span className={styles.statLabel}>{LABELS.hero.stat_free}</span>
             </div>
           </div>
         </div>
@@ -128,14 +131,18 @@ export default function HeroSection() {
                 playsInline
               >
                 <source src='/assets/MeetupIntro.mp4' type='video/mp4' />
-                Your browser does not support the video tag.
+                {LABELS.hero.video_unsupported}
               </video>
               <div
                 className={`${styles.videoOverlay} ${isVideoPlaying ? styles.overlayFaded : ''}`}
               ></div>
               <div
                 className={`${styles.playButton} ${isVideoPlaying ? styles.playButtonHidden : ''}`}
-                aria-label={isVideoPlaying ? 'Pause video' : 'Play video'}
+                aria-label={
+                  isVideoPlaying
+                    ? LABELS.hero.pause_video
+                    : LABELS.hero.play_video
+                }
               >
                 <div className={styles.playIcon}></div>
               </div>
@@ -149,7 +156,7 @@ export default function HeroSection() {
         <div className={styles.mouse}>
           <div className={styles.mouseWheel}></div>
         </div>
-        <div className={styles.scrollText}>Scroll to explore</div>
+        <div className={styles.scrollText}>{LABELS.hero.scroll_to_explore}</div>
       </div>
     </section>
   );

@@ -148,6 +148,8 @@
 .bentoContainer {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: minmax(600px, auto);
+  align-items: stretch;
   gap: 2rem;
   min-height: 600px;
   animation: fadeInUp 1s ease-out 0.3s both;
@@ -163,10 +165,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative; /* ensure fill images can size against the card */
+  height: 100%; /* stretch to grid row height even with no text */
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+}
+
+/* Image-only modifier for full-bleed image */
+.imageOnly {
+  padding: 0;
+  border: none;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* Image variant: keep same grid footprint while letting the image fill */
+.messageCardImage {
+  padding: 0;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+  border: none;
+  display: block;
+}
+
+.messageCardImage img,
+.messageCardImage .photoImage {
+  object-fit: cover;
 }
 
 .messageCard:hover {
@@ -259,6 +287,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  height: 100%;
 }
 
 .smallPhotoCard {
@@ -288,7 +317,6 @@
   transform: scale(1.1);
 }
 
-/* Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -322,7 +350,6 @@
   }
 }
 
-/* Scroll Indicator */
 .scrollIndicator {
   position: absolute;
   bottom: 2rem;
@@ -381,6 +408,7 @@
 @media (max-width: 1024px) {
   .bentoContainer {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
     gap: 1.5rem;
   }
 
@@ -461,13 +489,16 @@
 
   .bentoContainer {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 1.5rem;
     min-height: auto;
   }
 
-  .messageCard {
-    padding: 1.5rem;
-    order: 1;
+  .messageCardImage {
+    padding: 0;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
   }
 
   .messageTitle {

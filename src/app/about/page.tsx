@@ -1,12 +1,32 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useMemo } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import Image from 'next/image';
 import styles from './about.module.css';
 import Link from 'next/link';
+import TeamList from '../components/teamList/teamList';
+import Spinner from '../components/spinner/spinner';
+import { Speaker } from '@/types/globalTypes';
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);
+
+  const { data: peopleDataResponse, isLoading } = useQuery({
+    queryKey: ['people'],
+    queryFn: async () => {
+      const response = await fetch('/api/people', { cache: 'no-store' });
+      return response.json();
+    },
+    refetchOnWindowFocus: false,
+    refetchOnMount: false,
+  });
+
+  const peopleData = (peopleDataResponse ?? []) as Speaker[];
+  const adminTeam = useMemo(
+    () => peopleData.filter((person) => person.isAdmin),
+    [peopleData]
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,7 +51,6 @@ export default function AboutPage() {
 
   return (
     <div className={styles.aboutPage}>
-      {/* Hero Section */}
       <section className={styles.heroSection} ref={heroRef}>
         <div className={styles.backgroundElements}>
           <div
@@ -66,7 +85,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Mission Section */}
       <section className={styles.missionSection}>
         <div className={styles.container}>
           <div className={styles.missionGrid}>
@@ -81,7 +99,7 @@ export default function AboutPage() {
               </p>
               <div className={styles.statsGrid}>
                 <div className={styles.statCard}>
-                  <span className={styles.statNumber}>500+</span>
+                  <span className={styles.statNumber}>7400+</span>
                   <span className={styles.statLabel}>Active Members</span>
                 </div>
                 <div className={styles.statCard}>
@@ -107,7 +125,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values Section */}
       <section className={styles.valuesSection}>
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>Our Core Values</h2>
@@ -150,7 +167,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What We Offer Section */}
       <section className={styles.offerSection}>
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>What We Offer</h2>
@@ -163,10 +179,13 @@ export default function AboutPage() {
               </p>
             </div>
             <div className={styles.offerCard}>
-              <h3 className={styles.offerTitle}>Technical Workshops</h3>
+              <h3 className={styles.offerTitle}>
+                The Commit Your Code Conference
+              </h3>
               <p className={styles.offerDescription}>
-                Deep dive into specific technologies with expert-led workshops
-                covering everything from web development to cloud architecture.
+                An annual event where 100% of all ticket sales go to charity,
+                bringing together developers, industry leaders, and enthusiasts
+                for two days of learning, networking, and collaboration.
               </p>
             </div>
             <div className={styles.offerCard}>
@@ -184,10 +203,10 @@ export default function AboutPage() {
               </p>
             </div>
             <div className={styles.offerCard}>
-              <h3 className={styles.offerTitle}>Mentorship Program</h3>
+              <h3 className={styles.offerTitle}>Cohort Program</h3>
               <p className={styles.offerDescription}>
-                Connect with experienced developers who can guide you through
-                your learning journey and career growth.
+                Be guided by professionals as you work on a team to build a
+                project that is actually worth talking about in an interview.
               </p>
             </div>
             <div className={styles.offerCard}>
@@ -201,65 +220,26 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
       <section className={styles.teamSection}>
         <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Meet Our Leadership</h2>
-          <div className={styles.teamGrid}>
-            <div className={styles.teamCard}>
-              <div className={styles.teamImageWrapper}>
-                <Image
-                  src='/assets/people/Danny_Thompson.png'
-                  alt='Danny Thompson'
-                  width={200}
-                  height={200}
-                  className={styles.teamImage}
-                />
-              </div>
-              <h3 className={styles.teamName}>Danny Thompson</h3>
-              <p className={styles.teamRole}>Founder & Community Lead</p>
-              <p className={styles.teamBio}>
-                Passionate about building communities and helping developers
-                grow their careers.
-              </p>
-            </div>
-            <div className={styles.teamCard}>
-              <div className={styles.teamImageWrapper}>
-                <Image
-                  src='/assets/people/Dennis_Garcia.jpg'
-                  alt='Dennis Garcia'
-                  width={200}
-                  height={200}
-                  className={styles.teamImage}
-                />
-              </div>
-              <h3 className={styles.teamName}>Dennis Garcia</h3>
-              <p className={styles.teamRole}>Technical Lead</p>
-              <p className={styles.teamBio}>
-                Senior engineer dedicated to mentoring and technical excellence.
-              </p>
-            </div>
-            <div className={styles.teamCard}>
-              <div className={styles.teamImageWrapper}>
-                <Image
-                  src='/assets/people/Clint_Myers.jpg'
-                  alt='Clint Myers'
-                  width={200}
-                  height={200}
-                  className={styles.teamImage}
-                />
-              </div>
-              <h3 className={styles.teamName}>Clint Myers</h3>
-              <p className={styles.teamRole}>Events Coordinator</p>
-              <p className={styles.teamBio}>
-                Organizing engaging events that bring the community together.
-              </p>
-            </div>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Meet Our Team</h2>
+            <p className={styles.sectionDescription}>
+              Meet the dedicated admin team volunteers who spend countless hours
+              to support, guide, and inspire every member of our community.
+            </p>
           </div>
+
+          {isLoading ? (
+            <div className={styles.loadingContainer}>
+              <Spinner />
+            </div>
+          ) : (
+            <TeamList peopleData={adminTeam} />
+          )}
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className={styles.ctaSection}>
         <div className={styles.ctaBackground}>
           <div className={styles.ctaOverlay}></div>

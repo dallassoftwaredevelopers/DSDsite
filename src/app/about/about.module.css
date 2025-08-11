@@ -139,7 +139,7 @@
 }
 
 .highlight {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--gradient-secondary);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -350,6 +350,39 @@
 .teamSection {
   padding: var(--spacing-12) 0;
   background: hsl(var(--light));
+}
+
+.teamSection .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.teamSection .sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+}
+
+.teamSection .sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: hsl(var(--dark));
+  margin-bottom: var(--spacing-4);
+}
+
+.teamSection .sectionDescription {
+  font-size: 1.125rem;
+  color: hsl(var(--gray));
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.teamSection .loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
 }
 
 .teamGrid {

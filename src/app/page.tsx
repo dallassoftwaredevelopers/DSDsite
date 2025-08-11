@@ -11,12 +11,10 @@ import styles from './page.module.css';
 export default function Home() {
   return (
     <div className={styles.pageContainer}>
-      {/* Hero section with full width */}
       <section className={styles.heroContainer}>
         <HeroSection />
       </section>
 
-      {/* Main content sections */}
       <section className={styles.sectionContainer}>
         <BannerSection />
       </section>

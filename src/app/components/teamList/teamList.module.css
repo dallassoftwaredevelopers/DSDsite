@@ -176,16 +176,50 @@
 
 @media (max-width: 600px) {
   .teamGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .teamCard {
-    aspect-ratio: 4/5;
+    aspect-ratio: 3/4;
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .teamGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .teamCard {
+    width: 100%;
+    max-width: none;
+    min-height: auto;
   }
 
   .teamOverlay {
-    padding: 1.5rem 1.25rem 1.25rem;
+    padding: 0.6rem 0.5rem 0.5rem;
+  }
+
+  .teamName {
+    font-size: 0.95rem;
+  }
+  .teamRole {
+    font-size: 0.68rem;
+  }
+  .teamCompany {
+    font-size: 0.62rem;
+  }
+  .linkedinLink {
+    width: 26px;
+    height: 26px;
+    bottom: 0.6rem;
+    right: 0.6rem;
+  }
+  .linkedinLink svg {
+    width: 13px;
+    height: 13px;
   }
 }
 

@@ -12,6 +12,7 @@ import CommunityBento from '../components/communityBento/communityBento';
 import Image from 'next/image';
 import styles from './community.module.css';
 import { Speaker } from '@/types/globalTypes';
+import { LABELS } from '../labels';
 
 const communityStats = [
   {
@@ -136,7 +137,6 @@ export default function CommunityPage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
-  // Fetch team data from the existing API
   const { data: peopleDataResponse, isLoading } = useQuery({
     queryKey: ['people'],
     queryFn: async () => {
@@ -154,9 +154,8 @@ export default function CommunityPage() {
   );
 
   useEffect(() => {
-    if (isLoading) return; // wait until content is rendered
+    if (isLoading) return;
 
-    // Defer setup to the next frame to ensure refs and layout are ready
     let observer: IntersectionObserver | null = null;
     let raf1 = 0;
     let raf2 = 0;
@@ -180,11 +179,9 @@ export default function CommunityPage() {
             }
           });
         },
-        // Trigger earlier and avoid missing near-fold sections
         { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
       );
 
-      // Observe all known sections
       Object.entries(sectionRefs.current).forEach(([key, el]) => {
         if (el) {
           (el as HTMLElement).dataset.key = key;
@@ -192,7 +189,6 @@ export default function CommunityPage() {
         }
       });
 
-      // Helper to check and reveal any sections already in view
       const checkVisibleNow = () => {
         const viewportH = window.innerHeight;
         Object.entries(sectionRefs.current).forEach(([key, el]) => {
@@ -212,11 +208,9 @@ export default function CommunityPage() {
         });
       };
 
-      // Perform an initial pass and also a delayed pass as a safety net
       checkVisibleNow();
       setTimeout(checkVisibleNow, 800);
 
-      // One-time passive scroll fallback to catch early user scroll
       onFirstScroll = () => {
         checkVisibleNow();
         if (onFirstScroll) window.removeEventListener('scroll', onFirstScroll);
@@ -226,7 +220,6 @@ export default function CommunityPage() {
     };
 
     raf1 = requestAnimationFrame(() => {
-      // Use a second frame to be extra safe on slower devices
       raf2 = requestAnimationFrame(setup);
     });
 
@@ -250,21 +243,17 @@ export default function CommunityPage() {
 
   return (
     <div className={styles.pageContainer}>
-      {/* Community Bento Hero Section */}
       <CommunityBento />
-
-      {/* Community Overview Section */}
       <section
         className={`${styles.sectionContainer} ${styles.gradientBackground} ${styles.sectionVisible}`}
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Our Community Impact</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.community.sections.impact_title}
+            </h2>
             <p className={styles.sectionDescription}>
-              We are immensely grateful for the contributions of each member,
-              whose collective efforts sustain and enrich our community,
-              propelling us toward new heights of achievement and impact in the
-              Dallas tech ecosystem.
+              {LABELS.community.sections.impact_desc}
             </p>
           </div>
 
@@ -272,30 +261,30 @@ export default function CommunityPage() {
             <div className={styles.overviewImage}>
               <Image
                 src='/assets/justin.jpg'
-                alt='Dallas Software Developers Community'
+                alt={LABELS.community.sections.overview_image_alt}
                 width={800}
                 height={500}
                 className={styles.roundedImage}
               />
               <div className={styles.imageCaption}>
-                Our vibrant community of developers, speakers, and tech
-                enthusiasts
+                {LABELS.community.sections.overview_image_caption}
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Get Involved Section */}
       <section
         ref={(el) => (sectionRefs.current['getInvolved'] = el)}
         className={`${styles.sectionContainer} ${styles.altBackground} ${visibleSections.has('getInvolved') ? styles.sectionVisible : ''}`}
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Get Involved</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.community.sections.get_involved_title}
+            </h2>
             <p className={styles.sectionDescription}>
-              Ready to share your knowledge with the Dallas tech community?
+              {LABELS.community.sections.get_involved_desc}
             </p>
           </div>
 
@@ -312,15 +301,11 @@ export default function CommunityPage() {
                   <path d='M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-3 8l8 5-8 5v-10z' />
                 </svg>
               </div>
-              <h3>Become a Speaker</h3>
-              <p>
-                Share your expertise, inspire fellow developers, and contribute
-                to the growth of our community. We welcome speakers of all
-                experience levels and diverse backgrounds.
-              </p>
+              <h3>{LABELS.community.sections.become_speaker_title}</h3>
+              <p>{LABELS.community.sections.become_speaker_desc}</p>
 
               <Button
-                buttonText='Apply to Speak'
+                buttonText={LABELS.community.sections.apply_to_speak_button}
                 onClick={() => setModalOpen(true)}
               />
             </div>
@@ -328,17 +313,17 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* Our Team Section */}
       <section
         ref={(el) => (sectionRefs.current['team'] = el)}
         className={`${styles.sectionContainer} ${styles.primaryBackground} ${visibleSections.has('team') ? styles.sectionVisible : ''}`}
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Meet Our Team</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.community.sections.team_title}
+            </h2>
             <p className={styles.sectionDescription}>
-              Meet the dedicated admin team volunteers who spend countless hours
-              to support, guide, and inspire every member of our community.
+              {LABELS.community.sections.team_desc}
             </p>
           </div>
 
@@ -346,132 +331,161 @@ export default function CommunityPage() {
         </div>
       </section>
 
-      {/* Speakers Section - Using Contentful */}
       <section
         ref={(el) => (sectionRefs.current['speakers'] = el)}
         className={`${styles.sectionContainer} ${styles.accentBackground} ${visibleSections.has('speakers') ? styles.sectionVisible : ''}`}
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Our Amazing Speakers</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.community.sections.speakers_title}
+            </h2>
             <p className={styles.sectionDescription}>
-              We&apos;ve been honored to host incredible speakers who have
-              shared their knowledge, experience, and passion with our
-              community.
+              {LABELS.community.sections.speakers_desc}
             </p>
           </div>
 
           <div className={styles.speakersShowcase}>
             <div className={styles.speakerHighlight}>
-              <h3>Featured Topics</h3>
+              <h3>{LABELS.community.sections.featured_topics}</h3>
               <div className={styles.topicList}>
                 <button
                   className={`${styles.topicTag} ${selectedTopic === null ? styles.topicTagActive : ''}`}
                   onClick={() => setSelectedTopic(null)}
                 >
-                  All Topics
+                  {LABELS.community.sections.all_topics}
                 </button>
                 <button
-                  className={`${styles.topicTag} ${selectedTopic === 'JavaScript' ? styles.topicTagActive : ''}`}
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[0] ? styles.topicTagActive : ''}`}
                   onClick={() =>
                     setSelectedTopic(
-                      selectedTopic === 'JavaScript' ? null : 'JavaScript'
-                    )
-                  }
-                >
-                  JavaScript
-                </button>
-                <button
-                  className={`${styles.topicTag} ${selectedTopic === 'Java' ? styles.topicTagActive : ''}`}
-                  onClick={() =>
-                    setSelectedTopic(selectedTopic === 'Java' ? null : 'Java')
-                  }
-                >
-                  Java
-                </button>
-                <button
-                  className={`${styles.topicTag} ${selectedTopic === 'Cloud' ? styles.topicTagActive : ''}`}
-                  onClick={() =>
-                    setSelectedTopic(selectedTopic === 'Cloud' ? null : 'Cloud')
-                  }
-                >
-                  Cloud
-                </button>
-                <button
-                  className={`${styles.topicTag} ${selectedTopic === 'AI' ? styles.topicTagActive : ''}`}
-                  onClick={() =>
-                    setSelectedTopic(selectedTopic === 'AI' ? null : 'AI')
-                  }
-                >
-                  AI
-                </button>
-                <button
-                  className={`${styles.topicTag} ${selectedTopic === 'C#' ? styles.topicTagActive : ''}`}
-                  onClick={() =>
-                    setSelectedTopic(selectedTopic === 'C#' ? null : 'C#')
-                  }
-                >
-                  C#
-                </button>
-                <button
-                  className={`${styles.topicTag} ${selectedTopic === 'Mobile' ? styles.topicTagActive : ''}`}
-                  onClick={() =>
-                    setSelectedTopic(
-                      selectedTopic === 'Mobile' ? null : 'Mobile'
-                    )
-                  }
-                >
-                  Mobile Development
-                </button>
-                <button
-                  className={`${styles.topicTag} ${selectedTopic === 'CSS' ? styles.topicTagActive : ''}`}
-                  onClick={() =>
-                    setSelectedTopic(selectedTopic === 'CSS' ? null : 'CSS')
-                  }
-                >
-                  CSS
-                </button>
-                <button
-                  className={`${styles.topicTag} ${selectedTopic === 'UI/UX' ? styles.topicTagActive : ''}`}
-                  onClick={() =>
-                    setSelectedTopic(selectedTopic === 'UI/UX' ? null : 'UI/UX')
-                  }
-                >
-                  UI/UX
-                </button>
-                <button
-                  className={`${styles.topicTag} ${selectedTopic === 'Software Architecture' ? styles.topicTagActive : ''}`}
-                  onClick={() =>
-                    setSelectedTopic(
-                      selectedTopic === 'Software Architecture'
+                      selectedTopic === LABELS.community.topics[0]
                         ? null
-                        : 'Software Architecture'
+                        : LABELS.community.topics[0]
                     )
                   }
                 >
-                  Software Architecture
+                  {LABELS.community.topics[0]}
                 </button>
                 <button
-                  className={`${styles.topicTag} ${selectedTopic === 'Cyber Security' ? styles.topicTagActive : ''}`}
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[1] ? styles.topicTagActive : ''}`}
                   onClick={() =>
                     setSelectedTopic(
-                      selectedTopic === 'Cyber Security'
+                      selectedTopic === LABELS.community.topics[1]
                         ? null
-                        : 'Cyber Security'
+                        : LABELS.community.topics[1]
                     )
                   }
                 >
-                  Cyber Security
+                  {LABELS.community.topics[1]}
                 </button>
                 <button
-                  className={`${styles.topicTag} ${selectedTopic === 'Career Growth' ? styles.topicTagActive : ''}`}
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[2] ? styles.topicTagActive : ''}`}
                   onClick={() =>
                     setSelectedTopic(
-                      selectedTopic === 'Career Growth' ? null : 'Career Growth'
+                      selectedTopic === LABELS.community.topics[2]
+                        ? null
+                        : LABELS.community.topics[2]
                     )
                   }
                 >
-                  Career Growth
+                  {LABELS.community.topics[2]}
+                </button>
+                <button
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[3] ? styles.topicTagActive : ''}`}
+                  onClick={() =>
+                    setSelectedTopic(
+                      selectedTopic === LABELS.community.topics[3]
+                        ? null
+                        : LABELS.community.topics[3]
+                    )
+                  }
+                >
+                  {LABELS.community.topics[3]}
+                </button>
+                <button
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[4] ? styles.topicTagActive : ''}`}
+                  onClick={() =>
+                    setSelectedTopic(
+                      selectedTopic === LABELS.community.topics[4]
+                        ? null
+                        : LABELS.community.topics[4]
+                    )
+                  }
+                >
+                  {LABELS.community.topics[4]}
+                </button>
+                <button
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[5] ? styles.topicTagActive : ''}`}
+                  onClick={() =>
+                    setSelectedTopic(
+                      selectedTopic === LABELS.community.topics[5]
+                        ? null
+                        : LABELS.community.topics[5]
+                    )
+                  }
+                >
+                  {LABELS.community.topics[5]}
+                </button>
+                <button
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[6] ? styles.topicTagActive : ''}`}
+                  onClick={() =>
+                    setSelectedTopic(
+                      selectedTopic === LABELS.community.topics[6]
+                        ? null
+                        : LABELS.community.topics[6]
+                    )
+                  }
+                >
+                  {LABELS.community.topics[6]}
+                </button>
+                <button
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[7] ? styles.topicTagActive : ''}`}
+                  onClick={() =>
+                    setSelectedTopic(
+                      selectedTopic === LABELS.community.topics[7]
+                        ? null
+                        : LABELS.community.topics[7]
+                    )
+                  }
+                >
+                  {LABELS.community.topics[7]}
+                </button>
+                <button
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[8] ? styles.topicTagActive : ''}`}
+                  onClick={() =>
+                    setSelectedTopic(
+                      selectedTopic === LABELS.community.topics[8]
+                        ? null
+                        : LABELS.community.topics[8]
+                    )
+                  }
+                >
+                  {LABELS.community.topics[8]}
+                </button>
+                <button
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[9] ? styles.topicTagActive : ''}`}
+                  onClick={() =>
+                    setSelectedTopic(
+                      selectedTopic === LABELS.community.topics[9]
+                        ? null
+                        : LABELS.community.topics[9]
+                    )
+                  }
+                >
+                  {LABELS.community.topics[9]}
+                </button>
+                <button
+                  className={`${styles.topicTag} ${selectedTopic === LABELS.community.topics[10] ? styles.topicTagActive : ''}`}
+                  onClick={() =>
+                    setSelectedTopic(
+                      selectedTopic === LABELS.community.topics[10]
+                        ? null
+                        : LABELS.community.topics[10]
+                    )
+                  }
+                >
+                  {LABELS.community.topics[10]}
                 </button>
               </div>
             </div>
@@ -482,13 +496,10 @@ export default function CommunityPage() {
           </div>
 
           <div className={styles.speakersCallout}>
-            <h3>Want to join our speaker lineup?</h3>
-            <p>
-              We&apos;re always looking for passionate speakers to share their
-              knowledge with our community.
-            </p>
+            <h3>{LABELS.community.sections.callout_title}</h3>
+            <p>{LABELS.community.sections.callout_desc}</p>
             <Button
-              buttonText='Apply to Speak'
+              buttonText={LABELS.community.sections.apply_to_speak_button}
               onClick={() => setModalOpen(true)}
             />
           </div>

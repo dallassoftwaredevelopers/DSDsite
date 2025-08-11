@@ -8,6 +8,7 @@ import Image from 'next/image';
 import { externalLinks } from '@/app/_constants';
 import BackgroundPattern from '../decorative/backgroundPattern';
 import FloatingShapes from '../decorative/floatingShapes';
+import { LABELS } from '@/app/labels';
 
 interface CardData {
   id: number;
@@ -22,47 +23,43 @@ interface CardData {
 const cardData: CardData[] = [
   {
     id: 1,
-    title: 'Meetups',
-    content:
-      "Mark your calendars as our meetups typically occur twice a month, offering regular opportunities to connect with like-minded individuals and expand your skill set. Don't forget to RSVP on our Meetup page, so we can ensure we have enough pizza to fuel our collective creativity and collaboration.",
-    buttonText: 'Go To A Meetup',
+    title: LABELS.cards.items.meetups.title,
+    content: LABELS.cards.items.meetups.content,
+    buttonText: LABELS.cards.items.meetups.button,
     href: externalLinks.meetupUrl,
     isExternal: true,
     src: '/assets/technicalWorkshops.png',
-    alt: 'Technical Workshops',
+    alt: LABELS.cards.items.meetups.alt,
   },
   {
     id: 2,
-    title: 'Community Support',
-    content:
-      'Meet the community that has your back and learn how you can get involved with helping others. Whether you want to give a presentation, mentor fellow developers, or just network with others, there is a spot for all who share a passion for coding. ',
-    buttonText: 'Community Impact',
+    title: LABELS.cards.items.community.title,
+    content: LABELS.cards.items.community.content,
+    buttonText: LABELS.cards.items.community.button,
     href: '/community',
     isExternal: false,
     src: '/assets/communitySupport.png',
-    alt: 'Community Support',
+    alt: LABELS.cards.items.community.alt,
   },
   {
     id: 3,
-    title: 'Cohorts',
-    content:
-      'A 6-week program that is completely free to pair developers working on a project being guided by a developer working in the industry. The focus is to help give you something interesting to showcase in an interview and give you real-world skills!',
-    buttonText: 'Join Our Cohort',
+    title: LABELS.cards.items.cohorts.title,
+    content: LABELS.cards.items.cohorts.content,
+    buttonText: LABELS.cards.items.cohorts.button,
     href: '/cohorts',
     isExternal: false,
     src: '/assets/cohortsAndHackathons.png',
-    alt: 'Cohorts & Hackathons',
+    alt: LABELS.cards.items.cohorts.alt,
   },
   {
     id: 4,
-    title: 'The Commit Your Code Conference',
-    content:
-      'Join us for our annual tech conference featuring industry leaders, innovative workshops, and networking opportunities. Connect with fellow developers, learn about the latest technologies, and be inspired by talks from experts in the field.',
-    buttonText: 'Learn About Conference',
+    title: LABELS.cards.items.conference.title,
+    content: LABELS.cards.items.conference.content,
+    buttonText: LABELS.cards.items.conference.button,
     href: '/conference',
     isExternal: false,
     src: '/assets/cycpic.jpg',
-    alt: 'The Commit Your Code Conference',
+    alt: LABELS.cards.items.conference.alt,
   },
 ];
 
@@ -82,8 +79,8 @@ export default function CardsSection() {
       <BackgroundPattern variant='dots' opacity={0.03} />
       <FloatingShapes />
       <div className={styles.sectionHeading}>
-        <h2>What We Offer</h2>
-        <p>Join our community and take advantage of these opportunities</p>
+        <h2>{LABELS.cards.section_title}</h2>
+        <p>{LABELS.cards.section_subtitle}</p>
       </div>
       <div className={styles.cardContainer}>
         {cardData.map((card, index) => (

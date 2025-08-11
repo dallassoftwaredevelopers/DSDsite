@@ -17,6 +17,7 @@ import Spinner from '../components/spinner/spinner';
 import BackgroundPattern from '../components/decorative/backgroundPattern';
 import FloatingShapes from '../components/decorative/floatingShapes';
 import Image from 'next/image';
+import { LABELS } from '../labels';
 
 interface Group {
   id: number;
@@ -42,8 +43,7 @@ type CohortData = {
 const defaultCohortStatusMessage = {
   documentId: 0,
   statusType: 'closed',
-  message:
-    'Cohorts are currently closed and registration will be announced in Discord when the next one opens.',
+  message: LABELS.cohorts.apply.defaultStatusMessage,
   active: false,
 } as CohortStatus;
 
@@ -264,9 +264,8 @@ const programDetails = [
         <path d='M20 20h-4v-4h4v4zm-6-10h-4v4h4v-4zm6 0h-4v4h4v-4zm-12 6h-4v4h4v-4zm6 0h-4v4h4v-4zm-6-6h-4v4h4v-4zm16-8v22h-24v-22h3v1c0 1.103.897 2 2 2s2-.897 2-2v-1h10v1c0 1.103.897 2 2 2s2-.897 2-2v-1h3zm-2 6h-20v14h20v-14zm-2-7c0-.552-.447-1-1-1s-1 .448-1 1v2c0 .552.447 1 1 1s1-.448 1-1v-2zm-14 2c0 .552-.447 1-1 1s-1-.448-1-1v-2c0-.552.447-1 1-1s1 .448 1 1v2z' />
       </svg>
     ),
-    title: 'Duration',
-    description:
-      'Six weeks of guided, hands-on development with a structured curriculum and clear milestones',
+    title: LABELS.cohorts.details.items.duration.title,
+    description: LABELS.cohorts.details.items.duration.description,
   },
   {
     icon: (
@@ -280,9 +279,8 @@ const programDetails = [
         <path d='M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 16.057v-3.057h2.994c-.059 1.143-.212 2.24-.456 3.279-.823-.12-1.674-.188-2.538-.222zm1.957 2.162c-.499 1.33-1.159 2.497-1.957 3.456v-3.62c.666.028 1.319.081 1.957.164zm-1.957-7.219v-3.015c.868-.034 1.721-.103 2.548-.224.238 1.027.389 2.111.446 3.239h-2.994zm0-5.014v-3.661c.806.969 1.471 2.15 1.971 3.496-.642.084-1.3.137-1.971.165zm2.703-3.267c1.237.496 2.354 1.228 3.29 2.146-.642.234-1.311.442-2.019.607-.344-.992-.775-1.91-1.271-2.753zm-7.241 13.56c-.244-1.039-.398-2.136-.456-3.279h2.994v3.057c-.865.034-1.714.102-2.538.222zm2.538 1.776v3.62c-.798-.959-1.458-2.126-1.957-3.456.638-.083 1.291-.136 1.957-.164zm-2.994-7.055c.057-1.128.207-2.212.446-3.239.827.121 1.68.19 2.548.224v3.015h-2.994zm1.024-5.179c.5-1.346 1.165-2.527 1.97-3.496v3.661c-.671-.028-1.329-.081-1.97-.165zm-2.005-.35c-.708-.165-1.377-.373-2.018-.607.937-.918 2.053-1.65 3.29-2.146-.496.844-.927 1.762-1.272 2.753zm-.549 1.918c-.264 1.151-.434 2.36-.492 3.611h-3.933c.165-1.658.739-3.197 1.617-4.518.88.361 1.816.67 2.808.907zm.009 9.262c-.988.236-1.92.542-2.797.9-.89-1.328-1.471-2.879-1.637-4.551h3.934c.058 1.265.231 2.488.5 3.651zm.553 1.917c.342.976.768 1.881 1.257 2.712-1.223-.49-2.326-1.211-3.256-2.115.636-.229 1.299-.435 1.999-.597zm9.924 0c.7.163 1.362.367 1.999.597-.931.903-2.034 1.625-3.257 2.116.489-.832.915-1.737 1.258-2.713zm.553-1.917c.27-1.163.442-2.386.501-3.651h3.934c-.167 1.672-.748 3.223-1.638 4.551-.877-.358-1.81-.664-2.797-.9zm.501-5.651c-.058-1.251-.229-2.46-.492-3.611.992-.237 1.929-.546 2.809-.907.877 1.321 1.451 2.86 1.616 4.518h-3.933z' />
       </svg>
     ),
-    title: 'Format',
-    description:
-      'Fully remote with virtual collaboration tools—Dallas-area participants get priority on limited seats, but we welcome participants from anywhere',
+    title: LABELS.cohorts.details.items.format.title,
+    description: LABELS.cohorts.details.items.format.description,
   },
   {
     icon: (
@@ -296,9 +294,8 @@ const programDetails = [
         <path d='M12.324 7.021l.154.345c.237-.041.52-.055.847-.025l.133.577c-.257-.032-.53-.062-.771-.012l-.092.023c-.218.054-.377.201-.377.425 0 .01.011.025.011.035 0 .108.034.171.114.217.06.035.126.06.206.071.257.033.53.004.771-.12.218-.015.389.096.389.333l-.028.139c-.069.257-.236.416-.505.416-.055 0-.116-.012-.183-.023-.309-.047-.635.036-.864.24-.16.145-.258.35-.258.577 0 .19.056.368.153.53.126.202.32.351.298.684-.012.183-.103.355-.252.48-.19.17-.388.294-.679.294-.151 0-.291-.036-.416-.082l.034-.695c.056.035.126.058.195.058.151 0 .252-.082.275-.232.011-.094-.023-.17-.126-.232-.115-.07-.229-.151-.309-.252-.195-.241-.275-.576-.172-.912.092-.284.252-.458.481-.556.217-.092.459-.092.709-.058l.058-.231c-.252-.058-.561-.07-.858-.035l-.149-.6c.252.035.531.07.858.035l.126-.267.631.267zm-1.858 10.205c-.172-.207-.247-.481-.247-.794 0-.184.035-.356.092-.53.172.207.252.486.252.8 0 .183-.035.355-.097.524zm.988-1.735c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.93-8.186l-.218.929-.929-.218.218-.929.929.218zm-3.839 2.559l-.218.929-.929-.218.218-.929.929.218zm-.988 4.24c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-2.559c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm-1 1.729c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-5.118l-.218.929-.929-.218.218-.929.929.218zm-3.839 2.559l-.218.929-.929-.218.218-.929.929.218zm-1.988 8.186c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-2.559c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm6.816-8.186c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm-1.988 2.559c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm-2.64-1.912l.919.246-.246.919-.918-.246.245-.919zm3.629 3.47l.919.246-.246.919-.918-.246.245-.919zm-.989 4.131c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-2.559c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm-1 1.729c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-5.118l-.246.919-.918-.246.245-.919.919.246zm-3.629 3.47l-.246.919-.918-.246.245-.919.919.246zm-1.72-5.789l.919.246-.246.919-.918-.246.245-.919zm3.629 3.47l.919.246-.246.919-.918-.246.245-.919zm-1.989 8.186c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-2.559c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm-1 1.729c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-5.118l-.246.919-.918-.246.245-.919.919.246zm-3.629 3.47l-.246.919-.918-.246.245-.919.919.246zm-1.72-5.789l.919.246-.246.919-.918-.246.245-.919zm3.629 3.47l.919.246-.246.919-.918-.246.245-.919zm-1.989 8.186c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-2.559c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm-1 1.729c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-5.118l-.246.919-.918-.246.245-.919.919.246zm-3.629 3.47l-.246.919-.918-.246.245-.919.919.246zm-8.186-5.118l-.246.919-.918-.246.245-.919.919.246zm3.629 3.47l-.246.919-.918-.246.245-.919.919.246zm-1.989 8.186c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-2.559c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm-1 1.729c-.172-.207-.252-.486-.252-.8 0-.183.035-.355.097-.524.172.207.247.481.247.794 0 .184-.035.356-.092.53zm1.988-5.118l-.246.919-.918-.246.245-.919.919.246zm-3.629 3.47l-.246.919-.918-.246.245-.919.919.246zm12-14.039c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0-2c7.732 0 14 6.268 14 14s-6.268 14-14 14-14-6.268-14-14 6.268-14 14-14z' />
       </svg>
     ),
-    title: 'Cost',
-    description:
-      '100% free. We run this as a community service to uplift aspiring developers and strengthen the Dallas tech ecosystem',
+    title: LABELS.cohorts.details.items.cost.title,
+    description: LABELS.cohorts.details.items.cost.description,
   },
   {
     icon: (
@@ -312,9 +309,8 @@ const programDetails = [
         <path d='M17.997 18h-11.995l-.002-.623c0-1.259.1-1.986 1.588-2.33 1.684-.389 3.344-.736 2.545-2.209-2.366-4.363-.674-6.838 1.866-6.838 2.491 0 4.226 2.383 1.866 6.839-.775 1.464.826 1.812 2.545 2.209 1.49.344 1.589 1.072 1.589 2.333l-.002.619zm4.811-2.214c-1.29-.298-2.49-.559-1.909-1.657 1.769-3.342.469-5.129-1.4-5.129-1.265 0-2.248.817-2.248 2.324 0 3.903 2.268 1.77 2.246 6.676h4.501l.002-.463c0-.946-.074-1.493-1.192-1.751zm-22.806 2.214h4.501c-.021-4.906 2.246-2.772 2.246-6.676 0-1.507-.983-2.324-2.248-2.324-1.869 0-3.169 1.787-1.399 5.129.581 1.099-.619 1.359-1.909 1.657-1.119.258-1.193.805-1.193 1.751l.002.463z' />
       </svg>
     ),
-    title: 'Teams',
-    description:
-      'Small squads (4–6 members) led by a professional "Cohort Lead" from companies like Toyota Connected, Capital One, and Texas Instruments',
+    title: LABELS.cohorts.details.items.teams.title,
+    description: LABELS.cohorts.details.items.teams.description,
   },
 ];
 
@@ -347,7 +343,7 @@ const testimonials = [
     role: 'Associate Software Engineer',
     company: 'L3Harris Technologies',
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'Thanks to the DSD Cohort I was able to gain experience working in a team environment, showcase my skills, and catch a glimpse of what developer life is actually like. The experience I gained from the cohort resulted in a job offer shortly after.',
     cohort: 'Cohort 9',
     image: '/assets/people/davidOgden.jpg',
     linkedIn: 'https://linkedin.com',
@@ -413,9 +409,7 @@ export default function CohortPage() {
   }, [cohortStatusResponse]);
 
   useEffect(() => {
-    if (isLoading) return; // wait until content is rendered
-
-    // Defer setup to ensure refs and layout are ready
+    if (isLoading) return;
     let observer: IntersectionObserver | null = null;
     let raf1 = 0;
     let raf2 = 0;
@@ -439,11 +433,9 @@ export default function CohortPage() {
             }
           });
         },
-        // Trigger earlier and avoid missing near-fold sections
         { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
       );
 
-      // Observe all sections
       Object.entries(sectionRefs.current).forEach(([key, el]) => {
         if (el) {
           (el as HTMLElement).dataset.key = key;
@@ -451,7 +443,6 @@ export default function CohortPage() {
         }
       });
 
-      // Helper to check and reveal any sections already in view
       const checkVisibleNow = () => {
         const viewportH = window.innerHeight;
         Object.entries(sectionRefs.current).forEach(([key, el]) => {
@@ -470,12 +461,8 @@ export default function CohortPage() {
           }
         });
       };
-
-      // Perform an initial pass and also a delayed pass as a safety net
       checkVisibleNow();
       setTimeout(checkVisibleNow, 800);
-
-      // One-time passive scroll fallback to catch early user scroll
       onFirstScroll = () => {
         checkVisibleNow();
         if (onFirstScroll) window.removeEventListener('scroll', onFirstScroll);
@@ -494,7 +481,7 @@ export default function CohortPage() {
       if (onFirstScroll) window.removeEventListener('scroll', onFirstScroll);
       observer?.disconnect();
     };
-  }, [isLoading]); // re-run when loading completes
+  }, [isLoading]);
 
   if (isLoading) {
     return (
@@ -508,11 +495,10 @@ export default function CohortPage() {
 
   return (
     <div className={styles.pageContainer}>
-      {/* Hero Section */}
       <section
         className={styles.hero}
         ref={heroRef}
-        aria-label='Hero section: Dallas Software Developers Cohort Program'
+        aria-label={LABELS.cohorts.hero.ariaLabel}
       >
         <div className={styles.heroBackground} aria-hidden='true'>
           <div className={styles.gradientOverlay}></div>
@@ -530,33 +516,39 @@ export default function CohortPage() {
 
         <div className={styles.heroContent}>
           <div className={styles.heroTextContent}>
-            <h2 className={styles.heroTagline}>Dallas Software Developers</h2>
+            <h2 className={styles.heroTagline}>
+              {LABELS.cohorts.hero.tagline}
+            </h2>
             <h1 className={styles.heroHeading}>
               <span className={styles.heroHeadingLine}>
-                <span className={styles.heroText}>Cohort Program</span>
+                <span className={styles.heroText}>
+                  {LABELS.cohorts.hero.heading}
+                </span>
               </span>
             </h1>
 
             <div className={styles.heroDescription}>
-              <p>
-                A 6-week collaborative experience where you&apos;ll build real
-                projects with a team of developers under the guidance of
-                industry professionals from the Dallas tech scene.
-              </p>
+              <p>{LABELS.cohorts.hero.description}</p>
             </div>
 
             <div className={styles.heroStats}>
               <div className={styles.stat}>
                 <span className={styles.statNumber}>6</span>
-                <span className={styles.statLabel}>Weeks</span>
+                <span className={styles.statLabel}>
+                  {LABELS.cohorts.hero.stats.weeks}
+                </span>
               </div>
               <div className={styles.stat}>
                 <span className={styles.statNumber}>100%</span>
-                <span className={styles.statLabel}>Free</span>
+                <span className={styles.statLabel}>
+                  {LABELS.cohorts.hero.stats.free}
+                </span>
               </div>
               <div className={styles.stat}>
                 <span className={styles.statNumber}>4-6</span>
-                <span className={styles.statLabel}>Team Size</span>
+                <span className={styles.statLabel}>
+                  {LABELS.cohorts.hero.stats.teamSize}
+                </span>
               </div>
             </div>
 
@@ -574,8 +566,8 @@ export default function CohortPage() {
                   </svg>
                 </div>
                 <div className={styles.highlightText}>
-                  <h3>Real-World Experience</h3>
-                  <p>Build a deployable MVP for your portfolio</p>
+                  <h3>{LABELS.cohorts.hero.highlights.realWorld.title}</h3>
+                  <p>{LABELS.cohorts.hero.highlights.realWorld.description}</p>
                 </div>
               </div>
 
@@ -592,8 +584,8 @@ export default function CohortPage() {
                   </svg>
                 </div>
                 <div className={styles.highlightText}>
-                  <h3>Industry Mentorship</h3>
-                  <p>Learn from professionals at top Dallas companies</p>
+                  <h3>{LABELS.cohorts.hero.highlights.mentorship.title}</h3>
+                  <p>{LABELS.cohorts.hero.highlights.mentorship.description}</p>
                 </div>
               </div>
 
@@ -610,15 +602,15 @@ export default function CohortPage() {
                   </svg>
                 </div>
                 <div className={styles.highlightText}>
-                  <h3>100% Free</h3>
-                  <p>No cost to participate in our community program</p>
+                  <h3>{LABELS.cohorts.hero.highlights.free.title}</h3>
+                  <p>{LABELS.cohorts.hero.highlights.free.description}</p>
                 </div>
               </div>
             </div>
 
             <div className={styles.heroCTA}>
               <Button
-                buttonText='Apply Now'
+                buttonText={LABELS.cohorts.hero.applyNow}
                 onClick={() => {
                   const applySection = document.getElementById('apply-section');
                   applySection?.scrollIntoView({ behavior: 'smooth' });
@@ -635,21 +627,16 @@ export default function CohortPage() {
         </div>
       </section>
 
-      {/* Program Overview Section */}
       <section
         className={`${styles.sectionContainer} ${styles.gradientBackground} ${styles.sectionVisible}`}
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Cohort Program Overview</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.cohorts.overview.title}
+            </h2>
             <p className={styles.sectionDescription}>
-              The DSD Cohort program empowers you to join a cross-functional
-              tech team led by professional software developers currently
-              working in the Dallas tech industry. Over the course of six weeks,
-              you&apos;ll collaborate remotely (with priority given to
-              Dallas-area participants) to design, build, and deliver a complete
-              application that solves a tangible problem for the local tech
-              community.
+              {LABELS.cohorts.overview.description}
             </p>
           </div>
 
@@ -657,14 +644,13 @@ export default function CohortPage() {
             <div className={styles.overviewImage}>
               <Image
                 src='/assets/meetupGroupShot2.png'
-                alt='DSD Cohort Team Collaboration'
+                alt={LABELS.cohorts.overview.imageAlt}
                 width={800}
                 height={500}
                 className={styles.roundedImage}
               />
               <div className={styles.imageCaption}>
-                Cohort 8 final presentation at the Dallas Software Developers
-                meetup
+                {LABELS.cohorts.overview.imageCaption}
               </div>
             </div>
           </div>
@@ -677,9 +663,11 @@ export default function CohortPage() {
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Who Should Join?</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.cohorts.requirements.title}
+            </h2>
             <p className={styles.sectionDescription}>
-              To thrive in the DSD Cohort, you should:
+              {LABELS.cohorts.requirements.description}
             </p>
           </div>
 
@@ -708,14 +696,8 @@ export default function CohortPage() {
               </svg>
             </div>
             <div className={styles.calloutContent}>
-              <h3>Dallas Tech Scene Connection</h3>
-              <p>
-                While our cohorts are remote-friendly, we have deep connections
-                to the Dallas-Fort Worth tech ecosystem. Many of our mentors
-                work at local companies like Toyota Connected, Capital One,
-                Texas Instruments, and Match Group, providing insights into the
-                local job market and tech culture.
-              </p>
+              <h3>{LABELS.cohorts.requirements.dallasCallout.title}</h3>
+              <p>{LABELS.cohorts.requirements.dallasCallout.description}</p>
             </div>
           </div>
         </div>
@@ -727,7 +709,9 @@ export default function CohortPage() {
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Program Details</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.cohorts.details.title}
+            </h2>
           </div>
 
           <div className={styles.detailsGrid}>
@@ -742,22 +726,14 @@ export default function CohortPage() {
 
           <div className={styles.programHighlightsGrid}>
             <div className={styles.programHighlightItem}>
-              <h3>What You&apos;ll Build</h3>
+              <h3>{LABELS.cohorts.details.highlights.whatYouBuild.title}</h3>
               <p>
-                Past cohorts have created job boards for the Dallas tech
-                community, mentorship platforms connecting junior and senior
-                developers, event management systems for local meetups, and
-                developer tools that solve real problems.
+                {LABELS.cohorts.details.highlights.whatYouBuild.description}
               </p>
             </div>
             <div className={styles.programHighlightItem}>
-              <h3>Who You&apos;ll Meet</h3>
-              <p>
-                Your cohort lead will be an experienced developer currently
-                working in the industry. Past leads have come from companies
-                like Toyota Connected, Capital One, Texas Instruments, and Match
-                Group.
-              </p>
+              <h3>{LABELS.cohorts.details.highlights.whoYouMeet.title}</h3>
+              <p>{LABELS.cohorts.details.highlights.whoYouMeet.description}</p>
             </div>
           </div>
         </div>
@@ -769,10 +745,11 @@ export default function CohortPage() {
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Weekly Structure</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.cohorts.structure.title}
+            </h2>
             <p className={styles.sectionDescription}>
-              We follow a professional agile development process that mirrors
-              what you&apos;ll experience in the industry
+              {LABELS.cohorts.structure.description}
             </p>
           </div>
 
@@ -798,13 +775,8 @@ export default function CohortPage() {
           </div>
 
           <div className={styles.scheduleNote}>
-            <h3>Flexible Schedule</h3>
-            <p>
-              We understand that many participants have full-time jobs or other
-              commitments. Most cohort activities happen in the evenings and
-              weekends, with asynchronous work in between. Your team will
-              establish a schedule that works for everyone.
-            </p>
+            <h3>{LABELS.cohorts.structure.scheduleNote.title}</h3>
+            <p>{LABELS.cohorts.structure.scheduleNote.description}</p>
           </div>
         </div>
       </section>
@@ -815,7 +787,9 @@ export default function CohortPage() {
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Key Features & Benefits</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.cohorts.features.title}
+            </h2>
           </div>
 
           <div className={styles.featuresGrid}>
@@ -836,10 +810,11 @@ export default function CohortPage() {
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Cohort Projects</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.cohorts.projects.title}
+            </h2>
             <p className={styles.sectionDescription}>
-              Watch presentations from our previous cohorts showcasing their
-              completed projects
+              {LABELS.cohorts.projects.description}
             </p>
           </div>
 
@@ -873,35 +848,59 @@ export default function CohortPage() {
       >
         <div className={styles.contentWrapper}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Success Stories</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.cohorts.testimonials.title}
+            </h2>
             <p className={styles.sectionDescription}>
-              Hear from our alumni who have transformed their careers through
-              the DSD Cohort program
+              {LABELS.cohorts.testimonials.description}
             </p>
           </div>
 
           <TestimonialsCarousel testimonials={testimonials} />
 
           <div className={styles.careerOutcomes}>
-            <h3>Career Outcomes</h3>
+            <h3>{LABELS.cohorts.testimonials.careerOutcomes.title}</h3>
             <div className={styles.outcomesStats}>
               <div className={styles.outcomeStat}>
-                <span className={styles.outcomeNumber}>70%</span>
+                <span className={styles.outcomeNumber}>
+                  {
+                    LABELS.cohorts.testimonials.careerOutcomes.stats.jobSuccess
+                      .percentage
+                  }
+                </span>
                 <span className={styles.outcomeLabel}>
-                  of participants reported that the cohort experience helped
-                  them land a job or promotion
+                  {
+                    LABELS.cohorts.testimonials.careerOutcomes.stats.jobSuccess
+                      .label
+                  }
                 </span>
               </div>
               <div className={styles.outcomeStat}>
-                <span className={styles.outcomeNumber}>85%</span>
+                <span className={styles.outcomeNumber}>
+                  {
+                    LABELS.cohorts.testimonials.careerOutcomes.stats
+                      .interviewConfidence.percentage
+                  }
+                </span>
                 <span className={styles.outcomeLabel}>
-                  said the cohort gave them confidence in technical interviews
+                  {
+                    LABELS.cohorts.testimonials.careerOutcomes.stats
+                      .interviewConfidence.label
+                  }
                 </span>
               </div>
               <div className={styles.outcomeStat}>
-                <span className={styles.outcomeNumber}>90%</span>
+                <span className={styles.outcomeNumber}>
+                  {
+                    LABELS.cohorts.testimonials.careerOutcomes.stats
+                      .recommendation.percentage
+                  }
+                </span>
                 <span className={styles.outcomeLabel}>
-                  would recommend the program to other developers
+                  {
+                    LABELS.cohorts.testimonials.careerOutcomes.stats
+                      .recommendation.label
+                  }
                 </span>
               </div>
             </div>
@@ -917,10 +916,11 @@ export default function CohortPage() {
         <div className={styles.contentWrapper}>
           <div className={styles.applicationSection}>
             <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>How to Apply</h2>
+              <h2 className={styles.sectionTitle}>
+                {LABELS.cohorts.apply.title}
+              </h2>
               <p className={styles.sectionDescription}>
-                Ready to level up your developer skills and build something
-                meaningful with the Dallas tech community?
+                {LABELS.cohorts.apply.description}
               </p>
             </div>
 
@@ -942,51 +942,99 @@ export default function CohortPage() {
 
               {currentCohortStatusData.statusType === 'open' && (
                 <div className={styles.applySteps}>
-                  <h3>Application Process</h3>
+                  <h3>{LABELS.cohorts.apply.applicationProcess.title}</h3>
                   <ol className={styles.stepsList}>
                     <li>
-                      <span className={styles.stepNumber}>1</span>
+                      <span className={styles.stepNumber}>
+                        {
+                          LABELS.cohorts.apply.applicationProcess.steps.submit
+                            .number
+                        }
+                      </span>
                       <div className={styles.stepContent}>
-                        <h4>Submit Application</h4>
+                        <h4>
+                          {
+                            LABELS.cohorts.apply.applicationProcess.steps.submit
+                              .title
+                          }
+                        </h4>
                         <p>
-                          Fill out a brief form telling us about your background
-                          and why you want to join
+                          {
+                            LABELS.cohorts.apply.applicationProcess.steps.submit
+                              .description
+                          }
                         </p>
                       </div>
                     </li>
                     <li>
-                      <span className={styles.stepNumber}>2</span>
+                      <span className={styles.stepNumber}>
+                        {
+                          LABELS.cohorts.apply.applicationProcess.steps
+                            .assessment.number
+                        }
+                      </span>
                       <div className={styles.stepContent}>
-                        <h4>Technical Assessment</h4>
+                        <h4>
+                          {
+                            LABELS.cohorts.apply.applicationProcess.steps
+                              .assessment.title
+                          }
+                        </h4>
                         <p>
-                          Complete a small coding challenge to demonstrate your
-                          current skill level
+                          {
+                            LABELS.cohorts.apply.applicationProcess.steps
+                              .assessment.description
+                          }
                         </p>
                       </div>
                     </li>
                     <li>
-                      <span className={styles.stepNumber}>3</span>
+                      <span className={styles.stepNumber}>
+                        {
+                          LABELS.cohorts.apply.applicationProcess.steps
+                            .interview.number
+                        }
+                      </span>
                       <div className={styles.stepContent}>
-                        <h4>Brief Interview</h4>
+                        <h4>
+                          {
+                            LABELS.cohorts.apply.applicationProcess.steps
+                              .interview.title
+                          }
+                        </h4>
                         <p>
-                          Chat with a cohort lead about your goals and
-                          expectations
+                          {
+                            LABELS.cohorts.apply.applicationProcess.steps
+                              .interview.description
+                          }
                         </p>
                       </div>
                     </li>
                     <li>
-                      <span className={styles.stepNumber}>4</span>
+                      <span className={styles.stepNumber}>
+                        {
+                          LABELS.cohorts.apply.applicationProcess.steps
+                            .placement.number
+                        }
+                      </span>
                       <div className={styles.stepContent}>
-                        <h4>Team Placement</h4>
+                        <h4>
+                          {
+                            LABELS.cohorts.apply.applicationProcess.steps
+                              .placement.title
+                          }
+                        </h4>
                         <p>
-                          If selected, you&apos;ll be matched with a team based
-                          on your skills and interests
+                          {
+                            LABELS.cohorts.apply.applicationProcess.steps
+                              .placement.description
+                          }
                         </p>
                       </div>
                     </li>
                   </ol>
                   <Button
-                    buttonText='Apply Now'
+                    buttonText={LABELS.cohorts.apply.applyNow}
                     onClick={() => {
                       if (!actionLinks) return;
                       const cohortSignupLink = actionLinks.find(
@@ -1000,18 +1048,13 @@ export default function CohortPage() {
 
               {currentCohortStatusData.statusType === 'closed' && (
                 <div className={styles.notificationFormWrapper}>
-                  <h3>Get Notified When Applications Open</h3>
+                  <h3>{LABELS.cohorts.apply.notification.title}</h3>
                   <p className={styles.notificationDescription}>
-                    The next cohort is expected to start in Fall 2024. Join our
-                    notification list to be the first to know when applications
-                    open.
+                    {LABELS.cohorts.apply.notification.description}
                   </p>
                   <NotificationForm />
                   <div className={styles.joinDiscord}>
-                    <p>
-                      In the meantime, join our Discord community to connect
-                      with past cohort participants and mentors:
-                    </p>
+                    <p>{LABELS.cohorts.apply.notification.discordPrompt}</p>
                     <a
                       href='https://discord.gg/dallassoftwaredevs'
                       target='_blank'
@@ -1029,7 +1072,9 @@ export default function CohortPage() {
                           <path d='M19.54 0c1.356 0 2.46 1.104 2.46 2.472v21.528l-2.58-2.28-1.452-1.344-1.536-1.428.636 2.22h-13.608c-1.356 0-2.46-1.104-2.46-2.472v-16.224c0-1.368 1.104-2.472 2.46-2.472h16.08zm-4.632 15.672c2.652-.084 3.672-1.824 3.672-1.824 0-3.864-1.728-6.996-1.728-6.996-1.728-1.296-3.372-1.26-3.372-1.26l-.168.192c2.04.624 2.988 1.524 2.988 1.524-1.248-.684-2.472-1.02-3.612-1.152-.864-.096-1.692-.072-2.424.024l-.204.024c-.42.036-1.44.192-2.724.756-.444.204-.708.348-.708.348s.996-.948 3.156-1.572l-.12-.144s-1.644-.036-3.372 1.26c0 0-1.728 3.132-1.728 6.996 0 0 1.008 1.74 3.66 1.824 0 0 .444-.54.804-.996-1.524-.456-2.1-1.416-2.1-1.416l.336.204.048.036.047.027.014.006.047.027c.3.168.6.3.876.408.492.192 1.08.384 1.764.516.9.168 1.956.228 3.108.012.564-.096 1.14-.264 1.74-.516.42-.156.888-.384 1.38-.708 0 0-.6.984-2.172 1.428.36.456.792.972.792.972zm-5.58-5.604c-.684 0-1.224.6-1.224 1.332 0 .732.552 1.332 1.224 1.332.684 0 1.224-.6 1.224-1.332.012-.732-.54-1.332-1.224-1.332zm4.38 0c-.684 0-1.224.6-1.224 1.332 0 .732.552 1.332 1.224 1.332.684 0 1.224-.6 1.224-1.332 0-.732-.54-1.332-1.224-1.332z' />
                         </svg>
                       </span>
-                      <span>Join Discord</span>
+                      <span>
+                        {LABELS.cohorts.apply.notification.joinDiscord}
+                      </span>
                     </a>
                   </div>
                 </div>
@@ -1042,19 +1087,17 @@ export default function CohortPage() {
   );
 }
 
-// Testimonials Carousel Component
 function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
 
-  // Calculate the maximum index based on the number of visible cards
   useEffect(() => {
     const calculateMaxIndex = () => {
       if (!carouselRef.current) return;
 
       const containerWidth = carouselRef.current.clientWidth;
-      const cardWidth = containerWidth > 768 ? 450 : containerWidth - 64; // Approximate card width including gap
+      const cardWidth = containerWidth > 768 ? 450 : containerWidth - 64;
       const visibleCards = Math.floor(containerWidth / cardWidth);
       setMaxIndex(Math.max(0, testimonials.length - visibleCards));
     };
@@ -1067,7 +1110,6 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
     };
   }, [testimonials.length]);
 
-  // Scroll to a specific index
   const scrollToIndex = useCallback(
     (index: number) => {
       if (!carouselRef.current) return;
@@ -1078,7 +1120,7 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
       const cardWidth =
         carouselRef.current.querySelector(`.${styles.testimonialCard}`)
           ?.clientWidth || 0;
-      const scrollPosition = newIndex * (cardWidth + 32); // 32px is the gap
+      const scrollPosition = newIndex * (cardWidth + 32);
 
       carouselRef.current.scrollTo({
         left: scrollPosition,
@@ -1088,7 +1130,6 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
     [testimonials.length]
   );
 
-  // Handle scroll events to update the current index
   const handleScroll = useCallback(() => {
     if (!carouselRef.current) return;
 
@@ -1096,13 +1137,12 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
     const cardWidth =
       carouselRef.current.querySelector(`.${styles.testimonialCard}`)
         ?.clientWidth || 0;
-    const gap = 32; // Same as the gap in CSS
+    const gap = 32;
 
     const newIndex = Math.round(scrollPosition / (cardWidth + gap));
     setCurrentIndex(newIndex);
   }, []);
 
-  // Add scroll event listener
   useEffect(() => {
     const carousel = carouselRef.current;
     if (carousel) {
@@ -1111,7 +1151,6 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
     }
   }, [handleScroll]);
 
-  // Navigation handlers
   const handlePrev = () => scrollToIndex(currentIndex - 1);
   const handleNext = () => scrollToIndex(currentIndex + 1);
 
@@ -1159,7 +1198,7 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
               >
                 <path d='M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z' />
               </svg>
-              <span>Connect</span>
+              <span>{LABELS.cohorts.testimonials.connect}</span>
             </a>
           </div>
         ))}
@@ -1170,7 +1209,7 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
           className={styles.carouselButton}
           onClick={handlePrev}
           disabled={currentIndex === 0}
-          aria-label='Previous testimonial'
+          aria-label={LABELS.cohorts.testimonials.previousTestimonial}
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -1190,7 +1229,7 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
           className={styles.carouselButton}
           onClick={handleNext}
           disabled={currentIndex >= maxIndex}
-          aria-label='Next testimonial'
+          aria-label={LABELS.cohorts.testimonials.nextTestimonial}
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -1214,7 +1253,7 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
             key={index}
             className={`${styles.carouselIndicator} ${index === currentIndex ? styles.active : ''}`}
             onClick={() => scrollToIndex(index)}
-            aria-label={`Go to testimonial ${index + 1}`}
+            aria-label={`${LABELS.cohorts.testimonials.goToTestimonial} ${index + 1}`}
           />
         ))}
       </div>

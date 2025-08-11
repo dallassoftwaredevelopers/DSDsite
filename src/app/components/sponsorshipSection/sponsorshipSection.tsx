@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Button from '../button/button';
 import Modal from '../modal/modal';
 import styles from './sponsorshipSection.module.css';
+import { LABELS } from '@/app/labels';
 
 export default function SponsorshipSection() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -24,17 +25,13 @@ export default function SponsorshipSection() {
 
         <div className={styles.sponsorshipContent}>
           <h2 className={styles.sponsorshipTitle}>
-            Does your company want to sponsor a meetup?
+            {LABELS.sponsorship.title}
           </h2>
           <p className={styles.sponsorshipDescription}>
-            100% of ALL sponsorship money is used ONLY on food and drinks for
-            the meetup. We are completely volunteer ran and do not take any
-            money for ourselves. The sponsorship funds cover pizza for a very
-            active community of developers that we would love to introduce your
-            company to!
+            {LABELS.sponsorship.description}
           </p>
           <Button
-            buttonText='Learn More About Sponsorship'
+            buttonText={LABELS.sponsorship.learn_more}
             onClick={() => setModalOpen(true)}
           />
         </div>
@@ -45,7 +42,7 @@ export default function SponsorshipSection() {
           <div className={styles.modalImageContainer}>
             <Image
               src='/assets/sponsor.png'
-              alt='Dallas Software Developers Sponsorship Information'
+              alt={LABELS.sponsorship.modal_image_alt}
               width={1200}
               height={1600}
               style={{ width: '100%', height: 'auto' }}
@@ -54,24 +51,21 @@ export default function SponsorshipSection() {
           </div>
 
           <div className={styles.ctaSection}>
-            <h3>Ready to Make an Impact?</h3>
-            <p className={styles.ctaText}>
-              Let&apos;s discuss how your company can support the Dallas
-              developer community.
-            </p>
+            <h3>{LABELS.sponsorship.modal_title}</h3>
+            <p className={styles.ctaText}>{LABELS.sponsorship.modal_cta}</p>
             <div className={styles.buttonGroup}>
               <a
                 href='mailto:dallassoftwaredevelopersdsd@gmail.com?subject=Meetup Sponsorship Inquiry'
                 className={styles.emailButton}
               >
-                Contact Us About Sponsorship
+                {LABELS.sponsorship.contact_us}
               </a>
               <a
                 href='/assets/sponsor.png'
                 download='DSD-Sponsorship-Info.png'
                 className={styles.downloadButton}
               >
-                Download One-Pager
+                {LABELS.sponsorship.download_one_pager}
               </a>
             </div>
           </div>

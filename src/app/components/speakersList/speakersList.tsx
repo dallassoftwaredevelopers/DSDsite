@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Speaker } from '@/types/speaker';
 import styles from './speakersList.module.css';
 import Image from 'next/image';
+import { LABELS } from '@/app/labels';
 
 interface SpeakersListProps {
   selectedTopic?: string | null;
@@ -50,43 +51,43 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
   };
 
   if (loading) {
-    return <div className={styles.loading}>Loading speakers...</div>;
+    return <div className={styles.loading}>{LABELS.speakersList.loading}</div>;
   }
 
   if (error) {
-    return <div className={styles.error}>Error: {error}</div>;
+    return (
+      <div className={styles.error}>
+        {LABELS.speakersList.error_prefix}
+        {error}
+      </div>
+    );
   }
 
-  // Filter speakers by selected topic
   const filteredSpeakers = selectedTopic
     ? speakers.filter((speaker) => {
         if (!speaker.topics) return false;
-        // Topics are already normalized from the API
         const topicLower = speaker.topics.toLowerCase();
         const selectedLower = selectedTopic.toLowerCase();
-
-        // For compound topics like "JavaScript, CSS", split and check each
         const topics = topicLower.split(',').map((t) => t.trim());
-
-        // Use exact match for single-word topics to avoid Java matching JavaScript
         return topics.some((topic) => {
-          // For exact matches (like Java vs JavaScript)
           if (selectedLower === 'java') {
             return topic === 'java';
           }
-          // For other topics, allow partial matching (e.g., "Mobile" matches "Mobile Development")
           return topic === selectedLower || topic.includes(selectedLower);
         });
       })
     : speakers;
 
   if (speakers.length === 0) {
-    return <div className={styles.empty}>No speakers found</div>;
+    return <div className={styles.empty}>{LABELS.speakersList.empty}</div>;
   }
 
   if (filteredSpeakers.length === 0 && selectedTopic) {
     return (
-      <div className={styles.empty}>No speakers found for {selectedTopic}</div>
+      <div className={styles.empty}>
+        {LABELS.speakersList.empty_for_topic_prefix}
+        {selectedTopic}
+      </div>
     );
   }
 
@@ -94,20 +95,17 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
     <div className={styles.speakersGrid}>
       {filteredSpeakers
         .sort((a, b) => {
-          // Always sort by date (most recent first)
-          // If one has a date and the other doesn't, the one with date comes first
           if (a.lastSpoke && b.lastSpoke) {
             return (
               new Date(b.lastSpoke).getTime() - new Date(a.lastSpoke).getTime()
             );
           }
           if (a.lastSpoke && !b.lastSpoke) {
-            return -1; // a comes first
+            return -1;
           }
           if (!a.lastSpoke && b.lastSpoke) {
-            return 1; // b comes first
+            return 1;
           }
-          // If neither has a date, sort by name
           return a.name.localeCompare(b.name);
         })
         .map((speaker, index) => (
@@ -131,12 +129,14 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
                   )}
                   {speaker.topics && (
                     <p className={styles.speakerTopics}>
-                      Topic: {speaker.topics}
+                      {LABELS.speakersList.topic_prefix}
+                      {speaker.topics}
                     </p>
                   )}
                   {speaker.lastSpoke && (
                     <p className={styles.speakerDate}>
-                      Date Last Spoke: {formatDate(speaker.lastSpoke)}
+                      {LABELS.speakersList.date_last_spoke_prefix}
+                      {formatDate(speaker.lastSpoke)}
                     </p>
                   )}
                   {speaker.linkedin && (

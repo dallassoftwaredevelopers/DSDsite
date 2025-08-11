@@ -4,6 +4,7 @@ import { memo } from 'react';
 import { Speaker } from '@/types/globalTypes';
 import Image from 'next/image';
 import styles from './teamList.module.css';
+import { LABELS } from '@/app/labels';
 
 function TeamListComponent({ peopleData }: { peopleData: Speaker[] }) {
   return (
@@ -24,10 +25,10 @@ function TeamListComponent({ peopleData }: { peopleData: Speaker[] }) {
               <div className={styles.teamOverlay}>
                 <div className={styles.teamContent}>
                   <h3 className={styles.teamName}>{person.fullName}</h3>
-                  <p className={styles.teamRole}>Admin Team</p>
-                  <p className={styles.teamCompany}>
-                    Dallas Software Developers
+                  <p className={styles.teamRole}>
+                    {LABELS.teamList.admin_role}
                   </p>
+                  <p className={styles.teamCompany}>{LABELS.app.orgName}</p>
                   {person.linkedInUrl && (
                     <a
                       href={person.linkedInUrl}

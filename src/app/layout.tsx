@@ -5,28 +5,26 @@ import Navbar from './components/navbar/navbar';
 import Footer from '@/app/components/footer/footer';
 import ReactQueryProvider from './react-query-provider';
 import { GlobalStateProvider } from './hooks/useGlobalState/useGlobalState';
+import { LABELS } from './labels';
 
 export const metadata: Metadata = {
-  title: 'Dallas Software Developers',
-  description:
-    "Join Dallas's premier community of passionate developers building the future together",
+  title: LABELS.app.orgName,
+  description: LABELS.hero.subheading,
   keywords:
     'software development, coding, programming, Dallas, community, developers, tech meetup, coding bootcamp',
-  authors: [{ name: 'Dallas Software Developers' }],
+  authors: [{ name: LABELS.app.orgName }],
   openGraph: {
-    title: 'Dallas Software Developers',
-    description:
-      "Join Dallas's premier community of passionate developers building the future together",
+    title: LABELS.app.orgName,
+    description: LABELS.hero.subheading,
     url: 'https://dallassoftware.dev',
-    siteName: 'Dallas Software Developers',
+    siteName: LABELS.app.orgName,
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dallas Software Developers',
-    description:
-      "Join Dallas's premier community of passionate developers building the future together",
+    title: LABELS.app.orgName,
+    description: LABELS.hero.subheading,
   },
 };
 

@@ -4,10 +4,16 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-top: 1px solid #e9ecef;
 }
 
-/* Background elements */
+@media (max-width: 768px) {
+  .sponsorshipContainer {
+    padding: 60px 20px;
+    background: transparent;
+    border-top: none;
+  }
+}
+
 .backgroundElements {
   position: absolute;
   top: 0;

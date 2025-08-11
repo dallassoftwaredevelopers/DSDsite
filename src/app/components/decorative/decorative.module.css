@@ -57,24 +57,23 @@
   background-size: 100px 100px;
 }
 
-/* Floating elements */
 .floatingElement {
   position: absolute;
   z-index: 1;
   pointer-events: none;
-  animation: float 6s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 .floatingElement:nth-child(2n) {
-  animation-duration: 8s;
+  animation-duration: 4s;
 }
 
 .floatingElement:nth-child(3n) {
-  animation-duration: 10s;
+  animation-duration: 5s;
 }
 
 .floatingElement:nth-child(4n) {
-  animation-duration: 12s;
+  animation-duration: 6s;
 }
 
 @keyframes float {
@@ -87,7 +86,6 @@
   }
 }
 
-/* Add variations to the float animation for different shapes */
 .floatingElement:nth-child(odd) {
   animation-name: floatLeft;
 }
@@ -116,7 +114,6 @@
   }
 }
 
-/* Shapes */
 .shape {
   position: absolute;
   z-index: 0;
@@ -141,14 +138,12 @@
   border-bottom: 86.6px solid var(--shape-color, hsl(var(--primary)));
 }
 
-/* Animated gradient border */
 .gradientBorder {
   position: relative;
   border-radius: var(--border-radius-md);
   overflow: hidden;
 }
 
-/* Scroll Indicator */
 .scrollIndicator {
   position: fixed;
   left: 0;
@@ -195,7 +190,6 @@
   overflow: hidden;
 }
 
-/* Slightly faster transition during scrolling for better responsiveness */
 .fastScrolling {
   transition: width 0.08s linear;
 }
@@ -299,7 +293,6 @@
   }
 }
 
-/* Animated text reveal */
 .textReveal {
   display: inline-block;
   overflow: hidden;

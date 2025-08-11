@@ -6,14 +6,12 @@
   overflow-x: hidden;
 }
 
-/* Hero section container - full width */
 .heroContainer {
   width: 100%;
   margin-top: 0;
   padding-top: 0;
 }
 
-/* Standard section container with spacing */
 .sectionContainer {
   width: 100% !important;
   position: relative;
@@ -104,12 +102,23 @@
 /* Media queries */
 @media (max-width: 768px) {
   .sectionContainer {
-    padding: var(--spacing-8) 0;
+    padding: 0;
+    background: transparent !important;
+  }
+
+  .sectionContainer::before,
+  .sectionContainer::after {
+    display: none;
+  }
+
+  .sectionContainer:nth-of-type(odd),
+  .sectionContainer:nth-of-type(even) {
+    background-color: transparent;
   }
 }
 
 @media (max-width: 480px) {
   .sectionContainer {
-    padding: var(--spacing-6) 0;
+    padding: 0;
   }
 }

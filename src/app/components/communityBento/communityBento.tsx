@@ -70,18 +70,18 @@ export default function CommunityBento() {
             Join Our <span className={styles.highlight}>Community</span>
           </h1>
           <p className={styles.heroDescription}>
-            We&apos;re building an inclusive, welcoming space for developers of all
-            backgrounds and skill levels.
+            We&apos;re building an inclusive, welcoming space for developers of
+            all backgrounds and skill levels.
           </p>
         </div>
 
         {/* Bento Photo Collage */}
         <div className={styles.bentoContainer}>
-          {/* Message Card */}
           <div className={styles.messageCard}>
             <div className={styles.messageContent}>
               <h2 className={styles.messageTitle}>
-                Hybrid Meetups &amp;<br />
+                Hybrid Meetups &amp;
+                <br />
                 No Gatekeeping
               </h2>
               <p className={styles.messageText}>
@@ -90,8 +90,6 @@ export default function CommunityBento() {
               </p>
             </div>
           </div>
-
-          {/* Photo Grid */}
           <div className={styles.photoGrid}>
             {bentoImages.slice(0, 6).map((image, index) => (
               <div
@@ -108,8 +106,6 @@ export default function CommunityBento() {
               </div>
             ))}
           </div>
-
-          {/* Additional Photos */}
           <div className={styles.additionalPhotos}>
             {bentoImages.slice(6).map((image) => (
               <div key={image.id} className={styles.smallPhotoCard}>

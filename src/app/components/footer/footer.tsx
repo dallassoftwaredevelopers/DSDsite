@@ -3,6 +3,7 @@ import SocialLinks from '../socialSection/socialLinks';
 import Link from 'next/link';
 import styles from './footer.module.css';
 import { socialData, internalLinks } from '../../_constants';
+import { LABELS } from '@/app/labels';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,12 +28,8 @@ export default function Footer() {
         <div className={`${styles.footerContainer}`}>
           <div className={styles.footerColumns}>
             <div className={styles.footerColumn}>
-              <h3 className={styles.footerHeading}>
-                Dallas Software Developers
-              </h3>
-              <p className={styles.footerText}>
-                This website is made by the community for the community
-              </p>
+              <h3 className={styles.footerHeading}>{LABELS.app.orgName}</h3>
+              <p className={styles.footerText}>{LABELS.footer.tagline}</p>
               <div data-testid='socialLinksDiv'>
                 <SocialLinks
                   links={socialData}
@@ -43,27 +40,35 @@ export default function Footer() {
             </div>
 
             <div className={styles.footerColumn}>
-              <h3 className={styles.footerHeading}>Quick Links</h3>
+              <h3 className={styles.footerHeading}>
+                {LABELS.footer.quick_links}
+              </h3>
               <div className={styles.links}>
-                <Link href={internalLinks.home.link}>Home</Link>
-                <Link href={internalLinks.community.link}>Community</Link>
-                <Link href={internalLinks.cohorts.link}>Cohorts</Link>
-                <Link href={internalLinks.about.link}>About</Link>
+                <Link href={internalLinks.home.link}>{LABELS.footer.home}</Link>
+                <Link href={internalLinks.community.link}>
+                  {LABELS.footer.community}
+                </Link>
+                <Link href={internalLinks.cohorts.link}>
+                  {LABELS.footer.cohorts}
+                </Link>
+                <Link href={internalLinks.about.link}>
+                  {LABELS.footer.about}
+                </Link>
               </div>
             </div>
 
             <div className={styles.footerColumn}>
-              <h3 className={styles.footerHeading}>Contact</h3>
+              <h3 className={styles.footerHeading}>{LABELS.footer.contact}</h3>
               <div className={styles.contactLinks}>
-                <a href='mailto:dallassoftwaredevelopersdsd@gmail.com'>
-                  dallassoftwaredevelopersdsd@gmail.com
+                <a href={`mailto:${LABELS.footer.email}`}>
+                  {LABELS.footer.email}
                 </a>
                 <a
                   href='https://discord.gg/dallassoftwaredevs'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
-                  Join our Discord
+                  {LABELS.footer.join_discord}
                 </a>
               </div>
             </div>
@@ -71,8 +76,8 @@ export default function Footer() {
 
           <div className={styles.footerBottom}>
             <p className={styles.copyright}>
-              &copy; {currentYear} <span>Dallas Software Developers</span>. All
-              rights reserved.
+              &copy; {currentYear} <span>{LABELS.app.orgName}</span>.{' '}
+              {LABELS.footer.rights_reserved}
             </p>
           </div>
         </div>

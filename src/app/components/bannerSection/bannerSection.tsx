@@ -5,6 +5,7 @@ import styles from './bannerSection.module.css';
 import Image from 'next/image';
 import BackgroundPattern from '../decorative/backgroundPattern';
 import FloatingShapes from '../decorative/floatingShapes';
+import { LABELS } from '@/app/labels';
 
 export default function BannerSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -12,7 +13,7 @@ export default function BannerSection() {
   const [counters, setCounters] = useState({
     members: 0,
     events: 0,
-    workshops: 0,
+    conference: 0,
     volunteers: 0,
   });
 
@@ -44,10 +45,10 @@ export default function BannerSection() {
       const interval = duration / steps;
 
       const targets = {
-        members: 500,
+        members: 7400,
         events: 24,
-        workshops: 48,
-        volunteers: 25,
+        conference: 1,
+        volunteers: 100,
       };
 
       let currentStep = 0;
@@ -58,7 +59,7 @@ export default function BannerSection() {
         setCounters({
           members: Math.floor(targets.members * progress),
           events: Math.floor(targets.events * progress),
-          workshops: Math.floor(targets.workshops * progress),
+          conference: Math.floor(targets.conference * progress),
           volunteers: Math.floor(targets.volunteers * progress),
         });
 
@@ -71,32 +72,6 @@ export default function BannerSection() {
       return () => clearInterval(timer);
     }
   }, [isVisible]);
-
-  const values = [
-    {
-      icon: '🤝',
-      title: 'Community First',
-      description:
-        'Building meaningful connections between developers at all skill levels',
-    },
-    {
-      icon: '📚',
-      title: 'Continuous Learning',
-      description:
-        'Providing cutting-edge workshops and resources to stay ahead',
-    },
-    {
-      icon: '🚀',
-      title: 'Innovation',
-      description:
-        'Fostering creativity and pushing boundaries in software development',
-    },
-    {
-      icon: '💡',
-      title: 'Open Source',
-      description: 'Contributing to and supporting the open source ecosystem',
-    },
-  ];
 
   return (
     <div className={styles.bannerSection} ref={sectionRef}>
@@ -125,9 +100,9 @@ export default function BannerSection() {
       <div className={styles.container}>
         <div className={styles.headerSection}>
           <h1 className={styles.mainTitle}>
-            <span className={styles.titleLine}>WHO WE ARE</span>
+            <span className={styles.titleLine}>{LABELS.banner.who_we_are}</span>
             <span className={styles.subtitle}>
-              Building Dallas&apos;s Premier Developer Community
+              {LABELS.banner.building_subtitle}
             </span>
           </h1>
         </div>
@@ -137,7 +112,9 @@ export default function BannerSection() {
             className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
           >
             <div className={styles.statNumber}>{counters.members}+</div>
-            <div className={styles.statLabel}>Active Members</div>
+            <div className={styles.statLabel}>
+              {LABELS.banner.active_members}
+            </div>
             <div className={styles.statIcon}>👥</div>
           </div>
           <div
@@ -145,23 +122,29 @@ export default function BannerSection() {
             style={{ animationDelay: '0.1s' }}
           >
             <div className={styles.statNumber}>{counters.events}</div>
-            <div className={styles.statLabel}>Annual Events</div>
+            <div className={styles.statLabel}>
+              {LABELS.banner.meetups_a_year}
+            </div>
             <div className={styles.statIcon}>📅</div>
           </div>
           <div
             className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
             style={{ animationDelay: '0.2s' }}
           >
-            <div className={styles.statNumber}>{counters.workshops}+</div>
-            <div className={styles.statLabel}>Tech Workshops</div>
+            <div className={styles.statNumber}>{counters.conference}</div>
+            <div className={styles.statLabel}>
+              {LABELS.banner.tech_conference}
+            </div>
             <div className={styles.statIcon}>💻</div>
           </div>
           <div
             className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
             style={{ animationDelay: '0.3s' }}
           >
-            <div className={styles.statNumber}>{counters.volunteers}</div>
-            <div className={styles.statLabel}>Dedicated Volunteers</div>
+            <div className={styles.statNumber}>{counters.volunteers}+</div>
+            <div className={styles.statLabel}>
+              {LABELS.banner.speakers_and_cohort}
+            </div>
             <div className={styles.statIcon}>🌟</div>
           </div>
         </div>
@@ -169,44 +152,49 @@ export default function BannerSection() {
         <div className={styles.contentSection}>
           <div className={styles.missionSection}>
             <div className={styles.missionCard}>
-              <h2 className={styles.sectionTitle}>Our Mission</h2>
+              <h2 className={styles.sectionTitle}>
+                {LABELS.banner.our_mission}
+              </h2>
               <p className={styles.missionText}>
-                Dallas Software Developers is a thriving community in the DFW
-                area run 100% by passionate volunteers. We&apos;re dedicated to
-                providing exceptional value and resources to build a vibrant
-                ecosystem for local software developers.
+                {LABELS.banner.mission_paragraph}
               </p>
               <div className={styles.highlightBox}>
-                <span className={styles.highlight}>100% Free</span>
-                <span className={styles.highlight}>100% Community-Driven</span>
-                <span className={styles.highlight}>100% Inclusive</span>
+                <span className={styles.highlight}>
+                  {LABELS.banner.highlight_free}
+                </span>
+                <span className={styles.highlight}>
+                  {LABELS.banner.highlight_community}
+                </span>
+                <span className={styles.highlight}>
+                  {LABELS.banner.highlight_inclusive}
+                </span>
               </div>
             </div>
 
             <div className={styles.visionCard}>
-              <h2 className={styles.sectionTitle}>Our Core Values</h2>
+              <h2 className={styles.sectionTitle}>
+                {LABELS.banner.core_values}
+              </h2>
               <ul className={styles.offerList}>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>🎓</span>
-                  <span>Quarterly cohorts with structured learning paths</span>
+                  <span className={styles.offerIcon}>➤</span>
+                  <span>{LABELS.banner.value_1}</span>
                 </li>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>🔧</span>
-                  <span>Hands-on workshops on cutting-edge technologies</span>
+                  <span className={styles.offerIcon}>➤</span>
+                  <span>{LABELS.banner.value_2}</span>
                 </li>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>🤖</span>
-                  <span>AI, Machine Learning, and emerging tech sessions</span>
+                  <span className={styles.offerIcon}>➤</span>
+                  <span>{LABELS.banner.value_3}</span>
                 </li>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>🌐</span>
-                  <span>
-                    Networking opportunities with industry professionals
-                  </span>
+                  <span className={styles.offerIcon}>➤</span>
+                  <span>{LABELS.banner.value_4}</span>
                 </li>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>💼</span>
-                  <span>Career development and mentorship programs</span>
+                  <span className={styles.offerIcon}>➤</span>
+                  <span>{LABELS.banner.value_5}</span>
                 </li>
               </ul>
             </div>

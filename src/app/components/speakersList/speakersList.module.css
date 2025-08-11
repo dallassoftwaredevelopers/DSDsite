@@ -216,20 +216,53 @@
 
 @media (max-width: 600px) {
   .speakersGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .speakerCard {
-    aspect-ratio: 4/5;
-  }
-
-  .speakerOverlay {
-    padding: 1.5rem 1.25rem 1.25rem;
+    aspect-ratio: 3/4;
+    width: 100%;
+    max-width: none;
+    min-height: auto;
   }
 }
 
-/* Light theme adjustments for the page background */
+@media (max-width: 480px) {
+  .speakersGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .speakerCard {
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+  }
+
+  .speakerOverlay {
+    padding: 0.6rem 0.5rem 0.5rem;
+  }
+
+  .speakerName {
+    font-size: 0.95rem;
+  }
+  .speakerRole {
+    font-size: 0.68rem;
+  }
+  .speakerCompany {
+    font-size: 0.62rem;
+  }
+  .linkedinLink {
+    width: 26px;
+    height: 26px;
+    bottom: 0.6rem;
+    right: 0.6rem;
+  }
+  .linkedinLink svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
 @media (prefers-color-scheme: light) {
   .loading,
   .empty {

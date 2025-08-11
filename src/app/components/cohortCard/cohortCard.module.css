@@ -111,21 +111,36 @@
   border: none;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
+  .cohortCard {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
   .groupName {
-    font-size: var(--text-lg);
-    padding: var(--spacing-4);
+    font-size: 1rem;
+    padding: var(--spacing-3);
   }
 
   .cohortVideoContainer,
   .defaultImageContainer {
     aspect-ratio: 16 / 10;
+    height: 150px;
   }
 }
 
 @media (max-width: 480px) {
+  .cohortCard {
+    max-width: 240px;
+  }
+
   .groupName {
-    font-size: var(--text-base);
+    font-size: 0.9rem;
+    padding: var(--spacing-2);
+  }
+
+  .cohortVideoContainer,
+  .defaultImageContainer {
+    height: 120px;
   }
 }

@@ -244,6 +244,16 @@ a:hover {
   max-width: 100%;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 70px;
+  }
+
+  main {
+    min-height: calc(100vh - 70px);
+  }
+}
+
 .footerCol2 {
   -webkit-box-flex: 0;
   -ms-flex: 0 0 16.666667%;

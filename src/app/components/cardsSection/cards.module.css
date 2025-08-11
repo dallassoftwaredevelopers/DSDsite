@@ -36,10 +36,11 @@
 
 .cardContainer {
   display: flex;
-  gap: 30px;
-  padding: 0 5%;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 0 20px;
   justify-content: center;
-  max-width: var(--max-width);
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -47,8 +48,8 @@
 
 .card {
   height: auto;
-  max-width: 360px;
-  min-height: 520px;
+  max-width: 340px;
+  min-height: 480px;
   background: white;
   box-shadow: var(--shadow-md);
   border-radius: var(--border-radius-lg);
@@ -60,7 +61,7 @@
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   overflow: hidden;
   position: relative;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
   transform: translateY(0);
 }
 
@@ -123,10 +124,10 @@
 }
 
 .cardHeader {
-  font-size: var(--text-2xl);
+  font-size: 20px;
   font-weight: var(--font-weight-bold);
   color: hsl(var(--dark));
-  margin: 25px 0 20px;
+  margin: 20px 0 15px;
   position: relative;
   padding-bottom: 12px;
   text-align: center;
@@ -154,19 +155,20 @@
 }
 
 .cardContent {
-  font-size: var(--text-base);
-  line-height: 1.7;
+  font-size: 14px;
+  line-height: 1.6;
   font-weight: var(--font-weight-regular);
   color: hsl(var(--dark), 0.7);
-  padding: 0 30px;
+  padding: 0 20px;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .cardButtonWrapper {
   margin-top: auto;
   position: relative;
   z-index: 2;
+  padding: 0 15px;
 }
 
 .imageContainer {
@@ -213,39 +215,53 @@
 
 @media (min-width: 1450px) {
   .cardContainer {
-    padding: 60px 0;
+    padding: 60px 20px;
+    flex-wrap: nowrap;
   }
 
   .card {
-    flex: 0 0 360px;
+    flex: 0 1 340px;
+  }
+}
+
+@media (max-width: 1400px) and (min-width: 993px) {
+  .cardContainer {
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .card {
+    flex: 0 1 calc(25% - 15px);
+    min-width: 280px;
+    max-width: 320px;
   }
 }
 
 @media (max-width: 1200px) {
   .cardContainer {
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 25px;
-    padding: 40px 4%;
+    gap: 20px;
+    padding: 40px 20px;
   }
 
   .card {
-    flex: 0 0 calc(50% - 12.5px);
-    max-width: 360px;
-    min-height: 500px;
+    flex: 0 1 calc(50% - 10px);
+    max-width: 340px;
+    min-width: 280px;
+    min-height: 460px;
   }
 
   .cardHeader {
-    font-size: 22px;
+    font-size: 19px;
   }
 
   .cardContent {
-    font-size: 15px;
-    padding: 0 22px;
+    font-size: 13px;
+    padding: 0 18px;
   }
 
   .imageContainer {
-    height: 180px;
+    height: 170px;
   }
 }
 
@@ -269,12 +285,50 @@
   .cardContainer {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
+    padding: 30px 15px;
   }
 
   .card {
-    flex: 0 0 calc(50% - 15px);
-    max-width: 380px;
+    flex: 1 1 calc(50% - 10px);
+    min-width: 260px;
+    max-width: 340px;
+    min-height: 460px;
+  }
+
+  .cardHeader {
+    font-size: 18px;
+    margin: 18px 0 12px;
+  }
+
+  .cardContent {
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0 18px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .cardContainer {
+    gap: 20px;
+    padding: 25px 15px;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 250px;
+    max-width: 320px;
+    min-height: 450px;
+  }
+
+  .cardButtonWrapper {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .imageContainer {
+    height: 160px;
   }
 }
 
@@ -300,10 +354,16 @@
   }
 
   .card {
+    flex: 1 1 100%;
     width: 100%;
     max-width: 450px;
     min-height: 480px;
     margin-bottom: 0;
+  }
+
+  .cardButtonWrapper {
+    width: auto;
+    padding: 0;
   }
 
   .imageContainer {

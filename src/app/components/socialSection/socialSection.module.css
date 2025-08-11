@@ -278,10 +278,15 @@
   }
 }
 
-/* Mobile devices */
 @media only screen and (max-width: 768px) {
   .socialSection {
     padding: 60px 0;
+    background: hsl(var(--light));
+  }
+
+  .socialSection::before,
+  .socialSection::after {
+    display: none;
   }
 
   .socialHeading {
@@ -295,6 +300,17 @@
 
   .socialImage {
     height: 350px;
+    width: 100%;
+    display: block;
+  }
+
+  .imageWrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .communityImage {
+    display: block !important;
   }
 }
 
@@ -312,6 +328,7 @@
   }
 
   .socialImage {
-    height: 300px;
+    height: 250px;
+    margin-top: 30px;
   }
 }
