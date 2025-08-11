@@ -18,9 +18,17 @@
 }
 
 .patternGrid {
-  background-image: 
-    linear-gradient(to right, var(--pattern-color, hsl(var(--primary))) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--pattern-color, hsl(var(--primary))) 1px, transparent 1px);
+  background-image:
+    linear-gradient(
+      to right,
+      var(--pattern-color, hsl(var(--primary))) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      var(--pattern-color, hsl(var(--primary))) 1px,
+      transparent 1px
+    );
   background-size: 20px 20px;
 }
 
@@ -35,34 +43,42 @@
 }
 
 .patternCircles {
-  background-image: 
-    radial-gradient(circle at 25% 25%, var(--pattern-color, hsl(var(--primary))) 1%, transparent 10%),
-    radial-gradient(circle at 75% 75%, var(--pattern-color, hsl(var(--primary))) 1%, transparent 10%);
+  background-image:
+    radial-gradient(
+      circle at 25% 25%,
+      var(--pattern-color, hsl(var(--primary))) 1%,
+      transparent 10%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      var(--pattern-color, hsl(var(--primary))) 1%,
+      transparent 10%
+    );
   background-size: 100px 100px;
 }
 
-/* Floating elements */
 .floatingElement {
   position: absolute;
   z-index: 1;
   pointer-events: none;
-  animation: float 6s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
 }
 
 .floatingElement:nth-child(2n) {
-  animation-duration: 8s;
+  animation-duration: 4s;
 }
 
 .floatingElement:nth-child(3n) {
-  animation-duration: 10s;
+  animation-duration: 5s;
 }
 
 .floatingElement:nth-child(4n) {
-  animation-duration: 12s;
+  animation-duration: 6s;
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0);
   }
   50% {
@@ -70,7 +86,34 @@
   }
 }
 
-/* Shapes */
+.floatingElement:nth-child(odd) {
+  animation-name: floatLeft;
+}
+
+.floatingElement:nth-child(even) {
+  animation-name: floatRight;
+}
+
+@keyframes floatLeft {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-15px) translateX(-10px) rotate(3deg);
+  }
+}
+
+@keyframes floatRight {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-15px) translateX(10px) rotate(-3deg);
+  }
+}
+
 .shape {
   position: absolute;
   z-index: 0;
@@ -95,33 +138,161 @@
   border-bottom: 86.6px solid var(--shape-color, hsl(var(--primary)));
 }
 
-/* Animated gradient border */
 .gradientBorder {
   position: relative;
   border-radius: var(--border-radius-md);
   overflow: hidden;
 }
 
-/* Scroll Indicator */
 .scrollIndicator {
   position: fixed;
-  top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: var(--scroll-height, 4px);
   background-color: hsla(var(--dark), 0.1);
   z-index: 1001;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.scrollIndicator--top {
+  top: 0;
+}
+
+.scrollIndicator--bottom {
+  bottom: 0;
+}
+
+.scrollIndicator--hidden {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.scrollIndicator--bottom.scrollIndicator--hidden {
+  transform: translateY(100%);
 }
 
 .scrollIndicatorProgress {
   height: 100%;
-  background: linear-gradient(90deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+  background: var(
+    --scroll-gradient,
+    linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary-light)) 100%
+    )
+  );
   width: 0;
-  transition: width 0.1s ease;
-  box-shadow: 0 0 10px hsla(var(--primary), 0.5);
+  transition: width 0.15s ease-out;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Animated text reveal */
+.fastScrolling {
+  transition: width 0.08s linear;
+}
+
+.scrollIndicator--glow .scrollIndicatorProgress {
+  box-shadow:
+    0 0 10px hsla(var(--primary), 0.5),
+    0 0 20px hsla(var(--primary), 0.3),
+    0 0 30px hsla(var(--primary), 0.1);
+}
+
+.scrollIndicator--pulse .scrollIndicatorProgress {
+  animation: scrollPulse 0.3s ease-out;
+}
+
+.scrollIndicator--wave {
+  overflow: hidden;
+}
+
+.scrollIndicatorWave {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsla(var(--primary-light), 0.6) 50%,
+    transparent 100%
+  );
+  animation: scrollWave 2s ease-in-out infinite;
+}
+
+.scrollIndicatorPercentage {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 10px;
+  font-weight: 600;
+  color: hsl(var(--primary));
+  background: hsla(var(--background), 0.9);
+  padding: 2px 6px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s ease;
+}
+
+@keyframes scrollPulse {
+  0% {
+    box-shadow:
+      0 0 10px hsla(var(--primary), 0.5),
+      0 0 20px hsla(var(--primary), 0.3);
+  }
+  50% {
+    box-shadow:
+      0 0 20px hsla(var(--primary), 0.8),
+      0 0 40px hsla(var(--primary), 0.6),
+      0 0 60px hsla(var(--primary), 0.4);
+  }
+  100% {
+    box-shadow:
+      0 0 10px hsla(var(--primary), 0.5),
+      0 0 20px hsla(var(--primary), 0.3);
+  }
+}
+
+@keyframes scrollWave {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrollIndicator {
+    transition: none;
+  }
+
+  .scrollIndicatorProgress {
+    transition: none;
+    animation: none !important;
+  }
+
+  .scrollIndicatorWave {
+    animation: none;
+    display: none;
+  }
+
+  .scrollIndicator--glow .scrollIndicatorProgress {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .scrollIndicatorPercentage {
+    display: none;
+  }
+}
+
 .textReveal {
   display: inline-block;
   overflow: hidden;

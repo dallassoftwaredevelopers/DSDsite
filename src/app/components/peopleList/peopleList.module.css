@@ -1,7 +1,0 @@
-.peopleList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  gap: 1.5rem;
-}

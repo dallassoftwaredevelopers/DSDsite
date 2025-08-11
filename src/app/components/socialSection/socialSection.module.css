@@ -1,8 +1,12 @@
 .socialSection {
   position: relative;
-  background: linear-gradient(135deg, #f7f8fc 0%, #e6e9f0 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--light)) 0%,
+    hsl(var(--gray-100)) 100%
+  );
   padding: 120px 0;
-  color: #071238;
+  color: hsl(var(--dark));
   overflow: hidden;
 }
 
@@ -14,7 +18,11 @@
   right: -100px;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(51, 133, 255, 0.1) 0%, rgba(51, 133, 255, 0) 70%);
+  background: radial-gradient(
+    circle,
+    hsla(var(--primary), 0.1) 0%,
+    hsla(var(--primary), 0) 70%
+  );
   border-radius: 50%;
   z-index: 1;
 }
@@ -24,9 +32,13 @@
   position: absolute;
   bottom: -100px;
   left: -100px;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(7, 18, 56, 0.05) 0%, rgba(7, 18, 56, 0) 70%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    hsla(var(--dark), 0.05) 0%,
+    hsla(var(--dark), 0) 70%
+  );
   border-radius: 50%;
   z-index: 1;
 }
@@ -45,7 +57,7 @@
 .socialText {
   flex: 1;
   max-width: 600px;
-  animation: fadeIn 1s ease-in-out;
+  animation: fadeInUp 1s ease-in-out;
 }
 
 .socialHeading {
@@ -53,12 +65,12 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 2rem;
-  color: #071238;
+  color: hsl(var(--dark));
   position: relative;
 }
 
 .highlight {
-  color: #3385ff;
+  color: hsl(var(--primary));
   position: relative;
   display: inline-block;
 }
@@ -70,7 +82,7 @@
   left: 0;
   width: 100%;
   height: 0.3em;
-  background-color: rgba(51, 133, 255, 0.2);
+  background-color: hsla(var(--primary), 0.2);
   z-index: -1;
   transform: skewX(-15deg);
   animation: highlightGrow 1.2s ease-out forwards;
@@ -81,7 +93,7 @@
   margin-bottom: 2.5rem;
   line-height: 1.5;
   margin-bottom: 2rem;
-  color: #555;
+  color: hsl(var(--gray-300));
 }
 
 .ctaContainer {
@@ -92,14 +104,18 @@
   display: inline-flex;
   align-items: center;
   padding: 1rem 2rem;
-  background: linear-gradient(135deg, #3385ff 0%, #071238 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--dark)) 100%
+  );
   color: white;
   font-weight: 600;
   font-size: 1.1rem;
   border-radius: 50px;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(51, 133, 255, 0.3);
+  box-shadow: 0 8px 20px hsla(var(--primary), 0.3);
   position: relative;
   overflow: hidden;
 }
@@ -113,16 +129,16 @@
   height: 100%;
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0) 100%
+    hsla(var(--light), 0) 0%,
+    hsla(var(--light), 0.2) 50%,
+    hsla(var(--light), 0) 100%
   );
   transition: left 0.7s ease;
 }
 
 .discordCta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(51, 133, 255, 0.4);
+  box-shadow: 0 12px 25px hsla(var(--primary), 0.4);
 }
 
 .discordCta:hover::before {
@@ -148,15 +164,15 @@
 }
 
 .socialIcons {
-  color: #3385ff;
+  color: hsl(var(--primary));
   font-size: 2.5rem;
   transition: all 0.3s ease;
 }
 
 .socialIcons:hover {
   transform: translateY(-5px) scale(1.1);
-  color: #071238;
-  filter: drop-shadow(0 5px 15px rgba(51, 133, 255, 0.3));
+  color: hsl(var(--dark));
+  filter: drop-shadow(0 5px 15px hsla(var(--primary), 0.3));
 }
 
 .socialImage {
@@ -164,7 +180,7 @@
   position: relative;
   height: 500px;
   max-width: 600px;
-  animation: slideIn 1s ease-out;
+  animation: slideLeft 1s ease-out;
 }
 
 .imageWrapper {
@@ -173,15 +189,15 @@
   height: 100%;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(7, 18, 56, 0.15);
+  box-shadow: 0 20px 40px hsla(var(--dark), 0.15);
   transform: perspective(1000px) rotateY(5deg) translateZ(0);
   transition: all 0.5s ease;
-  border: 1px solid rgba(51, 133, 255, 0.1);
+  border: 1px solid hsla(var(--primary), 0.1);
 }
 
 .imageWrapper:hover {
   transform: perspective(1000px) rotateY(0deg) translateZ(0) scale(1.02);
-  box-shadow: 0 30px 60px rgba(7, 18, 56, 0.2);
+  box-shadow: 0 30px 60px hsla(var(--dark), 0.2);
 }
 
 .communityImage {
@@ -190,7 +206,7 @@
 }
 
 .imageWrapper:hover .communityImage {
-  transform: scale(1.00);
+  transform: scale(1.05);
 }
 
 .imageOverlay {
@@ -199,9 +215,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg,
-    rgba(51, 133, 255, 0.1) 0%,
-    rgba(7, 18, 56, 0.2) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.1) 0%,
+    hsla(var(--dark), 0.2) 100%
+  );
   mix-blend-mode: multiply;
   pointer-events: none;
 }
@@ -217,38 +235,18 @@
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+/* Animation definitions moved to globals.css */
 
 /* Medium-sized devices */
 @media only screen and (max-width: 1200px) {
   .socialHeading {
     font-size: 2.5rem;
   }
-  
+
   .socialSubheading {
     font-size: 1.3rem;
   }
-  
+
   .socialImage {
     height: 450px;
   }
@@ -259,44 +257,60 @@
     flex-direction: column;
     text-align: center;
   }
-  
+
   .socialText {
     max-width: 100%;
     padding: 0 20px;
   }
-  
+
   .socialLinks {
     justify-content: center;
   }
-  
+
   .socialImage {
     height: 400px;
     max-width: 90%;
     margin-top: 40px;
   }
-  
+
   .imageWrapper {
     transform: perspective(1000px) rotateY(0deg);
   }
 }
 
-/* Mobile devices */
 @media only screen and (max-width: 768px) {
   .socialSection {
     padding: 60px 0;
+    background: hsl(var(--light));
   }
-  
+
+  .socialSection::before,
+  .socialSection::after {
+    display: none;
+  }
+
   .socialHeading {
     font-size: 2rem;
   }
-  
+
   .socialSubheading {
     font-size: 1.1rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .socialImage {
     height: 350px;
+    width: 100%;
+    display: block;
+  }
+
+  .imageWrapper {
+    height: 100%;
+    width: 100%;
+  }
+
+  .communityImage {
+    display: block !important;
   }
 }
 
@@ -304,16 +318,17 @@
   .socialSection {
     padding: 40px 0;
   }
-  
+
   .socialHeading {
     font-size: 1.8rem;
   }
-  
+
   .socialLinks {
     gap: 1rem;
   }
-  
+
   .socialImage {
-    height: 300px;
+    height: 250px;
+    margin-top: 30px;
   }
 }
