@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState} from 'react';
 import styles from './groupPhotoSection.module.css';
 import Image from 'next/image';
 import BackgroundPattern from '../decorative/backgroundPattern';
-import FloatingShapes from '../decorative/floatingShapes';
-import TextReveal from '../decorative/textReveal';
 
 // Array of group photo images
 const groupPhotos = [
@@ -73,16 +71,10 @@ export default function GroupPhotoSection() {
 
   return (
     <div className={styles.groupPhotoSection} data-testid='groupPhoto'>
-      <BackgroundPattern variant="circles" opacity={0.07} />
-      <FloatingShapes shapes={customShapes} />
-      
+      <BackgroundPattern variant='circles' opacity={0.07} />
       <div className={styles.sectionHeading}>
-        <TextReveal text="Our Community" className={styles.headingText} />
-        <TextReveal
-          text="Join a thriving group of passionate developers"
-          className={styles.subheadingText}
-          delay={0.3}
-        />
+        <h2>Our Community</h2>
+        <p>Join a thriving group of passionate developers</p>
       </div>
       <div className={styles.imageWrapper}>
         <Image

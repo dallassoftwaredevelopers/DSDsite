@@ -14,22 +14,26 @@
 }
 
 .button--primary {
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--secondary)) 100%
+  );
   color: white;
-  padding: 0 25px;
-  height: 3.5rem;
+  padding: 0 20px;
+  height: 2.8rem;
   border-radius: var(--border-radius-full);
-  font-size: var(--text-md);
+  font-size: 14px;
   box-shadow: var(--shadow-primary);
 }
 
 .button--secondary {
   background-color: transparent;
   color: hsl(var(--primary));
-  padding: 0 25px;
-  height: 3.5rem;
+  padding: 0 20px;
+  height: 2.8rem;
   border-radius: var(--border-radius-full);
-  font-size: var(--text-md);
+  font-size: 14px;
   border: 2px solid hsl(var(--primary));
   box-shadow: var(--shadow-sm);
 }
@@ -60,7 +64,11 @@
 }
 
 .button--primary:hover {
-  background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--primary)) 100%);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--secondary)) 0%,
+    hsl(var(--primary)) 100%
+  );
   box-shadow: 0 8px 20px rgba(51, 133, 255, 0.4);
 }
 
@@ -73,8 +81,8 @@
 }
 
 .button__icon {
-  padding-left: 10px;
-  font-size: 1.2rem;
+  padding-left: 8px;
+  font-size: 1rem;
   transition: transform 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -91,22 +99,39 @@
 
 @media (max-width: 850px) {
   .button {
-    width: 100%;
-    font-size: var(--text-sm);
+    font-size: 13px;
+    min-width: 160px;
   }
-  
-  .button--primary, .button--secondary {
-    height: 3.2rem;
+
+  .button--primary,
+  .button--secondary {
+    height: 2.6rem;
+    padding: 0 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .button {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .button--primary,
+  .button--secondary {
+    height: 2.5rem;
   }
 }
 
 @media (max-width: 480px) {
-  .button--primary, .button--secondary {
-    height: 3rem;
-    padding: 0 20px;
+  .button--primary,
+  .button--secondary {
+    height: 2.4rem;
+    padding: 0 16px;
+    font-size: 12px;
   }
-  
+
   .button__icon {
-    padding-left: 8px;
+    padding-left: 6px;
+    font-size: 0.9rem;
   }
 }

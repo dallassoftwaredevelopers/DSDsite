@@ -13,30 +13,33 @@
 
 .modal {
   background-color: #fff;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 10px;
   width: 90%;
-  max-width: 500px;
-  max-height: 90vh; /* Limit height */
-  overflow-y: auto; /* Scrollable content */
+  max-width: 600px;
+  max-height: 85vh;
+  overflow-y: auto;
   position: relative;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   animation: fadeIn 0.3s ease-in-out;
 }
 
 .content {
-  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .closeButton {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
+  top: 1rem;
+  right: 1rem;
   background: transparent;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
   color: #333;
+  z-index: 10;
 }
 
 @keyframes fadeIn {
@@ -47,5 +50,21 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 95%;
+    max-width: 95vw;
+    max-height: 90vh;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 1rem;
+    max-height: 95vh;
   }
 }
