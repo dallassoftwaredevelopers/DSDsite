@@ -141,6 +141,8 @@ export default function HeroSection() {
                 loop
                 muted
                 playsInline
+                preload='none'
+                poster='/assets/videoPlaceholder.png'
               >
                 <source src="/assets/MeetupIntro.mp4" type="video/mp4" />
                 Your browser does not support the video tag.

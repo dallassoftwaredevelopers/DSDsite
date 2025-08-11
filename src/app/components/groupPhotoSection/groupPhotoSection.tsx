@@ -3,11 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import styles from './groupPhotoSection.module.css';
 import Image from 'next/image';
-import GradientBorder from '../decorative/gradientBorder';
 import BackgroundPattern from '../decorative/backgroundPattern';
 import FloatingShapes from '../decorative/floatingShapes';
 import TextReveal from '../decorative/textReveal';
-import Button from '../button/button';
 
 // Array of group photo images
 const groupPhotos = [
@@ -22,20 +20,18 @@ export default function GroupPhotoSection() {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Auto-rotate images every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
         setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % groupPhotos.length);
         setIsTransitioning(false);
-      }, 500); // Wait for fade-out transition before changing image
+      }, 500);
     }, 5000);
 
     return () => clearInterval(interval);
   }, []);
 
-  // Custom floating shapes for this section
   const customShapes = [
     {
       type: 'circle' as const,
@@ -88,39 +84,15 @@ export default function GroupPhotoSection() {
           delay={0.3}
         />
       </div>
-      
-      <div className={styles.carouselContainer}>
-        <GradientBorder className={styles.imageWrapper} borderWidth={3}>
-          <Image
-            className={`${styles.groupPhotoImg} ${isTransitioning ? styles.fadeOut : styles.fadeIn}`}
-            src={groupPhotos[currentPhotoIndex]}
-            alt='Dallas Software Developers Community Meetup'
-            width={1450}
-            height={500}
-            sizes='100vw'
-            priority
-            quality={90}
-          />
-        </GradientBorder>
-        
-        <div className={styles.carouselIndicators}>
-          {groupPhotos.map((_, index) => (
-            <button
-              key={index}
-              className={`${styles.indicator} ${currentPhotoIndex === index ? styles.activeIndicator : ''}`}
-              onClick={() => goToPhoto(index)}
-              aria-label={`View photo ${index + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-      
-      <div className={styles.ctaContainer}>
-        <Button
-          buttonText="Join Our Community"
-          variant="primary"
-          className={styles.ctaButton}
-          showIcon={true}
+      <div className={styles.imageWrapper}>
+        <Image
+          className={styles.groupPhotoImg}
+          src='/assets/meetupGroupShot5.png'
+          alt='Dallas Software Developers Community Meetup'
+          width={1450}
+          height={500}
+          sizes='100vw'
+          quality={90}
         />
       </div>
     </div>
