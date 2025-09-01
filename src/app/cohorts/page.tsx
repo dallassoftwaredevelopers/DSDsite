@@ -220,7 +220,7 @@ const whoShouldJoin = [
   {
     title: 'Time Commitment',
     description:
-      'Commit approximately 8–12 hours per week to teamwork, coding sprints, and mentorship sessions. We schedule around typical work hours to accommodate those with full-time jobs.',
+     LABELS.cohorts.requirements.items.timeCommitment.description,
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -297,21 +297,6 @@ const programDetails = [
     title: LABELS.cohorts.details.items.cost.title,
     description: LABELS.cohorts.details.items.cost.description,
   },
-  {
-    icon: (
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='24'
-        height='24'
-        viewBox='0 0 24 24'
-        fill='currentColor'
-      >
-        <path d='M17.997 18h-11.995l-.002-.623c0-1.259.1-1.986 1.588-2.33 1.684-.389 3.344-.736 2.545-2.209-2.366-4.363-.674-6.838 1.866-6.838 2.491 0 4.226 2.383 1.866 6.839-.775 1.464.826 1.812 2.545 2.209 1.49.344 1.589 1.072 1.589 2.333l-.002.619zm4.811-2.214c-1.29-.298-2.49-.559-1.909-1.657 1.769-3.342.469-5.129-1.4-5.129-1.265 0-2.248.817-2.248 2.324 0 3.903 2.268 1.77 2.246 6.676h4.501l.002-.463c0-.946-.074-1.493-1.192-1.751zm-22.806 2.214h4.501c-.021-4.906 2.246-2.772 2.246-6.676 0-1.507-.983-2.324-2.248-2.324-1.869 0-3.169 1.787-1.399 5.129.581 1.099-.619 1.359-1.909 1.657-1.119.258-1.193.805-1.193 1.751l.002.463z' />
-      </svg>
-    ),
-    title: LABELS.cohorts.details.items.teams.title,
-    description: LABELS.cohorts.details.items.teams.description,
-  },
 ];
 
 const testimonials = [
@@ -323,7 +308,7 @@ const testimonials = [
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     cohort: 'Cohort 8',
-    image: '/assets/people/aaryanDas.jpg',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/aaryanDas.jpg',
     linkedIn: 'https://linkedin.com',
   },
   {
@@ -334,7 +319,7 @@ const testimonials = [
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     cohort: 'Cohort 7',
-    image: '/assets/people/yoon.jpg',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/yoon.jpg',
     linkedIn: 'https://linkedin.com',
   },
   {
@@ -345,7 +330,7 @@ const testimonials = [
     quote:
       'Thanks to the DSD Cohort I was able to gain experience working in a team environment, showcase my skills, and catch a glimpse of what developer life is actually like. The experience I gained from the cohort resulted in a job offer shortly after.',
     cohort: 'Cohort 9',
-    image: '/assets/people/davidOgden.jpg',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
     linkedIn: 'https://linkedin.com',
   },
   {
@@ -356,7 +341,7 @@ const testimonials = [
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     cohort: 'Cohort 9',
-    image: '/assets/people/davidOgden.jpg',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
     linkedIn: 'https://linkedin.com',
   },
   {
@@ -367,7 +352,7 @@ const testimonials = [
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     cohort: 'Cohort 9',
-    image: '/assets/people/davidOgden.jpg',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
     linkedIn: 'https://linkedin.com',
   },
   {
@@ -378,7 +363,7 @@ const testimonials = [
     quote:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     cohort: 'Cohort 9',
-    image: '/assets/people/davidOgden.jpg',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
     linkedIn: 'https://linkedin.com',
   },
 ];
@@ -643,10 +628,10 @@ export default function CohortPage() {
           <div className={styles.overviewImageContainer}>
             <div className={styles.overviewImage}>
               <Image
-                src='/assets/meetupGroupShot2.png'
+                src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortPresentations.png'
                 alt={LABELS.cohorts.overview.imageAlt}
-                width={800}
-                height={500}
+                width={900}
+                height={512}
                 className={styles.roundedImage}
               />
               <div className={styles.imageCaption}>
@@ -838,6 +823,100 @@ export default function CohortPage() {
                 youtubeLink={group.youtubeLink}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cohort Photos Gallery Section */}
+      <section
+        className={`${styles.sectionContainer} ${styles.gradientBackground} ${
+          visibleSections.has('photos') ? styles.sectionVisible : ''
+        }`}
+        ref={(el) => {
+          sectionRefs.current['photos'] = el;
+        }}
+      >
+        <div className={styles.contentWrapper}>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Our Cohort Community</h2>
+            <p className={styles.sectionDescription}>
+              Capturing moments of collaboration, learning, and growth. These photos showcase the vibrant community
+              of developers who have participated in our cohort programs, working together to build real-world projects
+              and forge lasting professional connections.
+            </p>
+          </div>
+          
+          <div className={styles.photoGallery}>
+            <div className={styles.photoGrid}>
+              <div className={styles.photoCard}>
+                <div className={styles.photoWrapper}>
+                  <Image
+                    src="https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohort%20group%201.jpg"
+                    alt="Cohort Group 1 - Developers collaborating on projects"
+                    width={600}
+                    height={400}
+                    className={styles.galleryImage}
+                  />
+                  <div className={styles.photoOverlay}>
+                    <div className={styles.photoCaption}>
+                      <h3>Cohort Collaboration</h3>
+                      <p>Teams working together on innovative solutions</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className={styles.photoCard}>
+                <div className={styles.photoWrapper}>
+                  <Image
+                    src="https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup2.jpg"
+                    alt="Cohort Group 2 - Presentation and demo day"
+                    width={600}
+                    height={400}
+                    className={styles.galleryImage}
+                  />
+                  <div className={styles.photoOverlay}>
+                    <div className={styles.photoCaption}>
+                      <h3>Demo Day Presentations</h3>
+                      <p>Showcasing completed projects to the community</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className={styles.photoCard}>
+                <div className={styles.photoWrapper}>
+                  <Image
+                    src="https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup3.jpg"
+                    alt="Cohort Group 3 - Networking and community building"
+                    width={600}
+                    height={400}
+                    className={styles.galleryImage}
+                  />
+                  <div className={styles.photoOverlay}>
+                    <div className={styles.photoCaption}>
+                      <h3>Community Connections</h3>
+                      <p>Building lasting professional relationships</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className={styles.photoStats}>
+              <div className={styles.photoStat}>
+                <span className={styles.photoStatNumber}>100+</span>
+                <span className={styles.photoStatLabel}>Developers Trained</span>
+              </div>
+              <div className={styles.photoStat}>
+                <span className={styles.photoStatNumber}>15+</span>
+                <span className={styles.photoStatLabel}>Projects Completed</span>
+              </div>
+              <div className={styles.photoStat}>
+                <span className={styles.photoStatNumber}>85%</span>
+                <span className={styles.photoStatLabel}>Job Placement Rate</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>

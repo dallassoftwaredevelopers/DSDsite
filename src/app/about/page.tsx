@@ -114,7 +114,7 @@ export default function AboutPage() {
             </div>
             <div className={styles.missionImage}>
               <Image
-                src='/assets/communitySupport.png'
+                src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/communitySupport.png'
                 alt='Community collaboration'
                 width={600}
                 height={400}
@@ -144,14 +144,6 @@ export default function AboutPage() {
               <p className={styles.valueDescription}>
                 Technology evolves rapidly, and so do we. We&apos;re committed
                 to staying current with the latest trends and best practices.
-              </p>
-            </div>
-            <div className={styles.valueCard}>
-              <div className={styles.valueIcon}>💡</div>
-              <h3 className={styles.valueTitle}>Innovation</h3>
-              <p className={styles.valueDescription}>
-                We encourage creative thinking and experimentation, fostering an
-                environment where new ideas can flourish.
               </p>
             </div>
             <div className={styles.valueCard}>

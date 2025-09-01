@@ -54,7 +54,7 @@ export default function SocialSection() {
         <div className={styles.socialImage}>
           <div className={styles.imageWrapper}>
             <Image
-              src='/assets/joinOurDiscord.png'
+              src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/joinOurDiscord.png'
               alt={LABELS.social.discord_image_alt}
               fill
               style={{ objectFit: 'cover' }}

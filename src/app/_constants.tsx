@@ -27,6 +27,7 @@ export const externalLinks = {
   discordUrl: 'https://discord.gg/pWGt6JMV9t',
   linkedinUrl: 'https://www.linkedin.com/company/dallas-software-developers',
   meetupUrl: 'https://www.meetup.com/dallas-software-developers-meetup/',
+  cycSite: 'https://www.commityourcode.com',
 };
 
 export const socialData = [

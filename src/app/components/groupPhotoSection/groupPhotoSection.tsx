@@ -5,13 +5,13 @@ import styles from './groupPhotoSection.module.css';
 import Image from 'next/image';
 import BackgroundPattern from '../decorative/backgroundPattern';
 
-// Array of group photo images
+// Array of group photo images - using blob URLs
 const groupPhotos = [
-  '/assets/meetupGroupShot1.png',
-  '/assets/meetupGroupShot2.png',
-  '/assets/meetupGroupShot3.png',
-  '/assets/meetupGroupShot4.png',
-  '/assets/meetupGroupShot5.png',
+  '/assets/meetupGroupShot1.png',  // TODO: Add to blob storage if needed
+  '/assets/meetupGroupShot2.png',  // TODO: Add to blob storage if needed
+  '/assets/meetupGroupShot3.png',  // TODO: Add to blob storage if needed
+  '/assets/meetupGroupShot4.png',  // TODO: Add to blob storage if needed
+  'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetupGroupShot5.png',
 ];
 
 export default function GroupPhotoSection() {
@@ -79,12 +79,13 @@ export default function GroupPhotoSection() {
       <div className={styles.imageWrapper}>
         <Image
           className={styles.groupPhotoImg}
-          src='/assets/meetupGroupShot5.png'
+          src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetupGroupShot5.png'
           alt='Dallas Software Developers Community Meetup'
           width={1450}
           height={500}
           sizes='100vw'
           quality={90}
+          priority
         />
       </div>
     </div>

@@ -10,42 +10,42 @@ interface BentoData {
 const bentoImages: BentoData[] = [
   {
     id: 1,
-    url: '/assets/group1.jpg',
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/group1.jpg',
     alt: 'two people help',
   },
   {
     id: 2,
-    url: '/assets/patrick.jpg',
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/patrick.jpg',
     alt: 'meetup group picture 1',
   },
   {
     id: 3,
-    url: '/assets/speakingCohort.jpg',
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakingCohort.jpg',
     alt: 'meetup group picture 2',
   },
   {
     id: 4,
-    url: '/assets/josh.jpg',
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/josh.jpg',
     alt: 'meetup group picture 3',
   },
   {
     id: 5,
-    url: '/assets/interview.jpg',
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/interview.jpg',
     alt: 'meetup group picture 4',
   },
   {
     id: 6,
-    url: '/assets/meetup1.jpg',
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetup1.jpg',
     alt: 'meetup group picture 5',
   },
   {
     id: 7,
-    url: '/assets/helping.jpg',
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/helping.jpg',
     alt: 'two people help on laptop',
   },
   {
     id: 8,
-    url: '/assets/groupTableLaptop.png',
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/groupTableLaptop.png',
     alt: 'group table collaborating with laptops',
   },
 ];

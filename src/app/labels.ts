@@ -297,7 +297,7 @@ export const LABELS = {
         timeCommitment: {
           title: 'Time Commitment',
           description:
-            'Commit approximately 8–12 hours per week to teamwork, coding sprints, and mentorship sessions. We schedule around typical work hours to accommodate those with full-time jobs.',
+            'Commit approximately 15-20 hours per week to teamwork, coding sprints, and mentorship sessions. We schedule around typical work hours to accommodate those with full-time jobs.',
         },
         technicalFoundation: {
           title: 'Technical Foundation',
@@ -329,11 +329,7 @@ export const LABELS = {
           description:
             '100% free. We run this as a community service to uplift aspiring developers and strengthen the Dallas tech ecosystem',
         },
-        teams: {
-          title: 'Teams',
-          description:
-            'Small squads (4–6 members) led by a professional "Cohort Lead" from companies like Toyota Connected, Capital One, and Texas Instruments',
-        },
+        
       },
       highlights: {
         whatYouBuild: {

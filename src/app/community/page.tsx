@@ -260,7 +260,7 @@ export default function CommunityPage() {
           <div className={styles.overviewImageContainer}>
             <div className={styles.overviewImage}>
               <Image
-                src='/assets/justin.jpg'
+                    src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/communityImage_01.jpg'
                 alt={LABELS.community.sections.overview_image_alt}
                 width={800}
                 height={500}

@@ -14,7 +14,9 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.54.1",
+    "@vercel/blob": "^1.1.1",
     "appwrite": "^15.0.0",
+    "dotenv": "^17.2.1",
     "next": "^14.2.16",
     "node-appwrite": "^14.1.0",
     "react": "^18",

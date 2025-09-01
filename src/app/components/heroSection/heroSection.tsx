@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
+import React, { useRef, useEffect, useState } from 'react';
+import Link from 'next/link';
 import styles from './heroSection.module.css';
 import { LABELS } from '@/app/labels';
 
@@ -85,13 +85,13 @@ export default function HeroSection() {
           <p className={styles.heroSubheading}>{LABELS.hero.subheading}</p>
 
           <div className={styles.ctaContainer}>
-            <a href='#join-us' className={styles.primaryCta}>
+            <Link href='/community' className={styles.primaryCta}>
               {LABELS.hero.join_community}
               <span className={styles.ctaArrow}>→</span>
-            </a>
-            <a href='#explore' className={styles.secondaryCta}>
+            </Link>
+            <Link href='https://www.meetup.com/dallas-software-developers-meetup/' className={styles.secondaryCta} target='_blank'>
               {LABELS.hero.explore_events}
-            </a>
+            </Link>
           </div>
 
           <div className={styles.statContainer}>
@@ -130,9 +130,12 @@ export default function HeroSection() {
                 muted
                 playsInline
                 preload='none'
-                poster='/assets/videoPlaceholder.png'
+                poster='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/videoPlaceholder.png'
               >
-                <source src='/assets/MeetupIntro.mp4' type='video/mp4' />
+                <source 
+                  src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/MeetupIntro.mp4'
+                  type='video/mp4' 
+                />
                 {LABELS.hero.video_unsupported}
               </video>
               <div

@@ -28,7 +28,7 @@ const cardData: CardData[] = [
     buttonText: LABELS.cards.items.meetups.button,
     href: externalLinks.meetupUrl,
     isExternal: true,
-    src: '/assets/technicalWorkshops.png',
+    src: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/technicalWorkshops.png',
     alt: LABELS.cards.items.meetups.alt,
   },
   {
@@ -38,7 +38,7 @@ const cardData: CardData[] = [
     buttonText: LABELS.cards.items.community.button,
     href: '/community',
     isExternal: false,
-    src: '/assets/communitySupport.png',
+    src: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/communitySupport.png',
     alt: LABELS.cards.items.community.alt,
   },
   {
@@ -48,7 +48,7 @@ const cardData: CardData[] = [
     buttonText: LABELS.cards.items.cohorts.button,
     href: '/cohorts',
     isExternal: false,
-    src: '/assets/cohortsAndHackathons.png',
+    src: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortsAndHackathons.png',
     alt: LABELS.cards.items.cohorts.alt,
   },
   {
@@ -56,9 +56,9 @@ const cardData: CardData[] = [
     title: LABELS.cards.items.conference.title,
     content: LABELS.cards.items.conference.content,
     buttonText: LABELS.cards.items.conference.button,
-    href: '/conference',
-    isExternal: false,
-    src: '/assets/cycpic.jpg',
+    href: externalLinks.cycSite,
+    isExternal: true,
+    src: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cycpic.jpg',
     alt: LABELS.cards.items.conference.alt,
   },
 ];

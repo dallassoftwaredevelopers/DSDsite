@@ -41,7 +41,7 @@ export default function SponsorshipSection() {
         <div className={styles.modalContent}>
           <div className={styles.modalImageContainer}>
             <Image
-              src='/assets/sponsor.png'
+              src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/sponsor.png'
               alt={LABELS.sponsorship.modal_image_alt}
               width={1200}
               height={1600}

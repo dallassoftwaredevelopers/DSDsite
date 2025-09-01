@@ -19,7 +19,8 @@ const localEnv =
   process.env.NODE_ENV === 'development' &&
   process.env.NEXT_PUBLIC_APPWRITE_HASKEY === 'false';
 
-const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY ?? '';
+const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY || '';
+const hasValidSiteKey = siteKey && siteKey !== 'RECAPTCHA_SITEKEY' && siteKey !== '';
 
 export default function NotificationForm() {
   const [formData, setFormData] = useState(
@@ -36,8 +37,9 @@ export default function NotificationForm() {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    const token = localEnv ? 'localEnv' : captchaRef.current?.getValue();
-    if (!(token || localEnv)) {
+    const token = localEnv ? 'localEnv' : (hasValidSiteKey ? captchaRef.current?.getValue() : 'no-recaptcha');
+    
+    if (!localEnv && hasValidSiteKey && !token) {
       setMessage({
         message: 'Are you a robot? Please complete the reCAPTCHA',
         type: 'error',
@@ -104,7 +106,16 @@ export default function NotificationForm() {
           />
         </div>
         <div className={styles.recaptcha}>
-          {!localEnv && <ReCAPTCHA sitekey={siteKey} ref={captchaRef} />}
+          {!localEnv && hasValidSiteKey && (
+            <ReCAPTCHA sitekey={siteKey} ref={captchaRef} />
+          )}
+          {!localEnv && !hasValidSiteKey && (
+            <div className={styles.recaptchaPlaceholder}>
+              <p style={{ color: '#666', fontSize: '14px', textAlign: 'center' }}>
+                reCAPTCHA verification is temporarily unavailable. Please try again later.
+              </p>
+            </div>
+          )}
         </div>
         <button className={styles.submitBtn} type='submit'>
           Get Notified

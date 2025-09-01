@@ -1,7 +1,7 @@
 .bannerSection {
   background-color: hsl(var(--dark));
   color: hsl(var(--light));
-  padding: 5rem 0;
+  padding: 120px 0 5rem;
   position: relative;
   overflow: hidden;
   margin: 0 auto;
@@ -375,7 +375,7 @@
 /* Mobile Responsive */
 @media only screen and (max-width: 850px) {
   .bannerSection {
-    padding: 3rem 0;
+    padding: 100px 1rem 120px;
   }
 
   .container {

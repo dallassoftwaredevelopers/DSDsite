@@ -25,7 +25,7 @@ export default function CohortCard({
         className={styles.defaultImage}
         width={200}
         height={200}
-        src='/assets/video-placeholder.svg'
+        src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/videoPlaceholder.png'
         alt='Default thumbnail for cohort video'
       />
     </div>

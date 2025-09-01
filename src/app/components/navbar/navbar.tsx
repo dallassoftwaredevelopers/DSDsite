@@ -89,7 +89,7 @@ export default function Navbar() {
             <Link href='/' className={styles.logoLink}>
               <div className={styles.logoWrapper}>
                 <Image
-                  src='/assets/dsd-circle-logo.png'
+                  src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/dsd-circle-logo.png'
                   alt={`${LABELS.app.orgName} Logo`}
                   width={50}
                   height={50}

@@ -1,4 +1,3 @@
-/* Main hero container */
 .hero {
   position: relative;
   min-height: 100vh;
@@ -9,10 +8,9 @@
   justify-content: center;
   align-items: center;
   background-color: hsl(var(--light));
-  padding: var(--spacing-8) 0;
+  padding: 0;
 }
 
-/* Background elements */
 .heroBackground {
   position: absolute;
   top: 0;
@@ -611,14 +609,22 @@
 @media (max-width: 992px) {
   .heroContent {
     flex-direction: column;
-    gap: var(--spacing-12);
-    padding-top: var(--spacing-12);
+    gap: var(--spacing-2);
+    padding: 0;
+    height: 100%;
+    justify-content: space-between;
   }
 
   .textContent,
   .mediaContent {
     max-width: 100%;
     width: 100%;
+    padding: 0;
+  }
+
+  .textContent {
+    margin-top: 0;
+    padding-top: 0;
   }
 
   .heroHeading {
@@ -650,34 +656,77 @@
 
 @media (max-width: 768px) {
   .heroHeading {
-    font-size: var(--text-4xl);
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-2);
   }
 
   .heroSubheading {
-    font-size: var(--text-base);
-  }
-
-  .ctaContainer {
-    flex-direction: column;
-    width: 100%;
-    max-width: 300px;
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-3);
+    max-width: 90%;
     margin-left: auto;
     margin-right: auto;
   }
 
+  .ctaContainer {
+    flex-direction: column;
+    gap: var(--spacing-3);
+    justify-content: center;
+    margin-bottom: var(--spacing-3);
+    width: 100%;
+  }
+
   .primaryCta,
   .secondaryCta {
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--text-base);
     width: 100%;
-    justify-content: center;
+    max-width: 280px;
+    margin: 0 auto;
+    border-radius: var(--border-radius-lg);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .primaryCta {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    color: white;
+    border: none;
+    box-shadow: 0 4px 12px hsla(var(--primary), 0.3);
+  }
+
+  .secondaryCta {
+    background: transparent;
+    color: hsl(var(--primary));
+    border: 2px solid hsl(var(--primary));
   }
 
   .statContainer {
-    flex-direction: column;
-    gap: var(--spacing-4);
+    flex-direction: row;
+    gap: var(--spacing-2);
+    justify-content: space-between;
+    margin: var(--spacing-4) 0;
   }
 
   .statDivider {
-    display: none;
+    display: block;
+    height: 30px;
+    margin: 0 var(--spacing-2);
+  }
+
+  .stat {
+    flex: 1;
+    text-align: center;
+  }
+
+  .statNumber {
+    font-size: var(--text-lg);
+    margin-bottom: var(--spacing-1);
+  }
+
+  .statLabel {
+    font-size: var(--text-xs);
+    line-height: 1.2;
   }
 
   .shape1,
@@ -715,7 +764,6 @@
   .heroContent {
     flex-direction: column;
     gap: 3rem;
-    padding-top: 2rem;
   }
 
   .heroSection,
@@ -750,9 +798,10 @@
 
 @media (max-width: 768px) {
   .hero {
-    height: auto;
-    padding: 6rem 0 4rem;
-    min-height: 500px;
+    height: 100vh;
+    padding: 60px 1rem 80px;
+    min-height: 100vh;
+    justify-content: space-between;
   }
 
   .intro {
@@ -788,6 +837,6 @@
   }
 
   .scrollIndicator {
-    display: none;
+    bottom: calc(80px + var(--spacing-4));
   }
 }

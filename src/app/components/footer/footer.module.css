@@ -198,43 +198,6 @@
 
 @media only screen and (max-width: 768px) {
   .footerWave {
-    top: -70px;
-    height: 70px;
-  }
-
-  .footerWave svg {
-    height: 70px;
-  }
-
-  .footerSection {
-    margin-top: 0;
-  }
-
-  .footerContainer {
-    padding: 40px 5% 20px;
-  }
-
-  .footerColumns {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .footerColumn {
-    flex: 1 0 100%;
-  }
-
-  .footerHeading {
-    font-size: 1.3rem;
-    margin-bottom: 1.2rem;
-  }
-
-  .footerBottom {
-    margin-top: 40px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .footerWave {
     top: -50px;
     height: 50px;
   }
@@ -248,10 +211,125 @@
   }
 
   .footerContainer {
-    padding: 30px 5% 20px;
+    padding: 30px 4% 20px;
+  }
+
+  .footerColumns {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footerColumn {
+    flex: 1 0 100%;
+    min-width: unset;
+  }
+
+  .footerHeading {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footerHeading::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+  }
+
+  .footerColumn:hover .footerHeading::after {
+    width: 60px;
+  }
+
+  .footerText {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .links,
+  .contactLinks {
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .links a,
+  .contactLinks a {
+    font-size: 0.9rem;
+    justify-content: center;
   }
 
   .socialSection {
     justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .footerBottom {
+    margin-top: 30px;
+    padding-bottom: 20px;
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .footerWave {
+    top: -40px;
+    height: 40px;
+  }
+
+  .footerWave svg {
+    height: 40px;
+  }
+
+  .footerSection {
+    margin-top: 0;
+  }
+
+  .footerContainer {
+    padding: 25px 4% 15px;
+  }
+
+  .footerColumns {
+    gap: 25px;
+  }
+
+  .footerHeading {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .footerText {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .links,
+  .contactLinks {
+    gap: 0.5rem;
+  }
+
+  .links a,
+  .contactLinks a {
+    font-size: 0.85rem;
+    padding: 0.3rem 0;
+  }
+
+  .socialSection {
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+  }
+
+  .footerBottom {
+    margin-top: 25px;
+    padding-bottom: 15px;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+    padding: 0 1rem;
   }
 }
