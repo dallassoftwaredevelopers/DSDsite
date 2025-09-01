@@ -197,6 +197,17 @@
   transition: opacity 0.5s ease;
 }
 
+.customCard {
+  /* Override default card styles to maintain existing design */
+  max-width: 340px;
+  min-height: 480px;
+  overflow: visible; /* Allow hover effects */
+}
+
+.customCard:hover {
+  transform: translateY(-15px);
+}
+
 .card:hover .imageContainer::before {
   opacity: 1;
 }

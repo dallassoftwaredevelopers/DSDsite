@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import OptimizedImage from '@/app/components/ui/OptimizedImage';
 import SocialLinks from './socialLinks';
 import styles from './socialSection.module.css';
 import { socialData } from '../../_constants';
@@ -53,11 +53,11 @@ export default function SocialSection() {
         </div>
         <div className={styles.socialImage}>
           <div className={styles.imageWrapper}>
-            <Image
+            <OptimizedImage
               src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/joinOurDiscord.png'
               alt={LABELS.social.discord_image_alt}
-              fill
-              style={{ objectFit: 'cover' }}
+              width={600}
+              height={400}
               className={styles.communityImage}
             />
             <div className={styles.imageOverlay}></div>

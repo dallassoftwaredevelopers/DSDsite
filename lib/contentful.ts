@@ -1,5 +1,5 @@
 import 'server-only';
-import { Speaker, ContentfulResponse } from '@/types/speaker';
+import { Speaker, ContentfulResponse } from '@/types';
 
 function validateContentfulResponse(data: unknown): data is ContentfulResponse {
   if (typeof data !== 'object' || data === null) {
@@ -161,13 +161,14 @@ export async function getSpeakers(): Promise<Speaker[]> {
       });
 
       return {
+        id: item.sys.id,
         name: fields.name,
         role: fields.role,
         company: fields.company,
         photoUrl: photoUrl || '/assets/person.svg',
         linkedin: fields.linkedin,
         lastSpoke: fields.lastSpoke,
-        topics: fields.topics ? normalizeTopic(fields.topics) : undefined,
+        topics: fields.topics ? normalizeTopic(fields.topics).split(', ') : undefined,
       };
     });
 

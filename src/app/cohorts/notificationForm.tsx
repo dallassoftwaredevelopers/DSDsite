@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import styles from './cohorts.module.css';
-import { Message } from '@/types/globalTypes';
+import { Message } from '@/types';
 
 class NotificationFormClass {
   name: string;

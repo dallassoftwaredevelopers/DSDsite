@@ -307,9 +307,9 @@ export const LABELS = {
       },
       dallasCallout: {
         title: 'Dallas Tech Scene Connection',
-        description:
-          'While our cohorts are remote-friendly, we have deep connections to the Dallas-Fort Worth tech ecosystem. Many of our mentors work at local companies like Toyota Connected, Capital One, Texas Instruments, and Match Group, providing insights into the local job market and tech culture.',
-      },
+               description:
+          'While our cohorts are remote-friendly, we have deep connections to the Dallas-Fort Worth tech ecosystem. Many of our mentors work at local companies but many also contibute as leads from other locations. We do our best to put you on teams that make the most logistical and technological sense to your tech stack but we cannot guarantee local matches for everyone.',
+      }
     },
     details: {
       title: 'Program Details',
@@ -340,7 +340,7 @@ export const LABELS = {
         whoYouMeet: {
           title: "Who You'll Meet",
           description:
-            'Your cohort lead will be an experienced developer currently working in the industry. Past leads have come from companies like Toyota Connected, Capital One, Texas Instruments, and Match Group.',
+            'Your cohort leads will be experienced developers currently working in the industry. Past leads have come from companies like Meta, Amazon, JPMorgan Chase, NBC, and more.',
         },
       },
     },
@@ -392,11 +392,6 @@ export const LABELS = {
           title: 'Real-World Experience',
           description:
             'Build a deployable MVP that you can showcase in your portfolio. Past projects include job boards, community platforms, and developer tools that solve actual problems in the Dallas tech ecosystem.',
-        },
-        industryMentorship: {
-          title: 'Industry Mentorship',
-          description:
-            'Gain one-on-one guidance from professional software developers working at companies like Toyota Connected, Capital One, and Texas Instruments. Our mentors provide code reviews, architecture advice, and career coaching.',
         },
         agileWorkflow: {
           title: 'Agile Workflow Exposure',
@@ -526,5 +521,33 @@ export const LABELS = {
       },
       applyNow: 'Apply Now',
     },
+  },
+  errorHandling: {
+    somethingWentWrongTitle: 'Something went wrong',
+    unexpectedErrorMessage: "We're sorry, but something unexpected happened.",
+    tryAgainButtonText: 'Try again',
+    loadingText: 'Loading...',
+    submittingText: 'Submitting...',
+    submittedSuccessfullyText: 'Submitted successfully',
+    submissionFailedText: 'Submission failed',
+    networkErrorMessage: 'Network error occurred',
+    genericErrorMessage: 'An error occurred',
+  },
+  accessibility: {
+    skipToMainContentText: 'Skip to main content',
+    opensInNewTabText: 'Opens in a new tab',
+    closeModalText: 'Close modal',
+    toggleVideoPlaybackText: 'Toggle video playback',
+    scrollToExploreText: 'Scroll to explore more content',
+    toggleNavigationMenuText: 'Toggle navigation menu',
+    loadingFormText: 'Loading form...',
+    imageLoadingText: 'Loading image...',
+  },
+  validation: {
+    fieldRequiredSuffix: ' is required',
+    invalidFormatSuffix: ' format is invalid',
+    tooLongPrefix: ' must be under ',
+    charactersText: ' characters',
+    pleaseCompleteRecaptchaText: 'Please complete the reCAPTCHA!',
   },
 };

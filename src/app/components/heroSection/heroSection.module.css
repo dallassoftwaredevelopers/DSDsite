@@ -837,6 +837,6 @@
   }
 
   .scrollIndicator {
-    bottom: calc(80px + var(--spacing-4));
+    bottom: calc(80px + var(--spacing-2));
   }
 }

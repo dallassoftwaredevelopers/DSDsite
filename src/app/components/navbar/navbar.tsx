@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
+import React, { useState } from 'react';
+import OptimizedImage from '@/app/components/ui/OptimizedImage';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './navbar.module.css';
@@ -14,6 +14,8 @@ import {
   FaMeetup,
 } from 'react-icons/fa';
 import { LABELS } from '@/app/labels';
+import { useScrollEffect } from '@/hooks/useScrollEffect';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 
 const navItems = [
   {
@@ -59,26 +61,16 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+  useScrollEffect({
+    onScrollPositionChange: (scrollY) => {
+      setScrolled(scrollY > 50);
+    }
+  });
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  useBodyScrollLock(isNavVisible);
 
   const toggleNav = () => {
     setIsNavVisible(!isNavVisible);
-    document.body.style.overflow = isNavVisible ? 'auto' : 'hidden';
   };
 
   return (
@@ -88,12 +80,13 @@ export default function Navbar() {
           <div className={styles.navbarContent}>
             <Link href='/' className={styles.logoLink}>
               <div className={styles.logoWrapper}>
-                <Image
+                <OptimizedImage
                   src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/dsd-circle-logo.png'
                   alt={`${LABELS.app.orgName} Logo`}
                   width={50}
                   height={50}
                   className={styles.logo}
+                  priority={true}
                 />
                 <span className={styles.logoText}>{LABELS.app.orgName}</span>
               </div>

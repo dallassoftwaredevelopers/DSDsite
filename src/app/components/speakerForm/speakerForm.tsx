@@ -1,8 +1,9 @@
-import React, { useState, ChangeEvent, FormEvent, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import styles from './speakerForm.module.css';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { Message } from '@/types/globalTypes';
-import { useGlobalState } from '@/app/hooks/useGlobalState/useGlobalState';
+import { Message } from '@/types';
+import { useToast } from '@/contexts/ToastContext';
+import { useForm } from '@/hooks/useForm';
 import { LABELS } from '@/app/labels';
 
 interface FormData {
@@ -12,14 +13,6 @@ interface FormData {
   topic: string;
   briefDescription: string;
   token: string;
-}
-
-interface FormErrors {
-  fullName?: string;
-  email?: string;
-  linkedInUrl?: string;
-  topic?: string;
-  briefDescription?: string;
 }
 
 const localEnv =
@@ -44,86 +37,71 @@ export default function SpeakerForm({
   onSubmit: () => void;
   onCancel: () => void;
 }) {
-  const [formData, setFormData] = useState<FormData>({
-    fullName: '',
-    email: '',
-    linkedInUrl: '',
-    topic: '',
-    briefDescription: '',
-    token: '',
-  });
+  const {
+    values: formData,
+    errors,
+    isSubmitting,
+    setIsSubmitting,
+    handleChange,
+    setValue,
+    validate
+  } = useForm<FormData>(
+    {
+      fullName: '',
+      email: '',
+      linkedInUrl: '',
+      topic: '',
+      briefDescription: '',
+      token: ''
+    },
+    {
+      fullName: [{ isFieldRequired: true }],
+      email: [
+        { isFieldRequired: true },
+        { validationRegexPattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ }
+      ],
+      linkedInUrl: [
+        { isFieldRequired: true },
+        { customValidationFunction: (value) => !isValidHttpUrl(value as string) ? LABELS.speakerForm.errors.linked_in_invalid : undefined }
+      ],
+      topic: [
+        { isFieldRequired: true },
+        { maximumCharacterLength: 100 }
+      ],
+      briefDescription: [
+        { isFieldRequired: true },
+        { maximumCharacterLength: 500 }
+      ]
+    }
+  );
 
-  const [errors, setErrors] = useState<FormErrors>({});
   const [message, setMessage] = useState<Message | null>(null);
-
-  const { setToast } = useGlobalState();
+  const { showToast } = useToast();
   const captchaRef = useRef<ReCAPTCHA>(null);
 
-  const validate = (): boolean => {
-    const newErrors: FormErrors = {};
-
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = LABELS.speakerForm.errors.full_name_required;
-    }
-
-    if (!formData.email.trim()) {
-      newErrors.email = LABELS.speakerForm.errors.email_required;
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      newErrors.email = LABELS.speakerForm.errors.email_invalid;
-    }
-
-    if (!formData.linkedInUrl.trim()) {
-      newErrors.linkedInUrl = LABELS.speakerForm.errors.linked_in_required;
-    } else if (!isValidHttpUrl(formData.linkedInUrl)) {
-      newErrors.linkedInUrl = LABELS.speakerForm.errors.linked_in_invalid;
-    }
-
-    if (!formData.topic.trim()) {
-      newErrors.topic = LABELS.speakerForm.errors.topic_required;
-    } else if (formData.topic.length > 100) {
-      newErrors.topic = LABELS.speakerForm.errors.topic_too_long;
-    }
-
-    if (!formData.briefDescription.trim()) {
-      newErrors.briefDescription =
-        LABELS.speakerForm.errors.description_required;
-    } else if (formData.briefDescription.length > 500) {
-      newErrors.briefDescription =
-        LABELS.speakerForm.errors.description_too_long;
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ): void => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setMessage(null);
     e.preventDefault();
+    
     if (validate()) {
+      setIsSubmitting(true);
+      
       const hasValidSiteKey = siteKey && siteKey !== 'RECAPTCHA_SITEKEY';
       const token =
         localEnv || !hasValidSiteKey
           ? 'localEnv'
           : captchaRef.current?.getValue();
+          
       if (!token && hasValidSiteKey && !localEnv) {
         setMessage({
           message: LABELS.speakerForm.errors.recaptcha_required,
           type: 'error',
         });
+        setIsSubmitting(false);
         return;
       }
 
-      formData.token = token ?? '';
+      setValue('token', token ?? '');
 
       try {
         const response = await fetch('/api/speakerRequestForm', {
@@ -131,28 +109,20 @@ export default function SpeakerForm({
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(formData),
+          body: JSON.stringify({ ...formData, token: token ?? '' }),
         });
 
         if (response.status === 400) {
-          setToast({
-            type: 'error',
-            message: response.statusText,
-          });
+          showToast(response.statusText, 'error');
+          setIsSubmitting(false);
           return;
         }
 
-        setToast({
-          type: 'success',
-          message: LABELS.speakerForm.errors.submit_success,
-        });
+        showToast(LABELS.speakerForm.errors.submit_success, 'success');
         onSubmit();
       } catch (error) {
-        setToast({
-          type: 'error',
-          message: LABELS.speakerForm.errors.submit_error,
-        });
-        console.error('error', error);
+        showToast(LABELS.speakerForm.errors.submit_error, 'error');
+        setIsSubmitting(false);
       }
     }
   };

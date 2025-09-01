@@ -1,48 +1,19 @@
 'use client';
 
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import Link from 'next/link';
 import styles from './heroSection.module.css';
 import { LABELS } from '@/app/labels';
+import { useScrollEffect } from '@/hooks/useScrollEffect';
+import { useVideoPlayer } from '@/hooks/useVideoPlayer';
 
 export default function HeroSection() {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
-  const toggleVideo = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause();
-        videoRef.current.muted = true;
-      } else {
-        videoRef.current.play();
-        videoRef.current.muted = false;
-      }
-      setIsVideoPlaying(!isVideoPlaying);
-    }
-  };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (heroRef.current) {
-        const scrollPosition = window.scrollY;
-        const parallaxElements = heroRef.current.querySelectorAll(
-          `.${styles.parallax}`
-        );
-
-        parallaxElements.forEach((element) => {
-          const speed = (element as HTMLElement).dataset.speed || '0.5';
-          const movement = scrollPosition * parseFloat(speed);
-          (element as HTMLElement).style.transform =
-            `translateY(${movement}px)`;
-        });
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const { videoRef, isPlaying, togglePlayback } = useVideoPlayer();
+  
+  useScrollEffect({
+    parallaxElementsContainer: heroRef
+  });
 
   return (
     <section className={styles.hero} ref={heroRef}>
@@ -119,13 +90,13 @@ export default function HeroSection() {
         <div className={styles.mediaContent}>
           <div className={styles.videoCard}>
             <div
-              className={`${styles.videoCardInner} ${isVideoPlaying ? styles.videoCardPlaying : ''}`}
-              onClick={toggleVideo}
+              className={`${styles.videoCardInner} ${isPlaying ? styles.videoCardPlaying : ''}`}
+              onClick={togglePlayback}
               style={{ cursor: 'pointer' }}
             >
               <video
                 ref={videoRef}
-                className={`${styles.heroVideo} ${isVideoPlaying ? styles.videoPlaying : ''}`}
+                className={`${styles.heroVideo} ${isPlaying ? styles.videoPlaying : ''}`}
                 loop
                 muted
                 playsInline
@@ -139,12 +110,12 @@ export default function HeroSection() {
                 {LABELS.hero.video_unsupported}
               </video>
               <div
-                className={`${styles.videoOverlay} ${isVideoPlaying ? styles.overlayFaded : ''}`}
+                className={`${styles.videoOverlay} ${isPlaying ? styles.overlayFaded : ''}`}
               ></div>
               <div
-                className={`${styles.playButton} ${isVideoPlaying ? styles.playButtonHidden : ''}`}
+                className={`${styles.playButton} ${isPlaying ? styles.playButtonHidden : ''}`}
                 aria-label={
-                  isVideoPlaying
+                  isPlaying
                     ? LABELS.hero.pause_video
                     : LABELS.hero.play_video
                 }

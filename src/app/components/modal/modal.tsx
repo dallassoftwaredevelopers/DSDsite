@@ -1,5 +1,7 @@
 import React, { ReactNode, useEffect } from 'react';
 import styles from './modal.module.css';
+import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
+import { LABELS } from '@/app/labels';
 
 interface ModalProps {
   isOpen: boolean;
@@ -8,6 +10,8 @@ interface ModalProps {
 }
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
+  useBodyScrollLock(isOpen);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -15,10 +19,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
     if (isOpen) {
       document.addEventListener('keydown', handleKeyDown);
-      document.body.style.overflow = 'hidden';
     }
     return () => {
-      document.body.style.overflow = '';
       document.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, onClose]);
@@ -28,7 +30,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={onClose}>
+        <button className={styles.closeButton} onClick={onClose} aria-label={LABELS.accessibility.closeModalText}>
           &times;
         </button>
         <div className={styles.content}>{children}</div>

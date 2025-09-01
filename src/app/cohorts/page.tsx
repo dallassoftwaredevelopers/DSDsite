@@ -119,22 +119,6 @@ const programFeatures = [
     ),
   },
   {
-    title: 'Industry Mentorship',
-    description:
-      'Gain one-on-one guidance from professional software developers working at companies like Toyota Connected, Capital One, and Texas Instruments. Our mentors provide code reviews, architecture advice, and career coaching.',
-    icon: (
-      <svg
-        xmlns='http://www.w3.org/2000/svg'
-        width='24'
-        height='24'
-        viewBox='0 0 24 24'
-        fill='currentColor'
-      >
-        <path d='M12 2c2.757 0 5 2.243 5 5.001 0 2.756-2.243 5-5 5s-5-2.244-5-5c0-2.758 2.243-5.001 5-5.001zm0-2c-3.866 0-7 3.134-7 7.001 0 3.865 3.134 7 7 7s7-3.135 7-7c0-3.867-3.134-7.001-7-7.001zm6.369 13.353c-.497.498-1.057.931-1.658 1.302 2.872 1.874 4.378 5.083 4.972 7.346h-19.387c.572-2.29 2.058-5.503 4.973-7.358-.603-.374-1.162-.811-1.658-1.312-4.258 3.072-5.611 8.506-5.611 10.669h24c0-2.142-1.44-7.557-5.631-10.647z' />
-      </svg>
-    ),
-  },
-  {
     title: 'Agile Workflow Exposure',
     description:
       'Experience real sprint planning, daily standups, and retrospectives just like professional teams. Learn to use industry tools like GitHub, Jira, and Figma in a collaborative environment.',
@@ -317,10 +301,9 @@ const testimonials = [
     role: 'Software Engineer',
     company: 'NBC Universal',
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    cohort: 'Cohort 7',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/yoon.jpg',
-    linkedIn: 'https://linkedin.com',
+      'The cohort provided invaluable guidance from professionals actively working in the industry and taught me how to collaborate effectively within a team. It played a pivotal role in helping me break into tech. Now, as a professional developer, I’ve had the privilege of returning as a lead to mentor and support others who are now on the same journey I once was.',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/yoonJinBae.jpg',
+    linkedIn: 'https://www.linkedin.com/in/bae-yoojin/',
   },
   {
     id: 3,
@@ -335,38 +318,48 @@ const testimonials = [
   },
   {
     id: 4,
-    name: 'David Ogden III',
-    role: 'Associate Software Engineer',
-    company: 'L3Harris Technologies',
+    name: 'Staci Southerland',
+    role: 'Software Developer',
+    company: 'Onix Media',
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'The DSD Cohort program transformed my career trajectory. After being laid off, the 6-week program pushed me outside my comfort zone, working on a team to build a full-stack project that I showcased in interviews, helping me land my new developer role.',
     cohort: 'Cohort 9',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
-    linkedIn: 'https://linkedin.com',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/staciSoutherland.jpg',
+    linkedIn: 'https://www.linkedin.com/in/stacisoutherland/',
   },
   {
     id: 5,
-    name: 'David Ogden III',
-    role: 'Associate Software Engineer',
-    company: 'L3Harris Technologies',
+    name: 'Tatiana Bertazoli',
+    role: 'Backend Developer',
+    company: 'uMode',
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'I highly recommend the DSD cohort program. It gave me the opportunity to collaborate with a team of talented developers on a real project and boosted my confidence to continue pursuing a career in software development, ultimately helping me land my first job as a software developer',
     cohort: 'Cohort 9',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
-    linkedIn: 'https://linkedin.com',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/tatianaBertazoli.jpg',
+    linkedIn: 'https://www.linkedin.com/in/tatibertazoli/',
   },
   {
     id: 6,
-    name: 'David Ogden III',
-    role: 'Associate Software Engineer',
-    company: 'L3Harris Technologies',
+    name: 'Andrew Smith',
+    role: 'Software Developer',
+    company: 'Nautilus Architects',
     quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      'Going from building projects on my own to working with a team in the DSD cohort was a game-changer. It pushed me to grow faster as a developer, get more involved in the Boston tech community, and land my first client.',
     cohort: 'Cohort 9',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
-    linkedIn: 'https://linkedin.com',
+    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/andrewSmith.jpg',
+    linkedIn: 'https://www.linkedin.com/in/andrew-sm1th/',
   },
 ];
+
+// Fisher-Yates shuffle algorithm for randomizing array order
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
 export default function CohortPage() {
   const [selectedYear, setSelectedYear] = React.useState<number>(2024);
@@ -377,6 +370,9 @@ export default function CohortPage() {
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
   const { actionLinks } = useGlobalState();
+
+  // Randomize testimonials once when component mounts
+  const shuffledTestimonials = useMemo(() => shuffleArray(testimonials), []);
 
   const { data: cohortStatusResponse, isLoading } = useQuery({
     queryKey: ['cohortStatus'],
@@ -501,15 +497,8 @@ export default function CohortPage() {
 
         <div className={styles.heroContent}>
           <div className={styles.heroTextContent}>
-            <h2 className={styles.heroTagline}>
-              {LABELS.cohorts.hero.tagline}
-            </h2>
             <h1 className={styles.heroHeading}>
-              <span className={styles.heroHeadingLine}>
-                <span className={styles.heroText}>
-                  {LABELS.cohorts.hero.heading}
-                </span>
-              </span>
+              {LABELS.cohorts.hero.tagline} <span className={styles.highlight}>{LABELS.cohorts.hero.heading}</span>
             </h1>
 
             <div className={styles.heroDescription}>
@@ -935,7 +924,7 @@ export default function CohortPage() {
             </p>
           </div>
 
-          <TestimonialsCarousel testimonials={testimonials} />
+          <TestimonialsCarousel testimonials={shuffledTestimonials} />
 
           <div className={styles.careerOutcomes}>
             <h3>{LABELS.cohorts.testimonials.careerOutcomes.title}</h3>

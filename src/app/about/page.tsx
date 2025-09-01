@@ -7,7 +7,7 @@ import styles from './about.module.css';
 import Link from 'next/link';
 import TeamList from '../components/teamList/teamList';
 import Spinner from '../components/spinner/spinner';
-import { Speaker } from '@/types/globalTypes';
+import { Speaker } from '@/types';
 
 export default function AboutPage() {
   const heroRef = useRef<HTMLDivElement>(null);

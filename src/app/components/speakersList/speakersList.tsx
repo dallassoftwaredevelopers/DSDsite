@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Speaker } from '@/types/speaker';
+import { Speaker } from '@/types';
 import styles from './speakersList.module.css';
 import Image from 'next/image';
 import { LABELS } from '@/app/labels';

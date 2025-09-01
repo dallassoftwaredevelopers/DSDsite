@@ -1,7 +1,7 @@
 'use client';
 
 import { memo } from 'react';
-import { Speaker } from '@/types/globalTypes';
+import { Speaker } from '@/types';
 import Image from 'next/image';
 import styles from './teamList.module.css';
 import { LABELS } from '@/app/labels';

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState} from 'react';
 import styles from './groupPhotoSection.module.css';
-import Image from 'next/image';
+import OptimizedImage from '@/app/components/ui/OptimizedImage';
 import BackgroundPattern from '../decorative/backgroundPattern';
 
 // Array of group photo images - using blob URLs
@@ -77,13 +77,12 @@ export default function GroupPhotoSection() {
         <p>Join a thriving group of passionate developers</p>
       </div>
       <div className={styles.imageWrapper}>
-        <Image
+        <OptimizedImage
           className={styles.groupPhotoImg}
           src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetupGroupShot5.png'
           alt='Dallas Software Developers Community Meetup'
           width={1450}
           height={500}
-          sizes='100vw'
           quality={90}
           priority
         />

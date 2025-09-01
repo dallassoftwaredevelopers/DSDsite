@@ -11,7 +11,7 @@ import Button from '../components/button/button';
 import CommunityBento from '../components/communityBento/communityBento';
 import Image from 'next/image';
 import styles from './community.module.css';
-import { Speaker } from '@/types/globalTypes';
+import { Speaker } from '@/types';
 import { LABELS } from '../labels';
 
 const communityStats = [

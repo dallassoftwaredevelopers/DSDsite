@@ -52,7 +52,8 @@ const bentoImages: BentoData[] = [
 
 export default function CommunityBento() {
   return (
-    <section className={styles.communityHeroSection}>
+    <section >
+      <div className={styles.communityHeroSection}>
       <div className={styles.heroBackground}>
         <div className={styles.gradientOverlay}></div>
         <div className={styles.shapesContainer}>
@@ -126,6 +127,7 @@ export default function CommunityBento() {
         <div className={styles.mouse}>
           <div className={styles.mouseWheel}></div>
         </div>
+      </div>
       </div>
     </section>
   );

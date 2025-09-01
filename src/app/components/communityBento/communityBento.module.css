@@ -416,6 +416,10 @@
 
   }
 
+  .heroContent {
+      margin-bottom: 2rem;
+  }
+
   .messageCard {
     padding: 2rem;
   }
@@ -464,16 +468,13 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .communityHeroSection {
-    padding: 3rem 0;
-    min-height: auto;
+    max-height: 95%;
+    padding: 30px 0 10px 0;
+    justify-content: start;
   }
 
   .container {
     padding: 0 1rem;
-  }
-
-  .heroContent {
-    margin-bottom: 2rem;
   }
 
   .heroTitle {
@@ -561,7 +562,7 @@
   }
 
   .scrollIndicator {
-    bottom: 0;
+        bottom: 35px;
   }
 }
 
@@ -588,5 +589,8 @@
 
   .messageTitle {
     font-size: 1.25rem;
+  }
+   .scrollIndicator {
+      bottom: calc(80px + var(--spacing-2));
   }
 }

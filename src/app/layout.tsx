@@ -5,6 +5,8 @@ import Navbar from './components/navbar/navbar';
 import Footer from '@/app/components/footer/footer';
 import ReactQueryProvider from './react-query-provider';
 import { GlobalStateProvider } from './hooks/useGlobalState/useGlobalState';
+import { ToastProvider } from '@/contexts/ToastContext';
+import ErrorBoundary from '@/app/components/ErrorBoundary';
 import { LABELS } from './labels';
 
 export const metadata: Metadata = {
@@ -49,13 +51,17 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <ReactQueryProvider>
-          <GlobalStateProvider>
-            <Navbar />
-            <main>{children}</main>
-            <Footer />
-          </GlobalStateProvider>
-        </ReactQueryProvider>
+        <ErrorBoundary>
+          <ReactQueryProvider>
+            <ToastProvider>
+              <GlobalStateProvider>
+                <Navbar />
+                <main>{children}</main>
+                <Footer />
+              </GlobalStateProvider>
+            </ToastProvider>
+          </ReactQueryProvider>
+        </ErrorBoundary>
       </body>
     </html>
   );

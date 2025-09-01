@@ -1,10 +1,10 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import Card from './card';
+import Card from '@/app/components/ui/Card';
 import styles from './cards.module.css';
 import Button from '../button/button';
-import Image from 'next/image';
+import OptimizedImage from '@/app/components/ui/OptimizedImage';
 import { externalLinks } from '@/app/_constants';
 import BackgroundPattern from '../decorative/backgroundPattern';
 import FloatingShapes from '../decorative/floatingShapes';
@@ -84,13 +84,12 @@ export default function CardsSection() {
       </div>
       <div className={styles.cardContainer}>
         {cardData.map((card, index) => (
-          <Card key={card.id}>
+          <Card key={card.id} variant="elevated" padding="lg" className={styles.customCard}>
             <div className={styles.imageContainer}>
-              <Image
+              <OptimizedImage
                 src={card.src}
                 alt={card.alt}
                 className={styles.imageStyle}
-                sizes='100vw'
                 width={375}
                 height={250}
                 priority={index === 0}

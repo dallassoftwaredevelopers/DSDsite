@@ -1,0 +1,45 @@
+.card {
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  background: white;
+  border: none;
+  cursor: default;
+}
+
+.default {
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.elevated {
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.outlined {
+  background: white;
+  border: 2px solid #e5e7eb;
+  box-shadow: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card[type="button"] {
+  cursor: pointer;
+}
+
+.paddingSM {
+  padding: 1rem;
+}
+
+.paddingMD {
+  padding: 1.5rem;
+}
+
+.paddingLG {
+  padding: 2rem;
+}

@@ -11,29 +11,29 @@ import styles from './page.module.css';
 export default function Home() {
   return (
     <div className={styles.pageContainer}>
-      <section className={styles.heroContainer}>
+      <div className={styles.heroContainer}>
         <HeroSection />
-      </section>
+      </div>
 
-      <section className={styles.sectionContainer}>
+      <div className={styles.sectionContainer}>
         <BannerSection />
-      </section>
+      </div>
 
-      <section className={styles.sectionContainer}>
+      <div className={styles.sectionContainer}>
         <CardsSection />
-      </section>
+      </div>
 
-      <section className={styles.sectionContainer}>
+      <div className={styles.sectionContainer}>
         <SocialSection />
-      </section>
+      </div>
 
-      <section className={styles.sectionContainer}>
+      <div className={styles.sectionContainer}>
         <SponsorshipSection />
-      </section>
+      </div>
 
-      <section className={styles.sectionContainer}>
+      <div className={styles.sectionContainer}>
         <GroupPhotoSection />
-      </section>
+      </div>
     </div>
   );
 }

@@ -32,12 +32,4 @@ export interface ContentfulResponse {
   };
 }
 
-export interface Speaker {
-  name: string;
-  role: string;
-  company: string;
-  photoUrl?: string;
-  linkedin?: string;
-  lastSpoke?: string;
-  topics?: string;
-}
+// This file is deprecated - use unified types from @/types instead
