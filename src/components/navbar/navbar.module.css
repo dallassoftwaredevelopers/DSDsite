@@ -106,7 +106,7 @@
 }
 
 .navLink.active {
-  color: hsl(var(--primary));
+  color: hsl(213, 100%, 30%);
   font-weight: var(--font-weight-semibold);
 }
 
@@ -423,7 +423,7 @@
 
 .mobileBottomNavLink:hover,
 .mobileBottomNavLink.active {
-  color: hsl(var(--primary));
+  color: hsl(213, 100%, 30%);
 }
 
 .mobileBottomNavIcon {

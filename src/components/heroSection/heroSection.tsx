@@ -112,16 +112,17 @@ export default function HeroSection() {
               <div
                 className={`${styles.videoOverlay} ${isPlaying ? styles.overlayFaded : ''}`}
               ></div>
-              <div
+              <button
                 className={`${styles.playButton} ${isPlaying ? styles.playButtonHidden : ''}`}
                 aria-label={
                   isPlaying
                     ? LABELS.hero.pause_video
                     : LABELS.hero.play_video
                 }
+                type="button"
               >
                 <div className={styles.playIcon}></div>
-              </div>
+              </button>
             </div>
             <div className={styles.cardDecoration}></div>
           </div>

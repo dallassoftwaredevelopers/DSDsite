@@ -415,6 +415,13 @@
   transition: all 0.3s ease;
   z-index: 2;
   animation: pulsePlayButton 2s infinite ease-in-out;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 .playButtonHidden {

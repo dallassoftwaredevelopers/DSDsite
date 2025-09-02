@@ -34,25 +34,33 @@ export default function CohortsHero() {
             {LABELS.cohorts.hero.tagline} <span className={styles.highlight}>{LABELS.cohorts.hero.heading}</span>
           </h1>
 
+          <h2 className="sr-only">{LABELS.cohorts.hero.programOverview}</h2>
+
           <div className={styles.heroDescription}>
             <p>{LABELS.cohorts.hero.description}</p>
           </div>
 
           <div className={styles.heroStats}>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>6</span>
+              <span className={styles.statNumber}>
+                {LABELS.cohorts.hero.stats.weeksNumber}
+              </span>
               <span className={styles.statLabel}>
                 {LABELS.cohorts.hero.stats.weeks}
               </span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>100%</span>
+              <span className={styles.statNumber}>
+                {LABELS.cohorts.hero.stats.freeNumber}
+              </span>
               <span className={styles.statLabel}>
                 {LABELS.cohorts.hero.stats.free}
               </span>
             </div>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>4-6</span>
+              <span className={styles.statNumber}>
+                {LABELS.cohorts.hero.stats.teamSizeNumber}
+              </span>
               <span className={styles.statLabel}>
                 {LABELS.cohorts.hero.stats.teamSize}
               </span>

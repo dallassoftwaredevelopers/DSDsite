@@ -64,7 +64,7 @@
 
 .sectionDescription {
   font-size: clamp(var(--text-base), 2vw, var(--text-lg));
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
@@ -163,7 +163,7 @@
     width: 48px;
     height: 48px;
   }
-  .authorInfo h4 {
+  .authorName {
     font-size: 0.85rem;
   }
   .authorInfo p {
@@ -211,7 +211,7 @@
     width: 44px;
     height: 44px;
   }
-  .authorInfo h4 {
+  .authorName {
     font-size: 0.8rem;
   }
   .authorInfo p {
@@ -219,7 +219,7 @@
   }
   .linkedinLink {
     font-size: 0.7rem !important;
-    color: hsla(var(--dark), 0.6);
+    color: hsla(var(--dark), 0.8);
     text-decoration: underline;
     margin-top: -10px;
   }
@@ -342,7 +342,7 @@
   border: 2px solid hsla(var(--primary), 0.2);
 }
 
-.authorInfo h4 {
+.authorName {
   font-size: var(--text-base);
   font-weight: var(--font-weight-semibold);
   color: hsl(var(--dark));
@@ -351,7 +351,7 @@
 
 .authorInfo p {
   font-size: var(--text-sm);
-  color: hsla(var(--dark), 0.6);
+  color: hsla(var(--dark), 0.8);
   margin: 0 0 var(--spacing-2);
 }
 
@@ -427,6 +427,6 @@
 
 .outcomeLabel {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   line-height: 1.6;
 }

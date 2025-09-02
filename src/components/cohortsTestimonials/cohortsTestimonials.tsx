@@ -171,7 +171,7 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
                 className={styles.authorImage}
               />
               <div className={styles.authorInfo}>
-                <h4>{testimonial.name}</h4>
+                <div className={styles.authorName}>{testimonial.name}</div>
                 <p>
                   {testimonial.role} at {testimonial.company}
                 </p>
@@ -244,11 +244,12 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
 
       <div className={styles.carouselIndicators}>
         {testimonials.map((_, index) => (
-          <div
+          <button
             key={index}
             className={`${styles.carouselIndicator} ${index === currentIndex ? styles.active : ''}`}
             onClick={() => scrollToIndex(index)}
             aria-label={`${LABELS.cohorts.testimonials.goToTestimonial} ${index + 1}`}
+            type="button"
           />
         ))}
       </div>
@@ -265,7 +266,10 @@ export default function CohortsTestimonials({
   sectionRef, 
   isVisible = false 
 }: CohortsTestimonialsProps) {
-  // Randomize testimonials once when component mounts
+  /* Randomize testimonials once when component mounts
+   * This is so that the testimonials appear in a different order each time the component is rendered
+   * Giving everyone an equal chance to be shown first.
+   */
   const shuffledTestimonials = useMemo(() => shuffleArray(testimonials), []);
 
   return (

@@ -8,6 +8,7 @@ interface OptimizedImageProps {
   priority?: boolean;
   className?: string;
   quality?: number;
+  fill?: boolean;
 }
 
 export default function OptimizedImage({
@@ -17,9 +18,30 @@ export default function OptimizedImage({
   height = 300,
   priority = false,
   className,
-  quality = 90
+  quality = 90,
+  fill = false
 }: OptimizedImageProps) {
-  const blurDataUrl = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q==';
+  const blurDataUrl = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAQABgDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EAB4QAAICAwEBAQEAAAAAAAAAAAABAgMEERIhMUFR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwQF/8QAHhEAAgICAwEBAAAAAAAAAAAAAAERAhIDITFBUWH/2gAMAwEAAhEDEQA/AIGJq1t2H7VdBiN7mhqRGNTEYeOSt2DdPl8lhHKnkp7fZcT0kkf1k4HGVOvOT9RiYTNJeNFmYeTbhFLj+n0fkqw2b4uF7lFdNfFVl/H/2Q==';
+
+  if (fill || (width === 0 && height === 0)) {
+    return (
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        quality={quality}
+        className={className}
+        placeholder="blur"
+        blurDataURL={blurDataUrl}
+        sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1450px"
+        style={{
+          objectFit: 'cover',
+          objectPosition: 'center'
+        }}
+      />
+    );
+  }
 
   return (
     <Image
@@ -32,7 +54,7 @@ export default function OptimizedImage({
       className={className}
       placeholder="blur"
       blurDataURL={blurDataUrl}
-      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+      sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1450px"
     />
   );
 }

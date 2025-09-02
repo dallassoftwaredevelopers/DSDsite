@@ -21,7 +21,7 @@
 .heroDescription p {
   font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl));
   line-height: 1.6;
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.8);
 }
 
 @media (max-width: 1024px) {
@@ -542,7 +542,7 @@
 
 .highlightText p {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.75);
+  color: hsla(var(--dark), 0.85);
   line-height: 1.5;
   font-weight: var(--font-weight-medium);
 }
@@ -683,7 +683,7 @@
 .heroSubheading {
   font-size: clamp(var(--text-lg), 3vw, var(--text-2xl));
   font-weight: var(--font-weight-regular);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   margin: 0 0 var(--spacing-12);
   line-height: 1.6;
   animation: fadeInUp 0.8s ease-out forwards;
@@ -831,7 +831,7 @@
 .statLabel {
   display: block;
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.8);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: var(--font-weight-medium);

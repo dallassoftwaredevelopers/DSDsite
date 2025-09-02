@@ -177,7 +177,7 @@
 .socialImage {
   flex: 1;
   position: relative;
-  height: 500px;
+  height: 400px;
   max-width: 600px;
   animation: slideLeft 1s ease-out;
 }
@@ -200,8 +200,11 @@
 }
 
 .communityImage {
+  object-fit: cover !important;
   object-position: center;
   transition: all 0.5s ease;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .imageWrapper:hover .communityImage {
@@ -244,7 +247,7 @@
   }
 
   .socialImage {
-    height: 450px;
+    height: 360px;
   }
 }
 
@@ -264,7 +267,7 @@
   }
 
   .socialImage {
-    height: 400px;
+    height: 320px;
     max-width: 90%;
     margin-top: 40px;
   }
@@ -295,7 +298,7 @@
   }
 
   .socialImage {
-    height: 350px;
+    height: 280px;
     width: 100%;
     display: block;
     position: relative;
@@ -334,7 +337,7 @@
   }
 
   .socialImage {
-    height: 250px;
+    height: 200px;
     margin-top: 30px;
     position: relative;
     display: block;

@@ -44,7 +44,7 @@
 .heroDescription p {
   font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl));
   line-height: 1.6;
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.8);
 }
 
 @media (max-width: 1024px) {
@@ -517,7 +517,7 @@
 
 .highlightText p {
   font-size: var(--text-sm);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
 }
 
 .heroContent {
@@ -594,7 +594,7 @@
 .heroSubheading {
   font-size: clamp(var(--text-lg), 3vw, var(--text-2xl));
   font-weight: var(--font-weight-regular);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   margin: 0 0 var(--spacing-12);
   line-height: 1.6;
   animation: fadeInUp 0.8s ease-out forwards;
@@ -742,7 +742,7 @@
 .statLabel {
   display: block;
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: var(--font-weight-medium);
@@ -913,7 +913,7 @@
 
 .sectionDescription {
   font-size: clamp(var(--text-base), 2vw, var(--text-lg));
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.8);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
@@ -1084,7 +1084,7 @@
 
 .requirementContent p {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   margin: 0;
   line-height: 1.6;
 }
@@ -1120,7 +1120,7 @@
 
 .calloutContent p {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   margin: 0;
   line-height: 1.6;
 }
@@ -1188,7 +1188,7 @@
 
 .detailCard p {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   margin: 0;
   line-height: 1.5;
   position: relative;
@@ -1222,7 +1222,7 @@
 
 .highlightItem p {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   margin: 0;
   line-height: 1.6;
 }
@@ -1304,7 +1304,7 @@
 .timelineContent li {
   position: relative;
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   margin-bottom: var(--spacing-2);
   padding-left: var(--spacing-6);
 }
@@ -1336,7 +1336,7 @@
 
 .scheduleNote p {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.85);
   margin: 0;
   line-height: 1.6;
 }
@@ -2299,7 +2299,7 @@
 .submitBtn {
   width: 100%;
   padding: var(--spacing-4);
-  background: hsl(var(--primary));
+  background: hsl(213, 100%, 30%);
   color: hsl(var(--light));
   border: none;
   border-radius: var(--border-radius-md);
@@ -2310,7 +2310,7 @@
 }
 
 .submitBtn:hover {
-  background: hsl(var(--primary-light));
+  background: hsl(213, 100%, 25%);
   box-shadow: var(--shadow-lg);
   transform: translateY(-2px);
 }

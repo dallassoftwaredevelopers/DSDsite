@@ -135,7 +135,7 @@
 
 .detailCard p {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.8);
   margin: 0;
   line-height: 1.5;
   position: relative;
@@ -169,7 +169,7 @@
 
 .programHighlightItem p {
   font-size: var(--text-base);
-  color: hsla(var(--dark), 0.7);
+  color: hsla(var(--dark), 0.8);
   margin: 0;
   line-height: 1.6;
 }

@@ -18,8 +18,9 @@ export default function SocialSection() {
       <div className={styles.socialContent}>
         <div className={styles.socialText}>
           <h2 className={styles.socialHeading}>
-            Join our <span className={styles.highlight}>Discord</span> and other
-            social links!
+            {LABELS.social.heading_parts.before_discord}
+            <span className={styles.highlight}>{LABELS.social.heading_parts.discord}</span>
+            {LABELS.social.heading_parts.after_discord}
           </h2>
           <p className={styles.socialSubheading}>{LABELS.social.subheading}</p>
           <div className={styles.ctaContainer}>
@@ -56,11 +57,10 @@ export default function SocialSection() {
             <OptimizedImage
               src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/joinOurDiscord.png'
               alt={LABELS.social.discord_image_alt}
-              width={600}
-              height={400}
+              width={0}
+              height={0}
               className={styles.communityImage}
             />
-            <div className={styles.imageOverlay}></div>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@
 
 import { memo } from 'react';
 import { Speaker } from '@/types';
-import Image from 'next/image';
+import OptimizedImage from '@/components/ui/OptimizedImage';
 import styles from './teamList.module.css';
 import { LABELS } from '@/app/labels';
 
@@ -19,12 +19,14 @@ function TeamListComponent({ peopleData }: { peopleData: Speaker[] }) {
         .map((person, index) => (
           <div key={person.id || `person-${index}`} className={styles.teamCard}>
             <div className={styles.teamImageWrapper}>
-              <Image
+              <OptimizedImage
                 src={person.photoUrl || '/assets/person.svg'}
                 alt={person.name}
                 width={400}
                 height={400}
                 className={styles.teamImage}
+                quality={95}
+                priority={index < 4}
               />
               <div className={styles.teamOverlay}>
                 <div className={styles.teamContent}>

@@ -6,10 +6,6 @@ import OptimizedImage from '@/components/ui/OptimizedImage';
 import BackgroundPattern from '@/components/decorative/backgroundPattern';
 
 const groupPhotos = [
-  '/assets/meetupGroupShot1.png',  // TODO: Add to blob storage if needed
-  '/assets/meetupGroupShot2.png',  // TODO: Add to blob storage if needed
-  '/assets/meetupGroupShot3.png',  // TODO: Add to blob storage if needed
-  '/assets/meetupGroupShot4.png',  // TODO: Add to blob storage if needed
   'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetupGroupShot5.png',
 ];
 
@@ -81,7 +77,7 @@ export default function GroupPhotoSection() {
           alt='Dallas Software Developers Community Meetup'
           width={1450}
           height={500}
-          quality={90}
+          quality={95}
           priority
         />
       </div>

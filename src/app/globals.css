@@ -14,9 +14,10 @@
   --accent: 213, 100%, 80%; 
   --dark: 222, 89%, 12%; 
   --light: 220, 33%, 98%; 
+  --muted: 220, 20%, 96%; 
   --gray-100: 220, 20%, 92%; 
   --gray-200: 220, 20%, 82%; 
-  --gray-300: 220, 20%, 72%; 
+  --gray-300: 220, 20%, 72%;
 
   --gradient-primary: linear-gradient(
     135deg,
@@ -367,6 +368,18 @@ footer,
 
 .fw-black {
   font-weight: var(--font-weight-black);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .animate-fade-in {

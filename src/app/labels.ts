@@ -221,6 +221,11 @@ export const LABELS = {
   },
   social: {
     heading: 'Join our Discord and other social links!',
+    heading_parts: {
+      before_discord: 'Join our ',
+      discord: 'Discord',
+      after_discord: ' and other social links!',
+    },
     subheading:
       'This is YOUR community, be a part of it! Connect with fellow developers, share knowledge, and grow together.',
     join_discord_cta: 'Join Our Discord',
@@ -288,12 +293,16 @@ export const LABELS = {
     hero: {
       tagline: 'Dallas Software Developers',
       heading: 'Cohort Program',
+      programOverview: 'Program Overview',
       description:
         "A 6-week collaborative experience where you'll build real projects with a team of developers under the guidance of industry professionals from the Dallas tech scene.",
       stats: {
         weeks: 'Weeks',
+        weeksNumber: '6',
         free: 'Free',
+        freeNumber: '100%',
         teamSize: 'Team Size',
+        teamSizeNumber: '4-6',
       },
       highlights: {
         realWorld: {

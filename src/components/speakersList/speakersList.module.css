@@ -250,6 +250,10 @@
   .speakerCompany {
     font-size: 0.62rem;
   }
+   .speakerDate {
+    font-size: 9px;
+  }
+
   .linkedinLink {
     width: 26px;
     height: 26px;
