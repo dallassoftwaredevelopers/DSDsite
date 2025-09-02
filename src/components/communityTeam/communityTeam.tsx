@@ -13,7 +13,10 @@ interface CommunityTeamProps {
   sectionRef: (el: HTMLElement | null) => void;
 }
 
-export default function CommunityTeam({ isVisible, sectionRef }: CommunityTeamProps) {
+export default function CommunityTeam({
+  isVisible,
+  sectionRef,
+}: CommunityTeamProps) {
   const { data: peopleDataResponse, isLoading } = useQuery({
     queryKey: ['people'],
     queryFn: async () => {
@@ -24,23 +27,19 @@ export default function CommunityTeam({ isVisible, sectionRef }: CommunityTeamPr
     refetchOnMount: false,
   });
 
-  const adminTeam = useMemo(
-    () => {
-      if (!peopleDataResponse) return [];
+  const adminTeam = useMemo(() => {
+    if (!peopleDataResponse) return [];
 
-      return peopleDataResponse
-        .map((person: any) => ({
-          id: person.documentId,
-          name: person.fullName,
-          role: 'Admin',
-          company: 'Dallas Software Developers',
-        photoUrl: person.imageUrl,
-        linkedin: person.linkedInUrl,
-        isAdmin: person.isAdmin,
-      }));
-    },
-    [peopleDataResponse]
-  );
+    return peopleDataResponse.map((person: any) => ({
+      id: person.documentId,
+      name: person.fullName,
+      role: 'Admin',
+      company: 'Dallas Software Developers',
+      photoUrl: person.imageUrl,
+      linkedin: person.linkedInUrl,
+      isAdmin: person.isAdmin,
+    }));
+  }, [peopleDataResponse]);
 
   return (
     <section

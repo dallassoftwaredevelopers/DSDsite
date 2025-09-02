@@ -56,9 +56,9 @@ interface CohortsRequirementsProps {
   isVisible?: boolean;
 }
 
-export default function CohortsRequirements({ 
-  sectionRef, 
-  isVisible = false 
+export default function CohortsRequirements({
+  sectionRef,
+  isVisible = false,
 }: CohortsRequirementsProps) {
   return (
     <section

@@ -9,22 +9,36 @@ export default function AboutMission() {
       <div className={styles.container}>
         <div className={styles.missionGrid}>
           <div className={styles.missionContent}>
-            <h2 className={styles.sectionTitle}>{LABELS.about.mission.title}</h2>
+            <h2 className={styles.sectionTitle}>
+              {LABELS.about.mission.title}
+            </h2>
             <p className={styles.missionText}>
               {LABELS.about.mission.description}
             </p>
             <div className={styles.statsGrid}>
               <div className={styles.statCard}>
-                <span className={styles.statNumber}>{LABELS.about.mission.stats.active_members}</span>
-                <span className={styles.statLabel}>{LABELS.about.mission.stats.active_members_label}</span>
+                <span className={styles.statNumber}>
+                  {LABELS.about.mission.stats.active_members}
+                </span>
+                <span className={styles.statLabel}>
+                  {LABELS.about.mission.stats.active_members_label}
+                </span>
               </div>
               <div className={styles.statCard}>
-                <span className={styles.statNumber}>{LABELS.about.mission.stats.events_per_year}</span>
-                <span className={styles.statLabel}>{LABELS.about.mission.stats.events_per_year_label}</span>
+                <span className={styles.statNumber}>
+                  {LABELS.about.mission.stats.events_per_year}
+                </span>
+                <span className={styles.statLabel}>
+                  {LABELS.about.mission.stats.events_per_year_label}
+                </span>
               </div>
               <div className={styles.statCard}>
-                <span className={styles.statNumber}>{LABELS.about.mission.stats.free_and_open}</span>
-                <span className={styles.statLabel}>{LABELS.about.mission.stats.free_and_open_label}</span>
+                <span className={styles.statNumber}>
+                  {LABELS.about.mission.stats.free_and_open}
+                </span>
+                <span className={styles.statLabel}>
+                  {LABELS.about.mission.stats.free_and_open_label}
+                </span>
               </div>
             </div>
           </div>

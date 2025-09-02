@@ -307,7 +307,7 @@
   backdrop-filter: blur(20px);
   border-radius: var(--border-radius-xl);
   border: 2px solid hsla(var(--primary), 0.15);
-  box-shadow: 
+  box-shadow:
     0 8px 32px hsla(var(--primary), 0.12),
     0 2px 8px hsla(var(--dark), 0.08),
     inset 0 1px 0 hsla(var(--light), 0.3);
@@ -469,7 +469,7 @@
     hsla(var(--accent), 0.1) 100%
   );
   border-color: hsla(var(--primary), 0.25);
-  box-shadow: 
+  box-shadow:
     0 16px 48px hsla(var(--primary), 0.2),
     0 8px 16px hsla(var(--dark), 0.12),
     inset 0 1px 0 hsla(var(--light), 0.4);
@@ -491,7 +491,7 @@
   color: hsl(var(--light));
   flex-shrink: 0;
   position: relative;
-  box-shadow: 
+  box-shadow:
     0 6px 20px hsla(var(--primary), 0.3),
     0 2px 8px hsla(var(--dark), 0.1);
   transition: all 0.3s ease;
@@ -515,7 +515,7 @@
 
 .highlightItem:hover .highlightIcon {
   transform: scale(1.1) rotate(5deg);
-  box-shadow: 
+  box-shadow:
     0 8px 24px hsla(var(--primary), 0.4),
     0 4px 12px hsla(var(--dark), 0.15);
 }
@@ -529,11 +529,7 @@
   font-weight: var(--font-weight-bold);
   color: hsl(var(--dark));
   margin-bottom: var(--spacing-2);
-  background: linear-gradient(
-    135deg,
-    hsl(var(--dark)),
-    hsl(var(--primary))
-  );
+  background: linear-gradient(135deg, hsl(var(--dark)), hsl(var(--primary)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

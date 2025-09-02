@@ -1249,7 +1249,7 @@
 .timelineMarker {
   position: absolute;
   left: -var(--spacing-12);
-  top: -20px; 
+  top: -20px;
   width: 80px;
   height: 40px;
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
@@ -1562,11 +1562,7 @@
   font-weight: var(--font-weight-bold);
   color: hsl(var(--primary));
   margin-bottom: var(--spacing-2);
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary)),
-    hsl(var(--accent))
-  );
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -1669,12 +1665,12 @@
   scroll-snap-type: x mandatory;
   gap: var(--spacing-8);
   padding: var(--spacing-4) var(--spacing-2);
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 .testimonialsCarousel::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
 
 .testimonialCard {
@@ -2459,7 +2455,6 @@
 }
 
 @media (max-width: 480px) {
-
   .container {
     padding-left: var(--spacing-4) !important;
     padding-right: var(--spacing-4) !important;
@@ -2832,4 +2827,3 @@
     font-size: 0.85rem;
   }
 }
-

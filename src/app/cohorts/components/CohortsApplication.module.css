@@ -1,4 +1,3 @@
-
 .applySectionContainer {
   width: 100%;
   padding: var(--spacing-24) 0 0 0;
@@ -212,7 +211,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     opacity: 1;
   }

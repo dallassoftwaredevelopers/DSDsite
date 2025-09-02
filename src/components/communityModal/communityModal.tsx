@@ -7,13 +7,13 @@ interface CommunityModalProps {
   onClose: () => void;
 }
 
-export default function CommunityModal({ isOpen, onClose }: CommunityModalProps) {
+export default function CommunityModal({
+  isOpen,
+  onClose,
+}: CommunityModalProps) {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
-      <SpeakerForm
-        onSubmit={onClose}
-        onCancel={onClose}
-      />
+      <SpeakerForm onSubmit={onClose} onCancel={onClose} />
     </Modal>
   );
 }

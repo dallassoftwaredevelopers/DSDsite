@@ -19,9 +19,10 @@ export default function OptimizedImage({
   priority = false,
   className,
   quality = 90,
-  fill = false
+  fill = false,
 }: OptimizedImageProps) {
-  const blurDataUrl = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAQABgDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EAB4QAAICAwEBAQEAAAAAAAAAAAABAgMEERIhMUFR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwQF/8QAHhEAAgICAwEBAAAAAAAAAAAAAAERAhIDITFBUWH/2gAMAwEAAhEDEQA/AIGJq1t2H7VdBiN7mhqRGNTEYeOSt2DdPl8lhHKnkp7fZcT0kkf1k4HGVOvOT9RiYTNJeNFmYeTbhFLj+n0fkqw2b4uF7lFdNfFVl/H/2Q==';
+  const blurDataUrl =
+    'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAQABgDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EAB4QAAICAwEBAQEAAAAAAAAAAAABAgMEERIhMUFR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwQF/8QAHhEAAgICAwEBAAAAAAAAAAAAAAERAhIDITFBUWH/2gAMAwEAAhEDEQA/AIGJq1t2H7VdBiN7mhqRGNTEYeOSt2DdPl8lhHKnkp7fZcT0kkf1k4HGVOvOT9RiYTNJeNFmYeTbhFLj+n0fkqw2b4uF7lFdNfFVl/H/2Q==';
 
   if (fill || (width === 0 && height === 0)) {
     return (
@@ -32,12 +33,12 @@ export default function OptimizedImage({
         priority={priority}
         quality={quality}
         className={className}
-        placeholder="blur"
+        placeholder='blur'
         blurDataURL={blurDataUrl}
-        sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1450px"
+        sizes='(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1450px'
         style={{
           objectFit: 'cover',
-          objectPosition: 'center'
+          objectPosition: 'center',
         }}
       />
     );
@@ -52,9 +53,9 @@ export default function OptimizedImage({
       priority={priority}
       quality={quality}
       className={className}
-      placeholder="blur"
+      placeholder='blur'
       blurDataURL={blurDataUrl}
-      sizes="(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1450px"
+      sizes='(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1450px'
     />
   );
 }

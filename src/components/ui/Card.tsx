@@ -9,20 +9,20 @@ interface CardProps {
   onClick?: () => void;
 }
 
-export default function Card({ 
-  children, 
+export default function Card({
+  children,
   variant = 'default',
   padding = 'md',
   className = '',
-  onClick 
+  onClick,
 }: CardProps) {
   const cardClasses = `${styles.card} ${styles[variant]} ${styles[`padding${padding.toUpperCase()}`]} ${className}`;
-  
+
   const CardElement = onClick ? 'button' : 'div';
-  
+
   return (
-    <CardElement 
-      className={cardClasses} 
+    <CardElement
+      className={cardClasses}
       onClick={onClick}
       type={onClick ? 'button' : undefined}
     >

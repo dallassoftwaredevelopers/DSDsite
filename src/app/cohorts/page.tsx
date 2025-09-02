@@ -47,17 +47,20 @@ export default function CohortPage() {
 
   const heroSectionRef = useRef<HTMLDivElement>(null);
 
-  const sectionRefsByKey = useRef<{ [sectionKey: string]: HTMLElement | null }>({});
+  const sectionRefsByKey = useRef<{ [sectionKey: string]: HTMLElement | null }>(
+    {}
+  );
 
   const { actionLinks } = useGlobalState();
 
-  const { data: cohortStatusResponse, isLoading: isLoadingCohortStatus } = useQuery({
-    queryKey: ['cohortStatus'],
-    queryFn: async () => {
-      const response = await fetch('/api/cohort', { cache: 'no-store' });
-      return response.json();
-    },
-  });
+  const { data: cohortStatusResponse, isLoading: isLoadingCohortStatus } =
+    useQuery({
+      queryKey: ['cohortStatus'],
+      queryFn: async () => {
+        const response = await fetch('/api/cohort', { cache: 'no-store' });
+        return response.json();
+      },
+    });
 
   const currentCohortStatusData = useMemo(() => {
     if (!cohortStatusResponse) {
@@ -65,7 +68,6 @@ export default function CohortPage() {
     }
     return cohortStatusResponse ?? defaultCohortStatusMessage;
   }, [cohortStatusResponse]);
-
 
   const markSectionAsVisible = useCallback((sectionKey: string) => {
     setVisibleSections((previous) => {
@@ -82,39 +84,45 @@ export default function CohortPage() {
    * Sets up an IntersectionObserver for all registered sections.
    * Uses a slightly negative bottom rootMargin so the animation triggers just before fully in view.
    */
-  const createObserver = useCallback((): IntersectionObserver =>
-    new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const sectionKey = (entry.target as HTMLElement).dataset.key;
-            if (sectionKey) markSectionAsVisible(sectionKey);
-            observerRef.current?.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: '0px 0px -10% 0px',
-        threshold: 0,
-      }
-    ), [markSectionAsVisible]);
+  const createObserver = useCallback(
+    (): IntersectionObserver =>
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const sectionKey = (entry.target as HTMLElement).dataset.key;
+              if (sectionKey) markSectionAsVisible(sectionKey);
+              observerRef.current?.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: '0px 0px -10% 0px',
+          threshold: 0,
+        }
+      ),
+    [markSectionAsVisible]
+  );
 
   /**
-   * Calculates and marks sections that are already visible (above the fold) 
+   * Calculates and marks sections that are already visible (above the fold)
    * without waiting for observer callbacks.
    */
   const markInitiallyVisibleSections = useCallback(() => {
     const viewportHeight = window.innerHeight;
-    Object.entries(sectionRefsByKey.current).forEach(([sectionKey, sectionEl]) => {
-      if (!sectionEl || !observerRef.current) return;
-      const bounds = sectionEl.getBoundingClientRect();
-      const isVisible = bounds.top < viewportHeight * 0.9 && bounds.bottom > 0;
-      if (isVisible) {
-        markSectionAsVisible(sectionKey);
-        observerRef.current.unobserve(sectionEl);
+    Object.entries(sectionRefsByKey.current).forEach(
+      ([sectionKey, sectionEl]) => {
+        if (!sectionEl || !observerRef.current) return;
+        const bounds = sectionEl.getBoundingClientRect();
+        const isVisible =
+          bounds.top < viewportHeight * 0.9 && bounds.bottom > 0;
+        if (isVisible) {
+          markSectionAsVisible(sectionKey);
+          observerRef.current.unobserve(sectionEl);
+        }
       }
-    });
+    );
   }, [markSectionAsVisible]);
 
   /**
@@ -130,11 +138,13 @@ export default function CohortPage() {
 
     const setup = () => {
       observerRef.current = createObserver();
-      Object.entries(sectionRefsByKey.current).forEach(([sectionKey, sectionEl]) => {
-        if (!sectionEl || !observerRef.current) return;
-        (sectionEl as HTMLElement).dataset.key = sectionKey;
-        observerRef.current.observe(sectionEl);
-      });
+      Object.entries(sectionRefsByKey.current).forEach(
+        ([sectionKey, sectionEl]) => {
+          if (!sectionEl || !observerRef.current) return;
+          (sectionEl as HTMLElement).dataset.key = sectionKey;
+          observerRef.current.observe(sectionEl);
+        }
+      );
 
       markInitiallyVisibleSections();
       setTimeout(markInitiallyVisibleSections, 800);
@@ -179,42 +189,56 @@ export default function CohortPage() {
         <CohortsHero />
       </div>
 
-      <div data-section="overview">
+      <div data-section='overview'>
         <CohortsOverview />
       </div>
 
       <CohortsDetails
-        sectionRef={(sectionElement) => (sectionRefsByKey.current['details'] = sectionElement)}
+        sectionRef={(sectionElement) =>
+          (sectionRefsByKey.current['details'] = sectionElement)
+        }
         isVisible={visibleSections.has('details')}
       />
 
       <CohortsRequirements
-        sectionRef={(sectionElement) => (sectionRefsByKey.current['requirements'] = sectionElement)}
+        sectionRef={(sectionElement) =>
+          (sectionRefsByKey.current['requirements'] = sectionElement)
+        }
         isVisible={visibleSections.has('requirements')}
       />
 
       <CohortsStructure
-        sectionRef={(sectionElement) => (sectionRefsByKey.current['structure'] = sectionElement)}
+        sectionRef={(sectionElement) =>
+          (sectionRefsByKey.current['structure'] = sectionElement)
+        }
         isVisible={visibleSections.has('structure')}
       />
 
       <CohortsProjects
-        sectionRef={(sectionElement) => (sectionRefsByKey.current['cohortVideos'] = sectionElement)}
+        sectionRef={(sectionElement) =>
+          (sectionRefsByKey.current['cohortVideos'] = sectionElement)
+        }
         isVisible={visibleSections.has('cohortVideos')}
       />
 
       <CohortsPhotos
-        sectionRef={(sectionElement) => (sectionRefsByKey.current['photos'] = sectionElement)}
+        sectionRef={(sectionElement) =>
+          (sectionRefsByKey.current['photos'] = sectionElement)
+        }
         isVisible={visibleSections.has('photos')}
       />
 
       <CohortsTestimonials
-        sectionRef={(sectionElement) => (sectionRefsByKey.current['testimonials'] = sectionElement)}
+        sectionRef={(sectionElement) =>
+          (sectionRefsByKey.current['testimonials'] = sectionElement)
+        }
         isVisible={visibleSections.has('testimonials')}
       />
 
       <CohortsApplication
-        sectionRef={(sectionElement) => (sectionRefsByKey.current['apply'] = sectionElement)}
+        sectionRef={(sectionElement) =>
+          (sectionRefsByKey.current['apply'] = sectionElement)
+        }
         isVisible={visibleSections.has('apply')}
         currentCohortStatusData={currentCohortStatusData}
         actionLinks={actionLinks || undefined}
@@ -222,4 +246,3 @@ export default function CohortPage() {
     </div>
   );
 }
-

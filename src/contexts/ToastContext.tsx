@@ -1,5 +1,11 @@
 'use client';
-import { createContext, useContext, useState, ReactNode, useCallback } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  ReactNode,
+  useCallback,
+} from 'react';
 import Toast from '@/components/toast/toast';
 import { LABELS } from '@/app/labels';
 
@@ -23,18 +29,23 @@ export function ToastProvider({ children }: { children: ReactNode }) {
 
   const showToast = useCallback((message: string, type: ToastType) => {
     const toastId = crypto.randomUUID();
-    setActiveToasts(previousToasts => [...previousToasts, { id: toastId, message, type }]);
+    setActiveToasts((previousToasts) => [
+      ...previousToasts,
+      { id: toastId, message, type },
+    ]);
   }, []);
 
   const hideToast = useCallback((toastId: string) => {
-    setActiveToasts(previousToasts => previousToasts.filter(toast => toast.id !== toastId));
+    setActiveToasts((previousToasts) =>
+      previousToasts.filter((toast) => toast.id !== toastId)
+    );
   }, []);
 
   return (
     <ToastContext.Provider value={{ showToast, hideToast }}>
       {children}
-      <div className="toast-container">
-        {activeToasts.map(toast => (
+      <div className='toast-container'>
+        {activeToasts.map((toast) => (
           <Toast
             key={toast.id}
             message={toast.message}

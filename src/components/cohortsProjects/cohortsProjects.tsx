@@ -78,9 +78,9 @@ interface CohortsProjectsProps {
   isVisible?: boolean;
 }
 
-export default function CohortsProjects({ 
-  sectionRef, 
-  isVisible = false 
+export default function CohortsProjects({
+  sectionRef,
+  isVisible = false,
 }: CohortsProjectsProps) {
   const [selectedYear, setSelectedYear] = useState(2024);
 

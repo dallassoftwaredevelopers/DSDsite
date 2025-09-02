@@ -30,7 +30,11 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return (
     <div className={styles.overlay}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
-        <button className={styles.closeButton} onClick={onClose} aria-label={LABELS.accessibility.closeModalText}>
+        <button
+          className={styles.closeButton}
+          onClick={onClose}
+          aria-label={LABELS.accessibility.closeModalText}
+        >
           &times;
         </button>
         <div className={styles.content}>{children}</div>

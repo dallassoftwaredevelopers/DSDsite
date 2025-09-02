@@ -19,11 +19,11 @@ export default function AboutTeam() {
     refetchOnMount: false,
   });
 
-  const adminTeam = useMemo(
-    () => {
-      if (!peopleDataResponse) return [];
-      
-      const transformedData: Speaker[] = peopleDataResponse.map((person: any) => ({
+  const adminTeam = useMemo(() => {
+    if (!peopleDataResponse) return [];
+
+    const transformedData: Speaker[] = peopleDataResponse.map(
+      (person: any) => ({
         id: person.documentId,
         name: person.fullName,
         role: 'Admin',
@@ -31,12 +31,11 @@ export default function AboutTeam() {
         photoUrl: person.imageUrl,
         linkedin: person.linkedInUrl,
         isAdmin: person.isAdmin,
-      }));
-      
-      return transformedData.filter((person) => person.isAdmin);
-    },
-    [peopleDataResponse]
-  );
+      })
+    );
+
+    return transformedData.filter((person) => person.isAdmin);
+  }, [peopleDataResponse]);
 
   return (
     <section className={styles.teamSection}>

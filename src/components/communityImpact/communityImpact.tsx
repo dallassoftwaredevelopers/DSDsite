@@ -5,7 +5,9 @@ import { LABELS } from '@/app/labels';
 
 export default function CommunityImpact() {
   return (
-    <section className={`${styles.sectionContainer} ${styles.gradientBackground} ${styles.sectionVisible}`}>
+    <section
+      className={`${styles.sectionContainer} ${styles.gradientBackground} ${styles.sectionVisible}`}
+    >
       <div className={styles.contentWrapper}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>

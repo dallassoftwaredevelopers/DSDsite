@@ -12,7 +12,11 @@ interface CommunitySpeakersProps {
   sectionRef: (el: HTMLElement | null) => void;
 }
 
-export default function CommunitySpeakers({ isVisible, onOpenModal, sectionRef }: CommunitySpeakersProps) {
+export default function CommunitySpeakers({
+  isVisible,
+  onOpenModal,
+  sectionRef,
+}: CommunitySpeakersProps) {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
 
   return (

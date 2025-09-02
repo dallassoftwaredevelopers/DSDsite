@@ -14,7 +14,8 @@ const testimonials = [
     quote:
       'The biggest benefit of the cohort was providing an environment to practice development in a collaborative team setting, which was something I couldn\'t get from just working on small  projects alone. Working with others on a large project over 6 weeks gave me the confidence and skills I needed to excel during my internship, which eventually led to a full-time offer. I\'ve since had the opportunity to return as a cohort lead, continuing to build my leadership skills while giving back to the community that helped launch my career.',
     cohort: 'Cohort 8',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/aaryanDas.jpg',
+    image:
+      'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/aaryanDas.jpg',
     linkedIn: 'https://linkedin.com',
   },
   {
@@ -24,7 +25,8 @@ const testimonials = [
     company: 'NBC Universal',
     quote:
       'The cohort provided invaluable guidance from professionals actively working in the industry and taught me how to collaborate effectively within a team. It played a pivotal role in helping me break into tech. Now, as a professional developer, I have had the privilege of returning as a lead to mentor and support others who are now on the same journey I once was.',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/yoonJinBae.jpg',
+    image:
+      'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/yoonJinBae.jpg',
     linkedIn: 'https://www.linkedin.com/in/bae-yoojin/',
   },
   {
@@ -35,7 +37,8 @@ const testimonials = [
     quote:
       'Thanks to the DSD Cohort I was able to gain experience working in a team environment, showcase my skills, and catch a glimpse of what developer life is actually like. The experience I gained from the cohort resulted in a job offer shortly after.',
     cohort: 'Cohort 9',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
+    image:
+      'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
     linkedIn: 'https://linkedin.com',
   },
   {
@@ -46,7 +49,8 @@ const testimonials = [
     quote:
       'The DSD Cohort program transformed my career trajectory. After being laid off, the 6-week program pushed me outside my comfort zone, working on a team to build a full-stack project that I showcased in interviews, helping me land my new developer role.',
     cohort: 'Cohort 9',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/staciSoutherland.jpg',
+    image:
+      'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/staciSoutherland.jpg',
     linkedIn: 'https://www.linkedin.com/in/stacisoutherland/',
   },
   {
@@ -57,7 +61,8 @@ const testimonials = [
     quote:
       'I highly recommend the DSD cohort program. It gave me the opportunity to collaborate with a team of talented developers on a real project and boosted my confidence to continue pursuing a career in software development, ultimately helping me land my first job as a software developer',
     cohort: 'Cohort 9',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/tatianaBertazoli.jpg',
+    image:
+      'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/tatianaBertazoli.jpg',
     linkedIn: 'https://www.linkedin.com/in/tatibertazoli/',
   },
   {
@@ -68,7 +73,8 @@ const testimonials = [
     quote:
       'Going from building projects on my own to working with a team in the DSD cohort was a game-changer. It pushed me to grow faster as a developer, get more involved in the Boston tech community, and land my first client.',
     cohort: 'Cohort 9',
-    image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/andrewSmith.jpg',
+    image:
+      'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/andrewSmith.jpg',
     linkedIn: 'https://www.linkedin.com/in/andrew-sm1th/',
   },
 ];
@@ -249,7 +255,7 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
             className={`${styles.carouselIndicator} ${index === currentIndex ? styles.active : ''}`}
             onClick={() => scrollToIndex(index)}
             aria-label={`${LABELS.cohorts.testimonials.goToTestimonial} ${index + 1}`}
-            type="button"
+            type='button'
           />
         ))}
       </div>
@@ -262,9 +268,9 @@ interface CohortsTestimonialsProps {
   isVisible?: boolean;
 }
 
-export default function CohortsTestimonials({ 
-  sectionRef, 
-  isVisible = false 
+export default function CohortsTestimonials({
+  sectionRef,
+  isVisible = false,
 }: CohortsTestimonialsProps) {
   /* Randomize testimonials once when component mounts
    * This is so that the testimonials appear in a different order each time the component is rendered
@@ -294,26 +300,44 @@ export default function CohortsTestimonials({
           <div className={styles.outcomesStats}>
             <div className={styles.outcomeStat}>
               <span className={styles.outcomeNumber}>
-                {LABELS.cohorts.testimonials.careerOutcomes.stats.jobSuccess.percentage}
+                {
+                  LABELS.cohorts.testimonials.careerOutcomes.stats.jobSuccess
+                    .percentage
+                }
               </span>
               <span className={styles.outcomeLabel}>
-                {LABELS.cohorts.testimonials.careerOutcomes.stats.jobSuccess.label}
+                {
+                  LABELS.cohorts.testimonials.careerOutcomes.stats.jobSuccess
+                    .label
+                }
               </span>
             </div>
             <div className={styles.outcomeStat}>
               <span className={styles.outcomeNumber}>
-                {LABELS.cohorts.testimonials.careerOutcomes.stats.interviewConfidence.percentage}
+                {
+                  LABELS.cohorts.testimonials.careerOutcomes.stats
+                    .interviewConfidence.percentage
+                }
               </span>
               <span className={styles.outcomeLabel}>
-                {LABELS.cohorts.testimonials.careerOutcomes.stats.interviewConfidence.label}
+                {
+                  LABELS.cohorts.testimonials.careerOutcomes.stats
+                    .interviewConfidence.label
+                }
               </span>
             </div>
             <div className={styles.outcomeStat}>
               <span className={styles.outcomeNumber}>
-                {LABELS.cohorts.testimonials.careerOutcomes.stats.recommendation.percentage}
+                {
+                  LABELS.cohorts.testimonials.careerOutcomes.stats
+                    .recommendation.percentage
+                }
               </span>
               <span className={styles.outcomeLabel}>
-                {LABELS.cohorts.testimonials.careerOutcomes.stats.recommendation.label}
+                {
+                  LABELS.cohorts.testimonials.careerOutcomes.stats
+                    .recommendation.label
+                }
               </span>
             </div>
           </div>

@@ -54,9 +54,9 @@ interface CohortsDetailsProps {
   isVisible?: boolean;
 }
 
-export default function CohortsDetails({ 
-  sectionRef, 
-  isVisible = false 
+export default function CohortsDetails({
+  sectionRef,
+  isVisible = false,
 }: CohortsDetailsProps) {
   return (
     <section
@@ -83,9 +83,7 @@ export default function CohortsDetails({
         <div className={styles.programHighlightsGrid}>
           <div className={styles.programHighlightItem}>
             <h3>{LABELS.cohorts.details.highlights.whatYouBuild.title}</h3>
-            <p>
-              {LABELS.cohorts.details.highlights.whatYouBuild.description}
-            </p>
+            <p>{LABELS.cohorts.details.highlights.whatYouBuild.description}</p>
           </div>
           <div className={styles.programHighlightItem}>
             <h3>{LABELS.cohorts.details.highlights.whoYouMeet.title}</h3>
