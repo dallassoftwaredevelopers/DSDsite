@@ -19,7 +19,9 @@ export default function SocialSection() {
         <div className={styles.socialText}>
           <h2 className={styles.socialHeading}>
             {LABELS.social.heading_parts.before_discord}
-            <span className={styles.highlight}>{LABELS.social.heading_parts.discord}</span>
+            <span className={styles.highlight}>
+              {LABELS.social.heading_parts.discord}
+            </span>
             {LABELS.social.heading_parts.after_discord}
           </h2>
           <p className={styles.socialSubheading}>{LABELS.social.subheading}</p>

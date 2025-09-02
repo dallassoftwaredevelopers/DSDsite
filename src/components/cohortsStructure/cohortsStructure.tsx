@@ -38,9 +38,9 @@ interface CohortsStructureProps {
   isVisible?: boolean;
 }
 
-export default function CohortsStructure({ 
-  sectionRef, 
-  isVisible = false 
+export default function CohortsStructure({
+  sectionRef,
+  isVisible = false,
 }: CohortsStructureProps) {
   return (
     <section

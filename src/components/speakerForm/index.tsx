@@ -7,6 +7,8 @@ const SpeakerFormComponent = dynamic(() => import('./speakerForm'), {
   ssr: false,
 });
 
-export default function SpeakerForm(props: ComponentProps<typeof SpeakerFormComponent>) {
+export default function SpeakerForm(
+  props: ComponentProps<typeof SpeakerFormComponent>
+) {
   return <SpeakerFormComponent {...props} />;
 }

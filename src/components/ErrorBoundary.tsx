@@ -13,7 +13,10 @@ interface ErrorBoundaryState {
   error?: Error;
 }
 
-export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
+export default class ErrorBoundary extends Component<
+  ErrorBoundaryProps,
+  ErrorBoundaryState
+> {
   constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
@@ -29,14 +32,16 @@ export default class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBo
 
   render() {
     if (this.state.hasError) {
-      return this.props.fallback || (
-        <div className="error-fallback">
-          <h2>{LABELS.errorHandling.somethingWentWrongTitle}</h2>
-          <p>{LABELS.errorHandling.unexpectedErrorMessage}</p>
-          <button onClick={() => this.setState({ hasError: false })}>
-            {LABELS.errorHandling.tryAgainButtonText}
-          </button>
-        </div>
+      return (
+        this.props.fallback || (
+          <div className='error-fallback'>
+            <h2>{LABELS.errorHandling.somethingWentWrongTitle}</h2>
+            <p>{LABELS.errorHandling.unexpectedErrorMessage}</p>
+            <button onClick={() => this.setState({ hasError: false })}>
+              {LABELS.errorHandling.tryAgainButtonText}
+            </button>
+          </div>
+        )
       );
     }
 

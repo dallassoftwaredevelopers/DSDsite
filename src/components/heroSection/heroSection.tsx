@@ -10,9 +10,9 @@ import { useVideoPlayer } from '@/hooks/useVideoPlayer';
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { videoRef, isPlaying, togglePlayback } = useVideoPlayer();
-  
+
   useScrollEffect({
-    parallaxElementsContainer: heroRef
+    parallaxElementsContainer: heroRef,
   });
 
   return (
@@ -60,7 +60,11 @@ export default function HeroSection() {
               {LABELS.hero.join_community}
               <span className={styles.ctaArrow}>→</span>
             </Link>
-            <Link href='https://www.meetup.com/dallas-software-developers-meetup/' className={styles.secondaryCta} target='_blank'>
+            <Link
+              href='https://www.meetup.com/dallas-software-developers-meetup/'
+              className={styles.secondaryCta}
+              target='_blank'
+            >
               {LABELS.hero.explore_events}
             </Link>
           </div>
@@ -103,9 +107,9 @@ export default function HeroSection() {
                 preload='none'
                 poster='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/videoPlaceholder.png'
               >
-                <source 
+                <source
                   src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/MeetupIntro.mp4'
-                  type='video/mp4' 
+                  type='video/mp4'
                 />
                 {LABELS.hero.video_unsupported}
               </video>
@@ -115,11 +119,9 @@ export default function HeroSection() {
               <button
                 className={`${styles.playButton} ${isPlaying ? styles.playButtonHidden : ''}`}
                 aria-label={
-                  isPlaying
-                    ? LABELS.hero.pause_video
-                    : LABELS.hero.play_video
+                  isPlaying ? LABELS.hero.pause_video : LABELS.hero.play_video
                 }
-                type="button"
+                type='button'
               >
                 <div className={styles.playIcon}></div>
               </button>

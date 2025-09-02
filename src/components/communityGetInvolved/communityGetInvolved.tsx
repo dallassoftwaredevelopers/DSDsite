@@ -9,7 +9,11 @@ interface CommunityGetInvolvedProps {
   sectionRef: (el: HTMLElement | null) => void;
 }
 
-export default function CommunityGetInvolved({ isVisible, onOpenModal, sectionRef }: CommunityGetInvolvedProps) {
+export default function CommunityGetInvolved({
+  isVisible,
+  onOpenModal,
+  sectionRef,
+}: CommunityGetInvolvedProps) {
   return (
     <section
       ref={sectionRef}

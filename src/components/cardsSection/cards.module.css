@@ -198,10 +198,9 @@
 }
 
 .customCard {
-
   max-width: 340px;
   min-height: 480px;
-  overflow: visible; 
+  overflow: visible;
 }
 
 .customCard:hover {

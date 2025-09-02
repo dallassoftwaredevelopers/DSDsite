@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './groupPhotoSection.module.css';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import BackgroundPattern from '@/components/decorative/backgroundPattern';
@@ -17,7 +17,9 @@ export default function GroupPhotoSection() {
     const interval = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % groupPhotos.length);
+        setCurrentPhotoIndex(
+          (prevIndex) => (prevIndex + 1) % groupPhotos.length
+        );
         setIsTransitioning(false);
       }, 500);
     }, 5000);

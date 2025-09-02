@@ -64,7 +64,7 @@ export default function Navbar() {
   useScrollEffect({
     onScrollPositionChange: (scrollY) => {
       setScrolled(scrollY > 50);
-    }
+    },
   });
 
   useBodyScrollLock(isNavVisible);

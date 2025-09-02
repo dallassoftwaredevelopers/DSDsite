@@ -44,7 +44,7 @@ export default function SpeakerForm({
     setIsSubmitting,
     handleChange,
     setValue,
-    validate
+    validate,
   } = useForm<FormData>(
     {
       fullName: '',
@@ -52,26 +52,28 @@ export default function SpeakerForm({
       linkedInUrl: '',
       topic: '',
       briefDescription: '',
-      token: ''
+      token: '',
     },
     {
       fullName: [{ isFieldRequired: true }],
       email: [
         { isFieldRequired: true },
-        { validationRegexPattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ }
+        { validationRegexPattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
       ],
       linkedInUrl: [
         { isFieldRequired: true },
-        { customValidationFunction: (value) => !isValidHttpUrl(value as string) ? LABELS.speakerForm.errors.linked_in_invalid : undefined }
+        {
+          customValidationFunction: (value) =>
+            !isValidHttpUrl(value as string)
+              ? LABELS.speakerForm.errors.linked_in_invalid
+              : undefined,
+        },
       ],
-      topic: [
-        { isFieldRequired: true },
-        { maximumCharacterLength: 100 }
-      ],
+      topic: [{ isFieldRequired: true }, { maximumCharacterLength: 100 }],
       briefDescription: [
         { isFieldRequired: true },
-        { maximumCharacterLength: 500 }
-      ]
+        { maximumCharacterLength: 500 },
+      ],
     }
   );
 
@@ -82,16 +84,16 @@ export default function SpeakerForm({
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setMessage(null);
     e.preventDefault();
-    
+
     if (validate()) {
       setIsSubmitting(true);
-      
+
       const hasValidSiteKey = siteKey && siteKey !== 'RECAPTCHA_SITEKEY';
       const token =
         localEnv || !hasValidSiteKey
           ? 'localEnv'
           : captchaRef.current?.getValue();
-          
+
       if (!token && hasValidSiteKey && !localEnv) {
         setMessage({
           message: LABELS.speakerForm.errors.recaptcha_required,

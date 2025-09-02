@@ -15,13 +15,13 @@ export default function AboutCTA() {
       </div>
       <div className={styles.ctaContent}>
         <h2 className={styles.ctaTitle}>{LABELS.about.cta.title}</h2>
-        <p className={styles.ctaSubtitle}>
-          {LABELS.about.cta.subtitle}
-        </p>
+        <p className={styles.ctaSubtitle}>{LABELS.about.cta.subtitle}</p>
         <div className={styles.ctaButtons}>
           <Link href='/community' className={styles.primaryButton}>
             {LABELS.about.cta.join_community}
-            <span className={styles.buttonArrow}>{LABELS.about.cta.button_arrow}</span>
+            <span className={styles.buttonArrow}>
+              {LABELS.about.cta.button_arrow}
+            </span>
           </Link>
           <Link href='/cohorts' className={styles.secondaryButton}>
             {LABELS.about.cta.explore_programs}

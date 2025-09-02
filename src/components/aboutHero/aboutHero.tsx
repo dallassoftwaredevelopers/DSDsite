@@ -49,16 +49,16 @@ export default function AboutHero() {
       <div className={styles.heroContent}>
         <div className={styles.heroText}>
           <h1 className={styles.heroTitle}>
-            <span className={styles.titleLine}>{LABELS.about.hero.title_about}</span>
+            <span className={styles.titleLine}>
+              {LABELS.about.hero.title_about}
+            </span>
             <span className={styles.titleLine}>
               <span className={styles.highlight}>
                 {LABELS.about.hero.title_highlight}
               </span>
             </span>
           </h1>
-          <p className={styles.heroSubtitle}>
-            {LABELS.about.hero.subtitle}
-          </p>
+          <p className={styles.heroSubtitle}>{LABELS.about.hero.subtitle}</p>
         </div>
       </div>
     </section>
