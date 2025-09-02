@@ -108,7 +108,6 @@ export async function getSpeakers(): Promise<Speaker[]> {
     const endpoint = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries`;
     const response = await fetch(`${endpoint}?${params.toString()}`, {
       next: { revalidate: 0 }, // Disable caching for development
-      cache: 'no-store',
     });
 
     if (!response.ok) {

@@ -1,5 +1,5 @@
 'use client';
-import Spinner from '../../components/spinner/spinner';
+import Spinner from '@/components/spinner/spinner';
 
 import { useQuery } from '@tanstack/react-query';
 import {

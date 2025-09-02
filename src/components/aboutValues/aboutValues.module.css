@@ -1,0 +1,101 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  color: hsl(var(--dark));
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.valuesSection {
+  padding: var(--spacing-12) 0;
+  background: hsl(var(--light));
+  position: relative;
+  overflow: hidden;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.valueCard {
+  background: white;
+  padding: var(--spacing-6);
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.valueCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.valueIcon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-4);
+  display: inline-block;
+  animation: bounce 2s infinite;
+}
+
+.valueCard:nth-child(2) .valueIcon {
+  animation-delay: 0.2s;
+}
+
+.valueCard:nth-child(3) .valueIcon {
+  animation-delay: 0.4s;
+}
+
+.valueCard:nth-child(4) .valueIcon {
+  animation-delay: 0.6s;
+}
+
+.valueTitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-3);
+  color: hsl(var(--dark));
+}
+
+.valueDescription {
+  color: hsl(var(--dark) / 0.7);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .valueIcon {
+    font-size: 2rem;
+  }
+}

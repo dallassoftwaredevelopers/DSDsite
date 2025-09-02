@@ -27,7 +27,6 @@ export async function POST(request: NextRequest) {
     return new Response(null, { status: 400, statusText: 'Missing fields' });
   }
 
-  // In development, we use faker to generate random images
   if (
     process.env.NODE_ENV === 'development' &&
     process.env.NEXT_PUBLIC_APPWRITE_HASKEY === 'false'
@@ -42,7 +41,6 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  // Verify the reCAPTCHA token
   const recaptchaResponse = await fetch(getRecaptchaSiteUrl(formData.token), {
     method: 'POST',
   });

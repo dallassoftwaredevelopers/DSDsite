@@ -1,0 +1,119 @@
+
+.sectionContainer {
+  width: 100%;
+  padding: var(--spacing-24) 0;
+}
+
+.sectionContainer.altBackground {
+  background: hsl(var(--muted));
+}
+
+.sectionContainer .contentWrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.sectionContainer.sectionVisible .contentWrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.sectionTitle {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-6);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--spacing-3);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
+  border-radius: var(--border-radius-full);
+}
+
+.sectionDescription {
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+  color: hsla(var(--dark), 0.7);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.getInvolvedCard {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-12);
+  background: hsl(var(--light));
+  border-radius: var(--border-radius-xl);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+  border: 2px solid hsla(var(--primary), 0.1);
+  transition: all 0.3s ease;
+}
+
+.getInvolvedCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: hsla(var(--primary), 0.2);
+}
+
+.getInvolvedContent h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--dark));
+  margin: var(--spacing-6) 0 var(--spacing-4);
+}
+
+.getInvolvedContent p {
+  font-size: var(--text-lg);
+  color: hsla(var(--dark), 0.7);
+  margin-bottom: var(--spacing-8);
+  line-height: 1.6;
+}
+
+.getInvolvedIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
+  border-radius: 50%;
+  color: hsl(var(--light));
+  margin: 0 auto var(--spacing-4);
+}

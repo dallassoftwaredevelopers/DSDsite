@@ -121,16 +121,18 @@ export default function NotificationForm() {
           Get Notified
         </button>
       </form>
-      <div
-        className={[
-          styles.formMessage,
-          message?.type === 'error'
-            ? styles.errorMessage
-            : styles.successMessage,
-        ].join(' ')}
-      >
-        {message?.message}
-      </div>
+      {message && (
+        <div
+          className={[
+            styles.formMessage,
+            message.type === 'error'
+              ? styles.errorMessage
+              : styles.successMessage,
+          ].join(' ')}
+        >
+          {message.message}
+        </div>
+      )}
     </div>
   );
 }

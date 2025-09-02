@@ -13,7 +13,6 @@ interface ActionLink {
 }
 
 export async function GET() {
-  // In development, we use faker to generate random images
   if (
     process.env.NODE_ENV === 'development' &&
     process.env.NEXT_PUBLIC_APPWRITE_HASKEY === 'false'

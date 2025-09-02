@@ -1,0 +1,184 @@
+
+.sectionContainer {
+  width: 100%;
+  padding: var(--spacing-24) 0;
+}
+
+.sectionContainer .contentWrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.sectionContainer.sectionVisible .contentWrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionContainer.altBackground {
+  background: hsl(var(--muted));
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.sectionTitle {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-6);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--spacing-3);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
+  border-radius: var(--border-radius-full);
+}
+
+.detailsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-8);
+}
+
+.detailCard {
+  text-align: center;
+  padding: var(--spacing-10);
+  background: hsl(var(--light));
+  border-radius: var(--border-radius-xl);
+  border: 2px solid hsla(var(--primary), 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.detailCard::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    hsla(var(--primary), 0.1) 0%,
+    transparent 70%
+  );
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+
+.detailCard:hover {
+  border-color: hsla(var(--primary), 0.3);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.detailCard:hover::after {
+  transform: scale(1);
+}
+
+.detailIcon {
+  font-size: var(--text-4xl);
+  margin-bottom: var(--spacing-4);
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.detailCard h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-3);
+  position: relative;
+  z-index: 1;
+}
+
+.detailCard p {
+  font-size: var(--text-base);
+  color: hsla(var(--dark), 0.7);
+  margin: 0;
+  line-height: 1.5;
+  position: relative;
+  z-index: 1;
+}
+
+.programHighlightsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-16);
+}
+
+.programHighlightItem {
+  padding: var(--spacing-8);
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.05) 0%,
+    hsla(var(--primary), 0.1) 100%
+  );
+  border-radius: var(--border-radius-xl);
+  border: 2px solid hsla(var(--primary), 0.1);
+}
+
+.programHighlightItem h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-3);
+}
+
+.programHighlightItem p {
+  font-size: var(--text-base);
+  color: hsla(var(--dark), 0.7);
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .detailCard h3 {
+    font-size: 1.1rem;
+  }
+  .detailCard p {
+    font-size: 0.9rem;
+  }
+}

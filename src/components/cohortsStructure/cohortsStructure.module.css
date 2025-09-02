@@ -1,0 +1,214 @@
+
+.sectionContainer {
+  width: 100%;
+  padding: var(--spacing-24) 0;
+}
+
+.sectionContainer .contentWrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.sectionContainer.sectionVisible .contentWrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionContainer.altBackground {
+  background: hsl(var(--muted));
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.sectionTitle {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-6);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--spacing-3);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
+  border-radius: var(--border-radius-full);
+}
+
+.sectionDescription {
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+  color: hsla(var(--dark), 0.7);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: var(--spacing-12);
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(
+    180deg,
+    hsl(var(--primary)) 0%,
+    hsla(var(--primary), 0.3) 100%
+  );
+}
+
+.timelineItem {
+  position: relative;
+  margin-bottom: var(--spacing-12);
+  padding-left: var(--spacing-8);
+}
+
+.timelineMarker {
+  position: absolute;
+  left: -var(--spacing-12);
+  top: -20px; 
+  width: 80px;
+  height: 40px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  border-radius: var(--border-radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--light));
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-sm);
+  box-shadow:
+    0 0 0 4px hsl(var(--light)),
+    0 0 0 6px hsla(var(--primary), 0.2);
+  transition: all 0.3s ease;
+}
+
+.timelineItem:hover .timelineMarker {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 0 4px hsl(var(--light)),
+    0 0 0 8px hsla(var(--primary), 0.3);
+}
+
+.timelineContent h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-3);
+  padding-top: 40px;
+}
+
+.weekLabel {
+  color: hsl(var(--primary));
+  font-weight: var(--font-weight-bold);
+  margin-right: var(--spacing-2);
+}
+
+.timelineContent ul {
+  margin: 0;
+  padding-left: var(--spacing-6);
+  list-style-type: none;
+}
+
+.timelineContent li {
+  position: relative;
+  font-size: var(--text-base);
+  color: hsla(var(--dark), 0.7);
+  margin-bottom: var(--spacing-2);
+  padding-left: var(--spacing-6);
+}
+
+.timelineContent li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: hsl(var(--primary));
+  font-weight: var(--font-weight-bold);
+}
+
+.scheduleNote {
+  max-width: 800px;
+  margin: var(--spacing-16) auto 0;
+  padding: var(--spacing-8);
+  background: hsl(var(--light));
+  border-radius: var(--border-radius-xl);
+  border: 2px solid hsla(var(--primary), 0.1);
+  text-align: center;
+}
+
+.scheduleNote h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-3);
+}
+
+.scheduleNote p {
+  font-size: var(--text-base);
+  color: hsla(var(--dark), 0.7);
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding: var(--spacing-4) 0;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timelineItem {
+    padding-left: 50px;
+    margin-bottom: var(--spacing-6);
+  }
+
+  .timelineMarker {
+    left: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .timelineContent h3 {
+    font-size: 1rem;
+  }
+
+  .weekLabel {
+    font-size: 0.9rem;
+  }
+}

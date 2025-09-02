@@ -1,4 +1,4 @@
-import SpeakersList from '../components/speakersList/speakersList';
+import SpeakersList from '@/components/speakersList/speakersList';
 
 export default function SpeakersPage() {
   return (

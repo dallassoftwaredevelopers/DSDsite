@@ -18,7 +18,6 @@ export async function POST(request: NextRequest) {
 
   const formData = await request.json();
 
-  // In development, we use faker to generate random images
   if (
     process.env.NODE_ENV === 'development' &&
     process.env.NEXT_PUBLIC_APPWRITE_HASKEY === 'false'
@@ -37,7 +36,6 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Missing field' }, { status: 400 });
   }
 
-  // Verify the reCAPTCHA token
   const recaptchaResponse = await fetch(getRecaptchaSiteUrl(formData.token), {
     method: 'POST',
   });

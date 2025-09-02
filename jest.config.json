@@ -2,6 +2,32 @@
   "testEnvironment": "jsdom",
   "setupFilesAfterEnv": ["<rootDir>/__test__/setupTests.js"],
   "moduleNameMapper": {
-    "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js"
-  }
+    "^@/(.*)$": "<rootDir>/src/$1",
+    "^next/link$": "<rootDir>/__mocks__/next/link.js",
+    "^next/navigation$": "<rootDir>/__mocks__/next/navigation.js",
+    "^next/router$": "<rootDir>/__mocks__/next/router.js",
+    "^@/hooks/(.*)$": "<rootDir>/__mocks__/hooks.js",
+    "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js",
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+  },
+  "transform": {
+    "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
+  },
+  "testMatch": [
+    "<rootDir>/src/**/__tests__/**/*.(test|spec).(js|jsx|ts|tsx)",
+    "<rootDir>/src/**/*.(test|spec).(js|jsx|ts|tsx)"
+  ],
+  "testPathIgnorePatterns": [
+    "<rootDir>/.next/",
+    "<rootDir>/node_modules/"
+  ],
+  "collectCoverageFrom": [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!src/**/*.d.ts",
+    "!src/**/*.stories.{js,jsx,ts,tsx}"
+  ],
+  "coveragePathIgnorePatterns": [
+    "<rootDir>/node_modules/",
+    "<rootDir>/.next/"
+  ]
 }

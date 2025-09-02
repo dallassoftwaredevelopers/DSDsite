@@ -162,6 +162,41 @@ export const LABELS = {
       'Cyber Security',
       'Career Growth',
     ],
+    statsArray: [
+      {
+        number: '500+',
+        label: 'Community Members',
+      },
+      {
+        number: '100+',
+        label: 'Past Speakers',
+      },
+      {
+        number: '24+',
+        label: 'Meetups Per Year',
+      },
+      {
+        number: '100%',
+        label: 'Volunteer-Driven',
+      },
+    ],
+    highlightsArray: [
+      {
+        title: 'Community-First',
+        description:
+          'Everything we do is driven by our community members and their needs',
+      },
+      {
+        title: 'Expert Speakers',
+        description:
+          'Learn from industry professionals and thought leaders in tech',
+      },
+      {
+        title: 'Volunteer-Driven',
+        description:
+          'Run entirely by passionate volunteers dedicated to the community',
+      },
+    ],
   },
   communityBento: {
     hero: {
@@ -262,16 +297,16 @@ export const LABELS = {
       },
       highlights: {
         realWorld: {
-          title: 'Real-World Experience',
-          description: 'Build a deployable MVP for your portfolio',
+          title: 'Solve Real Problems',
+          description: 'Build a technical solution that addresses a real need in the community',
         },
         mentorship: {
           title: 'Industry Mentorship',
-          description: 'Learn from professionals at top Dallas companies',
+          description: 'Work as a team but also get guidance from professionals at top Dallas companies',
         },
         free: {
-          title: '100% Free',
-          description: 'No cost to participate in our community program',
+          title: 'This is NOT a coding bootcamp',
+          description: 'Leads are not teachers. We don\'t teach you to code, we help you learn how to work on a team and build a real project. No To Do Apps here.',
         },
       },
       applyNow: 'Apply Now',
@@ -335,7 +370,7 @@ export const LABELS = {
         whatYouBuild: {
           title: "What You'll Build",
           description:
-            'Past cohorts have created job boards for the Dallas tech community, mentorship platforms connecting junior and senior developers, event management systems for local meetups, and developer tools that solve real problems.',
+            'Past cohorts have built and deployed Smart Apartment Building Tenant Portal, A booking system for local contract services, Dental Practice Management Platform, Smart Gym & Fitness Center portal, A Co-Working Space Rental Portal, and many more!',
         },
         whoYouMeet: {
           title: "Who You'll Meet",
@@ -385,26 +420,7 @@ export const LABELS = {
           'We understand that many participants have full-time jobs or other commitments. Most cohort activities happen in the evenings and weekends, with asynchronous work in between. Your team will establish a schedule that works for everyone.',
       },
     },
-    features: {
-      title: 'Key Features \u0026 Benefits',
-      items: {
-        realWorldExperience: {
-          title: 'Real-World Experience',
-          description:
-            'Build a deployable MVP that you can showcase in your portfolio. Past projects include job boards, community platforms, and developer tools that solve actual problems in the Dallas tech ecosystem.',
-        },
-        agileWorkflow: {
-          title: 'Agile Workflow Exposure',
-          description:
-            'Experience real sprint planning, daily standups, and retrospectives just like professional teams. Learn to use industry tools like GitHub, Jira, and Figma in a collaborative environment.',
-        },
-        peerCommunity: {
-          title: 'Peer Community',
-          description:
-            'Connect with a diverse cohort of developers from across DFW and beyond. Many participants have formed lasting professional relationships and even landed jobs through connections made during the program.',
-        },
-      },
-    },
+
     projects: {
       title: 'Cohort Projects',
       description:
@@ -521,6 +537,155 @@ export const LABELS = {
       },
       applyNow: 'Apply Now',
     },
+    programFeaturesArray: [
+      {
+        title: 'Real-World Experience',
+        description:
+          'Build a deployable MVP that you can showcase in your portfolio. Past projects include job boards, community platforms, and developer tools that solve actual problems in the Dallas tech ecosystem.',
+      },
+      {
+        title: 'Agile Workflow Exposure',
+        description:
+          'Experience real sprint planning, daily standups, and retrospectives just like professional teams. Learn to use industry tools like GitHub, Jira, and Figma in a collaborative environment.',
+      },
+      {
+        title: 'Peer Community',
+        description:
+          'Connect with a diverse cohort of developers from across DFW and beyond. Many participants have formed lasting professional relationships and even landed jobs through connections made during the program.',
+      },
+    ],
+    weeklyStructureArray: [
+      {
+        week: 'Week 1',
+        title: 'Onboarding & Project Kick-off',
+        activities: [
+          'Meet your cohort lead and teammates on Zoom',
+          'Select a project theme aligned to real industry needs',
+          'Set up your development environment and project repositories',
+        ],
+      },
+      {
+        week: 'Week 2-5',
+        title: 'Sprint Cycles',
+        activities: [
+          'Define user stories and wireframes using Figma and Miro',
+          'Develop features in iterative sprints with daily check-ins',
+          'Attend weekly "office hours" with industry mentors from the Dallas tech scene',
+          'Participate in code reviews and pair programming sessions',
+        ],
+      },
+      {
+        week: 'Week 6',
+        title: 'Final Demo & Next Steps',
+        activities: [
+          'Present your completed project to the DSD community at our monthly meetup',
+          'Receive feedback on code, design, and career trajectory from senior developers',
+          'Join the DSD alumni network for ongoing support and job opportunities',
+          'Add your project to your portfolio with professional documentation',
+        ],
+      },
+    ],
+    whoShouldJoinArray: [
+      {
+        title: 'Early-Career or Transitioning',
+        description:
+          "Whether you're a recent bootcamp grad, CS student, or professional changing careers, our cohorts provide the real-world experience that employers in Dallas-Fort Worth are looking for.",
+      },
+      {
+        title: 'Time Commitment',
+        description:
+          'Commit approximately 15-20 hours per week to teamwork, coding sprints, and mentorship sessions. We schedule around typical work hours to accommodate those with full-time jobs.',
+      },
+      {
+        title: 'Technical Foundation',
+        description:
+          "You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code. We don't expect mastery, just a willingness to learn.",
+      },
+    ],
+    programDetailsArray: [
+      {
+        title: 'Duration',
+        description:
+          'Six weeks of guided, hands-on development with a structured curriculum and clear milestones',
+      },
+      {
+        title: 'Format',
+        description:
+          'Fully remote with virtual collaboration tools—Dallas-area participants get priority on limited seats, but we welcome participants from anywhere',
+      },
+      {
+        title: 'Cost',
+        description:
+          '100% free. We run this as a community service to uplift aspiring developers and strengthen the Dallas tech ecosystem',
+      },
+    ],
+    testimonialsArray: [
+      {
+        id: 1,
+        name: 'Aaryan Das',
+        role: 'Software Engineer',
+        company: 'Bank Of America',
+        quote:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        cohort: 'Cohort 8',
+        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/aaryanDas.jpg',
+        linkedIn: 'https://linkedin.com',
+      },
+      {
+        id: 2,
+        name: 'Yoo Jin Bae',
+        role: 'Software Engineer',
+        company: 'NBC Universal',
+        quote:
+          'The cohort provided invaluable guidance from professionals actively working in the industry and taught me how to collaborate effectively within a team. It played a pivotal role in helping me break into tech. Now, as a professional developer, I\'ve had the privilege of returning as a lead to mentor and support others who are now on the same journey I once was.',
+        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/yoonJinBae.jpg',
+        linkedIn: 'https://www.linkedin.com/in/bae-yoojin/',
+      },
+      {
+        id: 3,
+        name: 'David Ogden III',
+        role: 'Associate Software Engineer',
+        company: 'L3Harris Technologies',
+        quote:
+          'Thanks to the DSD Cohort I was able to gain experience working in a team environment, showcase my skills, and catch a glimpse of what developer life is actually like. The experience I gained from the cohort resulted in a job offer shortly after.',
+        cohort: 'Cohort 9',
+        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
+        linkedIn: 'https://linkedin.com',
+      },
+      {
+        id: 4,
+        name: 'Staci Southerland',
+        role: 'Software Developer',
+        company: 'Onix Media',
+        quote:
+          'The DSD Cohort program transformed my career trajectory. After being laid off, the 6-week program pushed me outside my comfort zone, working on a team to build a full-stack project that I showcased in interviews, helping me land my new developer role.',
+        cohort: 'Cohort 9',
+        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/staciSoutherland.jpg',
+        linkedIn: 'https://www.linkedin.com/in/stacisoutherland/',
+      },
+      {
+        id: 5,
+        name: 'Tatiana Bertazoli',
+        role: 'Backend Developer',
+        company: 'uMode',
+        quote:
+          'I highly recommend the DSD cohort program. It gave me the opportunity to collaborate with a team of talented developers on a real project and boosted my confidence to continue pursuing a career in software development, ultimately helping me land my first job as a software developer',
+        cohort: 'Cohort 9',
+        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/tatianaBertazoli.jpg',
+        linkedIn: 'https://www.linkedin.com/in/tatibertazoli/',
+      },
+      {
+        id: 6,
+        name: 'Andrew Smith',
+        role: 'Software Developer',
+        company: 'Nautilus Architects',
+        quote:
+          'Going from building projects on my own to working with a team in the DSD cohort was a game-changer. It pushed me to grow faster as a developer, get more involved in the Boston tech community, and land my first client.',
+        cohort: 'Cohort 9',
+        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/andrewSmith.jpg',
+        linkedIn: 'https://www.linkedin.com/in/andrew-sm1th/',
+      },
+    ],
   },
   errorHandling: {
     somethingWentWrongTitle: 'Something went wrong',
@@ -549,5 +714,93 @@ export const LABELS = {
     tooLongPrefix: ' must be under ',
     charactersText: ' characters',
     pleaseCompleteRecaptchaText: 'Please complete the reCAPTCHA!',
+  },
+  about: {
+    hero: {
+      title_about: 'About',
+      title_highlight: 'Dallas Software Developers',
+      subtitle: 'Building the future of tech in Dallas, one developer at a time',
+    },
+    mission: {
+      title: 'Our Mission',
+      description:
+        'We are a vibrant community of developers, designers, and tech enthusiasts dedicated to fostering growth, collaboration, and innovation in the Dallas tech ecosystem. Through meetups, workshops, and collaborative projects, we empower individuals to reach their full potential.',
+      stats: {
+        active_members: '7400+',
+        active_members_label: 'Active Members',
+        events_per_year: '24',
+        events_per_year_label: 'Events Per Year',
+        free_and_open: '100%',
+        free_and_open_label: 'Free & Open',
+      },
+      image_alt: 'Community collaboration',
+    },
+    values: {
+      title: 'Our Core Values',
+      community_first: {
+        icon: '🤝',
+        title: 'Community First',
+        description:
+          'We believe in the power of community. Every member brings unique perspectives and experiences that enrich our collective knowledge.',
+      },
+      continuous_learning: {
+        icon: '🚀',
+        title: 'Continuous Learning',
+        description:
+          "Technology evolves rapidly, and so do we. We're committed to staying current with the latest trends and best practices.",
+      },
+      inclusivity: {
+        icon: '🌟',
+        title: 'Inclusivity',
+        description:
+          'Everyone is welcome here. We celebrate diversity and ensure our community is accessible to developers of all backgrounds and skill levels.',
+      },
+    },
+    offer: {
+      title: 'What We Offer',
+      monthly_meetups: {
+        title: 'Monthly Meetups',
+        description:
+          'Join us twice a month for in-person meetups featuring tech talks, networking, and hands-on workshops.',
+      },
+      conference: {
+        title: 'The Commit Your Code Conference',
+        description:
+          'An annual event where 100% of all ticket sales go to charity, bringing together developers, industry leaders, and enthusiasts for two days of learning, networking, and collaboration.',
+      },
+      career_support: {
+        title: 'Career Support',
+        description:
+          'Get guidance on career development, resume reviews, interview prep, and connect with hiring companies.',
+      },
+      open_source: {
+        title: 'Open Source Projects',
+        description:
+          'Contribute to real-world projects, build your portfolio, and collaborate with other developers.',
+      },
+      cohort_program: {
+        title: 'Cohort Program',
+        description:
+          'Be guided by professionals as you work on a team to build a project that is actually worth talking about in an interview.',
+      },
+      discord: {
+        title: 'Community Discord',
+        description:
+          'Stay connected 24/7 with our active Discord server where you can ask questions, share resources, and collaborate.',
+      },
+    },
+    team: {
+      title: 'Meet Our Team',
+      description:
+        'Meet the dedicated admin team volunteers who spend countless hours to support, guide, and inspire every member of our community.',
+    },
+    cta: {
+      title: 'Ready to Join Our Community?',
+      subtitle:
+        'Take the first step towards advancing your career and connecting with amazing developers',
+      join_community: 'Join the Community',
+      explore_programs: 'Explore Programs',
+      button_arrow: '→',
+    },
   },
 };

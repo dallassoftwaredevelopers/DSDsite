@@ -31,7 +31,7 @@ export function useForm<T extends Record<string, any>>(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setValue(name as keyof T, value);
+    setValue(name as keyof T, value as T[keyof T]);
   }, [setValue]);
 
   const validate = useCallback(() => {
@@ -41,7 +41,7 @@ export function useForm<T extends Record<string, any>>(
       const fieldKey = field as keyof T;
       const fieldValue = values[fieldKey];
       
-      rules?.forEach(rule => {
+      rules?.forEach((rule: NonNullable<typeof rules>[number]) => {
         if (rule.isFieldRequired && (!fieldValue || String(fieldValue).trim() === '')) {
           newErrors[fieldKey] = `${String(field)}${LABELS.validation.fieldRequiredSuffix}`;
           return;

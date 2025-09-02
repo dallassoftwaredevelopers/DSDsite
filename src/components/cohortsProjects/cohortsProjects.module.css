@@ -1,0 +1,133 @@
+
+.sectionContainer {
+  width: 100%;
+  padding: var(--spacing-24) 0;
+}
+
+.sectionContainer .contentWrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.sectionContainer.sectionVisible .contentWrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sectionContainer.primaryBackground {
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.05) 0%,
+    hsla(var(--primary-light), 0.03) 100%
+  );
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.sectionTitle {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-6);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--spacing-3);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
+  border-radius: var(--border-radius-full);
+}
+
+.sectionDescription {
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+  color: hsla(var(--dark), 0.7);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.cohortGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-8);
+  justify-items: center;
+}
+
+.yearSelector {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-12);
+  flex-wrap: wrap;
+}
+
+.yearButton {
+  padding: var(--spacing-3) var(--spacing-6);
+  background: hsla(var(--dark), 0.05);
+  border: 1px solid hsla(var(--dark), 0.1);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-medium);
+  color: hsla(var(--dark), 0.7);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.yearButton:hover {
+  background: hsla(var(--dark), 0.1);
+  transform: translateY(-2px);
+}
+
+.activeYear {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
+  color: hsl(var(--light));
+  border-color: transparent;
+  box-shadow: var(--shadow-md);
+}
+
+.activeYear:hover {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary-light)),
+    hsl(var(--primary))
+  );
+}
+
+@media (max-width: 768px) {
+  .cohortGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}

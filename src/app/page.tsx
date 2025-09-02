@@ -1,11 +1,11 @@
 'use client';
 
-import CardsSection from './components/cardsSection/cardsSection';
-import BannerSection from './components/bannerSection/bannerSection';
-import HeroSection from './components/heroSection/heroSection';
-import SocialSection from './components/socialSection/socialSection';
-import GroupPhotoSection from './components/groupPhotoSection/groupPhotoSection';
-import SponsorshipSection from './components/sponsorshipSection/sponsorshipSection';
+import CardsSection from '@/components/cardsSection/cardsSection';
+import BannerSection from '@/components/bannerSection/bannerSection';
+import HeroSection from '@/components/heroSection/heroSection';
+import SocialSection from '@/components/socialSection/socialSection';
+import GroupPhotoSection from '@/components/groupPhotoSection/groupPhotoSection';
+import SponsorshipSection from '@/components/sponsorshipSection/sponsorshipSection';
 import styles from './page.module.css';
 
 export default function Home() {

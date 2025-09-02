@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useContext, useState, ReactNode, useCallback } from 'react';
-import Toast from '@/app/components/toast/toast';
+import Toast from '@/components/toast/toast';
 import { LABELS } from '@/app/labels';
 
 type ToastType = 'success' | 'error' | 'warning' | 'info';

@@ -1,0 +1,223 @@
+
+.applySectionContainer {
+  width: 100%;
+  padding: var(--spacing-24) 0 0 0;
+}
+
+.applySectionContainer .contentWrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    transform 0.6s ease-out,
+    opacity 0.6s ease-out;
+  will-change: transform, opacity;
+}
+
+.applySectionContainer.sectionVisible .contentWrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.darkBackground {
+  background: linear-gradient(
+    135deg,
+    hsla(var(--dark), 0.03) 0%,
+    hsla(var(--dark), 0.05) 100%
+  );
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.sectionTitle {
+  font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-6);
+  line-height: 1.2;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -var(--spacing-3);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--primary-light))
+  );
+  border-radius: var(--border-radius-full);
+}
+
+.sectionDescription {
+  font-size: clamp(var(--text-base), 2vw, var(--text-lg));
+  color: hsla(var(--dark), 0.7);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.applicationSection {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.statusCard {
+  background: hsl(var(--light));
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-12);
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+  border: 2px solid hsla(var(--primary), 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.statusCard::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+.statusIcon {
+  margin: 0 auto var(--spacing-6);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--primary));
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.statusMessage {
+  margin-bottom: var(--spacing-8);
+}
+
+.statusMessage p {
+  font-size: var(--text-lg);
+  color: hsla(var(--dark), 0.8);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.applySteps {
+  margin-top: var(--spacing-8);
+}
+
+.applySteps h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--dark));
+  margin: 0 0 var(--spacing-6);
+}
+
+.stepsList {
+  padding: 0;
+  list-style: none;
+}
+
+.stepsList li {
+  position: relative;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-4);
+  margin-bottom: var(--spacing-6);
+}
+
+.stepNumber {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: hsla(var(--primary), 0.1);
+  color: hsl(var(--primary));
+  font-weight: var(--font-weight-bold);
+}
+
+.stepContent h4 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-1);
+}
+
+.stepContent p {
+  font-size: var(--text-base);
+  color: hsla(var(--dark), 0.7);
+  margin: 0;
+}
+
+.notificationFormWrapper {
+  margin-top: var(--spacing-8);
+}
+
+.notificationDescription {
+  font-size: var(--text-base);
+  color: hsla(var(--dark), 0.7);
+  margin-bottom: var(--spacing-6);
+}
+
+.joinDiscord {
+  margin-top: var(--spacing-8);
+  padding-top: var(--spacing-8);
+  border-top: 1px solid hsla(var(--dark), 0.1);
+}
+
+.discordButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-3) var(--spacing-6);
+  background: #5865f2;
+  color: hsl(var(--light));
+  border-radius: var(--border-radius-md);
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: var(--spacing-4);
+}
+
+.discordButton:hover {
+  background: #4752c4;
+  transform: translateY(-2px);
+}
+
+.discordIcon {
+  font-size: var(--text-xl);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}

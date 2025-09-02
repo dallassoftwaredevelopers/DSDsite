@@ -1,0 +1,482 @@
+.journeySection {
+  position: relative;
+  padding: var(--spacing-20) 0;
+  background: linear-gradient(
+    180deg,
+    hsl(var(--light)) 0%,
+    hsla(var(--primary), 0.02) 50%,
+    hsl(var(--light)) 100%
+  );
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-6);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.sectionTitle {
+  font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+  font-weight: var(--font-weight-black);
+  margin-bottom: var(--spacing-4);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)) 0%,
+    hsl(var(--accent)) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  font-size: clamp(var(--text-lg), 2.5vw, var(--text-xl));
+  color: hsla(var(--dark), 0.7);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.timelineContainer {
+  position: relative;
+  margin-top: var(--spacing-16);
+}
+
+.timelinePath {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    hsla(var(--primary), 0.2) 0%,
+    hsl(var(--primary)) 30%,
+    hsl(var(--accent)) 70%,
+    hsla(var(--accent), 0.2) 100%
+  );
+  border-radius: var(--border-radius-full);
+  z-index: 1;
+}
+
+.timelineStartIcon {
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent))
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--light));
+  font-size: var(--text-xl);
+  box-shadow: 
+    0 8px 25px hsla(var(--primary), 0.3),
+    0 0 0 4px hsl(var(--light)),
+    0 0 0 6px hsla(var(--primary), 0.2);
+  z-index: 2;
+  animation: carBounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes carBounce {
+  0% {
+    transform: translateY(-50%) translateX(0px);
+  }
+  100% {
+    transform: translateY(-50%) translateX(5px);
+  }
+}
+
+.timelineProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--accent))
+  );
+  border-radius: var(--border-radius-full);
+  width: 0%;
+  transition: width 2s ease-out;
+  animation: progressFill 3s ease-out forwards;
+}
+
+@keyframes progressFill {
+  to {
+    width: 100%;
+  }
+}
+
+.journeySteps {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.journeyStep {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.journeyStep:hover {
+  transform: translateY(-10px);
+}
+
+.stepNumber {
+  position: absolute;
+  top: -10px;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent))
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: hsl(var(--light));
+  font-weight: var(--font-weight-bold);
+  font-size: var(--text-sm);
+  box-shadow: 
+    0 8px 25px hsla(var(--primary), 0.3),
+    0 0 0 4px hsl(var(--light)),
+    0 0 0 6px hsla(var(--primary), 0.2);
+  z-index: 3;
+  transition: all 0.4s ease;
+}
+
+.journeyStep:hover .stepNumber {
+  transform: scale(1.2);
+  box-shadow: 
+    0 12px 35px hsla(var(--primary), 0.4),
+    0 0 0 4px hsl(var(--light)),
+    0 0 0 8px hsla(var(--primary), 0.3);
+}
+
+.stepCard {
+  background: hsl(var(--light));
+  border-radius: var(--border-radius-xl);
+  border: 2px solid hsla(var(--primary), 0.1);
+  padding: 0;
+  margin-top: var(--spacing-8);
+  width: 280px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  box-shadow: 0 8px 25px hsla(var(--primary), 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    hsla(var(--primary), 0.05) 0%,
+    hsla(var(--accent), 0.02) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.journeyStep:hover .stepCard {
+  border-color: hsla(var(--primary), 0.3);
+  box-shadow: 
+    0 20px 40px hsla(var(--primary), 0.15),
+    0 0 0 1px hsla(var(--primary), 0.1);
+}
+
+.journeyStep:hover .stepCard::before {
+  opacity: 1;
+}
+
+.stepImageContainer {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
+  flex-shrink: 0;
+}
+
+.stepImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  display: block;
+}
+
+.journeyStep:hover .stepImage {
+  transform: scale(1.05);
+}
+
+.stepIcon {
+  position: absolute;
+  bottom: var(--spacing-4);
+  right: var(--spacing-4);
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent))
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-lg);
+  color: hsl(var(--light));
+  transition: all 0.4s ease;
+  box-shadow: 
+    0 4px 15px hsla(var(--primary), 0.3),
+    0 0 0 2px hsl(var(--light));
+  z-index: 2;
+}
+
+.journeyStep:hover .stepIcon {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 
+    0 6px 20px hsla(var(--primary), 0.4),
+    0 0 0 3px hsl(var(--light));
+}
+
+.stepContent {
+  position: relative;
+  z-index: 2;
+  padding: var(--spacing-5);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stepTitle {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: hsl(var(--dark));
+  margin-bottom: var(--spacing-2);
+  line-height: 1.2;
+}
+
+.stepDescription {
+  font-size: var(--text-sm);
+  color: hsla(var(--dark), 0.7);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-3);
+  flex-grow: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.stepHighlight {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  color: hsl(var(--primary));
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: var(--spacing-2) var(--spacing-3);
+  background: hsla(var(--primary), 0.1);
+  border-radius: var(--border-radius-md);
+  display: inline-block;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (max-width: 1200px) {
+  .stepCard {
+    width: 250px;
+    height: 480px;
+  }
+
+  .stepImageContainer {
+    height: 140px;
+    flex-shrink: 0;
+  }
+
+  .stepContent {
+    padding: var(--spacing-4);
+  }
+
+  .stepTitle {
+    font-size: var(--text-base);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .stepDescription {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+}
+
+@media (max-width: 992px) {
+  .journeySteps {
+    flex-direction: column;
+    gap: var(--spacing-12);
+    align-items: center;
+  }
+
+  .timelinePath {
+    top: -40px;
+    left: 50%;
+    width: 4px;
+    height: calc(100% + 40px);
+    transform: translateX(-50%);
+    background: linear-gradient(
+      180deg,
+      hsla(var(--primary), 0.2) 0%,
+      hsl(var(--primary)) 30%,
+      hsl(var(--accent)) 70%,
+      hsla(var(--accent), 0.2) 100%
+    );
+  }
+
+  .timelineStartIcon {
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: carBounceVertical 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes carBounceVertical {
+    0% {
+      transform: translateX(-50%) translateY(0px);
+    }
+    100% {
+      transform: translateX(-50%) translateY(5px);
+    }
+  }
+
+  .timelineProgress {
+    width: 100%;
+    height: 0%;
+    animation: progressFillVertical 3s ease-out forwards;
+  }
+
+  @keyframes progressFillVertical {
+    to {
+      height: 100%;
+    }
+  }
+
+  .stepNumber {
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .journeyStep:hover .stepNumber {
+    transform: translateY(-50%) scale(1.2);
+  }
+
+  .stepCard {
+    margin-top: 0;
+    margin-left: 0;
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .journeySection {
+    padding: var(--spacing-16) 0;
+  }
+
+  .stepNumber {
+    left: -50px;
+  }
+
+  .stepCard {
+    width: 280px;
+    height: 450px;
+  }
+
+  .stepContent {
+    padding: var(--spacing-4);
+  }
+
+  .stepTitle {
+    font-size: var(--text-base);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .stepDescription {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-2);
+  }
+
+  .stepImageContainer {
+    height: 140px;
+  }
+
+  .stepIcon {
+    width: 45px;
+    height: 45px;
+    font-size: var(--text-base);
+    bottom: var(--spacing-3);
+    right: var(--spacing-3);
+  }
+}
+
+@media (max-width: 400px) {
+  .timelinePath {
+    display: none;
+  }
+
+  .timelineStartIcon {
+    display: none;
+  }
+
+  .stepNumber {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+    margin-bottom: var(--spacing-4);
+  }
+
+  .stepCard {
+    margin-left: 0;
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .stepImageContainer {
+    height: 140px;
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,64 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-4);
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: var(--spacing-8);
+  color: hsl(var(--dark));
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.offerSection {
+  padding: var(--spacing-12) 0;
+  background: white;
+}
+
+.offerGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-6);
+}
+
+.offerCard {
+  padding: var(--spacing-6);
+  background: linear-gradient(135deg, hsl(var(--light)) 0%, white 100%);
+  border-radius: 12px;
+  border: 1px solid hsla(var(--dark), 0.1);
+  transition: all 0.3s ease;
+}
+
+.offerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-color: #667eea;
+}
+
+.offerTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-3);
+  color: hsl(var(--dark));
+}
+
+.offerDescription {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: hsl(var(--dark) / 0.7);
+}

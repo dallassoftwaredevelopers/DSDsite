@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /** 01 - Breakpoints**/
   --max-width: 1450px;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -9,16 +8,15 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
 
-  /*02 - colors - new modern palette */
-  --primary: 213, 100%, 60%; /* Bright blue: #3385ff */
-  --primary-light: 213, 100%, 70%; /* Lighter blue: #66a3ff */
-  --secondary: 213, 100%, 50%; /* Slightly darker blue: #0066ff */
-  --accent: 213, 100%, 80%; /* Very light blue: #99c2ff */
-  --dark: 222, 89%, 12%; /* Very dark navy: #071238 */
-  --light: 220, 33%, 98%; /* Off white: #f7f8fc */
-  --gray-100: 220, 20%, 92%; /* Light gray: #e6e9f0 */
-  --gray-200: 220, 20%, 82%; /* Medium gray: #ccd2e0 */
-  --gray-300: 220, 20%, 72%; /* Darker gray: #b3bbd1 */
+  --primary: 213, 100%, 60%; 
+  --primary-light: 213, 100%, 70%; 
+  --secondary: 213, 100%, 50%; 
+  --accent: 213, 100%, 80%; 
+  --dark: 222, 89%, 12%; 
+  --light: 220, 33%, 98%; 
+  --gray-100: 220, 20%, 92%; 
+  --gray-200: 220, 20%, 82%; 
+  --gray-300: 220, 20%, 72%; 
 
   --gradient-primary: linear-gradient(
     135deg,
@@ -52,7 +50,6 @@
   --border-radius-xl: 30px;
   --border-radius-full: 9999px;
 
-  /**03 - Typography**/
   --font-primary: 'Poppins', sans-serif;
   --font-secondary: 'Inter', sans-serif;
   --font-base-size: 16px;
@@ -106,7 +103,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Accessibility: Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -215,9 +211,6 @@ a:hover {
   color: hsl(var(--primary-light));
 }
 
-/*********************
-*  Container Blocks  *
-**********************/
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -396,7 +389,6 @@ footer,
   animation: slideRight 1s ease-in-out;
 }
 
-/* Glass effect */
 .glass {
   background: hsla(var(--light), 0.1);
   backdrop-filter: blur(10px);
@@ -411,7 +403,6 @@ footer,
   border: 1px solid hsla(var(--light), 0.1);
 }
 
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -487,9 +478,6 @@ footer,
   }
 }
 
-/******************
-*  Media Queries  *
-*******************/
 @media (max-width: 575px) {
   h1 {
     font-size: var(--text-4xl);
@@ -549,12 +537,10 @@ footer,
   }
 }
 
-/* For backward compatibility */
 @media only screen and (max-width: 850px) {
   .innerContainer {
     padding: 0;
   }
 }
-/* Medium-sized devices (like tablets in portrait and landscape mode) */
 @media only screen and (min-width: 850px) and (max-width: 1050px) {
 }

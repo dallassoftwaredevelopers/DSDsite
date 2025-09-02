@@ -23,7 +23,6 @@
   );
 }
 
-/* Add alternating section backgrounds */
 .sectionContainer:nth-of-type(odd) {
   background-color: hsl(var(--light));
   position: relative;
@@ -76,7 +75,6 @@
   z-index: 0;
 }
 
-/* Section dividers */
 .sectionContainer:not(:last-child)::after {
   content: '';
   position: absolute;
@@ -93,13 +91,11 @@
   z-index: 1;
 }
 
-/* Special styling for the last section container (GroupPhotoSection) */
 .sectionContainer:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
 }
 
-/* Media queries */
 @media (max-width: 768px) {
   .sectionContainer {
     padding: 0;
