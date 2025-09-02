@@ -9,22 +9,34 @@ export default function AboutValues() {
         <h2 className={styles.sectionTitle}>{LABELS.about.values.title}</h2>
         <div className={styles.valuesGrid}>
           <div className={styles.valueCard}>
-            <div className={styles.valueIcon}>{LABELS.about.values.community_first.icon}</div>
-            <h3 className={styles.valueTitle}>{LABELS.about.values.community_first.title}</h3>
+            <div className={styles.valueIcon}>
+              {LABELS.about.values.community_first.icon}
+            </div>
+            <h3 className={styles.valueTitle}>
+              {LABELS.about.values.community_first.title}
+            </h3>
             <p className={styles.valueDescription}>
               {LABELS.about.values.community_first.description}
             </p>
           </div>
           <div className={styles.valueCard}>
-            <div className={styles.valueIcon}>{LABELS.about.values.continuous_learning.icon}</div>
-            <h3 className={styles.valueTitle}>{LABELS.about.values.continuous_learning.title}</h3>
+            <div className={styles.valueIcon}>
+              {LABELS.about.values.continuous_learning.icon}
+            </div>
+            <h3 className={styles.valueTitle}>
+              {LABELS.about.values.continuous_learning.title}
+            </h3>
             <p className={styles.valueDescription}>
               {LABELS.about.values.continuous_learning.description}
             </p>
           </div>
           <div className={styles.valueCard}>
-            <div className={styles.valueIcon}>{LABELS.about.values.inclusivity.icon}</div>
-            <h3 className={styles.valueTitle}>{LABELS.about.values.inclusivity.title}</h3>
+            <div className={styles.valueIcon}>
+              {LABELS.about.values.inclusivity.icon}
+            </div>
+            <h3 className={styles.valueTitle}>
+              {LABELS.about.values.inclusivity.title}
+            </h3>
             <p className={styles.valueDescription}>
               {LABELS.about.values.inclusivity.description}
             </p>

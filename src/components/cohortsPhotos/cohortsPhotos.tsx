@@ -6,9 +6,9 @@ interface CohortsPhotosProps {
   isVisible?: boolean;
 }
 
-export default function CohortsPhotos({ 
-  sectionRef, 
-  isVisible = false 
+export default function CohortsPhotos({
+  sectionRef,
+  isVisible = false,
 }: CohortsPhotosProps) {
   return (
     <section
@@ -19,19 +19,20 @@ export default function CohortsPhotos({
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Our Cohort Community</h2>
           <p className={styles.sectionDescription}>
-            Capturing moments of collaboration, learning, and growth. These photos showcase the vibrant community
-            of developers who have participated in our cohort programs, working together to build real-world projects
-            and forge lasting professional connections.
+            Capturing moments of collaboration, learning, and growth. These
+            photos showcase the vibrant community of developers who have
+            participated in our cohort programs, working together to build
+            real-world projects and forge lasting professional connections.
           </p>
         </div>
-        
+
         <div className={styles.photoGallery}>
           <div className={styles.photoGrid}>
             <div className={styles.photoCard}>
               <div className={styles.photoWrapper}>
                 <Image
-                  src="https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohort%20group%201.jpg"
-                  alt="Cohort Group 1 - Developers collaborating on projects"
+                  src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohort%20group%201.jpg'
+                  alt='Cohort Group 1 - Developers collaborating on projects'
                   width={600}
                   height={400}
                   className={styles.galleryImage}
@@ -44,12 +45,12 @@ export default function CohortsPhotos({
                 </div>
               </div>
             </div>
-            
+
             <div className={styles.photoCard}>
               <div className={styles.photoWrapper}>
                 <Image
-                  src="https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup2.jpg"
-                  alt="Cohort Group 2 - Presentation and demo day"
+                  src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup2.jpg'
+                  alt='Cohort Group 2 - Presentation and demo day'
                   width={600}
                   height={400}
                   className={styles.galleryImage}
@@ -62,12 +63,12 @@ export default function CohortsPhotos({
                 </div>
               </div>
             </div>
-            
+
             <div className={styles.photoCard}>
               <div className={styles.photoWrapper}>
                 <Image
-                  src="https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup3.jpg"
-                  alt="Cohort Group 3 - Networking and community building"
+                  src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup3.jpg'
+                  alt='Cohort Group 3 - Networking and community building'
                   width={600}
                   height={400}
                   className={styles.galleryImage}
@@ -81,7 +82,7 @@ export default function CohortsPhotos({
               </div>
             </div>
           </div>
-          
+
           <div className={styles.photoStats}>
             <div className={styles.photoStat}>
               <span className={styles.photoStatNumber}>100+</span>

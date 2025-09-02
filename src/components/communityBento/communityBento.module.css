@@ -162,8 +162,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative; 
-  height: 100%; 
+  position: relative;
+  height: 100%;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   transition:
     transform 0.3s ease,
@@ -409,11 +409,10 @@
   .additionalPhotos {
     grid-column: 1 / -1;
     flex-direction: row;
-
   }
 
   .heroContent {
-      margin-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 
   .messageCard {
@@ -557,7 +556,7 @@
   }
 
   .scrollIndicator {
-        bottom: 35px;
+    bottom: 35px;
   }
 }
 
@@ -584,7 +583,7 @@
   .messageTitle {
     font-size: 1.25rem;
   }
-   .scrollIndicator {
-      bottom: calc(80px + var(--spacing-2));
+  .scrollIndicator {
+    bottom: calc(80px + var(--spacing-2));
   }
 }

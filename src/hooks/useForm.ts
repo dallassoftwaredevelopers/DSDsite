@@ -19,44 +19,60 @@ export function useForm<T extends Record<string, any>>(
   const [errors, setErrors] = useState<Partial<Record<keyof T, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const setValue = useCallback((fieldName: keyof T, fieldValue: T[keyof T]) => {
-    setValues(prev => ({ ...prev, [fieldName]: fieldValue }));
-    
-    if (errors[fieldName]) {
-      setErrors(prev => ({ ...prev, [fieldName]: undefined }));
-    }
-  }, [errors]);
+  const setValue = useCallback(
+    (fieldName: keyof T, fieldValue: T[keyof T]) => {
+      setValues((prev) => ({ ...prev, [fieldName]: fieldValue }));
 
-  const handleChange = useCallback((
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setValue(name as keyof T, value as T[keyof T]);
-  }, [setValue]);
+      if (errors[fieldName]) {
+        setErrors((prev) => ({ ...prev, [fieldName]: undefined }));
+      }
+    },
+    [errors]
+  );
+
+  const handleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target;
+      setValue(name as keyof T, value as T[keyof T]);
+    },
+    [setValue]
+  );
 
   const validate = useCallback(() => {
     const newErrors: Partial<Record<keyof T, string>> = {};
-    
+
     Object.entries(validationRules).forEach(([field, rules]) => {
       const fieldKey = field as keyof T;
       const fieldValue = values[fieldKey];
-      
+
       rules?.forEach((rule: NonNullable<typeof rules>[number]) => {
-        if (rule.isFieldRequired && (!fieldValue || String(fieldValue).trim() === '')) {
-          newErrors[fieldKey] = `${String(field)}${LABELS.validation.fieldRequiredSuffix}`;
+        if (
+          rule.isFieldRequired &&
+          (!fieldValue || String(fieldValue).trim() === '')
+        ) {
+          newErrors[fieldKey] =
+            `${String(field)}${LABELS.validation.fieldRequiredSuffix}`;
           return;
         }
-        
-        if (rule.validationRegexPattern && !rule.validationRegexPattern.test(String(fieldValue))) {
-          newErrors[fieldKey] = `${String(field)}${LABELS.validation.invalidFormatSuffix}`;
+
+        if (
+          rule.validationRegexPattern &&
+          !rule.validationRegexPattern.test(String(fieldValue))
+        ) {
+          newErrors[fieldKey] =
+            `${String(field)}${LABELS.validation.invalidFormatSuffix}`;
           return;
         }
-        
-        if (rule.maximumCharacterLength && String(fieldValue).length > rule.maximumCharacterLength) {
-          newErrors[fieldKey] = `${String(field)}${LABELS.validation.tooLongPrefix}${rule.maximumCharacterLength}${LABELS.validation.charactersText}`;
+
+        if (
+          rule.maximumCharacterLength &&
+          String(fieldValue).length > rule.maximumCharacterLength
+        ) {
+          newErrors[fieldKey] =
+            `${String(field)}${LABELS.validation.tooLongPrefix}${rule.maximumCharacterLength}${LABELS.validation.charactersText}`;
           return;
         }
-        
+
         if (rule.customValidationFunction) {
           const customError = rule.customValidationFunction(fieldValue);
           if (customError) {
@@ -66,7 +82,7 @@ export function useForm<T extends Record<string, any>>(
         }
       });
     });
-    
+
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   }, [values, validationRules]);

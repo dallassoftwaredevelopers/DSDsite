@@ -1,4 +1,3 @@
-
 .sectionContainer {
   width: 100%;
   padding: var(--spacing-24) 0;
@@ -100,7 +99,7 @@
 .timelineMarker {
   position: absolute;
   left: -var(--spacing-12);
-  top: -20px; 
+  top: -20px;
   width: 80px;
   height: 40px;
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));

@@ -31,10 +31,13 @@ export default function CohortsHero() {
       <div className={styles.heroContent}>
         <div className={styles.heroTextContent}>
           <h1 className={styles.heroHeading}>
-            {LABELS.cohorts.hero.tagline} <span className={styles.highlight}>{LABELS.cohorts.hero.heading}</span>
+            {LABELS.cohorts.hero.tagline}{' '}
+            <span className={styles.highlight}>
+              {LABELS.cohorts.hero.heading}
+            </span>
           </h1>
 
-          <h2 className="sr-only">{LABELS.cohorts.hero.programOverview}</h2>
+          <h2 className='sr-only'>{LABELS.cohorts.hero.programOverview}</h2>
 
           <div className={styles.heroDescription}>
             <p>{LABELS.cohorts.hero.description}</p>

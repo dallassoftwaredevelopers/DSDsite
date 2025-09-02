@@ -68,11 +68,16 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
         if (!speaker.topics) return false;
         const selectedLower = selectedTopic.toLowerCase();
         let topics: string[] = [];
-        
+
         if (Array.isArray(speaker.topics)) {
-          topics = (speaker.topics as string[]).map(t => t.toLowerCase().trim());
+          topics = (speaker.topics as string[]).map((t) =>
+            t.toLowerCase().trim()
+          );
         } else if (typeof speaker.topics === 'string') {
-          topics = (speaker.topics as string).toLowerCase().split(',').map((t) => t.trim());
+          topics = (speaker.topics as string)
+            .toLowerCase()
+            .split(',')
+            .map((t) => t.trim());
         }
         return topics.some((topic) => {
           if (selectedLower === 'java') {
@@ -137,8 +142,8 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
                   {speaker.topics && (
                     <p className={styles.speakerTopics}>
                       {LABELS.speakersList.topic_prefix}
-                      {Array.isArray(speaker.topics) 
-                        ? speaker.topics.join(', ') 
+                      {Array.isArray(speaker.topics)
+                        ? speaker.topics.join(', ')
                         : speaker.topics}
                     </p>
                   )}

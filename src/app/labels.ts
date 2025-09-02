@@ -307,15 +307,18 @@ export const LABELS = {
       highlights: {
         realWorld: {
           title: 'Solve Real Problems',
-          description: 'Build a technical solution that addresses a real need in the community',
+          description:
+            'Build a technical solution that addresses a real need in the community',
         },
         mentorship: {
           title: 'Industry Mentorship',
-          description: 'Work as a team but also get guidance from professionals at top Dallas companies',
+          description:
+            'Work as a team but also get guidance from professionals at top Dallas companies',
         },
         free: {
           title: 'This is NOT a coding bootcamp',
-          description: 'Leads are not teachers. We don\'t teach you to code, we help you learn how to work on a team and build a real project. No To Do Apps here.',
+          description:
+            "Leads are not teachers. We don't teach you to code, we help you learn how to work on a team and build a real project. No To Do Apps here.",
         },
       },
       applyNow: 'Apply Now',
@@ -351,9 +354,9 @@ export const LABELS = {
       },
       dallasCallout: {
         title: 'Dallas Tech Scene Connection',
-               description:
+        description:
           'While our cohorts are remote-friendly, we have deep connections to the Dallas-Fort Worth tech ecosystem. Many of our mentors work at local companies but many also contibute as leads from other locations. We do our best to put you on teams that make the most logistical and technological sense to your tech stack but we cannot guarantee local matches for everyone.',
-      }
+      },
     },
     details: {
       title: 'Program Details',
@@ -373,7 +376,6 @@ export const LABELS = {
           description:
             '100% free. We run this as a community service to uplift aspiring developers and strengthen the Dallas tech ecosystem',
         },
-        
       },
       highlights: {
         whatYouBuild: {
@@ -637,7 +639,8 @@ export const LABELS = {
         quote:
           'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
         cohort: 'Cohort 8',
-        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/aaryanDas.jpg',
+        image:
+          'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/aaryanDas.jpg',
         linkedIn: 'https://linkedin.com',
       },
       {
@@ -646,8 +649,9 @@ export const LABELS = {
         role: 'Software Engineer',
         company: 'NBC Universal',
         quote:
-          'The cohort provided invaluable guidance from professionals actively working in the industry and taught me how to collaborate effectively within a team. It played a pivotal role in helping me break into tech. Now, as a professional developer, I\'ve had the privilege of returning as a lead to mentor and support others who are now on the same journey I once was.',
-        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/yoonJinBae.jpg',
+          "The cohort provided invaluable guidance from professionals actively working in the industry and taught me how to collaborate effectively within a team. It played a pivotal role in helping me break into tech. Now, as a professional developer, I've had the privilege of returning as a lead to mentor and support others who are now on the same journey I once was.",
+        image:
+          'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/yoonJinBae.jpg',
         linkedIn: 'https://www.linkedin.com/in/bae-yoojin/',
       },
       {
@@ -658,7 +662,8 @@ export const LABELS = {
         quote:
           'Thanks to the DSD Cohort I was able to gain experience working in a team environment, showcase my skills, and catch a glimpse of what developer life is actually like. The experience I gained from the cohort resulted in a job offer shortly after.',
         cohort: 'Cohort 9',
-        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
+        image:
+          'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/davidOgden.jpg',
         linkedIn: 'https://linkedin.com',
       },
       {
@@ -669,7 +674,8 @@ export const LABELS = {
         quote:
           'The DSD Cohort program transformed my career trajectory. After being laid off, the 6-week program pushed me outside my comfort zone, working on a team to build a full-stack project that I showcased in interviews, helping me land my new developer role.',
         cohort: 'Cohort 9',
-        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/staciSoutherland.jpg',
+        image:
+          'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/staciSoutherland.jpg',
         linkedIn: 'https://www.linkedin.com/in/stacisoutherland/',
       },
       {
@@ -680,7 +686,8 @@ export const LABELS = {
         quote:
           'I highly recommend the DSD cohort program. It gave me the opportunity to collaborate with a team of talented developers on a real project and boosted my confidence to continue pursuing a career in software development, ultimately helping me land my first job as a software developer',
         cohort: 'Cohort 9',
-        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/tatianaBertazoli.jpg',
+        image:
+          'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/tatianaBertazoli.jpg',
         linkedIn: 'https://www.linkedin.com/in/tatibertazoli/',
       },
       {
@@ -691,7 +698,8 @@ export const LABELS = {
         quote:
           'Going from building projects on my own to working with a team in the DSD cohort was a game-changer. It pushed me to grow faster as a developer, get more involved in the Boston tech community, and land my first client.',
         cohort: 'Cohort 9',
-        image: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/andrewSmith.jpg',
+        image:
+          'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/andrewSmith.jpg',
         linkedIn: 'https://www.linkedin.com/in/andrew-sm1th/',
       },
     ],
@@ -728,7 +736,8 @@ export const LABELS = {
     hero: {
       title_about: 'About',
       title_highlight: 'Dallas Software Developers',
-      subtitle: 'Building the future of tech in Dallas, one developer at a time',
+      subtitle:
+        'Building the future of tech in Dallas, one developer at a time',
     },
     mission: {
       title: 'Our Mission',

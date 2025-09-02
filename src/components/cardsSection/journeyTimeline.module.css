@@ -71,18 +71,14 @@
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary)),
-    hsl(var(--accent))
-  );
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: hsl(var(--light));
   font-size: var(--text-xl);
-  box-shadow: 
+  box-shadow:
     0 8px 25px hsla(var(--primary), 0.3),
     0 0 0 4px hsl(var(--light)),
     0 0 0 6px hsla(var(--primary), 0.2);
@@ -104,11 +100,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(
-    90deg,
-    hsl(var(--primary)),
-    hsl(var(--accent))
-  );
+  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
   border-radius: var(--border-radius-full);
   width: 0%;
   transition: width 2s ease-out;
@@ -137,7 +129,7 @@
   text-align: center;
   position: relative;
   cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .journeyStep:hover {
@@ -149,11 +141,7 @@
   top: -10px;
   width: 40px;
   height: 40px;
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary)),
-    hsl(var(--accent))
-  );
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -161,7 +149,7 @@
   color: hsl(var(--light));
   font-weight: var(--font-weight-bold);
   font-size: var(--text-sm);
-  box-shadow: 
+  box-shadow:
     0 8px 25px hsla(var(--primary), 0.3),
     0 0 0 4px hsl(var(--light)),
     0 0 0 6px hsla(var(--primary), 0.2);
@@ -171,7 +159,7 @@
 
 .journeyStep:hover .stepNumber {
   transform: scale(1.2);
-  box-shadow: 
+  box-shadow:
     0 12px 35px hsla(var(--primary), 0.4),
     0 0 0 4px hsl(var(--light)),
     0 0 0 8px hsla(var(--primary), 0.3);
@@ -187,7 +175,7 @@
   height: 520px;
   display: flex;
   flex-direction: column;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   box-shadow: 0 8px 25px hsla(var(--primary), 0.08);
   position: relative;
   overflow: hidden;
@@ -211,7 +199,7 @@
 
 .journeyStep:hover .stepCard {
   border-color: hsla(var(--primary), 0.3);
-  box-shadow: 
+  box-shadow:
     0 20px 40px hsla(var(--primary), 0.15),
     0 0 0 1px hsla(var(--primary), 0.1);
 }
@@ -234,7 +222,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
   display: block;
 }
 
@@ -248,11 +236,7 @@
   right: var(--spacing-4);
   width: 50px;
   height: 50px;
-  background: linear-gradient(
-    135deg,
-    hsl(var(--primary)),
-    hsl(var(--accent))
-  );
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -260,7 +244,7 @@
   font-size: var(--text-lg);
   color: hsl(var(--light));
   transition: all 0.4s ease;
-  box-shadow: 
+  box-shadow:
     0 4px 15px hsla(var(--primary), 0.3),
     0 0 0 2px hsl(var(--light));
   z-index: 2;
@@ -268,7 +252,7 @@
 
 .journeyStep:hover .stepIcon {
   transform: scale(1.1) rotate(10deg);
-  box-shadow: 
+  box-shadow:
     0 6px 20px hsla(var(--primary), 0.4),
     0 0 0 3px hsl(var(--light));
 }

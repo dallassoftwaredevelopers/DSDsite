@@ -67,7 +67,8 @@ function generateFakeData(): Speaker[] {
       fullName: 'Danny Thompson',
       xUrl: 'https://x.com/DThompsonDev',
       linkedInUrl: 'https://www.linkedin.com/in/dthompsondev/',
-      imageUrl: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/Danny_Thompson.png',
+      imageUrl:
+        'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/Danny_Thompson.png',
     },
     {
       documentId: '2',
@@ -75,7 +76,8 @@ function generateFakeData(): Speaker[] {
       fullName: 'Dennis Garcia',
       xUrl: 'https://x.com/dgarcia_appdev',
       linkedInUrl: 'https://www.linkedin.com/in/dgarcia-appdev/',
-      imageUrl: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/Dennis_Garcia.jpg',
+      imageUrl:
+        'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/Dennis_Garcia.jpg',
     },
     {
       documentId: '3',
@@ -83,7 +85,8 @@ function generateFakeData(): Speaker[] {
       fullName: 'Clint Myers',
       xUrl: null,
       linkedInUrl: 'https://www.linkedin.com/in/clintmyers/',
-      imageUrl: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/Clint_Myers.jpg',
+      imageUrl:
+        'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/Clint_Myers.jpg',
     },
     {
       documentId: '4',
@@ -91,7 +94,8 @@ function generateFakeData(): Speaker[] {
       fullName: 'Erik Andersen',
       xUrl: null,
       linkedInUrl: 'https://www.linkedin.com/in/ebandersen/',
-      imageUrl: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/Erik_Andersen.jpg',
+      imageUrl:
+        'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/Erik_Andersen.jpg',
     },
     ...fakeData,
   ];
