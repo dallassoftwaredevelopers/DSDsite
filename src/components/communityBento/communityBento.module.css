@@ -13,6 +13,13 @@
   padding: var(--spacing-8) 0;
 }
 
+/* Add top padding for desktop to account for fixed navbar */
+@media (min-width: 769px) {
+  .communityHeroSection {
+    padding-top: 100px;
+  }
+}
+
 .heroBackground {
   position: absolute;
   top: 0;

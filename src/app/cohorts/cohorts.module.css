@@ -1,16 +1,8 @@
 .pageContainer {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   width: 100%;
-  overflow-x: hidden;
   background: hsl(var(--light));
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-.pageContainer::-webkit-scrollbar {
-  display: none;
 }
 
 .loadingContainer {
@@ -30,7 +22,7 @@
   justify-content: center;
   overflow: hidden;
   background-color: hsl(var(--light));
-  padding: 90px var(--spacing-6) calc(var(--spacing-8) + 60px);
+  padding: 120px var(--spacing-6) calc(var(--spacing-8) + 60px);
 }
 
 .heroDescription {
@@ -51,7 +43,7 @@
   .hero {
     min-height: 100vh;
     height: auto;
-    padding: 85px var(--spacing-4) var(--spacing-6);
+    padding: 110px var(--spacing-4) var(--spacing-6);
   }
 
   .heroContent {
@@ -525,7 +517,7 @@
   z-index: 10;
   width: 100%;
   max-width: var(--max-width);
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 0 var(--spacing-6);
   text-align: center;
 }

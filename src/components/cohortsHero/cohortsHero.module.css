@@ -7,7 +7,7 @@
   justify-content: center;
   overflow: hidden;
   background-color: hsl(var(--light));
-  padding: 90px var(--spacing-6) calc(var(--spacing-8) + 60px);
+  padding: 120px var(--spacing-6) calc(var(--spacing-8) + 60px);
 }
 
 .heroDescription {
