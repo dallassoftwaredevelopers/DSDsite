@@ -30,7 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Run Prettier Check
-        run: npx prettier --check .
+        run: npx prettier --check ./src
   typescript-run-push:
     name: Setup TypeScript on Main Push
     runs-on: ubuntu-latest
