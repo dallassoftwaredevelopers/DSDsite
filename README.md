@@ -168,10 +168,10 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/tk1ng">
-            <img src="https://avatars.githubusercontent.com/u/49492414?v=4" width="100;" alt="tk1ng"/>
+        <a href="https://github.com/elderyouth">
+            <img src="https://avatars.githubusercontent.com/u/13540588?v=4" width="100;" alt="elderyouth"/>
             <br />
-            <sub><b>Taryn King</b></sub>
+            <sub><b>Elder</b></sub>
         </a>
     </td>
     <td align="center">
@@ -183,31 +183,24 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
     </td></tr>
 <tr>
     <td align="center">
-        <a href="https://github.com/elderyouth">
-            <img src="https://avatars.githubusercontent.com/u/13540588?v=4" width="100;" alt="elderyouth"/>
+        <a href="https://github.com/tk1ng">
+            <img src="https://avatars.githubusercontent.com/u/49492414?v=4" width="100;" alt="tk1ng"/>
             <br />
-            <sub><b>Elder</b></sub>
+            <sub><b>Taryn King</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/abhiramrp">
-            <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
+        <a href="https://github.com/PrashanthVamanan">
+            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
             <br />
-            <sub><b>Abhiram Rishi Prattipati</b></sub>
+            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/amelia2802">
-            <img src="https://avatars.githubusercontent.com/u/49182604?v=4" width="100;" alt="amelia2802"/>
+        <a href="https://github.com/wotta">
+            <img src="https://avatars.githubusercontent.com/u/13332240?v=4" width="100;" alt="wotta"/>
             <br />
-            <sub><b>Amelia Dutta</b></sub>
-        </a>
-    </td>
-    <td align="center">
-        <a href="https://github.com/Dthompsondevtestaccount">
-            <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
-            <br />
-            <sub><b>Null</b></sub>
+            <sub><b>Wouter (wotta)</b></sub>
         </a>
     </td>
     <td align="center">
@@ -218,13 +211,27 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/PrashanthVamanan">
-            <img src="https://avatars.githubusercontent.com/u/24620085?v=4" width="100;" alt="PrashanthVamanan"/>
+        <a href="https://github.com/Dthompsondevtestaccount">
+            <img src="https://avatars.githubusercontent.com/u/162359894?v=4" width="100;" alt="Dthompsondevtestaccount"/>
             <br />
-            <sub><b>Prashanth Vamanan Srinivasan</b></sub>
+            <sub><b>Null</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/amelia2802">
+            <img src="https://avatars.githubusercontent.com/u/49182604?v=4" width="100;" alt="amelia2802"/>
+            <br />
+            <sub><b>Amelia Dutta</b></sub>
         </a>
     </td></tr>
 <tr>
+    <td align="center">
+        <a href="https://github.com/abhiramrp">
+            <img src="https://avatars.githubusercontent.com/u/64505707?v=4" width="100;" alt="abhiramrp"/>
+            <br />
+            <sub><b>Abhiram Rishi Prattipati</b></sub>
+        </a>
+    </td>
     <td align="center">
         <a href="https://github.com/braydoncoyer">
             <img src="https://avatars.githubusercontent.com/u/38799309?v=4" width="100;" alt="braydoncoyer"/>
@@ -259,15 +266,15 @@ To Contribute, Read the Contribution Guidelines. [Contribution guidelines for th
             <br />
             <sub><b>Noel Covarrubias</b></sub>
         </a>
-    </td>
+    </td></tr>
+<tr>
     <td align="center">
         <a href="https://github.com/coffee2theorems">
             <img src="https://avatars.githubusercontent.com/u/7843313?v=4" width="100;" alt="coffee2theorems"/>
             <br />
             <sub><b>Ryan Monaghan</b></sub>
         </a>
-    </td></tr>
-<tr>
+    </td>
     <td align="center">
         <a href="https://github.com/Brayheart">
             <img src="https://avatars.githubusercontent.com/u/30908449?v=4" width="100;" alt="Brayheart"/>
