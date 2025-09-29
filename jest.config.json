@@ -17,17 +17,11 @@
     "<rootDir>/src/**/__tests__/**/*.(test|spec).(js|jsx|ts|tsx)",
     "<rootDir>/src/**/*.(test|spec).(js|jsx|ts|tsx)"
   ],
-  "testPathIgnorePatterns": [
-    "<rootDir>/.next/",
-    "<rootDir>/node_modules/"
-  ],
+  "testPathIgnorePatterns": ["<rootDir>/.next/", "<rootDir>/node_modules/"],
   "collectCoverageFrom": [
     "src/**/*.{js,jsx,ts,tsx}",
     "!src/**/*.d.ts",
     "!src/**/*.stories.{js,jsx,ts,tsx}"
   ],
-  "coveragePathIgnorePatterns": [
-    "<rootDir>/node_modules/",
-    "<rootDir>/.next/"
-  ]
+  "coveragePathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/.next/"]
 }

@@ -113,6 +113,7 @@
 @media (max-width: 768px) {
   .button {
     width: 100%;
+    max-width: 576px;
     font-size: 13px;
   }
 
@@ -123,6 +124,10 @@
 }
 
 @media (max-width: 480px) {
+  .button {
+    max-width: 320px;
+  }
+
   .button--primary,
   .button--secondary {
     height: 2.4rem;

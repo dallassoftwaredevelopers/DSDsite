@@ -167,7 +167,9 @@ export async function getSpeakers(): Promise<Speaker[]> {
         photoUrl: photoUrl || '/assets/person.svg',
         linkedin: fields.linkedin,
         lastSpoke: fields.lastSpoke,
-        topics: fields.topics ? normalizeTopic(fields.topics).split(', ') : undefined,
+        topics: fields.topics
+          ? normalizeTopic(fields.topics).split(', ')
+          : undefined,
       };
     });
 
