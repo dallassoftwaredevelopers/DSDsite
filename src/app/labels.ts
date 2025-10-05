@@ -541,7 +541,7 @@ export const LABELS = {
       notification: {
         title: 'Get Notified When Applications Open',
         description:
-          'The next cohort is expected to start in Fall 2024. Join our notification list to be the first to know when applications open.',
+          'The next cohort is expected to start in End of Jan 2026. Join our notification list to be the first to know when applications open.',
         discordPrompt:
           'In the meantime, join our Discord community to connect with past cohort participants and mentors:',
         joinDiscord: 'Join Discord',
