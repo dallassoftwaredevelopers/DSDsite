@@ -10,13 +10,34 @@ import { useVideoPlayer } from '@/hooks/useVideoPlayer';
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { videoRef, isPlaying, togglePlayback } = useVideoPlayer();
+  const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
 
   useScrollEffect({
     parallaxElementsContainer: heroRef,
   });
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (heroRef.current) {
+      const rect = heroRef.current.getBoundingClientRect();
+      setMousePos({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }
+  };
+
   return (
-    <section className={styles.hero} ref={heroRef}>
+    <section
+      className={styles.hero}
+      ref={heroRef}
+      onMouseMove={handleMouseMove}
+      style={
+        {
+          '--mouse-x': `${mousePos.x}px`,
+          '--mouse-y': `${mousePos.y}px`,
+        } as React.CSSProperties
+      }
+    >
       <div className={styles.heroBackground}>
         <div
           className={`${styles.gradientOverlay} ${styles.parallax}`}

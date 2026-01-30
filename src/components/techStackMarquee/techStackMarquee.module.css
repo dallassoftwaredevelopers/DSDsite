@@ -1,0 +1,117 @@
+.marqueeSection {
+    position: relative;
+    width: 100%;
+    padding: var(--spacing-10) 0;
+    background: linear-gradient(to bottom,
+            hsl(var(--light)),
+            hsla(var(--primary), 0.05));
+    overflow: hidden;
+    border-bottom: 1px solid hsla(var(--primary), 0.1);
+}
+
+.marqueeContainer {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: var(--spacing-8);
+    width: 100%;
+}
+
+.marqueeContent {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: space-around;
+    gap: var(--spacing-8);
+    min-width: 100%;
+    animation: scroll 40s linear infinite;
+}
+
+.techCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-4) var(--spacing-6);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsla(var(--primary), 0.1);
+    border-radius: var(--border-radius-lg);
+    min-width: 120px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.techCard:hover {
+    transform: translateY(-5px) scale(1.05);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px hsla(var(--primary), 0.15);
+    border-color: hsla(var(--primary), 0.3);
+    z-index: 10;
+}
+
+.icon {
+    font-size: var(--text-3xl);
+    color: hsla(var(--dark), 0.7);
+    transition: color 0.3s ease;
+}
+
+.techCard:hover .icon {
+    color: hsl(var(--primary));
+}
+
+.name {
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
+    color: hsla(var(--dark), 0.8);
+}
+
+.gradientLeft,
+.gradientRight {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.gradientLeft {
+    left: 0;
+    background: linear-gradient(to right, hsl(var(--light)), transparent);
+}
+
+.gradientRight {
+    right: 0;
+    background: linear-gradient(to left, hsl(var(--light)), transparent);
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-100% - var(--spacing-8)));
+    }
+}
+
+@media (max-width: 768px) {
+    .marqueeContent {
+        animation-duration: 20s;
+        gap: var(--spacing-6);
+    }
+
+    .techCard {
+        padding: var(--spacing-3) var(--spacing-4);
+        min-width: 100px;
+    }
+
+    .icon {
+        font-size: var(--text-2xl);
+    }
+
+    .name {
+        font-size: var(--text-xs);
+    }
+}

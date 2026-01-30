@@ -6,6 +6,7 @@ import HeroSection from '@/components/heroSection/heroSection';
 import SocialSection from '@/components/socialSection/socialSection';
 import GroupPhotoSection from '@/components/groupPhotoSection/groupPhotoSection';
 import SponsorshipSection from '@/components/sponsorshipSection/sponsorshipSection';
+import TechStackMarquee from '@/components/techStackMarquee/techStackMarquee';
 import styles from './page.module.css';
 
 export default function Home() {
@@ -13,6 +14,10 @@ export default function Home() {
     <div className={styles.pageContainer}>
       <div className={styles.heroContainer}>
         <HeroSection />
+      </div>
+
+      <div className={styles.sectionContainer}>
+        <TechStackMarquee />
       </div>
 
       <div className={styles.sectionContainer}>
