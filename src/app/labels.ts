@@ -255,6 +255,56 @@ export const LABELS = {
   pages: {
     meetups: {
       title: 'Meetups',
+      hero: {
+        tagline: 'Join Us at Our Next',
+        title: 'DSD Meetup',
+        subtitle:
+          'Every month, we bring together developers from across the Dallas-Fort Worth area for talks, networking, and free pizza. All skill levels welcome!',
+        stats: {
+          frequency: '2x',
+          frequencyLabel: 'Monthly',
+          attendees: '50+',
+          attendeesLabel: 'Attendees',
+          cost: 'Free',
+          costLabel: 'Always',
+        },
+        cta: 'Join on Meetup.com',
+      },
+      eventTypes: {
+        title: 'Our Event Formats',
+        fullLength: {
+          title: 'Full-Length Talks',
+          description:
+            'Deep-dive presentations (45-60 minutes) on a single topic. Perfect for exploring complex subjects, technology deep-dives, or comprehensive career advice.',
+        },
+        lightningNight: {
+          title: '"A Night Of" Lightning Talks',
+          description:
+            'Three to four short talks (10-15 minutes each) around a theme. Great variety and perfect for first-time speakers. Past themes: APIs, Career Growth, Side Projects.',
+        },
+        networking: {
+          title: 'Networking & Pizza',
+          description:
+            "Every meetup starts with 30 minutes of socializing, free pizza and drinks (thanks to our sponsors!), and ends with more time to connect. It's not just about the talks!",
+        },
+      },
+      schedule: {
+        title: 'Typical Meetup Schedule',
+        items: [
+          { time: '6:00 PM', activity: 'Doors open, networking & pizza' },
+          { time: '6:30 PM', activity: 'Welcome & announcements' },
+          { time: '6:45 PM', activity: 'Main presentation(s)' },
+          { time: '7:45 PM', activity: 'Q&A and wrap-up' },
+          { time: '8:00 PM', activity: 'More networking & goodbyes' },
+        ],
+      },
+      cta: {
+        title: 'Ready to Join Us?',
+        description:
+          'Our meetups are free and open to everyone. RSVP on Meetup.com to get notified about upcoming events and secure your spot!',
+        button: 'View Upcoming Meetups',
+        externalNote: 'Opens Meetup.com in a new tab',
+      },
     },
     speakers: {
       title: 'Our Speakers',
@@ -363,6 +413,11 @@ export const LABELS = {
     },
   },
   cohorts: {
+    status: {
+      open: 'Now Accepting Applications',
+      inProgress: 'Cohort In Progress',
+      closed: 'Applications Closed',
+    },
     hero: {
       tagline: 'Dallas Software Developers',
       heading: 'Cohort Program',
@@ -422,7 +477,7 @@ export const LABELS = {
         technicalFoundation: {
           title: 'Technical Foundation',
           description:
-            "You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code. We don't expect mastery, just a willingness to learn.",
+            "You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.",
         },
       },
       dallasCallout: {
@@ -576,6 +631,42 @@ export const LABELS = {
       nextTestimonial: 'Next testimonial',
       goToTestimonial: 'Go to testimonial',
     },
+    faq: {
+      title: 'Frequently Asked Questions',
+      subtitle: 'Everything you need to know about the DSD Cohort Program',
+      items: [
+        {
+          question: 'Do I need to be an experienced developer to join?',
+          answer:
+            "No! Our cohorts are designed for early-career developers, bootcamp grads, and career changers. You should have basic knowledge of programming concepts and be comfortable learning new technologies. We don't expect you to be the best developer in the world, just the technical capability to contribute to a team project.",
+        },
+        {
+          question: 'How much time do I need to commit each week?',
+          answer:
+            'Plan for approximately 15-20 hours per week. This includes team meetings, coding sessions, and independent work. Most activities happen in evenings and weekends, and your team will establish a schedule that works for everyone.',
+        },
+        {
+          question: 'Is the program really free?',
+          answer:
+            "Yes, 100% free! The DSD Cohort Program is a volunteer-run community initiative. We don't charge any fees because our mission is to uplift aspiring developers and strengthen the Dallas tech ecosystem.",
+        },
+        {
+          question: 'Do I need to be located in Dallas?',
+          answer:
+            'While priority is given to Dallas-Fort Worth area participants, the program is fully remote and open to anyone. You will need to be available during US Central Time zone hours for team meetings.',
+        },
+        {
+          question: 'What kind of projects will I work on?',
+          answer:
+            'Each cohort works on a real-world project that addresses actual needs in the tech community. Past projects have included developer portfolio tools, community event platforms, and skill-tracking applications. Projects are selected based on technical learning value and community impact.',
+        },
+        {
+          question: 'What happens after the cohort ends?',
+          answer:
+            "You'll join our alumni network, which provides ongoing support, networking opportunities, and job leads. Many alumni return as mentors for future cohorts. You'll also have a completed project to add to your portfolio with professional documentation.",
+        },
+      ],
+    },
     apply: {
       title: 'How to Apply',
       description:
@@ -683,7 +774,7 @@ export const LABELS = {
       {
         title: 'Technical Foundation',
         description:
-          "You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code. We don't expect mastery, just a willingness to learn.",
+          "You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.",
       },
     ],
     programDetailsArray: [
@@ -852,7 +943,7 @@ export const LABELS = {
       monthly_meetups: {
         title: 'Monthly Meetups',
         description:
-          'Join us twice a month for in-person meetups featuring tech talks, networking, and hands-on workshops.',
+          'Join us twice a month for free in-person meetups featuring full-length tech talks (45-60 min) or themed lightning talk nights. Networking, free pizza, and all skill levels welcome!',
       },
       conference: {
         title: 'The Commit Your Code Conference',

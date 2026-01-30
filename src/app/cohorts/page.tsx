@@ -20,6 +20,7 @@ import CohortsStructure from '@/components/cohortsStructure/cohortsStructure';
 import CohortsProjects from '@/components/cohortsProjects/cohortsProjects';
 import CohortsPhotos from '@/components/cohortsPhotos/cohortsPhotos';
 import CohortsTestimonials from '@/components/cohortsTestimonials/cohortsTestimonials';
+import CohortsFAQ from '@/components/cohortsFAQ/cohortsFAQ';
 import CohortsApplication from './components/CohortsApplication';
 
 interface CohortStatus {
@@ -186,7 +187,7 @@ export default function CohortPage() {
   return (
     <div className={styles.pageContainer}>
       <div ref={heroSectionRef}>
-        <CohortsHero />
+        <CohortsHero status={currentCohortStatusData} />
       </div>
 
       <div data-section='overview'>
@@ -233,6 +234,13 @@ export default function CohortPage() {
           (sectionRefsByKey.current['testimonials'] = sectionElement)
         }
         isVisible={visibleSections.has('testimonials')}
+      />
+
+      <CohortsFAQ
+        sectionRef={(sectionElement) =>
+          (sectionRefsByKey.current['faq'] = sectionElement)
+        }
+        isVisible={visibleSections.has('faq')}
       />
 
       <CohortsApplication

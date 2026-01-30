@@ -5,8 +5,42 @@ import FloatingShapes from '@/components/decorative/floatingShapes';
 import styles from './cohortsHero.module.css';
 import { LABELS } from '@/app/labels';
 
-export default function CohortsHero() {
+interface CohortStatus {
+  statusType: string;
+  message: string;
+  active: boolean;
+}
+
+interface CohortsHeroProps {
+  status?: CohortStatus;
+}
+
+export default function CohortsHero({ status }: CohortsHeroProps) {
   const heroRef = useRef<HTMLDivElement>(null);
+
+  const getStatusBadgeClass = () => {
+    if (!status) return styles.statusBadgeClosed;
+    switch (status.statusType) {
+      case 'open':
+        return styles.statusBadgeOpen;
+      case 'in_progress':
+        return styles.statusBadgeInProgress;
+      default:
+        return styles.statusBadgeClosed;
+    }
+  };
+
+  const getStatusLabel = () => {
+    if (!status) return LABELS.cohorts.status.closed;
+    switch (status.statusType) {
+      case 'open':
+        return LABELS.cohorts.status.open;
+      case 'in_progress':
+        return LABELS.cohorts.status.inProgress;
+      default:
+        return LABELS.cohorts.status.closed;
+    }
+  };
 
   return (
     <section
@@ -30,6 +64,15 @@ export default function CohortsHero() {
 
       <div className={styles.heroContent}>
         <div className={styles.heroTextContent}>
+          {status && (
+            <div className={styles.statusBanner}>
+              <span className={`${styles.statusBadge} ${getStatusBadgeClass()}`}>
+                {getStatusLabel()}
+              </span>
+              <p className={styles.statusMessage}>{status.message}</p>
+            </div>
+          )}
+
           <h1 className={styles.heroHeading}>
             {LABELS.cohorts.hero.tagline}{' '}
             <span className={styles.highlight}>
