@@ -11,6 +11,32 @@ export const LABELS = {
     discord: 'Discord',
     linkedin: 'LinkedIn',
   },
+  newHere: {
+    badge: 'New Here?',
+    title: 'Find Your Path in the Community',
+    subtitle:
+      'Not sure where to start? Here are the best ways to get involved with Dallas Software Developers.',
+    paths: {
+      meetups: {
+        title: 'Attend a Meetup',
+        description:
+          'Join us twice a month for tech talks, networking, and free pizza. Perfect for connecting with local developers.',
+        cta: 'Explore Events',
+      },
+      cohorts: {
+        title: 'Join a Cohort',
+        description:
+          'Work on a real project with a team of developers guided by industry mentors. Free, 6-week program.',
+        cta: 'Learn More',
+      },
+      speak: {
+        title: 'Give a Talk',
+        description:
+          'Share your knowledge with the community. All skill levels welcome, from lightning talks to full sessions.',
+        cta: 'Become a Speaker',
+      },
+    },
+  },
   hero: {
     elevate: 'Elevate',
     your_code: 'Your Code',
@@ -96,6 +122,7 @@ export const LABELS = {
     contact: 'Contact',
     email: 'dallassoftwaredevelopersdsd@gmail.com',
     join_discord: 'Join our Discord',
+    partnerships: 'Sponsor or Partner with Us',
     rights_reserved: 'All rights reserved.',
   },
   speakersList: {

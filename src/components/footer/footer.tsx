@@ -73,6 +73,9 @@ export default function Footer() {
                 >
                   {LABELS.footer.join_discord}
                 </a>
+                <a href={`mailto:${LABELS.footer.email}?subject=DSD%20Partnership%20Inquiry`}>
+                  {LABELS.footer.partnerships}
+                </a>
               </div>
             </div>
           </div>
