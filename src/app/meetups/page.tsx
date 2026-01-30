@@ -1,5 +1,6 @@
-import React from 'react';
+import { redirect } from 'next/navigation';
+import { externalLinks } from '@/app/_constants';
 
 export default function MeetupsPage() {
-  return <div>Meetups</div>;
+  redirect(externalLinks.meetupUrl);
 }

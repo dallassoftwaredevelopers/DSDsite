@@ -60,9 +60,11 @@ export default function SponsorshipSection() {
                 {LABELS.sponsorship.contact_us}
               </a>
               <a
-                href='/assets/sponsor.png'
+                href='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/sponsor.png'
                 download='DSD-Sponsorship-Info.png'
                 className={styles.downloadButton}
+                target='_blank'
+                rel='noopener noreferrer'
               >
                 {LABELS.sponsorship.download_one_pager}
               </a>

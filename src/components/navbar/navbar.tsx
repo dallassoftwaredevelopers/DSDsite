@@ -167,7 +167,9 @@ export default function Navbar() {
             <div className={styles.mobileNavFooter}>
               <div className={styles.socialLinks}>
                 <a
-                  href='#'
+                  href={externalLinks.githubUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className={styles.socialLink}
                   aria-label={LABELS.navbar.github}
                 >
@@ -182,7 +184,9 @@ export default function Navbar() {
                   </svg>
                 </a>
                 <a
-                  href='#'
+                  href={externalLinks.discordUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className={styles.socialLink}
                   aria-label={LABELS.navbar.discord}
                 >
@@ -197,7 +201,9 @@ export default function Navbar() {
                   </svg>
                 </a>
                 <a
-                  href='#'
+                  href={externalLinks.linkedinUrl}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className={styles.socialLink}
                   aria-label={LABELS.navbar.linkedin}
                 >

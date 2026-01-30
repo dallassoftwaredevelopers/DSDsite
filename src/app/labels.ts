@@ -637,7 +637,7 @@ export const LABELS = {
         role: 'Software Engineer',
         company: 'Bank Of America',
         quote:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+          'The biggest benefit of the cohort was providing an environment to practice development in a collaborative team setting, which was something I couldn\'t get from just working on small projects alone. Working with others on a large project over 6 weeks gave me the confidence and skills I needed to excel during my internship, which eventually led to a full-time offer. I\'ve since had the opportunity to return as a cohort lead, continuing to build my leadership skills while giving back to the community that helped launch my career.',
         cohort: 'Cohort 8',
         image:
           'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/aaryanDas.jpg',
