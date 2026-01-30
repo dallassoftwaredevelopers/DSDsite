@@ -91,6 +91,7 @@ export const LABELS = {
     home: 'Home',
     community: 'Community',
     cohorts: 'Cohorts',
+    speak: 'Speak',
     about: 'About',
     contact: 'Contact',
     email: 'dallassoftwaredevelopersdsd@gmail.com',
@@ -257,6 +258,78 @@ export const LABELS = {
     },
     speakers: {
       title: 'Our Speakers',
+    },
+  },
+  speak: {
+    hero: {
+      tagline: 'Dallas Software Developers',
+      title: 'Share Your Knowledge',
+      subtitle:
+        "Inspire our community of 500+ developers by sharing your expertise at one of our monthly meetups. We're always looking for passionate speakers.",
+      stats: {
+        audience: '50+',
+        audienceLabel: 'Attendees',
+        meetups: '24',
+        meetupsLabel: 'Events/Year',
+        speakers: '100+',
+        speakersLabel: 'Past Speakers',
+      },
+      cta: 'Submit Your Talk',
+    },
+    guidelines: {
+      title: 'Talk Format & Guidelines',
+      subtitle: "Here's what to expect when you speak at a DSD meetup",
+      duration: {
+        title: 'Talk Duration',
+        description:
+          'We do two types of talks, either lightning talks in our "A Night Of" Theme (10-15 minutes MAX) or full-length talks (45-60 minutes MAX).',
+      },
+      format: {
+        title: 'In-Person Only',
+        description:
+          'All speaking engagements are in-person at our meetup venues in the Dallas-Fort Worth area. We cannot accommodate remote presentations.',
+      },
+      equipment: {
+        title: 'A/V Equipment',
+        description:
+          'We provide projector, HDMI connection, speaker system, and a clicker. Bring your laptop with your presentation ready to go.',
+      },
+      topics: {
+        title: 'Topic Ideas',
+        description:
+          'We welcome talks on web development, mobile, DevOps, AI/ML, career growth, soft skills, and emerging technologies. All experience levels welcome!',
+      },
+    },
+    benefits: {
+      title: 'Why Speak at DSD?',
+      items: [
+        {
+          title: 'Grow Your Network',
+          description:
+            'Connect with hundreds of developers, potential employers, and collaborators in the Dallas tech community.',
+        },
+        {
+          title: 'Build Your Brand',
+          description:
+            "Establish yourself as an expert in your field. We'll promote your talk on our social channels and feature you on our speakers page.",
+        },
+        {
+          title: 'Practice Public Speaking',
+          description:
+            'Our supportive community is a great place to practice presenting. We welcome first-time speakers and provide feedback.',
+        },
+        {
+          title: 'Give Back',
+          description:
+            'Help uplift the Dallas developer community by sharing what you know. Your experience could help someone land their dream job.',
+        },
+      ],
+    },
+    cta: {
+      title: 'Ready to Share Your Story?',
+      description:
+        "We'd love to hear what you want to talk about. Submit your proposal and we'll get back to you soon.",
+      button: 'Submit Your Talk Proposal',
     },
   },
   speakerForm: {

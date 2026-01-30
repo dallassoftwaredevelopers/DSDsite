@@ -51,6 +51,9 @@ export default function Footer() {
                 <Link href={internalLinks.cohorts.link}>
                   {LABELS.footer.cohorts}
                 </Link>
+                <Link href={internalLinks.speak.link}>
+                  {LABELS.footer.speak}
+                </Link>
                 <Link href={internalLinks.about.link}>
                   {LABELS.footer.about}
                 </Link>

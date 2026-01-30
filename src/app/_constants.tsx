@@ -16,6 +16,10 @@ export const internalLinks = {
     link: '/cohorts',
     label: 'Cohorts',
   },
+  speak: {
+    link: '/speak',
+    label: 'Speak',
+  },
   about: {
     link: '/about',
     label: 'About',
