@@ -6,38 +6,18 @@ import styles from './heroSection.module.css';
 import { LABELS } from '@/app/labels';
 import { useScrollEffect } from '@/hooks/useScrollEffect';
 import { useVideoPlayer } from '@/hooks/useVideoPlayer';
+import ParticleCanvas from './ParticleCanvas';
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { videoRef, isPlaying, togglePlayback } = useVideoPlayer();
-  const [mousePos, setMousePos] = React.useState({ x: 0, y: 0 });
 
   useScrollEffect({
     parallaxElementsContainer: heroRef,
   });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    if (heroRef.current) {
-      const rect = heroRef.current.getBoundingClientRect();
-      setMousePos({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      });
-    }
-  };
-
   return (
-    <section
-      className={styles.hero}
-      ref={heroRef}
-      onMouseMove={handleMouseMove}
-      style={
-        {
-          '--mouse-x': `${mousePos.x}px`,
-          '--mouse-y': `${mousePos.y}px`,
-        } as React.CSSProperties
-      }
-    >
+    <section className={styles.hero} ref={heroRef}>
       <div className={styles.heroBackground}>
         <div
           className={`${styles.gradientOverlay} ${styles.parallax}`}
@@ -92,7 +72,7 @@ export default function HeroSection() {
 
           <div className={styles.statContainer}>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>500+</span>
+              <span className={styles.statNumber}>7,400+</span>
               <span className={styles.statLabel}>
                 {LABELS.hero.stat_members}
               </span>
@@ -150,6 +130,11 @@ export default function HeroSection() {
             <div className={styles.cardDecoration}></div>
           </div>
         </div>
+      </div>
+
+      <div className={styles.particleSection}>
+        <ParticleCanvas text="DSD" />
+        <p className={styles.interactHint}>Move your mouse here!</p>
       </div>
 
       <div className={styles.scrollIndicator}>

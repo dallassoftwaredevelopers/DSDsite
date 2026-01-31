@@ -2,7 +2,7 @@ import { useEffect, RefObject, useCallback } from 'react';
 
 interface UseScrollEffectOptions {
   onScrollPositionChange?: (currentScrollPositionInPixels: number) => void;
-  parallaxElementsContainer?: RefObject<HTMLElement>;
+  parallaxElementsContainer?: RefObject<HTMLElement | null>;
   scrollThresholdInPixelsForEffects?: number;
 }
 
