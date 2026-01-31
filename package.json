@@ -11,7 +11,7 @@
     "test": "jest",
     "format": "prettier --check ./src",
     "format:fix": "prettier --write ./src",
-    "prepare": "husky"
+    "prepare": "node -e \"if (process.env.CI !== 'true') { require('child_process').execSync('npx husky', {stdio: 'inherit'}) }\""
   },
   "dependencies": {
     "@tanstack/react-query": "^5.54.1",

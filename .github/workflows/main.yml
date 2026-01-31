@@ -1,50 +1,66 @@
 ---
+name: CI
+
+on:
+  pull_request:
+  push:
+
 jobs:
   contrib-readme-job:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     name: A job to automate contrib in readme
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Contribute List
         uses: akhilmhdh/contributors-readme-action@v2.3.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   eslint-run-push:
     name: Run ESLint
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+      - name: Install dependencies
+        run: npm ci
       - name: Run ESLint
-        run: npm install
-          npx eslint .
+        run: npx eslint .
+
   prettier-format-check:
     name: Check code formatting with Prettier
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: "14"
+          node-version: "20"
+          cache: "npm"
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Run Prettier Check
         run: npx prettier --check ./src
+
   typescript-run-push:
     name: Setup TypeScript on Main Push
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: "14"
+          node-version: "20"
+          cache: "npm"
       - name: Install TypeScript
         run: npm install -g typescript
       - name: Check TypeScript Version
         run: tsc --version
-on:
-  pull_request:
-  push:
