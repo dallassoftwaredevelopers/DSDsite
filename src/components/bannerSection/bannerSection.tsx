@@ -1,81 +1,40 @@
-'use client';
-
-import React, { useEffect, useRef, useState } from 'react';
 import styles from './bannerSection.module.css';
-import Image from 'next/image';
 import BackgroundPattern from '@/components/decorative/backgroundPattern';
 import FloatingShapes from '@/components/decorative/floatingShapes';
 import { LABELS } from '@/app/labels';
+import AnimatedStatsGrid from './AnimatedStatsGrid';
+
+const statsData = [
+  {
+    targetValue: 7400,
+    suffix: '+',
+    label: LABELS.banner.active_members,
+    icon: '👥',
+  },
+  {
+    targetValue: 24,
+    label: LABELS.banner.meetups_a_year,
+    icon: '📅',
+    delay: '0.1s',
+  },
+  {
+    targetValue: 1,
+    label: LABELS.banner.tech_conference,
+    icon: '💻',
+    delay: '0.2s',
+  },
+  {
+    targetValue: 100,
+    suffix: '+',
+    label: LABELS.banner.speakers_and_cohort,
+    icon: '🌟',
+    delay: '0.3s',
+  },
+];
 
 export default function BannerSection() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const [counters, setCounters] = useState({
-    members: 0,
-    events: 0,
-    conference: 0,
-    volunteers: 0,
-  });
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !isVisible) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    const currentSection = sectionRef.current;
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
-    return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
-    };
-  }, [isVisible]);
-
-  useEffect(() => {
-    if (isVisible) {
-      const duration = 2000;
-      const steps = 60;
-      const interval = duration / steps;
-
-      const targets = {
-        members: 7400,
-        events: 24,
-        conference: 1,
-        volunteers: 100,
-      };
-
-      let currentStep = 0;
-      const timer = setInterval(() => {
-        currentStep++;
-        const progress = currentStep / steps;
-
-        setCounters({
-          members: Math.floor(targets.members * progress),
-          events: Math.floor(targets.events * progress),
-          conference: Math.floor(targets.conference * progress),
-          volunteers: Math.floor(targets.volunteers * progress),
-        });
-
-        if (currentStep >= steps) {
-          clearInterval(timer);
-          setCounters(targets);
-        }
-      }, interval);
-
-      return () => clearInterval(timer);
-    }
-  }, [isVisible]);
-
   return (
-    <div className={styles.bannerSection} ref={sectionRef}>
+    <div className={styles.bannerSection}>
       <BackgroundPattern variant='waves' opacity={0.05} />
       <FloatingShapes
         shapes={[
@@ -108,47 +67,7 @@ export default function BannerSection() {
           </h1>
         </div>
 
-        <div className={styles.statsGrid}>
-          <div
-            className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
-          >
-            <div className={styles.statNumber}>{counters.members}+</div>
-            <div className={styles.statLabel}>
-              {LABELS.banner.active_members}
-            </div>
-            <div className={styles.statIcon}>👥</div>
-          </div>
-          <div
-            className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
-            style={{ animationDelay: '0.1s' }}
-          >
-            <div className={styles.statNumber}>{counters.events}</div>
-            <div className={styles.statLabel}>
-              {LABELS.banner.meetups_a_year}
-            </div>
-            <div className={styles.statIcon}>📅</div>
-          </div>
-          <div
-            className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
-            style={{ animationDelay: '0.2s' }}
-          >
-            <div className={styles.statNumber}>{counters.conference}</div>
-            <div className={styles.statLabel}>
-              {LABELS.banner.tech_conference}
-            </div>
-            <div className={styles.statIcon}>💻</div>
-          </div>
-          <div
-            className={`${styles.statCard} ${isVisible ? styles.animateIn : ''}`}
-            style={{ animationDelay: '0.3s' }}
-          >
-            <div className={styles.statNumber}>{counters.volunteers}+</div>
-            <div className={styles.statLabel}>
-              {LABELS.banner.speakers_and_cohort}
-            </div>
-            <div className={styles.statIcon}>🌟</div>
-          </div>
-        </div>
+        <AnimatedStatsGrid stats={statsData} />
 
         <div className={styles.contentSection}>
           <div className={styles.missionSection}>

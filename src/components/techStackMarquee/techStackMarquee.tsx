@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import styles from './techStackMarquee.module.css';
 import {
   SiReact,
@@ -42,11 +39,12 @@ const techStack = [
 
 export default function TechStackMarquee() {
   return (
-    <section className={styles.marqueeSection} aria-label="Technologies used by our community">
+    <section
+      className={styles.marqueeSection}
+      aria-label='Technologies used by our community'
+    >
       <div className={styles.gradientLeft}></div>
       <div className={styles.marqueeContainer}>
-        {/* We duplicate the content to create a seamless infinite loop. 
-        This is crucial for the marquee to work properly.*/}
         <div className={styles.marqueeContent}>
           {techStack.map((tech, index) => (
             <div key={`tech-${index}`} className={styles.techCard}>
@@ -55,7 +53,7 @@ export default function TechStackMarquee() {
             </div>
           ))}
         </div>
-        <div className={styles.marqueeContent} aria-hidden="true">
+        <div className={styles.marqueeContent} aria-hidden='true'>
           {techStack.map((tech, index) => (
             <div key={`tech-duplicate-${index}`} className={styles.techCard}>
               <span className={styles.icon}>{tech.icon}</span>

@@ -1,13 +1,11 @@
-'use client';
 import SocialLinks from '@/components/socialSection/socialLinks';
 import Link from 'next/link';
 import styles from './footer.module.css';
 import { socialData, internalLinks } from '@/app/_constants';
 import { LABELS } from '@/app/labels';
+import CurrentYear from './CurrentYear';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className={styles.footerSection} data-testid='footerComponent'>
       <div className={styles.footerWave}>
@@ -73,7 +71,9 @@ export default function Footer() {
                 >
                   {LABELS.footer.join_discord}
                 </a>
-                <a href={`mailto:${LABELS.footer.email}?subject=DSD%20Partnership%20Inquiry`}>
+                <a
+                  href={`mailto:${LABELS.footer.email}?subject=DSD%20Partnership%20Inquiry`}
+                >
                   {LABELS.footer.partnerships}
                 </a>
               </div>
@@ -82,7 +82,7 @@ export default function Footer() {
 
           <div className={styles.footerBottom}>
             <p className={styles.copyright}>
-              &copy; {currentYear} <span>{LABELS.app.orgName}</span>.{' '}
+              &copy; <CurrentYear /> <span>{LABELS.app.orgName}</span>.{' '}
               {LABELS.footer.rights_reserved}
             </p>
           </div>

@@ -1,23 +1,13 @@
-'use client';
-
-import React, { useRef } from 'react';
 import Link from 'next/link';
 import styles from './heroSection.module.css';
 import { LABELS } from '@/app/labels';
-import { useScrollEffect } from '@/hooks/useScrollEffect';
-import { useVideoPlayer } from '@/hooks/useVideoPlayer';
-import ParticleCanvas from './ParticleCanvas';
+import HeroInteractive from './HeroInteractive';
+import HeroVideoPlayer from './HeroVideoPlayer';
+import HeroParticles from './HeroParticles';
 
 export default function HeroSection() {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const { videoRef, isPlaying, togglePlayback } = useVideoPlayer();
-
-  useScrollEffect({
-    parallaxElementsContainer: heroRef,
-  });
-
   return (
-    <section className={styles.hero} ref={heroRef}>
+    <HeroInteractive>
       <div className={styles.heroBackground}>
         <div
           className={`${styles.gradientOverlay} ${styles.parallax}`}
@@ -93,49 +83,11 @@ export default function HeroSection() {
         </div>
 
         <div className={styles.mediaContent}>
-          <div className={styles.videoCard}>
-            <div
-              className={`${styles.videoCardInner} ${isPlaying ? styles.videoCardPlaying : ''}`}
-              onClick={togglePlayback}
-              style={{ cursor: 'pointer' }}
-            >
-              <video
-                ref={videoRef}
-                className={`${styles.heroVideo} ${isPlaying ? styles.videoPlaying : ''}`}
-                loop
-                muted
-                playsInline
-                preload='none'
-                poster='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/videoPlaceholder.png'
-              >
-                <source
-                  src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/MeetupIntro.mp4'
-                  type='video/mp4'
-                />
-                {LABELS.hero.video_unsupported}
-              </video>
-              <div
-                className={`${styles.videoOverlay} ${isPlaying ? styles.overlayFaded : ''}`}
-              ></div>
-              <button
-                className={`${styles.playButton} ${isPlaying ? styles.playButtonHidden : ''}`}
-                aria-label={
-                  isPlaying ? LABELS.hero.pause_video : LABELS.hero.play_video
-                }
-                type='button'
-              >
-                <div className={styles.playIcon}></div>
-              </button>
-            </div>
-            <div className={styles.cardDecoration}></div>
-          </div>
+          <HeroVideoPlayer />
         </div>
       </div>
 
-      <div className={styles.particleSection}>
-        <ParticleCanvas text="DSD" />
-        <p className={styles.interactHint}>Move your mouse here!</p>
-      </div>
+      <HeroParticles />
 
       <div className={styles.scrollIndicator}>
         <div className={styles.mouse}>
@@ -143,6 +95,6 @@ export default function HeroSection() {
         </div>
         <div className={styles.scrollText}>{LABELS.hero.scroll_to_explore}</div>
       </div>
-    </section>
+    </HeroInteractive>
   );
 }
