@@ -9,11 +9,14 @@ import AboutCTA from '@/components/aboutCTA/aboutCTA';
 
 export const metadata: Metadata = {
   title: 'About Us | Dallas Software Developers',
-  description: 'Learn about Dallas Software Developers - a community of passionate developers sharing knowledge and building connections in Dallas-Fort Worth.',
-  keywords: 'about DSD, Dallas developers community, software developer group history, tech community Dallas',
+  description:
+    'Learn about Dallas Software Developers - a community of passionate developers sharing knowledge and building connections in Dallas-Fort Worth.',
+  keywords:
+    'about DSD, Dallas developers community, software developer group history, tech community Dallas',
   openGraph: {
     title: 'About Us | Dallas Software Developers',
-    description: 'Learn about Dallas Software Developers - a community of passionate developers sharing knowledge and building connections.',
+    description:
+      'Learn about Dallas Software Developers - a community of passionate developers sharing knowledge and building connections.',
     type: 'website',
   },
 };

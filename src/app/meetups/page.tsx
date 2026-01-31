@@ -8,7 +8,8 @@ import MeetupCTAButton from './MeetupCTAButton';
 export const metadata: Metadata = {
   title: 'Meetups | Dallas Software Developers',
   description: LABELS.pages.meetups.hero.subtitle,
-  keywords: 'Dallas tech meetups, developer events Dallas, coding meetups, software developer networking',
+  keywords:
+    'Dallas tech meetups, developer events Dallas, coding meetups, software developer networking',
   openGraph: {
     title: 'Meetups | Dallas Software Developers',
     description: LABELS.pages.meetups.hero.subtitle,
@@ -193,7 +194,9 @@ export default function MeetupsPage() {
             {LABELS.pages.meetups.cta.description}
           </p>
           <MeetupCTAButton buttonText={LABELS.pages.meetups.cta.button} />
-          <p className={styles.ctaNote}>{LABELS.pages.meetups.cta.externalNote}</p>
+          <p className={styles.ctaNote}>
+            {LABELS.pages.meetups.cta.externalNote}
+          </p>
         </div>
       </section>
     </div>

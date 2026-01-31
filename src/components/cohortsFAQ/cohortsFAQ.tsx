@@ -27,10 +27,10 @@ export default function CohortsFAQ({ sectionRef, isVisible }: CohortsFAQProps) {
     <section
       ref={sectionRef}
       className={`${styles.faqSection} ${isVisible ? styles.visible : ''}`}
-      aria-labelledby="faq-heading"
+      aria-labelledby='faq-heading'
     >
       <div className={styles.container}>
-        <h2 id="faq-heading" className={styles.heading}>
+        <h2 id='faq-heading' className={styles.heading}>
           {LABELS.cohorts.faq.title}
         </h2>
         <p className={styles.subheading}>{LABELS.cohorts.faq.subtitle}</p>
@@ -48,7 +48,7 @@ export default function CohortsFAQ({ sectionRef, isVisible }: CohortsFAQProps) {
                 aria-controls={`faq-answer-${index}`}
               >
                 <span>{item.question}</span>
-                <span className={styles.faqIcon} aria-hidden="true">
+                <span className={styles.faqIcon} aria-hidden='true'>
                   {openIndex === index ? '−' : '+'}
                 </span>
               </button>

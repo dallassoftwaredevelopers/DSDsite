@@ -504,7 +504,7 @@ export const LABELS = {
         technicalFoundation: {
           title: 'Technical Foundation',
           description:
-            "You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.",
+            'You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.',
         },
       },
       dallasCallout: {
@@ -801,7 +801,7 @@ export const LABELS = {
       {
         title: 'Technical Foundation',
         description:
-          "You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.",
+          'You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.',
       },
     ],
     programDetailsArray: [
@@ -828,7 +828,7 @@ export const LABELS = {
         role: 'Software Engineer',
         company: 'Bank Of America',
         quote:
-          'The biggest benefit of the cohort was providing an environment to practice development in a collaborative team setting, which was something I couldn\'t get from just working on small projects alone. Working with others on a large project over 6 weeks gave me the confidence and skills I needed to excel during my internship, which eventually led to a full-time offer. I\'ve since had the opportunity to return as a cohort lead, continuing to build my leadership skills while giving back to the community that helped launch my career.',
+          "The biggest benefit of the cohort was providing an environment to practice development in a collaborative team setting, which was something I couldn't get from just working on small projects alone. Working with others on a large project over 6 weeks gave me the confidence and skills I needed to excel during my internship, which eventually led to a full-time offer. I've since had the opportunity to return as a cohort lead, continuing to build my leadership skills while giving back to the community that helped launch my career.",
         cohort: 'Cohort 8',
         image:
           'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/people/aaryanDas.jpg',

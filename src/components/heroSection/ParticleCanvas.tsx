@@ -57,7 +57,12 @@ function ParticleCanvas({ text = 'DSD', className }: ParticleCanvasProps) {
       offCtx.textBaseline = 'middle';
       offCtx.fillText(text, offscreen.width / 2, offscreen.height / 2);
 
-      const imageData = offCtx.getImageData(0, 0, offscreen.width, offscreen.height);
+      const imageData = offCtx.getImageData(
+        0,
+        0,
+        offscreen.width,
+        offscreen.height
+      );
       const data = imageData.data;
       const gap = 4;
 

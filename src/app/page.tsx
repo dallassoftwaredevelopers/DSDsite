@@ -12,7 +12,8 @@ import { LABELS } from './labels';
 export const metadata: Metadata = {
   title: `${LABELS.app.orgName} | Dallas Developer Community`,
   description: LABELS.hero.subheading,
-  keywords: 'Dallas software developers, coding community, tech meetup Dallas, programming Dallas, developer events',
+  keywords:
+    'Dallas software developers, coding community, tech meetup Dallas, programming Dallas, developer events',
   openGraph: {
     title: LABELS.app.orgName,
     description: LABELS.hero.subheading,

@@ -133,10 +133,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg,
-      hsla(252, 74%, 26%, 0.03) 0%,
-      hsla(252, 80%, 46%, 0.05) 50%,
-      hsla(208, 93%, 23%, 0.163) 100%);
+  background: linear-gradient(
+    135deg,
+    hsla(252, 74%, 26%, 0.03) 0%,
+    hsla(252, 80%, 46%, 0.05) 50%,
+    hsla(208, 93%, 23%, 0.163) 100%
+  );
   z-index: 1;
 }
 
@@ -160,9 +162,11 @@
   left: 15%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle,
-      hsla(213, 100%, 60%, 0.15) 0%,
-      hsla(213, 100%, 60%, 0) 70%);
+  background: radial-gradient(
+    circle,
+    hsla(213, 100%, 60%, 0.15) 0%,
+    hsla(213, 100%, 60%, 0) 70%
+  );
   animation: floatAnimation 20s infinite alternate ease-in-out;
 }
 
@@ -171,9 +175,11 @@
   right: 10%;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle,
-      hsla(213, 100%, 80%, 0.1) 0%,
-      hsla(213, 100%, 80%, 0) 70%);
+  background: radial-gradient(
+    circle,
+    hsla(213, 100%, 80%, 0.1) 0%,
+    hsla(213, 100%, 80%, 0) 70%
+  );
   animation: floatAnimation 15s infinite alternate-reverse ease-in-out;
 }
 
@@ -183,9 +189,11 @@
   transform: translate(-50%, -50%);
   width: 450px;
   height: 450px;
-  background: radial-gradient(circle,
-      hsla(222, 89%, 12%, 0.05) 0%,
-      hsla(222, 89%, 12%, 0) 70%);
+  background: radial-gradient(
+    circle,
+    hsla(222, 89%, 12%, 0.05) 0%,
+    hsla(222, 89%, 12%, 0) 70%
+  );
   animation: pulseAnimation 10s infinite ease-in-out;
 }
 
@@ -194,9 +202,11 @@
   right: 25%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle,
-      hsla(213, 100%, 70%, 0.12) 0%,
-      hsla(213, 100%, 70%, 0) 70%);
+  background: radial-gradient(
+    circle,
+    hsla(213, 100%, 70%, 0.12) 0%,
+    hsla(213, 100%, 70%, 0) 70%
+  );
   animation: floatAnimation 18s infinite alternate-reverse ease-in-out;
 }
 
@@ -294,10 +304,12 @@
   align-items: center;
   gap: var(--spacing-4);
   padding: var(--spacing-6) var(--spacing-8);
-  background: linear-gradient(145deg,
-      hsla(var(--primary), 0.08) 0%,
-      hsla(var(--primary-light), 0.04) 50%,
-      hsla(var(--accent), 0.06) 100%);
+  background: linear-gradient(
+    145deg,
+    hsla(var(--primary), 0.08) 0%,
+    hsla(var(--primary-light), 0.04) 50%,
+    hsla(var(--accent), 0.06) 100%
+  );
   backdrop-filter: blur(20px);
   border-radius: var(--border-radius-xl);
   border: 2px solid hsla(var(--primary), 0.15);
@@ -445,19 +457,23 @@
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg,
-      hsl(var(--primary)),
-      hsl(var(--accent)),
-      hsl(var(--primary-light)));
+  background: linear-gradient(
+    90deg,
+    hsl(var(--primary)),
+    hsl(var(--accent)),
+    hsl(var(--primary-light))
+  );
   border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
 }
 
 .highlightItem:hover {
   transform: translateY(-8px) scale(1.02);
-  background: linear-gradient(145deg,
-      hsla(var(--primary), 0.12) 0%,
-      hsla(var(--primary-light), 0.08) 50%,
-      hsla(var(--accent), 0.1) 100%);
+  background: linear-gradient(
+    145deg,
+    hsla(var(--primary), 0.12) 0%,
+    hsla(var(--primary-light), 0.08) 50%,
+    hsla(var(--accent), 0.1) 100%
+  );
   border-color: hsla(var(--primary), 0.25);
   box-shadow:
     0 16px 48px hsla(var(--primary), 0.2),
@@ -471,10 +487,12 @@
   justify-content: center;
   width: 56px;
   height: 56px;
-  background: linear-gradient(135deg,
-      hsl(var(--primary)),
-      hsl(var(--accent)),
-      hsl(var(--primary-light)));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent)),
+    hsl(var(--primary-light))
+  );
   border-radius: 50%;
   color: hsl(var(--light));
   flex-shrink: 0;
@@ -489,10 +507,12 @@
   content: '';
   position: absolute;
   inset: -2px;
-  background: linear-gradient(135deg,
-      hsl(var(--primary)),
-      hsl(var(--accent)),
-      hsl(var(--primary-light)));
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary)),
+    hsl(var(--accent)),
+    hsl(var(--primary-light))
+  );
   border-radius: 50%;
   z-index: -1;
   opacity: 0;
@@ -549,7 +569,7 @@
   pointer-events: none;
 }
 
-.scrollIndicator>* {
+.scrollIndicator > * {
   pointer-events: auto;
 }
 
@@ -857,19 +877,31 @@
 }
 
 .statusBadgeOpen {
-  background: linear-gradient(135deg, hsla(142, 71%, 45%, 0.2), hsla(142, 71%, 45%, 0.1));
+  background: linear-gradient(
+    135deg,
+    hsla(142, 71%, 45%, 0.2),
+    hsla(142, 71%, 45%, 0.1)
+  );
   color: hsl(142, 71%, 35%);
   border: 1px solid hsla(142, 71%, 45%, 0.3);
 }
 
 .statusBadgeInProgress {
-  background: linear-gradient(135deg, hsla(45, 93%, 47%, 0.2), hsla(45, 93%, 47%, 0.1));
+  background: linear-gradient(
+    135deg,
+    hsla(45, 93%, 47%, 0.2),
+    hsla(45, 93%, 47%, 0.1)
+  );
   color: hsl(45, 93%, 37%);
   border: 1px solid hsla(45, 93%, 47%, 0.3);
 }
 
 .statusBadgeClosed {
-  background: linear-gradient(135deg, hsla(var(--dark), 0.1), hsla(var(--dark), 0.05));
+  background: linear-gradient(
+    135deg,
+    hsla(var(--dark), 0.1),
+    hsla(var(--dark), 0.05)
+  );
   color: hsla(var(--dark), 0.7);
   border: 1px solid hsla(var(--dark), 0.2);
 }

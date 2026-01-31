@@ -2,13 +2,7 @@
 import Spinner from '@/components/spinner/spinner';
 
 import { useQuery } from '@tanstack/react-query';
-import {
-  createContext,
-  useContext,
-  useState,
-  ReactNode,
-  useEffect,
-} from 'react';
+import { createContext, useContext, ReactNode } from 'react';
 import { ActionLink } from '@/types';
 
 type GlobalState = {
@@ -20,23 +14,13 @@ const GlobalStateContext = createContext<GlobalState>({
 });
 
 export const GlobalStateProvider = ({ children }: { children: ReactNode }) => {
-  const [actionLinks, setActionLinks] = useState<Array<ActionLink> | null>(
-    null
-  );
-
-  const { data: actionLinksResponse, isLoading } = useQuery({
+  const { data: actionLinks = null, isLoading } = useQuery({
     queryKey: ['actionLinks'],
     queryFn: async () => {
       const response = await fetch('/api/actionLinks', { cache: 'no-store' });
       return response.json();
     },
   });
-
-  useEffect(() => {
-    if (actionLinksResponse) {
-      setActionLinks(actionLinksResponse);
-    }
-  }, [actionLinksResponse]);
 
   if (isLoading) return <Spinner />;
 

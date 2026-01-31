@@ -36,7 +36,7 @@ const whoShouldJoin = [
   {
     title: 'Technical Foundation',
     description:
-      "You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.",
+      'You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.',
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'

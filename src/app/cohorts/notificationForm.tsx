@@ -52,7 +52,7 @@ export default function NotificationForm() {
       return;
     }
 
-    formData.token = token ?? '';
+    const submitData = { ...formData, token: token ?? '' };
 
     try {
       const response = await fetch('/api/notificationForm', {
@@ -60,7 +60,7 @@ export default function NotificationForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(submitData),
       });
 
       if (!response.ok) {

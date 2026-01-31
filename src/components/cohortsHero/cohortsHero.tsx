@@ -66,7 +66,9 @@ export default function CohortsHero({ status }: CohortsHeroProps) {
         <div className={styles.heroTextContent}>
           {status && (
             <div className={styles.statusBanner}>
-              <span className={`${styles.statusBadge} ${getStatusBadgeClass()}`}>
+              <span
+                className={`${styles.statusBadge} ${getStatusBadgeClass()}`}
+              >
                 {getStatusLabel()}
               </span>
               <p className={styles.statusMessage}>{status.message}</p>
