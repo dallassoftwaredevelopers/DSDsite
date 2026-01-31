@@ -26,7 +26,13 @@ export async function GET(request: NextRequest) {
 
   try {
     const imageResponse = await fetch(
-      `${process.env.APPWRITE_ENDPOINT}/storage/buckets/${process.env.APPWRITE_STORAGE_BUCKET_ID}/files/${queryParam}/view?project=${process.env.APPWRITE_PROJECT_ID}`
+      `${process.env.APPWRITE_ENDPOINT}/storage/buckets/${process.env.APPWRITE_STORAGE_BUCKET_ID}/files/${queryParam}/view?project=${process.env.APPWRITE_PROJECT_ID}`,
+      {
+        headers: {
+          'X-Appwrite-Project': process.env.APPWRITE_PROJECT_ID || '',
+          'X-Appwrite-Key': process.env.APPWRITE_API_KEY || '',
+        },
+      }
     );
 
     const contentType =
