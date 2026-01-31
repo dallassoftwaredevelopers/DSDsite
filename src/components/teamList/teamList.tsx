@@ -5,6 +5,7 @@ import { Speaker } from '@/types';
 import OptimizedImage from '@/components/ui/OptimizedImage';
 import styles from './teamList.module.css';
 import { LABELS } from '@/app/labels';
+import { sanitizeExternalUrl } from '@/utils/urlSanitizer';
 
 function TeamListComponent({ peopleData }: { peopleData: Speaker[] }) {
   return (
@@ -35,9 +36,9 @@ function TeamListComponent({ peopleData }: { peopleData: Speaker[] }) {
                     {LABELS.teamList.admin_role}
                   </p>
                   <p className={styles.teamCompany}>{LABELS.app.orgName}</p>
-                  {person.linkedin && (
+                  {sanitizeExternalUrl(person.linkedin) && (
                     <a
-                      href={person.linkedin}
+                      href={sanitizeExternalUrl(person.linkedin)!}
                       target='_blank'
                       rel='noopener noreferrer'
                       className={styles.linkedinLink}

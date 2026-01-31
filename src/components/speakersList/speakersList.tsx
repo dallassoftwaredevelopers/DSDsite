@@ -5,6 +5,7 @@ import { Speaker } from '@/types';
 import styles from './speakersList.module.css';
 import Image from 'next/image';
 import { LABELS } from '@/app/labels';
+import { sanitizeExternalUrl } from '@/utils/urlSanitizer';
 
 interface SpeakersListProps {
   selectedTopic?: string | null;
@@ -153,9 +154,9 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
                       {formatDate(speaker.lastSpoke)}
                     </p>
                   )}
-                  {speaker.linkedin && (
+                  {sanitizeExternalUrl(speaker.linkedin) && (
                     <a
-                      href={speaker.linkedin}
+                      href={sanitizeExternalUrl(speaker.linkedin)!}
                       target='_blank'
                       rel='noopener noreferrer'
                       className={styles.linkedinLink}
