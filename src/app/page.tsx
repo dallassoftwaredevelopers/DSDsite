@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import CardsSection from '@/components/cardsSection/cardsSection';
 import BannerSection from '@/components/bannerSection/bannerSection';
 import HeroSection from '@/components/heroSection/heroSection';
@@ -8,6 +7,18 @@ import GroupPhotoSection from '@/components/groupPhotoSection/groupPhotoSection'
 import SponsorshipSection from '@/components/sponsorshipSection/sponsorshipSection';
 import TechStackMarquee from '@/components/techStackMarquee/techStackMarquee';
 import styles from './page.module.css';
+import { LABELS } from './labels';
+
+export const metadata: Metadata = {
+  title: `${LABELS.app.orgName} | Dallas Developer Community`,
+  description: LABELS.hero.subheading,
+  keywords: 'Dallas software developers, coding community, tech meetup Dallas, programming Dallas, developer events',
+  openGraph: {
+    title: LABELS.app.orgName,
+    description: LABELS.hero.subheading,
+    type: 'website',
+  },
+};
 
 export default function Home() {
   return (
@@ -42,5 +53,3 @@ export default function Home() {
     </div>
   );
 }
-
-

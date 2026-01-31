@@ -1,17 +1,22 @@
-'use client';
-
+import type { Metadata } from 'next';
 import styles from './meetups.module.css';
 import BackgroundPattern from '@/components/decorative/backgroundPattern';
 import FloatingShapes from '@/components/decorative/floatingShapes';
-import Button from '@/components/button/button';
 import { LABELS } from '@/app/labels';
-import { externalLinks } from '@/app/_constants';
+import MeetupCTAButton from './MeetupCTAButton';
+
+export const metadata: Metadata = {
+  title: 'Meetups | Dallas Software Developers',
+  description: LABELS.pages.meetups.hero.subtitle,
+  keywords: 'Dallas tech meetups, developer events Dallas, coding meetups, software developer networking',
+  openGraph: {
+    title: 'Meetups | Dallas Software Developers',
+    description: LABELS.pages.meetups.hero.subtitle,
+    type: 'website',
+  },
+};
 
 export default function MeetupsPage() {
-  const handleJoinMeetup = () => {
-    window.open(externalLinks.meetupUrl, '_blank', 'noopener,noreferrer');
-  };
-
   return (
     <div className={styles.pageContainer}>
       <section className={styles.hero}>
@@ -68,10 +73,7 @@ export default function MeetupsPage() {
             </div>
 
             <div className={styles.heroCTA}>
-              <Button
-                buttonText={LABELS.pages.meetups.hero.cta}
-                onClick={handleJoinMeetup}
-              />
+              <MeetupCTAButton buttonText={LABELS.pages.meetups.hero.cta} />
             </div>
           </div>
         </div>
@@ -190,10 +192,7 @@ export default function MeetupsPage() {
           <p className={styles.ctaDescription}>
             {LABELS.pages.meetups.cta.description}
           </p>
-          <Button
-            buttonText={LABELS.pages.meetups.cta.button}
-            onClick={handleJoinMeetup}
-          />
+          <MeetupCTAButton buttonText={LABELS.pages.meetups.cta.button} />
           <p className={styles.ctaNote}>{LABELS.pages.meetups.cta.externalNote}</p>
         </div>
       </section>

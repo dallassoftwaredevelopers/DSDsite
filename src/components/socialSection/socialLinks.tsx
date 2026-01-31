@@ -1,3 +1,5 @@
+'use client';
+
 import { IconContext } from 'react-icons';
 import { SocialLinkData } from './socialSection';
 
