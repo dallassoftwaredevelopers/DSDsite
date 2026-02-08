@@ -175,9 +175,9 @@
 
 @media (max-width: 768px) {
   .detailCard h3 {
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
   }
   .detailCard p {
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
   }
 }

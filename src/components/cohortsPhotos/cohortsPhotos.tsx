@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { LABELS } from '@/app/labels';
 import styles from './cohortsPhotos.module.css';
 
 interface CohortsPhotosProps {
@@ -17,12 +18,9 @@ export default function CohortsPhotos({
     >
       <div className={styles.contentWrapper}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Our Cohort Community</h2>
+          <h2 className={styles.sectionTitle}>{LABELS.cohorts.photos.title}</h2>
           <p className={styles.sectionDescription}>
-            Capturing moments of collaboration, learning, and growth. These
-            photos showcase the vibrant community of developers who have
-            participated in our cohort programs, working together to build
-            real-world projects and forge lasting professional connections.
+            {LABELS.cohorts.photos.description}
           </p>
         </div>
 
@@ -32,15 +30,19 @@ export default function CohortsPhotos({
               <div className={styles.photoWrapper}>
                 <Image
                   src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohort%20group%201.jpg'
-                  alt='Cohort Group 1 - Developers collaborating on projects'
+                  alt={LABELS.cohorts.photos.imageAlts.group1}
                   width={600}
                   height={400}
                   className={styles.galleryImage}
                 />
                 <div className={styles.photoOverlay}>
                   <div className={styles.photoCaption}>
-                    <h3>Cohort Collaboration</h3>
-                    <p>Teams working together on innovative solutions</p>
+                    <h3>
+                      {LABELS.cohorts.photos.captions.collaboration.title}
+                    </h3>
+                    <p>
+                      {LABELS.cohorts.photos.captions.collaboration.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -50,15 +52,15 @@ export default function CohortsPhotos({
               <div className={styles.photoWrapper}>
                 <Image
                   src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup2.jpg'
-                  alt='Cohort Group 2 - Presentation and demo day'
+                  alt={LABELS.cohorts.photos.imageAlts.group2}
                   width={600}
                   height={400}
                   className={styles.galleryImage}
                 />
                 <div className={styles.photoOverlay}>
                   <div className={styles.photoCaption}>
-                    <h3>Demo Day Presentations</h3>
-                    <p>Showcasing completed projects to the community</p>
+                    <h3>{LABELS.cohorts.photos.captions.demoDay.title}</h3>
+                    <p>{LABELS.cohorts.photos.captions.demoDay.description}</p>
                   </div>
                 </div>
               </div>
@@ -68,15 +70,17 @@ export default function CohortsPhotos({
               <div className={styles.photoWrapper}>
                 <Image
                   src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup3.jpg'
-                  alt='Cohort Group 3 - Networking and community building'
+                  alt={LABELS.cohorts.photos.imageAlts.group3}
                   width={600}
                   height={400}
                   className={styles.galleryImage}
                 />
                 <div className={styles.photoOverlay}>
                   <div className={styles.photoCaption}>
-                    <h3>Community Connections</h3>
-                    <p>Building lasting professional relationships</p>
+                    <h3>{LABELS.cohorts.photos.captions.community.title}</h3>
+                    <p>
+                      {LABELS.cohorts.photos.captions.community.description}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -85,16 +89,28 @@ export default function CohortsPhotos({
 
           <div className={styles.photoStats}>
             <div className={styles.photoStat}>
-              <span className={styles.photoStatNumber}>100+</span>
-              <span className={styles.photoStatLabel}>Developers Trained</span>
+              <span className={styles.photoStatNumber}>
+                {LABELS.cohorts.photos.stats.developersTrained.number}
+              </span>
+              <span className={styles.photoStatLabel}>
+                {LABELS.cohorts.photos.stats.developersTrained.label}
+              </span>
             </div>
             <div className={styles.photoStat}>
-              <span className={styles.photoStatNumber}>15+</span>
-              <span className={styles.photoStatLabel}>Projects Completed</span>
+              <span className={styles.photoStatNumber}>
+                {LABELS.cohorts.photos.stats.projectsCompleted.number}
+              </span>
+              <span className={styles.photoStatLabel}>
+                {LABELS.cohorts.photos.stats.projectsCompleted.label}
+              </span>
             </div>
             <div className={styles.photoStat}>
-              <span className={styles.photoStatNumber}>85%</span>
-              <span className={styles.photoStatLabel}>Job Placement Rate</span>
+              <span className={styles.photoStatNumber}>
+                {LABELS.cohorts.photos.stats.jobPlacement.number}
+              </span>
+              <span className={styles.photoStatLabel}>
+                {LABELS.cohorts.photos.stats.jobPlacement.label}
+              </span>
             </div>
           </div>
         </div>

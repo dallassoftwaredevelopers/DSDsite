@@ -638,6 +638,35 @@ export const LABELS = {
         ],
       },
     },
+    photos: {
+      title: 'Our Cohort Community',
+      description:
+        'Capturing moments of collaboration, learning, and growth. These photos showcase the vibrant community of developers who have participated in our cohort programs, working together to build real-world projects and forge lasting professional connections.',
+      captions: {
+        collaboration: {
+          title: 'Cohort Collaboration',
+          description: 'Teams working together on innovative solutions',
+        },
+        demoDay: {
+          title: 'Demo Day Presentations',
+          description: 'Showcasing completed projects to the community',
+        },
+        community: {
+          title: 'Community Connections',
+          description: 'Building lasting professional relationships',
+        },
+      },
+      stats: {
+        developersTrained: { number: '100+', label: 'Developers Trained' },
+        projectsCompleted: { number: '15+', label: 'Projects Completed' },
+        jobPlacement: { number: '85%', label: 'Job Placement Rate' },
+      },
+      imageAlts: {
+        group1: 'Cohort Group 1 - Developers collaborating on projects',
+        group2: 'Cohort Group 2 - Presentation and demo day',
+        group3: 'Cohort Group 3 - Networking and community building',
+      },
+    },
     testimonials: {
       title: 'Success Stories',
       description:

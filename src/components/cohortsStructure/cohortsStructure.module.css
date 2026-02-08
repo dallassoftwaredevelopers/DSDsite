@@ -189,25 +189,32 @@
   }
 
   .timeline::before {
-    left: 20px;
+    left: 14px;
   }
 
   .timelineItem {
-    padding-left: 50px;
-    margin-bottom: var(--spacing-6);
+    padding-left: 44px;
+    margin-bottom: var(--spacing-8);
   }
 
   .timelineMarker {
-    left: 10px;
-    width: 20px;
-    height: 20px;
+    left: 4px;
+    width: 22px;
+    height: 22px;
+    font-size: 0;
+    overflow: hidden;
+  }
+
+  .timelineMarker span {
+    display: none;
   }
 
   .timelineContent h3 {
-    font-size: 1rem;
+    font-size: var(--text-base);
+    padding-top: 0;
   }
 
   .weekLabel {
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
   }
 }

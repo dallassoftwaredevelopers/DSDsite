@@ -3,9 +3,8 @@ import styles from './cohortsRequirements.module.css';
 
 const whoShouldJoin = [
   {
-    title: 'Early-Career or Transitioning',
-    description:
-      "Whether you're a recent bootcamp grad, CS student, or professional changing careers, our cohorts provide the real-world experience that employers in Dallas-Fort Worth are looking for.",
+    title: LABELS.cohorts.requirements.items.earlyCareer.title,
+    description: LABELS.cohorts.requirements.items.earlyCareer.description,
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -19,7 +18,7 @@ const whoShouldJoin = [
     ),
   },
   {
-    title: 'Time Commitment',
+    title: LABELS.cohorts.requirements.items.timeCommitment.title,
     description: LABELS.cohorts.requirements.items.timeCommitment.description,
     icon: (
       <svg
@@ -34,9 +33,9 @@ const whoShouldJoin = [
     ),
   },
   {
-    title: 'Technical Foundation',
+    title: LABELS.cohorts.requirements.items.technicalFoundation.title,
     description:
-      'You should be comfortable with core web or mobile technologies (e.g., JavaScript, React, C#, .NET, Java, Swift) and eager to work with tools like GitHub, Figma, Jira, and VS Code.',
+      LABELS.cohorts.requirements.items.technicalFoundation.description,
     icon: (
       <svg
         xmlns='http://www.w3.org/2000/svg'
