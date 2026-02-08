@@ -1,33 +1,34 @@
-import styles from './bannerSection.module.css';
+import { FaUsers, FaCalendarAlt, FaLaptopCode, FaStar } from 'react-icons/fa';
+import AnimatedStatsGrid from './AnimatedStatsGrid';
 import BackgroundPattern from '@/components/decorative/backgroundPattern';
 import FloatingShapes from '@/components/decorative/floatingShapes';
 import { LABELS } from '@/app/labels';
-import AnimatedStatsGrid from './AnimatedStatsGrid';
+import styles from './bannerSection.module.css';
 
 const statsData = [
   {
     targetValue: 7400,
     suffix: '+',
     label: LABELS.banner.active_members,
-    icon: '👥',
+    icon: <FaUsers aria-hidden='true' />,
   },
   {
     targetValue: 24,
     label: LABELS.banner.meetups_a_year,
-    icon: '📅',
+    icon: <FaCalendarAlt aria-hidden='true' />,
     delay: '0.1s',
   },
   {
     targetValue: 1,
     label: LABELS.banner.tech_conference,
-    icon: '💻',
+    icon: <FaLaptopCode aria-hidden='true' />,
     delay: '0.2s',
   },
   {
     targetValue: 100,
     suffix: '+',
     label: LABELS.banner.speakers_and_cohort,
-    icon: '🌟',
+    icon: <FaStar aria-hidden='true' />,
     delay: '0.3s',
   },
 ];
@@ -97,23 +98,18 @@ export default function BannerSection() {
               </h2>
               <ul className={styles.offerList}>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>➤</span>
                   <span>{LABELS.banner.value_1}</span>
                 </li>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>➤</span>
                   <span>{LABELS.banner.value_2}</span>
                 </li>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>➤</span>
                   <span>{LABELS.banner.value_3}</span>
                 </li>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>➤</span>
                   <span>{LABELS.banner.value_4}</span>
                 </li>
                 <li className={styles.offerItem}>
-                  <span className={styles.offerIcon}>➤</span>
                   <span>{LABELS.banner.value_5}</span>
                 </li>
               </ul>

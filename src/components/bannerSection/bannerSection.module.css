@@ -1,7 +1,7 @@
 .bannerSection {
   background-color: hsl(var(--dark));
   color: hsl(var(--light));
-  padding: 120px 0 5rem;
+  padding: 120px 0 var(--spacing-20);
   position: relative;
   overflow: hidden;
   margin: 0 auto;
@@ -25,25 +25,25 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--spacing-8);
   position: relative;
   z-index: 10;
 }
 
 .headerSection {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: var(--spacing-16);
 }
 
 .mainTitle {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-4);
 }
 
 .titleLine {
-  font-size: 3.5rem;
-  font-weight: 800;
+  font-size: clamp(var(--text-4xl), 5vw, var(--text-5xl));
+  font-weight: var(--font-weight-extrabold);
   background: linear-gradient(
     135deg,
     hsl(var(--primary)) 0%,
@@ -56,8 +56,8 @@
 }
 
 .subtitle {
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-regular);
   color: hsla(var(--light), 0.8);
   letter-spacing: 0.5px;
 }
@@ -65,8 +65,8 @@
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-16);
 }
 
 .statCard {
@@ -76,8 +76,8 @@
     hsla(var(--primary-dark), 0.05) 100%
   );
   border: 1px solid hsla(var(--primary), 0.2);
-  border-radius: 1rem;
-  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-8);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -121,16 +121,16 @@
 }
 
 .statNumber {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-size: var(--text-3xl);
+  font-weight: var(--font-weight-bold);
   color: hsl(var(--primary));
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--spacing-2);
   position: relative;
   z-index: 1;
 }
 
 .statLabel {
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: hsla(var(--light), 0.8);
   position: relative;
   z-index: 1;
@@ -138,50 +138,51 @@
 
 .statIcon {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  opacity: 0.3;
+  top: var(--spacing-4);
+  right: var(--spacing-4);
+  font-size: var(--text-xl);
+  color: hsl(var(--primary));
+  opacity: 0.5;
 }
 
 .contentSection {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: var(--spacing-16);
 }
 
 .missionSection {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: var(--spacing-8);
 }
 
 .missionCard,
 .visionCard {
   background: hsla(var(--dark-lighter), 0.3);
   border: 1px solid hsla(var(--primary), 0.1);
-  border-radius: 1rem;
-  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-8);
   backdrop-filter: blur(10px);
 }
 
 .sectionTitle {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-6);
   color: hsl(var(--primary));
 }
 
 .missionText {
-  font-size: 1.1rem;
+  font-size: var(--text-md);
   line-height: 1.8;
   color: hsla(var(--light), 0.9);
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-8);
 }
 
 .highlightBox {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-4);
   flex-wrap: wrap;
 }
 
@@ -192,10 +193,10 @@
     hsla(var(--primary-light), 0.1) 100%
   );
   border: 1px solid hsla(var(--primary), 0.3);
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-semibold);
   color: hsl(var(--primary-light));
 }
 
@@ -205,27 +206,25 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--spacing-3);
 }
 
 .offerItem {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.75rem;
+  padding: var(--spacing-3) var(--spacing-4);
   background: hsla(var(--primary), 0.05);
-  border-radius: 0.5rem;
+  border-radius: var(--border-radius-md);
+  border-left: 3px solid hsl(var(--primary));
   transition: all 0.3s ease;
+  font-size: var(--text-base);
+  color: hsla(var(--light), 0.9);
 }
 
 .offerItem:hover {
   background: hsla(var(--primary), 0.1);
-  transform: translateX(5px);
-}
-
-.offerIcon {
-  font-size: 1.5rem;
-  flex-shrink: 0;
+  border-left-color: hsl(var(--primary-light));
+  transform: translateX(4px);
 }
 
 .valuesSection {
@@ -235,8 +234,8 @@
 .valuesGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: var(--spacing-8);
+  margin-top: var(--spacing-8);
 }
 
 .valueCard {
@@ -246,8 +245,8 @@
     hsla(var(--dark), 0.3) 100%
   );
   border: 1px solid hsla(var(--primary), 0.15);
-  border-radius: 1rem;
-  padding: 2rem;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-8);
   text-align: center;
   transition: all 0.3s ease;
   opacity: 0;
@@ -265,19 +264,19 @@
 }
 
 .valueIcon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: var(--text-4xl);
+  margin-bottom: var(--spacing-4);
 }
 
 .valueTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-size: var(--text-lg);
+  font-weight: var(--font-weight-semibold);
   color: hsl(var(--primary));
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--spacing-3);
 }
 
 .valueDescription {
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   color: hsla(var(--light), 0.8);
   line-height: 1.6;
 }
@@ -289,16 +288,16 @@
     hsla(var(--primary-dark), 0.05) 100%
   );
   border: 1px solid hsla(var(--primary), 0.2);
-  border-radius: 1rem;
-  padding: 3rem;
+  border-radius: var(--border-radius-md);
+  padding: var(--spacing-12);
   text-align: center;
-  margin-top: 2rem;
+  margin-top: var(--spacing-8);
 }
 
 .ctaTitle {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  font-size: var(--text-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-4);
   background: linear-gradient(
     135deg,
     hsl(var(--primary)) 0%,
@@ -310,28 +309,28 @@
 }
 
 .ctaText {
-  font-size: 1.1rem;
+  font-size: var(--text-md);
   color: hsla(var(--light), 0.8);
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-8);
 }
 
 .ctaButtons {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-4);
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .primaryBtn,
 .secondaryBtn {
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
+  padding: var(--spacing-3) var(--spacing-8);
+  border-radius: var(--border-radius-sm);
+  font-weight: var(--font-weight-semibold);
   text-decoration: none;
   transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-2);
 }
 
 .primaryBtn {
@@ -370,32 +369,28 @@
 
 @media only screen and (max-width: 850px) {
   .bannerSection {
-    padding: 100px 1rem 120px;
+    padding: 100px var(--spacing-4) 120px;
   }
 
   .container {
-    padding: 0 1rem;
-  }
-
-  .titleLine {
-    font-size: 2.5rem;
+    padding: 0 var(--spacing-4);
   }
 
   .subtitle {
-    font-size: 1rem;
+    font-size: var(--text-base);
   }
 
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: var(--spacing-4);
   }
 
   .statCard {
-    padding: 1.5rem;
+    padding: var(--spacing-6);
   }
 
   .statNumber {
-    font-size: 2rem;
+    font-size: var(--text-2xl);
   }
 
   .missionSection {
@@ -407,11 +402,11 @@
   }
 
   .ctaSection {
-    padding: 2rem 1rem;
+    padding: var(--spacing-8) var(--spacing-4);
   }
 
   .ctaTitle {
-    font-size: 1.5rem;
+    font-size: var(--text-xl);
   }
 
   .ctaButtons {
@@ -426,10 +421,6 @@
 }
 
 @media only screen and (min-width: 850px) and (max-width: 1050px) {
-  .titleLine {
-    font-size: 3rem;
-  }
-
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
   }

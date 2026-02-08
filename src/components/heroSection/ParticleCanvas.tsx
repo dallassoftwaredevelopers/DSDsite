@@ -30,12 +30,15 @@ const canvasStyle: React.CSSProperties = {
   height: '100%',
 };
 
+const MAX_PARTICLES = 600;
+
 function ParticleCanvas({ text = 'DSD', className }: ParticleCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const particlesRef = useRef<Particle[]>([]);
   const mouseRef = useRef({ x: -1000, y: -1000, isActive: false });
   const animationRef = useRef<number>(0);
   const timeRef = useRef(0);
+  const isVisibleRef = useRef(true);
 
   const generateParticlesFromText = useCallback(
     (width: number, height: number) => {
@@ -112,6 +115,13 @@ function ParticleCanvas({ text = 'DSD', className }: ParticleCanvasProps) {
         }
       }
 
+      if (particles.length > MAX_PARTICLES) {
+        const step = Math.ceil(particles.length / MAX_PARTICLES);
+        return particles
+          .filter((_, i) => i % step === 0)
+          .slice(0, MAX_PARTICLES);
+      }
+
       return particles;
     },
     [text]
@@ -142,8 +152,54 @@ function ParticleCanvas({ text = 'DSD', className }: ParticleCanvasProps) {
 
     setupCanvas();
 
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (prefersReducedMotion) {
+      const particles = particlesRef.current;
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x = p.originalX;
+        p.y = p.originalY;
+      }
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = p.color;
+        ctx.fill();
+      }
+      // Don't start the animation loop
+      const handleResize = () => {
+        setupCanvas();
+        const ps = particlesRef.current;
+        for (let i = 0; i < ps.length; i++) {
+          ps[i].x = ps[i].originalX;
+          ps[i].y = ps[i].originalY;
+        }
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < ps.length; i++) {
+          ctx.beginPath();
+          ctx.arc(ps[i].x, ps[i].y, ps[i].size, 0, Math.PI * 2);
+          ctx.fillStyle = ps[i].color;
+          ctx.fill();
+        }
+      };
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+
     const animate = () => {
       if (!ctx || !canvas) return;
+
+      if (!isVisibleRef.current) {
+        animationRef.current = requestAnimationFrame(animate);
+        return;
+      }
 
       timeRef.current += 0.016;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -231,6 +287,14 @@ function ParticleCanvas({ text = 'DSD', className }: ParticleCanvasProps) {
 
     const handleResize = () => setupCanvas();
 
+    const visibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    visibilityObserver.observe(canvas);
+
     window.addEventListener('resize', handleResize);
     canvas.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
@@ -239,6 +303,7 @@ function ParticleCanvas({ text = 'DSD', className }: ParticleCanvasProps) {
 
     return () => {
       cancelAnimationFrame(animationRef.current);
+      visibilityObserver.disconnect();
       window.removeEventListener('resize', handleResize);
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);

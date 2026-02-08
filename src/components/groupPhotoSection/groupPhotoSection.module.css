@@ -82,6 +82,75 @@
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+.closingCta {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-top: var(--spacing-12);
+}
+
+.closingText {
+  font-size: var(--text-xl);
+  color: white;
+  opacity: 0.9;
+  margin-bottom: var(--spacing-6);
+  font-weight: var(--font-weight-medium);
+}
+
+.closingButtons {
+  display: flex;
+  gap: var(--spacing-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-8);
+  background: var(--gradient-primary);
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--border-radius-full);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-primary);
+  font-size: var(--text-base);
+}
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(51, 133, 255, 0.4);
+}
+
+.buttonArrow {
+  margin-left: var(--spacing-2);
+  transition: transform 0.3s ease;
+}
+
+.primaryButton:hover .buttonArrow {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--spacing-4) var(--spacing-8);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  border-radius: var(--border-radius-full);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: var(--text-base);
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
 @media only screen and (min-width: 851px) and (max-width: 1200px) {
   .groupPhotoSection {
     padding: var(--spacing-12) var(--spacing-4) calc(var(--spacing-12) + 70px)
@@ -116,5 +185,27 @@
   .groupPhotoImg {
     border-width: 3px;
     transform: none;
+  }
+
+  .closingCta {
+    margin-top: var(--spacing-8);
+  }
+
+  .closingText {
+    font-size: var(--text-base);
+  }
+
+  .closingButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-3);
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    padding: var(--spacing-3) var(--spacing-6);
   }
 }

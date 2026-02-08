@@ -298,7 +298,7 @@
   display: inline-flex;
   align-items: center;
   padding: var(--spacing-4) var(--spacing-6);
-  background: transparent;
+  background-color: hsla(var(--primary), 0.05);
   color: hsl(var(--primary));
   font-weight: var(--font-weight-semibold);
   border-radius: var(--border-radius-full);
@@ -308,7 +308,7 @@
 }
 
 .secondaryCta:hover {
-  background-color: hsla(var(--primary), 0.05);
+  background-color: hsla(var(--primary), 0.1);
   transform: translateY(-3px);
 }
 
@@ -745,13 +745,13 @@
   }
 
   .heroHeading {
-    font-size: 1.8rem;
+    font-size: var(--text-3xl);
     line-height: 1.1;
     margin-bottom: var(--spacing-2);
   }
 
   .heroSubheading {
-    font-size: 0.9rem;
+    font-size: var(--text-sm);
     margin-bottom: var(--spacing-3);
     max-width: 90%;
     margin-left: auto;
@@ -840,10 +840,6 @@
     bottom: var(--spacing-2);
   }
 
-  .statContainer {
-    display: none;
-  }
-
   .scrollIndicator {
     display: none;
   }
@@ -870,10 +866,6 @@
   }
 
   .interactHint {
-    display: none;
-  }
-
-  .statContainer {
     display: none;
   }
 }

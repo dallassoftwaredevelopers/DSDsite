@@ -22,11 +22,22 @@ export const metadata: Metadata = {
     siteName: LABELS.app.orgName,
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetupGroupShot5.png',
+        width: 1450,
+        height: 500,
+        alt: 'Dallas Software Developers Community Meetup',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: LABELS.app.orgName,
     description: LABELS.hero.subheading,
+    images: [
+      'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetupGroupShot5.png',
+    ],
   },
 };
 
@@ -45,8 +56,11 @@ export default function RootLayout({
           <ReactQueryProvider>
             <ToastProvider>
               <GlobalStateProvider>
+                <a href='#main-content' className='skip-to-content'>
+                  {LABELS.accessibility.skipToMainContentText}
+                </a>
                 <Navbar />
-                <main>{children}</main>
+                <main id='main-content'>{children}</main>
                 <Footer />
               </GlobalStateProvider>
             </ToastProvider>

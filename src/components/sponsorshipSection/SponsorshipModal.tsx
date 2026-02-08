@@ -17,7 +17,11 @@ export default function SponsorshipModal() {
         onClick={() => setModalOpen(true)}
       />
 
-      <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+      <Modal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        ariaLabelledBy='sponsorship-modal-title'
+      >
         <div className={styles.modalContent}>
           <div className={styles.modalImageContainer}>
             <Image
@@ -30,7 +34,9 @@ export default function SponsorshipModal() {
           </div>
 
           <div className={styles.ctaSection}>
-            <h3>{LABELS.sponsorship.modal_title}</h3>
+            <h3 id='sponsorship-modal-title'>
+              {LABELS.sponsorship.modal_title}
+            </h3>
             <p className={styles.ctaText}>{LABELS.sponsorship.modal_cta}</p>
             <div className={styles.buttonGroup}>
               <a

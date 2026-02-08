@@ -79,13 +79,14 @@ export const LABELS = {
   cards: {
     section_title: 'What We Offer',
     section_subtitle:
-      'Join our community and take advantage of these opportunities',
+      'Your journey through the Dallas Software Developer community — from newcomer to leader',
     items: {
       meetups: {
         title: 'Meetups',
         content:
           "Mark your calendars as our meetups typically occur twice a month, offering regular opportunities to connect with like-minded individuals and expand your skill set. Don't forget to RSVP on our Meetup page, so we can ensure we have enough pizza to fuel our collective creativity and collaboration.",
         button: 'Go To A Meetup',
+        highlight: 'Start Here',
         alt: 'Technical Workshops',
       },
       community: {
@@ -93,6 +94,7 @@ export const LABELS = {
         content:
           'Meet the community that has your back and learn how you can get involved with helping others. Whether you want to give a presentation, mentor fellow developers, or just network with others, there is a spot for all who share a passion for coding. ',
         button: 'Community Impact',
+        highlight: 'Get Connected',
         alt: 'Community Support',
       },
       cohorts: {
@@ -100,6 +102,7 @@ export const LABELS = {
         content:
           'A 6-week program that is completely free to pair developers working on a project being guided by a developer working in the industry. The focus is to help give you something interesting to showcase in an interview and give you real-world skills!',
         button: 'Join Our Cohort',
+        highlight: 'Level Up',
         alt: 'Cohorts \u0026 Hackathons',
       },
       conference: {
@@ -107,6 +110,7 @@ export const LABELS = {
         content:
           'Join us for our annual tech conference featuring industry leaders, innovative workshops, and networking opportunities. Connect with fellow developers, learn about the latest technologies, and be inspired by talks from experts in the field.',
         button: 'Learn About Conference',
+        highlight: 'Showcase',
         alt: 'The Commit Your Code Conference',
       },
     },
@@ -263,6 +267,10 @@ export const LABELS = {
     title: 'Our Community',
     subtitle: 'Join a thriving group of passionate developers',
     image_alt: 'Dallas Software Developers Community Meetup',
+    closing_prompt: 'Ready to be part of something great?',
+    join_community: 'Join the Community',
+    attend_meetup: 'Attend a Meetup',
+    button_arrow: '→',
   },
   sponsorship: {
     title: 'Does your company want to sponsor a meetup?',

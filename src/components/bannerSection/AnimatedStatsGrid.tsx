@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import styles from './bannerSection.module.css';
 
 interface StatCounterProps {
   targetValue: number;
   suffix?: string;
   label: string;
-  icon: string;
+  icon: ReactNode;
   animationDelay?: string;
 }
 
@@ -42,6 +42,15 @@ function StatCounter({
 
   useEffect(() => {
     if (!isVisible) return;
+
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (prefersReducedMotion) {
+      setCount(targetValue);
+      return;
+    }
 
     const duration = 2000;
     const steps = 60;
@@ -83,7 +92,7 @@ interface AnimatedStatsGridProps {
     targetValue: number;
     suffix?: string;
     label: string;
-    icon: string;
+    icon: ReactNode;
     delay?: string;
   }>;
 }

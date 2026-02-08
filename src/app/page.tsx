@@ -18,6 +18,14 @@ export const metadata: Metadata = {
     title: LABELS.app.orgName,
     description: LABELS.hero.subheading,
     type: 'website',
+    images: [
+      {
+        url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetupGroupShot5.png',
+        width: 1450,
+        height: 500,
+        alt: 'Dallas Software Developers Community Meetup',
+      },
+    ],
   },
 };
 

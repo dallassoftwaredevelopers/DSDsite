@@ -119,6 +119,31 @@ html {
   }
 }
 
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: var(--spacing-3) var(--spacing-6);
+  background: hsl(var(--primary));
+  color: white;
+  font-weight: var(--font-weight-semibold);
+  border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
 body {
   margin: 0;
   padding: 0;
