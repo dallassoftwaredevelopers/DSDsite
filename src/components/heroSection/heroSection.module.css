@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   background-color: hsl(var(--light));
-  padding: 0;
+  padding: 100px 0 120px;
 }
 
 .heroBackground {
@@ -529,7 +529,7 @@
 
 .scrollIndicator {
   position: absolute;
-  bottom: var(--spacing-8);
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -689,10 +689,8 @@
 @media (max-width: 992px) {
   .heroContent {
     flex-direction: column;
-    gap: var(--spacing-2);
-    padding: 0;
-    height: 100%;
-    justify-content: space-between;
+    gap: var(--spacing-8);
+    padding: 0 var(--spacing-6);
   }
 
   .textContent,
@@ -740,6 +738,12 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    padding: 20px 1rem 80px;
+    min-height: 100svh;
+    gap: var(--spacing-4);
+  }
+
   .heroHeading {
     font-size: 1.8rem;
     line-height: 1.1;
@@ -827,7 +831,7 @@
   .particleSection {
     height: 150px;
     margin-top: var(--spacing-4);
-    margin-bottom: 80px;
+    margin-bottom: 0;
     width: calc(100% - var(--spacing-4));
   }
 
@@ -862,7 +866,7 @@
   .particleSection {
     height: 100px;
     margin-top: var(--spacing-2);
-    margin-bottom: 80px;
+    margin-bottom: 0;
   }
 
   .interactHint {
@@ -871,96 +875,5 @@
 
   .statContainer {
     display: none;
-  }
-}
-
-@media (max-width: 1200px) {
-  .intro {
-    font-size: 3.5rem;
-  }
-
-  .subheading {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 992px) {
-  .heroContent {
-    flex-direction: column;
-    gap: 3rem;
-  }
-
-  .heroSection,
-  .mediaContainer {
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-  }
-
-  .heroSection {
-    align-items: center;
-    order: 1;
-  }
-
-  .mediaContainer {
-    order: 2;
-  }
-
-  .intro {
-    text-align: center;
-    font-size: 3rem;
-  }
-
-  .ctaButtons {
-    justify-content: center;
-  }
-
-  .videoWrapper {
-    transform: perspective(1000px) rotateY(0deg);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: 100vh;
-    padding: 60px 1rem 80px;
-    min-height: 100vh;
-    justify-content: space-between;
-  }
-
-  .intro {
-    font-size: 2.5rem;
-  }
-
-  .subheading {
-    font-size: 1.1rem;
-    max-width: 30ch;
-  }
-
-  .ctaButtons {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .primaryButton,
-  .secondaryButton {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .intro {
-    font-size: 2.2rem;
-  }
-
-  .heroSection,
-  .mediaContainer {
-    width: 95%;
-  }
-
-  .scrollIndicator {
-    bottom: calc(80px + var(--spacing-2));
   }
 }
