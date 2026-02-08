@@ -2,35 +2,9 @@ import { LABELS } from '@/app/labels';
 import styles from './cohortsStructure.module.css';
 
 const weeklyStructure = [
-  {
-    week: 'Week 1',
-    title: 'Onboarding & Project Kick-off',
-    activities: [
-      'Meet your cohort lead and teammates on Zoom',
-      'Select a project theme aligned to real industry needs',
-      'Set up your development environment and project repositories',
-    ],
-  },
-  {
-    week: 'Week 2-5',
-    title: 'Sprint Cycles',
-    activities: [
-      'Define user stories and wireframes using Figma and Miro',
-      'Develop features in iterative sprints with daily check-ins',
-      'Attend weekly "office hours" with industry mentors from the Dallas tech scene',
-      'Participate in code reviews and pair programming sessions',
-    ],
-  },
-  {
-    week: 'Week 6',
-    title: 'Final Demo & Next Steps',
-    activities: [
-      'Present your completed project to the DSD community at our monthly meetup',
-      'Receive feedback on code, design, and career trajectory from senior developers',
-      'Join the DSD alumni network for ongoing support and job opportunities',
-      'Add your project to your portfolio with professional documentation',
-    ],
-  },
+  LABELS.cohorts.structure.weeks.week1,
+  LABELS.cohorts.structure.weeks.week2to5,
+  LABELS.cohorts.structure.weeks.week6,
 ];
 
 interface CohortsStructureProps {
