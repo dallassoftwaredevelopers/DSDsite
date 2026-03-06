@@ -75,6 +75,21 @@
   padding: 0 var(--spacing-12);
 }
 
+.testimonialsContainer::after,
+.testimonialsCarousel::after {
+  --shadow-position-LR: 3.5%;
+  position: absolute;
+  content: '';
+  top: 3%;
+  height: 816px;
+  box-shadow: hsl(var(--gray-100)) 0px 0px 20px 15px;
+}
+.testimonialsContainer::after {
+  left: var(--shadow-position-LR);
+}
+.testimonialsCarousel::after {
+  right: var(--shadow-position-LR);
+}
 .testimonialsCarousel {
   display: flex;
   overflow-x: auto;
@@ -124,6 +139,11 @@
   .testimonialsContainer {
     padding: 0 var(--spacing-2);
   }
+  .testimonialsContainer::after,
+  .testimonialsCarousel::after {
+    height: 88%;
+    top: 1%;
+  }
   .testimonialsCarousel {
     gap: var(--spacing-1);
     padding: var(--spacing-1);
@@ -168,6 +188,10 @@
 }
 
 @media (max-width: 480px) {
+  .testimonialsContainer::after,
+  .testimonialsCarousel::after {
+    height: 90%;
+  }
   .testimonialCard {
     width: 270px;
     padding: var(--spacing-3);
