@@ -92,6 +92,8 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [maxIndex, setMaxIndex] = useState(0);
+  const [canScrollL, setCanScrollL] = useState(false);
+  const [canScrollR, setCanScrollR] = useState(true);
 
   useEffect(() => {
     const calculateMaxIndex = () => {
@@ -131,6 +133,21 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
     [testimonials.length]
   );
 
+  const toggleScrollIndicators = (duration = 6000) => {
+    if (!carouselRef.current) return;
+    const isBegin = carouselRef.current.scrollLeft === 0 ? true : false;
+    const isEnd =
+      carouselRef.current.scrollLeft + carouselRef.current.clientWidth >
+      carouselRef.current.scrollWidth
+        ? true
+        : false;
+    setCanScrollL(!isBegin);
+    setCanScrollR(!isEnd);
+    setTimeout(() => {
+      setCanScrollL(false);
+      setCanScrollR(false);
+    }, duration);
+  };
   const handleScroll = useCallback(() => {
     if (!carouselRef.current) return;
 
@@ -142,6 +159,7 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
 
     const newIndex = Math.round(scrollPosition / (cardWidth + gap));
     setCurrentIndex(newIndex);
+    toggleScrollIndicators();
   }, []);
 
   useEffect(() => {
@@ -157,7 +175,11 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
 
   return (
     <div className={styles.testimonialsContainer}>
-      <div className={styles.testimonialsCarousel} ref={carouselRef}>
+      <div
+        className={styles.testimonialsCarousel}
+        onClick={() => toggleScrollIndicators()}
+        ref={carouselRef}
+      >
         {testimonials.map((testimonial, index) => (
           <div
             key={index}
@@ -203,6 +225,34 @@ function TestimonialsCarousel({ testimonials }: { testimonials: any[] }) {
             </a>
           </div>
         ))}
+        <svg
+          className={canScrollL ? styles.scrollL : styles.noScroll}
+          height='15%'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M13 8L9 12M9 12L13 16M9 12H21M19.4845 7C17.8699 4.58803 15.1204 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C15.1204 21 17.8699 19.412 19.4845 17'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+          />
+        </svg>
+        <svg
+          className={canScrollR ? styles.scrollR : styles.noScroll}
+          height='15%'
+          viewBox='0 0 24 24'
+          fill='none'
+          xmlns='http://www.w3.org/2000/svg'
+        >
+          <path
+            d='M11 16L15 12M15 12L11 8M15 12H3M4.51555 17C6.13007 19.412 8.87958 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C8.87958 3 6.13007 4.58803 4.51555 7'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'
+          />
+        </svg>
       </div>
 
       <div className={styles.carouselNavigation}>

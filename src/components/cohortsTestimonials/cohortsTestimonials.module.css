@@ -104,6 +104,30 @@
 .testimonialsCarousel::-webkit-scrollbar {
   display: none;
 }
+.scrollL,
+.scrollR {
+  --auto-scroll-position-LR: 5%;
+  position: absolute;
+  top: 35%;
+  aspect-ratio: 1/3;
+  stroke: hsla(var(--primary), 20%);
+  animation: fadeInOut 6s ease-in;
+}
+.scrollL {
+  z-index: 1;
+  left: var(--auto-scroll-position-LR);
+}
+.scrollR {
+  right: var(--auto-scroll-position-LR);
+}
+.noScroll {
+  /* empty continer prevents end of scroll R glitch */
+  position: absolute;
+  content: '';
+  height: 15%;
+  aspect-ratio: 1/3;
+  background-color: transparent;
+}
 
 .testimonialCard {
   flex: 0 0 auto;
@@ -124,6 +148,17 @@
   flex-direction: column;
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;
