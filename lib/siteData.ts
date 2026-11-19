@@ -1,5 +1,5 @@
 import 'server-only';
-import type { ActionLink, CohortStatus, Person } from '@/types';
+import type { ActionLink, CohortStatus, Person, Speaker } from '@/types';
 import { LABELS } from '@/app/labels';
 import { getSupabase } from './supabase';
 
@@ -81,6 +81,33 @@ export async function getActionLinks(): Promise<ActionLink[]> {
     linkName: row.link_name,
     link: row.link,
     active: row.active,
+  }));
+}
+
+/**
+ * Meetup speakers. Photos are hosted on Vercel Blob; the row holds the link.
+ * lastSpoke is a plain YYYY-MM-DD date.
+ */
+export async function getSpeakers(): Promise<Speaker[]> {
+  const { data, error } = await getSupabase()
+    .from('speakers')
+    .select(
+      'id, name, role, company, photo_url, linkedin_url, last_spoke, topics'
+    )
+    .order('last_spoke', { ascending: false, nullsFirst: false })
+    .order('name');
+
+  if (error) throw new Error(`Speakers query failed: ${error.message}`);
+
+  return data.map((row) => ({
+    id: row.id,
+    name: row.name,
+    role: row.role ?? '',
+    company: row.company ?? '',
+    photoUrl: row.photo_url ?? undefined,
+    linkedin: row.linkedin_url ?? undefined,
+    lastSpoke: row.last_spoke ?? undefined,
+    topics: row.topics,
   }));
 }
 

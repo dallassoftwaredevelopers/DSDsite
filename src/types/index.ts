@@ -60,40 +60,6 @@ export interface PaginatedResponse<T> extends ApiResponse<T[]> {
   };
 }
 
-export interface ContentfulSpeaker {
-  name: string;
-  role: string;
-  company: string;
-  photo?: {
-    sys: {
-      id: string;
-    };
-  };
-  linkedin?: string;
-  lastSpoke?: string;
-  topics?: string;
-}
-
-export interface ContentfulAsset {
-  sys?: {
-    id: string;
-  };
-  fields?: {
-    file?: {
-      url: string;
-    };
-  };
-}
-
-export interface ContentfulResponse {
-  items: Array<{
-    fields: ContentfulSpeaker;
-  }>;
-  includes: {
-    Asset: ContentfulAsset[];
-  };
-}
-
 export type Message = {
   message: string;
   type: 'error' | 'success';

@@ -35,13 +35,11 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
     fetchSpeakers();
   }, []);
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      month: '2-digit',
-      day: '2-digit',
-      year: 'numeric',
-    });
+  // lastSpoke is a plain YYYY-MM-DD date. Parsing it with Date would treat it
+  // as UTC and show the previous day in US time zones.
+  const formatDate = (isoDate: string) => {
+    const [year, month, day] = isoDate.split('-');
+    return `${month}/${day}/${year}`;
   };
 
   if (loading) {
