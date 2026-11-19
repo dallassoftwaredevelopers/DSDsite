@@ -17,7 +17,7 @@ interface FormData {
 
 const localEnv =
   process.env.NODE_ENV === 'development' &&
-  process.env.NEXT_PUBLIC_APPWRITE_HASKEY === 'false';
+  process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true';
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY ?? '';
 

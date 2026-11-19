@@ -1,5 +1,12 @@
 import styles from './communityBento.module.css';
 import Image from 'next/image';
+import { Raleway } from 'next/font/google';
+
+const raleway = Raleway({
+  subsets: ['latin'],
+  variable: '--font-raleway',
+  display: 'swap',
+});
 
 interface BentoData {
   id: number;
@@ -52,7 +59,7 @@ const bentoImages: BentoData[] = [
 
 export default function CommunityBento() {
   return (
-    <section>
+    <section className={raleway.variable}>
       <div className={styles.communityHeroSection}>
         <div className={styles.heroBackground}>
           <div className={styles.gradientOverlay}></div>

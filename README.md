@@ -24,11 +24,29 @@ To start, there are a few considerations.
 
 # > Tech Stack Of This Project
 
-This project will be using **Next.js, React.js, Typescript, Appwrite, and Vanilla CSS.**
+This project will be using **Next.js, React.js, Typescript, Supabase, and Vanilla CSS.**
 
-<img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/appwrite/appwrite-original.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" />
+<img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" /> <img style="height:100px" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" />
 
 For testing, we will be using **React Testing Library and Jest**
+
+# > Data & Storage
+
+The site's data lives in a [Supabase](https://supabase.com) Postgres database. The schema is in `supabase/migrations`.
+
+| Data                                      | Table                                                   | How to edit                                                                                   |
+| ----------------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| Cohort open/closed status                 | `cohort_status` (the row with `active = true` is shown) | Supabase dashboard > Table Editor. Shows on the site within a minute.                         |
+| Cohort signup link                        | `action_links` (`link_name = 'cohortSignup'`)           | Supabase dashboard > Table Editor.                                                            |
+| Team members shown on Community and About | `people`                                                | Supabase dashboard > Table Editor. Only rows with `is_admin = true` are shown.                |
+| Headshots                                 | Storage bucket `headshots`                              | Upload in Supabase dashboard > Storage, then put the file's public URL in `people.image_url`. |
+| Cohort waitlist signups, speaker requests | `cohort_waitlist`, `speaker_requests`                   | Written by the site forms. Read or export them as CSV from the Table Editor.                  |
+
+Every table has row level security enabled with no policies, so nothing is reachable with the public key. The site reads and writes only from its server routes (`lib/siteData.ts`) using `SUPABASE_URL` and `SUPABASE_SECRET_KEY`.
+
+Every read falls back to a built-in default, so a database outage never blocks a page from rendering.
+
+Local development uses sample data by default (`NEXT_PUBLIC_USE_MOCK_DATA="true"` in `.env.development`). To use a real database locally, create `.env.local` with `NEXT_PUBLIC_USE_MOCK_DATA="false"`, `SUPABASE_URL`, and `SUPABASE_SECRET_KEY` from the Supabase dashboard.
 
 | React Testing Library                                            |                            Jest                             |
 | ---------------------------------------------------------------- | :---------------------------------------------------------: |

@@ -9,6 +9,12 @@ interface OptimizedImageProps {
   className?: string;
   quality?: number;
   fill?: boolean;
+  /**
+   * How wide the image is displayed, as a CSS `sizes` value. Leave it out for
+   * fixed-size images (logos, avatars) so the browser picks from 1x/2x files
+   * instead of downloading a full-width one.
+   */
+  sizes?: string;
 }
 
 export default function OptimizedImage({
@@ -20,6 +26,7 @@ export default function OptimizedImage({
   className,
   quality = 90,
   fill = false,
+  sizes,
 }: OptimizedImageProps) {
   const blurDataUrl =
     'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAQABgDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EAB4QAAICAwEBAQEAAAAAAAAAAAABAgMEERIhMUFR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwQF/8QAHhEAAgICAwEBAAAAAAAAAAAAAAERAhIDITFBUWH/2gAMAwEAAhEDEQA/AIGJq1t2H7VdBiN7mhqRGNTEYeOSt2DdPl8lhHKnkp7fZcT0kkf1k4HGVOvOT9RiYTNJeNFmYeTbhFLj+n0fkqw2b4uF7lFdNfFVl/H/2Q==';
@@ -39,7 +46,7 @@ export default function OptimizedImage({
         placeholder={isApiRoute ? 'empty' : 'blur'}
         blurDataURL={isApiRoute ? undefined : blurDataUrl}
         unoptimized={isApiRoute}
-        sizes='(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1450px'
+        sizes={sizes ?? '100vw'}
         style={{
           objectFit: 'cover',
           objectPosition: 'center',
@@ -60,7 +67,7 @@ export default function OptimizedImage({
       placeholder={isApiRoute ? 'empty' : 'blur'}
       blurDataURL={isApiRoute ? undefined : blurDataUrl}
       unoptimized={isApiRoute}
-      sizes='(max-width: 480px) 100vw, (max-width: 768px) 90vw, (max-width: 1200px) 70vw, 1450px'
+      sizes={sizes}
     />
   );
 }

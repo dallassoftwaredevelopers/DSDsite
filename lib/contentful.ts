@@ -107,7 +107,7 @@ export async function getSpeakers(): Promise<Speaker[]> {
 
     const endpoint = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/master/entries`;
     const response = await fetch(`${endpoint}?${params.toString()}`, {
-      next: { revalidate: 0 }, // Disable caching for development
+      next: { revalidate: 300 },
     });
 
     if (!response.ok) {
@@ -117,9 +117,6 @@ export async function getSpeakers(): Promise<Speaker[]> {
     }
 
     const data = await response.json();
-
-    // Log the raw Contentful response
-    console.log('Raw Contentful Response:', JSON.stringify(data, null, 2));
 
     if (!validateContentfulResponse(data)) {
       throw new Error('Invalid data structure received from Contentful API');
@@ -136,28 +133,9 @@ export async function getSpeakers(): Promise<Speaker[]> {
     });
 
     const speakers = data.items.map((item: any) => {
-      console.log('asdas', item);
       const fields = item.fields;
       const photoId = fields.photo?.sys?.id;
       const photoUrl = photoId ? photoMap.get(photoId) : undefined;
-
-      // Log ALL fields to see what's available
-      console.log('Processing speaker - ALL FIELDS:', fields);
-      console.log('Field names available:', Object.keys(fields));
-
-      // Check for date in various possible field names
-      const possibleDateFields = [
-        'date',
-        'Date',
-        'speakingDate',
-        'lastSpoke',
-        'eventDate',
-      ];
-      possibleDateFields.forEach((fieldName) => {
-        if (fields[fieldName]) {
-          console.log(`Found date in field '${fieldName}':`, fields[fieldName]);
-        }
-      });
 
       return {
         id: item.sys.id,
@@ -167,11 +145,12 @@ export async function getSpeakers(): Promise<Speaker[]> {
         photoUrl: photoUrl || '/assets/person.svg',
         linkedin: fields.linkedin,
         lastSpoke: fields.lastSpoke,
-        topics: fields.topics ? normalizeTopic(fields.topics).split(', ') : undefined,
+        topics: fields.topics
+          ? normalizeTopic(fields.topics).split(', ')
+          : undefined,
       };
     });
 
-    console.log('Final speakers array:', speakers);
     return speakers;
   } catch (error) {
     console.error(

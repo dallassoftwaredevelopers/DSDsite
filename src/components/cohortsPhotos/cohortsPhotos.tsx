@@ -25,14 +25,14 @@ export default function CohortsPhotos({
         </div>
 
         <div className={styles.photoGallery}>
-          <div className={styles.photoGrid}>
-            <div className={styles.photoCard}>
+          <div className={styles.masonryGrid}>
+            <div className={`${styles.photoCard} ${styles.photoCardTall}`}>
               <div className={styles.photoWrapper}>
                 <Image
                   src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohort%20group%201.jpg'
                   alt={LABELS.cohorts.photos.imageAlts.group1}
                   width={600}
-                  height={400}
+                  height={500}
                   className={styles.galleryImage}
                 />
                 <div className={styles.photoOverlay}>
@@ -54,7 +54,7 @@ export default function CohortsPhotos({
                   src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup2.jpg'
                   alt={LABELS.cohorts.photos.imageAlts.group2}
                   width={600}
-                  height={400}
+                  height={350}
                   className={styles.galleryImage}
                 />
                 <div className={styles.photoOverlay}>
@@ -66,7 +66,7 @@ export default function CohortsPhotos({
               </div>
             </div>
 
-            <div className={styles.photoCard}>
+            <div className={`${styles.photoCard} ${styles.photoCardShort}`}>
               <div className={styles.photoWrapper}>
                 <Image
                   src='https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup3.jpg'

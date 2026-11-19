@@ -6,6 +6,7 @@ import SocialSection from '@/components/socialSection/socialSection';
 import GroupPhotoSection from '@/components/groupPhotoSection/groupPhotoSection';
 import SponsorshipSection from '@/components/sponsorshipSection/sponsorshipSection';
 import TechStackMarquee from '@/components/techStackMarquee/techStackMarquee';
+import SectionDivider from '@/components/decorative/SectionDivider';
 import styles from './page.module.css';
 import { LABELS } from './labels';
 
@@ -40,21 +41,31 @@ export default function Home() {
         <TechStackMarquee />
       </div>
 
+      <SectionDivider variant='wave' fillColor='hsla(var(--primary), 0.03)' />
+
       <div className={styles.sectionContainer}>
         <BannerSection />
       </div>
+
+      <SectionDivider variant='curve' flip />
 
       <div className={styles.sectionContainer}>
         <CardsSection />
       </div>
 
+      <SectionDivider variant='wave' fillColor='hsla(var(--primary), 0.03)' />
+
       <div className={styles.sectionContainer}>
         <SocialSection />
       </div>
 
+      <SectionDivider variant='diagonal' flip />
+
       <div className={styles.sectionContainer}>
         <SponsorshipSection />
       </div>
+
+      <SectionDivider variant='wave' fillColor='hsl(var(--dark))' />
 
       <div className={styles.sectionContainer}>
         <GroupPhotoSection />

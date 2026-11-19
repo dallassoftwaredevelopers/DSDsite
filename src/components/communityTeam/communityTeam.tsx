@@ -20,11 +20,16 @@ export default function CommunityTeam({
   const { data: peopleDataResponse, isLoading } = useQuery({
     queryKey: ['people'],
     queryFn: async () => {
-      const response = await fetch('/api/people', { cache: 'no-store' });
+      const response = await fetch('/api/people');
+      if (!response.ok) {
+        throw new Error(`people request failed: ${response.status}`);
+      }
       return response.json();
     },
     refetchOnWindowFocus: false,
     refetchOnMount: false,
+    retry: 1,
+    staleTime: 5 * 60 * 1000,
   });
 
   const adminTeam = useMemo(() => {

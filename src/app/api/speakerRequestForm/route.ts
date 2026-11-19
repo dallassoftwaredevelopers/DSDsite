@@ -1,20 +1,16 @@
 import 'server-only';
-import * as sdk from 'node-appwrite';
-import client from '../../../../lib/appwrite_client';
-
-export const dynamic = 'force-dynamic';
-
 import { type NextRequest } from 'next/server';
 import { getRecaptchaSiteUrl } from '@/app/_constants';
+import { addSpeakerRequest } from '../../../../lib/siteData';
+import { useMockData } from '../../../../lib/env';
+
+export const dynamic = 'force-dynamic';
 
 type RecaptchaData = {
   success: boolean;
 };
 
 export async function POST(request: NextRequest) {
-  if (request.method !== 'POST')
-    return new Response('Method not allowed', { status: 405 });
-
   const formData = await request.json();
 
   if (
@@ -27,10 +23,7 @@ export async function POST(request: NextRequest) {
     return new Response(null, { status: 400, statusText: 'Missing fields' });
   }
 
-  if (
-    process.env.NODE_ENV === 'development' &&
-    process.env.NEXT_PUBLIC_APPWRITE_HASKEY === 'false'
-  ) {
+  if (useMockData) {
     return new Response('Success', { status: 200 });
   }
 
@@ -54,26 +47,21 @@ export async function POST(request: NextRequest) {
     });
   }
 
-  const databases = new sdk.Databases(client);
   try {
-    await databases.createDocument(
-      process.env.APPWRITE_DATABASE_ID as string,
-      'speakerRequestForm',
-      sdk.ID.unique(),
-      {
-        fullName: formData.fullName,
-        email: formData.email,
-        linkedInUrl: formData.linkedInUrl,
-        topic: formData.topic,
-        briefDescription: formData.briefDescription,
-      }
-    );
+    await addSpeakerRequest({
+      fullName: String(formData.fullName).trim(),
+      email: String(formData.email).trim(),
+      linkedInUrl: String(formData.linkedInUrl).trim(),
+      topic: String(formData.topic).trim(),
+      briefDescription: String(formData.briefDescription).trim(),
+    });
 
     return new Response('Success', { status: 200 });
   } catch (error) {
+    console.error('Failed to save speaker request', error);
     return new Response(null, {
       status: 400,
-      statusText: 'Invalid Form Submission',
+      statusText: 'Unable to save your request right now. Please try again.',
     });
   }
 }

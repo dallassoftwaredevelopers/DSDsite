@@ -11,15 +11,16 @@
     "test": "jest",
     "format": "prettier --check ./src",
     "format:fix": "prettier --write ./src",
+    "export:appwrite": "node scripts/export-appwrite.mjs",
+    "import:supabase": "node scripts/import-to-supabase.mjs",
     "prepare": "node -e \"if (process.env.CI !== 'true') { require('child_process').execSync('npx husky', {stdio: 'inherit'}) }\""
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.119.1",
     "@tanstack/react-query": "^5.54.1",
     "@vercel/blob": "^2.0.1",
-    "appwrite": "^15.0.0",
     "dotenv": "^17.2.1",
     "next": "^16.1.6",
-    "node-appwrite": "^14.1.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "react-google-recaptcha": "^3.1.0",

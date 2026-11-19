@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
-
 .communityHeroSection {
   position: relative;
   min-height: 100vh;
@@ -128,7 +126,7 @@
 }
 
 .heroTitle {
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font-raleway), sans-serif;
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 800;
   color: hsl(var(--dark));
@@ -141,7 +139,7 @@
 }
 
 .heroDescription {
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font-raleway), sans-serif;
   font-size: 1.25rem;
   color: hsl(var(--dark));
   opacity: 0.8;
@@ -210,7 +208,7 @@
 }
 
 .messageTitle {
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font-raleway), sans-serif;
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -219,7 +217,7 @@
 }
 
 .messageText {
-  font-family: 'Raleway', sans-serif;
+  font-family: var(--font-raleway), sans-serif;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;

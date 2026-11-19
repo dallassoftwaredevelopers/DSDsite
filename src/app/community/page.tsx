@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Spinner from '@/components/spinner/spinner';
 import CommunityBento from '@/components/communityBento/communityBento';
 import CommunityImpact from '@/components/communityImpact/communityImpact';
 import CommunityGetInvolved from '@/components/communityGetInvolved/communityGetInvolved';
@@ -15,18 +14,9 @@ export default function CommunityPage() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
     new Set()
   );
-  const [isLoading, setIsLoading] = useState(true);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
   useEffect(() => {
-    // Simulate initial loading state
-    const timer = setTimeout(() => setIsLoading(false), 100);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (isLoading) return;
-
     let observer: IntersectionObserver | null = null;
     let raf1 = 0;
     let raf2 = 0;
@@ -100,20 +90,10 @@ export default function CommunityPage() {
       if (onFirstScroll) window.removeEventListener('scroll', onFirstScroll);
       observer?.disconnect();
     };
-  }, [isLoading]);
+  }, []);
 
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
-
-  if (isLoading) {
-    return (
-      <div className={styles.pageContainer}>
-        <div className={styles.loadingContainer}>
-          <Spinner />
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className={styles.pageContainer}>

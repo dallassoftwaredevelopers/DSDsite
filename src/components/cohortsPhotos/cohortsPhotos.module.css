@@ -78,17 +78,100 @@
   margin-top: var(--spacing-12);
 }
 
-.photoGrid {
+.masonryGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-8);
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  gap: var(--spacing-6);
   margin-bottom: var(--spacing-16);
 }
 
+.photoCard {
+  position: relative;
+  border-radius: var(--border-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: hsl(var(--light));
+}
+
+/* First card spans two rows on the left (tall) */
+.photoCardTall {
+  grid-row: 1 / 3;
+}
+
+.photoCard:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 40px hsla(var(--primary), 0.15),
+    0 0 0 1px hsla(var(--primary), 0.1);
+}
+
+.photoWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  overflow: hidden;
+}
+
+/* Tall card fills full height of its row span */
+.photoCardTall .photoWrapper {
+  min-height: 600px;
+}
+
+/* Short card is more compact */
+.photoCardShort .photoWrapper {
+  min-height: 300px;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photoCard:hover .galleryImage {
+  transform: scale(1.05);
+}
+
+.photoOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    transparent 100%
+  );
+  padding: var(--spacing-8) var(--spacing-6) var(--spacing-6);
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photoCard:hover .photoOverlay {
+  transform: translateY(0);
+}
+
 @media (max-width: 768px) {
-  .photoGrid {
+  .masonryGrid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-6);
+    grid-template-rows: auto;
+    gap: var(--spacing-4);
+  }
+
+  .photoCardTall {
+    grid-row: auto;
+  }
+
+  .photoWrapper,
+  .photoCardTall .photoWrapper,
+  .photoCardShort .photoWrapper {
+    min-height: 280px;
   }
 
   .photoOverlay {
@@ -102,77 +185,18 @@
   }
 }
 
-.photoCard {
-  position: relative;
-  border-radius: var(--border-radius-xl);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: hsl(var(--light));
-}
-
-.photoCard:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow:
-    0 20px 40px hsla(var(--primary), 0.15),
-    0 0 0 1px hsla(var(--primary), 0.1);
-}
-
-.photoWrapper {
-  position: relative;
-  width: 100%;
-  height: 550px;
-  overflow: hidden;
-}
-
-@media (max-width: 1024px) {
-  .photoWrapper {
-    height: 400px;
-  }
-}
-
-@media (max-width: 768px) {
-  .photoWrapper {
-    height: 350px;
-  }
-}
-
 @media (max-width: 480px) {
-  .photoWrapper {
-    height: 300px;
+  .photoWrapper,
+  .photoCardTall .photoWrapper,
+  .photoCardShort .photoWrapper {
+    min-height: 240px;
   }
 }
 
-.galleryImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.photoCard:hover .galleryImage {
-  transform: scale(1.1);
-}
-
-.photoOverlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.7) 50%,
-    transparent 100%
-  );
-  padding: var(--spacing-8) var(--spacing-6) var(--spacing-6);
-  transform: translateY(100%);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.photoCard:hover .photoOverlay {
-  transform: translateY(0);
+@media (min-width: 1200px) {
+  .photoCardTall .photoWrapper {
+    min-height: 680px;
+  }
 }
 
 .photoCaption {

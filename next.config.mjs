@@ -4,6 +4,9 @@ const nextConfig = {
     root: import.meta.dirname,
   },
   images: {
+    formats: ['image/avif', 'image/webp'],
+    // Source images never change at a given URL, so keep optimized copies for a month.
+    minimumCacheTTL: 2678400,
     remotePatterns: [
       {
         protocol: 'https',
@@ -28,6 +31,12 @@ const nextConfig = {
         hostname: '*.public.blob.vercel-storage.com',
         port: '',
         pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '*.supabase.co',
+        port: '',
+        pathname: '/storage/v1/object/public/**',
       },
     ],
   },

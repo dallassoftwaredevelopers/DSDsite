@@ -17,6 +17,22 @@ export interface ActionLink {
   active: boolean;
 }
 
+export interface CohortStatus {
+  documentId: string;
+  statusType: string;
+  message: string;
+  active: boolean;
+}
+
+export interface Person {
+  documentId: string;
+  isAdmin: boolean;
+  fullName: string;
+  xUrl?: string | null;
+  linkedInUrl?: string;
+  imageUrl?: string;
+}
+
 export interface ToastMessage {
   id: string;
   message: string;

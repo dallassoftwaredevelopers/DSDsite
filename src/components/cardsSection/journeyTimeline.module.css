@@ -11,7 +11,7 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-6);
 }
@@ -42,107 +42,58 @@
   margin: 0 auto;
 }
 
-.timelineContainer {
+/* ---- Alternating timeline layout ---- */
+
+.timeline {
   position: relative;
-  margin-top: var(--spacing-16);
+  padding: var(--spacing-8) 0;
 }
 
-.timelinePath {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    hsla(var(--primary), 0.2) 0%,
-    hsl(var(--primary)) 30%,
-    hsl(var(--accent)) 70%,
-    hsla(var(--accent), 0.2) 100%
-  );
-  border-radius: var(--border-radius-full);
-  z-index: 1;
-}
-
-.timelineStartIcon {
-  position: absolute;
-  left: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: hsl(var(--light));
-  font-size: var(--text-xl);
-  box-shadow:
-    0 8px 25px hsla(var(--primary), 0.3),
-    0 0 0 4px hsl(var(--light)),
-    0 0 0 6px hsla(var(--primary), 0.2);
-  z-index: 2;
-  animation: carBounce 2s ease-in-out infinite alternate;
-}
-
-@keyframes carBounce {
-  0% {
-    transform: translateY(-50%) translateX(0px);
-  }
-  100% {
-    transform: translateY(-50%) translateX(5px);
-  }
-}
-
-.timelineProgress {
+.timelineLine {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
   height: 100%;
-  background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--accent)));
+  background: linear-gradient(
+    180deg,
+    hsla(var(--primary), 0.1) 0%,
+    hsl(var(--primary)) 15%,
+    hsl(var(--accent)) 85%,
+    hsla(var(--accent), 0.1) 100%
+  );
   border-radius: var(--border-radius-full);
-  width: 0%;
-  transition: width 2s ease-out;
-  animation: progressFill 3s ease-out forwards;
 }
 
-@keyframes progressFill {
-  to {
-    width: 100%;
-  }
-}
-
-.journeySteps {
+.timelineItem {
   position: relative;
-  z-index: 2;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.journeyStep {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  width: 50%;
+  padding: var(--spacing-6) 0;
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
-.journeyStep:hover {
-  transform: translateY(-10px);
+.timelineItemLeft {
+  margin-left: 0;
+  padding-right: var(--spacing-12);
+  justify-content: flex-end;
 }
 
-.stepNumber {
+.timelineItemRight {
+  margin-left: 50%;
+  padding-left: var(--spacing-12);
+  justify-content: flex-start;
+}
+
+/* Dot on the center line */
+.timelineDot {
   position: absolute;
-  top: -10px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
   border-radius: 50%;
   display: flex;
@@ -152,70 +103,80 @@
   font-weight: var(--font-weight-bold);
   font-size: var(--text-sm);
   box-shadow:
-    0 8px 25px hsla(var(--primary), 0.3),
+    0 4px 16px hsla(var(--primary), 0.3),
     0 0 0 4px hsl(var(--light)),
-    0 0 0 6px hsla(var(--primary), 0.2);
+    0 0 0 6px hsla(var(--primary), 0.15);
   z-index: 3;
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
-.journeyStep:hover .stepNumber {
-  transform: scale(1.2);
+.timelineItemLeft .timelineDot {
+  right: calc(-22px - var(--spacing-12) + var(--spacing-12));
+  right: -22px;
+}
+
+.timelineItemRight .timelineDot {
+  left: -22px;
+}
+
+.timelineItem:hover .timelineDot {
+  transform: scale(1.15);
   box-shadow:
-    0 12px 35px hsla(var(--primary), 0.4),
+    0 6px 24px hsla(var(--primary), 0.4),
     0 0 0 4px hsl(var(--light)),
-    0 0 0 8px hsla(var(--primary), 0.3);
+    0 0 0 8px hsla(var(--primary), 0.25);
 }
 
+/* Connector arm from dot to card */
+.timelineItemLeft::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: var(--spacing-12);
+  height: 2px;
+  background: hsla(var(--primary), 0.2);
+  transform: translateY(-50%);
+}
+
+.timelineItemRight::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: var(--spacing-12);
+  height: 2px;
+  background: hsla(var(--primary), 0.2);
+  transform: translateY(-50%);
+}
+
+/* Card styling */
 .stepCard {
   background: hsl(var(--light));
   border-radius: var(--border-radius-xl);
   border: 2px solid hsla(var(--primary), 0.1);
-  padding: 0;
-  margin-top: var(--spacing-8);
-  width: 280px;
-  height: 520px;
+  width: 100%;
+  max-width: 480px;
   display: flex;
   flex-direction: column;
-  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 8px 25px hsla(var(--primary), 0.08);
-  position: relative;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 6px 20px hsla(var(--primary), 0.06);
   overflow: hidden;
 }
 
-.stepCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    135deg,
-    hsla(var(--primary), 0.05) 0%,
-    hsla(var(--accent), 0.02) 100%
-  );
-  opacity: 0;
-  transition: opacity 0.6s ease;
-}
-
-.journeyStep:hover .stepCard {
-  border-color: hsla(var(--primary), 0.3);
+.timelineItem:hover .stepCard {
+  border-color: hsla(var(--primary), 0.25);
   box-shadow:
-    0 20px 40px hsla(var(--primary), 0.15),
-    0 0 0 1px hsla(var(--primary), 0.1);
-}
-
-.journeyStep:hover .stepCard::before {
-  opacity: 1;
+    0 16px 40px hsla(var(--primary), 0.12),
+    0 0 0 1px hsla(var(--primary), 0.08);
+  transform: translateY(-4px);
 }
 
 .stepImageContainer {
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 180px;
   overflow: hidden;
-  border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
   flex-shrink: 0;
 }
 
@@ -239,18 +200,15 @@
   display: block;
 }
 
-.journeyStep:hover .stepImage {
+.timelineItem:hover .stepImage {
   transform: scale(1.05);
 }
 
 .stepContent {
-  position: relative;
-  z-index: 2;
-  padding: var(--spacing-5);
-  flex-grow: 1;
+  padding: var(--spacing-6);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .stepTitle {
@@ -264,13 +222,9 @@
 .stepDescription {
   font-size: var(--text-sm);
   color: hsla(var(--dark), 0.7);
-  line-height: 1.4;
-  margin-bottom: var(--spacing-3);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-4);
   flex-grow: 1;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
 }
 
 .stepHighlight {
@@ -283,115 +237,84 @@
   background: hsla(var(--primary), 0.1);
   border-radius: var(--border-radius-md);
   display: inline-block;
-  margin-top: auto;
   align-self: flex-start;
 }
 
-@media (max-width: 1200px) {
-  .stepCard {
-    width: 250px;
-    height: 480px;
-  }
-
-  .stepImageContainer {
-    height: 140px;
-    flex-shrink: 0;
-  }
-
-  .stepContent {
-    padding: var(--spacing-4);
-  }
-
-  .stepTitle {
-    font-size: var(--text-base);
-    margin-bottom: var(--spacing-2);
-  }
-
-  .stepDescription {
-    font-size: 0.75rem;
-    line-height: 1.3;
-  }
-}
+/* ---- Tablet: single column, line on left ---- */
 
 @media (max-width: 992px) {
-  .journeySteps {
-    flex-direction: column;
-    gap: var(--spacing-12);
-    align-items: center;
+  .timelineLine {
+    left: 24px;
+    transform: none;
   }
 
-  .timelinePath {
-    top: -40px;
-    left: 50%;
-    width: 4px;
-    height: calc(100% + 40px);
-    transform: translateX(-50%);
-    background: linear-gradient(
-      180deg,
-      hsla(var(--primary), 0.2) 0%,
-      hsl(var(--primary)) 30%,
-      hsl(var(--accent)) 70%,
-      hsla(var(--accent), 0.2) 100%
-    );
-  }
-
-  .timelineStartIcon {
-    top: -60px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: carBounceVertical 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes carBounceVertical {
-    0% {
-      transform: translateX(-50%) translateY(0px);
-    }
-    100% {
-      transform: translateX(-50%) translateY(5px);
-    }
-  }
-
-  .timelineProgress {
+  .timelineItem {
     width: 100%;
-    height: 0%;
-    animation: progressFillVertical 3s ease-out forwards;
+    padding: var(--spacing-4) 0;
+    padding-left: calc(24px + var(--spacing-10));
   }
 
-  @keyframes progressFillVertical {
-    to {
-      height: 100%;
-    }
+  .timelineItemLeft,
+  .timelineItemRight {
+    margin-left: 0;
+    padding-right: 0;
+    justify-content: flex-start;
   }
 
-  .stepNumber {
-    left: -80px;
+  .timelineItemLeft .timelineDot,
+  .timelineItemRight .timelineDot {
+    left: 2px;
+    right: auto;
+  }
+
+  .timelineItemLeft::before,
+  .timelineItemRight::before {
+    left: 46px;
+    right: auto;
+    width: var(--spacing-10);
     top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .journeyStep:hover .stepNumber {
-    transform: translateY(-50%) scale(1.2);
   }
 
   .stepCard {
-    margin-top: 0;
-    margin-left: 0;
-    width: 300px;
+    max-width: 100%;
   }
 }
 
-@media (max-width: 768px) {
+/* ---- Mobile: compact layout ---- */
+
+@media (max-width: 600px) {
   .journeySection {
-    padding: var(--spacing-16) 0;
+    padding: var(--spacing-12) 0;
   }
 
-  .stepNumber {
-    left: -50px;
+  .sectionHeader {
+    margin-bottom: var(--spacing-10);
   }
 
-  .stepCard {
-    width: 280px;
-    height: 450px;
+  .timelineLine {
+    left: 18px;
+  }
+
+  .timelineItem {
+    padding-left: calc(18px + var(--spacing-8));
+  }
+
+  .timelineItemLeft .timelineDot,
+  .timelineItemRight .timelineDot {
+    width: 36px;
+    height: 36px;
+    font-size: var(--text-xs);
+    left: 0;
+  }
+
+  .timelineItemLeft::before,
+  .timelineItemRight::before {
+    left: 36px;
+    width: var(--spacing-8);
+  }
+
+  .stepImageContainer {
+    height: 140px;
   }
 
   .stepContent {
@@ -400,45 +323,10 @@
 
   .stepTitle {
     font-size: var(--text-base);
-    margin-bottom: var(--spacing-2);
   }
 
   .stepDescription {
-    font-size: 0.8rem;
-    line-height: 1.3;
-    margin-bottom: var(--spacing-2);
-  }
-
-  .stepImageContainer {
-    height: 140px;
-  }
-}
-
-@media (max-width: 400px) {
-  .timelinePath {
-    display: none;
-  }
-
-  .timelineStartIcon {
-    display: none;
-  }
-
-  .stepNumber {
-    position: relative;
-    left: 0;
-    top: 0;
-    transform: none;
-    margin-bottom: var(--spacing-4);
-  }
-
-  .stepCard {
-    margin-left: 0;
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .stepImageContainer {
-    height: 140px;
-    flex-shrink: 0;
+    font-size: var(--text-xs);
+    line-height: 1.4;
   }
 }
