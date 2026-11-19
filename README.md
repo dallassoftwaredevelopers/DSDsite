@@ -34,13 +34,15 @@ For testing, we will be using **React Testing Library and Jest**
 
 The site's data lives in a [Supabase](https://supabase.com) Postgres database. The schema is in `supabase/migrations`.
 
-| Data                                      | Table                                                   | How to edit                                                                                   |
-| ----------------------------------------- | ------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| Cohort open/closed status                 | `cohort_status` (the row with `active = true` is shown) | Supabase dashboard > Table Editor. Shows on the site within a minute.                         |
-| Cohort signup link                        | `action_links` (`link_name = 'cohortSignup'`)           | Supabase dashboard > Table Editor.                                                            |
-| Team members shown on Community and About | `people`                                                | Supabase dashboard > Table Editor. Only rows with `is_admin = true` are shown.                |
-| Headshots                                 | Storage bucket `headshots`                              | Upload in Supabase dashboard > Storage, then put the file's public URL in `people.image_url`. |
-| Cohort waitlist signups, speaker requests | `cohort_waitlist`, `speaker_requests`                   | Written by the site forms. Read or export them as CSV from the Table Editor.                  |
+| Data                                      | Table                                                   | How to edit                                                                                                       |
+| ----------------------------------------- | ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Cohort open/closed status                 | `cohort_status` (the row with `active = true` is shown) | Supabase dashboard > Table Editor. Shows on the site within a minute.                                             |
+| Cohort signup link                        | `action_links` (`link_name = 'cohortSignup'`)           | Supabase dashboard > Table Editor.                                                                                |
+| Team members shown on Community and About | `people`                                                | Supabase dashboard > Table Editor. Only rows with `is_admin = true` are shown.                                    |
+| Headshots                                 | Storage bucket `headshots`                              | Upload in Supabase dashboard > Storage, then put the file's public URL in `people.image_url`.                     |
+| Meetup speakers                           | `speakers`                                              | Supabase dashboard > Table Editor. `topics` is a list (for example `{JavaScript,AI}`) and `last_spoke` is a date. |
+| Speaker photos                            | Vercel Blob, `dsd-assets/speakers/`                     | Upload in the Vercel dashboard > Storage > Blob, then put the file's URL in `speakers.photo_url`.                 |
+| Cohort waitlist signups, speaker requests | `cohort_waitlist`, `speaker_requests`                   | Written by the site forms. Read or export them as CSV from the Table Editor.                                      |
 
 Every table has row level security enabled with no policies, so nothing is reachable with the public key. The site reads and writes only from its server routes (`lib/siteData.ts`) using `SUPABASE_URL` and `SUPABASE_SECRET_KEY`.
 
