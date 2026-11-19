@@ -19,18 +19,11 @@ export default function SpeakersList({ selectedTopic }: SpeakersListProps) {
   useEffect(() => {
     async function fetchSpeakers() {
       try {
-        const response = await fetch('/api/speakers', {
-          cache: 'no-store',
-          headers: {
-            'Cache-Control': 'no-cache',
-            Pragma: 'no-cache',
-          },
-        });
+        const response = await fetch('/api/speakers');
         if (!response.ok) {
           throw new Error('Failed to fetch speakers');
         }
         const data = await response.json();
-        console.log('Speakers data received in component:', data);
         setSpeakers(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred');

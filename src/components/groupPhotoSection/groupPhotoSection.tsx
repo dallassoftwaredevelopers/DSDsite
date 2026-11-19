@@ -21,7 +21,7 @@ export default function GroupPhotoSection() {
           width={1450}
           height={500}
           quality={95}
-          priority
+          sizes='(max-width: 1450px) 100vw, 1450px'
         />
       </div>
       <div className={styles.closingCta}>

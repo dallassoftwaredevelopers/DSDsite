@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+/* Fonts are loaded with next/font in layout.tsx (self-hosted, no external request) */
 
 :root {
   --max-width: 1450px;
@@ -51,7 +51,7 @@
   --border-radius-xl: 30px;
   --border-radius-full: 9999px;
 
-  --font-primary: 'Poppins', sans-serif;
+  --font-primary: var(--font-poppins), 'Poppins', sans-serif;
   --font-secondary: 'Inter', sans-serif;
   --font-base-size: 16px;
   --line-height: 1.6;

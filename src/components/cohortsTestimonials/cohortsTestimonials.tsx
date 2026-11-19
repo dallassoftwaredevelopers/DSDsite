@@ -1,6 +1,13 @@
 'use client';
 
-import { useState, useRef, useEffect, useCallback, useMemo } from 'react';
+import {
+  useState,
+  useRef,
+  useEffect,
+  useCallback,
+  useMemo,
+  useSyncExternalStore,
+} from 'react';
 import Image from 'next/image';
 import { LABELS } from '@/app/labels';
 import styles from './cohortsTestimonials.module.css';
@@ -78,6 +85,8 @@ const testimonials = [
     linkedIn: 'https://www.linkedin.com/in/andrew-sm1th/',
   },
 ];
+
+const subscribeToNothing = () => () => {};
 
 function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array];
@@ -275,8 +284,19 @@ export default function CohortsTestimonials({
   /* Randomize testimonials once when component mounts
    * This is so that the testimonials appear in a different order each time the component is rendered
    * Giving everyone an equal chance to be shown first.
+   *
+   * The shuffle only runs in the browser: the page is rendered on the server
+   * first, and a random order there would not match the browser's.
    */
-  const shuffledTestimonials = useMemo(() => shuffleArray(testimonials), []);
+  const isBrowser = useSyncExternalStore(
+    subscribeToNothing,
+    () => true,
+    () => false
+  );
+  const shuffledTestimonials = useMemo(
+    () => (isBrowser ? shuffleArray(testimonials) : testimonials),
+    [isBrowser]
+  );
 
   return (
     <section

@@ -7,6 +7,10 @@
 .yarn/install-state.gz
 .agent
 .agents
+
+# one-time Appwrite data export
+/appwrite-export
+
 # testing
 /coverage
 

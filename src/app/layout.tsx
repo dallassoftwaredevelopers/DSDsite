@@ -1,13 +1,21 @@
 import React, { ReactNode } from 'react';
 import type { Metadata } from 'next';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar/navbar';
 import Footer from '@/components/footer/footer';
 import ReactQueryProvider from './react-query-provider';
-import { GlobalStateProvider } from './hooks/useGlobalState/useGlobalState';
 import { ToastProvider } from '@/contexts/ToastContext';
 import ErrorBoundary from '@/components/ErrorBoundary';
 import { LABELS } from './labels';
+
+// Self-hosted at build time: no request to Google Fonts and no render-blocking CSS.
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-poppins',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: LABELS.app.orgName,
@@ -47,7 +55,7 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' className={poppins.variable}>
       <head>
         <link rel='icon' href='/favicon.ico' sizes='any' />
       </head>
@@ -55,14 +63,12 @@ export default function RootLayout({
         <ErrorBoundary>
           <ReactQueryProvider>
             <ToastProvider>
-              <GlobalStateProvider>
-                <a href='#main-content' className='skip-to-content'>
-                  {LABELS.accessibility.skipToMainContentText}
-                </a>
-                <Navbar />
-                <main id='main-content'>{children}</main>
-                <Footer />
-              </GlobalStateProvider>
+              <a href='#main-content' className='skip-to-content'>
+                {LABELS.accessibility.skipToMainContentText}
+              </a>
+              <Navbar />
+              <main id='main-content'>{children}</main>
+              <Footer />
             </ToastProvider>
           </ReactQueryProvider>
         </ErrorBoundary>

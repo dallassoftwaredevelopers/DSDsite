@@ -5,13 +5,7 @@ import styles from './CohortsApplication.module.css';
 import Button from '@/components/button/button';
 import NotificationForm from '../notificationForm';
 import { LABELS } from '@/app/labels';
-
-interface CohortStatus {
-  documentId: number;
-  statusType: string;
-  message: string;
-  active: boolean;
-}
+import type { CohortStatus } from '@/types';
 
 interface CohortsApplicationProps {
   sectionRef?: (el: HTMLElement | null) => void;

@@ -85,84 +85,69 @@ export default function JourneyTimeline() {
           </p>
         </div>
 
-        <div className={styles.timelineContainer}>
-          <div className={styles.timelinePath}>
-            <div className={styles.timelineProgress}></div>
-          </div>
+        <div className={styles.timeline}>
+          <div className={styles.timelineLine} aria-hidden='true' />
 
-          <div className={styles.timelineStartIcon}>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='26'
-              height='26'
-              viewBox='0 0 24 24'
-              fill='currentColor'
-              aria-hidden='true'
-            >
-              <path d='M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11C5.84 5 5.28 5.42 5.08 6.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z' />
-            </svg>
-          </div>
+          {journeySteps.map((step, index) => {
+            const isLeft = index % 2 === 0;
+            const stepClass = `${styles.timelineItem} ${isLeft ? styles.timelineItemLeft : styles.timelineItemRight}`;
 
-          <div className={styles.journeySteps}>
-            {journeySteps.map((step) => {
-              const cardContent = (
-                <>
-                  <div className={styles.stepNumber}>{step.step}</div>
+            const cardContent = (
+              <>
+                <div className={styles.timelineDot} aria-hidden='true'>
+                  {step.step}
+                </div>
 
-                  <div className={styles.stepCard}>
-                    <div className={styles.stepImageContainer}>
-                      <OptimizedImage
-                        src={step.imageSrc}
-                        alt={step.imageAlt}
-                        className={styles.stepImage}
-                        width={280}
-                        height={160}
-                        priority={step.id === 1}
-                        quality={90}
-                      />
-                    </div>
-
-                    <div className={styles.stepContent}>
-                      <h3 className={styles.stepTitle}>{step.title}</h3>
-                      <p className={styles.stepDescription}>
-                        {step.description}
-                      </p>
-
-                      <span className={styles.stepHighlight}>
-                        {step.highlight}
-                      </span>
-                    </div>
+                <div className={styles.stepCard}>
+                  <div className={styles.stepImageContainer}>
+                    <OptimizedImage
+                      src={step.imageSrc}
+                      alt={step.imageAlt}
+                      className={styles.stepImage}
+                      width={500}
+                      height={280}
+                      quality={90}
+                      sizes='(max-width: 768px) 100vw, 500px'
+                    />
                   </div>
-                </>
-              );
 
-              if (step.isExternal) {
-                return (
-                  <a
-                    key={step.id}
-                    href={step.href}
-                    className={styles.journeyStep}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    aria-label={`${step.title} - ${step.highlight}`}
-                  >
-                    {cardContent}
-                  </a>
-                );
-              }
+                  <div className={styles.stepContent}>
+                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <p className={styles.stepDescription}>{step.description}</p>
+                    <span className={styles.stepHighlight}>
+                      {step.highlight}
+                    </span>
+                  </div>
+                </div>
+              </>
+            );
 
+            if (step.isExternal) {
               return (
-                <Link
+                <a
                   key={step.id}
                   href={step.href}
-                  className={styles.journeyStep}
+                  className={stepClass}
+                  target='_blank'
+                  rel='noopener noreferrer'
                   aria-label={`${step.title} - ${step.highlight}`}
                 >
                   {cardContent}
-                </Link>
+                </a>
               );
-            })}
-          </div>
+            }
+
+            return (
+              <Link
+                key={step.id}
+                href={step.href}
+                className={stepClass}
+                aria-label={`${step.title} - ${step.highlight}`}
+              >
+                {cardContent}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

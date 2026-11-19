@@ -62,6 +62,7 @@ export default function SocialSection() {
               width={0}
               height={0}
               className={styles.communityImage}
+              sizes='(max-width: 992px) 100vw, 50vw'
             />
           </div>
         </div>

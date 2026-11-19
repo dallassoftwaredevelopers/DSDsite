@@ -24,4 +24,8 @@ const Image = ({
   return <img src={src} alt={alt} width={width} height={height} {...filteredProps} />;
 };
 
+export const getImageProps = ({ src, alt, width, height }) => ({
+  props: { src, alt, width, height },
+});
+
 export default Image;

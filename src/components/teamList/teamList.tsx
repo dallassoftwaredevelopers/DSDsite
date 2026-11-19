@@ -32,7 +32,7 @@ function TeamListComponent({ peopleData }: { peopleData: Speaker[] }) {
                   height={400}
                   className={styles.teamImage}
                   quality={95}
-                  priority={index < 4}
+                  sizes='(max-width: 640px) 100vw, 400px'
                 />
                 <div className={styles.teamOverlay}>
                   <div className={styles.teamContent}>
