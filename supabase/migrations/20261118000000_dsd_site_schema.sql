@@ -6,7 +6,6 @@
 
 create table if not exists public.people (
   id uuid primary key default gen_random_uuid(),
-  legacy_id text unique,
   full_name text not null,
   is_admin boolean not null default false,
   x_url text,
@@ -17,7 +16,6 @@ create table if not exists public.people (
 
 create table if not exists public.action_links (
   id uuid primary key default gen_random_uuid(),
-  legacy_id text unique,
   link_name text not null,
   link text not null,
   active boolean not null default true,
@@ -26,7 +24,6 @@ create table if not exists public.action_links (
 
 create table if not exists public.cohort_status (
   id uuid primary key default gen_random_uuid(),
-  legacy_id text unique,
   status_type text not null,
   message text not null,
   active boolean not null default false,
@@ -35,7 +32,6 @@ create table if not exists public.cohort_status (
 
 create table if not exists public.cohort_waitlist (
   id uuid primary key default gen_random_uuid(),
-  legacy_id text unique,
   name text not null,
   email text not null,
   notified boolean not null default false,
@@ -48,7 +44,6 @@ create unique index if not exists cohort_waitlist_email_key
 
 create table if not exists public.speaker_requests (
   id uuid primary key default gen_random_uuid(),
-  legacy_id text unique,
   full_name text not null,
   email text not null,
   linkedin_url text not null,

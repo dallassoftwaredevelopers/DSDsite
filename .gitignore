@@ -8,9 +8,6 @@
 .agent
 .agents
 
-# one-time Appwrite data export
-/appwrite-export
-
 # testing
 /coverage
 

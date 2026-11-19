@@ -31,9 +31,6 @@ export default function OptimizedImage({
   const blurDataUrl =
     'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAQABgDASIAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAAAAECBf/EAB4QAAICAwEBAQEAAAAAAAAAAAABAgMEERIhMUFR/8QAFgEBAQEAAAAAAAAAAAAAAAAAAwQF/8QAHhEAAgICAwEBAAAAAAAAAAAAAAERAhIDITFBUWH/2gAMAwEAAhEDEQA/AIGJq1t2H7VdBiN7mhqRGNTEYeOSt2DdPl8lhHKnkp7fZcT0kkf1k4HGVOvOT9RiYTNJeNFmYeTbhFLj+n0fkqw2b4uF7lFdNfFVl/H/2Q==';
 
-  // Skip Next.js Image optimization for API routes - they don't work well in production
-  const isApiRoute = src.startsWith('/api/');
-
   if (fill || (width === 0 && height === 0)) {
     return (
       <Image
@@ -43,9 +40,8 @@ export default function OptimizedImage({
         priority={priority}
         quality={quality}
         className={className}
-        placeholder={isApiRoute ? 'empty' : 'blur'}
-        blurDataURL={isApiRoute ? undefined : blurDataUrl}
-        unoptimized={isApiRoute}
+        placeholder='blur'
+        blurDataURL={blurDataUrl}
         sizes={sizes ?? '100vw'}
         style={{
           objectFit: 'cover',
@@ -64,9 +60,8 @@ export default function OptimizedImage({
       priority={priority}
       quality={quality}
       className={className}
-      placeholder={isApiRoute ? 'empty' : 'blur'}
-      blurDataURL={isApiRoute ? undefined : blurDataUrl}
-      unoptimized={isApiRoute}
+      placeholder='blur'
+      blurDataURL={blurDataUrl}
       sizes={sizes}
     />
   );
