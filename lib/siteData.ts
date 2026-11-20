@@ -18,22 +18,19 @@ export const DEFAULT_COHORT_STATUS: CohortStatus = {
   active: false,
 };
 
-export const DEFAULT_ACTION_LINKS: ActionLink[] = [
-  {
-    documentId: 'default',
-    linkName: 'cohortSignup',
-    link: 'https://dallassoftwaredevelopers.org/',
-    active: true,
-  },
-];
+// Without a configured application URL the cohort page directs visitors to Discord.
+export const DEFAULT_ACTION_LINKS: ActionLink[] = [];
 
 const UNIQUE_VIOLATION = '23505';
 
-export async function getPeople(): Promise<Person[]> {
-  const { data, error } = await getSupabase()
+export async function getPeople(organizersOnly = false): Promise<Person[]> {
+  const query = getSupabase()
     .from('people')
     .select('id, full_name, is_admin, x_url, linkedin_url, image_url')
     .order('full_name');
+  const { data, error } = await (organizersOnly
+    ? query.eq('is_admin', true)
+    : query);
 
   if (error) throw new Error(`People query failed: ${error.message}`);
 

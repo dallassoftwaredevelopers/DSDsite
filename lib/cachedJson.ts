@@ -8,7 +8,8 @@ import { NextResponse } from 'next/server';
 export async function cachedJson<T>(
   read: () => Promise<T>,
   fallback: T,
-  cacheControl: string
+  cacheControl: string,
+  fallbackStatus = 200
 ): Promise<NextResponse> {
   try {
     return NextResponse.json(await read(), {
@@ -17,6 +18,7 @@ export async function cachedJson<T>(
   } catch (error) {
     console.warn('Serving fallback data:', (error as Error).message);
     return NextResponse.json(fallback, {
+      status: fallbackStatus,
       headers: { 'Cache-Control': 'no-store' },
     });
   }

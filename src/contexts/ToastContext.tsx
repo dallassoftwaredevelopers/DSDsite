@@ -9,17 +9,14 @@ import {
 import Toast from '@/components/toast/toast';
 import { LABELS } from '@/app/labels';
 
-type ToastType = 'success' | 'error' | 'warning' | 'info';
+import type { Message } from '@/types';
 
-interface ToastState {
+interface ToastState extends Message {
   id: string;
-  message: string;
-  type: ToastType;
 }
 
 interface ToastContextType {
-  showToast: (message: string, type: ToastType) => void;
-  hideToast: (id: string) => void;
+  showToast: (message: string, type: Message['type']) => void;
 }
 
 const ToastContext = createContext<ToastContextType | null>(null);
@@ -27,7 +24,7 @@ const ToastContext = createContext<ToastContextType | null>(null);
 export function ToastProvider({ children }: { children: ReactNode }) {
   const [activeToasts, setActiveToasts] = useState<ToastState[]>([]);
 
-  const showToast = useCallback((message: string, type: ToastType) => {
+  const showToast = useCallback((message: string, type: Message['type']) => {
     const toastId = crypto.randomUUID();
     setActiveToasts((previousToasts) => [
       ...previousToasts,
@@ -42,18 +39,16 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <ToastContext.Provider value={{ showToast, hideToast }}>
+    <ToastContext.Provider value={{ showToast }}>
       {children}
-      <div className='toast-container'>
-        {activeToasts.map((toast) => (
-          <Toast
-            key={toast.id}
-            message={toast.message}
-            type={toast.type}
-            onClose={() => hideToast(toast.id)}
-          />
-        ))}
-      </div>
+      {activeToasts.map((toast) => (
+        <Toast
+          key={toast.id}
+          message={toast.message}
+          type={toast.type}
+          onClose={() => hideToast(toast.id)}
+        />
+      ))}
     </ToastContext.Provider>
   );
 }

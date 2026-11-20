@@ -1,119 +1,106 @@
-'use client';
+import {
+  getOrganizers,
+  getSpeakerPreview,
+  initialDirectoryData,
+} from '../../../lib/directoryData';
+import MeetupGallery from './MeetupGallery';
+import community from '../_site/photos/community-tables.webp';
+import VolunteerTeam from '../_site/VolunteerTeam';
+import SpeakersList from '@/components/speakersList/speakersList';
+import ProposalButton from '../_site/ProposalButton';
+import {
+  Action,
+  PageHero,
+  Print,
+  SectionTitle,
+  FactStrip,
+} from '../_site/Editorial';
+import s from '../_site/interior.module.css';
+import { externalLinks } from '../_constants';
 
-import React, { useEffect, useRef, useState } from 'react';
-import CommunityBento from '@/components/communityBento/communityBento';
-import CommunityImpact from '@/components/communityImpact/communityImpact';
-import CommunityGetInvolved from '@/components/communityGetInvolved/communityGetInvolved';
-import CommunityTeam from '@/components/communityTeam/communityTeam';
-import CommunitySpeakers from '@/components/communitySpeakers/communitySpeakers';
-import CommunityModal from '@/components/communityModal/communityModal';
-import styles from './community.module.css';
+export const revalidate = 300;
+const pageSize = 8;
 
-export default function CommunityPage() {
-  const [modalOpen, setModalOpen] = useState(false);
-  const [visibleSections, setVisibleSections] = useState<Set<string>>(
-    new Set()
-  );
-  const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
-
-  useEffect(() => {
-    let observer: IntersectionObserver | null = null;
-    let raf1 = 0;
-    let raf2 = 0;
-    let onFirstScroll: (() => void) | null = null;
-
-    const setup = () => {
-      observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const key = (entry.target as HTMLElement).dataset.key;
-              if (key) {
-                setVisibleSections((prev) => {
-                  if (prev.has(key)) return prev;
-                  const next = new Set(prev);
-                  next.add(key);
-                  return next;
-                });
-              }
-              observer?.unobserve(entry.target);
-            }
-          });
-        },
-        { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0 }
-      );
-
-      Object.entries(sectionRefs.current).forEach(([key, el]) => {
-        if (el) {
-          (el as HTMLElement).dataset.key = key;
-          observer!.observe(el);
-        }
-      });
-
-      const checkVisibleNow = () => {
-        const viewportH = window.innerHeight;
-        Object.entries(sectionRefs.current).forEach(([key, el]) => {
-          if (el) {
-            const rect = el.getBoundingClientRect();
-            const isVisible = rect.top < viewportH * 0.9 && rect.bottom > 0;
-            if (isVisible) {
-              setVisibleSections((prev) => {
-                if (prev.has(key)) return prev;
-                const next = new Set(prev);
-                next.add(key);
-                return next;
-              });
-              observer!.unobserve(el);
-            }
-          }
-        });
-      };
-
-      checkVisibleNow();
-      setTimeout(checkVisibleNow, 800);
-
-      onFirstScroll = () => {
-        checkVisibleNow();
-        if (onFirstScroll) window.removeEventListener('scroll', onFirstScroll);
-        onFirstScroll = null;
-      };
-      window.addEventListener('scroll', onFirstScroll, { passive: true });
-    };
-
-    raf1 = requestAnimationFrame(() => {
-      raf2 = requestAnimationFrame(setup);
-    });
-
-    return () => {
-      if (raf1) cancelAnimationFrame(raf1);
-      if (raf2) cancelAnimationFrame(raf2);
-      if (onFirstScroll) window.removeEventListener('scroll', onFirstScroll);
-      observer?.disconnect();
-    };
-  }, []);
-
-  const handleOpenModal = () => setModalOpen(true);
-  const handleCloseModal = () => setModalOpen(false);
-
+export default async function CommunityPage() {
+  const [team, speakers] = await Promise.all([
+    initialDirectoryData(getOrganizers()),
+    initialDirectoryData(getSpeakerPreview(pageSize)),
+  ]);
   return (
-    <div className={styles.pageContainer}>
-      <CommunityBento />
-      <CommunityImpact />
-      <CommunityGetInvolved
-        isVisible={visibleSections.has('getInvolved')}
-        onOpenModal={handleOpenModal}
-        sectionRef={(el) => (sectionRefs.current['getInvolved'] = el)}
+    <div className={s.page}>
+      <PageHero
+        layout='room'
+        label='The DSD community'
+        title='Pull up'
+        accent='a chair.'
+        description='What are other DFW developers working on? Around these tables you can talk through a design decision, compare stacks, or ask about a speaker’s demo. Bring a project or just join the conversation.'
+        art={
+          <Print
+            photo={community}
+            alt='DSD members talking around tables at a meetup'
+            hero
+            sizes='(max-width: 760px) 90vw, (max-width: 1500px) 50vw, 740px'
+          />
+        }
+      >
+        <Action href={externalLinks.discordUrl}>Join the Discord</Action>
+        <Action href='/meetups' secondary>
+          Come to a meetup
+        </Action>
+      </PageHero>
+      <FactStrip
+        facts={[
+          ['9,500+', 'Community members'],
+          ['24', 'Meetups each year'],
+          ['100%', 'Volunteer-run'],
+        ]}
       />
-      <CommunityTeam
-        isVisible={visibleSections.has('team')}
-        sectionRef={(el) => (sectionRefs.current['team'] = el)}
-      />
-      <CommunitySpeakers
-        isVisible={visibleSections.has('speakers')}
-        onOpenModal={handleOpenModal}
-        sectionRef={(el) => (sectionRefs.current['speakers'] = el)}
-      />
-      <CommunityModal isOpen={modalOpen} onClose={handleCloseModal} />
+      <section className={s.section}>
+        <SectionTitle note='Get involved' title='Bring what you know.' />
+        <div className={s.tiles}>
+          <article>
+            <h3>Take the mic.</h3>
+            <p>
+              Show us the thing you finally got working, or walk through a
+              decision your team would make differently today. A short demo
+              makes a good first talk.
+            </p>
+            <ProposalButton text='Pitch a talk' secondary />
+          </article>
+          <article>
+            <h3>Work alongside someone.</h3>
+            <p>
+              Cohort teams spend six weeks designing, reviewing, and shipping an
+              app together. Watch a past demo to see what the team chose to
+              build and ask about it at a meetup.
+            </p>
+            <Action href='/cohorts' secondary>
+              Explore cohorts
+            </Action>
+          </article>
+          <article>
+            <h3>Help build DSD.</h3>
+            <p>
+              Notice a broken link or a page that’s slow on your phone? Open an
+              issue, test someone’s fix, or send a pull request. The site you’re
+              using is the project.
+            </p>
+            <Action href={externalLinks.projectRepo} secondary>
+              Explore the repository
+            </Action>
+          </article>
+        </div>
+      </section>
+      <MeetupGallery />
+      <VolunteerTeam initial={team} />
+      <section className={s.section} id='speakers'>
+        <SectionTitle note='Community voices' title='Who’s taken the mic?' />
+        <SpeakersList pageSize={pageSize} initial={speakers} />
+        <div className={s.actions}>
+          <Action href='/speakers'>Full speaker directory</Action>
+          <ProposalButton text='Apply to speak' secondary />
+        </div>
+      </section>
     </div>
   );
 }

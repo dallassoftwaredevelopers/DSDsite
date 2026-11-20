@@ -1,95 +1,41 @@
-import React from 'react';
-import { render, screen, fireEvent } from '../../../__test__/testUtils';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import Modal from './modal';
 
-describe('Modal Component', () => {
-  const defaultProps = {
-    isOpen: true,
-    onClose: jest.fn(),
-    title: 'Test Modal',
-    children: <div data-testid='modal-content'>Modal Content</div>,
-  };
+function dialog(isOpen, onClose) {
+  return (
+    <Modal isOpen={isOpen} onClose={onClose} ariaLabelledBy='dialog-heading'>
+      <h2 id='dialog-heading'>Meetup details</h2>
+      <a href='/meetups'>Meetups</a>
+    </Modal>
+  );
+}
 
-  beforeEach(() => {
-    defaultProps.onClose.mockClear();
-  });
-
-  test('renders modal when isOpen is true', () => {
-    render(<Modal {...defaultProps} />);
-
-    const modal = screen.getByRole('dialog');
-    expect(modal).toBeInTheDocument();
-    expect(modal).toBeVisible();
-  });
-
-  test('does not render modal when isOpen is false', () => {
-    render(<Modal {...defaultProps} isOpen={false} />);
-
-    const modal = screen.queryByRole('dialog');
-    expect(modal).not.toBeInTheDocument();
-  });
-
-  test('displays the modal title', () => {
-    render(<Modal {...defaultProps} />);
-
-    const title = screen.getByText('Test Modal');
-    expect(title).toBeInTheDocument();
-  });
-
-  test('displays modal content', () => {
-    render(<Modal {...defaultProps} />);
-
-    const content = screen.getByTestId('modal-content');
-    expect(content).toBeInTheDocument();
-    expect(content).toHaveTextContent('Modal Content');
-  });
-
-  test('calls onClose when close button is clicked', () => {
-    render(<Modal {...defaultProps} />);
-
-    const closeButton = screen.getByRole('button', { name: /close/i });
-    fireEvent.click(closeButton);
-
-    expect(defaultProps.onClose).toHaveBeenCalledTimes(1);
-  });
-
-  test('calls onClose when escape key is pressed', () => {
-    render(<Modal {...defaultProps} />);
-
-    const modal = screen.getByRole('dialog');
-    fireEvent.keyDown(modal, { key: 'Escape', code: 'Escape' });
-
-    expect(defaultProps.onClose).toHaveBeenCalledTimes(1);
-  });
-
-  test('has proper accessibility attributes', () => {
-    render(<Modal {...defaultProps} />);
-
-    const modal = screen.getByRole('dialog');
-    expect(modal).toHaveAttribute('aria-modal', 'true');
-    expect(modal).toHaveAttribute('aria-labelledby');
-  });
-
-  test('traps focus within modal', () => {
-    render(<Modal {...defaultProps} />);
-
-    const modal = screen.getByRole('dialog');
-    expect(modal).toBeInTheDocument();
-
-    // Modal should contain focus
-    const closeButton = screen.getByRole('button', { name: /close/i });
-    expect(closeButton).toBeInTheDocument();
-  });
-
-  test('handles modal without title', () => {
-    const propsWithoutTitle = { ...defaultProps, title: undefined };
-    render(<Modal {...propsWithoutTitle} />);
-
-    const modal = screen.getByRole('dialog');
-    expect(modal).toBeInTheDocument();
-  });
-
-  test('renders without crashing', () => {
-    expect(() => render(<Modal {...defaultProps} />)).not.toThrow();
-  });
+test('opens a named dialog and restores focus and scrolling when closed', async () => {
+  const trigger = document.createElement('button');
+  document.body.appendChild(trigger);
+  trigger.focus();
+  const close = jest.fn();
+  const { rerender } = render(dialog(false, close));
+  expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
+  rerender(dialog(true, close));
+  expect(
+    screen.getByRole('dialog', { name: 'Meetup details' })
+  ).toHaveAttribute('aria-modal', 'true');
+  expect(document.body.style.overflow).toBe('hidden');
+  const closeButton = screen.getByRole('button', { name: /close modal/i });
+  await waitFor(() => expect(closeButton).toHaveFocus());
+  const user = userEvent.setup();
+  await user.tab({ shift: true });
+  expect(screen.getByRole('link', { name: 'Meetups' })).toHaveFocus();
+  await user.tab();
+  expect(closeButton).toHaveFocus();
+  await user.keyboard('{Escape}');
+  expect(close).toHaveBeenCalledTimes(1);
+  await user.click(closeButton);
+  expect(close).toHaveBeenCalledTimes(2);
+  rerender(dialog(false, close));
+  expect(trigger).toHaveFocus();
+  expect(document.body.style.overflow).toBe('');
+  trigger.remove();
 });

@@ -1,0 +1,223 @@
+.speakers {
+  padding: clamp(28px, 3.6vw, 52px) var(--home-pad);
+  background: #151b24;
+  border-block: 1px solid #343540;
+}
+.speakerHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+.hand {
+  display: block;
+  color: #c1a7fc;
+  font:
+    600 clamp(25px, 2.7vw, 36px)/1 var(--home-hand),
+    cursive;
+  margin-bottom: 6px;
+}
+.speakers .speakerHeading h2,
+.sponsor h2 {
+  font-size: clamp(31px, 3.8vw, 53px);
+}
+.directoryLink,
+.conferenceLink,
+.replays,
+.supportLinks a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.directoryLink {
+  flex-shrink: 0;
+  padding: 11px 15px;
+  border-radius: 11px;
+  border: 1px solid #827990;
+  font-size: 14px;
+}
+.directoryLink:hover {
+  background: #332f3c;
+  color: #fff;
+}
+.portraits {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 14px 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.portraits li {
+  container: featured-speaker / inline-size;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-content: start;
+  align-items: center;
+  gap: 6px 10px;
+}
+.portraits img,
+.portraits li span {
+  grid-column: 1 / -1;
+}
+.portraits img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+  background: #29303a;
+}
+.portraits li span {
+  display: block;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+  font-weight: 700;
+  line-height: 1.25;
+}
+.speakers .directoryNote {
+  margin-top: 21px;
+  font-size: 14px;
+  color: #ccd0da;
+}
+.replays:hover,
+.supportLinks a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.conference {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  align-items: center;
+  gap: clamp(25px, 5vw, 70px);
+  padding: clamp(40px, 5vw, 75px) var(--home-pad);
+  background:
+    radial-gradient(ellipse at 85% 90%, #332b22, transparent 65%), #181c1d;
+}
+.conference .hand {
+  color: var(--gold);
+}
+.conference h2 {
+  max-width: 10ch;
+}
+.conferenceCopy > p {
+  margin: 15px 0 20px;
+  max-width: 44ch;
+  font-size: clamp(15px, 1.45vw, 18px);
+  color: var(--soft);
+}
+.conferenceActions,
+.supportLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 18px;
+}
+.conferenceActions .conferenceLink {
+  background: var(--gold);
+  color: #141817;
+  border-radius: 12px;
+  padding: 13px 16px;
+}
+.conferenceLink:hover {
+  background: #ffdc63;
+}
+.replays {
+  font-size: 14px;
+}
+.conferencePhoto {
+  position: relative;
+  padding: 0 6px 5px 0;
+}
+.conferencePhoto img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 24px 12px 32px 12px;
+  box-shadow: 5px 5px 0 #bd9635;
+}
+.conferencePhoto figcaption {
+  margin-top: 11px;
+  text-align: right;
+  color: #f6e2a4;
+  font:
+    600 23px/1.1 var(--home-hand),
+    cursive;
+}
+.sponsor {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: center;
+  gap: 34px;
+  padding: clamp(30px, 4vw, 62px) var(--home-pad);
+  border-top: 1px solid #354047;
+  background: #192229;
+}
+.sponsor .hand {
+  color: #ffca51;
+}
+.sponsor p {
+  color: var(--soft);
+  max-width: 60ch;
+}
+.supportLinks {
+  margin-top: 11px;
+  font-size: 14px;
+}
+.supportLinks a:first-child {
+  color: var(--gold);
+}
+@container featured-speaker (min-width: 15rem) {
+  .portraits img {
+    grid-column: 1;
+    grid-row: 1;
+    width: 64px;
+  }
+  .portraits li span {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+@media (max-width: 90rem) {
+  .portraits {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (max-width: 720px) {
+  .conference,
+  .sponsor {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .conference h2 {
+    max-width: none;
+  }
+  .conferencePhoto {
+    max-width: 540px;
+  }
+  .speakerHeading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .portraits {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .speakerHeading {
+    gap: 12px;
+  }
+  .portraits img {
+    max-width: 88px;
+  }
+}
+@media (max-width: 23rem) {
+  .portraits {
+    grid-template-columns: 1fr;
+  }
+}

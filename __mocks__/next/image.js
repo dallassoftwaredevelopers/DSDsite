@@ -1,31 +1,12 @@
-import React from 'react';
-
-const Image = ({ 
-  src, 
-  alt, 
-  width, 
-  height, 
-  fill,
-  priority,
-  placeholder,
-  blurDataURL,
-  quality,
-  sizes,
-  ...props 
-}) => {
-  // Filter out Next.js specific props that shouldn't be passed to DOM img element
-  const filteredProps = Object.keys(props).reduce((acc, key) => {
-    if (!['onLoad', 'onError', 'onLoadingComplete'].includes(key)) {
-      acc[key] = props[key];
-    }
-    return acc;
-  }, {});
-
-  return <img src={src} alt={alt} width={width} height={height} {...filteredProps} />;
-};
-
-export const getImageProps = ({ src, alt, width, height }) => ({
-  props: { src, alt, width, height },
-});
-
-export default Image;
+export default function Image({ src, alt, width, height }) {
+  // The test renderer exposes the underlying image to jsdom.
+  return (
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={typeof src === 'string' ? src : src.src}
+      alt={alt}
+      width={width}
+      height={height}
+    />
+  );
+}

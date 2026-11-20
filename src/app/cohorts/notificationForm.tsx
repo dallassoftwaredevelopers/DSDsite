@@ -1,50 +1,36 @@
+'use client';
 import { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import styles from './cohorts.module.css';
-import { Message } from '@/types';
+import styles from './notification.module.css';
+import type { Message } from '@/types';
+import { useMockData } from '../../../lib/env';
 
-class NotificationFormClass {
-  name: string;
-  email: string;
-  token: string;
-
-  constructor(name: string, email: string, token: string) {
-    this.name = name;
-    this.email = email;
-    this.token = token;
-  }
-}
-
-const localEnv =
-  process.env.NODE_ENV === 'development' &&
-  process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true';
+const emptySignup = { name: '', email: '' };
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY || '';
-const hasValidSiteKey =
-  siteKey && siteKey !== 'RECAPTCHA_SITEKEY' && siteKey !== '';
+const hasValidSiteKey = siteKey && siteKey !== 'RECAPTCHA_SITEKEY';
 
 export default function NotificationForm() {
-  const [formData, setFormData] = useState(
-    new NotificationFormClass('', '', '')
-  );
+  const [formData, setFormData] = useState(emptySignup);
+  const [pending, setPending] = useState(false);
   const [message, setMessage] = useState<Message | null>(null);
 
   const captchaRef = useRef<ReCAPTCHA>(null);
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (event: any) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const token = localEnv
+    const token = useMockData
       ? 'localEnv'
       : hasValidSiteKey
         ? captchaRef.current?.getValue()
         : 'no-recaptcha';
 
-    if (!localEnv && hasValidSiteKey && !token) {
+    if (!useMockData && hasValidSiteKey && !token) {
       setMessage({
         message: 'Are you a robot? Please complete the reCAPTCHA',
         type: 'error',
@@ -52,6 +38,8 @@ export default function NotificationForm() {
       return;
     }
 
+    setPending(true);
+    setMessage(null);
     const submitData = { ...formData, token: token ?? '' };
 
     try {
@@ -64,13 +52,13 @@ export default function NotificationForm() {
       });
 
       if (!response.ok) {
-        const errorResponse = await response.json();
-        if (errorResponse.data.message) {
-          setMessage({
-            message: errorResponse.data.message.message,
-            type: 'error',
-          });
-        }
+        const detail = await response.json().catch(() => null);
+        setMessage({
+          message:
+            detail?.message ||
+            'Your signup could not be saved. Please try again.',
+          type: 'error',
+        });
         return;
       }
 
@@ -79,9 +67,14 @@ export default function NotificationForm() {
         type: 'success',
       });
 
-      setFormData(new NotificationFormClass('', '', ''));
-    } catch (error) {
-      console.error('error', error);
+      setFormData(emptySignup);
+    } catch {
+      setMessage({
+        message: 'We could not reach the signup form. Please try again.',
+        type: 'error',
+      });
+    } finally {
+      setPending(false);
     }
   };
 
@@ -111,26 +104,25 @@ export default function NotificationForm() {
           />
         </div>
         <div className={styles.recaptcha}>
-          {!localEnv && hasValidSiteKey && (
+          {!useMockData && hasValidSiteKey && (
             <ReCAPTCHA sitekey={siteKey} ref={captchaRef} />
           )}
-          {!localEnv && !hasValidSiteKey && (
+          {!useMockData && !hasValidSiteKey && (
             <div className={styles.recaptchaPlaceholder}>
-              <p
-                style={{ color: '#666', fontSize: '14px', textAlign: 'center' }}
-              >
+              <p>
                 reCAPTCHA verification is temporarily unavailable. Please try
                 again later.
               </p>
             </div>
           )}
         </div>
-        <button className={styles.submitBtn} type='submit'>
+        <button className={styles.submitBtn} disabled={pending} type='submit'>
           Get Notified
         </button>
       </form>
       {message && (
         <div
+          role='status'
           className={[
             styles.formMessage,
             message.type === 'error'

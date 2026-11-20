@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import styles from './modal.module.css';
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { LABELS } from '@/app/labels';
@@ -25,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({
     if (e.key !== 'Tab' || !modalRef.current) return;
 
     const focusable = modalRef.current.querySelectorAll<HTMLElement>(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      'button, [href], input, select, textarea, video[controls], [tabindex]:not([tabindex="-1"])'
     );
     if (focusable.length === 0) return;
 
@@ -63,7 +64,7 @@ const Modal: React.FC<ModalProps> = ({
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      if (!isOpen && previousFocusRef.current) {
+      if (isOpen && previousFocusRef.current) {
         previousFocusRef.current.focus();
         previousFocusRef.current = null;
       }
@@ -72,7 +73,7 @@ const Modal: React.FC<ModalProps> = ({
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div className={styles.overlay} onClick={onClose}>
       <div
         ref={modalRef}
@@ -91,7 +92,8 @@ const Modal: React.FC<ModalProps> = ({
         </button>
         <div className={styles.content}>{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

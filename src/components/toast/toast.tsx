@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
+import type { Message } from '@/types';
 import styles from './toast.module.css';
 
 interface ToastProps {
   message: string;
-  type?: 'success' | 'error' | 'warning' | 'info';
+  type?: Message['type'];
   duration?: number;
   onClose: () => void;
 }
@@ -20,9 +21,17 @@ export default function Toast({
   }, [onClose, duration]);
 
   return (
-    <div className={`${styles.toast} ${styles[type]}`}>
+    <div
+      role={type === 'error' ? 'alert' : 'status'}
+      className={`${styles.toast} ${styles[type]}`}
+    >
       <span>{message}</span>
-      <button onClick={onClose} className={styles.close}>
+      <button
+        type='button'
+        aria-label='Dismiss notification'
+        onClick={onClose}
+        className={styles.close}
+      >
         &times;
       </button>
     </div>

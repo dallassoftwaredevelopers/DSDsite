@@ -5,7 +5,6 @@ type ValidationRuleForFormField<T> = {
   [K in keyof T]?: {
     isFieldRequired?: boolean;
     validationRegexPattern?: RegExp;
-    minimumCharacterLength?: number;
     maximumCharacterLength?: number;
     customValidationFunction?: (fieldValue: T[K]) => string | undefined;
   }[];
@@ -87,20 +86,12 @@ export function useForm<T extends Record<string, any>>(
     return Object.keys(newErrors).length === 0;
   }, [values, validationRules]);
 
-  const reset = useCallback(() => {
-    setValues(initialValues);
-    setErrors({});
-    setIsSubmitting(false);
-  }, [initialValues]);
-
   return {
     values,
     errors,
     isSubmitting,
     setIsSubmitting,
     handleChange,
-    setValue,
     validate,
-    reset,
   };
 }

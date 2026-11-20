@@ -33,33 +33,6 @@ export interface Person {
   imageUrl?: string;
 }
 
-export interface ToastMessage {
-  id: string;
-  message: string;
-  type: 'success' | 'error' | 'warning' | 'info';
-}
-
-export interface FormFieldError {
-  field: string;
-  message: string;
-}
-
-export interface ApiResponse<T> {
-  data: T;
-  success: boolean;
-  message?: string;
-}
-
-export interface PaginatedResponse<T> extends ApiResponse<T[]> {
-  pagination: {
-    page: number;
-    limit: number;
-    total: number;
-    hasNext: boolean;
-    hasPrev: boolean;
-  };
-}
-
 export type Message = {
   message: string;
   type: 'error' | 'success';

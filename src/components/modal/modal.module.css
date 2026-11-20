@@ -1,70 +1,41 @@
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+  inset: 0;
+  background: #060c10c9;
+  display: grid;
+  place-items: center;
+  z-index: 9999;
+  padding: 12px;
 }
-
 .modal {
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 600px;
-  max-height: 85vh;
-  overflow-y: auto;
+  color-scheme: dark;
+  background: #172229;
+  color: #f5f4ef;
+  padding: clamp(20px, 3vw, 38px);
+  border: 1px solid #627079;
+  border-top: 4px solid #ffca23;
+  border-radius: 16px;
+  width: min(100%, 560px);
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  overscroll-behavior: contain;
   position: relative;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.3s ease-in-out;
+  box-shadow: 0 20px 70px #0008;
 }
-
-.content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 .closeButton {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
+  top: 9px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
   cursor: pointer;
-  color: #333;
-  z-index: 10;
+  color: #f4f3ee;
+  border: 1px solid #526069;
+  border-radius: 10px;
+  background: #1e2b32;
+  font-size: 26px;
+  line-height: 1;
 }
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@media (max-width: 768px) {
-  .modal {
-    width: 95%;
-    max-width: 95vw;
-    max-height: 90vh;
-    padding: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal {
-    padding: 1rem;
-    max-height: 95vh;
-  }
+.content {
+  width: 100%;
 }

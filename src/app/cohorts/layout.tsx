@@ -1,18 +1,20 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '../_site/metadata';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('/cohorts', {
   title: 'Cohorts | Dallas Software Developers',
   description:
-    'Join our intensive cohort program. Learn software development with hands-on projects and mentorship from experienced Dallas developers.',
-  keywords:
-    'coding cohort Dallas, software development bootcamp, developer mentorship, hands-on coding program',
-  openGraph: {
-    title: 'Cohorts | Dallas Software Developers',
-    description:
-      'Join our intensive cohort program with hands-on projects and mentorship.',
-    type: 'website',
+    'Build a working app with a small team in six weeks. Explore the schedule, watch project demos, and see when applications open.',
+  image: {
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/cohortGroup3.jpg',
+    width: 1440,
+    height: 831,
+    alt: 'Code shared during a remote DSD cohort call',
   },
-};
+  keywords:
+    'Dallas developer cohorts, team software projects, developer demo day',
+  shareDescription:
+    'Six weeks from the first sprint to demo day with a DSD cohort team.',
+});
 
 export default function CohortsLayout({
   children,

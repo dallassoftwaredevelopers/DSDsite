@@ -1,4 +1,4 @@
-import CohortPageClient from './CohortPageClient';
+import CohortGuide from './CohortGuide';
 import {
   getActionLinks,
   getCohortStatus,
@@ -27,7 +27,5 @@ export default async function CohortPage() {
     readOrDefault(getActionLinks, DEFAULT_ACTION_LINKS),
   ]);
 
-  return (
-    <CohortPageClient cohortStatus={cohortStatus} actionLinks={actionLinks} />
-  );
+  return <CohortGuide cohortStatus={cohortStatus} actionLinks={actionLinks} />;
 }

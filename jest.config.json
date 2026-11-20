@@ -2,13 +2,12 @@
   "testEnvironment": "jsdom",
   "setupFilesAfterEnv": ["<rootDir>/__test__/setupTests.js"],
   "moduleNameMapper": {
-    "^@/(.*)$": "<rootDir>/src/$1",
     "^next/link$": "<rootDir>/__mocks__/next/link.js",
     "^next/navigation$": "<rootDir>/__mocks__/next/navigation.js",
-    "^next/router$": "<rootDir>/__mocks__/next/router.js",
-    "^@/hooks/(.*)$": "<rootDir>/__mocks__/hooks.js",
     "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js",
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js"
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+    "^next/image$": "<rootDir>/__mocks__/next/image.js",
+    "^@/(.*)$": "<rootDir>/src/$1"
   },
   "transform": {
     "^.+\\.(js|jsx|ts|tsx)$": [
@@ -16,7 +15,12 @@
       {
         "presets": [
           "@babel/preset-env",
-          ["@babel/preset-react", { "runtime": "automatic" }],
+          [
+            "@babel/preset-react",
+            {
+              "runtime": "automatic"
+            }
+          ],
           "@babel/preset-typescript"
         ]
       }

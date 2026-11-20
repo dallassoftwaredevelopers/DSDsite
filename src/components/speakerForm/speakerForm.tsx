@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import styles from './speakerForm.module.css';
 import ReCAPTCHA from 'react-google-recaptcha';
-import { Message } from '@/types';
+import type { Message } from '@/types';
+import { useMockData } from '../../../lib/env';
 import { useToast } from '@/contexts/ToastContext';
 import { useForm } from '@/hooks/useForm';
 import { LABELS } from '@/app/labels';
@@ -12,12 +13,7 @@ interface FormData {
   linkedInUrl: string;
   topic: string;
   briefDescription: string;
-  token: string;
 }
-
-const localEnv =
-  process.env.NODE_ENV === 'development' &&
-  process.env.NEXT_PUBLIC_USE_MOCK_DATA === 'true';
 
 const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITEKEY ?? '';
 
@@ -25,7 +21,7 @@ function isValidHttpUrl(urlValue: string): boolean {
   try {
     const url = new URL(urlValue);
     return url.protocol === 'http:' || url.protocol === 'https:';
-  } catch (_) {
+  } catch {
     return false;
   }
 }
@@ -43,7 +39,6 @@ export default function SpeakerForm({
     isSubmitting,
     setIsSubmitting,
     handleChange,
-    setValue,
     validate,
   } = useForm<FormData>(
     {
@@ -52,7 +47,6 @@ export default function SpeakerForm({
       linkedInUrl: '',
       topic: '',
       briefDescription: '',
-      token: '',
     },
     {
       fullName: [{ isFieldRequired: true }],
@@ -90,11 +84,11 @@ export default function SpeakerForm({
 
       const hasValidSiteKey = siteKey && siteKey !== 'RECAPTCHA_SITEKEY';
       const token =
-        localEnv || !hasValidSiteKey
+        useMockData || !hasValidSiteKey
           ? 'localEnv'
           : captchaRef.current?.getValue();
 
-      if (!token && hasValidSiteKey && !localEnv) {
+      if (!token && hasValidSiteKey && !useMockData) {
         setMessage({
           message: LABELS.speakerForm.errors.recaptcha_required,
           type: 'error',
@@ -102,8 +96,6 @@ export default function SpeakerForm({
         setIsSubmitting(false);
         return;
       }
-
-      setValue('token', token ?? '');
 
       try {
         const response = await fetch('/api/speakerRequestForm', {
@@ -114,15 +106,18 @@ export default function SpeakerForm({
           body: JSON.stringify({ ...formData, token: token ?? '' }),
         });
 
-        if (response.status === 400) {
-          showToast(response.statusText, 'error');
+        if (!response.ok) {
+          showToast(
+            response.statusText || LABELS.speakerForm.errors.submit_error,
+            'error'
+          );
           setIsSubmitting(false);
           return;
         }
 
         showToast(LABELS.speakerForm.errors.submit_success, 'success');
         onSubmit();
-      } catch (error) {
+      } catch {
         showToast(LABELS.speakerForm.errors.submit_error, 'error');
         setIsSubmitting(false);
       }
@@ -132,11 +127,16 @@ export default function SpeakerForm({
   return (
     <form onSubmit={handleSubmit} noValidate className={styles.formContainer}>
       <div className={styles.formGroup}>
-        <label className={styles.formLabel}>
+        <label htmlFor='proposal-fullName' className={styles.formLabel}>
           {LABELS.speakerForm.labels.full_name}
         </label>
         <input
           type='text'
+          id='proposal-fullName'
+          aria-invalid={Boolean(errors.fullName)}
+          aria-describedby={
+            errors.fullName ? 'proposal-fullName-error' : undefined
+          }
           name='fullName'
           value={formData.fullName}
           onChange={handleChange}
@@ -144,31 +144,45 @@ export default function SpeakerForm({
           required
         />
         {errors.fullName && (
-          <p className={styles.errorText}>{errors.fullName}</p>
+          <p id='proposal-fullName-error' className={styles.errorText}>
+            {errors.fullName}
+          </p>
         )}
       </div>
 
       <div className={styles.formGroup}>
-        <label className={styles.formLabel}>
+        <label htmlFor='proposal-email' className={styles.formLabel}>
           {LABELS.speakerForm.labels.email}
         </label>
         <input
           type='email'
+          id='proposal-email'
+          aria-invalid={Boolean(errors.email)}
+          aria-describedby={errors.email ? 'proposal-email-error' : undefined}
           name='email'
           value={formData.email}
           onChange={handleChange}
           className={styles.formInput}
           required
         />
-        {errors.email && <p className={styles.errorText}>{errors.email}</p>}
+        {errors.email && (
+          <p id='proposal-email-error' className={styles.errorText}>
+            {errors.email}
+          </p>
+        )}
       </div>
 
       <div className={styles.formGroup}>
-        <label className={styles.formLabel}>
+        <label htmlFor='proposal-linkedInUrl' className={styles.formLabel}>
           {LABELS.speakerForm.labels.linked_in_url}
         </label>
         <input
-          type='linkedInUrl'
+          type='url'
+          id='proposal-linkedInUrl'
+          aria-invalid={Boolean(errors.linkedInUrl)}
+          aria-describedby={
+            errors.linkedInUrl ? 'proposal-linkedInUrl-error' : undefined
+          }
           name='linkedInUrl'
           value={formData.linkedInUrl}
           onChange={handleChange}
@@ -176,16 +190,21 @@ export default function SpeakerForm({
           required
         />
         {errors.linkedInUrl && (
-          <p className={styles.errorText}>{errors.linkedInUrl}</p>
+          <p id='proposal-linkedInUrl-error' className={styles.errorText}>
+            {errors.linkedInUrl}
+          </p>
         )}
       </div>
 
       <div className={styles.formGroup}>
-        <label className={styles.formLabel}>
+        <label htmlFor='proposal-topic' className={styles.formLabel}>
           {LABELS.speakerForm.labels.topic}
         </label>
         <input
           type='text'
+          id='proposal-topic'
+          aria-invalid={Boolean(errors.topic)}
+          aria-describedby={errors.topic ? 'proposal-topic-error' : undefined}
           name='topic'
           value={formData.topic}
           onChange={handleChange}
@@ -194,14 +213,25 @@ export default function SpeakerForm({
           required
         />
         <p className={styles.formHelperText}>{formData.topic.length}/100</p>
-        {errors.topic && <p className={styles.errorText}>{errors.topic}</p>}
+        {errors.topic && (
+          <p id='proposal-topic-error' className={styles.errorText}>
+            {errors.topic}
+          </p>
+        )}
       </div>
 
       <div className={styles.formGroup}>
-        <label className={styles.formLabel}>
+        <label htmlFor='proposal-briefDescription' className={styles.formLabel}>
           {LABELS.speakerForm.labels.brief_description}
         </label>
         <textarea
+          id='proposal-briefDescription'
+          aria-invalid={Boolean(errors.briefDescription)}
+          aria-describedby={
+            errors.briefDescription
+              ? 'proposal-briefDescription-error'
+              : undefined
+          }
           name='briefDescription'
           value={formData.briefDescription}
           onChange={handleChange}
@@ -214,30 +244,32 @@ export default function SpeakerForm({
           {formData.briefDescription.length}/500
         </p>
         {errors.briefDescription && (
-          <p className={styles.errorText}>{errors.briefDescription}</p>
+          <p id='proposal-briefDescription-error' className={styles.errorText}>
+            {errors.briefDescription}
+          </p>
         )}
       </div>
 
-      <p className='smText'>
-        {LABELS.speakerForm.labels.in_person_notice_line1}
-      </p>
-      <p className='smText'>
-        {LABELS.speakerForm.labels.in_person_notice_line2}
-      </p>
+      <p>{LABELS.speakerForm.labels.in_person_notice_line1}</p>
+      <p>{LABELS.speakerForm.labels.in_person_notice_line2}</p>
 
       <div className={styles.recaptcha}>
-        {!localEnv && siteKey && siteKey !== 'RECAPTCHA_SITEKEY' && (
+        {!useMockData && siteKey && siteKey !== 'RECAPTCHA_SITEKEY' && (
           <ReCAPTCHA sitekey={siteKey} ref={captchaRef} />
         )}
       </div>
-      <button type='submit' className={styles.submitButton}>
+      <button
+        disabled={isSubmitting}
+        type='submit'
+        className={styles.submitButton}
+      >
         {LABELS.speakerForm.labels.submit}
       </button>
       <button type='button' className={styles.cancelButton} onClick={onCancel}>
         {LABELS.speakerForm.labels.cancel}
       </button>
 
-      <p>{message?.message}</p>
+      <p role='status'>{message?.message}</p>
     </form>
   );
 }

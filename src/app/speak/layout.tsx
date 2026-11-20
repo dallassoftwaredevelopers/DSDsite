@@ -1,18 +1,18 @@
-import type { Metadata } from 'next';
+import { pageMetadata } from '../_site/metadata';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('/speak', {
   title: 'Speak at DSD | Dallas Software Developers',
   description:
-    'Share your knowledge with Dallas Software Developers. Submit a talk proposal and speak at our meetups.',
+    'Pitch a 10–15 minute demo or a full-length technical talk for a Dallas Software Developers meetup. Find the formats, venue requirements, and proposal form.',
+  image: {
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/ronDagdag.jpg',
+    width: 2611,
+    height: 1958,
+    alt: 'A speaker presenting at a DSD meetup',
+  },
   keywords:
     'speak at meetup Dallas, tech talk submission, developer speaking opportunity, present at DSD',
-  openGraph: {
-    title: 'Speak at DSD | Dallas Software Developers',
-    description:
-      'Share your knowledge with Dallas Software Developers. Submit a talk proposal.',
-    type: 'website',
-  },
-};
+});
 
 export default function SpeakLayout({
   children,

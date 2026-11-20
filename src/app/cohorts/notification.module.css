@@ -1,0 +1,58 @@
+.notificationFormContainer {
+  margin-top: 15px;
+}
+.notificationFormContainer form {
+  display: grid;
+  gap: 12px;
+}
+.formGroup {
+  display: grid;
+  gap: 4px;
+}
+.formGroup label {
+  font-weight: 700;
+  font-size: 14px;
+}
+.formGroup input {
+  width: 100%;
+  font: inherit;
+  color: #f8f8f2;
+  background: #0e181d;
+  border: 1px solid #586771;
+  border-radius: 8px;
+  padding: 9px 12px;
+}
+.submitBtn {
+  background: #ffca23;
+  color: #13191a;
+  font: inherit;
+  font-weight: 780;
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 15px;
+  cursor: pointer;
+  justify-self: start;
+}
+.submitBtn:disabled {
+  opacity: 0.65;
+}
+.recaptcha {
+  max-width: 100%;
+  overflow: auto;
+}
+.recaptcha:empty {
+  display: none;
+}
+.recaptchaPlaceholder p {
+  font-size: 14px;
+}
+.formMessage {
+  padding-top: 10px;
+  font-weight: 700;
+}
+.errorMessage {
+  color: #ffa3a3;
+}
+.successMessage {
+  color: #86ebbb;
+}

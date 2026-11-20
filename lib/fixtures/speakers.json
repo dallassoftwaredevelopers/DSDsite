@@ -1,0 +1,1144 @@
+{
+  "featured": [
+    {
+      "id": "eedfca50-a8bd-4db9-aa0a-257ce0c5d983",
+      "name": "Danny Thompson",
+      "role": "Director Of Technology",
+      "company": "This Dot Labs",
+      "photoUrl": "/images/speakers/danny-thompson-v2.webp",
+      "linkedin": "https://www.linkedin.com/in/dthompsondev/",
+      "lastSpoke": "2026-11-12",
+      "topics": [
+        "JavaScript",
+        "CSS",
+        "AI",
+        "Career Growth",
+        "Java",
+        "Software Architecture"
+      ]
+    },
+    {
+      "id": "5156473a-c70e-4ff1-9864-e89cdfa46c97",
+      "name": "Sarah Shook",
+      "role": "UI/UX Engineer",
+      "company": "Hunter Industries",
+      "photoUrl": "/images/speakers/sarah-shook-v2.webp",
+      "linkedin": "https://www.linkedin.com/in/sarahshook/",
+      "lastSpoke": "2026-05-19",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "9b98035f-1459-41ea-aa9c-5680b01d46ae",
+      "name": "Eric Diviney",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/eric-diviney.webp",
+      "lastSpoke": "2026-05-19",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "d71e4f38-c607-4b90-ad4a-48fe02dac7f2",
+      "name": "Clint Myers",
+      "role": "Senior Software Engineer",
+      "company": "Concan Consulting",
+      "photoUrl": "/images/speakers/clint-myers.webp",
+      "linkedin": "https://www.linkedin.com/in/clintmyers/",
+      "lastSpoke": "2026-05-19",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "3c0aec8c-6046-44e8-b1d5-cf13f36d98ee",
+      "name": "Amanda Mayfield",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/amanda-mayfield.webp",
+      "lastSpoke": "2025-11-13",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "b90468b7-8f75-4853-a3ba-808b29983673",
+      "name": "Ron Dagdag",
+      "role": " Staff Software Engineering Manager",
+      "company": "7-Eleven",
+      "photoUrl": "/images/speakers/ron-dagdag-v2.webp",
+      "linkedin": "https://www.linkedin.com/in/rondagdag/",
+      "lastSpoke": "2026-08-13",
+      "topics": ["JavaScript", "CSS", "AI"]
+    },
+    {
+      "id": "aeaa3a1c-4b36-41f8-a8ed-65153023e15f",
+      "name": "Noah Jenkins",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/noah-jenkins-v2.webp",
+      "lastSpoke": "2026-09-22",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "b11855b5-9063-483e-aaed-3d7a99b130f7",
+      "name": "Preston McCauley",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/preston-mccauley.webp",
+      "lastSpoke": "2026-08-13",
+      "topics": ["AI"]
+    },
+    {
+      "id": "b826de87-d223-4f50-9f15-93c9ceb3ec90",
+      "name": "Tim Rayburn",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/tim-rayburn.webp",
+      "lastSpoke": "2026-07-09",
+      "topics": ["AI"]
+    },
+    {
+      "id": "6d0fd3e3-255f-45d7-be1b-00fdd734f62d",
+      "name": "Yeshwanth Pentakota",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/yeshwanth-pentakota-v2.webp",
+      "lastSpoke": "2026-03-25",
+      "topics": ["Software Architecture"]
+    },
+    {
+      "id": "d0cb8faf-e10f-4c0d-bead-57de999afa69",
+      "name": "Kierra Dotson",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/kierra-dotson-v2.webp",
+      "lastSpoke": "2025-12-09",
+      "topics": ["AI"]
+    },
+    {
+      "id": "c26633e7-6cd9-4857-ace0-ca346866438e",
+      "name": "Sandra Chaparro",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/sandra-chaparro-v2.webp",
+      "lastSpoke": "2025-11-13",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "cd529942-fca8-44be-9511-5b251e3163d3",
+      "name": "Rishab Kumar",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/rishab-kumar.webp",
+      "lastSpoke": "2025-08-19",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "864eaf03-afbd-40af-9581-019cfaa025a9",
+      "name": "Andrea Griffiths",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/andrea-griffiths-v2.webp",
+      "lastSpoke": "2025-07-10",
+      "topics": ["AI"]
+    },
+    {
+      "id": "9857a331-ec8f-465c-9828-b83b1cf31670",
+      "name": "Ben Potter",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/ben-potter.webp",
+      "lastSpoke": "2026-06-23",
+      "topics": ["AI"]
+    },
+    {
+      "id": "1c514c5d-9ab0-45f2-b012-4aae9f2b60bb",
+      "name": "Marcus Merrell",
+      "role": "",
+      "company": "",
+      "photoUrl": "/images/speakers/marcus-merrell.webp",
+      "lastSpoke": "2026-03-25",
+      "topics": ["Software Architecture"]
+    }
+  ],
+  "other": [
+    {
+      "id": "da69eac9-7196-43f3-b33d-f176244f9d5d",
+      "name": "Mitchell West",
+      "role": "Engineering Manager",
+      "company": "Yum! Brands",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Mitchell_West.jpg",
+      "linkedin": "https://www.linkedin.com/in/mitchell-west-197234aa/",
+      "lastSpoke": "2026-03-25",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "51a78d71-f9ce-461c-a100-d4aa4ef3e124",
+      "name": "Sam Ingbar",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Sam_Ingbar_v2.jpg",
+      "lastSpoke": "2026-03-25",
+      "topics": ["Software Architecture"]
+    },
+    {
+      "id": "d948143e-f1ae-47e7-a8a9-427134ecb525",
+      "name": "Kyle Shelton",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Kyle_Shelton_v2.png",
+      "lastSpoke": "2025-12-09",
+      "topics": ["AI"]
+    },
+    {
+      "id": "87cb474e-dadf-4a86-9487-79ca5ba4a6eb",
+      "name": "Satinder Khasriya",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Satinder_Khasriya_v2.jpg",
+      "lastSpoke": "2025-12-09",
+      "topics": ["AI"]
+    },
+    {
+      "id": "f02639cb-8b70-45d1-8213-bf4acaf0ead4",
+      "name": "Eric Romere",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Eric_Romere_v2.jpg",
+      "lastSpoke": "2025-11-13",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "1837a1b4-3a7f-498d-bcab-dc627583789f",
+      "name": "Poojitha A S",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Poojitha_A_S_v2.jpg",
+      "lastSpoke": "2025-08-19",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "a935af71-93ca-4e12-934e-3c178d1a932b",
+      "name": "Suresh A M",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Suresh_A_M.jpg",
+      "lastSpoke": "2025-08-19",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "588b49b3-a470-4ccb-8725-1d02d8c80b78",
+      "name": "Garrett Tolbert",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Garrett_Tolbert_v2.jpg",
+      "lastSpoke": "2025-08-07",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "14e64233-fb89-45bb-97b1-efe074e9f02e",
+      "name": "Jamaal Smith",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jamaal_Smith.jpg",
+      "lastSpoke": "2025-08-07",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "4387c69e-bbda-4ac0-863e-61c628b40cf9",
+      "name": "Tatiana Maskaron",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Tatiana_Maskaron.jpg",
+      "lastSpoke": "2025-08-07",
+      "topics": ["JavaScript", "UI/UX"]
+    },
+    {
+      "id": "6c9f0e56-7f93-4259-b527-a2ba81d2a338",
+      "name": "Brandon Ward",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Brandon_Ward_v2.jpg",
+      "lastSpoke": "2025-07-22",
+      "topics": ["UI/UX"]
+    },
+    {
+      "id": "6bf2263b-ce77-4237-84be-fb4b540346f7",
+      "name": "Caleb Jenkins",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Caleb_Jenkins_v2.jpg",
+      "lastSpoke": "2025-07-22",
+      "topics": ["UI/UX"]
+    },
+    {
+      "id": "33b5d6bd-7d98-4be8-803b-97dbecda41a9",
+      "name": "Kaleb Garner",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Kaleb_Garner_v2.jpg",
+      "lastSpoke": "2025-07-22",
+      "topics": ["UI/UX"]
+    },
+    {
+      "id": "9f36c275-33fa-4f04-8ec5-cb008a89a6b2",
+      "name": "Vishal Reddy",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Vishal_Reddy_v2.png",
+      "lastSpoke": "2025-07-22",
+      "topics": ["UI/UX"]
+    },
+    {
+      "id": "66da1bb2-cadc-44c5-85bf-1d250614bc95",
+      "name": "Zoe Shuk-Yu Liu",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Zoe_Shuk_Yu_Liu_v2.jpg",
+      "lastSpoke": "2025-07-22",
+      "topics": ["UI/UX"]
+    },
+    {
+      "id": "17c150c0-ac85-408c-8a29-1e27c7990f60",
+      "name": "YK Sugi",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/YK_Sugi.jpg",
+      "lastSpoke": "2025-07-10",
+      "topics": ["AI"]
+    },
+    {
+      "id": "48d7d3b3-dbc1-4707-960c-bafdf4df3c31",
+      "name": "Aryaman Khandelwal",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Aryaman_Khandelwal_v2.jpg",
+      "lastSpoke": "2025-06-23",
+      "topics": ["AI"]
+    },
+    {
+      "id": "cd047a07-9a10-417f-a195-9bade337fc26",
+      "name": "Hermes Frangoudis",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Hermes_Frangoudis.jpg",
+      "lastSpoke": "2025-06-23",
+      "topics": ["AI"]
+    },
+    {
+      "id": "33f66695-f6e5-400d-8510-3b798a36c7b7",
+      "name": "Jorge Zreik",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jorge_Zreik.jpg",
+      "lastSpoke": "2025-06-23",
+      "topics": ["AI"]
+    },
+    {
+      "id": "32a13364-8e81-4132-b4a9-a21c686a286f",
+      "name": "Juan Cruz Martinez",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Juan_Cruz_Martinez.jpg",
+      "lastSpoke": "2025-06-23",
+      "topics": ["AI"]
+    },
+    {
+      "id": "2144f2df-f5fb-4736-bf92-c1ba95004bbf",
+      "name": "Kap Sev",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Kap_Sev.jpg",
+      "lastSpoke": "2025-06-23",
+      "topics": ["AI"]
+    },
+    {
+      "id": "9bb2fa70-1710-40c0-af88-fd207f1f674f",
+      "name": "Mark Thompson",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Mark_Thompson.jpg",
+      "lastSpoke": "2025-06-23",
+      "topics": ["AI"]
+    },
+    {
+      "id": "99fee85e-d234-42aa-be5e-729446126af3",
+      "name": "Michael Liendo",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Michael_Liendo.jpg",
+      "lastSpoke": "2025-06-23",
+      "topics": ["AI"]
+    },
+    {
+      "id": "3263fc5c-884f-4970-94b5-54c4ae23a138",
+      "name": "Ben Peeri",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Ben_Peeri.jpg",
+      "lastSpoke": "2025-05-20",
+      "topics": ["AI"]
+    },
+    {
+      "id": "5db87c7d-1301-40f9-8603-7cd97e3ec86d",
+      "name": "David Ojo",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/David_Ojo.jpg",
+      "lastSpoke": "2025-05-20",
+      "topics": ["AI"]
+    },
+    {
+      "id": "146f3240-a2a5-45c2-85a3-b5eddad6b2d9",
+      "name": "Patrick Hulce",
+      "role": "ML Architect",
+      "company": "Netflix",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Patrick_Hulce_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/patrickhulce/",
+      "lastSpoke": "2025-05-20",
+      "topics": ["JavaScript", "CSS", "AI"]
+    },
+    {
+      "id": "73a4b485-4342-4274-b88b-eca50741d2c7",
+      "name": "Nishith Singh",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Nishith_Singh.jpg",
+      "lastSpoke": "2025-05-08",
+      "topics": [
+        "Software Architecture",
+        "Cloud Architecture",
+        "JavaScript",
+        "Java"
+      ]
+    },
+    {
+      "id": "b837a03b-4e4b-4436-8737-58d6e4e01e26",
+      "name": "Saurabh Gupta",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Saurabh_Gupta_v2.png",
+      "lastSpoke": "2025-05-08",
+      "topics": ["Software Architecture"]
+    },
+    {
+      "id": "87a3efd5-db9c-4fff-b24d-e39a8e861468",
+      "name": "Sireesha Chilakamarri",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Sireesha_Chilakamarri_v2.png",
+      "lastSpoke": "2025-05-08",
+      "topics": ["Software Architecture"]
+    },
+    {
+      "id": "32ec3453-4964-4e1f-9faf-e2a5f3f35b3b",
+      "name": "Eleazar Hernandez",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Eleazar_Hernandez_v2.jpg",
+      "lastSpoke": "2025-04-10",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "574eee74-d60d-487e-b9e9-b3d7af0ce98d",
+      "name": "Faye Xu",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Faye_Xu.jpg",
+      "lastSpoke": "2025-04-10",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "bc3167fa-42b9-44a8-a6c5-ca63ce7b1084",
+      "name": "M M Farhad",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/M_M_Farhad_v2.jpg",
+      "lastSpoke": "2025-04-10",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "804d16d9-8df5-47cb-93d5-d42ed182aa3c",
+      "name": "Raja Krishna",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Raja_Krishna_v2.jpg",
+      "lastSpoke": "2025-04-10",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "1dbc259f-8c98-406b-af1b-6a2bea253b5c",
+      "name": "Aly Ibrahim",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Aly_Ibrahim_v2.jpg",
+      "lastSpoke": "2025-03-13",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "b27f645b-c977-46c0-a0a2-08b70825b043",
+      "name": "David Strickland",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/David_Strickland_v2.jpg",
+      "lastSpoke": "2025-03-13",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "2579ff4e-37cb-4d76-92ab-585664c6aa10",
+      "name": "Jitender Jain",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jitender_Jain_v2.jpg",
+      "lastSpoke": "2025-03-13",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "18d75685-b6ad-4d96-b179-3a8298d37a0d",
+      "name": "Justin Biard",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Justin_Biard_v2.jpg",
+      "lastSpoke": "2025-03-13",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "7c4e64a0-a7bd-4f07-84b0-02c6ae5586af",
+      "name": "Samantha St-Louis",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Samantha_St_Louis_v2.jpg",
+      "lastSpoke": "2025-03-13",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "ee8dd54a-e3ce-41cb-a781-e216ae227f5e",
+      "name": "Jacob Orshalick",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jacob_Orshalick_v2.jpg",
+      "lastSpoke": "2025-02-20",
+      "topics": ["AI", "JavaScript"]
+    },
+    {
+      "id": "e1bd655d-91c4-4a89-94f1-cab37ca7cbbb",
+      "name": "Jerry Mannel Reghunadh",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jerry_Mannel_Reghunadh_v2.jpg",
+      "lastSpoke": "2025-02-20",
+      "topics": ["AI"]
+    },
+    {
+      "id": "b2cf73d2-4a34-4d60-b8f4-4046892337f3",
+      "name": "David Archuleta",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/David_Archuleta_v2.jpg",
+      "lastSpoke": "2025-02-06",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "a26d2400-c86c-4f06-999e-8ca120673e5a",
+      "name": "Harsha Thirimanna",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Harsha_Thirimanna_v2.jpg",
+      "lastSpoke": "2025-02-06",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "9f1e3263-e16d-4ab8-a09b-1f3b4f857fcd",
+      "name": "Jeremy Ashley",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jeremy_Ashley_v2.png",
+      "lastSpoke": "2025-02-06",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "b4418412-3a5e-4a88-bc68-a03595fc30cd",
+      "name": "Joseph Warren",
+      "role": "Software Engineer",
+      "company": "USAA",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Joseph_Warren.jpg",
+      "linkedin": "https://www.linkedin.com/in/josephmwarren/",
+      "lastSpoke": "2025-02-06",
+      "topics": ["JavaScript", "CSS", "Career Growth"]
+    },
+    {
+      "id": "f75a8e6f-572b-4c56-a9c7-77d85b92a262",
+      "name": "Sean Campbell",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Sean_Campbell_v2.jpg",
+      "lastSpoke": "2025-02-06",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "2e001b2f-490f-46d3-acf6-ec0b944c6e3a",
+      "name": "Dennis Garcia",
+      "role": "Senior Software Engineer Team Lead",
+      "company": "Imagine",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Dennis_Garcia.jpg",
+      "linkedin": "https://www.linkedin.com/in/dgarcia-appdev/",
+      "lastSpoke": "2024-11-14",
+      "topics": ["JavaScript", "CSS", "Career Growth"]
+    },
+    {
+      "id": "0d92a1c3-d5c9-4f36-a237-a25df11d8406",
+      "name": "Summer Tomaseski",
+      "role": "Game Developer",
+      "company": "NDA",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Summer_Tomaseski_v2.png",
+      "linkedin": "https://www.linkedin.com/in/summertime/",
+      "lastSpoke": "2024-11-14",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "7fa7546a-2420-4486-b55a-24b317513d91",
+      "name": "Dante Leeseberg",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Dante_Leeseberg.jpg",
+      "lastSpoke": "2024-11-07",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "7d35038e-5e03-40e5-9aaf-cdcf5a12e8a6",
+      "name": "Lindsey Dortch",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Lindsey_Dortch.png",
+      "lastSpoke": "2024-11-07",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "697b973f-5508-4353-a599-5d9f7ac996e3",
+      "name": "David Kea, Jr.",
+      "role": "Technology Business Specialist",
+      "company": "PNC Bank",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/David_Kea_Jr.jpg",
+      "linkedin": "https://www.linkedin.com/in/davidckeajr415/",
+      "lastSpoke": "2024-10-22",
+      "topics": ["Java"]
+    },
+    {
+      "id": "76398337-a0e2-46f1-9d5b-e21b1c986411",
+      "name": "Sergey Kryvets",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Sergey_Kryvets.jpg",
+      "lastSpoke": "2024-10-22",
+      "topics": ["Java"]
+    },
+    {
+      "id": "b0475c29-a759-4743-aec4-8de018a726d6",
+      "name": "Joshua Ow",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Joshua_Ow_v2.jpg",
+      "lastSpoke": "2024-09-23",
+      "topics": ["Java"]
+    },
+    {
+      "id": "ca70f634-514c-4148-81ed-408ced4253ac",
+      "name": "Sharat Chander",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Sharat_Chander.jpg",
+      "lastSpoke": "2024-09-23",
+      "topics": ["Java"]
+    },
+    {
+      "id": "a646968b-3e26-492f-8091-835d4df257c5",
+      "name": "Andrew Smit",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Andrew_Smit_v2.jpg",
+      "lastSpoke": "2024-08-08",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "b1ec1cb4-c0de-424b-bfbb-47052d2e06aa",
+      "name": "Trey Clark",
+      "role": "Software Engineer",
+      "company": "University of North Texas",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Trey_Clark_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/webdevtreyclark/",
+      "lastSpoke": "2024-08-08",
+      "topics": ["Java"]
+    },
+    {
+      "id": "b8ab58e8-fafb-40f7-9fdb-dda6d36396c4",
+      "name": "Brittany Frank",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Brittany_Frank.jpg",
+      "lastSpoke": "2024-07-23",
+      "topics": ["C#"]
+    },
+    {
+      "id": "5dac5499-e894-407b-ace9-ee5a76c6edc7",
+      "name": "Nick Cosentino",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Nick_Cosentino.jpg",
+      "lastSpoke": "2024-07-23",
+      "topics": ["C#"]
+    },
+    {
+      "id": "95e63a95-acc9-4f3d-99b3-ea65ac46f639",
+      "name": "Ryan Monaghan",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Ryan_Monaghan_v2.jpg",
+      "lastSpoke": "2024-07-23",
+      "topics": ["C#"]
+    },
+    {
+      "id": "9ee4541d-a7a8-4555-b5c2-1bd9573a8137",
+      "name": "Devyn Coyer",
+      "role": "Senior Full-Stack Developer",
+      "company": "LogicGate",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Devyn_Coyer.jpg",
+      "linkedin": "https://www.linkedin.com/in/devyn-c-6673b895/",
+      "lastSpoke": "2024-06-29",
+      "topics": ["Java"]
+    },
+    {
+      "id": "6c95613a-10d2-45c7-adba-c3e4b13f30d7",
+      "name": "Anusha Kondam",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Anusha_Kondam_v2.jpg",
+      "lastSpoke": "2024-05-09",
+      "topics": ["Cyber Security"]
+    },
+    {
+      "id": "0d77730b-4775-4856-bed0-085f30c16278",
+      "name": "Gabe Marshall",
+      "role": "Principal Security Consultant",
+      "company": "NCC Group",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Gabe_Marshall.jpg",
+      "linkedin": "https://www.linkedin.com/in/gabe-marshall-a3372536/",
+      "lastSpoke": "2024-05-09",
+      "topics": ["Cyber Security"]
+    },
+    {
+      "id": "f01a44ac-0c92-457d-9841-118c4b845877",
+      "name": "Peter Stromquist",
+      "role": "Enterprise Solutions Architect",
+      "company": "DevRev",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Peter_Stromquist.jpg",
+      "linkedin": "https://www.linkedin.com/in/twistedstream/",
+      "lastSpoke": "2024-05-09",
+      "topics": ["Cyber Security"]
+    },
+    {
+      "id": "994d1fde-2a2c-4526-bb70-dce5f9d1a241",
+      "name": "Serena D.",
+      "role": "Security Analyst",
+      "company": "Black Hills Information Security",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Serena_D_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/serena-d-b89b3765/",
+      "lastSpoke": "2024-05-09",
+      "topics": ["Cyber Security"]
+    },
+    {
+      "id": "cd8ff5e6-4956-4d0e-9eb8-5ae6f268ce45",
+      "name": "Brandy Smith",
+      "role": "Manager, Observability Architecture",
+      "company": "Grafana Labs",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Brandy_Smith_v2.png",
+      "linkedin": "https://www.linkedin.com/in/brandynicolesmith/",
+      "lastSpoke": "2024-04-11",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "62a3f140-a40c-4d87-a605-cf25b2ffa083",
+      "name": "Braydon Coyer",
+      "role": "Senior Front End Developer",
+      "company": "LogicGate",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Braydon_Coyer.jpg",
+      "linkedin": "https://www.linkedin.com/in/braydon-coyer/",
+      "lastSpoke": "2024-04-11",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "898fbd35-117a-4679-b2fd-6d8bbb92bc6b",
+      "name": "Cavasier Morris",
+      "role": "Staff Software Engineer",
+      "company": "Blackhawk Network",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Cavasier_Morris_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/cavasier-morris/",
+      "lastSpoke": "2024-04-11",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "93c629c8-3d17-449b-85f2-630a8a84f382",
+      "name": "Dan Kiuna",
+      "role": "Developer Agents and Experiences - Kiro",
+      "company": "AWS",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Dan_Kiuna_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/dan-kiuna/",
+      "lastSpoke": "2024-04-11",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "a72fefca-7a75-4ae1-80f9-d80f982ca382",
+      "name": "Shashi Lo",
+      "role": "Senior Software Engineer",
+      "company": "Microsoft",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Shashi_Lo_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/shashilo/",
+      "lastSpoke": "2024-04-11",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "dad1db7a-b3fd-4831-94d4-7f2a67237091",
+      "name": "Yoo Jin Bae",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Yoo_Jin_Bae_v2.jpg",
+      "lastSpoke": "2024-04-11",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "af5c2e7d-3b83-483c-884e-e247e55f170e",
+      "name": "Akshay Lingamaneni",
+      "role": "Senior Software Engineer",
+      "company": "Fidelity",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Akshay_Lingamaneni.jpg",
+      "linkedin": "https://www.linkedin.com/in/akshaylingamaneni/",
+      "lastSpoke": "2024-02-22",
+      "topics": ["Java"]
+    },
+    {
+      "id": "ccf30f7f-1d48-4461-b196-ebb106df652b",
+      "name": "Lawrence Lockhart",
+      "role": "Senior Developer Advocate",
+      "company": "Beefree",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Lawrence_Lockhart_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/lawrencelockhart/",
+      "lastSpoke": "2024-02-22",
+      "topics": ["Java"]
+    },
+    {
+      "id": "66b3c83a-4079-482c-b64e-eaaec4287b2f",
+      "name": "Mike Arsenault",
+      "role": "Offensive Security Officer",
+      "company": "Bank of America",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Mike_Arsenault.jpg",
+      "linkedin": "https://www.linkedin.com/in/mike-arsenault-23092193/",
+      "lastSpoke": "2024-02-22",
+      "topics": ["Java"]
+    },
+    {
+      "id": "6d7d2238-52ea-43af-9b03-895e9b1e3614",
+      "name": "Mudit Singh",
+      "role": "VP Product & Growth",
+      "company": "LambdaTest",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Mudit_Singh.png",
+      "linkedin": "https://www.linkedin.com/in/muditsingh5000/",
+      "lastSpoke": "2024-02-22",
+      "topics": ["Java"]
+    },
+    {
+      "id": "755fe9ce-be8e-4f99-9f84-5b7c8fd04b38",
+      "name": "Priyanka Koppula",
+      "role": "Vice President",
+      "company": "JPMorganChase",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Priyanka_Koppula.jpg",
+      "linkedin": "https://www.linkedin.com/in/priyanka-koppula/",
+      "lastSpoke": "2024-02-22",
+      "topics": ["Java"]
+    },
+    {
+      "id": "db5d7311-f349-45ea-be4a-a11735bcf25d",
+      "name": "Bas Steins",
+      "role": "Senior Software Engineer",
+      "company": "Miltenyi Biotec",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Bas_Steins_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/bascodes/",
+      "lastSpoke": "2024-02-08",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "02fb0e31-1276-421d-b28d-dd6e2f8338c3",
+      "name": "Nicolai Froehlich",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Nicolai_Froehlich.jpg",
+      "lastSpoke": "2024-02-08",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "d7200c23-cc28-4962-a3e7-2b85133f662c",
+      "name": "Chad Retz",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Chad_Retz.jpg",
+      "lastSpoke": "2023-12-07",
+      "topics": ["Cloud Architecture"]
+    },
+    {
+      "id": "9cdab33f-181b-412f-a52b-59237594caf0",
+      "name": "Daniel Scott",
+      "role": "Senior Lead Software Engineering Immersive Instructor",
+      "company": "General Assembly",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Daniel_Scott_v2.png",
+      "linkedin": "https://www.linkedin.com/in/daniel-j-scott/",
+      "lastSpoke": "2023-11-14",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "eb53eb13-06b4-4b1d-8865-7f4f79a0d015",
+      "name": "Joseph Evans",
+      "role": "Software Engineer",
+      "company": "Citi",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Joseph_Evans.jpg",
+      "linkedin": "https://www.linkedin.com/in/josephevans0/",
+      "lastSpoke": "2023-11-14",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "dadbb91f-f9b2-4f94-a419-2486f382a906",
+      "name": "Angie del Castillo",
+      "role": "Program Manager",
+      "company": "Meta",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Angie_del_Castillo.jpg",
+      "linkedin": "https://www.linkedin.com/in/adelcastillo17/",
+      "lastSpoke": "2023-09-12",
+      "topics": ["Career Growth"]
+    },
+    {
+      "id": "0813eb22-05d7-40ea-80bd-0a6c1c0e877c",
+      "name": "Melissa Guerrero",
+      "role": "Design Manager",
+      "company": "Amadeus",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Melissa_Guerrero.jpg",
+      "linkedin": "https://www.linkedin.com/in/melissa-guerrero/",
+      "lastSpoke": "2023-09-12",
+      "topics": ["CSS", "Career Growth"]
+    },
+    {
+      "id": "3f0f3c5d-ecfa-41d6-b343-119be25d92e8",
+      "name": "Perrymon Wright",
+      "role": "Technical Sales Recruiter",
+      "company": "Palo Alto Networks",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Perrymon_Wright.jpg",
+      "linkedin": "https://www.linkedin.com/in/perrymon-wright-80751bb3/",
+      "lastSpoke": "2023-09-12",
+      "topics": ["Career Growth"]
+    },
+    {
+      "id": "d1883d80-d777-4d30-b697-2132b986894c",
+      "name": "Alexis Roberson",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Alexis_Roberson_v2.jpg",
+      "lastSpoke": "2023-06-29",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "fb499231-ac28-43dd-8461-d37d88780dd7",
+      "name": "Kurtis Ivey",
+      "role": "Full Stack Software Developer",
+      "company": "One Community Global",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Kurtis_Ivey.jpg",
+      "linkedin": "https://www.linkedin.com/in/kurtisivey/",
+      "lastSpoke": "2023-06-29",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "6b56df69-fa4b-44e1-8157-2125daa4f0f0",
+      "name": "David Parry",
+      "role": "Developer Advocate",
+      "company": "Qodo",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/David_Parry_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/daviddryparry/",
+      "lastSpoke": "2023-05-09",
+      "topics": ["Java"]
+    },
+    {
+      "id": "0c35419d-ed79-4b37-adcb-7fbcdd344c5a",
+      "name": "Edwin Choi",
+      "role": "Software Engineer",
+      "company": "Lockheed Martin",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Edwin_Choi.jpg",
+      "linkedin": "https://www.linkedin.com/in/ec-dev/",
+      "lastSpoke": "2023-04-11",
+      "topics": ["CSS"]
+    },
+    {
+      "id": "5ab9d794-3100-4738-a016-34eafea3bfcd",
+      "name": "Ryan Matthews",
+      "role": "Software Engineer",
+      "company": "Limble CMMS",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Ryan_Matthews.jpg",
+      "linkedin": "https://www.linkedin.com/in/ryntak94/",
+      "lastSpoke": "2023-04-11",
+      "topics": ["CSS"]
+    },
+    {
+      "id": "90d06896-e0fc-497a-8a3e-bb7f62a430b6",
+      "name": "Ariel Bowen",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Ariel_Bowen_v2.png",
+      "lastSpoke": "2023-02-07",
+      "topics": ["Java"]
+    },
+    {
+      "id": "de5d9445-982b-4ac2-bc8e-1a39fab42c40",
+      "name": "Jordan Parker",
+      "role": "Software Engineer",
+      "company": "Chase",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jordan_Parker.jpg",
+      "linkedin": "https://www.linkedin.com/in/johnsonpark/",
+      "lastSpoke": "2023-02-07",
+      "topics": ["Java"]
+    },
+    {
+      "id": "8784fcdb-3f75-4326-95ca-9a3b0d661f04",
+      "name": "Kris MacKay",
+      "role": "Principal Consultant",
+      "company": "QA Consultants",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Kris_MacKay.jpg",
+      "linkedin": "https://www.linkedin.com/in/krismackay/",
+      "lastSpoke": "2023-02-07",
+      "topics": ["Java"]
+    },
+    {
+      "id": "9cf14bc7-8b54-4b91-b5aa-69b20c2409b1",
+      "name": "Neil Chaudhuri",
+      "role": "President",
+      "company": "Vidya",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Neil_Chaudhuri.jpg",
+      "linkedin": "https://www.linkedin.com/in/neil-chaudhuri/",
+      "lastSpoke": "2023-02-07",
+      "topics": ["Java"]
+    },
+    {
+      "id": "59950cbf-0e11-4f27-8fd4-2c8129483b55",
+      "name": "Ermoni Osborne",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Ermoni_Osborne.jpg",
+      "lastSpoke": "2022-12-13",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "c790abe6-2bac-4fc3-a9ed-28e58ecf8024",
+      "name": "Toby Rex",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Toby_Rex_v2.jpg",
+      "lastSpoke": "2022-12-13",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "1cafba2f-848d-4c8a-80c1-0255e7d5c6c5",
+      "name": "Erik Andersen",
+      "role": "Staff Software Engineer",
+      "company": "Yum! Brands",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Erik_Andersen.jpg",
+      "linkedin": "https://www.linkedin.com/in/ebandersen/",
+      "lastSpoke": "2022-11-22",
+      "topics": ["Career Growth"]
+    },
+    {
+      "id": "feb11bec-9be8-4839-a0a4-8c3374450cb8",
+      "name": "Everett Swain II",
+      "role": " Sr. Conversational AI Designer",
+      "company": "Guardian Life",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Everett_Swain_II_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/everettblakeswain/",
+      "lastSpoke": "2022-11-22",
+      "topics": ["Career Growth"]
+    },
+    {
+      "id": "bce4b1b9-31e9-4cd6-b553-022564fce180",
+      "name": "Samantha Lozano",
+      "role": "Senior Recruiting Lead",
+      "company": "Tech & R37",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Samantha_Lozano.jpg",
+      "linkedin": "https://www.linkedin.com/in/samantha-lozano-02b04b5a/",
+      "lastSpoke": "2022-11-22",
+      "topics": ["Career Growth"]
+    },
+    {
+      "id": "d59d3b08-205a-4c8e-bc2f-dfdedebda4b7",
+      "name": "Thaddeus Blankenship",
+      "role": "Product Engineer",
+      "company": "Pocus",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Thaddeus_Blankenship_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/thaddeusb/",
+      "lastSpoke": "2022-11-22",
+      "topics": ["Career Growth"]
+    },
+    {
+      "id": "5ff68b22-d203-4351-836b-054ace3033f6",
+      "name": "Brian Douglas",
+      "role": "Head of Developer Experience",
+      "company": "Continue",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Brian_Douglas_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/brianldouglas/",
+      "lastSpoke": "2022-11-10",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "9d9c7bea-c0fd-443f-be6d-2c41c57bd6ee",
+      "name": "Jacob M-G Evans",
+      "role": "Staff Engineer",
+      "company": "Whop",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jacob_M_G_Evans_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/jacob-m-g-evans/",
+      "lastSpoke": "2022-11-10",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "c00bc930-ddd0-4c2d-9264-b08f0fb66b98",
+      "name": "Jesse Hall",
+      "role": "Staff Developer Advocate",
+      "company": "MongoDB",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jesse_Hall_v2.jpg",
+      "linkedin": "https://www.linkedin.com/in/codestackr/",
+      "lastSpoke": "2022-11-10",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "abfd83df-3908-43bd-b549-5a42c21a58ca",
+      "name": "Kassandra Moreno",
+      "role": " Senior Frontend Developer",
+      "company": "Extreme Arts and Sciences",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Kassandra_Moreno.jpg",
+      "linkedin": "https://www.linkedin.com/in/kassandrasanch/",
+      "lastSpoke": "2022-11-10",
+      "topics": ["JavaScript", "CSS"]
+    },
+    {
+      "id": "3511c625-4689-4747-8132-9a5bde21ffac",
+      "name": "Ramiro Beltran",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Ramiro_Beltran_v2.png",
+      "lastSpoke": "2022-11-10",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "9a773373-2046-4a6f-95e4-c72b1150ae6e",
+      "name": "Anthony Campolo",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Anthony_Campolo.png",
+      "lastSpoke": "2022-09-29",
+      "topics": ["JavaScript"]
+    },
+    {
+      "id": "5121e20f-b046-4fc1-a159-424943b419e9",
+      "name": "Ben Myers",
+      "role": "",
+      "company": "",
+      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Ben_Myers.jpg",
+      "lastSpoke": "2022-08-25",
+      "topics": ["UI/UX"]
+    }
+  ]
+}

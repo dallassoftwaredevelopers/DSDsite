@@ -1,72 +1,56 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import {
+  getSpeakerPreview,
+  initialDirectoryData,
+} from '../../../lib/directoryData';
+import { pageMetadata } from '../_site/metadata';
 import SpeakersList from '@/components/speakersList/speakersList';
-import { LABELS } from '@/app/labels';
-import { internalLinks } from '@/app/_constants';
-
-export const metadata: Metadata = {
+import { Action, PageHero, SectionTitle } from '../_site/Editorial';
+import s from '../_site/interior.module.css';
+export const metadata = pageMetadata('/speakers', {
   title: 'Speakers | Dallas Software Developers',
   description:
-    'Meet the talented speakers who share their knowledge at Dallas Software Developers meetups.',
+    'Find developers who have spoken at DSD. Search by name, company, or topic, see when someone last spoke, or propose a talk of your own.',
+  image: {
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/patrick.jpg',
+    width: 2611,
+    height: 1958,
+    alt: 'A DSD speaker explaining a slide at the lectern',
+  },
   keywords:
     'Dallas tech speakers, developer talks, software development presentations, DSD speakers',
-  openGraph: {
-    title: 'Speakers | Dallas Software Developers',
-    description:
-      'Meet the talented speakers who share their knowledge at our meetups.',
-    type: 'website',
-  },
-};
+});
+export const revalidate = 300;
+const pageSize = 24;
 
-export default function SpeakersPage() {
+export default async function SpeakersPage() {
+  const speakers = await initialDirectoryData(getSpeakerPreview(pageSize));
   return (
-    <main style={{ padding: '2rem' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>
-        {LABELS.pages.speakers.title}
-      </h1>
-      <SpeakersList />
-
-      <section
-        style={{
-          marginTop: '4rem',
-          padding: '3rem 2rem',
-          background:
-            'linear-gradient(135deg, rgba(60, 60, 185, 0.1) 0%, rgba(69, 71, 201, 0.05) 100%)',
-          borderRadius: '16px',
-          textAlign: 'center',
-          border: '1px solid rgba(60, 60, 185, 0.2)',
-        }}
+    <div className={s.page}>
+      <PageHero
+        label='DSD speakers'
+        title='People behind'
+        accent='the talks.'
+        description='Heard a demo you’d like to follow up on? Look up the speaker by name or company. If you’re exploring a subject like CSS or cloud infrastructure, filter by topic to find DFW developers who’ve brought it to the stage.'
       >
-        <h2 style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>
-          {LABELS.speak.cta.title}
-        </h2>
-        <p
-          style={{
-            color: 'var(--cool-gray)',
-            marginBottom: '1.5rem',
-            maxWidth: '500px',
-            margin: '0 auto 1.5rem',
-          }}
-        >
-          {LABELS.speak.cta.description}
-        </p>
-        <Link
-          href={internalLinks.speak.link}
-          style={{
-            display: 'inline-block',
-            padding: '12px 32px',
-            background:
-              'linear-gradient(135deg, var(--blue) 0%, var(--light-blue) 100%)',
-            color: 'var(--white)',
-            borderRadius: '8px',
-            fontWeight: '600',
-            textDecoration: 'none',
-            transition: 'transform 0.2s, box-shadow 0.2s',
-          }}
-        >
-          Apply to Speak
-        </Link>
+        <Action href='#directory'>Browse the directory</Action>
+        <Action href='/speak' secondary>
+          Pitch a talk
+        </Action>
+      </PageHero>
+      <section className={s.section} id='directory'>
+        <SectionTitle note='The archive' title='Speaker directory.' />
+        <SpeakersList pageSize={pageSize} initial={speakers} />
       </section>
-    </main>
+      <section className={s.featureBand}>
+        <div>
+          <h2>What would you bring to the mic?</h2>
+          <p>
+            A side project, a tricky bug, or a decision you had to defend in
+            code review can all make a DSD talk.
+          </p>
+        </div>
+        <Action href='/speak'>Give a talk</Action>
+      </section>
+    </div>
   );
 }

@@ -1,202 +1,131 @@
-import type { Metadata } from 'next';
-import styles from './meetups.module.css';
-import BackgroundPattern from '@/components/decorative/backgroundPattern';
-import FloatingShapes from '@/components/decorative/floatingShapes';
-import { LABELS } from '@/app/labels';
-import MeetupCTAButton from './MeetupCTAButton';
+import Image from 'next/image';
+import mobileStage from './javascript-meetup-mobile.webp';
+import { pageMetadata } from '../_site/metadata';
+import { LABELS } from '../labels';
+import stage from '../_home/photos/javascript-meetup.webp';
+import { getNextMeetup } from '../_home/nextMeetup';
+import { Action, PageHero, SectionTitle } from '../_site/Editorial';
+import s from '../_site/interior.module.css';
+import { externalLinks, sponsorshipEmail } from '../_constants';
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata('/meetups', {
   title: 'Meetups | Dallas Software Developers',
   description: LABELS.pages.meetups.hero.subtitle,
+  image: {
+    url: 'https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/meetup1.jpg',
+    width: 3480,
+    height: 1891,
+    alt: 'The group on stage at A Night of JavaScript',
+  },
   keywords:
     'Dallas tech meetups, developer events Dallas, coding meetups, software developer networking',
-  openGraph: {
-    title: 'Meetups | Dallas Software Developers',
-    description: LABELS.pages.meetups.hero.subtitle,
-    type: 'website',
-  },
-};
-
-export default function MeetupsPage() {
+});
+export const revalidate = 900;
+export default async function MeetupsPage() {
+  const next = await getNextMeetup();
+  const { schedule, eventTypes } = LABELS.pages.meetups;
   return (
-    <div className={styles.pageContainer}>
-      <section className={styles.hero}>
-        <div className={styles.heroBackground} aria-hidden='true'>
-          <div className={styles.gradientOverlay}></div>
-          <div className={styles.shapesContainer}>
-            <div className={styles.shape + ' ' + styles.shape1}></div>
-            <div className={styles.shape + ' ' + styles.shape2}></div>
-            <div className={styles.shape + ' ' + styles.shape3}></div>
-          </div>
-          <div className={styles.gridPattern}></div>
-          <BackgroundPattern variant='dots' opacity={0.19} />
-          <FloatingShapes />
+    <div className={s.page}>
+      <PageHero
+        layout='room'
+        label='DSD meetups'
+        title='Come for a talk.'
+        accent='Stay for the people.'
+        description='Twice a month, 50+ DFW developers get together for free talks and pizza. Come see a tool in action, ask the speaker why they chose it, or compare it with something you use at work.'
+        art={
+          <figure className={s.printPhoto}>
+            <picture>
+              <source
+                media='(max-width: 480px)'
+                type='image/webp'
+                srcSet={mobileStage.src}
+              />
+              <Image
+                src={stage}
+                alt='Developers on stage at A Night of JavaScript'
+                sizes='(max-width: 760px) 90vw, (max-width: 1500px) 50vw, 740px'
+                loading='eager'
+                fetchPriority='high'
+              />
+            </picture>
+          </figure>
+        }
+      >
+        <Action href={next?.url ?? externalLinks.meetupUrl}>
+          RSVP on Meetup
+        </Action>
+        <Action href='#schedule' secondary>
+          Plan your evening
+        </Action>
+      </PageHero>
+      <section className={s.featureBand} aria-label='Next meetup'>
+        <div>
+          <span className={s.hand}>
+            {next ? 'Next on the calendar' : 'The meetup calendar'}
+          </span>
+          <h2>{next?.title ?? 'Find your next meetup.'}</h2>
+          <p>
+            {next
+              ? [next.date, next.time, next.location]
+                  .filter(Boolean)
+                  .join(' · ')
+              : 'See upcoming dates, venues, and RSVP details on Meetup.'}
+          </p>
         </div>
-
-        <div className={styles.heroContent}>
-          <div className={styles.heroTextContent}>
-            <h1 className={styles.heroHeading}>
-              {LABELS.pages.meetups.hero.tagline}{' '}
-              <span className={styles.highlight}>
-                {LABELS.pages.meetups.hero.title}
-              </span>
-            </h1>
-
-            <div className={styles.heroDescription}>
-              <p>{LABELS.pages.meetups.hero.subtitle}</p>
-            </div>
-
-            <div className={styles.heroStats}>
-              <div className={styles.stat}>
-                <span className={styles.statNumber}>
-                  {LABELS.pages.meetups.hero.stats.frequency}
-                </span>
-                <span className={styles.statLabel}>
-                  {LABELS.pages.meetups.hero.stats.frequencyLabel}
-                </span>
-              </div>
-              <div className={styles.stat}>
-                <span className={styles.statNumber}>
-                  {LABELS.pages.meetups.hero.stats.attendees}
-                </span>
-                <span className={styles.statLabel}>
-                  {LABELS.pages.meetups.hero.stats.attendeesLabel}
-                </span>
-              </div>
-              <div className={styles.stat}>
-                <span className={styles.statNumber}>
-                  {LABELS.pages.meetups.hero.stats.cost}
-                </span>
-                <span className={styles.statLabel}>
-                  {LABELS.pages.meetups.hero.stats.costLabel}
-                </span>
-              </div>
-            </div>
-
-            <div className={styles.heroCTA}>
-              <MeetupCTAButton buttonText={LABELS.pages.meetups.hero.cta} />
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.scrollIndicator} aria-hidden='true'>
-          <div className={styles.mouse}>
-            <div className={styles.mouseWheel}></div>
-          </div>
-        </div>
+        <Action href={next?.url ?? externalLinks.meetupUrl}>
+          {next ? 'Event details' : 'View the calendar'}
+        </Action>
       </section>
-
-      <section className={styles.eventTypesSection}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>
-            {LABELS.pages.meetups.eventTypes.title}
-          </h2>
-        </div>
-
-        <div className={styles.eventTypesGrid}>
-          <div className={styles.eventTypeCard}>
-            <div className={styles.eventTypeIcon} aria-hidden='true'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='currentColor'
-              >
-                <path d='M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM9 8h2v8H9zm4 0h2v8h-2z' />
-              </svg>
-            </div>
-            <h3 className={styles.eventTypeTitle}>
-              {LABELS.pages.meetups.eventTypes.fullLength.title}
-            </h3>
-            <p className={styles.eventTypeDescription}>
-              {LABELS.pages.meetups.eventTypes.fullLength.description}
-            </p>
-          </div>
-
-          <div className={styles.eventTypeCard}>
-            <div className={styles.eventTypeIcon} aria-hidden='true'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='currentColor'
-              >
-                <path d='M7 2v11h3v9l7-12h-4l4-8z' />
-              </svg>
-            </div>
-            <h3 className={styles.eventTypeTitle}>
-              {LABELS.pages.meetups.eventTypes.lightningNight.title}
-            </h3>
-            <p className={styles.eventTypeDescription}>
-              {LABELS.pages.meetups.eventTypes.lightningNight.description}
-            </p>
-          </div>
-
-          <div className={styles.eventTypeCard}>
-            <div className={styles.eventTypeIcon} aria-hidden='true'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='currentColor'
-              >
-                <path d='M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z' />
-              </svg>
-            </div>
-            <h3 className={styles.eventTypeTitle}>
-              {LABELS.pages.meetups.eventTypes.networking.title}
-            </h3>
-            <p className={styles.eventTypeDescription}>
-              {LABELS.pages.meetups.eventTypes.networking.description}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.scheduleSection}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>
-            {LABELS.pages.meetups.schedule.title}
-          </h2>
-        </div>
-
-        <div className={styles.scheduleContainer}>
-          <div className={styles.scheduleTimeline}>
-            {LABELS.pages.meetups.schedule.items.map((item, index) => (
-              <div key={index} className={styles.scheduleItem}>
-                <div className={styles.scheduleTime}>{item.time}</div>
-                <div className={styles.scheduleDot}></div>
-                <div className={styles.scheduleActivity}>{item.activity}</div>
+      <section id='schedule' className={s.section}>
+        <div className={s.split}>
+          <SectionTitle note='Doors open at six' title='An evening at DSD.' />
+          <dl className={s.rows}>
+            {schedule.items.map((item) => (
+              <div key={item.time} className={s.row}>
+                <dt>{item.time}</dt>
+                <dd>{item.activity}</dd>
               </div>
             ))}
-          </div>
+          </dl>
         </div>
       </section>
-
-      <section className={styles.ctaSection}>
-        <div className={styles.ctaCard}>
-          <div className={styles.ctaIcon} aria-hidden='true'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='32'
-              height='32'
-              viewBox='0 0 24 24'
-              fill='currentColor'
-            >
-              <path d='M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11zM9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm-8 4H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2z' />
-            </svg>
-          </div>
-          <h3 className={styles.ctaTitle}>{LABELS.pages.meetups.cta.title}</h3>
-          <p className={styles.ctaDescription}>
-            {LABELS.pages.meetups.cta.description}
-          </p>
-          <MeetupCTAButton buttonText={LABELS.pages.meetups.cta.button} />
-          <p className={styles.ctaNote}>
-            {LABELS.pages.meetups.cta.externalNote}
-          </p>
+      <section className={s.contrast}>
+        <SectionTitle note='What’s on' title='Inside a meetup night.' />
+        <div className={s.tiles}>
+          <article>
+            <h3>{eventTypes.fullLength.title}</h3>
+            <p>
+              A speaker has 45–60 minutes to walk through a project, explain a
+              tool, or dig into a technical decision.
+            </p>
+          </article>
+          <article>
+            <h3>Lightning talks</h3>
+            <p>
+              At an “A Night Of” event, three or four speakers each take 10–15
+              minutes on a shared theme, such as APIs, career growth, or side
+              projects. You get to hear how several developers approached the
+              same question.
+            </p>
+          </article>
+          <article>
+            <h3>Pizza and conversation</h3>
+            <p>
+              Sponsors provide free pizza and drinks. Doors open half an hour
+              before announcements. Grab a slice, introduce yourself, and stay
+              after the Q&amp;A to meet the speakers. Check the event listing
+              for in-person and online options.
+            </p>
+          </article>
+        </div>
+        <div className={s.actions}>
+          <Action href={externalLinks.meetupUrl}>Join the Meetup group</Action>
+          <Action href='/speakers' secondary>
+            Browse past speakers
+          </Action>
+          <Action href={sponsorshipEmail} secondary>
+            Sponsor a meetup
+          </Action>
         </div>
       </section>
     </div>

@@ -1,68 +1,64 @@
 .formContainer {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 0;
+  display: grid;
+  gap: 11px;
 }
-
 .formGroup {
-  margin-bottom: 1rem;
+  display: grid;
+  gap: 4px;
 }
-
 .formLabel {
-  display: block;
-  margin-bottom: 0.25rem;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
+  color: #f4f5ef;
 }
-
-.formInput,
-.formTextarea {
+.formInput {
   width: 100%;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-family: inherit;
-  box-sizing: border-box;
+  min-width: 0;
+  padding: 10px 12px;
+  border: 1px solid #64737b;
+  background: #0e191f;
+  border-radius: 7px;
+  color: #f5f5f1;
+  font: inherit;
 }
-
-.formTextarea {
+textarea.formInput {
   resize: vertical;
 }
-
-.formHelperText {
-  font-size: 0.875rem;
-  color: #666;
-  margin-top: 0.25rem;
+.formHelperText,
+.formContainer p {
+  font-size: 13px;
+  margin: 0;
+  color: #cad3d5;
 }
-
-.errorText {
-  font-size: 0.875rem;
-  color: #e53e3e;
-  margin-top: 0.25rem;
+.formContainer .errorText {
+  color: #ffbbbb;
 }
-
-.submitButton {
-  background-color: #2563eb;
-  color: #fff;
+.formInput[aria-invalid='true'] {
+  border-color: #ff9898;
 }
-
-.cancelButton {
-  background-color: #ffca2c;
-  color: #000;
-  margin-left: 0.5rem;
+.recaptcha {
+  max-width: 100%;
+  overflow: auto;
 }
-
 .submitButton,
 .cancelButton {
-  margin-top: 1rem;
-  padding: 0.75rem 3rem;
-  font-weight: 500;
-  border: none;
-  border-radius: 6px;
+  font: inherit;
+  font-weight: 750;
+  padding: 10px 14px;
+  border-radius: 9px;
   cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
 }
-
-.submitButton:hover {
-  background-color: #1d4ed8;
+.submitButton {
+  border: 0;
+  background: #ffca23;
+  color: #161b19;
+}
+.submitButton:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+.cancelButton {
+  border: 1px solid #63727b;
+  background: transparent;
+  color: #f3f4ef;
 }
