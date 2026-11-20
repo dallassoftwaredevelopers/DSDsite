@@ -129,13 +129,13 @@
       "topics": ["Cloud Architecture"]
     },
     {
-      "id": "864eaf03-afbd-40af-9581-019cfaa025a9",
-      "name": "Andrea Griffiths",
+      "id": "4387c69e-bbda-4ac0-863e-61c628b40cf9",
+      "name": "Tatiana Maskaron",
       "role": "",
       "company": "",
-      "photoUrl": "/images/speakers/andrea-griffiths-v2.webp",
-      "lastSpoke": "2025-07-10",
-      "topics": ["AI"]
+      "photoUrl": "/images/speakers/tatiana-maskaron.webp",
+      "lastSpoke": "2025-08-07",
+      "topics": ["JavaScript", "UI/UX"]
     },
     {
       "id": "9857a331-ec8f-465c-9828-b83b1cf31670",
@@ -238,15 +238,6 @@
       "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Jamaal_Smith.jpg",
       "lastSpoke": "2025-08-07",
       "topics": ["JavaScript"]
-    },
-    {
-      "id": "4387c69e-bbda-4ac0-863e-61c628b40cf9",
-      "name": "Tatiana Maskaron",
-      "role": "",
-      "company": "",
-      "photoUrl": "https://vpgsxqtnqt8tekgb.public.blob.vercel-storage.com/dsd-assets/speakers/Tatiana_Maskaron.jpg",
-      "lastSpoke": "2025-08-07",
-      "topics": ["JavaScript", "UI/UX"]
     },
     {
       "id": "6c9f0e56-7f93-4259-b527-a2ba81d2a338",
