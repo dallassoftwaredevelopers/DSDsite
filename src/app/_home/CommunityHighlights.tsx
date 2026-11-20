@@ -1,6 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FiArrowRight, FiArrowUpRight, FiPlayCircle } from 'react-icons/fi';
+import {
+  FiArrowRight,
+  FiArrowUpRight,
+  FiDownload,
+  FiFileText,
+  FiPlayCircle,
+} from 'react-icons/fi';
+import { LuPizza } from 'react-icons/lu';
 import roster from '../../../lib/fixtures/speakers.json';
 import { externalLinks, sponsorshipEmail } from '../_constants';
 import conference from './photos/commit-your-code.webp';
@@ -30,7 +37,7 @@ export function PastSpeakers() {
               alt=''
               width={180}
               height={180}
-              sizes='(max-width: 368px) 64px, (max-width: 480px) 88px, (max-width: 580px) 45vw, (max-width: 720px) 64px, (max-width: 1140px) 23vw, (max-width: 1440px) 64px, 160px'
+              sizes='(max-width: 320px) 80px, (max-width: 464px) 25vw, (max-width: 720px) 116px, (max-width: 1140px) 23vw, (max-width: 1440px) 64px, 160px'
             />
             <span>{speaker.name}</span>
           </li>
@@ -94,29 +101,35 @@ export function MeetupSponsorship() {
       className={styles.sponsor}
       aria-labelledby='sponsor-heading'
     >
-      <div>
+      <div className={styles.sponsorIntro}>
         <span className={styles.hand}>Give back</span>
         <h2 id='sponsor-heading'>Feed the next meetup.</h2>
-      </div>
-      <div>
         <p>
-          When your company sponsors a meetup, you’re buying dinner for the
-          developers in the room. Every sponsorship dollar goes to food and
-          drinks. The one-pager has the details, and your inquiry goes straight
-          to the organizers.
+          Pick up the dinner tab for the room and help keep DSD meetups free.
         </p>
-        <div className={styles.supportLinks}>
-          <a href={sponsorshipEmail}>
-            Sponsor a meetup <FiArrowRight aria-hidden />
-          </a>
+      </div>
+      <div className={styles.receipt}>
+        <div className={styles.receiptLabel}>
+          <LuPizza aria-hidden /> Pizza &amp; drinks
+        </div>
+        <p>
+          <strong>100%</strong> of every sponsorship dollar
+        </p>
+      </div>
+      <div className={styles.sponsorActions}>
+        <a className={styles.sponsorButton} href={sponsorshipEmail}>
+          Sponsor a meetup <FiArrowRight aria-hidden />
+        </a>
+        <div className={styles.guideLinks}>
           <a href='/images/DSD-Sponsorship-Info.png'>
-            View sponsorship details <FiArrowUpRight aria-hidden />
+            <FiFileText aria-hidden /> View one-pager
           </a>
           <a
             href='/images/DSD-Sponsorship-Info.png'
             download='DSD-Sponsorship-Info.png'
+            aria-label='Download the one-pager'
           >
-            Download the one-pager
+            <FiDownload aria-hidden /> Download
           </a>
         </div>
       </div>

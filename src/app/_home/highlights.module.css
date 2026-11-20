@@ -25,7 +25,7 @@
 .directoryLink,
 .conferenceLink,
 .replays,
-.supportLinks a {
+.sponsorActions a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -86,7 +86,7 @@
   color: #ccd0da;
 }
 .replays:hover,
-.supportLinks a:hover {
+.guideLinks a:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -111,8 +111,7 @@
   font-size: clamp(15px, 1.45vw, 18px);
   color: var(--soft);
 }
-.conferenceActions,
-.supportLinks {
+.conferenceActions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -151,26 +150,112 @@
 }
 .sponsor {
   display: grid;
-  grid-template-columns: 0.8fr 1.2fr;
-  align-items: center;
-  gap: 34px;
-  padding: clamp(30px, 4vw, 62px) var(--home-pad);
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-areas: 'intro receipt' 'actions receipt';
+  gap: 20px clamp(28px, 6vw, 84px);
+  padding: clamp(34px, 5vw, 72px) var(--home-pad);
   border-top: 1px solid #354047;
   background: #192229;
+}
+.sponsorIntro {
+  grid-area: intro;
 }
 .sponsor .hand {
   color: #ffca51;
 }
-.sponsor p {
+.sponsorIntro p {
+  margin-top: 12px;
+  max-width: 42ch;
   color: var(--soft);
-  max-width: 60ch;
 }
-.supportLinks {
-  margin-top: 11px;
+.receipt {
+  --paper: #fff0c7;
+  grid-area: receipt;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 22rem;
+  position: relative;
+  padding: 14px clamp(18px, 3vw, 32px) 20px;
+  margin-bottom: 6px;
+  color: #24231f;
+  background: var(--paper);
+  border-top: 5px solid var(--gold);
+}
+.receipt::after {
+  content: '';
+  position: absolute;
+  inset: 100% 0 auto;
+  height: 6px;
+  background: linear-gradient(135deg, var(--paper) 50%, transparent 50%) 0 0 /
+    10px 10px repeat-x;
+}
+.receiptLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed #91815c;
+  font:
+    700 29px/1.1 var(--home-hand),
+    cursive;
+}
+.receiptLabel svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.7;
+}
+.receipt p {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 12px;
+  max-width: 20rem;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+.receipt strong {
+  font-size: clamp(40px, 5vw, 62px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+.sponsorActions {
+  grid-area: actions;
+  display: grid;
+  justify-items: start;
+  gap: 12px;
   font-size: 14px;
 }
-.supportLinks a:first-child {
-  color: var(--gold);
+.sponsorActions a {
+  min-height: 44px;
+}
+.sponsorActions svg {
+  flex: none;
+}
+.sponsorButton {
+  padding: 12px 18px;
+  border-radius: 12px;
+  color: #141817;
+  background: var(--gold);
+}
+.sponsorButton:hover {
+  background: #ffdc63;
+}
+.guideLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0 12px;
+}
+.guideLinks a {
+  color: var(--soft);
+}
+.guideLinks a + a {
+  padding-left: 13px;
+  background: linear-gradient(#586570, #586570) left center / 1px 18px no-repeat;
 }
 @container featured-speaker (min-width: 15rem) {
   .portraits img {
@@ -194,6 +279,12 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
+  .sponsor {
+    grid-template-areas: 'intro' 'receipt' 'actions';
+  }
+  .receipt {
+    justify-self: start;
+  }
   .conference h2 {
     max-width: none;
   }
@@ -201,23 +292,31 @@
     max-width: 540px;
   }
   .speakerHeading {
-    align-items: flex-start;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
   }
   .portraits {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 27rem;
+    margin-inline: auto;
+    row-gap: 18px;
   }
-}
-@media (max-width: 480px) {
-  .speakerHeading {
-    gap: 12px;
+  .portraits li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .portraits img {
-    max-width: 88px;
+    width: clamp(80px, 25vw, 116px);
+    max-width: 100%;
   }
-}
-@media (max-width: 23rem) {
-  .portraits {
-    grid-template-columns: 1fr;
+  .speakers .directoryNote {
+    margin-inline: auto;
+    max-width: 48ch;
+    text-align: center;
+    text-wrap: pretty;
   }
 }

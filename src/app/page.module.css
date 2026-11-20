@@ -844,6 +844,7 @@
   }
   .stats {
     display: grid;
+    align-items: start;
     grid-template-columns: 1.3fr 1fr 0.82fr;
     gap: 9px;
   }
