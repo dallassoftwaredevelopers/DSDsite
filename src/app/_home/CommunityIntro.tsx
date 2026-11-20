@@ -180,7 +180,7 @@ export default function CommunityIntro() {
               <dd>24</dd>
             </div>
             <div>
-              <dt>To attend a meetup</dt>
+              <dt>to attend</dt>
               <dd>$0</dd>
             </div>
           </dl>
